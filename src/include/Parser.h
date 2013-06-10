@@ -23,11 +23,17 @@ using std::ostream;
 using std::cout;
 using std::endl;
 
+#include <fstream>
+using std::fstream;
+
+#include <cassert>
+
 class Parser
 {
 protected:
 	bool isSpecialChar(const char & c);
 	bool readLineAsTokens(istream& is, vector<string>& tokens, bool includeSpecialChars = false);
+	fstream is;
 public:
 	Parser();
 	virtual ~Parser();
@@ -60,9 +66,10 @@ public:
 		int sourceNode;
 		string sourcePin;
 		vector<Sink> sinks;
+		bool dummyNet;
 
-		Net(const string name, const int sourceNode, const string sourcePin) :
-			name(name), sourceNode(sourceNode), sourcePin(sourcePin)
+		Net(const string name, const int sourceNode, const string sourcePin, const bool dummyNet = false) :
+			name(name), sourceNode(sourceNode), sourcePin(sourcePin), dummyNet(dummyNet)
 			{};
 
 		void addSink(const Sink sinkNode) { sinks.push_back(sinkNode); }
@@ -81,7 +88,7 @@ private:
 	}
 	friend ostream & operator<<( ostream & out, const CircuitNetList::Net net)
 	{
-		out << net.name << " " << net.sourceNode << " " << net.sourcePin << " : ";
+		out << net.name << (net.dummyNet? " dummyNet":"") << " from (" << net.sourceNode << ", " << net.sourcePin << ") : ";
 		for(int i = 0; i < net.sinks.size(); i++)
 		{
 			out << net.sinks[i] << " ";
@@ -108,15 +115,43 @@ private:
 	const int addNet(const string name, const int sourceNode, const string sourcePin);
 	const int addNet(const string name);
 public:
-	void addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs);
+	void addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential = false);
+
+
+	const size_t getNetsSize() const {return nets.size();};
+	Net & getNet(const size_t & i) {return nets[i];};
 	virtual ~CircuitNetList(){};
 };
 
 
 class VerilogParser : public Parser
 {
+	static const string SEQUENTIAL_CELL;
+	static const string CLOCK_NET;
+
+	// Read the module definition
+	bool read_module(string& moduleName);
+
+	// Read the next primary input.
+	// Return value indicates if the last read was successful or not.
+	bool read_primary_input(string& primaryInput);
+
+	// Read the next primary output.
+	// Return value indicates if the last read was successful or not.
+	bool read_primary_output(string& primaryInput);
+
+	// Read the next net.
+	// Return value indicates if the last read was successful or not.
+	bool read_wire(string& wire);
+
+	// Read the next cell instance.
+	// Return value indicates if the last read was successful or not.
+	bool read_cell_inst(string& cellType, string& cellInstName, vector<std::pair<string, string> >& pinNetPairs);
+	bool read_assign(pair<string, string> & assignment);
 public:
 	bool readFile(const string filename, CircuitNetList & netlist);
+	
+
 	virtual ~VerilogParser()
 	{
 
