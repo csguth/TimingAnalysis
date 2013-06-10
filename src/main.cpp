@@ -1,5 +1,6 @@
 #include <iostream>
 using std::cout;
+using std::cerr;
 using std::endl;
 
 #include "include/TimingAnalysis.h"
@@ -7,16 +8,31 @@ using std::endl;
 
 using std::make_pair;
 
+struct PassingArgs {
+	string contestRoot;
+	string contestBenchmark;
+	PassingArgs(string contestRoot,	string contestBenchmark) : contestRoot(contestRoot), contestBenchmark(contestBenchmark){};
+};
+
 int main(int argc, char const *argv[])
 {
-	cout << "Olá" << endl;
+	if(argc != 3)
+	{
+		cerr << "Using: " << argv[0] << " <CONTEST_ROOT> <CONTEST_BENCHMARK>" << endl;
+		return -1;
+	}
 
-	TimingAnalysis::TimingAnalysis ta;
+	const PassingArgs args(argv[1], argv[2]);
+	
+
+
+	cout << "Olá" << endl;
 	
 	CircuitNetList netlist;
-	
 	VerilogParser vp;
-	vp.readFile("/home/csguth/Documents/UFSC/tcc/implementacao/ispd2013/simple/simple.v", netlist);
+
+	const string verilogFile = args.contestRoot + "/" + args.contestBenchmark + "/" + args.contestBenchmark + ".v";
+	vp.readFile(verilogFile, netlist);
 
 	cout << netlist << endl;
 
