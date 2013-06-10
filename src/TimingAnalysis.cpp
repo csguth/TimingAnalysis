@@ -8,13 +8,13 @@ namespace TimingAnalysis
 
 */
 
-	TimingAnalysis::TimingAnalysis() : nodes(5)
+	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist) : nodes(netlist.getGatesSize())
 	{
-		nodes[0] = Node("Source");
-		nodes[1] = Node("Node 1", 2);
-		nodes[2] = Node("Node 2", 3);
-		nodes[3] = Node("Node 3", 1);
-		nodes[4] = Node("Sink", 1);
+		for(size_t i = 0; i < netlist.getGatesSize(); i++)
+		{
+			const CircuitNetList::LogicGate & gate = netlist.getGateT(i);
+			nodes[i] = Node(gate.name, gate.inNets.size());
+		}
 	}
 
 	TimingAnalysis::~TimingAnalysis()

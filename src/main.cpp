@@ -5,6 +5,7 @@ using std::endl;
 
 #include "include/TimingAnalysis.h"
 #include "include/Parser.h"
+#include "include/CircuitNetList.h"
 
 using std::make_pair;
 
@@ -24,21 +25,17 @@ int main(int argc, char const *argv[])
 
 	const PassingArgs args(argv[1], argv[2]);
 
-	cout << "Olá" << endl;
-	
-	CircuitNetList netlist;
 	VerilogParser vp;
 
 	const string verilogFile = args.contestRoot + "/" + args.contestBenchmark + "/" + args.contestBenchmark + ".v";
-	vp.readFile(verilogFile, netlist);
+	const CircuitNetList netlist = vp.readFile(verilogFile);
 
-
-	cout << netlist << endl;
-
-	cout << "gates size: " << netlist.getGatesSize() << endl;
-	cout << "nets size: " << netlist.getNetsSize() << endl;
-
-	cout << "fim" << endl;
+	TimingAnalysis::TimingAnalysis ta(netlist);
+	cout << "-- Timing TimingAnalysis Topology ("<<ta.getNumberOfNodes() << " nodes)" << endl;
+	for(size_t i = 0; i < ta.getNumberOfNodes(); i++)
+	{
+		cout << "---- Node ["<<i<<"] = " <<  ta.getNodeName(i) << endl;
+	}
 
 	return 0;
 }

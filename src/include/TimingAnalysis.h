@@ -9,6 +9,8 @@ using std::string;
 
 #include "Transitions.h"
 
+#include "CircuitNetList.h"
+
 namespace TimingAnalysis
 {
 
@@ -47,7 +49,7 @@ namespace TimingAnalysis
 	{
 		vector<Node> nodes;
 	public:
-		TimingAnalysis();
+		TimingAnalysis(const CircuitNetList netlist);
 		virtual ~TimingAnalysis();
 
 
