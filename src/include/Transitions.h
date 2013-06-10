@@ -80,7 +80,7 @@ public:
 
 	void reverse() { return swap(clsValue[RISE], clsValue[FALL]); }
 
-	double aggregate() const { return clsValue[RISE] + clsValue[FALL]; }
+	T aggregate() const { return clsValue[RISE] + clsValue[FALL]; }
 }; // end class
 
 #endif
