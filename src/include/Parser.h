@@ -120,6 +120,7 @@ public:
 
 	const size_t getNetsSize() const {return nets.size();};
 	Net & getNet(const size_t & i) {return nets[i];};
+	LogicGate & getGate(const size_t & i){return gates[i];};
 	virtual ~CircuitNetList(){};
 };
 
@@ -127,6 +128,8 @@ public:
 class VerilogParser : public Parser
 {
 	static const string SEQUENTIAL_CELL;
+	static const string INPUT_DRIVER_CELL;
+	static const string PRIMARY_OUTPUT_CELL;
 	static const string CLOCK_NET;
 
 	// Read the module definition

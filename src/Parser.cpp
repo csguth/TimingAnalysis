@@ -78,6 +78,8 @@ bool Parser::readLineAsTokens(istream& is, vector<string>& tokens, bool includeS
 
 // VERILOG PARSER
 const string VerilogParser::SEQUENTIAL_CELL = "ms00f80";
+const string VerilogParser::INPUT_DRIVER_CELL = "in01f80";
+const string VerilogParser::PRIMARY_OUTPUT_CELL = "__PO__";
 const string VerilogParser::CLOCK_NET = "ispd_clk";
 bool VerilogParser::readFile(const string filename, CircuitNetList & netlist)
 {
@@ -96,7 +98,13 @@ bool VerilogParser::readFile(const string filename, CircuitNetList & netlist)
 		if (valid) 
 		{
 			// cout << "Primary input: " << primaryInput << endl;
-			// netlist.addNet(primaryInput, -1, "o");
+			if(primaryInput != CLOCK_NET)
+			{
+				vector<std::pair<string, string> > piPins;
+				piPins.push_back(make_pair("a", primaryInput + "_PI"));
+				piPins.push_back(make_pair("o", primaryInput));
+				netlist.addCellInst(primaryInput, INPUT_DRIVER_CELL, piPins);
+			}
 		}
 
 	}
@@ -113,6 +121,10 @@ bool VerilogParser::readFile(const string filename, CircuitNetList & netlist)
 		{
 			// cout << "Primary output: " << primaryOutput << endl;
 			// netlist.addNet(primaryOutput);
+			vector<std::pair<string, string> > poPins;
+			poPins.push_back(make_pair("i", primaryOutput));
+			poPins.push_back(make_pair("o", primaryOutput + "_PO"));
+			netlist.addCellInst(primaryOutput, PRIMARY_OUTPUT_CELL, poPins);
 		}
 
 	}
@@ -177,7 +189,9 @@ bool VerilogParser::readFile(const string filename, CircuitNetList & netlist)
 
 	for(size_t i = 0; i < netlist.getNetsSize(); i++)
 	{
-		if(netlist.getNet(i).sourceNode == -1 || netlist.getNet(i).sinks.empty())
+		const int sourceNodeIndex = netlist.getNet(i).sourceNode;
+		const int sinkNodeIndex = (netlist.getNet(i).sinks.empty() ? -1 : netlist.getNet(i).sinks.front().gate);
+		if( sourceNodeIndex == -1 || sinkNodeIndex == -1 || netlist.getGate(sinkNodeIndex).cellType == PRIMARY_OUTPUT_CELL )
 			netlist.getNet(i).dummyNet = true;
 	}
 
@@ -425,6 +439,9 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 		const int gateIndex = addGate(name, cellType, inputPinPairs.size() - 1);
 		const int netIndex = addNet(fanoutNetName, gateIndex, outputPin);
 		LogicGate & gate = gates[gateIndex];
+		Net & net = nets[netIndex];
+		if(net.sourceNode == -1)
+			net.sourceNode = gateIndex;
 		gate.fanoutNetIndex = netIndex;
 		for(size_t i = 0; i < inputPinPairs.size() - 1 ; i++)
 		{
