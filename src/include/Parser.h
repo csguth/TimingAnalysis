@@ -28,6 +28,9 @@ using std::fstream;
 
 #include <cassert>
 
+#include <queue>
+using std::queue;
+
 class Parser
 {
 protected:
@@ -49,9 +52,10 @@ public:
 		string cellType;
 		vector<int> inNets;
 		int fanoutNetIndex;
+		bool inputDriver;
 
-		LogicGate(const string name, const string cellType, const unsigned inputs, int fanoutNetIndex) :
-			name(name), cellType(cellType), inNets(inputs), fanoutNetIndex(fanoutNetIndex)
+		LogicGate(const string name, const string cellType, const unsigned inputs, int fanoutNetIndex, const bool inputDriver = false) :
+			name(name), cellType(cellType), inNets(inputs), fanoutNetIndex(fanoutNetIndex), inputDriver(inputDriver)
 			{};
 	};
 
@@ -78,12 +82,12 @@ public:
 private:
 	friend ostream & operator<<( ostream & out, const CircuitNetList netlist) 
 	{
-		out << "-- NETS" << endl;
-		for(int i = 0; i < netlist.nets.size(); i++)
-			out << "---- NET["<<i<<"] " << netlist.nets[i] << endl;
-		out << "-- GATES" << endl;
-		for(int i = 0; i < netlist.gates.size(); i++)
-			out << "---- GATE["<<i<<"] " << netlist.gates[i] << endl;	
+		out << "-- NET TOPOLOGY ("<< netlist.nets.size()<< ")" << endl;
+		for(size_t i = 0; i < netlist.nets.size(); i++)
+			out << "---- netT[" << i  << " = "<< netlist.netTopology[i] <<"] "<< netlist.nets[netlist.netTopology[i]] << endl;
+		out << "-- GATE TOPOLOGY" << endl;
+		for(size_t i = 0; i < netlist.gates.size(); i++)
+			out << "---- gateT["<<i<<" = "<< netlist.topology[i] <<"] " << netlist.gates[netlist.topology[i]] << endl;	
 		return out;
 	}
 	friend ostream & operator<<( ostream & out, const CircuitNetList::Net net)
@@ -101,7 +105,7 @@ private:
 	}
 	friend ostream & operator<<( ostream & out, const CircuitNetList::LogicGate gate)
 	{
-		out << gate.cellType << " " << gate.name << endl;
+		out << gate.cellType << " " << gate.name << (gate.inputDriver?" inputDriver":"") << endl;
 		for(int i = 0; i < gate.inNets.size(); i++)
 			out << "------ net["<<i<<"] = " << gate.inNets[i] << endl;
 		return out;
@@ -111,16 +115,24 @@ private:
 	vector<LogicGate> gates;
 	vector<Net> nets;
 
-	const int addGate(const string name, const string cellType, const int inputs);
+	vector<int> topology;
+	vector<int> netTopology;
+
+
+	const int addGate(const string name, const string cellType, const int inputs, const bool isInputDriver = false);
 	const int addNet(const string name, const int sourceNode, const string sourcePin);
 	const int addNet(const string name);
 public:
-	void addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential = false);
+	void addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential = false, const bool isInputDriver = false);
+	void updateTopology();
 
+	const size_t getNetsSize() { return nets.size(); };
+	const size_t getGatesSize() { return gates.size(); };
+	Net & getNet(const size_t & i) { return nets[i]; };
+	LogicGate & getGate(const size_t & i) { return gates[i]; };
+	LogicGate & getGateT(const size_t & i) { return gates[topology[i]]; };
+	Net & getNetT(const size_t & i) { return nets[netTopology[i]]; };
 
-	const size_t getNetsSize() const {return nets.size();};
-	Net & getNet(const size_t & i) {return nets[i];};
-	LogicGate & getGate(const size_t & i){return gates[i];};
 	virtual ~CircuitNetList(){};
 };
 

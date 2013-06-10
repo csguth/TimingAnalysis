@@ -23,8 +23,6 @@ int main(int argc, char const *argv[])
 	}
 
 	const PassingArgs args(argv[1], argv[2]);
-	
-
 
 	cout << "Olá" << endl;
 	
@@ -34,7 +32,11 @@ int main(int argc, char const *argv[])
 	const string verilogFile = args.contestRoot + "/" + args.contestBenchmark + "/" + args.contestBenchmark + ".v";
 	vp.readFile(verilogFile, netlist);
 
+
 	cout << netlist << endl;
+
+	cout << "gates size: " << netlist.getGatesSize() << endl;
+	cout << "nets size: " << netlist.getNetsSize() << endl;
 
 	cout << "fim" << endl;
 
