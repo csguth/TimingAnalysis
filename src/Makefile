@@ -1,6 +1,6 @@
 GXX=g++
 OPTIMIZATION_FLAGS=-g3
-OBJS=main.o TimingAnalysis.o Parser.o
+OBJS=main.o  CircuitNetList.o TimingAnalysis.o Parser.o
 
 all: $(OBJS)
 	$(GXX) -o TimingAnalysis $(OBJS)
@@ -13,6 +13,10 @@ TimingAnalysis.o:
 
 Parser.o:
 	$(GXX) $(OPTIMIZATION_FLAGS) -c -o Parser.o Parser.cpp
+
+CircuitNetList.o:
+	$(GXX) $(OPTIMIZATION_FLAGS) -c -o CircuitNetList.o CircuitNetList.cpp
+
 
 clean:
 	rm -rf *.o TimingAnalysis
