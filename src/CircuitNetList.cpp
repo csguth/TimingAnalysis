@@ -18,10 +18,11 @@ void CircuitNetList::updateTopology()
 	}
 
 	topology.clear();
-	inverseTopology.clear();
 	netTopology.clear();
-	inverseNetTopology.clear();
 	
+	inverseTopology.resize(gates.size(), -1);
+	inverseNetTopology.resize(nets.size(), -1);
+
 	while(!q.empty())
 	{
 		const int currentIndex = q.front();
@@ -34,16 +35,19 @@ void CircuitNetList::updateTopology()
 			if(!insertedN[gate.inNets[i]])
 			{
 				netTopology.push_back(gate.inNets[i]);
+				inverseNetTopology[gate.inNets[i]] = netTopology.size() - 1;
 				insertedN[gate.inNets[i]] = true;
 			}
 		}
 		if(!insertedN[gate.fanoutNetIndex])
 		{
 			netTopology.push_back(gate.fanoutNetIndex);
+			inverseNetTopology[gate.fanoutNetIndex] = netTopology.size() - 1;
 			insertedN[gate.fanoutNetIndex] = true;
 		}
 		
 		topology.push_back(currentIndex);
+		inverseTopology[currentIndex] = topology.size() - 1;
 		for(size_t i = 0; i < fanoutNet.sinks.size(); i++)
 		{
 			const int fanoutIndex = fanoutNet.sinks[i].gate;
@@ -58,30 +62,6 @@ void CircuitNetList::updateTopology()
 			}
 		}
 	}
-
-	inverseTopology.resize(topology.size());
-
-	for(size_t i = 0; i < inverseTopology.size(); i++)
-	{
-		size_t j = 0;
-		while(j < topology.size() && topology[j] != i){ j++; }
-		if(j < topology.size() && i == topology[j])
-			inverseTopology[i] = j;
-		else
-			assert(false);
-	}
-
-	inverseNetTopology.resize(netTopology.size());
-	for(size_t i = 0; i < inverseNetTopology.size(); i++)
-	{
-		size_t j = 0;
-		while(j < netTopology.size() && netTopology[j] != i){ j++; }
-		if(j < netTopology.size() && i == netTopology[j])
-			inverseNetTopology[i] = j;
-		else
-			assert(false);
-	}
-
 
 	// cout << "printing topology: " << endl;
 	// for(size_t i = 0; i < topology.size(); i++)
