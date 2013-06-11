@@ -23,6 +23,8 @@ using std::endl;
 #include <queue>
 using std::queue;
 
+#include <cassert>
+
 class CircuitNetList
 {
 public:
@@ -98,6 +100,9 @@ private:
 	vector<int> topology;
 	vector<int> netTopology;
 
+	vector<int> inverseTopology;
+	vector<int> inverseNetTopology;
+
 
 	const int addGate(const string name, const string cellType, const int inputs, const bool isInputDriver = false);
 	const int addNet(const string name, const int sourceNode, const string sourcePin);
@@ -106,12 +111,14 @@ public:
 	void addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential = false, const bool isInputDriver = false);
 	void updateTopology();
 
-	const size_t getNetsSize() { return nets.size(); };
+	const size_t getNetsSize() const { return nets.size(); };
 	const size_t getGatesSize() const { return gates.size(); };
 	Net & getNet(const size_t & i) { return nets[i]; };
 	LogicGate & getGate(const size_t & i) { return gates[i]; };
 	const LogicGate & getGateT(const size_t & i) const { return gates[topology[i]]; };
-	Net & getNetT(const size_t & i) { return nets[netTopology[i]]; };
+	const Net & getNetT(const size_t & i) const { return nets[netTopology[i]]; };
+	const int getTopologicIndex(const size_t & i) const { return (i==-1?-1:inverseTopology.at(i)); };
+	const int getNetTopologicIndex(const size_t & i) const { return inverseNetTopology.at(i); };
 
 	virtual ~CircuitNetList(){};
 };
