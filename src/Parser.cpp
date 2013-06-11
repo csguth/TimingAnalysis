@@ -736,20 +736,20 @@ ostream& operator<< (ostream& os, LibertyLookupTable& lut) {
   assert (lut.tableVals.size() == lut.loadIndices.size()) ;
   assert (lut.tableVals[0].size() == lut.transitionIndices.size()) ;
 
-  cout << "\t" ;
+  os << "\t" ;
   for (int i=0; i < lut.transitionIndices.size(); ++i) {
-    cout << lut.transitionIndices[i] << "\t" ;
+    os << lut.transitionIndices[i] << "\t" ;
   }
-  cout << endl ;
+  os << endl ;
 
   
   for (int i=0; i < lut.loadIndices.size(); ++i) {
-    cout << lut.loadIndices[i] << "\t" ;
+    os << lut.loadIndices[i] << "\t" ;
 
     for (int j=0; j < lut.transitionIndices.size(); ++j)
-      cout << lut.tableVals[i][j] << "\t" ;
+      os << lut.tableVals[i][j] << "\t" ;
 
-    cout << endl ;
+    os << endl ;
     
   }
 
@@ -759,20 +759,20 @@ ostream& operator<< (ostream& os, LibertyLookupTable& lut) {
 
 ostream& operator<< (ostream& os, LibertyTimingInfo& timing) {
 
-  cout << "Timing info from " << timing.fromPin << " to " << timing.toPin << ": " << endl ;
-  cout << "Timing sense: " << timing.timingSense << endl ;
+  os << "Timing info from " << timing.fromPin << " to " << timing.toPin << ": " << endl ;
+  os << "Timing sense: " << timing.timingSense << endl ;
 
-  cout << "Fall delay LUT: " << endl ;
-  cout << timing.fallDelay ;
+  os << "Fall delay LUT: " << endl ;
+  os << timing.fallDelay ;
 
-  cout << "Rise delay LUT: " << endl ;
-  cout << timing.riseDelay ;
+  os << "Rise delay LUT: " << endl ;
+  os << timing.riseDelay ;
   
-  cout << "Fall transition LUT: " << endl ;
-  cout << timing.fallTransition ;
+  os << "Fall transition LUT: " << endl ;
+  os << timing.fallTransition ;
 
-  cout << "Rise transition LUT: " << endl ;
-  cout << timing.riseTransition ;
+  os << "Rise transition LUT: " << endl ;
+  os << timing.riseTransition ;
 
   return os ;
 }
@@ -780,12 +780,12 @@ ostream& operator<< (ostream& os, LibertyTimingInfo& timing) {
 
 ostream& operator<< (ostream& os, LibertyPinInfo& pin) {
 
-  cout << "Pin " << pin.name << ":" << endl ;
-  cout << "capacitance: " << pin.capacitance << endl ;
-  cout << "maxCapacitance: " << pin.maxCapacitance << endl ;
-  cout << "isInput? " << (pin.isInput ? "true" : "false") << endl ;
-  cout << "isClock? " << (pin.isClock ? "true" : "false") << endl ;
-  cout << "End pin" << endl ;
+  os << "Pin " << pin.name << ":" << endl ;
+  os << "capacitance: " << pin.capacitance << endl ;
+  os << "maxCapacitance: " << pin.maxCapacitance << endl ;
+  os << "isInput? " << (pin.isInput ? "true" : "false") << endl ;
+  os << "isClock? " << (pin.isClock ? "true" : "false") << endl ;
+  os << "End pin" << endl ;
 
   return os ;
 }
@@ -793,25 +793,25 @@ ostream& operator<< (ostream& os, LibertyPinInfo& pin) {
 
 ostream& operator<< (ostream& os, LibertyCellInfo& cell) {
 
-  cout << "Library cell " << cell.name << ": " << endl ;
+  os << "Library cell " << cell.name << ": " << endl ;
 
-  cout << "Footprint: " << cell.footprint << endl ;
-  cout << "Leakage power: " << cell.leakagePower << endl ;
-  cout << "Area: " << cell.area << endl ;
-  cout << "Sequential? " << (cell.isSequential ? "yes" : "no") << endl ;
-  cout << "Dont-touch? " << (cell.dontTouch ? "yes" : "no") << endl ;      
+  os << "Footprint: " << cell.footprint << endl ;
+  os << "Leakage power: " << cell.leakagePower << endl ;
+  os << "Area: " << cell.area << endl ;
+  os << "Sequential? " << (cell.isSequential ? "yes" : "no") << endl ;
+  os << "Dont-touch? " << (cell.dontTouch ? "yes" : "no") << endl ;      
 
-  cout << "Cell has " << cell.pins.size() << " pins: " << endl ;
+  os << "Cell has " << cell.pins.size() << " pins: " << endl ;
   for (int i=0; i < cell.pins.size(); ++i) {
-    cout << cell.pins[i] << endl ;
+    os << cell.pins[i] << endl ;
   }
 
-  cout << "Cell has " << cell.timingArcs.size() << " timing arcs: " << endl ;
+  os << "Cell has " << cell.timingArcs.size() << " timing arcs: " << endl ;
   for (int i=0; i < cell.timingArcs.size(); ++i) {
-    cout << cell.timingArcs[i] << endl ;
+    os << cell.timingArcs[i] << endl ;
   }
 
-  cout << "End of cell " << cell.name << endl << endl ;
+  os << "End of cell " << cell.name << endl << endl ;
 
   return os ;
 }
@@ -826,7 +826,7 @@ const LibertyLibrary LibertyParser::readFile(const string filename)
 	LibertyLibrary lib(maxTransition);
 
 	assert (valid) ;
-	cout << "The default max transition defined is " << maxTransition << endl ;
+	// cout << "The default max transition defined is " << maxTransition << endl ;
 
 	int readCnt = 0 ;
 	do {
@@ -836,13 +836,13 @@ const LibertyLibrary LibertyParser::readFile(const string filename)
 		if (valid) {
 			++readCnt ;
 
-			cout << cell << endl ;
+			// cout << cell << endl ;
 			lib.addCellInfo(cell);
 		}
 
 	} while (valid) ;
 
-	cout << "Read " << readCnt << " number of library cells" << endl ;
+	// cout << "Read " << readCnt << " number of library cells" << endl ;
 
 	is.close();
 	return lib;
