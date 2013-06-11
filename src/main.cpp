@@ -34,7 +34,7 @@ int main(int argc, char const *argv[])
 	const LibertyLibrary library = lp.readFile(libertyFile);
 
 
-	cout << "printing cell in01 option 20" << endl;
+	cout << "printing cell in01 option 13" << endl;
 	const LibertyCellInfo & cell = library.getCellInfo("in01", 13);
 	cout << (LibertyCellInfo &) cell << endl;
 
