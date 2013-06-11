@@ -141,7 +141,7 @@ const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLook
 
  const Transitions<double> LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable riseLut, const LibertyLookupTable fallLut, const Transitions<double> load, const Transitions<double> transition)
  {
- 	// NON UNATE
+ 	// NEGATIVE UNATE
  	const double riseDelay = interpolate(riseLut, load.getRise(), transition.getFall());
  	const double fallDelay = interpolate(fallLut, load.getFall(), transition.getRise());
  	return Transitions<double>(riseDelay, fallDelay);
