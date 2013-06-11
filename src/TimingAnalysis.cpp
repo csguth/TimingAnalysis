@@ -8,21 +8,15 @@ namespace TimingAnalysis
 
 */
 
-	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib) : nodes(netlist.getGatesSize()), nodesOptions(netlist.getGatesSize()), library(lib)
+	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib) : nodes(netlist.getGatesSize()), nodesOptions(netlist.getGatesSize()), edges(netlist.getNetsSize()), library(lib)
 	{
 		for(size_t i = 0; i < netlist.getGatesSize(); i++)
 		{
 			const CircuitNetList::LogicGate & gate = netlist.getGateT(i);
-			WireDelayModel * delayModel;
-			if(i < 3)
-				delayModel = new LumpedCapacitanceWireDelayModel(10.0f);
-			else
-				delayModel = new RCTreeWireDelayModel(20.0f);
-			nodes[i] = Node(gate.name, gate.inNets.size(), delayModel);
+			nodes[i] = Node(gate.name, gate.inNets.size());
 			cout << "node " << i << " cell type " << gate.cellType << endl;
 			const pair<int, int> cellIndex = lib->getCellIndex(gate.cellType);
 			nodesOptions[i] = Option(cellIndex.first, cellIndex.second);
-			cout << nodes[i] << endl;
 		}
 
 		interpolator = new LinearLibertyLookupTableInterpolator();
@@ -31,6 +25,66 @@ namespace TimingAnalysis
 		{
 			const LibertyCellInfo & cellInfo = lib->getCellInfo(nodesOptions[i].footprintIndex, nodesOptions[i].optionIndex);
 			cout << "node " << i << "("<< nodes[i].name <<") footprint " << cellInfo.footprint << " cell " << cellInfo.name << endl;
+		}
+
+		cout << "creating edges" << endl;
+
+
+		// Creating the edges and setting their drivers
+		for(size_t i = 0; i < netlist.getNetsSize(); i++)
+		{
+			const CircuitNetList::Net & net = netlist.getNetT(i);
+			const int driverTopologicIndex = netlist.getTopologicIndex(net.sourceNode);
+
+			Node * driverNode = 0;
+			TimingPoint * driver = 0;
+		
+			if(driverTopologicIndex != -1)
+			{
+				driverNode = &nodes.at(driverTopologicIndex);
+				driver = &driverNode->timingPoints.back();
+			}
+
+			// Just a test {
+			WireDelayModel * delayModel;
+			if(i < 3)
+				delayModel = new LumpedCapacitanceWireDelayModel(10.0f);
+			else
+				delayModel = new RCTreeWireDelayModel(20.0f);
+			// }
+
+			edges[i] = Edge(net.name, delayModel, driver, net.sinks.size());
+			if(driver)
+				driver->net = &edges[i];
+
+		}
+
+		// Now, setting the fanin edges of nodes
+		for(size_t i = 0; i < netlist.getGatesSize(); i++)
+		{
+			const CircuitNetList::LogicGate & gate = netlist.getGateT(i);
+			Node & node = nodes[i];
+			for(size_t j = 0; j < gate.inNets.size(); j++)
+			{
+				const int inNetTopologicIndex = netlist.getNetTopologicIndex(gate.inNets.at(j));
+				
+				edges[inNetTopologicIndex].addFanout(&node.timingPoints.at(j));
+				
+				node.timingPoints.at(j).net = &edges[inNetTopologicIndex];
+			}
+		}
+
+		// printing topology
+		cout << "printing topology: " << endl;
+		for(size_t i = 0; i < nodes.size(); i++)
+		{
+			Node & node = nodes[i];
+			const LibertyCellInfo & cellInfo = lib->getCellInfo(nodesOptions[i].footprintIndex, nodesOptions[i].optionIndex);
+			cout << "node " << node.name << " op " << cellInfo.name << " ("<<nodesOptions[i].optionIndex <<")" << endl;
+			for(size_t j = 0; j < node.timingPoints.size(); j++)
+			{
+				cout << "-- timing point[" << j << "] driver = " << node.timingPoints.at(j).getNetName() << endl;
+			}
 		}
 	}
 
@@ -49,13 +103,11 @@ namespace TimingAnalysis
 	{
 		return nodes.size();
 	}
-	const double TimingAnalysis::simulateRCTree(const int &nodeIndex)
-	{
-		return nodes[nodeIndex].wireDelayModel->simulate();
-	}
+	
 	const Transitions<double> TimingAnalysis::getNodeDelay(const int nodeIndex, const int inputNumber)
 	{
-		Transitions<double> ceff(nodes[nodeIndex].wireDelayModel->simulate(),nodes[nodeIndex].wireDelayModel->simulate()); // polimorph call
+		//Transitions<double> ceff(nodes[nodeIndex].wireDelayModel->simulate(),nodes[nodeIndex].wireDelayModel->simulate()); // polimorph call
+		Transitions<double> ceff(1.0f, 1.0f);
 		Transitions<double> transition(20.0f, 20.0f); // todo
 		const LibertyCellInfo & cellInfo = library->getCellInfo(nodesOptions[nodeIndex].footprintIndex, nodesOptions[nodeIndex].optionIndex);
 		const LibertyLookupTable fallLUT = cellInfo.timingArcs.at(inputNumber).fallDelay;
@@ -70,16 +122,41 @@ namespace TimingAnalysis
 	NODE
 
 */
-	Node::Node(const string name, const unsigned inputs, WireDelayModel * wireDelayModel) :	name(name),
+	Node::Node(const string name, const unsigned inputs) :	name(name),
 															timingPoints(inputs + 1),
-															timingArcs(inputs),
-															wireDelayModel(wireDelayModel)
+															timingArcs(inputs)
 	{
 		//cout << wireDelayModel->simulate() << endl;
 	}
 	Node::~Node()
 	{
 	}
+
+/*
+
+	EDGE
+
+*/
+
+	Edge::Edge(const string & netName, WireDelayModel * wireDelayModel, TimingPoint * driver, const int numFanouts) : netName(netName), wireDelayModel(wireDelayModel), driver(driver), fanouts(numFanouts)
+	{
+
+	}
+	Edge::~Edge()
+	{
+
+	}
+	void Edge::addFanout(TimingPoint * fanout)
+	{
+		fanouts.push_back(fanout);
+	}
+	const string Edge::getNetName()
+	{
+		return netName;
+	}
+
+
+
 
 /*
 
@@ -95,6 +172,13 @@ namespace TimingAnalysis
 	{
 
 	}
+	const string TimingPoint::getNetName()
+	{
+		if(!net)
+			return "FROM_SOURCE_NET";
+		return net->getNetName();
+	}
+
 
 /*
 

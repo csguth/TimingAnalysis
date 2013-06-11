@@ -18,13 +18,18 @@ using std::ostream;
 namespace TimingAnalysis
 {
 
+	class Edge;
 	class TimingPoint
 	{
+		friend class TimingAnalysis;
+		Edge * net;
 		Transitions<double> arrivalTime;
 		Transitions<double> slew;
+
 	public:
 		TimingPoint();
 		virtual ~TimingPoint();
+		const string getNetName();
 	};
 
 	class TimingArc
@@ -43,15 +48,25 @@ namespace TimingAnalysis
 		string name;
 		vector<TimingPoint> timingPoints;
 		vector<TimingArc> timingArcs;
-		WireDelayModel * wireDelayModel;
-		friend ostream& operator<<(ostream & out, Node & node)
-		{
-			return out << node.name << " op " << " wireDelayModel " << node.wireDelayModel << endl;
-		};
 
 	public:
-		Node(const string name = "DEFAULT_NODE_NAME", const unsigned inputs = 1, WireDelayModel * wireDelayModel = 0);
+		Node(const string name = "DEFAULT_NODE_NAME", const unsigned inputs = 1);
 		virtual ~Node();
+	};
+
+	class Edge
+	{
+		friend class TimingAnalysis;
+		string netName;
+		WireDelayModel * wireDelayModel;
+		TimingPoint * driver;
+		vector<TimingPoint*> fanouts;
+
+	public:
+		Edge(const string & netName = "DEFAULT_NET_NAME", WireDelayModel * wireDelayModel = 0, TimingPoint * driver = 0, const int numFanouts = 1);
+		virtual ~Edge();
+		void addFanout(TimingPoint * fanout);
+		const string getNetName();
 	};
 
 	struct Option
@@ -67,6 +82,7 @@ namespace TimingAnalysis
 	{
 		vector<Node> nodes;
 		vector<Option> nodesOptions;
+		vector<Edge> edges;
 
 
 		const LibertyLibrary * library;
@@ -79,7 +95,6 @@ namespace TimingAnalysis
 		// GETTERS
 		const string getNodeName(const int nodeIndex) const;
 		const unsigned getNumberOfNodes() const;
-		const double simulateRCTree(const int &nodeIndex);
 
 		const Transitions<double> getNodeDelay(const int nodeIndex, const int inputNumber);
 	};
