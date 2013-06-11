@@ -33,6 +33,16 @@ int main(int argc, char const *argv[])
 	const CircuitNetList netlist = vp.readFile(verilogFile);
 	const LibertyLibrary library = lp.readFile(libertyFile);
 
+
+	cout << "printing cell in01 option 20" << endl;
+	const LibertyCellInfo & cell = library.getCellInfo("in01", 13);
+	cout << (LibertyCellInfo &) cell << endl;
+
+	cout << "printing cell in01m01" << endl;
+	const LibertyCellInfo & cell2 = library.getCellInfo("in01m01");
+	cout << (LibertyCellInfo &) cell2 << endl;
+
+
 	TimingAnalysis::TimingAnalysis ta(netlist);
 	cout << "-- Timing TimingAnalysis Topology ("<<ta.getNumberOfNodes() << " nodes)" << endl;
 	for(size_t i = 0; i < ta.getNumberOfNodes(); i++)

@@ -100,6 +100,8 @@ class LibertyLibrary
 
 	map<string, int> footPrintToIndex;
 	map<string, int> cellOptionNumber; // ex cellOptionNumber[in01f01] = 0 
+  map<string, int> cellToFootprintIndex;
+  // fazer um map de celltype para footprint
 
 public:
 	LibertyLibrary(const double maxTransition = 0.0f);
@@ -107,6 +109,10 @@ public:
 
 
 	const pair<int, int> addCellInfo(const LibertyCellInfo & cellInfo); // return = [footprint index][option index]
+
+
+  const LibertyCellInfo & getCellInfo(const string & footPrint, const int & i) const ;
+  const LibertyCellInfo & getCellInfo(const string & cellName) const;
 
 	/* data */
 };
