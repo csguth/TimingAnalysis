@@ -13,6 +13,7 @@ using std::ostream;
 #include "Transitions.h"
 #include "CircuitNetList.h"
 #include "WireDelayModel.h"
+#include "LibertyLibrary.h"
 
 namespace TimingAnalysis
 {
@@ -42,11 +43,10 @@ namespace TimingAnalysis
 		string name;
 		vector<TimingPoint> timingPoints;
 		vector<TimingArc> timingArcs;
-		unsigned option;
 		WireDelayModel * wireDelayModel;
 		friend ostream& operator<<(ostream & out, Node & node)
 		{
-			return out << node.name << " op " << node.option << " wireDelayModel " << node.wireDelayModel << endl;
+			return out << node.name << " op " << " wireDelayModel " << node.wireDelayModel << endl;
 		};
 
 	public:
@@ -54,11 +54,25 @@ namespace TimingAnalysis
 		virtual ~Node();
 	};
 
+	struct Option
+	{
+		int footprintIndex;
+		int optionIndex;
+
+		Option():footprintIndex(-1), optionIndex(-1){};
+		Option(const int footprintIndex, const int optionIndex) : footprintIndex(footprintIndex), optionIndex(optionIndex){};
+	};
+
 	class TimingAnalysis
 	{
 		vector<Node> nodes;
+		vector<Option> nodesOptions;
+
+
+		const LibertyLibrary * library;
+		LibertyLookupTableInterpolator * interpolator;
 	public:
-		TimingAnalysis(const CircuitNetList netlist);
+		TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib);
 		virtual ~TimingAnalysis();
 
 
@@ -66,6 +80,8 @@ namespace TimingAnalysis
 		const string getNodeName(const int nodeIndex) const;
 		const unsigned getNumberOfNodes() const;
 		const double simulateRCTree(const int &nodeIndex);
+
+		const Transitions<double> getNodeDelay(const int nodeIndex, const int inputNumber);
 	};
 
 };

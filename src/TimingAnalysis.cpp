@@ -8,7 +8,7 @@ namespace TimingAnalysis
 
 */
 
-	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist) : nodes(netlist.getGatesSize())
+	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib) : nodes(netlist.getGatesSize()), nodesOptions(netlist.getGatesSize()), library(lib)
 	{
 		for(size_t i = 0; i < netlist.getGatesSize(); i++)
 		{
@@ -19,6 +19,18 @@ namespace TimingAnalysis
 			else
 				delayModel = new RCTreeWireDelayModel(20.0f);
 			nodes[i] = Node(gate.name, gate.inNets.size(), delayModel);
+			cout << "node " << i << " cell type " << gate.cellType << endl;
+			const pair<int, int> cellIndex = lib->getCellIndex(gate.cellType);
+			nodesOptions[i] = Option(cellIndex.first, cellIndex.second);
+			cout << nodes[i] << endl;
+		}
+
+		interpolator = new LinearLibertyLookupTableInterpolator();
+		cout << "Timing Analysis Option Vector: " << endl;
+		for(size_t i = 0; i < netlist.getGatesSize(); i++)
+		{
+			const LibertyCellInfo & cellInfo = lib->getCellInfo(nodesOptions[i].footprintIndex, nodesOptions[i].optionIndex);
+			cout << "node " << i << "("<< nodes[i].name <<") footprint " << cellInfo.footprint << " cell " << cellInfo.name << endl;
 		}
 	}
 
@@ -41,6 +53,16 @@ namespace TimingAnalysis
 	{
 		return nodes[nodeIndex].wireDelayModel->simulate();
 	}
+	const Transitions<double> TimingAnalysis::getNodeDelay(const int nodeIndex, const int inputNumber)
+	{
+		Transitions<double> ceff(nodes[nodeIndex].wireDelayModel->simulate(),nodes[nodeIndex].wireDelayModel->simulate()); // polimorph call
+		Transitions<double> transition(20.0f, 20.0f); // todo
+		const LibertyCellInfo & cellInfo = library->getCellInfo(nodesOptions[nodeIndex].footprintIndex, nodesOptions[nodeIndex].optionIndex);
+		const LibertyLookupTable fallLUT = cellInfo.timingArcs.at(inputNumber).fallDelay;
+		const LibertyLookupTable riseLUT = cellInfo.timingArcs.at(inputNumber).riseDelay;
+		return interpolator->interpolate(riseLUT, fallLUT, ceff, transition);
+	}
+
 
 
 /*
