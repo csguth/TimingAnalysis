@@ -10,11 +10,15 @@ namespace TimingAnalysis
 
 	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist) : nodes(netlist.getGatesSize())
 	{
-		cout << "criando nodo "<< endl;
 		for(size_t i = 0; i < netlist.getGatesSize(); i++)
 		{
 			const CircuitNetList::LogicGate & gate = netlist.getGateT(i);
-			nodes[i] = Node(gate.name, gate.inNets.size(), (i<3?reinterpret_cast<WireDelayModel*>(new RCTreeWireDelayModel(10.0f)):reinterpret_cast<WireDelayModel*>(new LumpedCapacitanceWireDelayModel(2.0f))));
+			WireDelayModel * delayModel;
+			if(i < 3)
+				delayModel = new LumpedCapacitanceWireDelayModel(10.0f);
+			else
+				delayModel = new RCTreeWireDelayModel(20.0f);
+			nodes[i] = Node(gate.name, gate.inNets.size(), delayModel);
 		}
 	}
 
@@ -53,7 +57,6 @@ namespace TimingAnalysis
 	}
 	Node::~Node()
 	{
-		delete wireDelayModel;
 	}
 
 /*

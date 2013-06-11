@@ -7,6 +7,9 @@ using std::vector;
 #include <string>
 using std::string;
 
+#include <ostream>
+using std::ostream;
+
 #include "Transitions.h"
 #include "CircuitNetList.h"
 #include "WireDelayModel.h"
@@ -35,12 +38,16 @@ namespace TimingAnalysis
 	class Node
 	{
 		friend class TimingAnalysis;
+
 		string name;
 		vector<TimingPoint> timingPoints;
 		vector<TimingArc> timingArcs;
 		unsigned option;
 		WireDelayModel * wireDelayModel;
-
+		friend ostream& operator<<(ostream & out, Node & node)
+		{
+			return out << node.name << " op " << node.option << " wireDelayModel " << node.wireDelayModel << endl;
+		};
 
 	public:
 		Node(const string name = "DEFAULT_NODE_NAME", const unsigned inputs = 1, WireDelayModel * wireDelayModel = 0);
