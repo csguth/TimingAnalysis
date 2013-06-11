@@ -8,8 +8,8 @@ using std::vector;
 using std::string;
 
 #include "Transitions.h"
-
 #include "CircuitNetList.h"
+#include "WireDelayModel.h"
 
 namespace TimingAnalysis
 {
@@ -39,9 +39,11 @@ namespace TimingAnalysis
 		vector<TimingPoint> timingPoints;
 		vector<TimingArc> timingArcs;
 		unsigned option;
+		WireDelayModel * wireDelayModel;
+
 
 	public:
-		Node(const string name = "DEFAULT_NODE_NAME", const unsigned inputs = 1);
+		Node(const string name = "DEFAULT_NODE_NAME", const unsigned inputs = 1, WireDelayModel * wireDelayModel = 0);
 		virtual ~Node();
 	};
 
@@ -56,6 +58,7 @@ namespace TimingAnalysis
 		// GETTERS
 		const string getNodeName(const int nodeIndex) const;
 		const unsigned getNumberOfNodes() const;
+		const double simulateRCTree(const int &nodeIndex);
 	};
 
 };
