@@ -15,7 +15,10 @@ using std::fstream;
 
 #include <cassert>
 
+#include <cstdlib>
+
 #include "CircuitNetList.h"
+#include "LibertyLibrary.h"
 
 class Parser
 {
@@ -64,5 +67,30 @@ public:
 
 	};
 };
+
+// See test_lib_parser () function in parser_helper.cpp for an
+// example of how to use this class.
+class LibertyParser : public Parser {
+
+  void _skip_lut_3D () ;
+  void _begin_read_lut (LibertyLookupTable& lut) ;
+  void _begin_read_timing_info (string pinName, LibertyTimingInfo& cell) ;
+  void _begin_read_pin_info (string pinName, LibertyCellInfo& cell, LibertyPinInfo& pin) ;
+  void _begin_read_cell_info (string cellName, LibertyCellInfo& cell) ;
+    // Read the default max_transition defined for the library.
+  // Return value indicates if the last read was successful or not.  
+  // This function must be called in the beginning before any read_cell_info function call.
+  bool read_default_max_transition (double& maxTransition) ;
+
+  
+  // Read the next standard cell definition.
+  // Return value indicates if the last read was successful or not.  
+  bool read_cell_info (LibertyCellInfo& cell) ;
+public:
+
+  const LibertyLibrary readFile(const string filename);
+
+};
+
 
 #endif
