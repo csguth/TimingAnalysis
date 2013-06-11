@@ -26,15 +26,18 @@ int main(int argc, char const *argv[])
 	const PassingArgs args(argv[1], argv[2]);
 
 	VerilogParser vp;
+	LibertyParser lp;
 
 	const string verilogFile = args.contestRoot + "/" + args.contestBenchmark + "/" + args.contestBenchmark + ".v";
+	const string libertyFile = args.contestRoot + "/lib/contest.lib";
 	const CircuitNetList netlist = vp.readFile(verilogFile);
+	const LibertyLibrary library = lp.readFile(libertyFile);
 
 	TimingAnalysis::TimingAnalysis ta(netlist);
 	cout << "-- Timing TimingAnalysis Topology ("<<ta.getNumberOfNodes() << " nodes)" << endl;
 	for(size_t i = 0; i < ta.getNumberOfNodes(); i++)
 	{
-		cout << "---- Node ["<<i<<"] = " <<  ta.getNodeName(i) << endl;
+		cout << "---- Node ["<<i<<"] = " <<  ta.getNodeName(i) << " " <<  ta.simulateRCTree(i) << endl;
 	}
 
 	return 0;
