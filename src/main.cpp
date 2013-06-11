@@ -43,7 +43,7 @@ int main(int argc, char const *argv[])
 	cout << (LibertyCellInfo &) cell2 << endl;
 
 
-	TimingAnalysis::TimingAnalysis ta(netlist);
+	TimingAnalysis::TimingAnalysis ta(netlist, &library);
 	cout << "-- Timing TimingAnalysis Topology ("<<ta.getNumberOfNodes() << " nodes)" << endl;
 	for(size_t i = 0; i < ta.getNumberOfNodes(); i++)
 	{
