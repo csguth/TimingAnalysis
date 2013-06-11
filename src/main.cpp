@@ -42,12 +42,14 @@ int main(int argc, char const *argv[])
 	const LibertyCellInfo & cell2 = library.getCellInfo("in01m01");
 	cout << (LibertyCellInfo &) cell2 << endl;
 
+cout << "netlist:" << endl;
+cout << netlist << endl;
 
 	TimingAnalysis::TimingAnalysis ta(netlist, &library);
 	cout << "-- Timing TimingAnalysis Topology ("<<ta.getNumberOfNodes() << " nodes)" << endl;
 	for(size_t i = 0; i < ta.getNumberOfNodes(); i++)
 	{
-		cout << "---- Node ["<<i<<"] = " <<  ta.getNodeName(i) << " " <<  ta.simulateRCTree(i) << endl;
+		cout << "---- Node ["<<i<<"] = " <<  ta.getNodeName(i) << endl;
 	}
 
 	return 0;
