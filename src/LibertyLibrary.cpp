@@ -3,6 +3,19 @@
 
 LibertyLibrary::LibertyLibrary(const double maxTransition) : maxTransition(maxTransition)
 {
+	library.push_back(vector<LibertyCellInfo>());
+
+// DUMMY CELL TYPE TO PRIMARY OUTPUT
+	LibertyCellInfo po;
+	po.name = "__PO__";
+	po.footprint = "__PO__";
+	po.pins.resize(1);
+	po.timingArcs.resize(1);
+	library[0].push_back(po);
+	footPrintToIndex[po.footprint] = 0;
+	cellOptionNumber[po.name] = 0;
+	cellToFootprintIndex[po.name] = footPrintToIndex[po.footprint];
+
 }
 LibertyLibrary::~LibertyLibrary()
 {
@@ -31,12 +44,105 @@ const pair<int, int> LibertyLibrary::addCellInfo(const LibertyCellInfo & cellInf
 const LibertyCellInfo & LibertyLibrary::getCellInfo(const string & footPrint, const int & i) const
 {
 	const int footPrintIndex = footPrintToIndex.at(footPrint);
-	return library[footPrintIndex][i];
+	return library.at(footPrintIndex).at(i);
 }
 
 const LibertyCellInfo & LibertyLibrary::getCellInfo(const string & cellName) const
 {
 	const int footPrintIndex = cellToFootprintIndex.at(cellName);
 	const int optionNumber = cellOptionNumber.at(cellName);
-	return library[footPrintIndex][optionNumber];
+	return library.at(footPrintIndex).at(optionNumber);
 }
+
+const LibertyCellInfo & LibertyLibrary::getCellInfo(const int & footPrintIndex, const int & optionIndex) const
+{
+	return library.at(footPrintIndex).at(optionIndex);
+}
+
+
+const pair<int, int> LibertyLibrary::getCellIndex(const string &cellName) const
+{
+	const int footPrintIndex = cellToFootprintIndex.at(cellName);
+	const int optionNumber = cellOptionNumber.at(cellName);
+	return make_pair(footPrintIndex, optionNumber);
+}
+
+
+
+const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable lut, const double load, const double transition)
+{
+	double wTransition, wLoad, y1, y2, x1, x2;
+	double t[2][2];
+	int row1, row2, column1, column2;
+	wTransition = 0.0f;
+	wLoad = 0.0f;
+
+	assert(load >= 0 && transition >= 0);
+
+	row1 = lut.loadIndices.size() - 2;
+	row2 = lut.loadIndices.size() - 1;
+
+	y1 = lut.loadIndices[row1];
+	y2 = lut.loadIndices[row2];
+
+	// loads -- rows
+	for(size_t i = 0; i < lut.loadIndices.size() - 1; i++)
+	{
+		if(load >= lut.loadIndices[i] && load <= lut.loadIndices[i + 1])
+		{
+			row1 = i;
+			row2 = i + 1;
+			y1 = lut.loadIndices[row1];
+			y2 = lut.loadIndices[row2];
+		}
+	}
+
+	// transitions -- columns
+	if(transition < lut.transitionIndices[0])
+	{
+		column1 = 0;
+		column2 = 1;
+		x1 = lut.transitionIndices[column1];
+		x2 = lut.transitionIndices[column2];
+	}
+	else if (transition > lut.transitionIndices[lut.transitionIndices.size()-1])
+	{
+		column1 = lut.transitionIndices.size() - 2;
+		column2 = lut.transitionIndices.size() - 1;
+		x1 = lut.transitionIndices[column1];
+		x2 = lut.transitionIndices[column2];
+	}
+	else
+	{
+		for(size_t i = 0; i < lut.transitionIndices.size() - 1; i++)
+		{
+			if(transition <= lut.transitionIndices[i] && transition <= lut.transitionIndices[i + 1])
+			{
+				column1 = i;
+				column2 = i + 1;
+				x1 = lut.transitionIndices[column1];
+				x2 = lut.transitionIndices[column2];
+			}
+		}
+	}
+
+	//equation for interpolation (Ref - ISPD Contest: http://www.ispd.cc/contests/12/ISPD_2012_Contest_Details.pdf), slide 17
+	wTransition = (transition - x1) * (1.0f / (x2 - x1));
+	wLoad = (load - y1) * (1.0f / (y2 - y1));
+
+	t[0][0] = lut.tableVals[row1][column1];
+	t[0][1] = lut.tableVals[row1][column2];
+	t[1][0] = lut.tableVals[row2][column1];
+	t[1][1] = lut.tableVals[row2][column2];
+
+	return ((1 - wTransition) * (1 - wLoad) * t[0][0]) + (wTransition * (1 - wLoad) * t[0][1]) + ((1 - wTransition) * wLoad * t[1][0]) + (wTransition * wLoad * t[1][1]);
+ }
+
+
+ const Transitions<double> LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable riseLut, const LibertyLookupTable fallLut, const Transitions<double> load, const Transitions<double> transition)
+ {
+ 	// NON UNATE
+ 	const double riseDelay = interpolate(riseLut, load.getRise(), transition.getFall());
+ 	const double fallDelay = interpolate(fallLut, load.getFall(), transition.getRise());
+ 	return Transitions<double>(riseDelay, fallDelay);
+ }

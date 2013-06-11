@@ -20,7 +20,9 @@ using std::numeric_limits;
 #include <ostream>
 using std::ostream;
 
+#include <cassert>
 
+#include "Transitions.h"
 
 // Look up table to store delay or slew functions
 struct LibertyLookupTable {
@@ -36,7 +38,7 @@ struct LibertyLookupTable {
   vector<double> transitionIndices ;
   vector<vector<double> > tableVals ;
 
-} ;
+};
 
 ostream& operator<< (ostream& os, LibertyLookupTable& lut) ;
 
@@ -67,10 +69,13 @@ struct LibertyPinInfo {
   bool isInput ; // whether the pin is input or output pin
   bool isClock ; // whether the pin is a clock pin or not
 
-  LibertyPinInfo () : capacitance (0.0), maxCapacitance (std::numeric_limits<double>::max()),
-                        isInput(true), isClock(false) {}
+  LibertyPinInfo () : capacitance (0.0)
+  , maxCapacitance (std::numeric_limits<double>::max())
+  , isInput(true)
+  , isClock(false) {};
   
-} ;
+};
+
 
 ostream& operator<< (ostream& os, LibertyPinInfo& pin) ;
 
@@ -95,26 +100,60 @@ ostream& operator<< (ostream& os, LibertyCellInfo& cell) ;
 
 class LibertyLibrary
 {
-	double maxTransition;
-	vector< vector<LibertyCellInfo> > library;
+  double maxTransition;
+  vector< vector<LibertyCellInfo> > library;
 
-	map<string, int> footPrintToIndex;
-	map<string, int> cellOptionNumber; // ex cellOptionNumber[in01f01] = 0 
+  map<string, int> footPrintToIndex;
+  map<string, int> cellOptionNumber; // ex cellOptionNumber[in01f01] = 0 
   map<string, int> cellToFootprintIndex;
   // fazer um map de celltype para footprint
 
 public:
-	LibertyLibrary(const double maxTransition = 0.0f);
-	virtual ~LibertyLibrary();
+  LibertyLibrary(const double maxTransition = 0.0f);
+  virtual ~LibertyLibrary();
 
 
-	const pair<int, int> addCellInfo(const LibertyCellInfo & cellInfo); // return = [footprint index][option index]
+  const pair<int, int> addCellInfo(const LibertyCellInfo & cellInfo); // return = [footprint index][option index]
 
 
-  const LibertyCellInfo & getCellInfo(const string & footPrint, const int & i) const ;
+  const LibertyCellInfo & getCellInfo(const string & footPrint, const int & i) const;
   const LibertyCellInfo & getCellInfo(const string & cellName) const;
+  const LibertyCellInfo & getCellInfo(const int & footPrintIndex, const int & optionIndex) const;
 
-	/* data */
+  const pair<int, int> getCellIndex(const string &cellName) const;
+
+
+
+  /* data */
+};
+
+class LibertyLookupTableInterpolator
+{
+public:
+  virtual const double interpolate(const LibertyLookupTable lut, const double load, const double transition) = 0;
+  virtual const Transitions<double> interpolate(const LibertyLookupTable riseLut, const LibertyLookupTable fallLut, const Transitions<double> load, const Transitions<double> transition) = 0;
+
+  /* data */
+};
+
+class LinearLibertyLookupTableInterpolator : public LibertyLookupTableInterpolator
+{
+public:
+  const double interpolate(const LibertyLookupTable lut, const double load, const double transition);
+  const Transitions<double> interpolate(const LibertyLookupTable riseLut, const LibertyLookupTable fallLut, const Transitions<double> load, const Transitions<double> transition);
+
 };
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
