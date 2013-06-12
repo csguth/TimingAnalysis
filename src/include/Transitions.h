@@ -7,6 +7,9 @@ using std::swap;
 #include <ostream>
 using std::ostream;
 
+#include <cmath>
+
+
 #define MAKE_SELF_OPERATOR( OP ) \
 friend void operator OP ( Transitions<T> &v0, const Transitions<T> v1 ) { v0[RISE] OP v1[RISE], v0[FALL] OP v1[FALL]; } \
 friend void operator OP ( Transitions<T> &v0, const T            v1 ) { v0[RISE] OP v1; v0[FALL] OP v1; }
