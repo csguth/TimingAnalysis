@@ -1,6 +1,6 @@
 GXX=g++
 OPTIMIZATION_FLAGS=-g3
-OBJS=main.o CircuitNetList.o WireDelayModel.o LibertyLibrary.o TimingAnalysis.o Parser.o
+OBJS=main.o CircuitNetList.o SpefNet.o WireDelayModel.o LibertyLibrary.o TimingAnalysis.o Parser.o
 
 all: $(OBJS)
 	$(GXX) -o TimingAnalysis $(OBJS)
@@ -22,6 +22,9 @@ WireDelayModel.o:
 
 LibertyLibrary.o:
 	$(GXX) $(OPTIMIZATION_FLAGS) -c -o LibertyLibrary.o LibertyLibrary.cpp
+
+SpefNet.o:
+	$(GXX) $(OPTIMIZATION_FLAGS) -c -o SpefNet.o SpefNet.cpp
 
 
 clean:
