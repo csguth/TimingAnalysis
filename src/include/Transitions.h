@@ -3,6 +3,7 @@
 
 #include <algorithm>
 using std::swap;
+using std::max;
 
 #include <ostream>
 using std::ostream;
