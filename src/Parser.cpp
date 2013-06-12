@@ -847,3 +847,187 @@ const LibertyLibrary LibertyParser::readFile(const string filename)
 	is.close();
 	return lib;
 }
+
+
+// SPEF ISPD 2013
+// The return value indicates whether the *CONN section has been read or not
+bool SpefParserISPD2013::read_connections(SpefNetISPD2013 & net)
+{
+	bool terminateEarly = false;
+
+	vector<string> tokens;
+	bool valid = readLineAsTokens(is, tokens, true /*include special chars*/);
+
+	// Skip the lines that are not "*CONN"
+	while (valid && !(tokens.size() == 2 && tokens[0] == "*" && tokens[1] == "CONN"))
+	{
+
+		// The following if condition checks for nets without any connections
+		// This is needed for clock nets.
+		if (tokens.size() == 2 && tokens[0] == "*" && tokens[1] == "END")
+		{
+			terminateEarly = true;
+			break;
+		}
+
+		valid = readLineAsTokens(is, tokens, true /*include special chars*/);
+	}
+
+	assert(valid); // end of file not expected here
+
+	if (terminateEarly)
+		return false;
+
+	while (valid)
+	{
+		valid = readLineAsTokens(is, tokens, true /*include special chars*/);
+
+		if (tokens.size() == 2 && tokens[0] == "*" && tokens[1] == "CAP")
+			break; // the beginning of the next section
+
+		// Line format: "*nodeType nodeName direction"
+		// Note that nodeName can be either a single token or 3 tokens
+
+		assert(tokens.size() == 4 || tokens.size() == 6);
+		assert(tokens[0] == "*");
+
+		int tokenIndex = 1;
+
+		assert(tokens[tokenIndex].size() == 1); // should be a single character
+		const char nodeType = tokens[tokenIndex++][0];
+		assert(nodeType == 'P' || nodeType == 'I');
+		const std::string nodeNameN1 = tokens[tokenIndex++];
+		if (tokens[tokenIndex] == ":")
+		{
+			++tokenIndex; // skip the current token
+			const std::string nodeNameN2 = tokens[tokenIndex++];
+		}
+
+		assert(tokens[tokenIndex].size() == 1); // should be a single character
+		const char direction = tokens[tokenIndex++][0];
+		assert(direction == 'I' || direction == 'O');
+	}
+
+	return true;
+}
+
+void SpefParserISPD2013::read_capacitances(SpefNetISPD2013 & net)
+{
+
+	vector<string> tokens;
+	bool valid = true;
+	while (valid)
+	{
+
+		valid = readLineAsTokens(is, tokens, true /*include special chars*/);
+
+		if (tokens.size() == 2 && tokens[0] == "*" && tokens[1] == "RES")
+			break; // the beginning of the next section
+
+		// Line format: "index nodeName cap"
+		// Note that nodeName can be either a single token or 3 tokens
+
+		assert(tokens.size() == 3 || tokens.size() == 5);
+
+		int tokenIndex = 1;
+
+		std::string nodeName = tokens[tokenIndex++];
+		if (tokens[tokenIndex] == ":")
+		{
+			++tokenIndex; // skip the current token
+			nodeName += ":" + tokens[tokenIndex++];
+		}
+
+		const double value = std::atof(tokens[tokenIndex++].c_str());
+		net.addCapacitor(nodeName, value);
+		assert(value >= 0);
+	}
+}
+
+void SpefParserISPD2013::read_resistances(SpefNetISPD2013 & net)
+{
+	vector<string> tokens;
+	bool valid = true;
+	while (valid)
+	{
+		valid = readLineAsTokens(is, tokens, true /*include special chars*/);
+		if (tokens.size() == 2 && tokens[0] == "*" && tokens[1] == "END")
+			break; // end for this net
+		// Line format: "index fromNodeName toNodeName res"
+		// Note that each nodeName can be either a single token or 3 tokens
+		assert(tokens.size() >= 4 && tokens.size() <= 8);
+		int tokenIndex = 1;
+		std::string fromNodeName = tokens[tokenIndex++];
+		if (tokens[tokenIndex] == ":")
+		{
+			++tokenIndex; // skip the current token
+			fromNodeName += ":" + tokens[tokenIndex++];
+		}
+		std::string toNodeName = tokens[tokenIndex++];
+		if (tokens[tokenIndex] == ":")
+		{
+			++tokenIndex; // skip the current token
+			toNodeName += ":" + tokens[tokenIndex++];
+		}
+		const double value = std::atof(tokens[tokenIndex++].c_str());
+		assert(value >= 0);
+		net.addResistor(fromNodeName, toNodeName, value);
+	}
+}
+
+// Read the spef data for the next net.
+// Return value indicates if the last read was successful or not.
+bool SpefParserISPD2013::read_net_data(SpefNetISPD2013& spefNet)
+{
+	vector<string> tokens;
+
+	bool valid = readLineAsTokens(is, tokens, true /*include special chars*/);
+	
+	// Read until a valid D_NET line is found
+	while (valid)
+	{
+		if (tokens.size() == 4 && tokens[0] == "*" && tokens[1] == "D_NET")
+		{
+			// for(int i = 0; i < tokens.size(); i++)
+			// 	cout << tokens[i] << " ";
+			// cout << endl;
+			spefNet.netName = tokens[2];
+			spefNet.netLumpedCap = std::atof(tokens[3].c_str());
+
+
+			bool readConns = read_connections(spefNet);
+			if (readConns)
+			{
+				read_capacitances(spefNet);
+				read_resistances(spefNet);
+			}
+
+			return true;
+		}
+
+		valid = readLineAsTokens(is, tokens, true /*include special chars*/);
+	}
+
+	return false; // a valid net was not read
+}
+
+const Parasitics SpefParserISPD2013::readFile(const string filename)
+{
+	is.open(filename.c_str(), fstream::in);
+	map<string, SpefNetISPD2013> parasitics;
+	SpefNetISPD2013 spefNet;
+	bool valid = read_net_data(spefNet);
+
+	int readCnt = 0;
+	while (valid)
+	{
+		++readCnt;
+		parasitics[spefNet.netName] = spefNet;
+		spefNet = SpefNetISPD2013();
+		valid = read_net_data(spefNet);
+	}
+
+	cout << "Read " << readCnt << " nets in the spef file." << endl;
+	is.close();
+	return parasitics;
+}	

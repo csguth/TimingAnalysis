@@ -19,6 +19,7 @@ using std::fstream;
 
 #include "CircuitNetList.h"
 #include "LibertyLibrary.h"
+#include "SpefNet.h"
 
 class Parser
 {
@@ -70,7 +71,8 @@ public:
 
 // See test_lib_parser () function in parser_helper.cpp for an
 // example of how to use this class.
-class LibertyParser : public Parser {
+class LibertyParser : public Parser
+{
 
   void _skip_lut_3D () ;
   void _begin_read_lut (LibertyLookupTable& lut) ;
@@ -91,6 +93,21 @@ public:
   const LibertyLibrary readFile(const string filename);
 
 };
+
+
+class SpefParserISPD2013 : public Parser
+{
+	bool read_connections(SpefNetISPD2013 & net);
+	void read_capacitances(SpefNetISPD2013 & net);
+	void read_resistances(SpefNetISPD2013 & net);
+	bool read_net_data(SpefNetISPD2013& spefNet);
+public:
+	const Parasitics readFile(const string filename);
+
+	/* data */
+};
+
+
 
 
 #endif
