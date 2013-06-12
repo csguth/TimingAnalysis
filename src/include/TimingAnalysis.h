@@ -14,6 +14,7 @@ using std::ostream;
 #include "CircuitNetList.h"
 #include "WireDelayModel.h"
 #include "LibertyLibrary.h"
+#include "SpefNet.h"
 
 namespace TimingAnalysis
 {
@@ -48,6 +49,8 @@ namespace TimingAnalysis
 		string name;
 		vector<TimingPoint> timingPoints;
 		vector<TimingArc> timingArcs;
+		bool inputDriver;
+		bool sequential;
 
 	public:
 		Node(const string name = "DEFAULT_NODE_NAME", const unsigned inputs = 1);
@@ -86,9 +89,10 @@ namespace TimingAnalysis
 
 
 		const LibertyLibrary * library;
+		const Parasitics * parasitics;
 		LibertyLookupTableInterpolator * interpolator;
 	public:
-		TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib);
+		TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib, const Parasitics * parasitics);
 		virtual ~TimingAnalysis();
 
 

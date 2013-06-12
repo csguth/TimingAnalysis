@@ -8,12 +8,14 @@ namespace TimingAnalysis
 
 */
 
-	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib) : nodes(netlist.getGatesSize()), nodesOptions(netlist.getGatesSize()), edges(netlist.getNetsSize()), library(lib)
+	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib, const Parasitics * parasitics) : nodes(netlist.getGatesSize()), nodesOptions(netlist.getGatesSize()), edges(netlist.getNetsSize()), library(lib), parasitics(parasitics)
 	{
 		for(size_t i = 0; i < netlist.getGatesSize(); i++)
 		{
 			const CircuitNetList::LogicGate & gate = netlist.getGateT(i);
 			nodes[i] = Node(gate.name, gate.inNets.size());
+			nodes[i].inputDriver = gate.inputDriver;
+			nodes[i].sequential = gate.sequential;
 			cout << "node " << i << " cell type " << gate.cellType << endl;
 			const pair<int, int> cellIndex = lib->getCellIndex(gate.cellType);
 			nodesOptions[i] = Option(cellIndex.first, cellIndex.second);
@@ -27,36 +29,40 @@ namespace TimingAnalysis
 			cout << "node " << i << "("<< nodes[i].name <<") footprint " << cellInfo.footprint << " cell " << cellInfo.name << endl;
 		}
 
-		cout << "creating edges" << endl;
-
 
 		// Creating the edges and setting their drivers
 		for(size_t i = 0; i < netlist.getNetsSize(); i++)
 		{
 			const CircuitNetList::Net & net = netlist.getNetT(i);
 			const int driverTopologicIndex = netlist.getTopologicIndex(net.sourceNode);
-
 			Node * driverNode = 0;
 			TimingPoint * driver = 0;
-		
+			string rcTreeRootNodeName;
+
 			if(driverTopologicIndex != -1)
 			{
 				driverNode = &nodes.at(driverTopologicIndex);
 				driver = &driverNode->timingPoints.back();
+				const LibertyCellInfo & driverCellInfo = lib->getCellInfo(nodesOptions[driverTopologicIndex].footprintIndex, nodesOptions[driverTopologicIndex].optionIndex);
+				rcTreeRootNodeName = driverNode->name;
+				size_t pos = rcTreeRootNodeName.find("_PI");
+				if(pos != string::npos)
+					rcTreeRootNodeName = rcTreeRootNodeName.substr(0, pos);
+				if(!driverNode->inputDriver || driverNode->sequential)
+				{
+					rcTreeRootNodeName += ":";
+					rcTreeRootNodeName += driverCellInfo.pins.front().name;
+				}
 			}
-
 			// Just a test {
-			WireDelayModel * delayModel;
-			if(i < 3)
-				delayModel = new LumpedCapacitanceWireDelayModel(10.0f);
-			else
-				delayModel = new RCTreeWireDelayModel(20.0f);
+			WireDelayModel * delayModel = 0;
+			//delayModel = new LumpedCapacitanceWireDelayModel(10.0f);
+			if(parasitics->find(net.name) != parasitics->end())
+				delayModel = new RCTreeWireDelayModel(parasitics->at(net.name), false, rcTreeRootNodeName);
 			// }
-
 			edges[i] = Edge(net.name, delayModel, driver, net.sinks.size());
 			if(driver)
 				driver->net = &edges[i];
-
 		}
 
 		// Now, setting the fanin edges of nodes
