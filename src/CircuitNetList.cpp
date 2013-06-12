@@ -113,7 +113,7 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 		const int netIndex = addNet(fanoutNetName + "_PO", gateIndex, outputPin);
 		LogicGate & gate = gates[gateIndex];
 		gate.fanoutNetIndex = netIndex;
-
+		gate.sequential = isSequential;
 		for(size_t i = 0; i < inputPinPairs.size() - 1 ; i++)
 		{
 			const int faninNetIndex = addNet(inputPinPairs[i].second);
@@ -129,7 +129,7 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 		const int sequentialCellGatePINetIndex = addNet(fanoutNetName, sequentialCellGateIndex, outputPin);
 		LogicGate & sequentialGate = gates[sequentialCellGateIndex];
 		sequentialGate.fanoutNetIndex = sequentialCellGatePINetIndex;
-
+		sequentialGate.sequential = isSequential;
 		for(size_t i = 0; i < inputPinPairs.size() - 1 ; i++)
 		{
 			const int faninNetIndex = addNet(inputPinPairs[i].second);
@@ -154,5 +154,6 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 			faninNet.addSink(Sink(gateIndex, inputPinPairs[i].first));
 			gate.inNets[i] = faninNetIndex;
 		}
+		gate.sequential = isSequential;
 	}
 }

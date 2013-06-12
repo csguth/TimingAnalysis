@@ -35,6 +35,7 @@ public:
 		vector<int> inNets;
 		int fanoutNetIndex;
 		bool inputDriver;
+		bool sequential;
 
 		LogicGate(const string name, const string cellType, const unsigned inputs, int fanoutNetIndex, const bool inputDriver = false) :
 			name(name), cellType(cellType), inNets(inputs), fanoutNetIndex(fanoutNetIndex), inputDriver(inputDriver)
