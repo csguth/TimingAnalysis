@@ -6,6 +6,7 @@ using std::endl;
 #include "include/TimingAnalysis.h"
 #include "include/Parser.h"
 #include "include/CircuitNetList.h"
+#include "include/SpefNet.h"
 
 using std::make_pair;
 
@@ -27,25 +28,32 @@ int main(int argc, char const *argv[])
 
 	VerilogParser vp;
 	LibertyParser lp;
+	SpefParserISPD2013 sp;
 
+	// Transformar isso numa classe {
 	const string verilogFile = args.contestRoot + "/" + args.contestBenchmark + "/" + args.contestBenchmark + ".v";
+	const string spefFile = args.contestRoot + "/" + args.contestBenchmark + "/" + args.contestBenchmark + ".spef";
 	const string libertyFile = args.contestRoot + "/lib/contest.lib";
+	// }
+
 	const CircuitNetList netlist = vp.readFile(verilogFile);
 	const LibertyLibrary library = lp.readFile(libertyFile);
+	const Parasitics parasitics = sp.readFile(spefFile);
+	cout << "parasitics size " << parasitics.size() << endl;
 
 
-	cout << "printing cell in01 option 13" << endl;
-	const LibertyCellInfo & cell = library.getCellInfo("in01", 13);
-	cout << (LibertyCellInfo &) cell << endl;
+	// cout << "printing cell in01 option 13" << endl;
+	// const LibertyCellInfo & cell = library.getCellInfo("in01", 13);
+	// cout << (LibertyCellInfo &) cell << endl;
 
-	cout << "printing cell in01m01" << endl;
-	const LibertyCellInfo & cell2 = library.getCellInfo("in01m01");
-	cout << (LibertyCellInfo &) cell2 << endl;
+	// cout << "printing cell in01m01" << endl;
+	// const LibertyCellInfo & cell2 = library.getCellInfo("in01m01");
+	// cout << (LibertyCellInfo &) cell2 << endl;
 
-cout << "netlist:" << endl;
-cout << netlist << endl;
+	// cout << "netlist:" << endl;
+	// cout << netlist << endl;
 
-	TimingAnalysis::TimingAnalysis ta(netlist, &library);
+	TimingAnalysis::TimingAnalysis ta(netlist, &library, &parasitics); // PASSAR PARASITICS POR PARAMETRO
 	cout << "-- Timing TimingAnalysis Topology ("<<ta.getNumberOfNodes() << " nodes)" << endl;
 	for(size_t i = 0; i < ta.getNumberOfNodes(); i++)
 	{
