@@ -1,10 +1,12 @@
 #include "include/WireDelayModel.h"
 
-const double LumpedCapacitanceWireDelayModel::simulate()
+const double LumpedCapacitanceWireDelayModel::simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew)
 {
 	return lumpedCapacitance;
 }
 
+
+LinearLibertyLookupTableInterpolator RCTreeWireDelayModel::interpolator;
 RCTreeWireDelayModel::RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const bool dummyEdge, const string rootNode) : WireDelayModel(lumpedCapacitance), nodes(descriptor.nodesSize()), nodesNames(descriptor.nodesSize())
 {
 	if (dummyEdge)
@@ -81,10 +83,10 @@ RCTreeWireDelayModel::RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, c
 	initializeEffectiveCapacitances();
 }
 
-const double RCTreeWireDelayModel::simulate()
+const double RCTreeWireDelayModel::simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew)
 {
-	/*
-initializeEffectiveCapacitances();
+	const double PRECISION = 10E-5;
+	initializeEffectiveCapacitances();
 	updateDownstreamCapacitances();
 	//forwardIterate();
 	Transitions<double> error;
@@ -94,14 +96,14 @@ initializeEffectiveCapacitances();
 	do
 	{
 		ceff0 = nodes[0].effectiveCapacitance;
-		updateSlews(cellType, option, input, slew);
+		updateSlews(cellInfo, input, slew);
 		updateEffectiveCapacitances();
 		ceffF = nodes[0].effectiveCapacitance;
 		i++;
 		error = abs(ceffF - ceff0) / max(abs(ceff0), abs(ceffF));
 	}
-	while (error.getRise() > Defines::STD_THRESHOLD || error.getFall() > Defines::STD_THRESHOLD);
-	*/
+	while (error.getRise() > PRECISION || error.getFall() > PRECISION);
+
 	const double ceff = 1.2f;
 	return ceff;
 }
@@ -109,11 +111,8 @@ initializeEffectiveCapacitances();
 
 void RCTreeWireDelayModel::updateSlews(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew)
 {
-	/*
-
-nodes[0].slew = cellType->computeOutputSlew(option, input, slew, Transitions<double>(nodes[0].totalCapacitance, nodes[0].totalCapacitance));
-	_worstSlew = max(_worstSlew, nodes[0].slew);
-	nodes[0].delay = cellType->computeDelay(option, input, slew, Transitions<double>(nodes[0].totalCapacitance, nodes[0].totalCapacitance));
+	nodes[0].slew = RCTreeWireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(nodes[0].totalCapacitance, nodes[0].totalCapacitance), slew);
+	nodes[0].delay = RCTreeWireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(nodes[0].totalCapacitance, nodes[0].totalCapacitance), slew);
 	for (int i = 1; i < nodes.size(); i++)
 	{
 		Transitions<double> & T01 = nodes[i].delay;
@@ -132,7 +131,7 @@ nodes[0].slew = cellType->computeOutputSlew(option, input, slew, Transitions<dou
 		}
 
 	}
-	*/
+	
 }
 
 

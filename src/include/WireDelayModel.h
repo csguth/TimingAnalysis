@@ -16,14 +16,14 @@ public:
 	WireDelayModel(const double & lumpedCapacitance) : lumpedCapacitance(lumpedCapacitance){};
 	virtual ~WireDelayModel(){};
 
-	virtual const double simulate() = 0;
+	virtual const double simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew) = 0;
 };
 
 class LumpedCapacitanceWireDelayModel : public WireDelayModel
 {
 public:
 	LumpedCapacitanceWireDelayModel(const double & lumpedCapacitance) : WireDelayModel(lumpedCapacitance){};
-	const double simulate();
+	const double simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
 };
 
 class RCTreeWireDelayModel : public WireDelayModel
@@ -69,10 +69,10 @@ class RCTreeWireDelayModel : public WireDelayModel
 	vector<Transitions<double> > _delays;
 	map<std::string, int> fanoutNameToNodeNumber;
 
-
+	static LinearLibertyLookupTableInterpolator interpolator;
 public:
 	RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const bool dummyEdge, const string rootNode);
-	const double simulate();
+	const double simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
 };
 
 
