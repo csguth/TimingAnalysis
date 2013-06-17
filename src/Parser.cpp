@@ -508,12 +508,14 @@ void LibertyParser::_begin_read_timing_info (string toPin, LibertyTimingInfo& ti
       assert (tokens[1] == "timing") ;
       finishedReading = true ;
       
-    } else if (tokens[0] == "timing_type") {
+    } else if (tokens[0] == "double") {
       // ignore data
 
     } else if (tokens[0] == "related_output_pin") {
       // ignore data
 
+    } else if (tokens[0] == "timing_type") {
+    	// ignore
     } else {
 
       cout << "Error: Unknown keyword: " << tokens[0] << endl ;
@@ -826,7 +828,7 @@ const LibertyLibrary LibertyParser::readFile(const string filename)
 	LibertyLibrary lib(maxTransition);
 
 	assert (valid) ;
-	// cout << "The default max transition defined is " << maxTransition << endl ;
+	 cout << "The default max transition defined is " << maxTransition << endl ;
 
 	int readCnt = 0 ;
 	do {
@@ -836,13 +838,13 @@ const LibertyLibrary LibertyParser::readFile(const string filename)
 		if (valid) {
 			++readCnt ;
 
-			// cout << cell << endl ;
+			 // cout << cell << endl ;
 			lib.addCellInfo(cell);
 		}
 
 	} while (valid) ;
 
-	// cout << "Read " << readCnt << " number of library cells" << endl ;
+	 // cout << "Read " << readCnt << " number of library cells" << endl ;
 
 	is.close();
 	return lib;
@@ -1030,4 +1032,295 @@ const Parasitics SpefParserISPD2013::readFile(const string filename)
 	cout << "Read " << readCnt << " nets in the spef file." << endl;
 	is.close();
 	return parasitics;
-}	
+}
+
+
+// SDC PARSER
+
+// Read clock definition
+// Return value indicates if the last read was successful or not.
+bool SDCParser::read_clock(string& clockName, string& clockPort, double& period)
+{
+
+	clockName = "";
+	clockPort = "";
+	period = 0.0;
+
+	vector<string> tokens;
+	bool valid = readLineAsTokens(is, tokens);
+
+	while (valid)
+	{
+
+		if (tokens.size() == 7 && tokens[0] == "create_clock" && tokens[1] == "-name")
+		{
+
+			clockName = tokens[2];
+
+			assert(tokens[3] == "-period");
+			period = std::atof(tokens[4].c_str());
+
+			assert(tokens[5] == "get_ports");
+			clockPort = tokens[6];
+			break;
+		}
+
+		valid = readLineAsTokens(is, tokens);
+	}
+
+	// Skip the next comment line to prepare for the next stage
+	bool valid2 = readLineAsTokens(is, tokens);
+	assert(valid2);
+	assert(tokens.size() == 2);
+	assert(tokens[0] == "input" && tokens[1] == "delays");
+
+	return valid;
+}
+
+// Read input delay
+// Return value indicates if the last read was successful or not.
+bool SDCParser::read_input_delay(string& portName, double& delay)
+{
+
+	portName = "";
+	delay = 0.0;
+
+	vector<string> tokens;
+	bool valid = readLineAsTokens(is, tokens);
+
+	assert(valid);
+	assert(tokens.size() >= 2);
+
+	if (valid && tokens[0] == "set_input_delay")
+	{
+		assert(tokens.size() == 6);
+
+		delay = std::atof(tokens[1].c_str());
+
+		assert(tokens[2] == "get_ports");
+
+		portName = tokens[3];
+
+		assert(tokens[4] == "-clock");
+
+	}
+	else
+	{
+
+		assert(tokens.size() == 2);
+		assert(tokens[0] == "input" && tokens[1] == "drivers");
+
+		return false;
+
+	}
+
+	return valid;
+}
+
+// Read output delay
+// Return value indicates if the last read was successful or not.
+bool SDCParser::read_output_delay(string& portName, double& delay)
+{
+
+	portName = "";
+	delay = 0.0;
+
+	vector<string> tokens;
+	bool valid = readLineAsTokens(is, tokens);
+
+	assert(valid);
+	assert(tokens.size() >= 2);
+
+	if (valid && tokens[0] == "set_output_delay")
+	{
+		assert(tokens.size() == 6);
+
+		delay = std::atof(tokens[1].c_str());
+
+		assert(tokens[2] == "get_ports");
+
+		portName = tokens[3];
+
+		assert(tokens[4] == "-clock");
+
+	}
+	else
+	{
+
+		assert(tokens.size() == 2);
+		assert(tokens[0] == "output" && tokens[1] == "loads");
+
+		return false;
+
+	}
+
+	return valid;
+}
+
+// Read driver info for the input port
+// Return value indicates if the last read was successful or not.
+bool SDCParser::read_driver_info(string& inPortName, string& driverSize, string& driverPin, double& inputTransitionFall, double& inputTransitionRise)
+{
+
+	inPortName = "";
+	driverSize = "";
+	driverPin = "";
+	inputTransitionFall = 0.0;
+	inputTransitionRise = 0.0;
+
+	vector<string> tokens;
+	bool valid = readLineAsTokens(is, tokens);
+
+	assert(valid);
+	assert(tokens.size() >= 2);
+
+	if (valid && tokens[0] == "set_driving_cell")
+	{
+		assert(tokens.size() == 11);
+		assert(tokens[1] == "-lib_cell");
+
+		driverSize = tokens[2];
+
+		assert(tokens[3] == "-pin");
+		driverPin = tokens[4];
+
+		assert(tokens[5] == "get_ports");
+		inPortName = tokens[6];
+
+		assert(tokens[7] == "-input_transition_fall");
+		inputTransitionFall = std::atof(tokens[8].c_str());
+
+		assert(tokens[9] == "-input_transition_rise");
+		inputTransitionRise = std::atof(tokens[10].c_str());
+
+	}
+	else
+	{
+
+		assert(tokens.size() == 2);
+		assert(tokens[0] == "output" && tokens[1] == "delays");
+
+		return false;
+	}
+
+	return valid;
+}
+
+// Read output load
+// Return value indicates if the last read was successful or not.
+bool SDCParser::read_output_load(string& outPortName, double& load)
+{
+
+	outPortName = "";
+	load = 0.0;
+
+	vector<string> tokens;
+	bool valid = readLineAsTokens(is, tokens);
+
+	if (valid && tokens[0] == "set_load")
+	{
+		assert(tokens.size() == 5);
+
+		assert(tokens[1] == "-pin_load");
+		load = std::atof(tokens[2].c_str());
+
+		assert(tokens[3] == "get_ports");
+		outPortName = tokens[4];
+
+	}
+	else
+	{
+
+		assert(!valid);
+		return false;
+	}
+
+	return valid;
+}
+
+const DesignConstraints SDCParser::readFile(const string filename)
+{
+	is.open(filename.c_str(), fstream::in);
+	string clockName;
+	string clockPort;
+	double period;
+	bool valid = read_clock(clockName, clockPort, period);
+
+	assert(valid);
+	cout << "Clock " << clockName << " connected to port " << clockPort << " has period " << period << endl;
+
+	DesignConstraints constraints;
+	constraints.setClock(period);
+
+	do
+	{
+		string portName;
+		double delay;
+
+		valid = read_input_delay(portName, delay);
+
+		if (valid)
+		{
+						cout << "Input port " << portName << " has delay " << delay << endl;
+			constraints.setInputDelay(portName, Transitions<double>(delay,delay));
+		}
+
+	}
+	while (valid);
+
+	do
+	{
+		string portName;
+		string driverSize;
+		string driverPin;
+		double inputTransitionFall;
+		double inputTransitionRise;
+
+		valid = read_driver_info(portName, driverSize, driverPin, inputTransitionFall, inputTransitionRise);
+
+		if (valid)
+		{
+						cout << "Input port " << portName << " is assumed to be connected to the " << driverPin << " pin of lib cell " << driverSize << endl;
+						cout << "This virtual driver is assumed to have input transitions: " << inputTransitionFall << " (fall) and " << inputTransitionRise << " (rise)" << endl;
+
+			constraints.setDrivingCell(portName, driverSize);
+			constraints.setInputTransition(portName, Transitions<double>(inputTransitionRise, inputTransitionFall));
+		}
+
+	}
+	while (valid);
+
+	do
+	{
+		string portName;
+		double delay;
+
+		valid = read_output_delay(portName, delay);
+
+		if (valid)
+		{
+						cout << "Output port " << portName << " has delay " << delay << endl;
+			constraints.setOutputDelay(portName, Transitions<double>(delay,delay));
+		}
+
+	}
+	while (valid);
+
+	do
+	{
+		string portName;
+		double load;
+
+		valid = read_output_load(portName, load);
+
+		if (valid)
+		{
+						cout << "Output port " << portName << " has load " << load << endl;
+			constraints.setOutputLoad(portName, load);
+		}
+
+	}
+	while (valid);
+	is.close();
+	return constraints;
+}

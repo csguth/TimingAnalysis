@@ -20,6 +20,7 @@ using std::fstream;
 #include "CircuitNetList.h"
 #include "LibertyLibrary.h"
 #include "SpefNet.h"
+#include "DesignConstraints.h"
 
 class Parser
 {
@@ -107,7 +108,32 @@ public:
 	/* data */
 };
 
+class SDCParser : public Parser
+{
+	// The following functions must be issued in a particular order
+	// See test_sdc_parser function for an example
 
+	// Read clock definition
+	// Return value indicates if the last read was successful or not.
+	bool read_clock(string& clockName, string& clockPort, double& period);
 
+	// Read input delay
+	// Return value indicates if the last read was successful or not.
+	bool read_input_delay(string& portName, double& delay);
+
+	// Read driver info for the input port
+	// Return value indicates if the last read was successful or not.
+	bool read_driver_info(string& inPortName, string& driverSize, string& driverPin, double& inputTransitionFall, double& inputTransitionRise);
+
+	// Read output delay
+	// Return value indicates if the last read was successful or not.
+	bool read_output_delay(string& portName, double& delay);
+
+	// Read output load
+	// Return value indicates if the last read was successful or not.
+	bool read_output_load(string& outPortName, double& load);
+public:
+	const DesignConstraints readFile(const string filename);
+};
 
 #endif
