@@ -16,6 +16,26 @@ struct PassingArgs {
 	PassingArgs(string contestRoot,	string contestBenchmark) : contestRoot(contestRoot), contestBenchmark(contestBenchmark){};
 };
 
+struct ISPDContestFiles
+{
+	string verilog;
+	string spef;
+	string liberty;
+	string designConstraints;
+	ISPDContestFiles(string contestRoot, string contestBenchmark) {
+		verilog = contestRoot + "/" + contestBenchmark + "/" + contestBenchmark + ".v";
+		spef = contestRoot + "/" + contestBenchmark + "/" + contestBenchmark + ".spef";
+		designConstraints = contestRoot + "/" + contestBenchmark + "/" + contestBenchmark + ".sdc";
+		liberty = contestRoot + "/lib/contest.lib";
+
+
+		cout << "Verilog file: " << verilog << endl;
+		cout << "Spef File: " << spef << endl;
+		cout << "SDC File: " << designConstraints << endl;
+		cout << "Liberty File: " << liberty << endl;
+	};
+};
+
 int main(int argc, char const *argv[])
 {
 	if(argc != 3)
@@ -29,16 +49,17 @@ int main(int argc, char const *argv[])
 	VerilogParser vp;
 	LibertyParser lp;
 	SpefParserISPD2013 sp;
+	SDCParser dcp;
 
-	// Transformar isso numa classe {
-	const string verilogFile = args.contestRoot + "/" + args.contestBenchmark + "/" + args.contestBenchmark + ".v";
-	const string spefFile = args.contestRoot + "/" + args.contestBenchmark + "/" + args.contestBenchmark + ".spef";
-	const string libertyFile = args.contestRoot + "/lib/contest.lib";
-	// }
+	
+	ISPDContestFiles files(argv[1], argv[2]);
+	
 
-	const CircuitNetList netlist = vp.readFile(verilogFile);
-	const LibertyLibrary library = lp.readFile(libertyFile);
-	const Parasitics parasitics = sp.readFile(spefFile);
+	const CircuitNetList netlist = vp.readFile(files.verilog);
+	const LibertyLibrary library = lp.readFile(files.liberty);
+	const Parasitics parasitics = sp.readFile(files.spef);
+	const DesignConstraints constraints = dcp.readFile(files.designConstraints);
+
 	cout << "parasitics size " << parasitics.size() << endl;
 
 
