@@ -1,25 +1,31 @@
 #include "include/WireDelayModel.h"
+LinearLibertyLookupTableInterpolator WireDelayModel::interpolator;
 
-const double LumpedCapacitanceWireDelayModel::simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew)
+const Transitions<double> LumpedCapacitanceWireDelayModel::simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew)
 {
-	return lumpedCapacitance;
+	this->slew = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew);
+	this->delay = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew);
+	return Transitions<double>(lumpedCapacitance, lumpedCapacitance);
+}
+
+// Any fanout node has the same delay and slew
+const Transitions<double> LumpedCapacitanceWireDelayModel::getDelay(const string nodeName) const {
+	return delay;
+}
+const Transitions<double> LumpedCapacitanceWireDelayModel::getSlew(const string nodeName) const {
+	return slew;
 }
 
 
-LinearLibertyLookupTableInterpolator RCTreeWireDelayModel::interpolator;
-RCTreeWireDelayModel::RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const bool dummyEdge, const string rootNode) : WireDelayModel(lumpedCapacitance), nodes(descriptor.nodesSize()), nodesNames(descriptor.nodesSize())
+RCTreeWireDelayModel::RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const bool dummyEdge, const string rootNode) : WireDelayModel(lumpedCapacitance), nodes(descriptor.nodesSize()), nodesNames(descriptor.nodesSize()), _delays(descriptor.nodesSize()), _slews(descriptor.nodesSize())
 {
 	if (dummyEdge)
 		return;
 
 
-	cout << "root node: " << rootNode << endl;
-
+	// criar um vetor de fanouts com referência para os timing points de seus fanouts
 
 	const int rootIndex = descriptor.getNodeIndex(rootNode);
-
-	cout << "root index " << rootIndex << endl;
-
 	const SpefNetISPD2013::Node & root = descriptor.getNode(rootIndex);
 	queue<NodeAndResistor> q;
 	vector<bool> added(descriptor.resistorsSize(), false);
@@ -83,7 +89,8 @@ RCTreeWireDelayModel::RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, c
 	initializeEffectiveCapacitances();
 }
 
-const double RCTreeWireDelayModel::simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew)
+
+const Transitions<double> RCTreeWireDelayModel::simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew)
 {
 	const double PRECISION = 10E-5;
 	initializeEffectiveCapacitances();
@@ -104,8 +111,7 @@ const double RCTreeWireDelayModel::simulate(const LibertyCellInfo & cellInfo, co
 	}
 	while (error.getRise() > PRECISION || error.getFall() > PRECISION);
 
-	const double ceff = 1.2f;
-	return ceff;
+	return ceffF;
 }
 
 
@@ -185,4 +191,23 @@ void RCTreeWireDelayModel::initializeEffectiveCapacitances()
 		Node & node = nodes[i];
 		node.effectiveCapacitance.set(node.totalCapacitance, node.totalCapacitance);
 	}
+}
+
+const Transitions<double> RCTreeWireDelayModel::getDelay(const string nodeName) const
+{
+	if(nodeName == nodesNames[0])
+		return _delays.front();
+	return _delays.at(fanoutNameToNodeNumber.at(nodeName));
+}	
+const Transitions<double> RCTreeWireDelayModel::getSlew(const string nodeName) const
+{
+	if(nodeName == nodesNames[0])
+		return _slews.front();
+	return _slews.at(fanoutNameToNodeNumber.at(nodeName));
+}
+
+
+void RCTreeWireDelayModel::setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance)
+{
+	nodes.at(fanoutNameToNodeNumber.at(fanoutNameAndPin)).totalCapacitance == pinCapacitance;
 }

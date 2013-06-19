@@ -21,7 +21,7 @@ friend Transitions<T> operator OP ( const T            v0, const Transitions<T> 
 friend Transitions<T> operator OP ( const Transitions<T> v0, const T            v1 ) { return Transitions<T>(v0[RISE] OP v1      , v0[FALL] OP v1      ); }
 
 enum EdgeType {
-	RISE = 0, FALL = 0
+	RISE = 0, FALL = 1
 };
 
 template<typename T>

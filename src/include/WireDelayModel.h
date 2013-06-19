@@ -12,18 +12,29 @@ class WireDelayModel
 {
 protected:
 	double lumpedCapacitance;
+	static LinearLibertyLookupTableInterpolator interpolator;
+
 public:
 	WireDelayModel(const double & lumpedCapacitance) : lumpedCapacitance(lumpedCapacitance){};
 	virtual ~WireDelayModel(){};
-
-	virtual const double simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew) = 0;
+	virtual const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew) = 0;
+	virtual const Transitions<double> getDelay(const string nodeName) const = 0;
+	virtual const Transitions<double> getSlew(const string nodeName) const = 0;
+	virtual void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) = 0;
 };
 
 class LumpedCapacitanceWireDelayModel : public WireDelayModel
 {
+	Transitions<double> delay;
+	Transitions<double> slew;
 public:
 	LumpedCapacitanceWireDelayModel(const double & lumpedCapacitance) : WireDelayModel(lumpedCapacitance){};
-	const double simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
+	const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
+	const Transitions<double> getDelay(const string nodeName) const;
+	const Transitions<double> getSlew(const string nodeName) const;
+	void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) {
+		lumpedCapacitance += pinCapacitance;
+	}
 };
 
 class RCTreeWireDelayModel : public WireDelayModel
@@ -69,10 +80,13 @@ class RCTreeWireDelayModel : public WireDelayModel
 	vector<Transitions<double> > _delays;
 	map<std::string, int> fanoutNameToNodeNumber;
 
-	static LinearLibertyLookupTableInterpolator interpolator;
+
 public:
 	RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const bool dummyEdge, const string rootNode);
-	const double simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
+	const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
+	const Transitions<double> getDelay(const string nodeName) const;
+	const Transitions<double> getSlew(const string nodeName) const;
+	void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance);
 };
 
 

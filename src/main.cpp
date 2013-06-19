@@ -60,8 +60,6 @@ int main(int argc, char const *argv[])
 	const Parasitics parasitics = sp.readFile(files.spef);
 	const DesignConstraints constraints = dcp.readFile(files.designConstraints);
 
-	cout << "parasitics size " << parasitics.size() << endl;
-
 
 	// cout << "printing cell in01 option 13" << endl;
 	// const LibertyCellInfo & cell = library.getCellInfo("in01", 13);
@@ -74,12 +72,9 @@ int main(int argc, char const *argv[])
 	// cout << "netlist:" << endl;
 	// cout << netlist << endl;
 
-	TimingAnalysis::TimingAnalysis ta(netlist, &library, &parasitics); // PASSAR PARASITICS POR PARAMETRO
-	cout << "-- Timing TimingAnalysis Topology ("<<ta.getNumberOfNodes() << " nodes)" << endl;
-	for(size_t i = 0; i < ta.getNumberOfNodes(); i++)
-	{
-		cout << "---- Node ["<<i<<"] = " <<  ta.getNodeName(i) << endl;
-	}
+	TimingAnalysis::TimingAnalysis ta(netlist, &library, &parasitics, &constraints);
+	ta.fullTimingAnalysis();
+	ta.printInfo();
 
 	return 0;
 }

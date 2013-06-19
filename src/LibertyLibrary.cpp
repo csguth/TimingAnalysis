@@ -11,6 +11,7 @@ LibertyLibrary::LibertyLibrary(const double maxTransition) : maxTransition(maxTr
 	po.footprint = "__PO__";
 	po.pins.resize(1);
 	po.timingArcs.resize(1);
+	po.primaryOutput = true;
 	library[0].push_back(po);
 	footPrintToIndex[po.footprint] = 0;
 	cellOptionNumber[po.name] = 0;

@@ -87,11 +87,12 @@ struct LibertyCellInfo {
   double area ; // cell area (will not be a metric for ISPD-13)
   bool isSequential ; // if true then sequential cell, else combinational
   bool dontTouch ; // is the sizer allowed to size this cell? 
+  bool primaryOutput;
   
   vector<LibertyPinInfo> pins ;
   vector<LibertyTimingInfo> timingArcs ;
 
-  LibertyCellInfo () : leakagePower (0.0), area (0.0), isSequential (false), dontTouch(false) {}
+  LibertyCellInfo () : leakagePower (0.0), area (0.0), isSequential (false), dontTouch(false), primaryOutput(false) {}
   
 } ;
 
