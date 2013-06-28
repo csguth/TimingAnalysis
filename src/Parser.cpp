@@ -1247,7 +1247,7 @@ const DesignConstraints SDCParser::readFile(const string filename)
 	bool valid = read_clock(clockName, clockPort, period);
 
 	assert(valid);
-	cout << "Clock " << clockName << " connected to port " << clockPort << " has period " << period << endl;
+	// cout << "Clock " << clockName << " connected to port " << clockPort << " has period " << period << endl;
 
 	DesignConstraints constraints;
 	constraints.setClock(period);
@@ -1261,7 +1261,7 @@ const DesignConstraints SDCParser::readFile(const string filename)
 
 		if (valid)
 		{
-						cout << "Input port " << portName << " has delay " << delay << endl;
+						// cout << "Input port " << portName << " has delay " << delay << endl;
 			constraints.setInputDelay(portName, Transitions<double>(delay,delay));
 		}
 
@@ -1280,8 +1280,8 @@ const DesignConstraints SDCParser::readFile(const string filename)
 
 		if (valid)
 		{
-						cout << "Input port " << portName << " is assumed to be connected to the " << driverPin << " pin of lib cell " << driverSize << endl;
-						cout << "This virtual driver is assumed to have input transitions: " << inputTransitionFall << " (fall) and " << inputTransitionRise << " (rise)" << endl;
+						// cout << "Input port " << portName << " is assumed to be connected to the " << driverPin << " pin of lib cell " << driverSize << endl;
+						// cout << "This virtual driver is assumed to have input transitions: " << inputTransitionFall << " (fall) and " << inputTransitionRise << " (rise)" << endl;
 
 			constraints.setDrivingCell(portName, driverSize);
 			constraints.setInputTransition(portName, Transitions<double>(inputTransitionRise, inputTransitionFall));
@@ -1299,7 +1299,7 @@ const DesignConstraints SDCParser::readFile(const string filename)
 
 		if (valid)
 		{
-						cout << "Output port " << portName << " has delay " << delay << endl;
+						// cout << "Output port " << portName << " has delay " << delay << endl;
 			constraints.setOutputDelay(portName, Transitions<double>(delay,delay));
 		}
 
@@ -1315,7 +1315,7 @@ const DesignConstraints SDCParser::readFile(const string filename)
 
 		if (valid)
 		{
-						cout << "Output port " << portName << " has load " << load << endl;
+						// cout << "Output port " << portName << " has load " << load << endl;
 			constraints.setOutputLoad(portName, load);
 		}
 
