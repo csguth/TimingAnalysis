@@ -12,6 +12,10 @@ using std::map;
 #include <utility>
 using std::make_pair;
 
+#include <iostream>
+using std::endl;
+using std::cout;
+
 class DesignConstraints
 {
 	double clock;
