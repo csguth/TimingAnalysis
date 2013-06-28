@@ -122,6 +122,7 @@ public:
   const LibertyCellInfo & getCellInfo(const int & footPrintIndex, const int & optionIndex) const;
 
   const pair<int, int> getCellIndex(const string &cellName) const;
+  const double getMaxTransition() const ;
 
 
 
