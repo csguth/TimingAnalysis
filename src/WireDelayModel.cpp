@@ -3,6 +3,12 @@ LinearLibertyLookupTableInterpolator WireDelayModel::interpolator;
 
 const Transitions<double> LumpedCapacitanceWireDelayModel::simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew)
 {
+	if(cellInfo.isSequential)
+	{
+		this->slew = max(WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew), WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew.getReversed()));
+		this->delay = max(WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew), WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew.getReversed()));
+		return Transitions<double>(lumpedCapacitance, lumpedCapacitance);
+	}
 	this->slew = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew);
 	this->delay = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew);
 	return Transitions<double>(lumpedCapacitance, lumpedCapacitance);
@@ -209,5 +215,5 @@ const Transitions<double> RCTreeWireDelayModel::getSlew(const string nodeName) c
 
 void RCTreeWireDelayModel::setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance)
 {
-	nodes.at(fanoutNameToNodeNumber.at(fanoutNameAndPin)).totalCapacitance == pinCapacitance;
+	nodes.at(fanoutNameToNodeNumber.at(fanoutNameAndPin)).totalCapacitance = pinCapacitance;
 }
