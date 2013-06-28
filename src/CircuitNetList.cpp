@@ -63,12 +63,7 @@ void CircuitNetList::updateTopology()
 		}
 	}
 
-	// cout << "printing topology: " << endl;
-	// for(size_t i = 0; i < topology.size(); i++)
-	// {
-	// 	LogicGate & gate = gates[topology[i]];
-	// 	cout << "topology[" << i << "] = " << gate << endl;
-	// }
+
 }
 
 const int CircuitNetList::addGate(const string name, const string cellType, const int inputs, const bool isInputDriver)
@@ -95,7 +90,25 @@ const int CircuitNetList::addNet(const string name)
 const int CircuitNetList::addNet(const string name, const int sourceNode, const string sourcePin)
 {
 	if(netNameToNetIndex.find(name) != netNameToNetIndex.end())
-		return netNameToNetIndex[name];
+	{
+		if(nets.at(netNameToNetIndex.at(name)).sourceNode == -1)
+		{
+			cout << "solved source" << endl;
+			nets.at(netNameToNetIndex.at(name)).sourceNode = sourceNode;
+		}
+
+
+		if(nets.at(netNameToNetIndex.at(name)).sourceNode != sourceNode)
+		{
+			cout << "netname: " << name << endl;
+			cout << gates.at(nets.at(netNameToNetIndex.at(name)).sourceNode).name << " != " << gates.at(sourceNode).name << endl;
+
+		}
+
+		assert(nets.at(netNameToNetIndex.at(name)).sourceNode == sourceNode);
+
+		return netNameToNetIndex.at(name);
+	} 
 
 	nets.push_back(Net(name, sourceNode, sourcePin));
 	netNameToNetIndex[name] = nets.size() - 1;
@@ -110,7 +123,7 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 	if(isSequential)
 	{
 		const int gateIndex = addGate(name, cellType, inputPinPairs.size() - 1);
-		const int netIndex = addNet(fanoutNetName + "_PO", gateIndex, outputPin);
+		const int netIndex = addNet(name + "_PO", gateIndex, outputPin);
 		LogicGate & gate = gates[gateIndex];
 		gate.fanoutNetIndex = netIndex;
 		gate.sequential = isSequential;
@@ -151,6 +164,8 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 		{
 			const int faninNetIndex = addNet(inputPinPairs[i].second);
 			Net & faninNet = nets[faninNetIndex];
+			if(faninNet.sourceNode == -1)
+				cout << inputPinPairs[i].second << " has no driver yet  " << endl;
 			faninNet.addSink(Sink(gateIndex, inputPinPairs[i].first));
 			gate.inNets[i] = faninNetIndex;
 		}
