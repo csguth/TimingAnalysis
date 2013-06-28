@@ -10,7 +10,6 @@ namespace TimingAnalysis
 
 	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib, const Parasitics * parasitics, const DesignConstraints * sdc) : nodes(netlist.getGatesSize()), nodesOptions(netlist.getGatesSize()), edges(netlist.getNetsSize()), library(lib), parasitics(parasitics)
 	{
-
 		targetDelay = sdc->getClock();
 
 		for(size_t i = 0; i < netlist.getGatesSize(); i++)
@@ -21,10 +20,18 @@ namespace TimingAnalysis
 			nodes[i].inputDriver = gate.inputDriver;
 			nodes[i].sequential = gate.sequential;
 
-			if(gate.inputDriver && !gate.sequential)
+			if(gate.inputDriver)
 			{
-				nodes[i].timingArcs.front().slew = sdc->getInputTransition(gate.name);
-				nodes[i].timingArcs.front().delay = sdc->getInputDelay(gate.name);
+				if(!gate.sequential)
+				{
+					nodes[i].timingPoints.front().slew = sdc->getInputTransition(gate.name);
+					nodes[i].timingPoints.front().arrivalTime = sdc->getInputDelay(gate.name);
+				}
+				else
+				{
+					nodes[i].timingPoints.front().slew =  Transitions<double>(lib->getMaxTransition(), lib->getMaxTransition());
+					nodes[i].timingPoints.front().arrivalTime = Transitions<double>(0, 0);
+				}
 			}
 
 			// cout << "node " << i << " cell type " << gate.cellType << endl;
@@ -131,47 +138,87 @@ namespace TimingAnalysis
 
 		for(size_t i = 0; i < nodes.size(); i++)
 		{
-			Node & node = nodes.at(i);
-			TimingPoint & outTimingPoint = node.timingPoints.back();
-			Edge * outEdge = outTimingPoint.net;
-
-            if(outEdge->wireDelayModel == 0x0)
-                continue;
-			
-			const LibertyCellInfo & cellInfo = library->getCellInfo(nodesOptions[i].footprintIndex, nodesOptions[i].optionIndex);
-			const string nodeNamePinName = outTimingPoint.name;
-			for(size_t k = 0; k < outEdge->fanouts.size(); k++)
-			{
-				outTimingPoint.arrivalTime = Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());
-				outTimingPoint.slew = Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());
-			}
-
-			for(size_t j = 0; j < node.timingPoints.size() - 1; j++)
-			{
-				TimingPoint & tp = node.timingPoints.at(j);
-				TimingArc & ta = node.timingArcs.at(j);
-
-				// UPDATING NODE TIMING ARC
-				const Transitions<double> ceff = outEdge->wireDelayModel->simulate(cellInfo, j, tp.slew);
-                ta.delay = outEdge->wireDelayModel->getDelay(nodeNamePinName);
-                ta.slew = outEdge->wireDelayModel->getSlew(nodeNamePinName);
-
-
-				// UPDATING FANOUT
-				for(size_t k = 0; k < outEdge->fanouts.size(); k++)
-				{
-					TimingPoint * fanoutTimingPoint = outEdge->fanouts.at(k);
-                    string fanoutNameAndPin = fanoutTimingPoint->name;
-					outTimingPoint.arrivalTime = max(outTimingPoint.arrivalTime, tp.arrivalTime.getReversed() + outEdge->wireDelayModel->getDelay(fanoutNameAndPin)); // NEGATIVE UNATE
-					outTimingPoint.slew =  max(outTimingPoint.slew, outEdge->wireDelayModel->getSlew(fanoutNameAndPin));
-				}
-			}
+			updateTiming(i);
 		}
 
 	}
 
+	void TimingAnalysis::updateTiming(const int i)
+	{
+
+		Node & node = nodes.at(i);
+		TimingPoint & outTimingPoint = node.timingPoints.back();
+		Edge * outEdge = outTimingPoint.net;
+
+        if(outEdge->wireDelayModel == 0x0)
+        {
+        	// DUMMY NET
+            return;
+        }
+		
+		const LibertyCellInfo & cellInfo = library->getCellInfo(nodesOptions[i].footprintIndex, nodesOptions[i].optionIndex);
+		const string nodeNamePinName = outTimingPoint.name;
+
+		// RESET OUTPUT SLEW AND ARRIVAL outTimingPoint
+		outTimingPoint.arrivalTime = Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());
+		outTimingPoint.slew = Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());
 
 
+		// UPDATE TIMING ARCS
+		for(size_t j = 0; j < node.timingArcs.size(); j++)
+		{
+			TimingPoint & tp = node.timingPoints.at(j);
+			TimingArc & ta = node.timingArcs.at(j);
+
+			if(node.inputDriver)
+			{
+				const Transitions<double> ceff = outEdge->wireDelayModel->simulate(cellInfo, j, tp.slew);
+            	const Transitions<double> delayWith0OutputLoad = this->getNodeDelay(i, j, tp.slew, Transitions<double>(0.0f, 0.0f));
+            	ta.delay = outEdge->wireDelayModel->getDelay(nodeNamePinName);
+            	if(!node.sequential)
+            		ta.delay -= delayWith0OutputLoad; // INPUT DRIVER DELAY = DELAY WITH CEFF - DELAY WITH 0 OUTPUT LOAD
+            	ta.slew = outEdge->wireDelayModel->getSlew(nodeNamePinName);
+            }
+            else
+            {
+            	const Transitions<double> ceff = outEdge->wireDelayModel->simulate(cellInfo, j, tp.slew);
+            	ta.delay = outEdge->wireDelayModel->getDelay(nodeNamePinName);
+            	ta.slew = outEdge->wireDelayModel->getSlew(nodeNamePinName);	
+            }
+			outTimingPoint.arrivalTime = max(outTimingPoint.arrivalTime, tp.arrivalTime.getReversed() + ta.delay); // NEGATIVE UNATE
+			outTimingPoint.slew =  max(outTimingPoint.slew, ta.slew);
+
+			
+		}
+		// UPDATING FANOUT
+		for(size_t k = 0; k < outEdge->fanouts.size(); k++)
+		{
+			TimingPoint * fanoutTimingPoint = outEdge->fanouts.at(k);
+            string fanoutNameAndPin = fanoutTimingPoint->name;
+			fanoutTimingPoint->arrivalTime = max(fanoutTimingPoint->arrivalTime, outTimingPoint.arrivalTime);
+			fanoutTimingPoint->slew = max(fanoutTimingPoint->slew, outTimingPoint.slew);
+		}
+	}
+
+	void TimingAnalysis::setNodeOption(const int nodeIndex, const int optionNumber)
+	{
+		if(optionNumber == nodesOptions[nodeIndex].optionIndex)
+			return; // NOTHING TO DO
+
+		const LibertyCellInfo & cellInfo = library->getCellInfo(nodesOptions[nodeIndex].footprintIndex, nodesOptions[nodeIndex].optionIndex);
+		const LibertyCellInfo & newCellInfo = library->getCellInfo(nodesOptions[nodeIndex].footprintIndex, optionNumber);
+		Node & node = nodes.at(nodeIndex);
+		
+		for(size_t i = 0; i < node.timingArcs.size(); i++)
+		{
+			const double oldPinCapacitance = cellInfo.pins.at(i + 1).capacitance;
+			const double newPinCapacitance = newCellInfo.pins.at(i + 1).capacitance;
+			const double deltaPinCapacitance = newPinCapacitance - oldPinCapacitance;
+			node.timingPoints.at(i).net->wireDelayModel->setFanoutPinCapacitance(node.timingPoints.at(i).name, deltaPinCapacitance);
+		}
+
+		nodesOptions[nodeIndex].optionIndex = optionNumber;		
+	}
 	// GETTERS
 	const string TimingAnalysis::getNodeName(const int nodeIndex) const
 	{
@@ -194,22 +241,33 @@ namespace TimingAnalysis
 
 	void TimingAnalysis::printInfo()
 	{
-		cout << "timing info: " << endl;
 		for(size_t i = 0; i < nodes.size(); i++)
-		{
-			cout << "node "<<i<<" (" << nodes[i].name << ") " << (nodes[i].inputDriver ? " :: input driver :: " : "") << (nodesOptions[i].footprintIndex == 0 || nodes[i].sequential && !nodes[i].inputDriver ? " :: primary output :: " : "") << endl;
-
-			cout << "-- timing arcs" << endl;
-			for(size_t j = 0; j < nodes[i].timingArcs.size(); j++)
+		{	
+			Node & node = nodes.at(i);
+			const bool primaryOutput = !(nodesOptions[i].footprintIndex);
+			const LibertyCellInfo & cellInfo = library->getCellInfo(nodesOptions[i].footprintIndex, nodesOptions[i].optionIndex);
+			if(primaryOutput || (node.sequential && !node.inputDriver)) // PRIMARY OUTPUT
 			{
-				cout << "---- " << j << " slew " << nodes[i].timingArcs.at(j).slew << " delay " << nodes[i].timingArcs.at(j).delay << endl;
+				TimingPoint & o = node.timingPoints.front();
+				cout << "PO "<< o.name << " net " << o.net->netName << " slew = " << o.slew << " arrival time = " << o.arrivalTime << endl;
 			}
-			cout << "-- timing points" << endl;
-			for(size_t j = 0; j < nodes[i].timingPoints.size(); j++)
+			else
 			{
-				cout << "---- " << j << " slew " << nodes[i].timingPoints.at(j).slew << " arrival time " << nodes[i].timingPoints.at(j).arrivalTime << endl;
+				TimingPoint & o = node.timingPoints.back();
+				if(!node.sequential || (node.sequential && node.inputDriver))
+				{
+					cout << node.name <<" load = " << o.net->wireDelayModel->simulate(cellInfo, 0, node.timingPoints.front().slew)  << endl;
+					cout << "-- "<< o.name << " net " << o.net->netName << " slew = " << o.slew << " arrival time = " << o.arrivalTime << endl;
+				}
+				if(!node.inputDriver)
+				{
+					for(size_t j = 0; j < nodes.at(i).timingPoints.size() -1 ; j++)
+					{
+						TimingPoint & tp = nodes.at(i).timingPoints.at(j);
+						cout <<"-- "<< tp.name << " net " << tp.net->netName << " slew = " << tp.slew << " arrival time = " << tp.arrivalTime << endl;
+					}
+				}
 			}
-			cout << endl;
 		}
 	}
 

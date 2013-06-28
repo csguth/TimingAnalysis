@@ -101,21 +101,24 @@ namespace TimingAnalysis
 
 
 		double targetDelay;
+
+		void updateTiming(const int i);
+		const Transitions<double> getNodeDelay(const int nodeIndex, const int inputNumber, const Transitions<double> transition, const Transitions<double> ceff);
 	public:
 		TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib, const Parasitics * parasitics, const DesignConstraints * sdc);
 		virtual ~TimingAnalysis();
-
-
 		void fullTimingAnalysis();
+
+		// SETTERS
+		void setNodeOption(const int nodeIndex, const int optionNumber);
 
 		// GETTERS
 		const string getNodeName(const int nodeIndex) const;
 		const unsigned getNumberOfNodes() const;
 
-		const Transitions<double> getNodeDelay(const int nodeIndex, const int inputNumber, const Transitions<double> transition, const Transitions<double> ceff);
-
-
 		void printInfo();
+
+
 	};
 
 };
