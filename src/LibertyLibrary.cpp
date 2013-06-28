@@ -117,7 +117,7 @@ const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLook
 	{
 		for(size_t i = 0; i < lut.transitionIndices.size() - 1; i++)
 		{
-			if(transition <= lut.transitionIndices[i] && transition <= lut.transitionIndices[i + 1])
+			if(transition >= lut.transitionIndices[i] && transition <= lut.transitionIndices[i + 1])
 			{
 				column1 = i;
 				column2 = i + 1;
@@ -147,3 +147,8 @@ const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLook
  	const double fallDelay = interpolate(fallLut, load.getFall(), transition.getRise());
  	return Transitions<double>(riseDelay, fallDelay);
  }
+
+const double  LibertyLibrary::getMaxTransition() const
+{
+	return maxTransition;
+}
