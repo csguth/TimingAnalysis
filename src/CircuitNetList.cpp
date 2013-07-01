@@ -93,16 +93,8 @@ const int CircuitNetList::addNet(const string name, const int sourceNode, const 
 	{
 		if(nets.at(netNameToNetIndex.at(name)).sourceNode == -1)
 		{
-			cout << "solved source" << endl;
+			// cout << "solved source" << endl;
 			nets.at(netNameToNetIndex.at(name)).sourceNode = sourceNode;
-		}
-
-
-		if(nets.at(netNameToNetIndex.at(name)).sourceNode != sourceNode)
-		{
-			cout << "netname: " << name << endl;
-			cout << gates.at(nets.at(netNameToNetIndex.at(name)).sourceNode).name << " != " << gates.at(sourceNode).name << endl;
-
 		}
 
 		assert(nets.at(netNameToNetIndex.at(name)).sourceNode == sourceNode);
@@ -164,8 +156,6 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 		{
 			const int faninNetIndex = addNet(inputPinPairs[i].second);
 			Net & faninNet = nets[faninNetIndex];
-			if(faninNet.sourceNode == -1)
-				cout << inputPinPairs[i].second << " has no driver yet  " << endl;
 			faninNet.addSink(Sink(gateIndex, inputPinPairs[i].first));
 			gate.inNets[i] = faninNetIndex;
 		}
