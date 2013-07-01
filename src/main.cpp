@@ -69,14 +69,14 @@ int main(int argc, char const *argv[])
 	// const LibertyCellInfo & cell2 = library.getCellInfo("in01m01");
 	// cout << (LibertyCellInfo &) cell2 << endl;
 
-	cout << "netlist:" << endl;
-	cout << netlist << endl;
-
-	cout << "OK" << endl;
+	// cout << "netlist:" << endl;
+	// cout << netlist << endl;
 
 	TimingAnalysis::TimingAnalysis ta(netlist, &library, &parasitics, &constraints);
 	ta.fullTimingAnalysis();
 	ta.printInfo();
+
+	cout << "-- DONE!" << endl;
 
 	return 0;
 }
