@@ -4,6 +4,7 @@
 #include <algorithm>
 using std::swap;
 using std::max;
+using std::min;
 
 #include <ostream>
 using std::ostream;
