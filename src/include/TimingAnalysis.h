@@ -29,13 +29,18 @@ namespace TimingAnalysis
 		friend class Edge;
 		string name;
 		Edge * net;
-		Transitions<double> arrivalTime;
+		Transitions<double> slack;
 		Transitions<double> slew;
+		Transitions<double> arrivalTime;
+
 
 	public:
 		TimingPoint();
 		virtual ~TimingPoint();
 		const string getNetName();
+
+		const Transitions<double> updateSlack(const Transitions<double> requiredTime);
+		const Transitions<double> getRequiredTime();
 	};
 
 	class TimingArc
@@ -93,17 +98,29 @@ namespace TimingAnalysis
 		vector<Node> nodes;
 		vector<Option> nodesOptions;
 		vector<Edge> edges;
-
+		static const Transitions<double> ZERO_TRANSITIONS;
+		static const Transitions<double> MIN_TRANSITIONS;
+		static const Transitions<double> MAX_TRANSITIONS;
 
 		const LibertyLibrary * library;
 		const Parasitics * parasitics;
 		LibertyLookupTableInterpolator * interpolator;
 
 
-		double targetDelay;
+		Transitions<double> targetDelay;
+		Transitions<double> maxTransition;
 
 		void updateTiming(const int i);
+		void updateSlacks(const int i);
+
+		Transitions<double> criticalPathValues;
+		Transitions<double> totalNegativeSlack;
+		Transitions<double> slewViolations;
+		Transitions<double> capacitanceViolations;
+
+
 		const Transitions<double> getNodeDelay(const int nodeIndex, const int inputNumber, const Transitions<double> transition, const Transitions<double> ceff);
+
 	public:
 		TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib, const Parasitics * parasitics, const DesignConstraints * sdc);
 		virtual ~TimingAnalysis();
