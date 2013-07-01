@@ -235,7 +235,7 @@ namespace TimingAnalysis
 			outTimingPoint.slew =  max(outTimingPoint.slew, ta.slew);
 		}
 
-		cout << "node " << node.name << " max output effective capacitance = " << maxOutputEffectiveCapacitance << ", max capacitance = " << cellInfo.pins.front().maxCapacitance << endl;
+		// cout << "node " << node.name << " max output effective capacitance = " << maxOutputEffectiveCapacitance << ", max capacitance = " << cellInfo.pins.front().maxCapacitance << endl;
 		capacitanceViolations += outEdge->fanouts.size() * max(maxOutputEffectiveCapacitance - cellInfo.pins.front().maxCapacitance, ZERO_TRANSITIONS);
 		// UPDATING FANOUT
 		for(size_t k = 0; k < outEdge->fanouts.size(); k++)
@@ -320,14 +320,17 @@ namespace TimingAnalysis
 			}
 		}
 
+		printCircuitInfo();
+	}
+
+	void TimingAnalysis::printCircuitInfo()
+	{
 		cout << "--" << endl;
 		cout << "Critical Path Values = " << criticalPathValues << " / " << targetDelay << endl;
 		cout << "Slew Violations = " << slewViolations.aggregate() << endl;
 		cout << "Capacitance Violations = " << capacitanceViolations.aggregate() << endl;
 		cout << "Total Negative Slack = " << totalNegativeSlack.aggregate() << endl;
 	}
-
-
 /*
 
 	NODE

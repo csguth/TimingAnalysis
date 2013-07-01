@@ -134,6 +134,7 @@ namespace TimingAnalysis
 		const unsigned getNumberOfNodes() const;
 
 		void printInfo();
+		void printCircuitInfo();
 
 
 	};

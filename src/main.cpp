@@ -74,7 +74,8 @@ int main(int argc, char const *argv[])
 
 	TimingAnalysis::TimingAnalysis ta(netlist, &library, &parasitics, &constraints);
 	ta.fullTimingAnalysis();
-	ta.printInfo();
+	// ta.printInfo();
+	ta.printCircuitInfo();
 
 	cout << "-- DONE!" << endl;
 
