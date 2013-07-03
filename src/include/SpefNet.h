@@ -33,6 +33,8 @@ class SpefNetISPD2012
 public:
 	string netName;
 	double netLumpedCap;
+
+	SpefNetISPD2012(){};
 };
 
 class SpefNetISPD2013
@@ -85,8 +87,8 @@ private:
 	const int addNode(const string & name);
 
 public:
-	SpefNetISPD2013();
-	virtual ~SpefNetISPD2013();
+	SpefNetISPD2013(){};
+	virtual ~SpefNetISPD2013(){};
 
 	void addResistor(const string & node1, const string & node2, const double & value);
 	void addCapacitor(const string & node, const double & value);
@@ -120,7 +122,9 @@ public:
 
 };
 
-typedef map<string, SpefNetISPD2013> Parasitics;
+typedef SpefNetISPD2012 SpefNet; 
+typedef map<string, SpefNet> Parasitics;
+
 
 
 #endif /* SPEFNET_H_ */

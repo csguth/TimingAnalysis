@@ -1,14 +1,5 @@
 #include "include/SpefNet.h"
 
-SpefNetISPD2013::SpefNetISPD2013()
-{
-}
-
-SpefNetISPD2013::~SpefNetISPD2013()
-{
-
-}
-
 void SpefNetISPD2013::set(string name, double lumpedCapacitance)
 {
 	this->netName = name;

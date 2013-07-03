@@ -1016,8 +1016,8 @@ bool SpefParserISPD2013::read_net_data(SpefNetISPD2013& spefNet)
 const Parasitics SpefParserISPD2013::readFile(const string filename)
 {
 	is.open(filename.c_str(), fstream::in);
-	map<string, SpefNetISPD2013> parasitics;
-	SpefNetISPD2013 spefNet;
+	Parasitics parasitics;
+	SpefNet spefNet;
 	bool valid = read_net_data(spefNet);
 
 	int readCnt = 0;
@@ -1025,11 +1025,58 @@ const Parasitics SpefParserISPD2013::readFile(const string filename)
 	{
 		++readCnt;
 		parasitics[spefNet.netName] = spefNet;
-		spefNet = SpefNetISPD2013();
+		spefNet = SpefNet();
 		valid = read_net_data(spefNet);
 	}
 
 	cout << "Read " << readCnt << " nets in the spef file." << endl;
+	is.close();
+	return parasitics;
+}
+
+bool SpefParserISPD2012::read_net_cap(string & net, double & cap)
+{
+	 net = "" ;
+	 cap = 0.0 ;
+
+	 vector<string> tokens ;
+	 bool valid = readLineAsTokens (is, tokens) ;
+
+	  // Read until a valid D_NET line is found
+	 while (valid) {
+	   if (tokens.size() == 3 && tokens[0] == "D_NET") {
+
+	     net = tokens[1] ;
+	     cap = std::atof(tokens[2].c_str()) ;
+	     return true ;
+	   }
+
+	   valid = readLineAsTokens (is, tokens) ;
+	 }
+
+	 return false ;
+}
+
+const Parasitics SpefParserISPD2012::readFile(const string filename)
+{
+	is.open(filename.c_str(), fstream::in);
+	Parasitics parasitics;
+
+	string net;
+	double cap;
+
+	bool valid = read_net_cap(net, cap);
+
+	while (valid)
+	{
+		SpefNet spefNet;
+		spefNet.netName = net;
+		spefNet.netLumpedCap = cap;
+		parasitics[net] = spefNet;
+		//		cout << "Lumped cap of net " << net << " is " << cap << endl;
+		valid = read_net_cap(net, cap);
+	}
+
 	is.close();
 	return parasitics;
 }
