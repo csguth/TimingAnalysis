@@ -1013,11 +1013,12 @@ bool SpefParserISPD2013::read_net_data(SpefNetISPD2013& spefNet)
 	return false; // a valid net was not read
 }
 
-const Parasitics SpefParserISPD2013::readFile(const string filename)
+const Parasitics2013 SpefParserISPD2013::readFile(const string filename)
 {
+	cout << "SPEF model is ISPD2013" << endl;
 	is.open(filename.c_str(), fstream::in);
-	Parasitics parasitics;
-	SpefNet spefNet;
+	Parasitics2013 parasitics;
+	SpefNetISPD2013 spefNet;
 	bool valid = read_net_data(spefNet);
 
 	int readCnt = 0;
@@ -1025,7 +1026,7 @@ const Parasitics SpefParserISPD2013::readFile(const string filename)
 	{
 		++readCnt;
 		parasitics[spefNet.netName] = spefNet;
-		spefNet = SpefNet();
+		spefNet = SpefNetISPD2013();
 		valid = read_net_data(spefNet);
 	}
 
@@ -1057,10 +1058,11 @@ bool SpefParserISPD2012::read_net_cap(string & net, double & cap)
 	 return false ;
 }
 
-const Parasitics SpefParserISPD2012::readFile(const string filename)
+const Parasitics2012 SpefParserISPD2012::readFile(const string filename)
 {
+	cout << "SPEF model is ISPD2012" << endl;
 	is.open(filename.c_str(), fstream::in);
-	Parasitics parasitics;
+	Parasitics2012 parasitics;
 
 	string net;
 	double cap;
@@ -1069,7 +1071,7 @@ const Parasitics SpefParserISPD2012::readFile(const string filename)
 
 	while (valid)
 	{
-		SpefNet spefNet;
+		SpefNetISPD2012 spefNet;
 		spefNet.netName = net;
 		spefNet.netLumpedCap = cap;
 		parasitics[net] = spefNet;

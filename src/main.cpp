@@ -8,6 +8,8 @@ using std::endl;
 #include "include/CircuitNetList.h"
 #include "include/SpefNet.h"
 
+#include "include/Configuration.h"
+
 using std::make_pair;
 
 struct PassingArgs {
@@ -48,7 +50,7 @@ int main(int argc, char const *argv[])
 
 	VerilogParser vp;
 	LibertyParser lp;
-	SpefParserISPD2013 sp;
+	SpefParser sp;
 	SDCParser dcp;
 
 	
@@ -73,6 +75,9 @@ int main(int argc, char const *argv[])
 	// cout << netlist << endl;
 
 	TimingAnalysis::TimingAnalysis ta(netlist, &library, &parasitics, &constraints);
+	for(int i = 0; i < ta.getNumberOfNodes(); i++)
+		ta.setNodeOption(i, 0);
+
 	ta.fullTimingAnalysis();
 	// ta.printInfo();
 	ta.printCircuitInfo();

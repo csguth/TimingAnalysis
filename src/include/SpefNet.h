@@ -122,9 +122,7 @@ public:
 
 };
 
-typedef SpefNetISPD2012 SpefNet; 
-typedef map<string, SpefNet> Parasitics;
-
-
+typedef map<string, SpefNetISPD2012> Parasitics2012;
+typedef map<string, SpefNetISPD2013> Parasitics2013;
 
 #endif /* SPEFNET_H_ */

@@ -14,8 +14,9 @@ using std::ostream;
 #include "CircuitNetList.h"
 #include "WireDelayModel.h"
 #include "LibertyLibrary.h"
-#include "SpefNet.h"
 #include "DesignConstraints.h"
+
+#include "Configuration.h"
 
 namespace TimingAnalysis
 {

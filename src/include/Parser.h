@@ -22,6 +22,9 @@ using std::fstream;
 #include "SpefNet.h"
 #include "DesignConstraints.h"
 
+
+
+
 class Parser
 {
 protected:
@@ -101,9 +104,9 @@ class SpefParserISPD2013 : public Parser
 	bool read_connections(SpefNetISPD2013 & net);
 	void read_capacitances(SpefNetISPD2013 & net);
 	void read_resistances(SpefNetISPD2013 & net);
-	bool read_net_data(SpefNet& spefNet);
+	bool read_net_data(SpefNetISPD2013& spefNet);
 public:
-	const Parasitics readFile(const string filename);
+	const Parasitics2013 readFile(const string filename);
 
 	/* data */
 };
@@ -112,7 +115,7 @@ class SpefParserISPD2012 : public Parser
 {
 	bool read_net_cap(string & net, double & cap);
 public:
-	const Parasitics readFile(const string filename);
+	const Parasitics2012 readFile(const string filename);
 
 	/* data */
 };

@@ -7,6 +7,7 @@ using std::endl;
 
 #include "SpefNet.h"
 #include "LibertyLibrary.h"
+#include "Configuration.h"
 
 class WireDelayModel
 {
@@ -16,6 +17,7 @@ protected:
 
 public:
 	WireDelayModel(const double & lumpedCapacitance) : lumpedCapacitance(lumpedCapacitance){};
+
 	virtual ~WireDelayModel(){};
 	virtual const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew) = 0;
 	virtual const Transitions<double> getDelay(const string nodeName) const = 0;
@@ -28,7 +30,7 @@ class LumpedCapacitanceWireDelayModel : public WireDelayModel
 	Transitions<double> delay;
 	Transitions<double> slew;
 public:
-	LumpedCapacitanceWireDelayModel(const double & lumpedCapacitance) : WireDelayModel(lumpedCapacitance){};
+	LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string rootNode, const bool dummyEdge = false) : WireDelayModel(descriptor.netLumpedCap){};
 	const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
 	const Transitions<double> getDelay(const string nodeName) const;
 	const Transitions<double> getSlew(const string nodeName) const;
@@ -82,15 +84,12 @@ class RCTreeWireDelayModel : public WireDelayModel
 
 
 public:
-	RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const bool dummyEdge, const string rootNode);
+	RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const string rootNode, const bool dummyEdge = false);
 	const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
 	const Transitions<double> getDelay(const string nodeName) const;
 	const Transitions<double> getSlew(const string nodeName) const;
 	void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance);
 };
-
-
-
 
 
 

@@ -57,12 +57,19 @@ namespace TimingAnalysis
 				nodes[i].timingPoints.front().name = nodes[i].name;
 			}
 
-			if(!nodes[i].inputDriver)
-				nodes[i].timingPoints.back().name = gate.name + ":" + cellInfo.pins.front().name;
+			if(nodes[i].inputDriver)
+			{
+				if(!nodes[i].sequential)
+				{
+					nodes[i].timingPoints.back().name = gate.name;
+				} else 
+				{
+					nodes[i].timingPoints.back().name = gate.name.substr(0, gate.name.size()-string("_PI").size()) +  ":" + cellInfo.pins.front().name;
+				}
+			}
 			else
-				nodes[i].timingPoints.back().name = gate.name;
+				nodes[i].timingPoints.back().name = gate.name + ":" + cellInfo.pins.front().name;
 		}
-
 		interpolator = new LinearLibertyLookupTableInterpolator();
 		// cout << "Timing Analysis Option Vector: " << endl;
 		for(size_t i = 0; i < netlist.getGatesSize(); i++)
@@ -100,8 +107,10 @@ namespace TimingAnalysis
 			WireDelayModel * delayModel = 0;
 			
 			if(parasitics->find(net.name) != parasitics->end())
-				delayModel = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name).netLumpedCap);
-			// 	delayModel = new RCTreeWireDelayModel(parasitics->at(net.name), false, rcTreeRootNodeName);
+			{
+				// delayModel = new RCTreeWireDelayModel(parasitics->at(net.name), rcTreeRootNodeName);
+				delayModel = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name), rcTreeRootNodeName);
+			}
 			// // }
 
 			// cout << "creating edge " << net.name << " with "<< net.sinks.size() << " sinks" << endl;
@@ -254,11 +263,16 @@ namespace TimingAnalysis
 	{
 		if(optionNumber == nodesOptions[nodeIndex].optionIndex)
 			return; // NOTHING TO DO
+       
+        Node & node = nodes.at(nodeIndex);
+
+        if(node.inputDriver || node.sequential || node.primaryOutput) // DONT TOUCH
+            return;
 
 		const LibertyCellInfo & cellInfo = library->getCellInfo(nodesOptions[nodeIndex].footprintIndex, nodesOptions[nodeIndex].optionIndex);
 		const LibertyCellInfo & newCellInfo = library->getCellInfo(nodesOptions[nodeIndex].footprintIndex, optionNumber);
-		Node & node = nodes.at(nodeIndex);
-		
+
+
 		for(size_t i = 0; i < node.timingArcs.size(); i++)
 		{
 			const double oldPinCapacitance = cellInfo.pins.at(i + 1).capacitance;

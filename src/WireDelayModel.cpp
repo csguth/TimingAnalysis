@@ -23,7 +23,7 @@ const Transitions<double> LumpedCapacitanceWireDelayModel::getSlew(const string 
 }
 
 
-RCTreeWireDelayModel::RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const bool dummyEdge, const string rootNode) : WireDelayModel(lumpedCapacitance), nodes(descriptor.nodesSize()), nodesNames(descriptor.nodesSize()), _delays(descriptor.nodesSize()), _slews(descriptor.nodesSize())
+RCTreeWireDelayModel::RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const string rootNode, const bool dummyEdge) : WireDelayModel(lumpedCapacitance), nodes(descriptor.nodesSize()), nodesNames(descriptor.nodesSize()), _delays(descriptor.nodesSize()), _slews(descriptor.nodesSize())
 {
 	if (dummyEdge)
 		return;
