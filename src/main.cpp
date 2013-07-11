@@ -75,12 +75,39 @@ int main(int argc, char const *argv[])
 	// cout << netlist << endl;
 
 	TimingAnalysis::TimingAnalysis ta(netlist, &library, &parasitics, &constraints);
-	for(int i = 0; i < ta.getNumberOfNodes(); i++)
-		ta.setNodeOption(i, 0);
 
-	ta.fullTimingAnalysis();
-	// ta.printInfo();
-	ta.printCircuitInfo();
+	cout << "TIMING POINTS " << endl;
+	for(size_t i = 0; i < ta.timingPointsSize(); i++)
+	{
+		cout << "  " <<  ta.timingPoint(i) << endl;
+	}
+
+	cout << "TIMING ARCS " << endl;
+	for(size_t i = 0; i < ta.timingArcsSize(); i++)
+	{
+		cout << "  " << ta.timingArc(i) << endl;
+	}
+
+	cout << "TIMING NETS " << endl;
+	for(size_t i = 0; i < ta.timingNetsSize(); i++)
+	{
+		cout << "  " << ta.timingNet(i).getName() << " net ";
+ 		cout << (ta.timingNet(i).getFrom() != 0 ? ta.timingNet(i).getFrom()->getName() : "source") << " -> ( ";
+ 		if(ta.timingNet(i).fanoutsSize() == 0)
+ 			cout << "sink ";
+ 		for(int j = 0; j < ta.timingNet(i).fanoutsSize(); j++)
+ 		{
+ 			cout << ta.timingNet(i).getTo(j)->getName() << " ";
+ 		}
+ 		cout << ")" << endl;
+	}
+
+	// for(int i = 0; i < ta.getNumberOfNodes(); i++)
+	// 	ta.setNodeOption(i, 0);
+
+	// ta.fullTimingAnalysis();
+	// // ta.printInfo();
+	// ta.printCircuitInfo();
 
 	cout << "-- DONE!" << endl;
 
