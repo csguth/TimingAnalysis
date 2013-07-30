@@ -25,19 +25,29 @@ namespace TimingAnalysis
 
 		points.reserve(numberOfTimingPoints);
 		arcs.reserve(numberOfTimingArcs);
-
+		nets.reserve(netlist.getNetsSize())
+;
 		vector<pair<size_t, size_t> > gateIndexToTimingPointIndex(netlist.getGatesSize());
 
 		// Creating Timing Points & Timing Arcs
 		for(size_t i = 0; i < netlist.getGatesSize(); i++)
 		{
 			const CircuitNetList::LogicGate & gate = netlist.getGateT(i);
+			// cout << "Gate " << gate.name << " (" << i << ") created!" << endl;
 			const pair<int, int> cellIndex = lib->getCellIndex(gate.cellType);
 			const LibertyCellInfo & cellInfo = lib->getCellInfo(cellIndex.first, cellIndex.second);
 			const bool PI = gate.inputDriver;
 			const bool PO = !cellIndex.first || gate.sequential && !PI;
 			gateIndexToTimingPointIndex[i] = createTimingPoints(i, gate, cellIndex, cellInfo);
 			createTimingArcs(gateIndexToTimingPointIndex[i], PI, PO);
+
+			options.push_back(Option(cellIndex.first, cellIndex.second));
+			if(gate.sequential || gate.inputDriver || cellIndex.first == 0 /* PRIMARY OUTPUT*/)
+				options.back().dontTouch = true;
+			// cout << "   gate option: (" << cellIndex.first << ", " << cellIndex.second << ")" << endl;
+			if(options.size() != i+1)
+				cout << "error! options.size() ("<< options.size() << ") != " << i+1 << endl;
+			assert(options.size() == i + 1);
 		}
 
 		// Create TimingNets
@@ -50,12 +60,14 @@ namespace TimingAnalysis
 			{
 				const string DUMMY_NET_NAME = net.name;
 				nets.push_back(TimingNet(DUMMY_NET_NAME, 0));
+
 			}
 			else
 			{
 				const int timingPointIndex = gateIndexToTimingPointIndex.at(driverTopologicIndex).second;
 				TimingPoint * driverTp = &points.at(timingPointIndex);
 				nets.push_back(TimingNet(net.name, driverTp));
+                driverTp->net = &(nets.at(nets.size()-1));
 			}
 		}
 		
@@ -97,7 +109,7 @@ namespace TimingAnalysis
 				if(cellInfo.pins.at(j).name == "ck")
 					continue;
 				const string timingPointName = gateName + ":" + cellInfo.pins.at(j).name;
-				points.push_back(TimingPoint(timingPointName));
+				points.push_back(TimingPoint(timingPointName, i, PI, PO));
 			}
 		}
 		
@@ -107,12 +119,12 @@ namespace TimingAnalysis
 			if( SEQUENTIAL )
 			{
 				const string timingPointName = gateName + ":" + cellInfo.pins.front().name;
-				points.push_back(TimingPoint(timingPointName));
+				points.push_back(TimingPoint(timingPointName, i, PI, PO));
 			}
 			else
 			{
 				const string timingPointName = gateName;
-				points.push_back(TimingPoint(timingPointName));
+				points.push_back(TimingPoint(timingPointName, i, PI, PO));
 			}
 		}
 		else if( PO )
@@ -120,18 +132,18 @@ namespace TimingAnalysis
 			if( SEQUENTIAL )
 			{
 				const string timingPointName = gateName + ":" + cellInfo.pins.at(2).name;
-				points.push_back(TimingPoint(timingPointName));
+				points.push_back(TimingPoint(timingPointName, i, PI, PO));
 			}
 			else
 			{
 				const string timingPointName = gateName;
-				points.push_back(TimingPoint(timingPointName));
+				points.push_back(TimingPoint(timingPointName, i, PI, PO));
 			}
 		}
 		else
 		{
 			const string timingPointName = gateName + ":" + cellInfo.pins.front().name;
-			points.push_back(TimingPoint(timingPointName));
+			points.push_back(TimingPoint(timingPointName, i, PI, PO));
 		}
 
 		return make_pair(firstTimingPointIndex, points.size() - 1);
@@ -162,7 +174,8 @@ namespace TimingAnalysis
 		if( PI )
 		{
 			// cout << "  PI timing arc " << points.at(tpIndexes.first).name << " -> " << points.at(tpIndexes.second).name << endl;
-			arcs.push_back(TimingArc(&points.at(tpIndexes.first), &points.at(tpIndexes.second)));
+			arcs.push_back(TimingArc(&points.at(tpIndexes.first), &points.at(tpIndexes.second), 0));
+			points.at(tpIndexes.first).arc = &arcs.back();
 			assert(arcs.back().getFrom() == &points.at(tpIndexes.first) && arcs.back().getTo() == &points.at(tpIndexes.second));
 			// cout << "  PI timing arc OK" << endl;
 		}
@@ -173,7 +186,8 @@ namespace TimingAnalysis
 				for(size_t j = tpIndexes.first; j < tpIndexes.second; j++)
 				{
 					// cout << "  timing arc " << points.at(j).name << " -> " << points.at(tpIndexes.second).name << endl;
-					arcs.push_back(TimingArc(&points.at(j), &points.at(tpIndexes.second)));
+					arcs.push_back(TimingArc(&points.at(j), &points.at(tpIndexes.second), j-tpIndexes.first));
+					points.at(j).arc = &arcs.back();
 					assert(arcs.back().getFrom() == &points.at(j) && arcs.back().getTo() == &points.at(tpIndexes.second));
 					// cout << "  timing arc OK" << endl;
 				}
@@ -190,109 +204,60 @@ namespace TimingAnalysis
 	void TimingAnalysis::fullTimingAnalysis()
 	{
 
-		// slewViolations = ZERO_TRANSITIONS;
-		// capacitanceViolations = ZERO_TRANSITIONS;
-		// totalNegativeSlack = ZERO_TRANSITIONS;
-		// criticalPathValues = ZERO_TRANSITIONS;
+		slewViolations = ZERO_TRANSITIONS;
+		capacitanceViolations = ZERO_TRANSITIONS;
+		totalNegativeSlack = ZERO_TRANSITIONS;
+		criticalPathValues = ZERO_TRANSITIONS;
 
-		// for(size_t i = 0; i < nodes.size(); i++)
-		// 	updateTiming(i);
+		for(size_t i = 0; i < points.size(); i++)
+			updateTiming(i);
 
-		// for(size_t i = 0; i < nodes.size(); i++)
-		// {
-		// 	size_t n = nodes.size() - i - 1;
-		// 	updateSlacks(n);
-		// }		
+		for(size_t i = 0; i < nodes.size(); i++)
+		{
+			size_t n = nodes.size() - i - 1;
+			updateSlacks(n);
+		}		
 
 	}
 
 	void TimingAnalysis::updateSlacks(const int i)
 	{
-		// Node & node = nodes.at(i);
-		// const LibertyCellInfo & cellInfo = library->getCellInfo(nodesOptions[i].footprintIndex, nodesOptions[i].optionIndex);
-		// TimingPoint & o = node.timingPoints.back();
-		// Edge * outEdge = o.net;
+		/*
 
-		// if(nodesOptions[i].footprintIndex == 0 || node.sequential && !node.inputDriver) // IS PO OR REGISTER
-		// {
-		// 	TimingPoint & tp = node.timingPoints.front();
-		// 	const Transitions<double> slack = tp.updateSlack(targetDelay);
-		// 	criticalPathValues = max(criticalPathValues, tp.arrivalTime);
-		// 	totalNegativeSlack -= min(tp.slack, ZERO_TRANSITIONS);
-		// 	return;
-		// }
+		if ( PO )
 
-		// Transitions<double> requiredTime(numeric_limits<double>::max(), numeric_limits<double>::max());
 		
-		// for(size_t j = 0; j < outEdge->fanouts.size(); j++)
-		// 	requiredTime = min(requiredTime, outEdge->fanouts.at(j)->getRequiredTime());
 
-		// node.timingPoints.back().updateSlack(requiredTime);
-
-		// for(size_t j = 0; j < node.timingArcs.size(); j++)
-		// 	node.timingPoints.at(j).updateSlack((requiredTime - node.timingArcs.at(j).delay).getReversed());
-			
+		*/
 	}
 
 	void TimingAnalysis::updateTiming(const int i)
 	{
-
-		// Node & node = nodes.at(i);
-		// TimingPoint & outTimingPoint = node.timingPoints.back();
-		// Edge * outEdge = outTimingPoint.net;
-
-  //       if(outEdge->wireDelayModel == 0x0)
-  //       {
-  //       	// DUMMY NET
-  //           return;
-  //       }
 		
-		// const LibertyCellInfo & cellInfo = library->getCellInfo(nodesOptions[i].footprintIndex, nodesOptions[i].optionIndex);
-		// const string nodeNamePinName = outTimingPoint.name;
+		
+		/*
 
-		// // RESET OUTPUT SLEW AND ARRIVAL outTimingPoint
-		// outTimingPoint.arrivalTime = MIN_TRANSITIONS;
-		// outTimingPoint.slew = MIN_TRANSITIONS;
+		if ( input_pin )
+		{
+			
 
+			if ( first_input_pin )
+				clear output_pin
+			
+			update timing arcs
+			update output_pin
 
-		// Transitions<double> maxOutputEffectiveCapacitance = ZERO_TRANSITIONS;
-		// // UPDATE TIMING ARCS
-		// for(size_t j = 0; j < node.timingArcs.size(); j++)
-		// {
-		// 	TimingPoint & tp = node.timingPoints.at(j);
-		// 	TimingArc & ta = node.timingArcs.at(j);
+		}
+		else
+		{
 
-		// 	const Transitions<double> ceff = outEdge->wireDelayModel->simulate(cellInfo, j, tp.slew);
+			propagate timing to fanouts
 
-  //           ta.delay = outEdge->wireDelayModel->getDelay(nodeNamePinName);
-  //       	if(node.inputDriver && !node.sequential)
-  //       	{
-		// 		const Transitions<double> delayWith0OutputLoad = this->getNodeDelay(i, j, tp.slew, ZERO_TRANSITIONS);
-  //       		ta.delay -= delayWith0OutputLoad; // INPUT DRIVER DELAY = DELAY WITH CEFF - DELAY WITH 0 OUTPUT LOAD
-  //       	}
-  //       	ta.slew = outEdge->wireDelayModel->getSlew(nodeNamePinName);	
-            
+		}
 
-               
-	 //        slewViolations += max(ta.slew - maxTransition, ZERO_TRANSITIONS);
-	 //        maxOutputEffectiveCapacitance = max(maxOutputEffectiveCapacitance, ceff);
-		// 	outTimingPoint.arrivalTime = max(outTimingPoint.arrivalTime, tp.arrivalTime.getReversed() + ta.delay); // NEGATIVE UNATE
-		// 	outTimingPoint.slew =  max(outTimingPoint.slew, ta.slew);
-		// }
+		*/
 
-		// // cout << "node " << node.name << " max output effective capacitance = " << maxOutputEffectiveCapacitance << ", max capacitance = " << cellInfo.pins.front().maxCapacitance << endl;
-		// capacitanceViolations += outEdge->fanouts.size() * max(maxOutputEffectiveCapacitance - cellInfo.pins.front().maxCapacitance, ZERO_TRANSITIONS);
-		// // UPDATING FANOUT
-		// for(size_t k = 0; k < outEdge->fanouts.size(); k++)
-		// {
-		// 	TimingPoint * fanoutTimingPoint = outEdge->fanouts.at(k);
-  //           string fanoutNameAndPin = fanoutTimingPoint->name;
-		// 	fanoutTimingPoint->arrivalTime = max(fanoutTimingPoint->arrivalTime, outTimingPoint.arrivalTime);
-		// 	fanoutTimingPoint->slew = max(fanoutTimingPoint->slew, outTimingPoint.slew);
-
-
-		// }
-
+		
 	}
 
 
@@ -330,6 +295,42 @@ namespace TimingAnalysis
 		// }
 
 		// printCircuitInfo();
+
+
+
+		cout << "# pins" << endl;
+		queue<int> ports;
+		for(int i = 0 ; i < points.size(); i++)
+		{
+			const TimingPoint & tp = points.at(i);
+			const bool input_pin = tp.arc;
+			const LibertyCellInfo & cellInfo = library->getCellInfo(options.at(tp.gateNumber).footprintIndex, options.at(tp.gateNumber).optionIndex);
+			
+			if( input_pin ) 
+			{
+				
+				// cout << tp.name << "\t" << tp.arrivalTime.getRise() << "\t" << tp.arrivalTime.getFall() << "\t" << tp.slew.getRise() << "\t" << endl;
+				// cout << "# Arc " << tp.arc->arcNumber << " [ " << tp.arc->getFrom()->getName() << " -> " << tp.arc->getTo()->getName() << " ] delay " << tp.arc->delay << " slew " << tp.arc->slew << endl;	;
+			} 
+
+			if( !tp.PI && !tp.PO || cellInfo.isSequential && tp.PO || cellInfo.isSequential && !input_pin)
+				printf("%s %f %f %f %f %f %f\n", tp.name.c_str(), tp.arrivalTime.getRise(), tp.arrivalTime.getFall(), tp.slack.getRise(), tp.slack.getFall(), tp.slew.getRise(), tp.slew.getFall());
+
+
+			if((tp.PI && !input_pin || tp.PO) && !cellInfo.isSequential)
+				ports.push(i);
+		}
+
+
+		cout << endl << "# ports" << endl;
+		while(!ports.empty())
+		{
+			const int tp_index = ports.front();
+			ports.pop();
+			const TimingPoint & tp = points.at(tp_index);
+			printf("%s %f %f %f %f\n", tp.name.c_str(), tp.slack.getRise(), tp.slack.getFall(), tp.slew.getRise(), tp.slew.getFall());
+		}
+		
 	}
 
 	void TimingAnalysis::printCircuitInfo()
@@ -340,8 +341,6 @@ namespace TimingAnalysis
 		cout << "Capacitance Violations = " << capacitanceViolations.aggregate() << endl;
 		cout << "Total Negative Slack = " << totalNegativeSlack.aggregate() << endl;
 	}
-
-
 
 	void TimingAnalysis::validateWithPrimeTime()
 	{

@@ -76,35 +76,43 @@ int main(int argc, char const *argv[])
 
 	TimingAnalysis::TimingAnalysis ta(netlist, &library, &parasitics, &constraints);
 
-	cout << "TIMING POINTS " << endl;
-	for(size_t i = 0; i < ta.timingPointsSize(); i++)
-	{
-		cout << "  " <<  ta.timingPoint(i) << endl;
+	// cout << "TIMING POINTS " << endl;
+	// for(size_t i = 0; i < ta.timingPointsSize(); i++)
+	// {
+	// 	cout << "  " <<  ta.timingPoint(i) << endl;
+	// }
+
+	// cout << "TIMING ARCS " << endl;
+	// for(size_t i = 0; i < ta.timingArcsSize(); i++)
+	// {
+	// 	cout << "  " << ta.timingArc(i) << endl;
+	// }
+
+	// cout << "TIMING NETS " << endl;
+	// for(size_t i = 0; i < ta.timingNetsSize(); i++)
+	// {
+	// 	cout << "  " << ta.timingNet(i).getName() << " net ";
+ // 		cout << (ta.timingNet(i).getFrom() != 0 ? ta.timingNet(i).getFrom()->getName() : "source") << " -> ( ";
+ // 		if(ta.timingNet(i).fanoutsSize() == 0)
+ // 			cout << "sink ";
+ // 		for(int j = 0; j < ta.timingNet(i).fanoutsSize(); j++)
+ // 		{
+ // 			cout << ta.timingNet(i).getTo(j)->getName() << " ";
+ // 		}
+ // 		cout << ")" << endl;
+	// }
+
+	for(int i = 0; i < ta.timingPointsSize(); i++)
+	{	
+		const TimingAnalysis::TimingPoint & tp = ta.timingPoint(i);
+		// cout << "tp " << tp.getName() << " gate number = " << tp.getGateNumber() << endl;
+		// cout << "setting gate " << tp.getGateNumber() << " option to 0"<< endl;
+		ta.setGateOption(tp.getGateNumber(), 0);
+		
 	}
 
-	cout << "TIMING ARCS " << endl;
-	for(size_t i = 0; i < ta.timingArcsSize(); i++)
-	{
-		cout << "  " << ta.timingArc(i) << endl;
-	}
 
-	cout << "TIMING NETS " << endl;
-	for(size_t i = 0; i < ta.timingNetsSize(); i++)
-	{
-		cout << "  " << ta.timingNet(i).getName() << " net ";
- 		cout << (ta.timingNet(i).getFrom() != 0 ? ta.timingNet(i).getFrom()->getName() : "source") << " -> ( ";
- 		if(ta.timingNet(i).fanoutsSize() == 0)
- 			cout << "sink ";
- 		for(int j = 0; j < ta.timingNet(i).fanoutsSize(); j++)
- 		{
- 			cout << ta.timingNet(i).getTo(j)->getName() << " ";
- 		}
- 		cout << ")" << endl;
-	}
-
-	// for(int i = 0; i < ta.getNumberOfNodes(); i++)
-	// 	ta.setNodeOption(i, 0);
-
+	ta.printInfo();
 	// ta.fullTimingAnalysis();
 	// // ta.printInfo();
 	// ta.printCircuitInfo();

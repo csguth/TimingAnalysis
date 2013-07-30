@@ -32,9 +32,12 @@ namespace TimingAnalysis
 		Transitions<double> slack;
 		Transitions<double> slew;
 		Transitions<double> arrivalTime;
+		int gateNumber;
+		bool PI;
+		bool PO;
 
 	public:
-		TimingPoint(string name) : name(name), net(0), arc(0), slack(0.0f, 0.0f), slew(0.0f, 0.0f), arrivalTime(0.0f, 0.0f)
+		TimingPoint(string name, const int gateNumber, const bool PI, const bool PO) : name(name), net(0), arc(0), slack(0.0f, 0.0f), slew(0.0f, 0.0f), arrivalTime(0.0f, 0.0f), gateNumber(gateNumber), PI(PI), PO(PO)
 		{
 		};
 		virtual ~TimingPoint(){};
@@ -52,6 +55,7 @@ namespace TimingAnalysis
 		};
 
 		const string getName() const { return name; }
+		const int getGateNumber() const  { return gateNumber; }
 	};
 
 
@@ -101,8 +105,9 @@ namespace TimingAnalysis
 		Transitions<double> delay;
 		Transitions<double> slew;
 		int gateNumber;
+		int arcNumber;
 	public:
-		TimingArc(TimingPoint * from, TimingPoint * to) : delay(0.0f, 0.0f), slew(0.0f, 0.0f), OneFanoutEdge(from, to)
+		TimingArc(TimingPoint * from, TimingPoint * to, const int arcNumber) : delay(0.0f, 0.0f), slew(0.0f, 0.0f), arcNumber(arcNumber), OneFanoutEdge(from, to)
 		{
 		};
 		virtual ~TimingArc(){};
@@ -151,9 +156,10 @@ namespace TimingAnalysis
 	{
 		int footprintIndex;
 		int optionIndex;
+		bool dontTouch;
 
-		Option():footprintIndex(-1), optionIndex(-1){};
-		Option(const int footprintIndex, const int optionIndex) : footprintIndex(footprintIndex), optionIndex(optionIndex){};
+		Option():footprintIndex(-1), optionIndex(-1), dontTouch(false){};
+		Option(const int footprintIndex, const int optionIndex) : footprintIndex(footprintIndex), optionIndex(optionIndex), dontTouch(false){};
 	};
 
 	
@@ -214,7 +220,13 @@ namespace TimingAnalysis
 		const TimingNet & timingNet( const int i ) { return nets.at(i); }
 
 		// SETTERS
-		void setNodeOption(const int nodeIndex, const int optionNumber);
+		bool setGateOption(const int gateIndex, const int optionNumber)
+		{
+			if(options.at(gateIndex).dontTouch)
+				return false;
+			options.at(gateIndex).optionIndex = optionNumber;
+			return true;
+		}
 
 		void printInfo();
 		void printCircuitInfo();
