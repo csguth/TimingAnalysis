@@ -22,6 +22,12 @@ namespace TimingAnalysis
 {
 	class TimingNet;
 	class TimingArc;
+
+	enum TimingPointType
+	{
+		INPUT, OUTPUT, PI_INPUT, REGISTER_INPUT, PI, PO
+	};
+
 	class TimingPoint
 	{
 		friend class TimingAnalysis;
@@ -33,11 +39,12 @@ namespace TimingAnalysis
 		Transitions<double> slew;
 		Transitions<double> arrivalTime;
 		int gateNumber;
-		bool PI;
-		bool PO;
+
+		TimingPointType type;
+
 
 	public:
-		TimingPoint(string name, const int gateNumber, const bool PI, const bool PO) : name(name), net(0), arc(0), slack(0.0f, 0.0f), slew(0.0f, 0.0f), arrivalTime(0.0f, 0.0f), gateNumber(gateNumber), PI(PI), PO(PO)
+		TimingPoint(string name, const int gateNumber, TimingPointType type) : name(name), net(0), arc(0), slack(0.0f, 0.0f), slew(0.0f, 0.0f), arrivalTime(0.0f, 0.0f), gateNumber(gateNumber), type(type)
 		{
 		};
 		virtual ~TimingPoint(){};
@@ -56,6 +63,24 @@ namespace TimingAnalysis
 
 		const string getName() const { return name; }
 		const int getGateNumber() const  { return gateNumber; }
+
+
+		bool isPO() const { return type == PO; }
+		bool isPI() const { return type == PI; }
+		bool isInputPin() const { return type == INPUT; }
+		bool isOutputPin() const { return type == OUTPUT; }
+		bool isPIInput() const { return type == PI_INPUT; }
+		bool isRegInput() const { return type == REGISTER_INPUT; }
+
+
+		void clearTimingInfo(){
+			slack = Transitions<double>(numeric_limits<double>::max(), numeric_limits<double>::max());
+			slew = Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());
+			arrivalTime = Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());
+		}
+
+
+
 	};
 
 
@@ -117,6 +142,7 @@ namespace TimingAnalysis
 		{
 			return out << ta.getFrom()->getName() << " -> " << ta.getTo()->getName();
 		};
+
 	};
 
 	class TimingNet : public MultiFanoutEdge

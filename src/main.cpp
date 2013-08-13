@@ -114,8 +114,8 @@ int main(int argc, char const *argv[])
 
 	ta.printInfo();
 	// ta.fullTimingAnalysis();
-	// // ta.printInfo();
-	// ta.printCircuitInfo();
+	
+	ta.printCircuitInfo();
 
 	cout << "-- DONE!" << endl;
 
