@@ -62,7 +62,8 @@ namespace TimingAnalysis
 				if(!nodes[i].sequential)
 				{
 					nodes[i].timingPoints.back().name = gate.name;
-				} else 
+				}
+				else 
 				{
 					nodes[i].timingPoints.back().name = gate.name.substr(0, gate.name.size()-string("_PI").size()) +  ":" + cellInfo.pins.front().name;
 				}
@@ -321,7 +322,7 @@ namespace TimingAnalysis
 				if(!node.sequential || (node.sequential && node.inputDriver))
 				{
 					cout << node.name << endl;
-					cout << "-- "<< o.name << " net " << o.net->netName << " " << o.slack << " " << o.slew << " " << o.arrivalTime << endl;
+					cout << "-- "<< o.name << " net " << o.net->netName << " " << o.slack << " " << o.slew << " " << o.arrivalTime << " cap " << o.net->wireDelayModel->getTotalLumpedCapacitance() << endl;
 				}
 				if(!node.inputDriver)
 				{

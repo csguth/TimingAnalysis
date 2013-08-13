@@ -23,6 +23,10 @@ public:
 	virtual const Transitions<double> getDelay(const string nodeName) const = 0;
 	virtual const Transitions<double> getSlew(const string nodeName) const = 0;
 	virtual void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) = 0;
+	double getTotalLumpedCapacitance()
+	{
+		return lumpedCapacitance;
+	};
 };
 
 class LumpedCapacitanceWireDelayModel : public WireDelayModel

@@ -79,8 +79,8 @@ int main(int argc, char const *argv[])
 		ta.setNodeOption(i, 0);
 
 	ta.fullTimingAnalysis();
-	// ta.printInfo();
-	ta.printCircuitInfo();
+	ta.printInfo();
+	// ta.printCircuitInfo();
 
 	cout << "-- DONE!" << endl;
 
