@@ -23,6 +23,9 @@ public:
 	virtual const Transitions<double> getDelay(const string nodeName) const = 0;
 	virtual const Transitions<double> getSlew(const string nodeName) const = 0;
 	virtual void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) = 0;
+
+
+	const double getLumpedCapacitance() const { return lumpedCapacitance; }
 };
 
 class LumpedCapacitanceWireDelayModel : public WireDelayModel
@@ -30,7 +33,10 @@ class LumpedCapacitanceWireDelayModel : public WireDelayModel
 	Transitions<double> delay;
 	Transitions<double> slew;
 public:
-	LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string rootNode, const bool dummyEdge = false) : WireDelayModel(descriptor.netLumpedCap){};
+	LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string rootNode, const bool dummyEdge = false) : WireDelayModel(descriptor.netLumpedCap){
+
+		cout << "creating lumped capacitance wire delay model to node " << descriptor.netName << ", lumped capacitance " << descriptor.netLumpedCap << endl;
+	};
 	const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
 	const Transitions<double> getDelay(const string nodeName) const;
 	const Transitions<double> getSlew(const string nodeName) const;

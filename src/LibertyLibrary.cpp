@@ -70,7 +70,7 @@ const pair<int, int> LibertyLibrary::getCellIndex(const string &cellName) const
 
 
 
-const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable lut, const double load, const double transition)
+const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable & lut, const double load, const double transition)
 {
 	double wTransition, wLoad, y1, y2, x1, x2;
 	double t[2][2];
@@ -140,12 +140,27 @@ const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLook
  }
 
 
- const Transitions<double> LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable riseLut, const LibertyLookupTable fallLut, const Transitions<double> load, const Transitions<double> transition)
+ const Transitions<double> LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness)
  {
  	// NEGATIVE UNATE
- 	const double riseDelay = interpolate(riseLut, load.getRise(), transition.getFall());
- 	const double fallDelay = interpolate(fallLut, load.getFall(), transition.getRise());
- 	return Transitions<double>(riseDelay, fallDelay);
+ 	if(unateness == NEGATIVE_UNATE)
+ 	{
+	 	const double riseDelay = interpolate(riseLut, load.getRise(), transition.getFall());
+	 	const double fallDelay = interpolate(fallLut, load.getFall(), transition.getRise());
+	 	return Transitions<double>(riseDelay, fallDelay);
+ 	}
+ 	else if(unateness == POSITIVE_UNATE)
+ 	{
+		const double riseDelay = interpolate(riseLut, load.getRise(), transition.getRise());
+	 	const double fallDelay = interpolate(fallLut, load.getFall(), transition.getFall());
+	 	return Transitions<double>(riseDelay, fallDelay);
+ 	}
+ 	else if(unateness == NON_UNATE)
+ 	{
+ 		const double riseDelay = max(interpolate(riseLut, load.getRise(), transition.getRise()), interpolate(riseLut, load.getRise(), transition.getFall()));
+	 	const double fallDelay = max(interpolate(fallLut, load.getFall(), transition.getFall()), interpolate(fallLut, load.getFall(), transition.getRise()));
+	 	return Transitions<double>(riseDelay, fallDelay);
+ 	}
  }
 
 const double  LibertyLibrary::getMaxTransition() const

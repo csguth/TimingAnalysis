@@ -129,11 +129,15 @@ public:
   /* data */
 };
 
+enum Unateness {
+  NEGATIVE_UNATE, POSITIVE_UNATE, NON_UNATE
+};
+
 class LibertyLookupTableInterpolator
 {
 public:
-  virtual const double interpolate(const LibertyLookupTable lut, const double load, const double transition) = 0;
-  virtual const Transitions<double> interpolate(const LibertyLookupTable riseLut, const LibertyLookupTable fallLut, const Transitions<double> load, const Transitions<double> transition) = 0;
+  virtual const double interpolate(const LibertyLookupTable & lut, const double load, const double transition) = 0;
+  virtual const Transitions<double> interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness = NEGATIVE_UNATE) = 0;
 
   /* data */
 };
@@ -141,8 +145,8 @@ public:
 class LinearLibertyLookupTableInterpolator : public LibertyLookupTableInterpolator
 {
 public:
-  const double interpolate(const LibertyLookupTable lut, const double load, const double transition);
-  const Transitions<double> interpolate(const LibertyLookupTable riseLut, const LibertyLookupTable fallLut, const Transitions<double> load, const Transitions<double> transition);
+  const double interpolate(const LibertyLookupTable & lut, const double load, const double transition);
+  const Transitions<double> interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness = NEGATIVE_UNATE);
 
 };
 

@@ -34,7 +34,7 @@ public:
 	string netName;
 	double netLumpedCap;
 
-	SpefNetISPD2012(){};
+	SpefNetISPD2012():netName("DEFAULT_NET_NAME"), netLumpedCap(0){};
 };
 
 class SpefNetISPD2013

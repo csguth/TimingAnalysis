@@ -10,6 +10,9 @@ using std::string;
 #include <ostream>
 using std::ostream;
 
+#include <map>
+using std::map;
+
 #include "Transitions.h"
 #include "CircuitNetList.h"
 #include "WireDelayModel.h"
@@ -74,9 +77,16 @@ namespace TimingAnalysis
 
 
 		void clearTimingInfo(){
-			slack = Transitions<double>(numeric_limits<double>::max(), numeric_limits<double>::max());
+			slack = Transitions<double>(0.0f, 0.0f);
 			slew = Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());
 			arrivalTime = Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());
+		}
+
+		const double load() const;
+
+		const Transitions<double> getArrivalTime() const 
+		{
+			return arrivalTime;
 		}
 
 
@@ -148,14 +158,14 @@ namespace TimingAnalysis
 	class TimingNet : public MultiFanoutEdge
 	{
 		friend class TimingAnalysis;
+		friend class TimingPoint;
 		string netName;
 		WireDelayModel * wireDelayModel;
 
 	public:
-		TimingNet(const string & netName, TimingPoint * from)
-		:netName(netName), MultiFanoutEdge(from)
+		TimingNet(const string & netName, TimingPoint * from, WireDelayModel * wireDelayModel)
+		:netName(netName), MultiFanoutEdge(from), wireDelayModel(wireDelayModel)
 		{
-
 		}
 		virtual ~TimingNet(){
 
@@ -201,6 +211,8 @@ namespace TimingAnalysis
 		vector<TimingNet> nets;
 
 		vector<Option> options;
+
+		map<int, double> poLoads;
 		static const Transitions<double> ZERO_TRANSITIONS;
 		static const Transitions<double> MIN_TRANSITIONS;
 		static const Transitions<double> MAX_TRANSITIONS;
@@ -222,14 +234,21 @@ namespace TimingAnalysis
 		Transitions<double> capacitanceViolations;
 
 
-		const Transitions<double> getNodeDelay(const int nodeIndex, const int inputNumber, const Transitions<double> transition, const Transitions<double> ceff);
+		const Transitions<double> getGateDelay(const int gateIndex, const int inputNumber, const Transitions<double> transition, const Transitions<double> ceff);
 
+
+
+		const LibertyCellInfo & option(const int nodeIndex)
+		{
+			return library->getCellInfo(options.at(nodeIndex).footprintIndex, options.at(nodeIndex).optionIndex);
+		}
 
 		// TOPOLOGY INIT
 		const pair<size_t, size_t> createTimingPoints(const int i,const CircuitNetList::LogicGate & gate,const pair<int, int> cellIndex, const LibertyCellInfo & cellInfo);
 		void getNumberOfTimingPointsAndTimingArcs(int & numberOfTimingPoints, int & numberOfTimingArcs, const CircuitNetList & netlist, const LibertyLibrary * lib);
-		void createTimingArcs(const pair<size_t, size_t> tpIndexes, const bool PI, const bool PO);
+		void createTimingArcs(const pair<size_t, size_t> tpIndexes, const bool is_pi , const bool is_po );
 	public:
+		const double pinCapacitance(const int timingPointIndex);
 		TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib, const Parasitics * parasitics, const DesignConstraints * sdc);
 		virtual ~TimingAnalysis();
 		void fullTimingAnalysis();

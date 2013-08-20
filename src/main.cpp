@@ -112,9 +112,20 @@ int main(int argc, char const *argv[])
 	}
 
 
-	ta.printInfo();
-	// ta.fullTimingAnalysis();
+	for(int  i = 0; i < ta.timingPointsSize(); i++)
+	{
+		const TimingAnalysis::TimingPoint & tp = ta.timingPoint(i);
+		cout << "timing point " << i << " (" << tp.getName() << ")" << endl;
+		cout << "  arrival time " << tp.getArrivalTime() << endl;
+		if( tp.isOutputPin() || tp.isPI() )
+			cout << "    output load " << tp.load() << endl;
+		if( tp.isInputPin() || tp.isPO() )
+			cout << "    pin capacitance " << ta.pinCapacitance(i) << endl;
+	}
+
+	ta.fullTimingAnalysis();
 	
+	ta.printInfo();
 	ta.printCircuitInfo();
 
 	cout << "-- DONE!" << endl;

@@ -50,43 +50,97 @@ namespace TimingAnalysis
 			assert(options.size() == i + 1);
 		}
 
+		// SETTING DESIGN CONSTRAINTS
+		// INPUT DELAY && INPUT SLEW
+		for(size_t i = 0; i < points.size(); i++)
+		{
+			const TimingPoint & tp = points.at(i);
+
+			if(tp.isPI())
+			{
+				const LibertyCellInfo & opt = option(tp.gateNumber);
+				if(opt.isSequential)
+					continue;
+				const string PI_name = tp.name;
+				TimingPoint & inPin = points.at(i - 1);
+				inPin.arrivalTime = sdc->getInputDelay(PI_name);
+				inPin.slew = sdc->getInputTransition(PI_name);
+
+				cout << "setting input delay " << inPin.arrivalTime << " to pin " << inPin.name << endl;
+				cout << "setting input slew " << inPin.slew << " to pin " << inPin.name << endl;
+			}
+
+
+			if(tp.isPO())
+			{
+				const LibertyCellInfo & opt = option(tp.gateNumber);
+				if(opt.isSequential)
+					continue;
+				poLoads[i] = sdc->getOutputLoad(tp.name);
+				cout << "setting poLoads["<<i<<"] = " << poLoads.at(i) << endl;
+			}
+		}
+
 		// Create TimingNets
 		for(size_t i = 0; i < netlist.getNetsSize(); i++)
 		{
 			const CircuitNetList::Net & net = netlist.getNetT(i);
 			const int driverTopologicIndex = netlist.getTopologicIndex(net.sourceNode);
-
+			
 			if(driverTopologicIndex == -1)
 			{
 				const string DUMMY_NET_NAME = net.name;
-				nets.push_back(TimingNet(DUMMY_NET_NAME, 0));
+				nets.push_back(TimingNet(DUMMY_NET_NAME, 0, 0));
 
 			}
 			else
 			{
 				const int timingPointIndex = gateIndexToTimingPointIndex.at(driverTopologicIndex).second;
 				TimingPoint * driverTp = &points.at(timingPointIndex);
-				nets.push_back(TimingNet(net.name, driverTp));
+
+				// Just a test {		
+				WireDelayModel * delayModel = 0;
+
+				if(parasitics->find(net.name) != parasitics->end())
+				{
+					// delayModel = new RCTreeWireDelayModel(parasitics->at(net.name), rcTreeRootNodeName);
+					delayModel = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name), driverTp->name);
+				}
+				// }
+
+				nets.push_back(TimingNet(net.name, driverTp, delayModel));
+				driverTp->net = &nets.back();
+				if(delayModel)
+					cout << "created net " << nets.back().netName << " with lumped capacitance " << driverTp->load() << endl;
                 driverTp->net = &(nets.at(nets.size()-1));
 			}
+	
 		}
 		
 		// Now, setting the fanin edges of nodes
 		for(size_t i = 0; i < netlist.getGatesSize(); i++)
 		{
 			const CircuitNetList::LogicGate & gate = netlist.getGateT(i);
+
+
+			cout << "gate " << gate.name << endl;
 			const pair<size_t, size_t> timingPointIndex = gateIndexToTimingPointIndex.at(i);
 			for(size_t j = 0; j < gate.inNets.size(); j++)
 			{
 				const int inNetTopologicIndex = netlist.getNetTopologicIndex(gate.inNets.at(j));
-                const int pinIndex = (gate.sequential? j + 2 :j + 1);
                 const int inTimingPointIndex = timingPointIndex.first + j;
+                const double pinCap = pinCapacitance(inTimingPointIndex);
+
+
                 nets.at(inNetTopologicIndex).addFanout(&points.at(inTimingPointIndex));
+                if(nets.at(inNetTopologicIndex).wireDelayModel)
+                	nets.at(inNetTopologicIndex).wireDelayModel->setFanoutPinCapacitance(points.at(inTimingPointIndex).name, pinCap);
 				points.at(inTimingPointIndex).net = &nets.at(inNetTopologicIndex);
 			}
 		}
 		interpolator = new LinearLibertyLookupTableInterpolator();
 
+		
 
 	}
 
@@ -171,9 +225,9 @@ namespace TimingAnalysis
 		}
 	}
 
-	void TimingAnalysis::createTimingArcs(const pair<size_t, size_t> tpIndexes, const bool PI, const bool PO)
+	void TimingAnalysis::createTimingArcs(const pair<size_t, size_t> tpIndexes, const bool is_pi, const bool is_po )
 	{
-		if( PI )
+		if( is_pi )
 		{
 			// cout << "  PI timing arc " << points.at(tpIndexes.first).name << " -> " << points.at(tpIndexes.second).name << endl;
 			arcs.push_back(TimingArc(&points.at(tpIndexes.first), &points.at(tpIndexes.second), 0));
@@ -183,7 +237,7 @@ namespace TimingAnalysis
 		}
 		else
 		{
-			if( !PO )
+			if( !is_po )
 			{
 				for(size_t j = tpIndexes.first; j < tpIndexes.second; j++)
 				{
@@ -218,73 +272,94 @@ namespace TimingAnalysis
 		{
 			size_t n = points.size() - i - 1;
 			updateSlacks(n);
-		}		
+		}
 
 	}
 
 	void TimingAnalysis::updateSlacks(const int i)
 	{
-		/*
+		TimingPoint & tp = points.at(i);
 
-		if ( PO )
+		Transitions<double> requiredTime = MAX_TRANSITIONS;
 
+		if( tp.isPIInput() || tp.isRegInput() )
+			return;
+
+		if( tp.isInputPin() )
+			requiredTime = tp.arc->getTo()->getRequiredTime() - tp.arc->delay;
+		else if( tp.isPO() )
+			requiredTime = targetDelay;
+		else if( tp.isOutputPin() || tp.isPI() )
+		{
+			for(int i = 0; i < tp.net->fanoutsSize(); i++)
+				requiredTime = min(requiredTime, tp.net->getTo(i)->getRequiredTime());
+		}
 		
-
-		*/
+		tp.updateSlack(requiredTime);
 	}
 
 
 	void TimingAnalysis::updateTiming(const int i)
 	{
-		vector<bool> dirty(options.size(), false); // Dirty bit of a gate output pin
+		// Dirty bit of a gate output pin
+		vector<bool> dirty(options.size(), false); 
 
-		const TimingPoint tp = points.at(i);
+		const TimingPoint & tp = points.at(i);
 		
-		if(tp.isInputPin())
-		{
-			if( !dirty.at(tp.gateNumber) ) // IF IS THE FIRST INPUT PIN OF A GATE
+		if(tp.isInputPin() || tp.isPIInput() || tp.isRegInput())
+		{	
+			TimingPoint * outputPin = tp.arc->getTo();
+			TimingArc * ta = tp.arc;
+
+			// IF IS THE FIRST INPUT PIN OF A GATE
+			// CLEAR OUTPUT PIN
+			if( !dirty.at(tp.gateNumber) ) 
 			{
 				dirty.at(tp.gateNumber) = true;
-				tp.arc->getTo()->clearTimingInfo(); // CLEAR OUTPUT PIN
+				outputPin->clearTimingInfo(); 
 			}
-
-			// UPDATE TIMING ARC
-			const LibertyCellInfo & cellInfo = library->getCellInfo(options.at(tp.gateNumber).footprintIndex, options.at(tp.gateNumber).optionIndex);
-			cellInfo.timingArcs.at(tp.arcNumber);
-		}
-		else
-		{
-
-		}
-
 		
-		/*
-
-		if ( input_pin )
-		{
+			const LibertyCellInfo & cellInfo = option(tp.gateNumber);
 			
-
-			if ( first_input_pin )
-				clear output_pin
-			
-			update timing arcs
-			update output_pin
+			// SETTING ARC DELAY AND SLEW
+			const Transitions<double> ceff = outputPin->net->wireDelayModel->simulate(cellInfo, ta->arcNumber, tp.slew);
+			ta->delay = outputPin->net->wireDelayModel->getDelay(outputPin->name); // INPUT DRIVER DELAY = DELAY WITH CEFF - DELAY WITH 0 OUTPUT LOAD
+			if(tp.isPIInput())
+			{
+				const Transitions<double> delayWith0OutputLoad = this->getGateDelay(tp.gateNumber, 0, tp.slew, ZERO_TRANSITIONS);
+				ta->delay -= delayWith0OutputLoad;
+			}
+       		ta->slew = outputPin->net->wireDelayModel->getSlew(outputPin->name);
+       		
+			// SETTING OUTPUT SLEW AND ARRIVAL TIME
+			outputPin->arrivalTime = max(outputPin->arrivalTime, tp.arrivalTime.getReversed() + ta->delay); // NEGATIVE UNATE
+			outputPin->slew = max(outputPin->slew, ta->slew);
 
 		}
-		else
+		else if(tp.isOutputPin() || tp.isPI())
 		{
-
-			propagate timing to fanouts
-
+			TimingNet * net = tp.net;
+			for(int i = 0; i < net->fanoutsSize(); i++)
+			{
+				TimingPoint * fanoutPin = net->getTo(i);
+				fanoutPin->arrivalTime = tp.arrivalTime;
+				fanoutPin->slew = tp.slew;
+			}
 		}
-
-		*/
-
+		else if(tp.isPO())
+		{
+			criticalPathValues = max(criticalPathValues, tp.arrivalTime);
+		}
 		
 	}
 
-
-
+	const Transitions<double> TimingAnalysis::getGateDelay(const int gateIndex, const int inputNumber, const Transitions<double> transition, const Transitions<double> ceff)
+	{
+		const LibertyCellInfo & cellInfo = option(gateIndex);
+		const LibertyLookupTable fallLUT = cellInfo.timingArcs.at(inputNumber).fallDelay;
+		const LibertyLookupTable riseLUT = cellInfo.timingArcs.at(inputNumber).riseDelay;
+		return interpolator->interpolate(riseLUT, fallLUT, ceff, transition);
+	}
 
 	void TimingAnalysis::printInfo()
 	{
@@ -329,18 +404,13 @@ namespace TimingAnalysis
 		printf(">>>> Timing Points Infos (pins)\n");
 		queue<int> ports;
 		queue<int> sequentials;
+
+		queue<int> pins;
 		for(int i = 0 ; i < points.size(); i++)
 		{
 			const TimingPoint & tp = points.at(i);
-			const bool input_pin = tp.arc;
-			const LibertyCellInfo & cellInfo = library->getCellInfo(options.at(tp.gateNumber).footprintIndex, options.at(tp.gateNumber).optionIndex);
-			
-			// if( tp.isInput() ) 
-			// {
-				
-			// 	// cout << tp.name << "\t" << tp.arrivalTime.getRise() << "\t" << tp.arrivalTime.getFall() << "\t" << tp.slew.getRise() << "\t" << endl;
-			// 	// cout << "# Arc " << tp.arc->arcNumber << " [ " << tp.arc->getFrom()->getName() << " -> " << tp.arc->getTo()->getName() << " ] delay " << tp.arc->delay << " slew " << tp.arc->slew << endl;	;
-			// } 
+			const LibertyCellInfo & cellInfo = option(tp.gateNumber);
+		
 
 			if( tp.isPI() && cellInfo.isSequential )
 			{
@@ -349,8 +419,22 @@ namespace TimingAnalysis
 				continue;
 			}
 
-			if( tp.isInputPin() || tp.isOutputPin() || tp.isPO() && cellInfo.isSequential ) 
-				printf("%s %f %f %f %f %f %f\n", tp.name.c_str(), tp.arrivalTime.getRise(), tp.arrivalTime.getFall(), tp.slack.getRise(), tp.slack.getFall(), tp.slew.getRise(), tp.slew.getFall());
+			if (tp.isInputPin() )
+			{
+				pins.push(i);
+				continue;
+			}
+
+			if( tp.isOutputPin() || tp.isPO() && cellInfo.isSequential ) 
+			{
+				printf("%s %f %f %f %f %f %f\n", tp.name.c_str(), tp.slack.getRise(), tp.slack.getFall(), tp.slew.getRise(), tp.slew.getFall(), tp.arrivalTime.getRise(), tp.arrivalTime.getFall());
+				while( !pins.empty() )
+				{
+					const TimingPoint & iPin = points.at(pins.front());
+					pins.pop();
+					printf("%s %f %f %f %f %f %f\n", iPin.name.c_str(), iPin.slack.getRise(), iPin.slack.getFall(), iPin.slew.getRise(), iPin.slew.getFall(), iPin.arrivalTime.getRise(), iPin.arrivalTime.getFall());	
+				}
+			}
 
 
 			if( !cellInfo.isSequential && (tp.isPI() || tp.isPO()) )
@@ -361,7 +445,7 @@ namespace TimingAnalysis
 				const int reg = sequentials.front();
 				sequentials.pop();
 				const TimingPoint & regTp = points.at(reg);
-				printf("%s %f %f %f %f %f %f\n", regTp.name.c_str(), regTp.arrivalTime.getRise(), regTp.arrivalTime.getFall(), regTp.slack.getRise(), regTp.slack.getFall(), regTp.slew.getRise(), regTp.slew.getFall());
+				printf("%s %f %f %f %f %f %f\n", regTp.name.c_str(), regTp.slack.getRise(), regTp.slack.getFall(), regTp.slew.getRise(), regTp.slew.getFall(), regTp.arrivalTime.getRise(), regTp.arrivalTime.getFall());
 			}
 		}
 
@@ -392,6 +476,29 @@ namespace TimingAnalysis
 	void TimingAnalysis::validateWithPrimeTime()
 	{
 		
+	}
+
+	const double TimingAnalysis::pinCapacitance(const int timingPointIndex)
+	{
+		const LibertyCellInfo & opt = option(points.at(timingPointIndex).gateNumber);
+        if( points.at(timingPointIndex).isInputPin()  ) // A OUTPUT PIN DOESN'T HAVE A ARC
+		{
+			const int pinNumber = points.at(timingPointIndex).arc->arcNumber;
+			return opt.pins.at(pinNumber+1).capacitance;
+		}
+		else if ( points.at(timingPointIndex).isPO() )
+		{
+			if(opt.isSequential)
+				return opt.pins.at(2).capacitance;
+			return poLoads.at(timingPointIndex); // todo MUDAR PARA CAPACITANCIA OBTIDA NO SDC
+		}
+		// assert(false);
+		return -1;
+	}
+
+	const double TimingPoint::load() const
+	{
+		return net->wireDelayModel->getLumpedCapacitance();
 	}
 }
 
