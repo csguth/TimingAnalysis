@@ -10,11 +10,10 @@ namespace TimingAnalysis
 	const Transitions<double> TimingAnalysis::ZERO_TRANSITIONS(0.0f, 0.0f);
 	const Transitions<double> TimingAnalysis::MIN_TRANSITIONS(numeric_limits<double>::min(), numeric_limits<double>::min());
 	const Transitions<double> TimingAnalysis::MAX_TRANSITIONS(numeric_limits<double>::max(), numeric_limits<double>::max());
-
-
 	
-	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib, const Parasitics * parasitics, const DesignConstraints * sdc) : library(lib), parasitics(parasitics)
+	TimingAnalysis::TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib, const Parasitics * parasitics, const DesignConstraints * sdc) : library(lib), parasitics(parasitics), _verilog(netlist.verilog())
 	{
+
 		targetDelay = Transitions<double>(sdc->getClock(), sdc->getClock());
 		maxTransition = Transitions<double>(lib->getMaxTransition(), lib->getMaxTransition());
 
@@ -66,8 +65,8 @@ namespace TimingAnalysis
 				inPin.arrivalTime = sdc->getInputDelay(PI_name);
 				inPin.slew = sdc->getInputTransition(PI_name);
 
-				cout << "setting input delay " << inPin.arrivalTime << " to pin " << inPin.name << endl;
-				cout << "setting input slew " << inPin.slew << " to pin " << inPin.name << endl;
+				// cout << "setting input delay " << inPin.arrivalTime << " to pin " << inPin.name << endl;
+				// cout << "setting input slew " << inPin.slew << " to pin " << inPin.name << endl;
 			}
 
 
@@ -77,7 +76,7 @@ namespace TimingAnalysis
 				if(opt.isSequential)
 					continue;
 				poLoads[i] = sdc->getOutputLoad(tp.name);
-				cout << "setting poLoads["<<i<<"] = " << poLoads.at(i) << endl;
+				// cout << "setting poLoads["<<i<<"] = " << poLoads.at(i) << endl;
 			}
 		}
 
@@ -110,8 +109,8 @@ namespace TimingAnalysis
 
 				nets.push_back(TimingNet(net.name, driverTp, delayModel));
 				driverTp->net = &nets.back();
-				if(delayModel)
-					cout << "created net " << nets.back().netName << " with lumped capacitance " << driverTp->load() << endl;
+				// if(delayModel)
+				// 	cout << "created net " << nets.back().netName << " with lumped capacitance " << driverTp->load() << endl;
                 driverTp->net = &(nets.at(nets.size()-1));
 			}
 	
@@ -123,7 +122,7 @@ namespace TimingAnalysis
 			const CircuitNetList::LogicGate & gate = netlist.getGateT(i);
 
 
-			cout << "gate " << gate.name << endl;
+			// cout << "gate " << gate.name << endl;
 			const pair<size_t, size_t> timingPointIndex = gateIndexToTimingPointIndex.at(i);
 			for(size_t j = 0; j < gate.inNets.size(); j++)
 			{
@@ -139,8 +138,6 @@ namespace TimingAnalysis
 			}
 		}
 		interpolator = new LinearLibertyLookupTableInterpolator();
-
-		
 
 	}
 
@@ -173,6 +170,7 @@ namespace TimingAnalysis
 				else
 					type = INPUT;
 
+				pinNameToTimingPointIndex[timingPointName] = points.size();
 				points.push_back(TimingPoint(timingPointName, i, type));
 			}
 		}
@@ -201,6 +199,7 @@ namespace TimingAnalysis
 			timingPointName = gateName + ":" + cellInfo.pins.front().name;
 		}
 
+		pinNameToTimingPointIndex[timingPointName] = points.size();
 		points.push_back(TimingPoint(timingPointName, i, type));
 		return make_pair(firstTimingPointIndex, points.size() - 1);
 	}
@@ -256,7 +255,6 @@ namespace TimingAnalysis
 
 	}
 
-
 	void TimingAnalysis::fullTimingAnalysis()
 	{
 
@@ -286,7 +284,7 @@ namespace TimingAnalysis
 			return;
 
 		if( tp.isInputPin() )
-			requiredTime = tp.arc->getTo()->getRequiredTime() - tp.arc->delay;
+			requiredTime = (tp.arc->getTo()->getRequiredTime() - tp.arc->delay).getReversed();
 		else if( tp.isPO() )
 			requiredTime = targetDelay;
 		else if( tp.isOutputPin() || tp.isPI() )
@@ -449,7 +447,6 @@ namespace TimingAnalysis
 			}
 		}
 
-
 		printf("\n>>>> Timing Points Infos (ports)\n");
 		while(!ports.empty())
 		{
@@ -473,15 +470,42 @@ namespace TimingAnalysis
 		printf("-------------------------------------------------------------------------------------------------------\n\n\n");
 	}
 
-	void TimingAnalysis::validateWithPrimeTime()
+	// PRIMETIME CALLING
+	bool TimingAnalysis::validate_with_prime_time()
 	{
-		
+		const string ispd_contest_root = getenv("ISPD_CONTEST_ROOT");
+		const string ispd_contest_benchmark = getenv("ISPD_CONTEST_BENCHMARK");
+		const string sizes_int_file = ispd_contest_root + "/" + ispd_contest_benchmark + "/" + ispd_contest_benchmark + ".int.sizes";
+		const string timing_file = ispd_contest_root + "/" + ispd_contest_benchmark + "/" + ispd_contest_benchmark + ".timing";
+		const vector<pair<string, string> > sizes_vector = get_sizes_vector();
+		const unsigned pollingTime = 1;
+
+		cout << "Running timing analysis" << endl;
+
+		TimerInterface::Status s = TimerInterface::runTimingAnalysisBlocking(sizes_vector, ispd_contest_root, ispd_contest_benchmark, pollingTime);
+		cout << "Timing analysis finished with status: " << s << endl;
+
+		return check_timing_file(timing_file);
+	}
+
+	void TimingAnalysis::writeSizesFile(const string filename)
+	{
+		const vector<pair<string, string> > sizes_vector = get_sizes_vector();
+		fstream out;
+		out.open(filename.c_str(), fstream::out);
+		for(int i = 0; i < sizes_vector.size(); i++)
+		{
+			out << sizes_vector.at(i).first << "\t" << sizes_vector.at(i).second;
+			if(i < sizes_vector.size() - 1)
+				out << endl;
+		}
+		out.close();
 	}
 
 	const double TimingAnalysis::pinCapacitance(const int timingPointIndex)
 	{
 		const LibertyCellInfo & opt = option(points.at(timingPointIndex).gateNumber);
-        if( points.at(timingPointIndex).isInputPin()  ) // A OUTPUT PIN DOESN'T HAVE A ARC
+        if( points.at(timingPointIndex).isInputPin() )
 		{
 			const int pinNumber = points.at(timingPointIndex).arc->arcNumber;
 			return opt.pins.at(pinNumber+1).capacitance;
@@ -490,16 +514,35 @@ namespace TimingAnalysis
 		{
 			if(opt.isSequential)
 				return opt.pins.at(2).capacitance;
-			return poLoads.at(timingPointIndex); // todo MUDAR PARA CAPACITANCIA OBTIDA NO SDC
+			return poLoads.at(timingPointIndex);
 		}
 		// assert(false);
 		return -1;
 	}
 
+	const vector<pair<string, string> > TimingAnalysis::get_sizes_vector()
+	{
+		vector<pair<string, string> > sizes(_verilog.size());
+		for(int i = 0; i < _verilog.size(); i++)
+		{
+			const pair<int, string> cell = _verilog.at(i);
+			const LibertyCellInfo & opt = option(cell.first);
+			sizes[i] = make_pair(cell.second, opt.name);
+		}
+		return sizes;
+	}
+
+	bool TimingAnalysis::check_timing_file(const string timing_file)
+	{
+		return true;
+	}	
+
 	const double TimingPoint::load() const
 	{
 		return net->wireDelayModel->getLumpedCapacitance();
 	}
+
+
 }
 
 

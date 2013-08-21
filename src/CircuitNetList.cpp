@@ -66,13 +66,13 @@ void CircuitNetList::updateTopology()
 
 }
 
-const int CircuitNetList::addGate(const string name, const string cellType, const int inputs, const bool isInputDriver)
+const int CircuitNetList::addGate(const string name, const string cellType, const int inputs, const bool isInputDriver, const bool primary_output)
 {
 	if(gateNameToGateIndex.find(name) != gateNameToGateIndex.end())
 		return gateNameToGateIndex[name];
 
 	//const string name, const string cellType, const unsigned inputs, int fanoutNetIndex
-	gates.push_back(LogicGate(name, cellType, inputs, -1, isInputDriver));
+	gates.push_back(LogicGate(name, cellType, inputs, -1, isInputDriver, primary_output));
 	gateNameToGateIndex[name] = gates.size() - 1;
 	return gateNameToGateIndex[name];
 }
@@ -107,7 +107,7 @@ const int CircuitNetList::addNet(const string name, const int sourceNode, const 
 	return netNameToNetIndex[name];
 }
 
-void CircuitNetList::addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential, const bool isInputDriver)
+void CircuitNetList::addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential, const bool isInputDriver, const bool primary_output)
 {
 	const string outputPin = inputPinPairs.back().first;
 	const string fanoutNetName = inputPinPairs.back().second;
@@ -145,7 +145,7 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 	}
 	else
 	{
-		const int gateIndex = addGate(name, cellType, inputPinPairs.size() - 1, isInputDriver);
+		const int gateIndex = addGate(name, cellType, inputPinPairs.size() - 1, isInputDriver, primary_output);
 		const int netIndex = addNet(fanoutNetName, gateIndex, outputPin);
 		LogicGate & gate = gates[gateIndex];
 		Net & net = nets[netIndex];
@@ -161,4 +161,20 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 		}
 		gate.sequential = isSequential;
 	}
+	if( !primary_output && !isInputDriver )
+		_numberOfGates++;
+}
+
+const vector<pair<int, string> > CircuitNetList::verilog() const 
+{
+	vector<pair<int, string> > verilogVector(_numberOfGates);
+	int j = 0;
+	for(int i = 0; i < gates.size(); i++)
+	{
+		if(gates.at(i).inputDriver || gates.at(i).primary_output )
+			continue;
+		const pair<int, string> indexAndName = make_pair(inverseTopology.at(i), gates.at(i).name);
+		verilogVector[j++] = indexAndName;
+	}
+	return verilogVector;
 }

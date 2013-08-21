@@ -36,9 +36,10 @@ public:
 		int fanoutNetIndex;
 		bool inputDriver;
 		bool sequential;
+		bool primary_output;
 
-		LogicGate(const string name, const string cellType, const unsigned inputs, int fanoutNetIndex, const bool inputDriver = false) :
-			name(name), cellType(cellType), inNets(inputs), fanoutNetIndex(fanoutNetIndex), inputDriver(inputDriver)
+		LogicGate(const string name, const string cellType, const unsigned inputs, int fanoutNetIndex, const bool inputDriver = false, const bool primary_output = false) :
+			name(name), cellType(cellType), inNets(inputs), fanoutNetIndex(fanoutNetIndex), inputDriver(inputDriver), primary_output(primary_output)
 			{};
 	};
 
@@ -104,12 +105,14 @@ private:
 	vector<int> inverseTopology;
 	vector<int> inverseNetTopology;
 
+	int _numberOfGates;
 
-	const int addGate(const string name, const string cellType, const int inputs, const bool isInputDriver = false);
+
+	const int addGate(const string name, const string cellType, const int inputs, const bool isInputDriver = false, const bool primary_output = false);
 	const int addNet(const string name, const int sourceNode, const string sourcePin);
 	const int addNet(const string name);
 public:
-	void addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential = false, const bool isInputDriver = false);
+	void addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential = false, const bool isInputDriver = false, const bool primary_output = false);
 	void updateTopology();
 
 	const size_t getNetsSize() const { return nets.size(); };
@@ -121,7 +124,13 @@ public:
 	const int getTopologicIndex(const size_t & i) const { return (i==-1?-1:inverseTopology.at(i)); };
 	const int getNetTopologicIndex(const size_t & i) const { return inverseNetTopology.at(i); };
 
+
+	const vector<pair<int, string> > verilog() const;
+
 	virtual ~CircuitNetList(){};
+	CircuitNetList():_numberOfGates(0){
+
+	};
 };
 
 #endif

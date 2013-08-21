@@ -35,7 +35,6 @@ class LumpedCapacitanceWireDelayModel : public WireDelayModel
 public:
 	LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string rootNode, const bool dummyEdge = false) : WireDelayModel(descriptor.netLumpedCap){
 
-		cout << "creating lumped capacitance wire delay model to node " << descriptor.netName << ", lumped capacitance " << descriptor.netLumpedCap << endl;
 	};
 	const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
 	const Transitions<double> getDelay(const string nodeName) const;

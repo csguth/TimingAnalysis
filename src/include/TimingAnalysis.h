@@ -13,6 +13,16 @@ using std::ostream;
 #include <map>
 using std::map;
 
+#include <utility>
+using std::pair;
+
+#include <fstream>
+using std::fstream;
+
+#include <cstdlib>
+
+#include "timer_interface.h"
+
 #include "Transitions.h"
 #include "CircuitNetList.h"
 #include "WireDelayModel.h"
@@ -213,6 +223,7 @@ namespace TimingAnalysis
 		vector<Option> options;
 
 		map<int, double> poLoads;
+		map<string, int> pinNameToTimingPointIndex;
 		static const Transitions<double> ZERO_TRANSITIONS;
 		static const Transitions<double> MIN_TRANSITIONS;
 		static const Transitions<double> MAX_TRANSITIONS;
@@ -234,6 +245,9 @@ namespace TimingAnalysis
 		Transitions<double> capacitanceViolations;
 
 
+		vector<pair<int, string> > _verilog;
+
+
 		const Transitions<double> getGateDelay(const int gateIndex, const int inputNumber, const Transitions<double> transition, const Transitions<double> ceff);
 
 
@@ -247,6 +261,15 @@ namespace TimingAnalysis
 		const pair<size_t, size_t> createTimingPoints(const int i,const CircuitNetList::LogicGate & gate,const pair<int, int> cellIndex, const LibertyCellInfo & cellInfo);
 		void getNumberOfTimingPointsAndTimingArcs(int & numberOfTimingPoints, int & numberOfTimingArcs, const CircuitNetList & netlist, const LibertyLibrary * lib);
 		void createTimingArcs(const pair<size_t, size_t> tpIndexes, const bool is_pi , const bool is_po );
+
+
+		// PRIMETIME CALLING
+		const vector<pair<string, string> > get_sizes_vector();
+		bool check_timing_file(const string timing_file);
+
+		// OUTPUT METHODS
+		void writeSizesFile(const string filename);
+
 	public:
 		const double pinCapacitance(const int timingPointIndex);
 		TimingAnalysis(const CircuitNetList netlist, const LibertyLibrary * lib, const Parasitics * parasitics, const DesignConstraints * sdc);
@@ -277,7 +300,7 @@ namespace TimingAnalysis
 		void printCircuitInfo();
 
 
-		void validateWithPrimeTime();
+		bool validate_with_prime_time();
 
 
 	};

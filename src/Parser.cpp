@@ -127,7 +127,7 @@ const CircuitNetList VerilogParser::readFile(const string filename)
 			vector<std::pair<string, string> > poPins;
 			poPins.push_back(make_pair("i", primaryOutput));
 			poPins.push_back(make_pair("o", primaryOutput + "_PO"));
-			netlist.addCellInst(primaryOutput, PRIMARY_OUTPUT_CELL, poPins);
+			netlist.addCellInst(primaryOutput, PRIMARY_OUTPUT_CELL, poPins, false, false, true);
 		}
 
 	}
