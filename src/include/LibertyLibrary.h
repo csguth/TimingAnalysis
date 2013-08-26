@@ -135,6 +135,9 @@ enum Unateness {
 
 class LibertyLookupTableInterpolator
 {
+protected:
+    static const int DEFAULT_DECIMAL_PLACES;
+    void round(Transitions<double> & transitions, const int decimal_places);
 public:
   virtual const double interpolate(const LibertyLookupTable & lut, const double load, const double transition) = 0;
   virtual const Transitions<double> interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness = NEGATIVE_UNATE) = 0;

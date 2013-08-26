@@ -37,6 +37,44 @@ public:
 };
 
 
+class Prime_Time_Output_Parser : public Parser
+{
+public:
+	struct Pin_Timing {
+		string pin_name;
+		Transitions<double> slack;
+		Transitions<double> slew;
+		Transitions<double> arrival_time;
+		friend ostream & operator <<( ostream & out, const Pin_Timing & pin)
+		{
+			return out << pin.pin_name << " " << pin.slack << " " <<  pin.slew << " " << pin.arrival_time;
+		}
+	};
+	struct Port_Timing {
+		string port_name;
+		Transitions<double> slack;
+		Transitions<double> slew;
+
+		friend ostream & operator <<( ostream & out, const Port_Timing & port)
+		{
+			return out << port.port_name << " " << port.slack << " " << port.slew;
+		}
+	};
+	class Prime_Time_Output{
+		friend class Prime_Time_Output_Parser;
+		vector<Pin_Timing> _pins;
+		vector<Port_Timing> _ports;
+	public:
+		const size_t pins_size() const { return _pins.size(); }
+		const size_t ports_size() const { return _ports.size(); }
+		const Pin_Timing & pin(const size_t i) const { return _pins.at(i); }
+		const Port_Timing & port(const size_t i) const { return _ports.at(i); }
+	};
+	Prime_Time_Output_Parser(){};
+	const Prime_Time_Output parse_prime_time_output_file(const string filename);
+};
+
+
 class VerilogParser : public Parser
 {
 	static const string SEQUENTIAL_CELL;

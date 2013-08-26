@@ -49,6 +49,8 @@ namespace TimingAnalysis
 			assert(options.size() == i + 1);
 		}
 
+        _dirty.resize(options.size());
+
 		// SETTING DESIGN CONSTRAINTS
 		// INPUT DELAY && INPUT SLEW
 		for(size_t i = 0; i < points.size(); i++)
@@ -257,8 +259,11 @@ namespace TimingAnalysis
 
 	void TimingAnalysis::fullTimingAnalysis()
 	{
+        for (int i = 0; i < _dirty.size(); ++i) {
+            _dirty[i] = false;
+        }
 
-		slewViolations = ZERO_TRANSITIONS;
+        slewViolations = ZERO_TRANSITIONS;
 		capacitanceViolations = ZERO_TRANSITIONS;
 		totalNegativeSlack = ZERO_TRANSITIONS;
 		criticalPathValues = ZERO_TRANSITIONS;
@@ -292,51 +297,66 @@ namespace TimingAnalysis
 			for(int i = 0; i < tp.net->fanoutsSize(); i++)
 				requiredTime = min(requiredTime, tp.net->getTo(i)->getRequiredTime());
 		}
-		
+
 		tp.updateSlack(requiredTime);
+
+		if(tp.isPO())
+			totalNegativeSlack -= min(ZERO_TRANSITIONS, tp.slack);
 	}
 
 
 	void TimingAnalysis::updateTiming(const int i)
 	{
-		// Dirty bit of a gate output pin
-		vector<bool> dirty(options.size(), false); 
-
-		const TimingPoint & tp = points.at(i);
+        const TimingPoint & tp = points.at(i);
+        if(tp.name == "g10_u0:a" || tp.name == "g10_u0:b" || tp.name == "g10_u0:c")
+            cout << endl;
 		
 		if(tp.isInputPin() || tp.isPIInput() || tp.isRegInput())
 		{	
 			TimingPoint * outputPin = tp.arc->getTo();
 			TimingArc * ta = tp.arc;
+            const bool first = !_dirty.at(outputPin->gateNumber);
 
 			// IF IS THE FIRST INPUT PIN OF A GATE
 			// CLEAR OUTPUT PIN
-			if( !dirty.at(tp.gateNumber) ) 
+			if( first ) 
 			{
-				dirty.at(tp.gateNumber) = true;
+                _dirty[outputPin->gateNumber] = true;
 				outputPin->clearTimingInfo(); 
 			}
 		
 			const LibertyCellInfo & cellInfo = option(tp.gateNumber);
-			
 			// SETTING ARC DELAY AND SLEW
 			const Transitions<double> ceff = outputPin->net->wireDelayModel->simulate(cellInfo, ta->arcNumber, tp.slew);
+
 			ta->delay = outputPin->net->wireDelayModel->getDelay(outputPin->name); // INPUT DRIVER DELAY = DELAY WITH CEFF - DELAY WITH 0 OUTPUT LOAD
+
 			if(tp.isPIInput())
 			{
 				const Transitions<double> delayWith0OutputLoad = this->getGateDelay(tp.gateNumber, 0, tp.slew, ZERO_TRANSITIONS);
 				ta->delay -= delayWith0OutputLoad;
 			}
+
        		ta->slew = outputPin->net->wireDelayModel->getSlew(outputPin->name);
-       		
+
 			// SETTING OUTPUT SLEW AND ARRIVAL TIME
 			outputPin->arrivalTime = max(outputPin->arrivalTime, tp.arrivalTime.getReversed() + ta->delay); // NEGATIVE UNATE
 			outputPin->slew = max(outputPin->slew, ta->slew);
 
+			// SETTING OUTPUT PIN VIOLATIONS
+			if( first )
+			{
+				const LibertyCellInfo & cell_info = option(outputPin->gateNumber);
+				capacitanceViolations += max(ZERO_TRANSITIONS, (ceff - cell_info.pins.front().maxCapacitance));
+			}
+
 		}
+
+
+
 		else if(tp.isOutputPin() || tp.isPI())
 		{
-			TimingNet * net = tp.net;
+			const TimingNet * net = tp.net;
 			for(int i = 0; i < net->fanoutsSize(); i++)
 			{
 				TimingPoint * fanoutPin = net->getTo(i);
@@ -345,9 +365,7 @@ namespace TimingAnalysis
 			}
 		}
 		else if(tp.isPO())
-		{
 			criticalPathValues = max(criticalPathValues, tp.arrivalTime);
-		}
 		
 	}
 
@@ -408,7 +426,6 @@ namespace TimingAnalysis
 		{
 			const TimingPoint & tp = points.at(i);
 			const LibertyCellInfo & cellInfo = option(tp.gateNumber);
-		
 
 			if( tp.isPI() && cellInfo.isSequential )
 			{
@@ -452,7 +469,7 @@ namespace TimingAnalysis
 		{
 			const int tp_index = ports.front();
 			ports.pop();
-			const TimingPoint & tp = points.at(tp_index);
+			const TimingPoint & tp = points.at(tp_index); 
 			printf("%s %f %f %f %f\n", tp.name.c_str(), tp.slack.getRise(), tp.slack.getFall(), tp.slew.getRise(), tp.slew.getFall());
 		}
 
@@ -473,16 +490,13 @@ namespace TimingAnalysis
 	// PRIMETIME CALLING
 	bool TimingAnalysis::validate_with_prime_time()
 	{
-		const string ispd_contest_root = getenv("ISPD_CONTEST_ROOT");
-		const string ispd_contest_benchmark = getenv("ISPD_CONTEST_BENCHMARK");
-		const string sizes_int_file = ispd_contest_root + "/" + ispd_contest_benchmark + "/" + ispd_contest_benchmark + ".int.sizes";
-		const string timing_file = ispd_contest_root + "/" + ispd_contest_benchmark + "/" + ispd_contest_benchmark + ".timing";
+        const string timing_file = Traits::ispd_contest_root + "/" + Traits::ispd_contest_benchmark + "/" + Traits::ispd_contest_benchmark + ".timing";
 		const vector<pair<string, string> > sizes_vector = get_sizes_vector();
 		const unsigned pollingTime = 1;
 
 		cout << "Running timing analysis" << endl;
 
-		TimerInterface::Status s = TimerInterface::runTimingAnalysisBlocking(sizes_vector, ispd_contest_root, ispd_contest_benchmark, pollingTime);
+        TimerInterface::Status s = TimerInterface::runTimingAnalysisBlocking(sizes_vector,  Traits::ispd_contest_root, Traits::ispd_contest_benchmark, pollingTime);
 		cout << "Timing analysis finished with status: " << s << endl;
 
 		return check_timing_file(timing_file);
@@ -516,7 +530,7 @@ namespace TimingAnalysis
 				return opt.pins.at(2).capacitance;
 			return poLoads.at(timingPointIndex);
 		}
-		// assert(false);
+        // assert(false);
 		return -1;
 	}
 
@@ -534,6 +548,44 @@ namespace TimingAnalysis
 
 	bool TimingAnalysis::check_timing_file(const string timing_file)
 	{
+		Prime_Time_Output_Parser prime_time_parser;
+		const Prime_Time_Output_Parser::Prime_Time_Output prime_time_output = prime_time_parser.parse_prime_time_output_file(timing_file);
+
+		cout << "pin timing (total = " << prime_time_output.pins_size() << ")" << endl;
+		for(size_t i = 0; i < prime_time_output.pins_size(); i++)
+		{
+			const Prime_Time_Output_Parser::Pin_Timing pin_timing = prime_time_output.pin(i);
+			const TimingPoint & tp = points.at(pinNameToTimingPointIndex.at(pin_timing.pin_name));
+
+            cout << "pin " << pin_timing.pin_name << " index " << pinNameToTimingPointIndex.at(pin_timing.pin_name) << endl;
+            cout << "  slack = " << tp.slack << " prime_time_slack = " << pin_timing.slack << endl;
+            cout << "  slew = " << tp.slew << " prime_time_slew = " << pin_timing.slew << endl;
+            cout << "  arrival_time = " << tp.arrivalTime << " prime_time_arrival_time = " << pin_timing.arrival_time << endl;
+//			cout << pin_timing << endl;
+
+            assert(fabs(tp.slack.getRise() - pin_timing.slack.getRise()) < Traits::STD_THRESHOLD);
+            assert(fabs(tp.slack.getFall() - pin_timing.slack.getFall()) < Traits::STD_THRESHOLD);
+            assert(fabs(tp.slew.getRise() - pin_timing.slew.getRise()) < Traits::STD_THRESHOLD);
+            assert(fabs(tp.slew.getFall() - pin_timing.slew.getFall()) < Traits::STD_THRESHOLD);
+            assert(fabs(tp.arrivalTime.getRise() - pin_timing.arrival_time.getRise()) < Traits::STD_THRESHOLD);
+            assert(fabs(tp.arrivalTime.getFall() - pin_timing.arrival_time.getFall()) < Traits::STD_THRESHOLD);
+		}
+		cout << "port timing (total = " << prime_time_output.ports_size() << ")" << endl;
+		for(size_t i = 0; i < prime_time_output.ports_size(); i++)
+		{
+			const Prime_Time_Output_Parser::Port_Timing port_timing = prime_time_output.port(i);
+			const TimingPoint & tp = points.at(pinNameToTimingPointIndex.at(port_timing.port_name));
+
+            cout << "port " << port_timing.port_name << " index " << pinNameToTimingPointIndex.at(port_timing.port_name) << endl;
+            cout << "  slack = " << tp.slack << " prime_time_slack = " << port_timing.slack << endl;
+            cout << "  slew = " << tp.slew << " prime_time_slew = " << port_timing.slew << endl;
+//			cout << port_timing << endl;
+
+            assert(fabs(tp.slack.getRise() - port_timing.slack.getRise()) < Traits::STD_THRESHOLD);
+            assert(fabs(tp.slack.getFall() - port_timing.slack.getFall()) < Traits::STD_THRESHOLD);
+            assert(fabs(tp.slew.getRise() - port_timing.slew.getRise()) < Traits::STD_THRESHOLD);
+            assert(fabs(tp.slew.getFall() - port_timing.slew.getFall()) < Traits::STD_THRESHOLD);
+		}
 		return true;
 	}	
 

@@ -4,6 +4,9 @@
 #include "SpefNet.h"
 #include "Parser.h"
 
+#include <string>
+using std::string;
+
 /*
 
 	This is a Configuration File
@@ -31,10 +34,15 @@ class Traits
 {
 public:
 	static const bool ISPD_2012 = true;
+    static const double STD_THRESHOLD = 0.01;
+    static string ispd_contest_root;
+    static string ispd_contest_benchmark;
 };
 
 
 // }
+
+
 
 
 

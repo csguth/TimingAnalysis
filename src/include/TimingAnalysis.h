@@ -31,6 +31,8 @@ using std::fstream;
 
 #include "Configuration.h"
 
+#include "Parser.h"
+
 namespace TimingAnalysis
 {
 	class TimingNet;
@@ -59,6 +61,13 @@ namespace TimingAnalysis
 	public:
 		TimingPoint(string name, const int gateNumber, TimingPointType type) : name(name), net(0), arc(0), slack(0.0f, 0.0f), slew(0.0f, 0.0f), arrivalTime(0.0f, 0.0f), gateNumber(gateNumber), type(type)
 		{
+            switch(type)
+            {
+            case REGISTER_INPUT:
+                slew = Transitions<double>(80.0f, 80.0f);
+                break;
+            }
+
 		};
 		virtual ~TimingPoint(){};
 
@@ -246,6 +255,7 @@ namespace TimingAnalysis
 
 
 		vector<pair<int, string> > _verilog;
+        vector<bool> _dirty;
 
 
 		const Transitions<double> getGateDelay(const int gateIndex, const int inputNumber, const Transitions<double> transition, const Transitions<double> ceff);

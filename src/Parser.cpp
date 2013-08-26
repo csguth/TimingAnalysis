@@ -1373,3 +1373,38 @@ const DesignConstraints SDCParser::readFile(const string filename)
 	is.close();
 	return constraints;
 }
+
+
+const Prime_Time_Output_Parser::Prime_Time_Output Prime_Time_Output_Parser::parse_prime_time_output_file(const string filename)
+{
+	Prime_Time_Output output;
+	vector<string> tokens;
+	is.open(filename.c_str(), istream::in);
+	bool valid = readLineAsTokens(is, tokens, true);
+	while( valid )
+	{
+		if(tokens.front() != "#" && !tokens.empty())
+		{
+			if(tokens.size() == 9)
+			{
+				output._pins.push_back(Pin_Timing());
+				output._pins.back().pin_name = tokens.at(0) + ":" + tokens.at(2);
+				output._pins.back().slack = Transitions<double>(atof(tokens.at(3).c_str()), atof(tokens.at(4).c_str()));
+				output._pins.back().slew = Transitions<double>(atof(tokens.at(5).c_str()), atof(tokens.at(6).c_str()));
+				output._pins.back().arrival_time = Transitions<double>(atof(tokens.at(7).c_str()), atof(tokens.at(8).c_str()));
+			} else if(tokens.size() == 5)
+			{
+				output._ports.push_back(Port_Timing());
+				output._ports.back().port_name = tokens.at(0);
+				output._ports.back().slack = Transitions<double>(atof(tokens.at(1).c_str()), atof(tokens.at(2).c_str()));
+				output._ports.back().slew = Transitions<double>(atof(tokens.at(3).c_str()), atof(tokens.at(4).c_str()));
+			}
+			else
+				assert(false);
+		}
+		valid = readLineAsTokens(is, tokens, true);
+	}
+
+	is.close();
+	return output;
+}

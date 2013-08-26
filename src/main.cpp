@@ -47,6 +47,8 @@ int main(int argc, char const *argv[])
 	}
 
 	const PassingArgs args(argv[1], argv[2]);
+    Traits::ispd_contest_root = argv[1];
+    Traits::ispd_contest_benchmark = argv[2];
 
 	VerilogParser vp;
 	LibertyParser lp;
@@ -125,8 +127,8 @@ int main(int argc, char const *argv[])
 
 	ta.fullTimingAnalysis();
 	
-
 	ta.validate_with_prime_time();
+
 	ta.printInfo();
 	ta.printCircuitInfo();
 
