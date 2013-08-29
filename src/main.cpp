@@ -13,9 +13,9 @@ using std::endl;
 using std::make_pair;
 
 struct PassingArgs {
-	string contestRoot;
-	string contestBenchmark;
-	PassingArgs(string contestRoot,	string contestBenchmark) : contestRoot(contestRoot), contestBenchmark(contestBenchmark){};
+    string _contest_root;
+    string _contest_benchmark;
+    PassingArgs(string contestRoot,	string contestBenchmark) : _contest_root(contestRoot), _contest_benchmark(contestBenchmark){}
 };
 
 struct ISPDContestFiles
@@ -104,14 +104,26 @@ int main(int argc, char const *argv[])
  // 		cout << ")" << endl;
 	// }
 
-	for(int i = 0; i < ta.timingPointsSize(); i++)
+    for(size_t i = 0; i < ta.timing_points_size(); i++)
 	{	
-		const TimingAnalysis::TimingPoint & tp = ta.timingPoint(i);
+        const TimingAnalysis::TimingPoint & tp = ta.timing_point(i);
 		// cout << "tp " << tp.getName() << " gate number = " << tp.getGateNumber() << endl;
 		// cout << "setting gate " << tp.getGateNumber() << " option to 0"<< endl;
-		ta.setGateOption(tp.getGateNumber(), 0);
+        cout << "tp " << tp.name() << ":: changing gate " << tp.gate_number() << " option to 0";
+        if( !ta.gate_option(tp.gate_number(), 0) )
+            cout << ", but it's a don't touch gate!!";
+        cout << endl;
+
 		
 	}
+
+
+    for(size_t i = 0; i < ta.timing_points_size(); i++)
+    {
+        const TimingAnalysis::TimingPoint & tp = ta.timing_point(i);
+        cout << "option vector["<< tp.name() << "] = " << ta.gate_option(tp.gate_number()).option_index << endl;
+    }
+
 
 
 	// for(int  i = 0; i < ta.timingPointsSize(); i++)
@@ -129,8 +141,8 @@ int main(int argc, char const *argv[])
 	
 	ta.validate_with_prime_time();
 
-	ta.printInfo();
-	ta.printCircuitInfo();
+    ta.print_info();
+    ta.print_circuit_info();
 
 	cout << "-- DONE!" << endl;
 

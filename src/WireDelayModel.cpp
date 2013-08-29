@@ -3,27 +3,24 @@ LinearLibertyLookupTableInterpolator WireDelayModel::interpolator;
 
 const Transitions<double> LumpedCapacitanceWireDelayModel::simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew)
 {
-	if(cellInfo.isSequential)
-	{
-		this->slew = max(WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew), WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew.getReversed()));
-		this->delay = max(WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew), WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew.getReversed()));
-		return Transitions<double>(lumpedCapacitance, lumpedCapacitance);
-	}
-	this->slew = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew);
-	this->delay = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(lumpedCapacitance, lumpedCapacitance), slew);
-	return Transitions<double>(lumpedCapacitance, lumpedCapacitance);
+    Unateness unateness = NEGATIVE_UNATE;
+    if(cellInfo.isSequential)
+        unateness = NON_UNATE;
+    this->slew = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(_lumped_capacitance, _lumped_capacitance), slew, unateness);
+    this->delay = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(_lumped_capacitance, _lumped_capacitance), slew, unateness);
+    return Transitions<double>(_lumped_capacitance, _lumped_capacitance);
 }
 
 // Any fanout node has the same delay and slew
-const Transitions<double> LumpedCapacitanceWireDelayModel::getDelay(const string nodeName) const {
+const Transitions<double> LumpedCapacitanceWireDelayModel::getDelay(const string node_name) const {
 	return delay;
 }
-const Transitions<double> LumpedCapacitanceWireDelayModel::getSlew(const string nodeName) const {
+const Transitions<double> LumpedCapacitanceWireDelayModel::getSlew(const string node_name) const {
 	return slew;
 }
 
 
-RCTreeWireDelayModel::RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const string rootNode, const bool dummyEdge) : WireDelayModel(lumpedCapacitance), nodes(descriptor.nodesSize()), nodesNames(descriptor.nodesSize()), _delays(descriptor.nodesSize()), _slews(descriptor.nodesSize())
+RCTreeWireDelayModel::RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const string rootNode, const bool dummyEdge) : WireDelayModel(_lumped_capacitance), nodes(descriptor.nodesSize()), nodesNames(descriptor.nodesSize()), _slews(descriptor.nodesSize()),  _delays(descriptor.nodesSize())
 {
 	if (dummyEdge)
 		return;
@@ -125,7 +122,7 @@ void RCTreeWireDelayModel::updateSlews(const LibertyCellInfo & cellInfo, const i
 {
 	nodes[0].slew = RCTreeWireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(nodes[0].totalCapacitance, nodes[0].totalCapacitance), slew);
 	nodes[0].delay = RCTreeWireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(nodes[0].totalCapacitance, nodes[0].totalCapacitance), slew);
-	for (int i = 1; i < nodes.size(); i++)
+    for (size_t i = 1; i < nodes.size(); i++)
 	{
 		Transitions<double> & T01 = nodes[i].delay;
 		const Transitions<double> & S0 = nodes[nodes[i].parent].slew;
@@ -178,12 +175,12 @@ void RCTreeWireDelayModel::updateEffectiveCapacitances()
 
 void RCTreeWireDelayModel::updateDownstreamCapacitances()
 {
-	for (int i = 0; i < nodes.size(); i++)
+    for (size_t i = 0; i < nodes.size(); i++)
 	{
 		Node & node = nodes[i];
 		node.totalCapacitance = node.nodeCapacitance;
 	}
-	for (int i = nodes.size() - 1; i > 0; i--)
+    for (size_t i = nodes.size() - 1; i > 0; i--)
 	{
 		Node & node = nodes[i];
 		nodes[node.parent].totalCapacitance += node.totalCapacitance;
@@ -192,7 +189,7 @@ void RCTreeWireDelayModel::updateDownstreamCapacitances()
 
 void RCTreeWireDelayModel::initializeEffectiveCapacitances()
 {
-	for (int i = 0; i < nodes.size(); i++)
+    for (size_t i = 0; i < nodes.size(); i++)
 	{
 		Node & node = nodes[i];
 		node.effectiveCapacitance.set(node.totalCapacitance, node.totalCapacitance);
@@ -215,5 +212,10 @@ const Transitions<double> RCTreeWireDelayModel::getSlew(const string nodeName) c
 
 void RCTreeWireDelayModel::setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance)
 {
-	nodes.at(fanoutNameToNodeNumber.at(fanoutNameAndPin)).totalCapacitance = pinCapacitance;
+    nodes.at(fanoutNameToNodeNumber.at(fanoutNameAndPin)).totalCapacitance = pinCapacitance;
+}
+
+double WireDelayModel::lumped_capacitance() const
+{
+    return _lumped_capacitance;
 }

@@ -65,12 +65,12 @@ public:
 		vector<Pin_Timing> _pins;
 		vector<Port_Timing> _ports;
 	public:
-		const size_t pins_size() const { return _pins.size(); }
-		const size_t ports_size() const { return _ports.size(); }
+        size_t pins_size() const { return _pins.size(); }
+        size_t ports_size() const { return _ports.size(); }
 		const Pin_Timing & pin(const size_t i) const { return _pins.at(i); }
 		const Port_Timing & port(const size_t i) const { return _ports.at(i); }
 	};
-	Prime_Time_Output_Parser(){};
+    Prime_Time_Output_Parser(){}
 	const Prime_Time_Output parse_prime_time_output_file(const string filename);
 };
 

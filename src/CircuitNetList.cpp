@@ -3,17 +3,20 @@
 // CIRCUIT NETLIST
 void CircuitNetList::updateTopology()
 {
-	vector<int> inputsVisiteds(gates.size(), 0);
-	vector<bool> inserted(gates.size(), false);
-	vector<bool> insertedN(nets.size(), false);
+    vector<size_t> num_of_visited_inputs(gates.size(), 0);
+    vector<bool> inserted_gate(gates.size(), false);
+    vector<bool> inserted_net(nets.size(), false);
 
-	queue<int> q;
+    queue<int> gates_queue;
+    queue<int> primary_output_queue;
 	for(size_t i = 0; i < gates.size(); i++)
 	{
+
 		if(gates[i].inputDriver)
 		{
-			q.push(i);
-			inserted[i] = true;
+            cout << gates.at(i).name << " is a input driver" << endl;
+            gates_queue.push(i);
+            inserted_gate[i] = true;
 		}
 	}
 
@@ -23,50 +26,101 @@ void CircuitNetList::updateTopology()
 	inverseTopology.resize(gates.size(), -1);
 	inverseNetTopology.resize(nets.size(), -1);
 
-	while(!q.empty())
+    while(!gates_queue.empty())
 	{
-		const int currentIndex = q.front();
-		q.pop();
+        const int current_index = gates_queue.front();
+        gates_queue.pop();
 
-		LogicGate & gate = gates[currentIndex];
-		const Net & fanoutNet = nets[gate.fanoutNetIndex];
-		for(size_t i = 0; i < gate.inNets.size(); i++)
+        const LogicGate & gate = gates.at(current_index);
+        const Net & fanout_net = nets.at(gate.fanoutNetIndex);
+
+        // insert input nets to the nets topology
+        for(size_t i = 0; i < gate.inNets.size(); i++)
 		{
-			if(!insertedN[gate.inNets[i]])
+            if(!inserted_net.at(gate.inNets.at(i)))
 			{
-				netTopology.push_back(gate.inNets[i]);
-				inverseNetTopology[gate.inNets[i]] = netTopology.size() - 1;
-				insertedN[gate.inNets[i]] = true;
+                netTopology.push_back(gate.inNets.at(i));
+                inverseNetTopology[gate.inNets.at(i)] = netTopology.size() - 1;
+                inserted_net[gate.inNets.at(i)] = true;
 			}
 		}
-		if(!insertedN[gate.fanoutNetIndex])
+        // insert output net to the nets topology
+        if(!inserted_net.at(gate.fanoutNetIndex))
 		{
 			netTopology.push_back(gate.fanoutNetIndex);
-			inverseNetTopology[gate.fanoutNetIndex] = netTopology.size() - 1;
-			insertedN[gate.fanoutNetIndex] = true;
+            inverseNetTopology[gate.fanoutNetIndex] = netTopology.size() - 1;
+            inserted_net[gate.fanoutNetIndex] = true;
 		}
 		
-		topology.push_back(currentIndex);
-		inverseTopology[currentIndex] = topology.size() - 1;
-		for(size_t i = 0; i < fanoutNet.sinks.size(); i++)
+        // insert gate to the topolgy
+        topology.push_back(current_index);
+        inverseTopology[current_index] = topology.size() - 1;
+
+        // push fanout gates to the process queue
+        for(size_t i = 0; i < fanout_net.sinks.size(); i++)
 		{
-			const int fanoutIndex = fanoutNet.sinks[i].gate;
-			LogicGate & fanout = gates[fanoutIndex];
-			if(!inserted[fanoutIndex])
+            const size_t fanoutIndex = fanout_net.sinks.at(i).gate;
+            const LogicGate & fanout = gates[fanoutIndex];
+            if(!inserted_gate.at(fanoutIndex))
 			{
-				if(++inputsVisiteds[fanoutIndex] == fanout.inNets.size())
+                if(++num_of_visited_inputs[fanoutIndex] == fanout.inNets.size())
 				{
-					q.push(fanoutIndex);
-					inserted[fanoutIndex] = true;
+                    if(fanout.primary_output)
+                        primary_output_queue.push(fanoutIndex);
+                    else
+                        gates_queue.push(fanoutIndex);
+                    inserted_gate[fanoutIndex] = true;
 				}
 			}
 		}
 	}
 
+    while(!primary_output_queue.empty())
+    {
+        const int PO_index = primary_output_queue.front();
+        primary_output_queue.pop();
+        LogicGate & gate = gates.at(PO_index);
+
+        // Insert Input Nets
+        for(size_t i = 0; i < gate.inNets.size(); i++)
+        {
+            if(!inserted_net.at(gate.inNets.at(i)))
+            {
+                netTopology.push_back(gate.inNets.at(i));
+                inverseNetTopology[gate.inNets.at(i)] = netTopology.size() - 1;
+                inserted_net[gate.inNets.at(i)] = true;
+            }
+        }
+        // insert output nets
+        if(!inserted_net.at(gate.fanoutNetIndex))
+        {
+            netTopology.push_back(gate.fanoutNetIndex);
+            inverseNetTopology[gate.fanoutNetIndex] = netTopology.size() - 1;
+            inserted_net[gate.fanoutNetIndex] = true;
+        }
+
+        topology.push_back(PO_index);
+        inverseTopology[PO_index] = topology.size() - 1;
+
+
+    }
+
+    cout << "=== printing net topology ===" << endl;
+    for (size_t i = 0; i < netTopology.size(); ++i) {
+        cout << nets.at(netTopology.at(i)).name << endl;
+    }
+
+    cout << "=== printing nets ===" << endl;
+    for (size_t i = 0; i < nets.size(); ++i) {
+        cout << nets.at(i).name << endl;
+    }
+
+    assert(netTopology.size() == inverseNetTopology.size());
+    assert(topology.size() == inverseTopology.size());
 
 }
 
-const int CircuitNetList::addGate(const string name, const string cellType, const int inputs, const bool isInputDriver, const bool primary_output)
+int CircuitNetList::addGate(const string name, const string cellType, const int inputs, const bool isInputDriver, const bool primary_output)
 {
 	if(gateNameToGateIndex.find(name) != gateNameToGateIndex.end())
 		return gateNameToGateIndex[name];
@@ -77,7 +131,7 @@ const int CircuitNetList::addGate(const string name, const string cellType, cons
 	return gateNameToGateIndex[name];
 }
 
-const int CircuitNetList::addNet(const string name)
+int CircuitNetList::addNet(const string name)
 {
 	if(netNameToNetIndex.find(name) != netNameToNetIndex.end())
 		return netNameToNetIndex[name];
@@ -87,7 +141,7 @@ const int CircuitNetList::addNet(const string name)
 	return netNameToNetIndex[name];
 }
 
-const int CircuitNetList::addNet(const string name, const int sourceNode, const string sourcePin)
+int CircuitNetList::addNet(const string name, const int sourceNode, const string sourcePin)
 {
 	if(netNameToNetIndex.find(name) != netNameToNetIndex.end())
 	{
@@ -169,7 +223,7 @@ const vector<pair<int, string> > CircuitNetList::verilog() const
 {
 	vector<pair<int, string> > verilogVector(_numberOfGates);
 	int j = 0;
-	for(int i = 0; i < gates.size(); i++)
+    for(size_t i = 0; i < gates.size(); i++)
 	{
 		if(gates.at(i).inputDriver || gates.at(i).primary_output )
 			continue;

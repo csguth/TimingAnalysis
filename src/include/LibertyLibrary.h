@@ -122,7 +122,7 @@ public:
   const LibertyCellInfo & getCellInfo(const int & footPrintIndex, const int & optionIndex) const;
 
   const pair<int, int> getCellIndex(const string &cellName) const;
-  const double getMaxTransition() const ;
+  double getMaxTransition() const ;
 
 
 
@@ -139,7 +139,7 @@ protected:
     static const int DEFAULT_DECIMAL_PLACES;
     void round(Transitions<double> & transitions, const int decimal_places);
 public:
-  virtual const double interpolate(const LibertyLookupTable & lut, const double load, const double transition) = 0;
+  virtual double interpolate(const LibertyLookupTable & lut, const double load, const double transition) = 0;
   virtual const Transitions<double> interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness = NEGATIVE_UNATE) = 0;
 
   /* data */
@@ -148,7 +148,7 @@ public:
 class LinearLibertyLookupTableInterpolator : public LibertyLookupTableInterpolator
 {
 public:
-  const double interpolate(const LibertyLookupTable & lut, const double load, const double transition);
+  double interpolate(const LibertyLookupTable & lut, const double load, const double transition);
   const Transitions<double> interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness = NEGATIVE_UNATE);
 
 };

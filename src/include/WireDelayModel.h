@@ -12,20 +12,17 @@ using std::endl;
 class WireDelayModel
 {
 protected:
-	double lumpedCapacitance;
+    double _lumped_capacitance;
 	static LinearLibertyLookupTableInterpolator interpolator;
 
 public:
-	WireDelayModel(const double & lumpedCapacitance) : lumpedCapacitance(lumpedCapacitance){};
-
-	virtual ~WireDelayModel(){};
+    WireDelayModel(const double & lumped_capacitance) : _lumped_capacitance(lumped_capacitance){}
+    virtual ~WireDelayModel(){}
 	virtual const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew) = 0;
 	virtual const Transitions<double> getDelay(const string nodeName) const = 0;
 	virtual const Transitions<double> getSlew(const string nodeName) const = 0;
 	virtual void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) = 0;
-
-
-	const double getLumpedCapacitance() const { return lumpedCapacitance; }
+    double lumped_capacitance() const;
 };
 
 class LumpedCapacitanceWireDelayModel : public WireDelayModel
@@ -33,15 +30,11 @@ class LumpedCapacitanceWireDelayModel : public WireDelayModel
 	Transitions<double> delay;
 	Transitions<double> slew;
 public:
-	LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string rootNode, const bool dummyEdge = false) : WireDelayModel(descriptor.netLumpedCap){
-
-	};
+    LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string root_node, const bool dummy_edge = false) : WireDelayModel(descriptor.netLumpedCap){	}
 	const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
-	const Transitions<double> getDelay(const string nodeName) const;
-	const Transitions<double> getSlew(const string nodeName) const;
-	void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) {
-		lumpedCapacitance += pinCapacitance;
-	}
+    const Transitions<double> getDelay(const string node_name) const;
+    const Transitions<double> getSlew(const string node_name) const;
+    void setFanoutPinCapacitance(const string fanout_name_and_pin, const double pinCapacitance) { _lumped_capacitance += pinCapacitance; }
 };
 
 class RCTreeWireDelayModel : public WireDelayModel

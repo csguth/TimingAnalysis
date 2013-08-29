@@ -70,7 +70,7 @@ const pair<int, int> LibertyLibrary::getCellIndex(const string &cellName) const
 
 
 
-const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable & lut, const double load, const double transition)
+double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable & lut, const double load, const double transition)
 {
 	double wTransition, wLoad, y1, y2, x1, x2;
 	double t[2][2];
@@ -140,7 +140,7 @@ const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLook
  }
 
 
-const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES = 2;
+const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES = 3;
 
  const Transitions<double> LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable & rise_lut, const LibertyLookupTable & fall_lut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness)
  {
@@ -158,8 +158,9 @@ const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES = 2;
         fall_delay = interpolate(fall_lut, load.getFall(), transition.getFall());
         break;
     case NON_UNATE:
-        rise_delay = max(interpolate(rise_lut, load.getRise(), transition.getRise()), interpolate(rise_lut, load.getRise(), transition.getFall()));
-        fall_delay = max(interpolate(fall_lut, load.getFall(), transition.getFall()), interpolate(fall_lut, load.getFall(), transition.getRise()));
+        rise_delay = interpolate(rise_lut, load.getRise(), transition.getFall());
+        fall_delay = interpolate(fall_lut, load.getFall(), transition.getRise());
+
         break;
     }
 
@@ -168,13 +169,14 @@ const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES = 2;
     return result;
  }
 
-const double  LibertyLibrary::getMaxTransition() const
+double LibertyLibrary::getMaxTransition() const
 {
     return maxTransition;
 }
 
 void LibertyLookupTableInterpolator::round(Transitions<double> &transitions, const int decimal_places)
 {
+    return;
     const Transitions<int> truncated = Transitions<int>(int(transitions.getRise() * pow(10, decimal_places)), int(transitions.getFall() * pow(10, decimal_places)));
     transitions = Transitions<double>(truncated.getRise(), truncated.getFall());
     transitions /= pow(10, decimal_places);
