@@ -36,7 +36,7 @@ bool Parser::readLineAsTokens(istream& is, vector<string>& tokens, bool includeS
 
 		string token = "" ;
 
-		for (int i=0; i < line.size(); ++i) {
+        for (size_t i=0; i < line.size(); ++i) {
 			char currChar = line[i] ;
 			bool _isSpecialChar = isSpecialChar(currChar) ;
 
@@ -68,7 +68,7 @@ bool Parser::readLineAsTokens(istream& is, vector<string>& tokens, bool includeS
 			std::getline (is, line) ;
 	}
 
-	//for (int i=0; i < tokens.size(); ++i)
+    //for (size_t i=0; i < tokens.size(); ++i)
 	//  cout << tokens[i] << " " ;
 	//cout << endl ;
 
@@ -127,7 +127,7 @@ const CircuitNetList VerilogParser::readFile(const string filename)
 			vector<std::pair<string, string> > poPins;
 			poPins.push_back(make_pair("i", primaryOutput));
 			poPins.push_back(make_pair("o", primaryOutput + "_PO"));
-			netlist.addCellInst(primaryOutput, PRIMARY_OUTPUT_CELL, poPins);
+			netlist.addCellInst(primaryOutput, PRIMARY_OUTPUT_CELL, poPins, false, false, true);
 		}
 
 	}
@@ -162,7 +162,7 @@ const CircuitNetList VerilogParser::readFile(const string filename)
 		if (valid)
 		{
 			// cout << cellType << " " << cellInst << " ";
-			// for (int i = 0; i < pinNetPairs.size(); ++i)
+            // for (size_t i = 0; i < pinNetPairs.size(); ++i)
 			// {
 			// 	cout << "(" << pinNetPairs[i].first << " " << pinNetPairs[i].second << ") ";
 			// }
@@ -356,7 +356,7 @@ bool VerilogParser::read_cell_inst(string& cellType, string& cellInstName, vecto
 	cellType = tokens[0];
 	cellInstName = tokens[1];
 
-	for (int i = 2; i < tokens.size() - 1; i += 2)
+    for (size_t i = 2; i < tokens.size() - 1; i += 2)
 	{
 
 		assert(tokens[i][0] == '.');
@@ -401,8 +401,8 @@ void LibertyParser::_skip_lut_3D () {
   assert (valid) ;
   assert (tokens.size() == 1 && tokens[0] == "values") ;
   
-  for (int i=0; i < size1; ++i) {
-    for (int j=0; j < size2; ++j) {
+  for (size_t i=0; i < size1; ++i) {
+    for (size_t j=0; j < size2; ++j) {
 
       valid = readLineAsTokens (is, tokens) ;
       assert (valid) ;
@@ -423,7 +423,7 @@ void LibertyParser::_begin_read_lut (LibertyLookupTable& lut) {
   
   int size1 = tokens.size()-1 ;
   lut.loadIndices.resize(size1) ;
-  for (int i=0; i < tokens.size()-1; ++i) {
+  for (size_t i=0; i < tokens.size()-1; ++i) {
     
     lut.loadIndices[i] = std::atof(tokens[i+1].c_str()) ;
   }
@@ -436,7 +436,7 @@ void LibertyParser::_begin_read_lut (LibertyLookupTable& lut) {
 
   int size2 = tokens.size()-1 ;
   lut.transitionIndices.resize(size2) ;
-  for (int i=0; i < tokens.size()-1; ++i) {
+  for (size_t i=0; i < tokens.size()-1; ++i) {
     
     lut.transitionIndices[i] = std::atof(tokens[i+1].c_str()) ;
   }
@@ -446,13 +446,13 @@ void LibertyParser::_begin_read_lut (LibertyLookupTable& lut) {
   assert (tokens.size() == 1 && tokens[0] == "values") ;
 
   lut.tableVals.resize(size1) ;
-  for (int i=0 ; i < lut.loadIndices.size(); ++i) {
+  for (size_t i=0 ; i < lut.loadIndices.size(); ++i) {
     valid = readLineAsTokens (is, tokens) ;
     assert (valid) ;
     assert (tokens.size() == lut.transitionIndices.size()) ;
 
     lut.tableVals[i].resize(size2) ;
-    for (int j=0; j < lut.transitionIndices.size(); ++j) {
+    for (size_t j=0; j < lut.transitionIndices.size(); ++j) {
       lut.tableVals[i][j] = std::atof(tokens[j].c_str()) ;
 
     }
@@ -739,16 +739,16 @@ ostream& operator<< (ostream& os, LibertyLookupTable& lut) {
   assert (lut.tableVals[0].size() == lut.transitionIndices.size()) ;
 
   os << "\t" ;
-  for (int i=0; i < lut.transitionIndices.size(); ++i) {
+  for (size_t i=0; i < lut.transitionIndices.size(); ++i) {
     os << lut.transitionIndices[i] << "\t" ;
   }
   os << endl ;
 
   
-  for (int i=0; i < lut.loadIndices.size(); ++i) {
+  for (size_t i=0; i < lut.loadIndices.size(); ++i) {
     os << lut.loadIndices[i] << "\t" ;
 
-    for (int j=0; j < lut.transitionIndices.size(); ++j)
+    for (size_t j=0; j < lut.transitionIndices.size(); ++j)
       os << lut.tableVals[i][j] << "\t" ;
 
     os << endl ;
@@ -804,12 +804,12 @@ ostream& operator<< (ostream& os, LibertyCellInfo& cell) {
   os << "Dont-touch? " << (cell.dontTouch ? "yes" : "no") << endl ;      
 
   os << "Cell has " << cell.pins.size() << " pins: " << endl ;
-  for (int i=0; i < cell.pins.size(); ++i) {
+  for (size_t i=0; i < cell.pins.size(); ++i) {
     os << cell.pins[i] << endl ;
   }
 
   os << "Cell has " << cell.timingArcs.size() << " timing arcs: " << endl ;
-  for (int i=0; i < cell.timingArcs.size(); ++i) {
+  for (size_t i=0; i < cell.timingArcs.size(); ++i) {
     os << cell.timingArcs[i] << endl ;
   }
 
@@ -990,7 +990,7 @@ bool SpefParserISPD2013::read_net_data(SpefNetISPD2013& spefNet)
 	{
 		if (tokens.size() == 4 && tokens[0] == "*" && tokens[1] == "D_NET")
 		{
-			// for(int i = 0; i < tokens.size(); i++)
+            // for(size_t i = 0; i < tokens.size(); i++)
 			// 	cout << tokens[i] << " ";
 			// cout << endl;
 			spefNet.netName = tokens[2];
@@ -1372,4 +1372,39 @@ const DesignConstraints SDCParser::readFile(const string filename)
 	while (valid);
 	is.close();
 	return constraints;
+}
+
+
+const Prime_Time_Output_Parser::Prime_Time_Output Prime_Time_Output_Parser::parse_prime_time_output_file(const string filename)
+{
+	Prime_Time_Output output;
+	vector<string> tokens;
+	is.open(filename.c_str(), istream::in);
+	bool valid = readLineAsTokens(is, tokens, true);
+	while( valid )
+	{
+		if(tokens.front() != "#" && !tokens.empty())
+		{
+			if(tokens.size() == 9)
+			{
+				output._pins.push_back(Pin_Timing());
+				output._pins.back().pin_name = tokens.at(0) + ":" + tokens.at(2);
+				output._pins.back().slack = Transitions<double>(atof(tokens.at(3).c_str()), atof(tokens.at(4).c_str()));
+				output._pins.back().slew = Transitions<double>(atof(tokens.at(5).c_str()), atof(tokens.at(6).c_str()));
+				output._pins.back().arrival_time = Transitions<double>(atof(tokens.at(7).c_str()), atof(tokens.at(8).c_str()));
+			} else if(tokens.size() == 5)
+			{
+				output._ports.push_back(Port_Timing());
+				output._ports.back().port_name = tokens.at(0);
+				output._ports.back().slack = Transitions<double>(atof(tokens.at(1).c_str()), atof(tokens.at(2).c_str()));
+				output._ports.back().slew = Transitions<double>(atof(tokens.at(3).c_str()), atof(tokens.at(4).c_str()));
+			}
+			else
+				assert(false);
+		}
+		valid = readLineAsTokens(is, tokens, true);
+	}
+
+	is.close();
+	return output;
 }

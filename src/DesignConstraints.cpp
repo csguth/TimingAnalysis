@@ -44,7 +44,7 @@ bool DesignConstraints::setInputTransition(const string inputName, const Transit
 
 
 // public
-const double DesignConstraints::getClock() const
+double DesignConstraints::getClock() const
 {
 	return clock;
 }
@@ -56,7 +56,7 @@ const Transitions<double> DesignConstraints::getOutputDelay(const string outputN
 {
 	return outputDelay.at(outputName);
 }
-const double DesignConstraints::getOutputLoad(const string outputName) const
+double DesignConstraints::getOutputLoad(const string outputName) const
 {
 	return outputLoads.at(outputName);
 }

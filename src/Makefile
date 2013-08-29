@@ -1,6 +1,6 @@
 GXX=g++
 OPTIMIZATION_FLAGS=-g3 -gdwarf-2
-OBJS=main.o CircuitNetList.o SpefNet.o LibertyLibrary.o WireDelayModel.o DesignConstraints.o TimingAnalysis.o Parser.o
+OBJS=main.o CircuitNetList.o SpefNet.o LibertyLibrary.o WireDelayModel.o DesignConstraints.o timer_interface.o TimingAnalysis.o Parser.o
 
 all: include/Transitions.h $(OBJS)
 	$(GXX) $(OPTIMIZATION_FLAGS) -o TimingAnalysis $(OBJS)
@@ -28,6 +28,9 @@ SpefNet.o: SpefNet.cpp
 
 DesignConstraints.o: DesignConstraints.cpp
 	$(GXX) $(OPTIMIZATION_FLAGS) -c -o DesignConstraints.o DesignConstraints.cpp
+
+timer_interface.o: timer_interface.cpp
+	$(GXX) $(OPTIMIZATION_FLAGS) -c -o timer_interface.o timer_interface.cpp	
 
 
 clean:

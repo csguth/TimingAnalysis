@@ -33,10 +33,10 @@ public:
 	bool setDrivingCell(const string inputName, const string drivingCell);
 	bool setInputTransition(const string inputName, const Transitions<double> transition);
 
-	const double getClock() const;
+    double getClock() const;
 	const Transitions<double> getInputDelay(const string inputName) const;
 	const Transitions<double> getOutputDelay(const string outputName) const;
-	const double getOutputLoad(const string outputName) const;
+    double getOutputLoad(const string outputName) const;
 	const string getDrivingCell(const string inputName) const;
 	const Transitions<double> getInputTransition(const string inputName) const;
 	/* data */

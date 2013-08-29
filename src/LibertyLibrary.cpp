@@ -70,7 +70,7 @@ const pair<int, int> LibertyLibrary::getCellIndex(const string &cellName) const
 
 
 
-const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable lut, const double load, const double transition)
+double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable & lut, const double load, const double transition)
 {
 	double wTransition, wLoad, y1, y2, x1, x2;
 	double t[2][2];
@@ -140,15 +140,44 @@ const double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLook
  }
 
 
- const Transitions<double> LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable riseLut, const LibertyLookupTable fallLut, const Transitions<double> load, const Transitions<double> transition)
+const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES = 3;
+
+ const Transitions<double> LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable & rise_lut, const LibertyLookupTable & fall_lut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness)
  {
- 	// NEGATIVE UNATE
- 	const double riseDelay = interpolate(riseLut, load.getRise(), transition.getFall());
- 	const double fallDelay = interpolate(fallLut, load.getFall(), transition.getRise());
- 	return Transitions<double>(riseDelay, fallDelay);
+    Transitions<double> result;
+    double rise_delay, fall_delay;
+    switch(unateness)
+    {
+    case NEGATIVE_UNATE:
+
+        rise_delay = interpolate(rise_lut, load.getRise(), transition.getFall());
+        fall_delay = interpolate(fall_lut, load.getFall(), transition.getRise());
+        break;
+    case POSITIVE_UNATE:
+        rise_delay = interpolate(rise_lut, load.getRise(), transition.getRise());
+        fall_delay = interpolate(fall_lut, load.getFall(), transition.getFall());
+        break;
+    case NON_UNATE:
+        rise_delay = interpolate(rise_lut, load.getRise(), transition.getFall());
+        fall_delay = interpolate(fall_lut, load.getFall(), transition.getRise());
+
+        break;
+    }
+
+    result = Transitions<double>(rise_delay, fall_delay);
+    round(result, DEFAULT_DECIMAL_PLACES);
+    return result;
  }
 
-const double  LibertyLibrary::getMaxTransition() const
+double LibertyLibrary::getMaxTransition() const
 {
-	return maxTransition;
+    return maxTransition;
+}
+
+void LibertyLookupTableInterpolator::round(Transitions<double> &transitions, const int decimal_places)
+{
+    return;
+    const Transitions<int> truncated = Transitions<int>(int(transitions.getRise() * pow(10, decimal_places)), int(transitions.getFall() * pow(10, decimal_places)));
+    transitions = Transitions<double>(truncated.getRise(), truncated.getFall());
+    transitions /= pow(10, decimal_places);
 }

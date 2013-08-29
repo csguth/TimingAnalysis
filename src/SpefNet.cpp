@@ -6,7 +6,7 @@ void SpefNetISPD2013::set(string name, double lumpedCapacitance)
 	this->netLumpedCap = lumpedCapacitance;
 }
 
-const int SpefNetISPD2013::addNode(const string & name)
+int SpefNetISPD2013::addNode(const string & name)
 {
 	if (nodeMap.find(name) != nodeMap.end())
 		return nodeMap.at(name);
@@ -35,13 +35,13 @@ void SpefNetISPD2013::addCapacitor(const string & node, const double & value)
 
 ostream& operator<<(ostream & out, const SpefNetISPD2013 & descriptor)
 {
-	for (int i = 0; i < descriptor.nodes.size(); i++)
+    for (size_t i = 0; i < descriptor.nodes.size(); i++)
 	{
 		const SpefNetISPD2013::Node & node = descriptor.nodes.at(i);
 		out << "node " << node.nodeIndex << " " << node.name << " {" << endl;
 		out << "  capacitance " << node.capacitance << endl;
 		out << "  resistors {" << endl;
-		for (int j = 0; j < node.resistors.size(); j++)
+        for (size_t j = 0; j < node.resistors.size(); j++)
 		{
 			out << "    " << j << " " << descriptor.resistors[node.resistors[j]].value;
 			out << endl;
@@ -53,7 +53,7 @@ ostream& operator<<(ostream & out, const SpefNetISPD2013 & descriptor)
 	return out;
 }
 
-const int SpefNetISPD2013::getNodeIndex(const string & name) const
+int SpefNetISPD2013::getNodeIndex(const string & name) const
 {
 	for (unsigned i = 0; i < nodes.size(); i++)
 	{
