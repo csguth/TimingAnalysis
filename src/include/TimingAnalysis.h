@@ -175,9 +175,7 @@ namespace TimingAnalysis
 
 	class TimingAnalysis
 	{
-        static const Transitions<double> ZERO_TRANSITIONS;
-        static const Transitions<double> MIN_TRANSITIONS;
-        static const Transitions<double> MAX_TRANSITIONS;
+
 
         vector<TimingPoint> _points;
         vector<TimingArc> _arcs;
@@ -253,6 +251,10 @@ namespace TimingAnalysis
         bool validate_with_prime_time();
 
 
+        // CONSTANTS
+        static const Transitions<double> ZERO_TRANSITIONS;
+        static const Transitions<double> MIN_TRANSITIONS;
+        static const Transitions<double> MAX_TRANSITIONS;
 	};
 
 };

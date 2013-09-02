@@ -110,8 +110,6 @@ namespace TimingAnalysis
 
                 _nets.push_back(TimingNet(net.name, &driver_timing_point, delay_model));
 
-                if(_nets.size() == 2)
-                    cout << "&nets[1] = " << &_nets.at(1) << endl;
 				// if(delayModel)
 				// 	cout << "created net " << nets.back().netName << " with lumped capacitance " << driverTp->load() << endl;
                 driver_timing_point._net = &(_nets.back());
@@ -131,8 +129,7 @@ namespace TimingAnalysis
                 const int in_net_topologic_index = netlist.get_net_topologic_index(gate.inNets.at(j));
                 TimingNet * in_net = &_nets.at(in_net_topologic_index);
 
-                if(in_net->_name == "n_885")
-                    cout << endl;
+
 
                 const int in_timing_point_index = timing_point_index.first + j;
                 TimingPoint & fanout_timing_point = _points.at(in_timing_point_index);
@@ -140,8 +137,7 @@ namespace TimingAnalysis
                 in_net->add_fanout(&fanout_timing_point);
                 if(in_net->_wire_delay_model)
                 {
-                    if(in_net->_name == "n_885")
-                        cout << endl;
+
                     const double pin_cap = pin_capacitance(in_timing_point_index);
                     in_net->_wire_delay_model->setFanoutPinCapacitance(fanout_timing_point._name, pin_cap);
                 }
@@ -150,10 +146,6 @@ namespace TimingAnalysis
 		}
         _interpolator = new LinearLibertyLookupTableInterpolator();
 
-        cout << "points address: " << &_points[0] << endl;
-        cout << "arcs address: " << &_arcs[0] << endl;
-        cout << "nets address: " << &_nets[0] << endl;
-        cout << "&nets[1] = " << &_nets.at(1) << endl;
 
 	}
 
@@ -354,8 +346,7 @@ namespace TimingAnalysis
     void TimingAnalysis::update_timing(const int timing_point_index)
 	{
         const TimingPoint & timing_point = _points.at(timing_point_index);
-        if(timing_point._name == "i_rx_phy_fs_ce_reg_u0:o" || timing_point._name == "i_rx_phy_fs_ce_reg_u0:d")
-            cout << endl;
+
 		
         if(timing_point.is_input_pin() || timing_point.is_PI_input() || timing_point.is_reg_input())
 		{	
@@ -609,115 +600,29 @@ namespace TimingAnalysis
 		Prime_Time_Output_Parser prime_time_parser;
 		const Prime_Time_Output_Parser::Prime_Time_Output prime_time_output = prime_time_parser.parse_prime_time_output_file(timing_file);
 
-
-        unsigned first_wrong_node_slack = numeric_limits<unsigned>::max();
-        unsigned first_wrong_node_slew = numeric_limits<unsigned>::max();
-        unsigned first_wrong_node_arrival = numeric_limits<unsigned>::max();
-        bool slack_fail = false;
-        bool slew_fail = false;
-        bool arrival_time_fail = false;
-
-		cout << "pin timing (total = " << prime_time_output.pins_size() << ")" << endl;
 		for(size_t i = 0; i < prime_time_output.pins_size(); i++)
 		{
 			const Prime_Time_Output_Parser::Pin_Timing pin_timing = prime_time_output.pin(i);
-            const TimingPoint & tp = _points.at(_pin_name_to_timing_point_index.at(pin_timing.pin_name));
+            const TimingPoint & timing_point = _points.at(_pin_name_to_timing_point_index.at(pin_timing.pin_name));
 
-            Transitions<double> slack_error(tp._slack-pin_timing.slack);
-            Transitions<double> slew_error(tp._slew-pin_timing.slew);
-            Transitions<double> arrival_time_error(tp._arrival_time-pin_timing.arrival_time);
-
-            slack_error = Transitions<double>(fabs(slack_error.getRise()), fabs(slack_error.getFall()));
-            slew_error = Transitions<double>(fabs(slew_error.getRise()), fabs(slew_error.getFall()));
-            arrival_time_error = Transitions<double>(fabs(arrival_time_error.getRise()), fabs(arrival_time_error.getFall()));
-
-            bool slack_diff = slack_error.getFall() >= Traits::STD_THRESHOLD || slack_error.getRise() >= Traits::STD_THRESHOLD;
-            bool slew_diff = slew_error.getFall() >= Traits::STD_THRESHOLD || slew_error.getRise() >= Traits::STD_THRESHOLD;
-            bool arrival_time_diff = arrival_time_error.getFall() >= Traits::STD_THRESHOLD || arrival_time_error.getRise() >= Traits::STD_THRESHOLD;
-
-            if(slack_diff)
-            {
-                if(_pin_name_to_timing_point_index.at(pin_timing.pin_name) < first_wrong_node_slack)
-                {
-                    first_wrong_node_slack = _pin_name_to_timing_point_index.at(pin_timing.pin_name);
-                    slack_fail = slack_diff;
-                }
-            }
-
-            if(slew_diff)
-            {
-                if(_pin_name_to_timing_point_index.at(pin_timing.pin_name) < first_wrong_node_slew)
-                {
-                    first_wrong_node_slew = _pin_name_to_timing_point_index.at(pin_timing.pin_name);
-                    slew_fail = slew_diff;
-                }
-            }
-
-
-            if(arrival_time_diff)
-            {
-                if(_pin_name_to_timing_point_index.at(pin_timing.pin_name) < first_wrong_node_arrival)
-                {
-                    first_wrong_node_arrival = _pin_name_to_timing_point_index.at(pin_timing.pin_name);
-                    arrival_time_fail = arrival_time_diff;
-                }
-            }
-
-            cout << "pin " << pin_timing.pin_name << " index " << _pin_name_to_timing_point_index.at(pin_timing.pin_name) << endl;
-            cout << "  slack = " << tp._slack << " prime_time_slack = " << pin_timing.slack;
-            if(slack_diff)
-                cout << " error " << slack_error;
-            cout << endl;
-            cout << "  slew = " << tp._slew << " prime_time_slew = " << pin_timing.slew;
-            if(slew_diff)
-                cout << " error " << slew_error;
-            cout << endl;
-            cout << "  arrival_time = " << tp._arrival_time << " prime_time_arrival_time = " << pin_timing.arrival_time;
-            if(arrival_time_diff)
-                cout << " error " << arrival_time_error;
-            cout << endl;
-
-//            assert(fabs(tp.slew.getRise() - pin_timing.slew.getRise()) < Traits::STD_THRESHOLD);
-//            assert(fabs(tp.slew.getFall() - pin_timing.slew.getFall()) < Traits::STD_THRESHOLD);
-//            assert(fabs(tp.arrivalTime.getRise() - pin_timing.arrival_time.getRise()) < Traits::STD_THRESHOLD);
-//            assert(fabs(tp.arrivalTime.getFall() - pin_timing.arrival_time.getFall()) < Traits::STD_THRESHOLD);
+            assert(fabs(timing_point._slack.getRise() - pin_timing.slack.getRise()) < Traits::STD_THRESHOLD);
+            assert(fabs(timing_point._slack.getFall() - pin_timing.slack.getFall()) < Traits::STD_THRESHOLD);
+            assert(fabs(timing_point._slew.getRise() - pin_timing.slew.getRise()) < Traits::STD_THRESHOLD);
+            assert(fabs(timing_point._slew.getFall() - pin_timing.slew.getFall()) < Traits::STD_THRESHOLD);
+            assert(fabs(timing_point._arrival_time.getRise() - pin_timing.arrival_time.getRise()) < Traits::STD_THRESHOLD);
+            assert(fabs(timing_point._arrival_time.getFall() - pin_timing.arrival_time.getFall()) < Traits::STD_THRESHOLD);
 		}
-		cout << "port timing (total = " << prime_time_output.ports_size() << ")" << endl;
-		for(size_t i = 0; i < prime_time_output.ports_size(); i++)
+
+        for(size_t i = 0; i < prime_time_output.ports_size(); i++)
 		{
 			const Prime_Time_Output_Parser::Port_Timing port_timing = prime_time_output.port(i);
-            const TimingPoint & tp = _points.at(_pin_name_to_timing_point_index.at(port_timing.port_name));
+            const TimingPoint & timing_point = _points.at(_pin_name_to_timing_point_index.at(port_timing.port_name));
 
-            cout << "port " << port_timing.port_name << " index " << _pin_name_to_timing_point_index.at(port_timing.port_name) << endl;
-            cout << "  slack = " << tp._slack << " prime_time_slack = " << port_timing.slack << endl;
-            cout << "  slew = " << tp._slew << " prime_time_slew = " << port_timing.slew << endl;
-
-//            assert(fabs(tp.slew.getRise() - port_timing.slew.getRise()) < Traits::STD_THRESHOLD);
-//            assert(fabs(tp.slew.getFall() - port_timing.slew.getFall()) < Traits::STD_THRESHOLD);
+            assert(fabs(timing_point._slack.getRise() - port_timing.slack.getRise()) < Traits::STD_THRESHOLD);
+            assert(fabs(timing_point._slack.getFall() - port_timing.slack.getFall()) < Traits::STD_THRESHOLD);
+            assert(fabs(timing_point._slew.getRise() - port_timing.slew.getRise()) < Traits::STD_THRESHOLD);
+            assert(fabs(timing_point._slew.getFall() - port_timing.slew.getFall()) < Traits::STD_THRESHOLD);
 		}
-
-
-        cout << "#############" << endl;
-        if(first_wrong_node_slack < _points.size())
-        {
-            cout << "slack = " << _points.at(first_wrong_node_slack)._name << endl;
-            cout << "  slack fail = " << slack_fail << endl;
-        }
-        if(first_wrong_node_slew < _points.size())
-        {
-            cout << "slew = " << _points.at(first_wrong_node_slew)._name << endl;
-            cout << "  slew fail = " << slew_fail << endl;
-        }
-        if(first_wrong_node_arrival < _points.size())
-        {
-            cout << "arrival = " << _points.at(first_wrong_node_arrival)._name << endl;
-            cout << "  arrival fail = " << arrival_time_fail << endl;
-        }
-
-        if(first_wrong_node_slack >= _points.size() && first_wrong_node_slew >= _points.size() && first_wrong_node_arrival >= _points.size())
-            cout << "ALL OK" << endl;
-        cout << "###########" << endl;
-
 
         return true;
     }
@@ -736,9 +641,9 @@ namespace TimingAnalysis
 
     void TimingPoint::clear_timing_info()
     {
-        _slack = Transitions<double>(0.0f, 0.0f);
-        _slew = Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());
-        _arrival_time = Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());
+        _slack =  TimingAnalysis::ZERO_TRANSITIONS;
+        _slew = TimingAnalysis::MIN_TRANSITIONS;
+        _arrival_time = TimingAnalysis::MIN_TRANSITIONS;
     }
 
     std::ostream & operator<<(std::ostream &out, const TimingPoint &tp)

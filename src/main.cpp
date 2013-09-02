@@ -73,20 +73,9 @@ int main(int argc, char const *argv[])
         const TimingAnalysis::TimingPoint & tp = ta.timing_point(i);
 		// cout << "tp " << tp.getName() << " gate number = " << tp.getGateNumber() << endl;
 		// cout << "setting gate " << tp.getGateNumber() << " option to 0"<< endl;
-        cout << "tp " << tp.name() << ":: changing gate " << tp.gate_number() << " option to 0";
-        if( !ta.gate_option(tp.gate_number(), 0) )
-            cout << ", but it's a don't touch gate!!";
-        cout << endl;
-
-		
+        ta.gate_option(tp.gate_number(), 0);
 	}
 
-
-    for(size_t i = 0; i < ta.timing_points_size(); i++)
-    {
-        const TimingAnalysis::TimingPoint & tp = ta.timing_point(i);
-        cout << "option vector["<< tp.name() << "] = " << ta.gate_option(tp.gate_number()).option_index << endl;
-    }
 
 
 	ta.fullTimingAnalysis();
@@ -94,8 +83,8 @@ int main(int argc, char const *argv[])
 	
 	ta.validate_with_prime_time();
 
-    ta.print_info();
-    ta.print_circuit_info();
+//    ta.print_info();
+//    ta.print_circuit_info();
 
 	cout << "-- DONE!" << endl;
 

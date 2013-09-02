@@ -14,7 +14,6 @@ void CircuitNetList::updateTopology()
 
 		if(gates[i].inputDriver)
 		{
-            cout << gates.at(i).name << " is a input driver" << endl;
             gates_queue.push(i);
             inserted_gate[i] = true;
 		}
@@ -103,16 +102,6 @@ void CircuitNetList::updateTopology()
         inverseTopology[PO_index] = topology.size() - 1;
 
 
-    }
-
-    cout << "=== printing net topology ===" << endl;
-    for (size_t i = 0; i < netTopology.size(); ++i) {
-        cout << nets.at(netTopology.at(i)).name << endl;
-    }
-
-    cout << "=== printing nets ===" << endl;
-    for (size_t i = 0; i < nets.size(); ++i) {
-        cout << nets.at(i).name << endl;
     }
 
     assert(netTopology.size() == inverseNetTopology.size());

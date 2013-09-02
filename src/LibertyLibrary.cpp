@@ -140,7 +140,7 @@ double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTabl
  }
 
 
-const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES = 3;
+const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES = 2;
 
  const Transitions<double> LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable & rise_lut, const LibertyLookupTable & fall_lut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness)
  {
