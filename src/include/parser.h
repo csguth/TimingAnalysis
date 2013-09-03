@@ -17,13 +17,10 @@ using std::fstream;
 
 #include <cstdlib>
 
-#include "CircuitNetList.h"
-#include "LibertyLibrary.h"
-#include "SpefNet.h"
-#include "DesignConstraints.h"
-
-
-
+#include "circuit_netlist.h"
+#include "liberty_library.h"
+#include "spef_net.h"
+#include "design_constraints.h"
 
 class Parser
 {
@@ -102,7 +99,7 @@ class VerilogParser : public Parser
 	bool read_cell_inst(string& cellType, string& cellInstName, vector<std::pair<string, string> >& pinNetPairs);
 	bool read_assign(pair<string, string> & assignment);
 public:
-	const CircuitNetList readFile(const string filename);
+	const Circuit_Netlist readFile(const string filename);
 	
 
 	virtual ~VerilogParser()
@@ -183,7 +180,7 @@ class SDCParser : public Parser
 	// Return value indicates if the last read was successful or not.
 	bool read_output_load(string& outPortName, double& load);
 public:
-	const DesignConstraints readFile(const string filename);
+	const Design_Constraints readFile(const string filename);
 };
 
 #endif

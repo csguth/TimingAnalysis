@@ -1,4 +1,4 @@
-#include "include/SpefNet.h"
+#include "include/spef_net.h"
 
 void SpefNetISPD2013::set(string name, double lumpedCapacitance)
 {

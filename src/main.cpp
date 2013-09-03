@@ -3,12 +3,12 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-#include "include/TimingAnalysis.h"
-#include "include/Parser.h"
-#include "include/CircuitNetList.h"
-#include "include/SpefNet.h"
+#include "include/timing_analysis.h"
+#include "include/parser.h"
+#include "include/circuit_netlist.h"
+#include "include/spef_net.h"
 
-#include "include/Configuration.h"
+#include "include/configuration.h"
 
 using std::make_pair;
 
@@ -59,18 +59,18 @@ int main(int argc, char const *argv[])
 	ISPDContestFiles files(argv[1], argv[2]);
 	
 
-	const CircuitNetList netlist = vp.readFile(files.verilog);
+	const Circuit_Netlist netlist = vp.readFile(files.verilog);
 	const LibertyLibrary library = lp.readFile(files.liberty);
 	const Parasitics parasitics = sp.readFile(files.spef);
-	const DesignConstraints constraints = dcp.readFile(files.designConstraints);
+	const Design_Constraints constraints = dcp.readFile(files.designConstraints);
 
-	TimingAnalysis::TimingAnalysis ta(netlist, &library, &parasitics, &constraints);
+    Timing_Analysis::Timing_Analysis ta(netlist, &library, &parasitics, &constraints);
 
 
 
     for(size_t i = 0; i < ta.timing_points_size(); i++)
 	{	
-        const TimingAnalysis::TimingPoint & tp = ta.timing_point(i);
+        const Timing_Analysis::Timing_Point & tp = ta.timing_point(i);
 		// cout << "tp " << tp.getName() << " gate number = " << tp.getGateNumber() << endl;
 		// cout << "setting gate " << tp.getGateNumber() << " option to 0"<< endl;
         ta.gate_option(tp.gate_number(), 0);
@@ -78,7 +78,7 @@ int main(int argc, char const *argv[])
 
 
 
-	ta.fullTimingAnalysis();
+    ta.full_timing_analysis();
 
 	
 	ta.validate_with_prime_time();

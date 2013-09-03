@@ -25,11 +25,11 @@ using std::queue;
 
 #include <cassert>
 
-class CircuitNetList
+class Circuit_Netlist
 {
 public:
 
-	struct LogicGate {
+    struct Logic_Gate {
 		string name;
 		string cellType;
 		vector<int> inNets;
@@ -38,7 +38,7 @@ public:
 		bool sequential;
 		bool primary_output;
 
-		LogicGate(const string name, const string cellType, const unsigned inputs, int fanoutNetIndex, const bool inputDriver = false, const bool primary_output = false) :
+        Logic_Gate(const string name, const string cellType, const unsigned inputs, int fanoutNetIndex, const bool inputDriver = false, const bool primary_output = false) :
 			name(name), cellType(cellType), inNets(inputs), fanoutNetIndex(fanoutNetIndex), inputDriver(inputDriver), primary_output(primary_output)
 			{};
 	};
@@ -64,7 +64,7 @@ public:
 	};
 
 private:
-	friend ostream & operator<<( ostream & out, const CircuitNetList netlist) 
+    friend ostream & operator<<( ostream & out, const Circuit_Netlist netlist)
 	{
 		out << "-- NET TOPOLOGY ("<< netlist.nets.size()<< ")" << endl;
 		for(size_t i = 0; i < netlist.nets.size(); i++)
@@ -74,18 +74,18 @@ private:
 			out << "---- gateT["<<i<<" = "<< netlist.topology[i] <<"] " << netlist.gates[netlist.topology[i]] << endl;	
 		return out;
 	}
-	friend ostream & operator<<( ostream & out, const CircuitNetList::Net net)
+    friend ostream & operator<<( ostream & out, const Circuit_Netlist::Net net)
 	{
 		out << net.name << (net.dummyNet? " dummyNet":"") << " from (" << net.sourceNode << ", " << net.sourcePin << ") : ";
         for(size_t i = 0; i < net.sinks.size(); i++)
 			out << net.sinks[i] << " ";
 		return out;
 	}
-	friend ostream & operator<<( ostream & out, const CircuitNetList::Sink sink)
+    friend ostream & operator<<( ostream & out, const Circuit_Netlist::Sink sink)
 	{
 		return out << "("<<sink.gate<<", "<<sink.pinName<<")";
 	}
-	friend ostream & operator<<( ostream & out, const CircuitNetList::LogicGate gate)
+    friend ostream & operator<<( ostream & out, const Circuit_Netlist::Logic_Gate gate)
 	{
 		out << gate.cellType << " " << gate.name << (gate.inputDriver?" inputDriver":"") << endl;
         for(size_t i = 0; i < gate.inNets.size(); i++)
@@ -94,7 +94,7 @@ private:
 	}
 	map<string, int> gateNameToGateIndex;
 	map<string, int> netNameToNetIndex;
-	vector<LogicGate> gates;
+    vector<Logic_Gate> gates;
 	vector<Net> nets;
 
 	vector<int> topology;
@@ -116,14 +116,14 @@ public:
     size_t getNetsSize() const { return nets.size(); }
     size_t getGatesSize() const { return gates.size(); }
     Net & getNet(const size_t & i) { return nets[i]; }
-    LogicGate & getGate(const size_t & i) { return gates[i]; }
-    const LogicGate & getGateT(const size_t & i) const { return gates.at(topology.at(i)); }
+    Logic_Gate & getGate(const size_t & i) { return gates[i]; }
+    const Logic_Gate & getGateT(const size_t & i) const { return gates.at(topology.at(i)); }
     const Net & getNetT(const size_t & i) const { return nets.at(netTopology.at(i)); }
     int getTopologicIndex(const int & i) const { return (i==-1?-1:inverseTopology.at(i)); }
     int get_net_topologic_index(const size_t & i) const { return inverseNetTopology.at(i); }
 	const vector<pair<int, string> > verilog() const;
-    virtual ~CircuitNetList(){}
-    CircuitNetList():_numberOfGates(0){}
+    virtual ~Circuit_Netlist(){}
+    Circuit_Netlist():_numberOfGates(0){}
 };
 
 #endif

@@ -1,4 +1,4 @@
-#include "include/LibertyLibrary.h"
+#include "include/liberty_library.h"
 
 
 LibertyLibrary::LibertyLibrary(const double maxTransition) : maxTransition(maxTransition)

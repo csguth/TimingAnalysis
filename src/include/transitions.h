@@ -58,9 +58,9 @@ public:
 	T &operator[]( const EdgeType edgeType ) {return clsValue[edgeType];}
 	T  operator[]( const EdgeType edgeType ) const {return clsValue[edgeType];}
 
-	Transitions &operator=(const Transitions &array) {
-		clsValue[RISE] = array[RISE];
-		clsValue[FALL] = array[FALL];
+    Transitions &operator=(const Transitions & array) {
+        clsValue[RISE] = array[RISE];
+        clsValue[FALL] = array[FALL];
 		return *this;
 	} // end operator
 

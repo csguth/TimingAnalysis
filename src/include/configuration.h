@@ -1,8 +1,8 @@
 #ifndef CONFIGURATION_H_
 #define CONFIGURATION_H_
 
-#include "SpefNet.h"
-#include "Parser.h"
+#include "spef_net.h"
+#include "parser.h"
 
 #include <string>
 using std::string;

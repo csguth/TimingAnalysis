@@ -22,7 +22,7 @@ using std::ostream;
 
 #include <cassert>
 
-#include "Transitions.h"
+#include "transitions.h"
 
 // Look up table to store delay or slew functions
 struct LibertyLookupTable {

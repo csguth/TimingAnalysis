@@ -5,9 +5,9 @@
 using std::cout;
 using std::endl;
 
-#include "SpefNet.h"
-#include "LibertyLibrary.h"
-#include "Configuration.h"
+#include "spef_net.h"
+#include "liberty_library.h"
+#include "configuration.h"
 
 class WireDelayModel
 {

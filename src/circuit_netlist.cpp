@@ -1,7 +1,7 @@
-#include "include/CircuitNetList.h"
+#include "include/circuit_netlist.h"
 
 // CIRCUIT NETLIST
-void CircuitNetList::updateTopology()
+void Circuit_Netlist::updateTopology()
 {
     vector<size_t> num_of_visited_inputs(gates.size(), 0);
     vector<bool> inserted_gate(gates.size(), false);
@@ -30,7 +30,7 @@ void CircuitNetList::updateTopology()
         const int current_index = gates_queue.front();
         gates_queue.pop();
 
-        const LogicGate & gate = gates.at(current_index);
+        const Logic_Gate & gate = gates.at(current_index);
         const Net & fanout_net = nets.at(gate.fanoutNetIndex);
 
         // insert input nets to the nets topology
@@ -59,7 +59,7 @@ void CircuitNetList::updateTopology()
         for(size_t i = 0; i < fanout_net.sinks.size(); i++)
 		{
             const size_t fanoutIndex = fanout_net.sinks.at(i).gate;
-            const LogicGate & fanout = gates[fanoutIndex];
+            const Logic_Gate & fanout = gates[fanoutIndex];
             if(!inserted_gate.at(fanoutIndex))
 			{
                 if(++num_of_visited_inputs[fanoutIndex] == fanout.inNets.size())
@@ -78,7 +78,7 @@ void CircuitNetList::updateTopology()
     {
         const int PO_index = primary_output_queue.front();
         primary_output_queue.pop();
-        LogicGate & gate = gates.at(PO_index);
+        Logic_Gate & gate = gates.at(PO_index);
 
         // Insert Input Nets
         for(size_t i = 0; i < gate.inNets.size(); i++)
@@ -109,18 +109,18 @@ void CircuitNetList::updateTopology()
 
 }
 
-int CircuitNetList::addGate(const string name, const string cellType, const int inputs, const bool isInputDriver, const bool primary_output)
+int Circuit_Netlist::addGate(const string name, const string cellType, const int inputs, const bool isInputDriver, const bool primary_output)
 {
 	if(gateNameToGateIndex.find(name) != gateNameToGateIndex.end())
 		return gateNameToGateIndex[name];
 
 	//const string name, const string cellType, const unsigned inputs, int fanoutNetIndex
-	gates.push_back(LogicGate(name, cellType, inputs, -1, isInputDriver, primary_output));
+	gates.push_back(Logic_Gate(name, cellType, inputs, -1, isInputDriver, primary_output));
 	gateNameToGateIndex[name] = gates.size() - 1;
 	return gateNameToGateIndex[name];
 }
 
-int CircuitNetList::addNet(const string name)
+int Circuit_Netlist::addNet(const string name)
 {
 	if(netNameToNetIndex.find(name) != netNameToNetIndex.end())
 		return netNameToNetIndex[name];
@@ -130,7 +130,7 @@ int CircuitNetList::addNet(const string name)
 	return netNameToNetIndex[name];
 }
 
-int CircuitNetList::addNet(const string name, const int sourceNode, const string sourcePin)
+int Circuit_Netlist::addNet(const string name, const int sourceNode, const string sourcePin)
 {
 	if(netNameToNetIndex.find(name) != netNameToNetIndex.end())
 	{
@@ -150,7 +150,7 @@ int CircuitNetList::addNet(const string name, const int sourceNode, const string
 	return netNameToNetIndex[name];
 }
 
-void CircuitNetList::addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential, const bool isInputDriver, const bool primary_output)
+void Circuit_Netlist::addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential, const bool isInputDriver, const bool primary_output)
 {
 	const string outputPin = inputPinPairs.back().first;
 	const string fanoutNetName = inputPinPairs.back().second;
@@ -159,7 +159,7 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 	{
 		const int gateIndex = addGate(name, cellType, inputPinPairs.size() - 1);
 		const int netIndex = addNet(name + "_PO", gateIndex, outputPin);
-		LogicGate & gate = gates[gateIndex];
+		Logic_Gate & gate = gates[gateIndex];
 		gate.fanoutNetIndex = netIndex;
 		gate.sequential = isSequential;
 		for(size_t i = 0; i < inputPinPairs.size() - 1 ; i++)
@@ -175,7 +175,7 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 		inputPinPairs.front().second += "_PI";
 		const int sequentialCellGateIndex = addGate(name + "_PI", cellType, inputPinPairs.size() - 1, true);
 		const int sequentialCellGatePINetIndex = addNet(fanoutNetName, sequentialCellGateIndex, outputPin);
-		LogicGate & sequentialGate = gates[sequentialCellGateIndex];
+		Logic_Gate & sequentialGate = gates[sequentialCellGateIndex];
 		sequentialGate.fanoutNetIndex = sequentialCellGatePINetIndex;
 		sequentialGate.sequential = isSequential;
 		for(size_t i = 0; i < inputPinPairs.size() - 1 ; i++)
@@ -190,7 +190,7 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 	{
 		const int gateIndex = addGate(name, cellType, inputPinPairs.size() - 1, isInputDriver, primary_output);
 		const int netIndex = addNet(fanoutNetName, gateIndex, outputPin);
-		LogicGate & gate = gates[gateIndex];
+		Logic_Gate & gate = gates[gateIndex];
 		Net & net = nets[netIndex];
 		if(net.sourceNode == -1)
 			net.sourceNode = gateIndex;
@@ -208,7 +208,7 @@ void CircuitNetList::addCellInst(const string name, const string cellType, vecto
 		_numberOfGates++;
 }
 
-const vector<pair<int, string> > CircuitNetList::verilog() const 
+const vector<pair<int, string> > Circuit_Netlist::verilog() const 
 {
 	vector<pair<int, string> > verilogVector(_numberOfGates);
 	int j = 0;

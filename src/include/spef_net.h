@@ -26,7 +26,7 @@ using std::endl;
 #include <queue>
 using std::queue;
 
-#include "Transitions.h"
+#include "transitions.h"
 
 class SpefNetISPD2012
 {

@@ -1,4 +1,4 @@
-#include "include/WireDelayModel.h"
+#include "include/wire_delay_model.h"
 LinearLibertyLookupTableInterpolator WireDelayModel::interpolator;
 
 const Transitions<double> LumpedCapacitanceWireDelayModel::simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew)

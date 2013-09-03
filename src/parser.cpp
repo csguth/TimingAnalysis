@@ -1,4 +1,4 @@
-#include "include/Parser.h"
+#include "include/parser.h"
 
 Parser::Parser()
 {
@@ -82,14 +82,14 @@ const string VerilogParser::INPUT_DRIVER_CELL = "in01f80";
 const string VerilogParser::PRIMARY_OUTPUT_CELL = "__PO__";
 const string VerilogParser::CLOCK_NET = "ispd_clk";
 
-const CircuitNetList VerilogParser::readFile(const string filename)
+const Circuit_Netlist VerilogParser::readFile(const string filename)
 {
 	is.open(filename.c_str(), fstream::in);
 	string moduleName;
 	bool valid = read_module(moduleName);
 	assert(valid);
 
-	CircuitNetList netlist;
+	Circuit_Netlist netlist;
 
 	// cout << "Module " << moduleName << endl << endl;
 
@@ -1287,7 +1287,7 @@ bool SDCParser::read_output_load(string& outPortName, double& load)
 	return valid;
 }
 
-const DesignConstraints SDCParser::readFile(const string filename)
+const Design_Constraints SDCParser::readFile(const string filename)
 {
 	is.open(filename.c_str(), fstream::in);
 	string clockName;
@@ -1298,8 +1298,8 @@ const DesignConstraints SDCParser::readFile(const string filename)
 	assert(valid);
 	// cout << "Clock " << clockName << " connected to port " << clockPort << " has period " << period << endl;
 
-	DesignConstraints constraints;
-	constraints.setClock(period);
+	Design_Constraints constraints;
+	constraints.clock(period);
 
 	do
 	{
@@ -1311,7 +1311,7 @@ const DesignConstraints SDCParser::readFile(const string filename)
 		if (valid)
 		{
 						// cout << "Input port " << portName << " has delay " << delay << endl;
-			constraints.setInputDelay(portName, Transitions<double>(delay,delay));
+			constraints.input_delay(portName, Transitions<double>(delay,delay));
 		}
 
 	}
@@ -1332,8 +1332,8 @@ const DesignConstraints SDCParser::readFile(const string filename)
 						// cout << "Input port " << portName << " is assumed to be connected to the " << driverPin << " pin of lib cell " << driverSize << endl;
 						// cout << "This virtual driver is assumed to have input transitions: " << inputTransitionFall << " (fall) and " << inputTransitionRise << " (rise)" << endl;
 
-			constraints.setDrivingCell(portName, driverSize);
-			constraints.setInputTransition(portName, Transitions<double>(inputTransitionRise, inputTransitionFall));
+			constraints.driving_cell(portName, driverSize);
+			constraints.input_transition(portName, Transitions<double>(inputTransitionRise, inputTransitionFall));
 		}
 
 	}
@@ -1349,7 +1349,7 @@ const DesignConstraints SDCParser::readFile(const string filename)
 		if (valid)
 		{
 						// cout << "Output port " << portName << " has delay " << delay << endl;
-			constraints.setOutputDelay(portName, Transitions<double>(delay,delay));
+            constraints.output_delay(portName, Transitions<double>(delay,delay));
 		}
 
 	}
@@ -1365,7 +1365,7 @@ const DesignConstraints SDCParser::readFile(const string filename)
 		if (valid)
 		{
 						// cout << "Output port " << portName << " has load " << load << endl;
-			constraints.setOutputLoad(portName, load);
+			constraints.output_load(portName, load);
 		}
 
 	}
