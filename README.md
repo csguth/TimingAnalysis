@@ -17,11 +17,11 @@ Code Style
 * .....return local_var;
 * }
 
-..... is a <TAB>
+..... is a \<TAB\>
 
 To run
 --------------
-./RunTimer <BENCHMARK> <2012 or 2013>
+./RunTimer \<BENCHMARK\> \<2012 or 2013\>
 
 
 
