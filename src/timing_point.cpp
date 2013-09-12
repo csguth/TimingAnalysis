@@ -13,6 +13,11 @@ namespace Timing_Analysis {
         return _net->_wire_delay_model->lumped_capacitance();
     }
 
+    Transitions<double> Timing_Point::ceff() const
+    {
+        return _ceff;
+    }
+
     const Transitions<double> Timing_Point::update_slack(const Transitions<double> required_time)
     {
         _slack = required_time - _arrival_time;
@@ -21,9 +26,9 @@ namespace Timing_Analysis {
 
     void Timing_Point::clear_timing_info()
     {
-        _slack =  Timing_Analysis::ZERO_TRANSITIONS;
-        _slew = Timing_Analysis::ZERO_TRANSITIONS;
-        _arrival_time = Timing_Analysis::ZERO_TRANSITIONS;
+        _slack =  numeric_limits<Transitions<double> >::zero();
+        _slew = numeric_limits<Transitions<double> >::zero();
+        _arrival_time = numeric_limits<Transitions<double> >::zero();
     }
 
     std::ostream & operator<<(std::ostream &out, const Timing_Point &tp)

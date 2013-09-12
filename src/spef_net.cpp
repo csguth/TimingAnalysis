@@ -3,9 +3,8 @@
 void SpefNetISPD2013::set(string name, double lumpedCapacitance)
 {
 	this->netName = name;
-	this->netLumpedCap = lumpedCapacitance;
+    this->netLumpedCap = lumpedCapacitance;
 }
-
 int SpefNetISPD2013::addNode(const string & name)
 {
 	if (nodeMap.find(name) != nodeMap.end())

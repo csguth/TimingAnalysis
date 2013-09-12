@@ -19,6 +19,9 @@ using std::pair;
 #include <fstream>
 using std::fstream;
 
+#include <stack>
+using std::stack;
+
 #include <cstdlib>
 
 #include "timer_interface.h"
@@ -84,9 +87,12 @@ namespace Timing_Analysis
         Transitions<double> _slew_violations;
         Transitions<double> _capacitance_violations;
 
+        map<string, Transitions<double> > _max_ceff;
+        map<string, Transitions<double> > _min_ceff;
+
         // PRIVATE GETTERS
-        const LibertyCellInfo & option(const int node_index) const;
-        const Transitions<double> calculate_gate_delay(const int gate_index, const int input_number, const Transitions<double> transition, const Transitions<double> ceff);
+        const LibertyCellInfo & liberty_cell_info(const int node_index) const;
+        const Transitions<double> calculate_timing_arc_delay(const Timing_Arc & timing_arc, const Transitions<double> transition, const Transitions<double> ceff);
 
         // STATIC TIMING ANALYSIS
         void update_timing(const int timing_point_index);
@@ -107,8 +113,12 @@ namespace Timing_Analysis
 	public:
         Timing_Analysis(const Circuit_Netlist & netlist, const LibertyLibrary * lib, const Parasitics * _parasitics, const Design_Constraints * sdc);
         virtual ~Timing_Analysis();
-        void full_timing_analysis();
 
+
+        //
+
+        void call_prime_time();
+        void full_timing_analysis();
 
 		// GETTERS
         size_t timing_points_size() { return _points.size(); }
@@ -122,24 +132,18 @@ namespace Timing_Analysis
 
         double pin_capacitance(const int timing_point_index) const;
         double pin_load(const int timing_point_index) const;
-
-        int option_number(const int gate_number);
+        int option(const int gate_number);
 
 		// SETTERS
-        bool gate_option(const int gate_index, const int option_number);
-
-
-        void print_info();
-        void print_circuit_info();
+        bool option(const int gate_index, const int option);
 
         // DEBUG
         bool validate_with_prime_time();
+        void print_info();
+        void print_circuit_info();
+        void report_timing();
 
 
-        // CONSTANTS
-        static const Transitions<double> ZERO_TRANSITIONS;
-        static const Transitions<double> MIN_TRANSITIONS;
-        static const Transitions<double> MAX_TRANSITIONS;
 	};
 
 };

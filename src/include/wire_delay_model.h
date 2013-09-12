@@ -9,6 +9,8 @@ using std::endl;
 #include "liberty_library.h"
 #include "configuration.h"
 
+#include <cassert>
+
 class WireDelayModel
 {
 protected:
@@ -18,24 +20,35 @@ protected:
 public:
     WireDelayModel(const double & lumped_capacitance) : _lumped_capacitance(lumped_capacitance){}
     virtual ~WireDelayModel(){}
-	virtual const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew) = 0;
-	virtual const Transitions<double> getDelay(const string nodeName) const = 0;
-	virtual const Transitions<double> getSlew(const string nodeName) const = 0;
+    virtual const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver) = 0;
+    virtual const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const = 0;
+    virtual const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const = 0;
 	virtual void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) = 0;
+
+
+    virtual Transitions<double> root_delay(int arc_number) = 0;
+    virtual Transitions<double> root_slew(int arc_number) = 0;
+    virtual void clear() = 0;
 
     double lumped_capacitance() const;
 };
 
 class LumpedCapacitanceWireDelayModel : public WireDelayModel
 {
-	Transitions<double> delay;
-	Transitions<double> slew;
+    Transitions<double> _delay;
+    Transitions<double> _slew;
 public:
     LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string root_node, const bool dummy_edge = false) : WireDelayModel(descriptor.netLumpedCap){	}
-	const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
-    const Transitions<double> getDelay(const string node_name) const;
-    const Transitions<double> getSlew(const string node_name) const;
+    const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> _slew, bool is_input_driver);
+    const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const;
+    const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const;
     void setFanoutPinCapacitance(const string fanout_name_and_pin, const double pinCapacitance) { _lumped_capacitance += pinCapacitance; }
+
+
+    Transitions<double> root_delay(int arc_number);
+    Transitions<double> root_slew(int arc_number);
+    void clear();
+
 };
 
 class RCTreeWireDelayModel : public WireDelayModel
@@ -43,16 +56,16 @@ class RCTreeWireDelayModel : public WireDelayModel
 	struct Node
 	{
 		int parent;
-		double nodeCapacitance;
-		double totalCapacitance;
+        Transitions<double> nodeCapacitance;
+        Transitions<double> totalCapacitance;
 		Transitions<double> effectiveCapacitance;
-		double resistance;
+        Transitions<double> resistance;
 		Transitions<double> slew;
 		Transitions<double> delay;
 		bool sink;
 		static vector<string> nodesNames;
 		Node() :
-				parent(-1), nodeCapacitance(0.0f), totalCapacitance(0.0f), effectiveCapacitance(0.0f, 0.0f), resistance(0.0f), slew(0.0f, 0.0f), delay(0.0f, 0.0f), sink(false)
+            parent(-1), nodeCapacitance(numeric_limits<Transitions<double> >::zero()), totalCapacitance(numeric_limits<Transitions<double> >::zero()), effectiveCapacitance(numeric_limits<Transitions<double> >::zero()), resistance(numeric_limits<Transitions<double> >::zero()), slew(numeric_limits<Transitions<double> >::zero()), delay(numeric_limits<Transitions<double> >::zero()), sink(false)
 		{
 		}
 		;
@@ -70,26 +83,34 @@ class RCTreeWireDelayModel : public WireDelayModel
 	};
 
 
-	void updateSlews(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
+    void updateSlews(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
 	void updateEffectiveCapacitances();
 	void updateDownstreamCapacitances();
 	void initializeEffectiveCapacitances();
 
 	vector<Node> nodes;
 	vector<string> nodesNames;
-	vector<Transitions<double> > _slews;
-	vector<Transitions<double> > _delays;
+    vector<vector<Transitions<double> > >_slews;
+    vector<vector<Transitions<double> > >_delays;
+
+
+    vector<Transitions<double> > _max_delays;
+    vector<Transitions<double> > _max_slews;
 	map<std::string, int> fanoutNameToNodeNumber;
 
 
 public:
-	RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const string rootNode, const bool dummyEdge = false);
-	const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew);
-	const Transitions<double> getDelay(const string nodeName) const;
-	const Transitions<double> getSlew(const string nodeName) const;
+    RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false);
+    const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
+    const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const;
+    const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const;
 	void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance);
-};
 
+
+    Transitions<double> root_delay(int arc_number);
+    Transitions<double> root_slew(int arc_number);
+    void clear();
+};
 
 
 #endif

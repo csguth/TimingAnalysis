@@ -116,7 +116,15 @@ int Circuit_Netlist::addGate(const string name, const string cellType, const int
 
 	//const string name, const string cellType, const unsigned inputs, int fanoutNetIndex
 	gates.push_back(Logic_Gate(name, cellType, inputs, -1, isInputDriver, primary_output));
+//    _timing_points++;
+//    if(cellType != "__PO__" || (gates.back().sequential && !gates.back().inputDriver))
+//    {
+//        _timing_points += gates.back().inNets.size();
+//        _timing_arcs += inputs;
+//    }
+
 	gateNameToGateIndex[name] = gates.size() - 1;
+
 	return gateNameToGateIndex[name];
 }
 
@@ -185,6 +193,7 @@ void Circuit_Netlist::addCellInst(const string name, const string cellType, vect
 			faninNet.addSink(Sink(sequentialCellGateIndex, inputPinPairs[i].first));
 			sequentialGate.inNets[i] = faninNetIndex;
 		}
+
 	}
 	else
 	{
@@ -203,9 +212,13 @@ void Circuit_Netlist::addCellInst(const string name, const string cellType, vect
 			gate.inNets[i] = faninNetIndex;
 		}
 		gate.sequential = isSequential;
+
 	}
 	if( !primary_output && !isInputDriver )
 		_numberOfGates++;
+
+
+
 }
 
 const vector<pair<int, string> > Circuit_Netlist::verilog() const 
@@ -219,5 +232,15 @@ const vector<pair<int, string> > Circuit_Netlist::verilog() const
 		const pair<int, string> indexAndName = make_pair(inverseTopology.at(i), gates.at(i).name);
 		verilogVector[j++] = indexAndName;
 	}
-	return verilogVector;
+    return verilogVector;
+}
+
+int Circuit_Netlist::timing_arcs() const
+{
+    return _timing_arcs;
+}
+
+int Circuit_Netlist::timing_points() const
+{
+    return _timing_points;
 }

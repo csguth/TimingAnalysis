@@ -103,27 +103,40 @@ private:
 	vector<int> inverseTopology;
 	vector<int> inverseNetTopology;
 
-	int _numberOfGates;
 
+
+
+	int _numberOfGates;
+    int _timing_arcs;
+    int _timing_points;
 
     int addGate(const string name, const string cellType, const int inputs, const bool isInputDriver = false, const bool primary_output = false);
     int addNet(const string name, const int sourceNode, const string sourcePin);
     int addNet(const string name);
 public:
+    Circuit_Netlist():_numberOfGates(0), _timing_arcs(0), _timing_points(0){}
+    virtual ~Circuit_Netlist(){}
+
 	void addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential = false, const bool isInputDriver = false, const bool primary_output = false);
 	void updateTopology();
 
     size_t getNetsSize() const { return nets.size(); }
-    size_t getGatesSize() const { return gates.size(); }
     Net & getNet(const size_t & i) { return nets[i]; }
-    Logic_Gate & getGate(const size_t & i) { return gates[i]; }
     const Logic_Gate & getGateT(const size_t & i) const { return gates.at(topology.at(i)); }
-    const Net & getNetT(const size_t & i) const { return nets.at(netTopology.at(i)); }
     int getTopologicIndex(const int & i) const { return (i==-1?-1:inverseTopology.at(i)); }
+
+    size_t getGatesSize() const { return gates.size(); }
+    Logic_Gate & getGate(const size_t & i) { return gates[i]; }
+    const Net & getNetT(const size_t & i) const { return nets.at(netTopology.at(i)); }
     int get_net_topologic_index(const size_t & i) const { return inverseNetTopology.at(i); }
+
 	const vector<pair<int, string> > verilog() const;
-    virtual ~Circuit_Netlist(){}
-    Circuit_Netlist():_numberOfGates(0){}
+
+    int timing_arcs() const;
+    int timing_points() const;
+
+
+
 };
 
 #endif

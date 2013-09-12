@@ -28,6 +28,8 @@ using std::queue;
 
 #include "transitions.h"
 
+#include <cassert>
+
 class SpefNetISPD2012
 {
 public:
@@ -86,6 +88,9 @@ public:
 	void set(string name, double lumpedCapacitance);
 	string netName;
 	double netLumpedCap;
+
+
+
 
 };
 

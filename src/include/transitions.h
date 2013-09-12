@@ -11,6 +11,8 @@ using std::ostream;
 
 #include <cmath>
 
+#include <limits>
+using std::numeric_limits;
 
 #define MAKE_SELF_OPERATOR( OP ) \
 friend void operator OP ( Transitions<T> &v0, const Transitions<T> v1 ) { v0[RISE] OP v1[RISE], v0[FALL] OP v1[FALL]; } \
@@ -87,6 +89,24 @@ public:
 
 	T aggregate() const { return clsValue[RISE] + clsValue[FALL]; }
 }; // end class
+
+
+
+
+namespace std {
+    template<>
+    class numeric_limits<Transitions<double> > {
+    public:
+        static Transitions<double> min(){return Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());}
+        static Transitions<double> max(){return Transitions<double>(numeric_limits<double>::max(), numeric_limits<double>::max());}
+        static Transitions<double> zero(){return Transitions<double>(0.0f, 0.0f);}
+    };
+}
+
+Transitions<double> fabs(Transitions<double> x)
+{
+    return Transitions<double>(fabs(x.getRise()), fabs(x.getFall()));
+}
 
 #endif
 

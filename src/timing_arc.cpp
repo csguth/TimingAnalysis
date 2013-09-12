@@ -8,4 +8,10 @@ namespace Timing_Analysis
         return out << ta.from()->name() << " -> " << ta.to().name();
     }
 
+    void Timing_Arc::clear()
+    {
+        _delay = numeric_limits<Transitions<double> >::zero();
+        _slew = numeric_limits<Transitions<double> >::zero();
+    }
+
 }

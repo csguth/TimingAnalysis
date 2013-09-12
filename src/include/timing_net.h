@@ -26,7 +26,8 @@ namespace Timing_Analysis {
         friend ostream & operator<<(ostream & out, const Timing_Net & tn);
 
 
-        WireDelayModel * wire_delay_model() {return _wire_delay_model;}
+
+       WireDelayModel * wire_delay_model() {return _wire_delay_model;}
     };
 }
 

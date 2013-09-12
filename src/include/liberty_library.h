@@ -140,7 +140,7 @@ protected:
     void round(Transitions<double> & transitions, const int decimal_places);
 public:
   virtual double interpolate(const LibertyLookupTable & lut, const double load, const double transition) = 0;
-  virtual const Transitions<double> interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness = NEGATIVE_UNATE) = 0;
+  virtual const Transitions<double> interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness = NEGATIVE_UNATE, bool is_input_driver = false) = 0;
 
   /* data */
 };
@@ -149,7 +149,7 @@ class LinearLibertyLookupTableInterpolator : public LibertyLookupTableInterpolat
 {
 public:
   double interpolate(const LibertyLookupTable & lut, const double load, const double transition);
-  const Transitions<double> interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness = NEGATIVE_UNATE);
+  const Transitions<double> interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness = NEGATIVE_UNATE, bool is_input_driver = false);
 
 };
 

@@ -1399,7 +1399,10 @@ const Prime_Time_Output_Parser::Prime_Time_Output Prime_Time_Output_Parser::pars
 				output._ports.back().slack = Transitions<double>(atof(tokens.at(1).c_str()), atof(tokens.at(2).c_str()));
 				output._ports.back().slew = Transitions<double>(atof(tokens.at(3).c_str()), atof(tokens.at(4).c_str()));
 			}
-			else
+            else if(tokens.size() == 7)
+            {
+            }
+            else
 				assert(false);
 		}
 		valid = readLineAsTokens(is, tokens, true);

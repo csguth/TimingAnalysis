@@ -142,7 +142,7 @@ double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTabl
 
 const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES = 2;
 
- const Transitions<double> LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable & rise_lut, const LibertyLookupTable & fall_lut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness)
+ const Transitions<double> LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable & rise_lut, const LibertyLookupTable & fall_lut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness, bool is_input_driver)
  {
     Transitions<double> result;
     double rise_delay, fall_delay;
@@ -152,14 +152,20 @@ const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES = 2;
 
         rise_delay = interpolate(rise_lut, load.getRise(), transition.getFall());
         fall_delay = interpolate(fall_lut, load.getFall(), transition.getRise());
+
+        if(is_input_driver)
+        {
+            rise_delay -= interpolate(rise_lut, 0.0f, transition.getFall());
+            fall_delay -= interpolate(rise_lut, 0.0f, transition.getRise());
+        }
         break;
     case POSITIVE_UNATE:
         rise_delay = interpolate(rise_lut, load.getRise(), transition.getRise());
         fall_delay = interpolate(fall_lut, load.getFall(), transition.getFall());
         break;
     case NON_UNATE:
-        rise_delay = interpolate(rise_lut, load.getRise(), transition.getFall());
-        fall_delay = interpolate(fall_lut, load.getFall(), transition.getRise());
+        rise_delay = max(interpolate(rise_lut, load.getRise(), transition.getFall()), interpolate(rise_lut, load.getRise(), transition.getRise()));
+        fall_delay = max(interpolate(fall_lut, load.getFall(), transition.getRise()), interpolate(fall_lut, load.getFall(), transition.getFall()));
 
         break;
     }

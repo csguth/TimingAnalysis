@@ -22,6 +22,9 @@ namespace Timing_Analysis
         virtual ~Timing_Arc(){}
 
 
+        void clear();
+
+
         // GETTERS
         Transitions<double> delay() const { return _delay; }
         Transitions<double> slew() const { return _slew; }
@@ -31,6 +34,8 @@ namespace Timing_Analysis
 
         int arc_number() const { return _arc_number; }
         int gate_number() const { return _gate_number; }
+
+
 
 
         friend ostream & operator<<(ostream & out, const Timing_Arc & ta);

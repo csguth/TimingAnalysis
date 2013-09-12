@@ -27,6 +27,8 @@ namespace Timing_Analysis {
         size_t _gate_number;
         Timing_Point_Type _type;
 
+        Transitions<double> _ceff;
+
 
 
 
@@ -36,6 +38,7 @@ namespace Timing_Analysis {
 
         // GETTERS
         double load() const;
+        Transitions<double> ceff() const;
         const string name() const { return _name; }
         int gate_number() const  { return _gate_number; }
 
@@ -47,6 +50,7 @@ namespace Timing_Analysis {
         Timing_Arc & arc () const { return *_arc; }
 
 
+        void ceff(Transitions<double> & ceff) { _ceff = ceff; }
         void slack(const Transitions<double> & slack ) { _slack = slack; }
         void slew(const Transitions<double> & slew ) { _slew = slew; }
         void arrival_time(const Transitions<double> & arrival_time ) { _arrival_time = arrival_time; }

@@ -68,22 +68,24 @@ int main(int argc, char const *argv[])
 
 
 
-    for(size_t i = 0; i < ta.timing_points_size(); i++)
-	{	
-        const Timing_Analysis::Timing_Point & tp = ta.timing_point(i);
-		// cout << "tp " << tp.getName() << " gate number = " << tp.getGateNumber() << endl;
-		// cout << "setting gate " << tp.getGateNumber() << " option to 0"<< endl;
-        ta.gate_option(tp.gate_number(), 0);
-	}
+//    for(size_t i = 0; i < ta.timing_points_size(); i++)
+//	{
+//        const Timing_Analysis::Timing_Point & tp = ta.timing_point(i);
+//		// cout << "tp " << tp.getName() << " gate number = " << tp.getGateNumber() << endl;
+//		// cout << "setting gate " << tp.getGateNumber() << " option to 0"<< endl;
+//        ta.option(tp.gate_number(), 0);
+//	}
 
 
 
     ta.full_timing_analysis();
+//    ta.report_timing();
+    ta.print_info();
 
+//    ta.call_prime_time();
 	
-	ta.validate_with_prime_time();
+    ta.validate_with_prime_time();
 
-//    ta.print_info();
 //    ta.print_circuit_info();
 
 	cout << "-- DONE!" << endl;
