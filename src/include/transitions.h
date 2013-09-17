@@ -103,10 +103,5 @@ namespace std {
     };
 }
 
-Transitions<double> fabs(Transitions<double> x)
-{
-    return Transitions<double>(fabs(x.getRise()), fabs(x.getFall()));
-}
-
 #endif
 

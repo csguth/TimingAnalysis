@@ -1392,16 +1392,13 @@ const Prime_Time_Output_Parser::Prime_Time_Output Prime_Time_Output_Parser::pars
 				output._pins.back().slack = Transitions<double>(atof(tokens.at(3).c_str()), atof(tokens.at(4).c_str()));
 				output._pins.back().slew = Transitions<double>(atof(tokens.at(5).c_str()), atof(tokens.at(6).c_str()));
 				output._pins.back().arrival_time = Transitions<double>(atof(tokens.at(7).c_str()), atof(tokens.at(8).c_str()));
-			} else if(tokens.size() == 5)
+            } else if(tokens.size() == 5 || tokens.size() == 7)
 			{
 				output._ports.push_back(Port_Timing());
 				output._ports.back().port_name = tokens.at(0);
 				output._ports.back().slack = Transitions<double>(atof(tokens.at(1).c_str()), atof(tokens.at(2).c_str()));
 				output._ports.back().slew = Transitions<double>(atof(tokens.at(3).c_str()), atof(tokens.at(4).c_str()));
 			}
-            else if(tokens.size() == 7)
-            {
-            }
             else
 				assert(false);
 		}

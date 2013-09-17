@@ -77,16 +77,15 @@ int main(int argc, char const *argv[])
 //	}
 
 
-
     ta.full_timing_analysis();
 //    ta.report_timing();
-    ta.print_info();
+//    ta.print_info();
 
 //    ta.call_prime_time();
 	
     ta.validate_with_prime_time();
 
-//    ta.print_circuit_info();
+    ta.print_circuit_info();
 
 	cout << "-- DONE!" << endl;
 

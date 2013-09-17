@@ -7,16 +7,16 @@ const Transitions<double> LumpedCapacitanceWireDelayModel::simulate(const Libert
     if(cellInfo.isSequential)
         unateness = NON_UNATE;
     this->_slew = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, Transitions<double>(_lumped_capacitance, _lumped_capacitance), slew, unateness);
-    this->_delay = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(_lumped_capacitance, _lumped_capacitance), slew, unateness);
+    this->_delay = WireDelayModel::interpolator.interpolate(cellInfo.timingArcs.at(input).riseDelay, cellInfo.timingArcs.at(input).fallDelay, Transitions<double>(_lumped_capacitance, _lumped_capacitance), slew, unateness, is_input_driver);
     return Transitions<double>(_lumped_capacitance, _lumped_capacitance);
 }
 
 // Any fanout node has the same delay and slew
 const Transitions<double> LumpedCapacitanceWireDelayModel::delay_at_fanout_node(const string fanout_node_name) const {
-    return _delay;
+    return numeric_limits<Transitions<double> >::zero();
 }
 const Transitions<double> LumpedCapacitanceWireDelayModel::slew_at_fanout_node(const string fanout_node_name) const {
-    return _slew;
+    return numeric_limits<Transitions<double> >::zero();
 }
 
 Transitions<double> LumpedCapacitanceWireDelayModel::root_delay(int arc_number)
@@ -31,7 +31,7 @@ Transitions<double> LumpedCapacitanceWireDelayModel::root_slew(int arc_number)
 
 void LumpedCapacitanceWireDelayModel::clear()
 {
-
+    // NÃO FAZ NADA
 }
 
 
