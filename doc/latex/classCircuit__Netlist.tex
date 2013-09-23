@@ -1,0 +1,382 @@
+\hypertarget{classCircuit__Netlist}{\section{Circuit\-\_\-\-Netlist Class Reference}
+\label{classCircuit__Netlist}\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate}
+\item 
+struct \hyperlink{structCircuit__Netlist_1_1Net}{Net}
+\item 
+struct \hyperlink{structCircuit__Netlist_1_1Sink}{Sink}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCircuit__Netlist_aae9b9e9ea0db3af35377d67a6e4d3d98}{Circuit\-\_\-\-Netlist} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCircuit__Netlist}{Circuit\-\_\-\-Netlist} default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCircuit__Netlist_a976bdf13baf79ba608b0c2eff6682efc}{$\sim$\-Circuit\-\_\-\-Netlist} ()
+\begin{DoxyCompactList}\small\item\em Empty \hyperlink{classCircuit__Netlist}{Circuit\-\_\-\-Netlist} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classCircuit__Netlist_a325723d10f874b1f37fae290929bb05e}{add\-Cell\-Inst} (const string name, const string cell\-Type, vector$<$ pair$<$ string, string $>$ $>$ input\-Pin\-Pairs, const bool is\-Sequential=false, const bool is\-Input\-Driver=false, const bool primary\-\_\-output=false)
+\begin{DoxyCompactList}\small\item\em Adds net to nets list. \end{DoxyCompactList}\item 
+void \hyperlink{classCircuit__Netlist_ac5ab8d692eb5d18bed59e41d2c55b678}{update\-Topology} ()
+\begin{DoxyCompactList}\small\item\em Updates topology$\ast$$\ast$$\ast$$\ast$incomplete. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCircuit__Netlist_a9bcee2cb05504ee65f3e70df9f89f576}{get\-Nets\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Returns number os elements in nets list. \end{DoxyCompactList}\item 
+\hyperlink{structCircuit__Netlist_1_1Net}{Net} \& \hyperlink{classCircuit__Netlist_ad894dfb5dabad7c657c450d32adda23d}{get\-Net} (const size\-\_\-t \&i)
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{structCircuit__Netlist_1_1Net}{Net} at index i. \end{DoxyCompactList}\item 
+const \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} \& \hyperlink{classCircuit__Netlist_a3413fe728fb06a6b5b71be6d676b59de}{get\-Gate\-T} (const size\-\_\-t \&i) const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
+int \hyperlink{classCircuit__Netlist_a287e1aaee9b917ce7d1192b7c3914009}{get\-Topologic\-Index} (const int \&i) const 
+\begin{DoxyCompactList}\small\item\em Returns Topologic index at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classCircuit__Netlist_aa0abd4b9e4a774c8baf83a5b1c141e67}{get\-Gates\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Returns number os elements in gates list. \end{DoxyCompactList}\item 
+\hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} \& \hyperlink{classCircuit__Netlist_a2c7c0bc6951c71564f8158682678d118}{get\-Gate} (const size\-\_\-t \&i)
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} at index i. \end{DoxyCompactList}\item 
+const \hyperlink{structCircuit__Netlist_1_1Net}{Net} \& \hyperlink{classCircuit__Netlist_a9dfc3ea50ca3a6f87ffac564011b85e2}{get\-Net\-T} (const size\-\_\-t \&i) const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{structCircuit__Netlist_1_1Net}{Net} at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
+int \hyperlink{classCircuit__Netlist_a92fd5d0cfc1c5951b5ff1f31dfff2f05}{get\-\_\-net\-\_\-topologic\-\_\-index} (const size\-\_\-t \&i) const 
+\begin{DoxyCompactList}\small\item\em Returns index of Net\-Topology$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
+const vector$<$ pair$<$ int, string $>$ $>$ \hyperlink{classCircuit__Netlist_a4638908b9a2c640b61f534edf048cdf7}{verilog} () const 
+\begin{DoxyCompactList}\small\item\em Returns $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
+int \hyperlink{classCircuit__Netlist_a8ada85e3c30b4787a46c7b8396cf640a}{timing\-\_\-arcs} () const 
+\begin{DoxyCompactList}\small\item\em Returns timings arcs. \end{DoxyCompactList}\item 
+int \hyperlink{classCircuit__Netlist_a070452269f2c7109f6ca089ae34dd752}{timing\-\_\-points} () const 
+\begin{DoxyCompactList}\small\item\em Returns timings points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classCircuit__Netlist_a89e0a93d3704bd2eef19ab4ef0f1aa93}{operator$<$$<$} (ostream \&out, const \hyperlink{classCircuit__Netlist}{Circuit\-\_\-\-Netlist} netlist)
+\begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts formatted description of Netlist including net/gate lists' size and elements. \end{DoxyCompactList}\item 
+ostream \& \hyperlink{classCircuit__Netlist_a27d57f1e1851e567c639f9f60314bb35}{operator$<$$<$} (ostream \&out, const \hyperlink{structCircuit__Netlist_1_1Net}{Circuit\-\_\-\-Netlist\-::\-Net} net)
+\begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts formatted description of \hyperlink{structCircuit__Netlist_1_1Net}{Net} including source node/pin and list of sinks. \end{DoxyCompactList}\item 
+ostream \& \hyperlink{classCircuit__Netlist_ac126ec5485445418dca89714e6127245}{operator$<$$<$} (ostream \&out, const \hyperlink{structCircuit__Netlist_1_1Sink}{Circuit\-\_\-\-Netlist\-::\-Sink} sink)
+\begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts formatted description of \hyperlink{structCircuit__Netlist_1_1Sink}{Sink} including gate and pin name. \end{DoxyCompactList}\item 
+ostream \& \hyperlink{classCircuit__Netlist_a14704ccb54893bee9c46df994cb63686}{operator$<$$<$} (ostream \&out, const \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Circuit\-\_\-\-Netlist\-::\-Logic\-\_\-\-Gate} gate)
+\begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts formatted description of \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} including cell type, name, and input identifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCircuit__Netlist_aae9b9e9ea0db3af35377d67a6e4d3d98}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}}
+\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{Circuit\-\_\-\-Netlist}]{\setlength{\rightskip}{0pt plus 5cm}Circuit\-\_\-\-Netlist\-::\-Circuit\-\_\-\-Netlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_aae9b9e9ea0db3af35377d67a6e4d3d98}
+
+
+\hyperlink{classCircuit__Netlist}{Circuit\-\_\-\-Netlist} default constructor. 
+
+\hypertarget{classCircuit__Netlist_a976bdf13baf79ba608b0c2eff6682efc}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!$\sim$\-Circuit\-\_\-\-Netlist@{$\sim$\-Circuit\-\_\-\-Netlist}}
+\index{$\sim$\-Circuit\-\_\-\-Netlist@{$\sim$\-Circuit\-\_\-\-Netlist}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{$\sim$\-Circuit\-\_\-\-Netlist}]{\setlength{\rightskip}{0pt plus 5cm}virtual Circuit\-\_\-\-Netlist\-::$\sim$\-Circuit\-\_\-\-Netlist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classCircuit__Netlist_a976bdf13baf79ba608b0c2eff6682efc}
+
+
+Empty \hyperlink{classCircuit__Netlist}{Circuit\-\_\-\-Netlist} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classCircuit__Netlist_a325723d10f874b1f37fae290929bb05e}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!add\-Cell\-Inst@{add\-Cell\-Inst}}
+\index{add\-Cell\-Inst@{add\-Cell\-Inst}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{add\-Cell\-Inst}]{\setlength{\rightskip}{0pt plus 5cm}void Circuit\-\_\-\-Netlist\-::add\-Cell\-Inst (
+\begin{DoxyParamCaption}
+\item[{const string}]{name, }
+\item[{const string}]{cell\-Type, }
+\item[{vector$<$ pair$<$ string, string $>$ $>$}]{input\-Pin\-Pairs, }
+\item[{const bool}]{is\-Sequential = {\ttfamily false}, }
+\item[{const bool}]{is\-Input\-Driver = {\ttfamily false}, }
+\item[{const bool}]{primary\-\_\-output = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classCircuit__Netlist_a325723d10f874b1f37fae290929bb05e}
+
+
+Adds net to nets list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string name, const string cell\-Type, vector$<$pair$<$string, string$>$ $>$ input\-Pin\-Pairs, const bool is\-Sequential(false default), const bool is\-Input\-Driver(false default), const bool primary\-\_\-output(false default)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_a92fd5d0cfc1c5951b5ff1f31dfff2f05}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!get\-\_\-net\-\_\-topologic\-\_\-index@{get\-\_\-net\-\_\-topologic\-\_\-index}}
+\index{get\-\_\-net\-\_\-topologic\-\_\-index@{get\-\_\-net\-\_\-topologic\-\_\-index}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{get\-\_\-net\-\_\-topologic\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}int Circuit\-\_\-\-Netlist\-::get\-\_\-net\-\_\-topologic\-\_\-index (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t \&}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_a92fd5d0cfc1c5951b5ff1f31dfff2f05}
+
+
+Returns index of Net\-Topology$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & size\-\_\-t \& i\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_a2c7c0bc6951c71564f8158682678d118}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!get\-Gate@{get\-Gate}}
+\index{get\-Gate@{get\-Gate}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{get\-Gate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logic\-\_\-\-Gate}\& Circuit\-\_\-\-Netlist\-::get\-Gate (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t \&}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_a2c7c0bc6951c71564f8158682678d118}
+
+
+Returns \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} at index i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & size\-\_\-t \& i\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} \& 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_aa0abd4b9e4a774c8baf83a5b1c141e67}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!get\-Gates\-Size@{get\-Gates\-Size}}
+\index{get\-Gates\-Size@{get\-Gates\-Size}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{get\-Gates\-Size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Circuit\-\_\-\-Netlist\-::get\-Gates\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_aa0abd4b9e4a774c8baf83a5b1c141e67}
+
+
+Returns number os elements in gates list. 
+
+\begin{DoxyReturn}{Returns}
+size\-\_\-t 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_a3413fe728fb06a6b5b71be6d676b59de}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!get\-Gate\-T@{get\-Gate\-T}}
+\index{get\-Gate\-T@{get\-Gate\-T}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{get\-Gate\-T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Logic\-\_\-\-Gate}\& Circuit\-\_\-\-Netlist\-::get\-Gate\-T (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t \&}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_a3413fe728fb06a6b5b71be6d676b59de}
+
+
+Returns \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & size\-\_\-t \& i\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} \& 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_ad894dfb5dabad7c657c450d32adda23d}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!get\-Net@{get\-Net}}
+\index{get\-Net@{get\-Net}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{get\-Net}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Net}\& Circuit\-\_\-\-Netlist\-::get\-Net (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t \&}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_ad894dfb5dabad7c657c450d32adda23d}
+
+
+Returns \hyperlink{structCircuit__Netlist_1_1Net}{Net} at index i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & size\-\_\-t \& i\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{structCircuit__Netlist_1_1Net}{Net} \& 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_a9bcee2cb05504ee65f3e70df9f89f576}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!get\-Nets\-Size@{get\-Nets\-Size}}
+\index{get\-Nets\-Size@{get\-Nets\-Size}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{get\-Nets\-Size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Circuit\-\_\-\-Netlist\-::get\-Nets\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_a9bcee2cb05504ee65f3e70df9f89f576}
+
+
+Returns number os elements in nets list. 
+
+\begin{DoxyReturn}{Returns}
+size\-\_\-t 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_a9dfc3ea50ca3a6f87ffac564011b85e2}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!get\-Net\-T@{get\-Net\-T}}
+\index{get\-Net\-T@{get\-Net\-T}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{get\-Net\-T}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Net}\& Circuit\-\_\-\-Netlist\-::get\-Net\-T (
+\begin{DoxyParamCaption}
+\item[{const size\-\_\-t \&}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_a9dfc3ea50ca3a6f87ffac564011b85e2}
+
+
+Returns \hyperlink{structCircuit__Netlist_1_1Net}{Net} at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & size\-\_\-t \& i\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \hyperlink{structCircuit__Netlist_1_1Net}{Net} \& 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_a287e1aaee9b917ce7d1192b7c3914009}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!get\-Topologic\-Index@{get\-Topologic\-Index}}
+\index{get\-Topologic\-Index@{get\-Topologic\-Index}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{get\-Topologic\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Circuit\-\_\-\-Netlist\-::get\-Topologic\-Index (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_a287e1aaee9b917ce7d1192b7c3914009}
+
+
+Returns Topologic index at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & size\-\_\-t \& i\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_a8ada85e3c30b4787a46c7b8396cf640a}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!timing\-\_\-arcs@{timing\-\_\-arcs}}
+\index{timing\-\_\-arcs@{timing\-\_\-arcs}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{timing\-\_\-arcs}]{\setlength{\rightskip}{0pt plus 5cm}int Circuit\-\_\-\-Netlist\-::timing\-\_\-arcs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCircuit__Netlist_a8ada85e3c30b4787a46c7b8396cf640a}
+
+
+Returns timings arcs. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_a070452269f2c7109f6ca089ae34dd752}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!timing\-\_\-points@{timing\-\_\-points}}
+\index{timing\-\_\-points@{timing\-\_\-points}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{timing\-\_\-points}]{\setlength{\rightskip}{0pt plus 5cm}int Circuit\-\_\-\-Netlist\-::timing\-\_\-points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCircuit__Netlist_a070452269f2c7109f6ca089ae34dd752}
+
+
+Returns timings points. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_ac5ab8d692eb5d18bed59e41d2c55b678}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!update\-Topology@{update\-Topology}}
+\index{update\-Topology@{update\-Topology}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{update\-Topology}]{\setlength{\rightskip}{0pt plus 5cm}void Circuit\-\_\-\-Netlist\-::update\-Topology (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCircuit__Netlist_ac5ab8d692eb5d18bed59e41d2c55b678}
+
+
+Updates topology$\ast$$\ast$$\ast$$\ast$incomplete. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{classCircuit__Netlist_a4638908b9a2c640b61f534edf048cdf7}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!verilog@{verilog}}
+\index{verilog@{verilog}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{verilog}]{\setlength{\rightskip}{0pt plus 5cm}const vector$<$pair$<$int, string$>$ $>$ Circuit\-\_\-\-Netlist\-::verilog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classCircuit__Netlist_a4638908b9a2c640b61f534edf048cdf7}
+
+
+Returns $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+
+\begin{DoxyReturn}{Returns}
+const vector$<$pair$<$int, string$>$ $>$ 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classCircuit__Netlist_a89e0a93d3704bd2eef19ab4ef0f1aa93}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Circuit\-\_\-\-Netlist}}]{netlist}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCircuit__Netlist_a89e0a93d3704bd2eef19ab4ef0f1aa93}
+
+
+Redefinition of $<$$<$ operator. Inserts formatted description of Netlist including net/gate lists' size and elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostream} & \& out, const \hyperlink{classCircuit__Netlist}{Circuit\-\_\-\-Netlist} netlist \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCircuit__Netlist_a27d57f1e1851e567c639f9f60314bb35}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Circuit\-\_\-\-Netlist\-::\-Net}}]{net}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCircuit__Netlist_a27d57f1e1851e567c639f9f60314bb35}
+
+
+Redefinition of $<$$<$ operator. Inserts formatted description of \hyperlink{structCircuit__Netlist_1_1Net}{Net} including source node/pin and list of sinks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostream} & \& out, const \hyperlink{structCircuit__Netlist_1_1Net}{Circuit\-\_\-\-Netlist\-::\-Net} net \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCircuit__Netlist_ac126ec5485445418dca89714e6127245}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Circuit\-\_\-\-Netlist\-::\-Sink}}]{sink}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCircuit__Netlist_ac126ec5485445418dca89714e6127245}
+
+
+Redefinition of $<$$<$ operator. Inserts formatted description of \hyperlink{structCircuit__Netlist_1_1Sink}{Sink} including gate and pin name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostream} & \& out, const \hyperlink{structCircuit__Netlist_1_1Sink}{Sink} sink \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCircuit__Netlist_a14704ccb54893bee9c46df994cb63686}{\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Circuit_Netlist@{Circuit\-\_\-\-Netlist}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Circuit\-\_\-\-Netlist\-::\-Logic\-\_\-\-Gate}}]{gate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classCircuit__Netlist_a14704ccb54893bee9c46df994cb63686}
+
+
+Redefinition of $<$$<$ operator. Inserts formatted description of \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} including cell type, name, and input identifiers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostream} & \& out, const \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} gate \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+tcc\-Chrystian/src/include/circuit\-\_\-netlist.\-h\end{DoxyCompactItemize}

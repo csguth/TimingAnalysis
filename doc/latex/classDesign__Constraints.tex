@@ -1,0 +1,277 @@
+\hypertarget{classDesign__Constraints}{\section{Design\-\_\-\-Constraints Class Reference}
+\label{classDesign__Constraints}\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDesign__Constraints_a3d8381f421422cdaa12e78216a3b46a8}{clock} (const double clock)
+\begin{DoxyCompactList}\small\item\em Sets clock period. frequency = 1 / clock\-\_\-period. \end{DoxyCompactList}\item 
+bool \hyperlink{classDesign__Constraints_ab9e466f0f2ad7cfd16f8fe0d0b814b16}{input\-\_\-delay} (const string input\-\_\-name, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ delay)
+\begin{DoxyCompactList}\small\item\em Tries to set input delay. Returns true if succeeded. \end{DoxyCompactList}\item 
+bool \hyperlink{classDesign__Constraints_a295b66d558e3aefea0b2d2629752517d}{output\-\_\-delay} (const string output\-\_\-name, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ delay)
+\begin{DoxyCompactList}\small\item\em Tries to set output delay. Returns true if succeeded. \end{DoxyCompactList}\item 
+bool \hyperlink{classDesign__Constraints_a3a670a53112e18db745a6f3de9597cd3}{output\-\_\-load} (const string output\-\_\-name, const double output\-\_\-load)
+\begin{DoxyCompactList}\small\item\em Tries to set output load. Returns true if succeeded. \end{DoxyCompactList}\item 
+bool \hyperlink{classDesign__Constraints_a54c18f5ebd9dbcdc9d3ab8f2d363fc04}{driving\-\_\-cell} (const string input\-\_\-name, const string driving\-\_\-cell)
+\begin{DoxyCompactList}\small\item\em Tries to set driving cell. Returns true if succeeded. \end{DoxyCompactList}\item 
+bool \hyperlink{classDesign__Constraints_afd86c8844a5a62d1a6bbd7138d548cf9}{input\-\_\-transition} (const string input\-\_\-name, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ transition)
+\begin{DoxyCompactList}\small\item\em Tries to set input transitions. Returns true if succeeded. \end{DoxyCompactList}\item 
+double \hyperlink{classDesign__Constraints_a535cc6d955b52c959b566510c1e3544a}{clock} () const 
+\begin{DoxyCompactList}\small\item\em Returns clock period. \end{DoxyCompactList}\item 
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classDesign__Constraints_ae67988a0cd0ba0ab5ad1463c273eb287}{input\-\_\-delay} (const string input\-\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTransitions}{Transitions$<$double$>$} input\-\_\-delay with input\-\_\-name name. \end{DoxyCompactList}\item 
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classDesign__Constraints_a07810050c6ae8a62d1e77ee23ad1f660}{output\-\_\-delay} (const string output\-\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTransitions}{Transitions$<$double$>$} output\-\_\-delay with output\-\_\-name name. \end{DoxyCompactList}\item 
+double \hyperlink{classDesign__Constraints_ab21387336a70852447a1d16e11358840}{output\-\_\-load} (const string output\-\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Returns output load with output\-\_\-name name. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classDesign__Constraints_a840bdfc3346651f9925ef35590f8c55b}{output\-\_\-loads\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em Returns output loads size. \end{DoxyCompactList}\item 
+const string \hyperlink{classDesign__Constraints_a3155a41841b4c24e3f79e6e1a280d6df}{driving\-\_\-cell} (const string input\-\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Returns driving cell with input\-\_\-name name. \end{DoxyCompactList}\item 
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classDesign__Constraints_a2fedb3b4d77d0b029e00bf0200fb84a2}{input\-\_\-transition} (const string input\-\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Returns Transition$<$double$>$ input\-\_\-transition with input\-\_\-name name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classDesign__Constraints_a3d8381f421422cdaa12e78216a3b46a8}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!clock@{clock}}
+\index{clock@{clock}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{clock}]{\setlength{\rightskip}{0pt plus 5cm}void Design\-\_\-\-Constraints\-::clock (
+\begin{DoxyParamCaption}
+\item[{const double}]{clock}
+\end{DoxyParamCaption}
+)}}\label{classDesign__Constraints_a3d8381f421422cdaa12e78216a3b46a8}
+
+
+Sets clock period. frequency = 1 / clock\-\_\-period. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_a535cc6d955b52c959b566510c1e3544a}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!clock@{clock}}
+\index{clock@{clock}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{clock}]{\setlength{\rightskip}{0pt plus 5cm}double Design\-\_\-\-Constraints\-::clock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDesign__Constraints_a535cc6d955b52c959b566510c1e3544a}
+
+
+Returns clock period. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_a54c18f5ebd9dbcdc9d3ab8f2d363fc04}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!driving\-\_\-cell@{driving\-\_\-cell}}
+\index{driving\-\_\-cell@{driving\-\_\-cell}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{driving\-\_\-cell}]{\setlength{\rightskip}{0pt plus 5cm}bool Design\-\_\-\-Constraints\-::driving\-\_\-cell (
+\begin{DoxyParamCaption}
+\item[{const string}]{input\-\_\-name, }
+\item[{const string}]{driving\-\_\-cell}
+\end{DoxyParamCaption}
+)}}\label{classDesign__Constraints_a54c18f5ebd9dbcdc9d3ab8f2d363fc04}
+
+
+Tries to set driving cell. Returns true if succeeded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string input\-\_\-name, const string driving\-\_\-cell\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_a3155a41841b4c24e3f79e6e1a280d6df}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!driving\-\_\-cell@{driving\-\_\-cell}}
+\index{driving\-\_\-cell@{driving\-\_\-cell}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{driving\-\_\-cell}]{\setlength{\rightskip}{0pt plus 5cm}const string Design\-\_\-\-Constraints\-::driving\-\_\-cell (
+\begin{DoxyParamCaption}
+\item[{const string}]{input\-\_\-name}
+\end{DoxyParamCaption}
+) const}}\label{classDesign__Constraints_a3155a41841b4c24e3f79e6e1a280d6df}
+
+
+Returns driving cell with input\-\_\-name name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string input\-\_\-name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const string 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_ab9e466f0f2ad7cfd16f8fe0d0b814b16}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!input\-\_\-delay@{input\-\_\-delay}}
+\index{input\-\_\-delay@{input\-\_\-delay}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{input\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}bool Design\-\_\-\-Constraints\-::input\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{const string}]{input\-\_\-name, }
+\item[{const {\bf Transitions}$<$ double $>$}]{delay}
+\end{DoxyParamCaption}
+)}}\label{classDesign__Constraints_ab9e466f0f2ad7cfd16f8fe0d0b814b16}
+
+
+Tries to set input delay. Returns true if succeeded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string input\-\_\-name, const \hyperlink{classTransitions}{Transitions$<$double$>$} delay\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_ae67988a0cd0ba0ab5ad1463c273eb287}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!input\-\_\-delay@{input\-\_\-delay}}
+\index{input\-\_\-delay@{input\-\_\-delay}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{input\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Design\-\_\-\-Constraints\-::input\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{const string}]{input\-\_\-name}
+\end{DoxyParamCaption}
+) const}}\label{classDesign__Constraints_ae67988a0cd0ba0ab5ad1463c273eb287}
+
+
+Returns \hyperlink{classTransitions}{Transitions$<$double$>$} input\-\_\-delay with input\-\_\-name name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string input\-\_\-name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_afd86c8844a5a62d1a6bbd7138d548cf9}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!input\-\_\-transition@{input\-\_\-transition}}
+\index{input\-\_\-transition@{input\-\_\-transition}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{input\-\_\-transition}]{\setlength{\rightskip}{0pt plus 5cm}bool Design\-\_\-\-Constraints\-::input\-\_\-transition (
+\begin{DoxyParamCaption}
+\item[{const string}]{input\-\_\-name, }
+\item[{const {\bf Transitions}$<$ double $>$}]{transition}
+\end{DoxyParamCaption}
+)}}\label{classDesign__Constraints_afd86c8844a5a62d1a6bbd7138d548cf9}
+
+
+Tries to set input transitions. Returns true if succeeded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string input\-\_\-name, const \hyperlink{classTransitions}{Transitions$<$double$>$} transition\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_a2fedb3b4d77d0b029e00bf0200fb84a2}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!input\-\_\-transition@{input\-\_\-transition}}
+\index{input\-\_\-transition@{input\-\_\-transition}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{input\-\_\-transition}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Design\-\_\-\-Constraints\-::input\-\_\-transition (
+\begin{DoxyParamCaption}
+\item[{const string}]{input\-\_\-name}
+\end{DoxyParamCaption}
+) const}}\label{classDesign__Constraints_a2fedb3b4d77d0b029e00bf0200fb84a2}
+
+
+Returns Transition$<$double$>$ input\-\_\-transition with input\-\_\-name name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string input\-\_\-name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const Transition$<$double$>$ 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_a295b66d558e3aefea0b2d2629752517d}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!output\-\_\-delay@{output\-\_\-delay}}
+\index{output\-\_\-delay@{output\-\_\-delay}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{output\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}bool Design\-\_\-\-Constraints\-::output\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{const string}]{output\-\_\-name, }
+\item[{const {\bf Transitions}$<$ double $>$}]{delay}
+\end{DoxyParamCaption}
+)}}\label{classDesign__Constraints_a295b66d558e3aefea0b2d2629752517d}
+
+
+Tries to set output delay. Returns true if succeeded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string input\-\_\-name, const \hyperlink{classTransitions}{Transitions$<$double$>$} delay\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_a07810050c6ae8a62d1e77ee23ad1f660}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!output\-\_\-delay@{output\-\_\-delay}}
+\index{output\-\_\-delay@{output\-\_\-delay}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{output\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Design\-\_\-\-Constraints\-::output\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{const string}]{output\-\_\-name}
+\end{DoxyParamCaption}
+) const}}\label{classDesign__Constraints_a07810050c6ae8a62d1e77ee23ad1f660}
+
+
+Returns \hyperlink{classTransitions}{Transitions$<$double$>$} output\-\_\-delay with output\-\_\-name name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string output\-\_\-name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_a3a670a53112e18db745a6f3de9597cd3}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!output\-\_\-load@{output\-\_\-load}}
+\index{output\-\_\-load@{output\-\_\-load}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{output\-\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}bool Design\-\_\-\-Constraints\-::output\-\_\-load (
+\begin{DoxyParamCaption}
+\item[{const string}]{output\-\_\-name, }
+\item[{const double}]{output\-\_\-load}
+\end{DoxyParamCaption}
+)}}\label{classDesign__Constraints_a3a670a53112e18db745a6f3de9597cd3}
+
+
+Tries to set output load. Returns true if succeeded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string input\-\_\-name, const \hyperlink{classTransitions}{Transitions$<$double$>$} output\-\_\-load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_ab21387336a70852447a1d16e11358840}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!output\-\_\-load@{output\-\_\-load}}
+\index{output\-\_\-load@{output\-\_\-load}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{output\-\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}double Design\-\_\-\-Constraints\-::output\-\_\-load (
+\begin{DoxyParamCaption}
+\item[{const string}]{output\-\_\-name}
+\end{DoxyParamCaption}
+) const}}\label{classDesign__Constraints_ab21387336a70852447a1d16e11358840}
+
+
+Returns output load with output\-\_\-name name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string output\-\_\-name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\hypertarget{classDesign__Constraints_a840bdfc3346651f9925ef35590f8c55b}{\index{Design\-\_\-\-Constraints@{Design\-\_\-\-Constraints}!output\-\_\-loads\-\_\-size@{output\-\_\-loads\-\_\-size}}
+\index{output\-\_\-loads\-\_\-size@{output\-\_\-loads\-\_\-size}!Design_Constraints@{Design\-\_\-\-Constraints}}
+\subsubsection[{output\-\_\-loads\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Design\-\_\-\-Constraints\-::output\-\_\-loads\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classDesign__Constraints_a840bdfc3346651f9925ef35590f8c55b}
+
+
+Returns output loads size. 
+
+\begin{DoxyReturn}{Returns}
+size\-\_\-t 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+tcc\-Chrystian/src/include/design\-\_\-constraints.\-h\end{DoxyCompactItemize}

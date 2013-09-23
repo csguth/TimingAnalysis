@@ -1,0 +1,144 @@
+\hypertarget{classTiming__Analysis_1_1Edge}{\section{Timing\-\_\-\-Analysis\-:\-:Edge$<$ T $>$ Class Template Reference}
+\label{classTiming__Analysis_1_1Edge}\index{Timing\-\_\-\-Analysis\-::\-Edge$<$ T $>$@{Timing\-\_\-\-Analysis\-::\-Edge$<$ T $>$}}
+}
+
+
+Template class which represents an edge of the graph model. An edge in graph theory is a connection between vertices.  
+
+
+
+
+{\ttfamily \#include $<$edge.\-h$>$}
+
+Inheritance diagram for Timing\-\_\-\-Analysis\-:\-:Edge$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTiming__Analysis_1_1Edge}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ \hyperlink{classTiming__Analysis_1_1Edge_a47020ea89fd9fde438adc814a731a23d}{from} () const 
+\begin{DoxyCompactList}\small\item\em Returns \-\_\-from$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classTiming__Analysis_1_1Edge_a60c70172e973450774a8ec5d4dadbcb5}{fanouts\-\_\-size} () const 
+\begin{DoxyCompactList}\small\item\em Returns fan out. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTiming__Analysis_1_1Edge_a64a07a7a08de0e2fd29b1d1db98c5d2d}{Edge} (T $\ast$\hyperlink{classTiming__Analysis_1_1Edge_a47020ea89fd9fde438adc814a731a23d}{from})
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTiming__Analysis_1_1Edge}{Edge} constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Edge_a81bc4f5f07902385b2234bf591822a52}{set\-\_\-fanout} (const int i, T $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Inserts T pointer at index i. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Edge_ab9195f5c50f8a66b29f6856c9629fcc8}{add\-\_\-fanout} (T $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Inserts T pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTiming__Analysis_1_1Edge_a718ef7f37c4d9ddf867ef15eaa96ae43}{T $\ast$ {\bfseries \-\_\-from}}\label{classTiming__Analysis_1_1Edge_a718ef7f37c4d9ddf867ef15eaa96ae43}
+
+\item 
+\hypertarget{classTiming__Analysis_1_1Edge_ae1bc9c1f6a84a2b4a116d5c4571fba02}{vector$<$ T $\ast$ $>$ {\bfseries \-\_\-to}}\label{classTiming__Analysis_1_1Edge_ae1bc9c1f6a84a2b4a116d5c4571fba02}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class Timing\-\_\-\-Analysis\-::\-Edge$<$ T $>$}
+
+Template class which represents an edge of the graph model. An edge in graph theory is a connection between vertices. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTiming__Analysis_1_1Edge_a64a07a7a08de0e2fd29b1d1db98c5d2d}{\index{Timing\-\_\-\-Analysis\-::\-Edge@{Timing\-\_\-\-Analysis\-::\-Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Timing_Analysis::Edge@{Timing\-\_\-\-Analysis\-::\-Edge}}
+\subsubsection[{Edge}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Timing\-\_\-\-Analysis\-::\-Edge}$<$ T $>$\-::{\bf Edge} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{from}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classTiming__Analysis_1_1Edge_a64a07a7a08de0e2fd29b1d1db98c5d2d}
+
+
+\hyperlink{classTiming__Analysis_1_1Edge}{Edge} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & $\ast$ from \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTiming__Analysis_1_1Edge_ab9195f5c50f8a66b29f6856c9629fcc8}{\index{Timing\-\_\-\-Analysis\-::\-Edge@{Timing\-\_\-\-Analysis\-::\-Edge}!add\-\_\-fanout@{add\-\_\-fanout}}
+\index{add\-\_\-fanout@{add\-\_\-fanout}!Timing_Analysis::Edge@{Timing\-\_\-\-Analysis\-::\-Edge}}
+\subsubsection[{add\-\_\-fanout}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Timing\-\_\-\-Analysis\-::\-Edge}$<$ T $>$\-::add\-\_\-fanout (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{tp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classTiming__Analysis_1_1Edge_ab9195f5c50f8a66b29f6856c9629fcc8}
+
+
+Inserts T pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em T} & $\ast$tp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Edge_a60c70172e973450774a8ec5d4dadbcb5}{\index{Timing\-\_\-\-Analysis\-::\-Edge@{Timing\-\_\-\-Analysis\-::\-Edge}!fanouts\-\_\-size@{fanouts\-\_\-size}}
+\index{fanouts\-\_\-size@{fanouts\-\_\-size}!Timing_Analysis::Edge@{Timing\-\_\-\-Analysis\-::\-Edge}}
+\subsubsection[{fanouts\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ size\-\_\-t {\bf Timing\-\_\-\-Analysis\-::\-Edge}$<$ T $>$\-::fanouts\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Edge_a60c70172e973450774a8ec5d4dadbcb5}
+
+
+Returns fan out. 
+
+\begin{DoxyReturn}{Returns}
+size\-\_\-t 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Edge_a47020ea89fd9fde438adc814a731a23d}{\index{Timing\-\_\-\-Analysis\-::\-Edge@{Timing\-\_\-\-Analysis\-::\-Edge}!from@{from}}
+\index{from@{from}!Timing_Analysis::Edge@{Timing\-\_\-\-Analysis\-::\-Edge}}
+\subsubsection[{from}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf Timing\-\_\-\-Analysis\-::\-Edge}$<$ T $>$\-::from (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Edge_a47020ea89fd9fde438adc814a731a23d}
+
+
+Returns \-\_\-from$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+
+\begin{DoxyReturn}{Returns}
+T $\ast$ 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Edge_a81bc4f5f07902385b2234bf591822a52}{\index{Timing\-\_\-\-Analysis\-::\-Edge@{Timing\-\_\-\-Analysis\-::\-Edge}!set\-\_\-fanout@{set\-\_\-fanout}}
+\index{set\-\_\-fanout@{set\-\_\-fanout}!Timing_Analysis::Edge@{Timing\-\_\-\-Analysis\-::\-Edge}}
+\subsubsection[{set\-\_\-fanout}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Timing\-\_\-\-Analysis\-::\-Edge}$<$ T $>$\-::set\-\_\-fanout (
+\begin{DoxyParamCaption}
+\item[{const int}]{i, }
+\item[{T $\ast$}]{tp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classTiming__Analysis_1_1Edge_a81bc4f5f07902385b2234bf591822a52}
+
+
+Inserts T pointer at index i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & int i, T $\ast$tp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+tcc\-Chrystian/src/include/edge.\-h\end{DoxyCompactItemize}

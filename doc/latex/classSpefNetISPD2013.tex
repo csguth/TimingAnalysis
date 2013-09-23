@@ -1,0 +1,243 @@
+\hypertarget{classSpefNetISPD2013}{\section{Spef\-Net\-I\-S\-P\-D2013 Class Reference}
+\label{classSpefNetISPD2013}\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structSpefNetISPD2013_1_1Capacitor}{Capacitor}
+\begin{DoxyCompactList}\small\item\em Struct which represents a capacitor. \end{DoxyCompactList}\item 
+struct \hyperlink{structSpefNetISPD2013_1_1Node}{Node}
+\begin{DoxyCompactList}\small\item\em Struct which represents a node of the circuit. A node is a point of the circuit where two or more elements meet. \end{DoxyCompactList}\item 
+struct \hyperlink{structSpefNetISPD2013_1_1Resistor}{Resistor}
+\begin{DoxyCompactList}\small\item\em Struct which represents a resistor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSpefNetISPD2013_a41ab1d666a3724e63e0fd815765f1372}{Spef\-Net\-I\-S\-P\-D2013} ()
+\begin{DoxyCompactList}\small\item\em Empty Spef\-Net constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classSpefNetISPD2013_a6bd1c7cc6d7bdf677fb69bb577a6327f}{$\sim$\-Spef\-Net\-I\-S\-P\-D2013} ()
+\begin{DoxyCompactList}\small\item\em Empty Spef\-Net destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classSpefNetISPD2013_ac837ca5049dd0fc8301b1c51a8508bfd}{add\-Resistor} (const string \&node1, const string \&node2, const double \&value)
+\begin{DoxyCompactList}\small\item\em Adds new resistor to nodes list. \end{DoxyCompactList}\item 
+void \hyperlink{classSpefNetISPD2013_a9d5344541f303241af6bec439a692850}{add\-Capacitor} (const string \&node, const double \&value)
+\begin{DoxyCompactList}\small\item\em Adds new capacitor to nodes list. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classSpefNetISPD2013_a68ae22df2961b88537802d444dd20588}{nodes\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Returns number of nodes. \end{DoxyCompactList}\item 
+const \hyperlink{structSpefNetISPD2013_1_1Node}{Node} \& \hyperlink{classSpefNetISPD2013_a8beeae8a280358ba32eedab9367b1006}{get\-Node} (const unsigned \&i) const 
+\begin{DoxyCompactList}\small\item\em Gets node at index i. \end{DoxyCompactList}\item 
+int \hyperlink{classSpefNetISPD2013_aa5143da0b98e3fa1613562061238f4ee}{get\-Node\-Index} (const string \&name) const 
+\begin{DoxyCompactList}\small\item\em Returns index of node. If not found, returns -\/1. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{classSpefNetISPD2013_a1a15314aec6fae289f90b9e7de201fe8}{resistors\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Retuns number of resistors. \end{DoxyCompactList}\item 
+const \hyperlink{structSpefNetISPD2013_1_1Resistor}{Resistor} \& \hyperlink{classSpefNetISPD2013_a1baa70cdf4b2c65a7e695849c2ad2525}{get\-Resistor} (const unsigned \&i) const 
+\begin{DoxyCompactList}\small\item\em Returns resistor at index i. \end{DoxyCompactList}\item 
+void \hyperlink{classSpefNetISPD2013_a3a0ed208b150100bda0544112fb1c0ba}{set} (string name, double lumped\-Capacitance)
+\begin{DoxyCompactList}\small\item\em Sets name and lumped\-Capacitance attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classSpefNetISPD2013_a1aa3f32d0cac9a7b1800ab67903361fa}{string {\bfseries net\-Name}}\label{classSpefNetISPD2013_a1aa3f32d0cac9a7b1800ab67903361fa}
+
+\item 
+\hypertarget{classSpefNetISPD2013_af088c8d7cbca748a4a56ab796ccb2fd5}{double {\bfseries net\-Lumped\-Cap}}\label{classSpefNetISPD2013_af088c8d7cbca748a4a56ab796ccb2fd5}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classSpefNetISPD2013_a6a52417a5250abf94d511910add3415e}{operator$<$$<$} (ostream \&out, const \hyperlink{classSpefNetISPD2013}{Spef\-Net\-I\-S\-P\-D2013} \&descriptor)
+\begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts description including node name, index, capacitance and resistors list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSpefNetISPD2013_a41ab1d666a3724e63e0fd815765f1372}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{Spef\-Net\-I\-S\-P\-D2013}]{\setlength{\rightskip}{0pt plus 5cm}Spef\-Net\-I\-S\-P\-D2013\-::\-Spef\-Net\-I\-S\-P\-D2013 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSpefNetISPD2013_a41ab1d666a3724e63e0fd815765f1372}
+
+
+Empty Spef\-Net constructor. 
+
+\hypertarget{classSpefNetISPD2013_a6bd1c7cc6d7bdf677fb69bb577a6327f}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!$\sim$\-Spef\-Net\-I\-S\-P\-D2013@{$\sim$\-Spef\-Net\-I\-S\-P\-D2013}}
+\index{$\sim$\-Spef\-Net\-I\-S\-P\-D2013@{$\sim$\-Spef\-Net\-I\-S\-P\-D2013}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{$\sim$\-Spef\-Net\-I\-S\-P\-D2013}]{\setlength{\rightskip}{0pt plus 5cm}virtual Spef\-Net\-I\-S\-P\-D2013\-::$\sim$\-Spef\-Net\-I\-S\-P\-D2013 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classSpefNetISPD2013_a6bd1c7cc6d7bdf677fb69bb577a6327f}
+
+
+Empty Spef\-Net destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSpefNetISPD2013_a9d5344541f303241af6bec439a692850}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!add\-Capacitor@{add\-Capacitor}}
+\index{add\-Capacitor@{add\-Capacitor}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{add\-Capacitor}]{\setlength{\rightskip}{0pt plus 5cm}void Spef\-Net\-I\-S\-P\-D2013\-::add\-Capacitor (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{node, }
+\item[{const double \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classSpefNetISPD2013_a9d5344541f303241af6bec439a692850}
+
+
+Adds new capacitor to nodes list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string \& node, const double \& value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{classSpefNetISPD2013_ac837ca5049dd0fc8301b1c51a8508bfd}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!add\-Resistor@{add\-Resistor}}
+\index{add\-Resistor@{add\-Resistor}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{add\-Resistor}]{\setlength{\rightskip}{0pt plus 5cm}void Spef\-Net\-I\-S\-P\-D2013\-::add\-Resistor (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{node1, }
+\item[{const string \&}]{node2, }
+\item[{const double \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classSpefNetISPD2013_ac837ca5049dd0fc8301b1c51a8508bfd}
+
+
+Adds new resistor to nodes list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string \& node1, const string \& node2, const double \& value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{classSpefNetISPD2013_a8beeae8a280358ba32eedab9367b1006}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!get\-Node@{get\-Node}}
+\index{get\-Node@{get\-Node}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{get\-Node}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Node}\& Spef\-Net\-I\-S\-P\-D2013\-::get\-Node (
+\begin{DoxyParamCaption}
+\item[{const unsigned \&}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSpefNetISPD2013_a8beeae8a280358ba32eedab9367b1006}
+
+
+Gets node at index i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & unsigned \& i\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \hyperlink{structSpefNetISPD2013_1_1Node}{Node} 
+\end{DoxyReturn}
+\hypertarget{classSpefNetISPD2013_aa5143da0b98e3fa1613562061238f4ee}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!get\-Node\-Index@{get\-Node\-Index}}
+\index{get\-Node\-Index@{get\-Node\-Index}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{get\-Node\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Spef\-Net\-I\-S\-P\-D2013\-::get\-Node\-Index (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{name}
+\end{DoxyParamCaption}
+) const}}\label{classSpefNetISPD2013_aa5143da0b98e3fa1613562061238f4ee}
+
+
+Returns index of node. If not found, returns -\/1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string \& name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{classSpefNetISPD2013_a1baa70cdf4b2c65a7e695849c2ad2525}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!get\-Resistor@{get\-Resistor}}
+\index{get\-Resistor@{get\-Resistor}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{get\-Resistor}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Resistor}\& Spef\-Net\-I\-S\-P\-D2013\-::get\-Resistor (
+\begin{DoxyParamCaption}
+\item[{const unsigned \&}]{i}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSpefNetISPD2013_a1baa70cdf4b2c65a7e695849c2ad2525}
+
+
+Returns resistor at index i. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & unsigned \& i\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \hyperlink{structSpefNetISPD2013_1_1Resistor}{Resistor} 
+\end{DoxyReturn}
+\hypertarget{classSpefNetISPD2013_a68ae22df2961b88537802d444dd20588}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!nodes\-Size@{nodes\-Size}}
+\index{nodes\-Size@{nodes\-Size}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{nodes\-Size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Spef\-Net\-I\-S\-P\-D2013\-::nodes\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSpefNetISPD2013_a68ae22df2961b88537802d444dd20588}
+
+
+Returns number of nodes. 
+
+\begin{DoxyReturn}{Returns}
+size\-\_\-t 
+\end{DoxyReturn}
+\hypertarget{classSpefNetISPD2013_a1a15314aec6fae289f90b9e7de201fe8}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!resistors\-Size@{resistors\-Size}}
+\index{resistors\-Size@{resistors\-Size}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{resistors\-Size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t Spef\-Net\-I\-S\-P\-D2013\-::resistors\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSpefNetISPD2013_a1a15314aec6fae289f90b9e7de201fe8}
+
+
+Retuns number of resistors. 
+
+\begin{DoxyReturn}{Returns}
+size\-\_\-t 
+\end{DoxyReturn}
+\hypertarget{classSpefNetISPD2013_a3a0ed208b150100bda0544112fb1c0ba}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!set@{set}}
+\index{set@{set}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void Spef\-Net\-I\-S\-P\-D2013\-::set (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{double}]{lumped\-Capacitance}
+\end{DoxyParamCaption}
+)}}\label{classSpefNetISPD2013_a3a0ed208b150100bda0544112fb1c0ba}
+
+
+Sets name and lumped\-Capacitance attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & name,double lumped\-Capacitance\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classSpefNetISPD2013_a6a52417a5250abf94d511910add3415e}{\index{Spef\-Net\-I\-S\-P\-D2013@{Spef\-Net\-I\-S\-P\-D2013}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!SpefNetISPD2013@{Spef\-Net\-I\-S\-P\-D2013}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Spef\-Net\-I\-S\-P\-D2013} \&}]{descriptor}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classSpefNetISPD2013_a6a52417a5250abf94d511910add3415e}
+
+
+Redefinition of $<$$<$ operator. Inserts description including node name, index, capacitance and resistors list. 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+tcc\-Chrystian/src/include/spef\-\_\-net.\-h\end{DoxyCompactItemize}

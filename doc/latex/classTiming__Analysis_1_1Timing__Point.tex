@@ -1,0 +1,461 @@
+\hypertarget{classTiming__Analysis_1_1Timing__Point}{\section{Timing\-\_\-\-Analysis\-:\-:Timing\-\_\-\-Point Class Reference}
+\label{classTiming__Analysis_1_1Timing__Point}\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTiming__Analysis_1_1Timing__Point_a05b02a7c4e302a256b20bdabf79b37d1}{Timing\-\_\-\-Point} (string \hyperlink{classTiming__Analysis_1_1Timing__Point_aa4e767553f03fb8dea972d4443edc615}{name}, const size\-\_\-t \hyperlink{classTiming__Analysis_1_1Timing__Point_a9f8c6bbc7bc46a3d1ff81a984e76126f}{gate\-\_\-number}, Timing\-\_\-\-Point\-\_\-\-Type type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classTiming__Analysis_1_1Timing__Point_a2c676cc95977d209cfa8fe0bcb40ec49}{$\sim$\-Timing\-\_\-\-Point} ()
+\begin{DoxyCompactList}\small\item\em Empty \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} destructor. \end{DoxyCompactList}\item 
+double \hyperlink{classTiming__Analysis_1_1Timing__Point_aaca34298e068bdcc1655c50ee914b9f4}{load} () const 
+\begin{DoxyCompactList}\small\item\em Returns $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
+\hypertarget{classTiming__Analysis_1_1Timing__Point_aa68be5e44a1d56f3e6c98dff1efe60e5}{\hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries ceff} () const }\label{classTiming__Analysis_1_1Timing__Point_aa68be5e44a1d56f3e6c98dff1efe60e5}
+
+\item 
+const string \hyperlink{classTiming__Analysis_1_1Timing__Point_aa4e767553f03fb8dea972d4443edc615}{name} () const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} name. \end{DoxyCompactList}\item 
+int \hyperlink{classTiming__Analysis_1_1Timing__Point_a9f8c6bbc7bc46a3d1ff81a984e76126f}{gate\-\_\-number} () const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} gate number. \end{DoxyCompactList}\item 
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTiming__Analysis_1_1Timing__Point_af5a20a073bd09092700ceed49a74e3e7}{slack} () const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} slack time. \end{DoxyCompactList}\item 
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTiming__Analysis_1_1Timing__Point_ae4d46c6ca5f00b75088e2edb5a3bac21}{slew} () const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} slew time. \end{DoxyCompactList}\item 
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTiming__Analysis_1_1Timing__Point_ad5a21b6fae7de267768c6f108a96cc4b}{arrival\-\_\-time} () const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} arrical time. \end{DoxyCompactList}\item 
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTiming__Analysis_1_1Timing__Point_aab60710f64cbc89f7316515aaca8ea17}{required\-\_\-time} () const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} required time. \end{DoxyCompactList}\item 
+\hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} \& \hyperlink{classTiming__Analysis_1_1Timing__Point_ae5be69561ff151feb055e8081911d4c1}{net} ()
+\begin{DoxyCompactList}\small\item\em Returns reference to \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} net. \end{DoxyCompactList}\item 
+\hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} \& \hyperlink{classTiming__Analysis_1_1Timing__Point_adfac3529231393d429f746d9e1f1bfb6}{arc} () const 
+\begin{DoxyCompactList}\small\item\em Returns reference to \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} arc. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Timing__Point_ab4f9a99d6dad95ec709f165f57478e66}{ceff} (\hyperlink{classTransitions}{Transitions}$<$ double $>$ \&ceff)
+\begin{DoxyCompactList}\small\item\em Sets the effective capacitance of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Timing__Point_a18a4b15b4612ea98ebba0f1f1e25db18}{slack} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \&slack)
+\begin{DoxyCompactList}\small\item\em Sets the slack time of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Timing__Point_ac8040357b9d6e8bc62d2958b4ffb4da4}{slew} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \&slew)
+\begin{DoxyCompactList}\small\item\em Sets the slew time of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Timing__Point_a28f687613d6d4d9ec544f6b90c8d16e6}{arrival\-\_\-time} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \&arrival\-\_\-time)
+\begin{DoxyCompactList}\small\item\em Sets the arrival time of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Timing__Point_ab17571917e751e2d9bdd8dc11404bb66}{net} (\hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} $\ast$net)
+\begin{DoxyCompactList}\small\item\em Sets pointer to \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Timing__Point_a7db0f9baed61c0534e19c2009ac41db5}{arc} (\hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} $\ast$arc)
+\begin{DoxyCompactList}\small\item\em Sets pointer to \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc}. \end{DoxyCompactList}\item 
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTiming__Analysis_1_1Timing__Point_a62c2af027f267f45294b593f880bfe2d}{update\-\_\-slack} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTiming__Analysis_1_1Timing__Point_aab60710f64cbc89f7316515aaca8ea17}{required\-\_\-time})
+\begin{DoxyCompactList}\small\item\em Returns updated slack. Slack = required\-\_\-time -\/ arrival\-\_\-time. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Timing__Point_a737bfc39dc3271c9b605d1d16ba8816c}{clear\-\_\-timing\-\_\-info} ()
+\begin{DoxyCompactList}\small\item\em Slack, slew and arrival\-\_\-time parameters are set to zero. \end{DoxyCompactList}\item 
+bool \hyperlink{classTiming__Analysis_1_1Timing__Point_a2223c8ec07ef018d39db5c7e03df90a9}{is\-\_\-\-P\-O} () const 
+\begin{DoxyCompactList}\small\item\em Returns true if caller is a primary ouput. \end{DoxyCompactList}\item 
+bool \hyperlink{classTiming__Analysis_1_1Timing__Point_a0c943d53edbf2fbffa188ebf883a5b9f}{is\-\_\-\-P\-I} () const 
+\begin{DoxyCompactList}\small\item\em Returns true if caller is a primary input. \end{DoxyCompactList}\item 
+bool \hyperlink{classTiming__Analysis_1_1Timing__Point_aebb2497a057619c1cc9206253238f969}{is\-\_\-input\-\_\-pin} () const 
+\begin{DoxyCompactList}\small\item\em Returns true if caller is a input pin. \end{DoxyCompactList}\item 
+bool \hyperlink{classTiming__Analysis_1_1Timing__Point_a5c8883bd6dae6b49cb5c80e16b612d70}{is\-\_\-output\-\_\-pin} () const 
+\begin{DoxyCompactList}\small\item\em Returns true if caller is a ouput pin. \end{DoxyCompactList}\item 
+bool \hyperlink{classTiming__Analysis_1_1Timing__Point_a1353ea265660f4bada0367f9a0d4251c}{is\-\_\-\-P\-I\-\_\-input} () const 
+\begin{DoxyCompactList}\small\item\em Returns true if caller is a primary\-\_\-input input. \end{DoxyCompactList}\item 
+bool \hyperlink{classTiming__Analysis_1_1Timing__Point_aabcd5ebf7151be22c98753d16f26c84c}{is\-\_\-reg\-\_\-input} () const 
+\begin{DoxyCompactList}\small\item\em Returns true if caller is a register input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a2050314f5969ad9af0efe192b472b67a}{class {\bfseries Timing\-\_\-\-Net}}\label{classTiming__Analysis_1_1Timing__Point_a2050314f5969ad9af0efe192b472b67a}
+
+\item 
+ostream \& \hyperlink{classTiming__Analysis_1_1Timing__Point_a9ff76c936a6e34e8de6e1335f9d94663}{operator$<$$<$} (ostream \&out, const \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} \&tp)
+\begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts formatted description including arrival, required and slack times. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a05b02a7c4e302a256b20bdabf79b37d1}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!Timing\-\_\-\-Point@{Timing\-\_\-\-Point}}
+\index{Timing\-\_\-\-Point@{Timing\-\_\-\-Point}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{Timing\-\_\-\-Point}]{\setlength{\rightskip}{0pt plus 5cm}Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::\-Timing\-\_\-\-Point (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{const size\-\_\-t}]{gate\-\_\-number, }
+\item[{Timing\-\_\-\-Point\-\_\-\-Type}]{type}
+\end{DoxyParamCaption}
+)}}\label{classTiming__Analysis_1_1Timing__Point_a05b02a7c4e302a256b20bdabf79b37d1}
+
+
+\hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & name, const size\-\_\-t gate\-\_\-number, Timing\-\_\-\-Point\-\_\-\-Type type \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a2c676cc95977d209cfa8fe0bcb40ec49}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!$\sim$\-Timing\-\_\-\-Point@{$\sim$\-Timing\-\_\-\-Point}}
+\index{$\sim$\-Timing\-\_\-\-Point@{$\sim$\-Timing\-\_\-\-Point}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{$\sim$\-Timing\-\_\-\-Point}]{\setlength{\rightskip}{0pt plus 5cm}virtual Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::$\sim$\-Timing\-\_\-\-Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classTiming__Analysis_1_1Timing__Point_a2c676cc95977d209cfa8fe0bcb40ec49}
+
+
+Empty \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_adfac3529231393d429f746d9e1f1bfb6}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!arc@{arc}}
+\index{arc@{arc}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{arc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Timing\-\_\-\-Arc}\& Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::arc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_adfac3529231393d429f746d9e1f1bfb6}
+
+
+Returns reference to \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} arc. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} \& 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a7db0f9baed61c0534e19c2009ac41db5}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!arc@{arc}}
+\index{arc@{arc}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{arc}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::arc (
+\begin{DoxyParamCaption}
+\item[{{\bf Timing\-\_\-\-Arc} $\ast$}]{arc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_a7db0f9baed61c0534e19c2009ac41db5}
+
+
+Sets pointer to \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc}} & $\ast$ arc \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_ad5a21b6fae7de267768c6f108a96cc4b}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!arrival\-\_\-time@{arrival\-\_\-time}}
+\index{arrival\-\_\-time@{arrival\-\_\-time}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{arrival\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::arrival\-\_\-time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_ad5a21b6fae7de267768c6f108a96cc4b}
+
+
+Returns \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} arrical time. 
+
+\begin{DoxyReturn}{Returns}
+const \hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a28f687613d6d4d9ec544f6b90c8d16e6}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!arrival\-\_\-time@{arrival\-\_\-time}}
+\index{arrival\-\_\-time@{arrival\-\_\-time}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{arrival\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::arrival\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transitions}$<$ double $>$ \&}]{arrival\-\_\-time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_a28f687613d6d4d9ec544f6b90c8d16e6}
+
+
+Sets the arrival time of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classTransitions}{Transitions$<$double$>$}} & \& arrival\-\_\-time \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_ab4f9a99d6dad95ec709f165f57478e66}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!ceff@{ceff}}
+\index{ceff@{ceff}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{ceff}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::ceff (
+\begin{DoxyParamCaption}
+\item[{{\bf Transitions}$<$ double $>$ \&}]{ceff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_ab4f9a99d6dad95ec709f165f57478e66}
+
+
+Sets the effective capacitance of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classTransitions}{Transitions$<$double$>$}} & \& ceff \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a737bfc39dc3271c9b605d1d16ba8816c}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!clear\-\_\-timing\-\_\-info@{clear\-\_\-timing\-\_\-info}}
+\index{clear\-\_\-timing\-\_\-info@{clear\-\_\-timing\-\_\-info}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{clear\-\_\-timing\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::clear\-\_\-timing\-\_\-info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTiming__Analysis_1_1Timing__Point_a737bfc39dc3271c9b605d1d16ba8816c}
+
+
+Slack, slew and arrival\-\_\-time parameters are set to zero. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a9f8c6bbc7bc46a3d1ff81a984e76126f}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!gate\-\_\-number@{gate\-\_\-number}}
+\index{gate\-\_\-number@{gate\-\_\-number}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{gate\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}int Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::gate\-\_\-number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_a9f8c6bbc7bc46a3d1ff81a984e76126f}
+
+
+Returns \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} gate number. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_aebb2497a057619c1cc9206253238f969}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!is\-\_\-input\-\_\-pin@{is\-\_\-input\-\_\-pin}}
+\index{is\-\_\-input\-\_\-pin@{is\-\_\-input\-\_\-pin}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{is\-\_\-input\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}bool Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::is\-\_\-input\-\_\-pin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_aebb2497a057619c1cc9206253238f969}
+
+
+Returns true if caller is a input pin. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a5c8883bd6dae6b49cb5c80e16b612d70}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!is\-\_\-output\-\_\-pin@{is\-\_\-output\-\_\-pin}}
+\index{is\-\_\-output\-\_\-pin@{is\-\_\-output\-\_\-pin}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{is\-\_\-output\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}bool Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::is\-\_\-output\-\_\-pin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_a5c8883bd6dae6b49cb5c80e16b612d70}
+
+
+Returns true if caller is a ouput pin. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a0c943d53edbf2fbffa188ebf883a5b9f}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!is\-\_\-\-P\-I@{is\-\_\-\-P\-I}}
+\index{is\-\_\-\-P\-I@{is\-\_\-\-P\-I}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{is\-\_\-\-P\-I}]{\setlength{\rightskip}{0pt plus 5cm}bool Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::is\-\_\-\-P\-I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_a0c943d53edbf2fbffa188ebf883a5b9f}
+
+
+Returns true if caller is a primary input. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a1353ea265660f4bada0367f9a0d4251c}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!is\-\_\-\-P\-I\-\_\-input@{is\-\_\-\-P\-I\-\_\-input}}
+\index{is\-\_\-\-P\-I\-\_\-input@{is\-\_\-\-P\-I\-\_\-input}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{is\-\_\-\-P\-I\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}bool Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::is\-\_\-\-P\-I\-\_\-input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_a1353ea265660f4bada0367f9a0d4251c}
+
+
+Returns true if caller is a primary\-\_\-input input. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a2223c8ec07ef018d39db5c7e03df90a9}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!is\-\_\-\-P\-O@{is\-\_\-\-P\-O}}
+\index{is\-\_\-\-P\-O@{is\-\_\-\-P\-O}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{is\-\_\-\-P\-O}]{\setlength{\rightskip}{0pt plus 5cm}bool Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::is\-\_\-\-P\-O (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_a2223c8ec07ef018d39db5c7e03df90a9}
+
+
+Returns true if caller is a primary ouput. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_aabcd5ebf7151be22c98753d16f26c84c}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!is\-\_\-reg\-\_\-input@{is\-\_\-reg\-\_\-input}}
+\index{is\-\_\-reg\-\_\-input@{is\-\_\-reg\-\_\-input}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{is\-\_\-reg\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}bool Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::is\-\_\-reg\-\_\-input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_aabcd5ebf7151be22c98753d16f26c84c}
+
+
+Returns true if caller is a register input. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_aaca34298e068bdcc1655c50ee914b9f4}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!load@{load}}
+\index{load@{load}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}double Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classTiming__Analysis_1_1Timing__Point_aaca34298e068bdcc1655c50ee914b9f4}
+
+
+Returns $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_aa4e767553f03fb8dea972d4443edc615}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!name@{name}}
+\index{name@{name}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}const string Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_aa4e767553f03fb8dea972d4443edc615}
+
+
+Returns \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} name. 
+
+\begin{DoxyReturn}{Returns}
+const string 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_ae5be69561ff151feb055e8081911d4c1}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!net@{net}}
+\index{net@{net}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{net}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Timing\-\_\-\-Net}\& Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::net (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_ae5be69561ff151feb055e8081911d4c1}
+
+
+Returns reference to \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} net. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} \& 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_ab17571917e751e2d9bdd8dc11404bb66}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!net@{net}}
+\index{net@{net}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{net}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::net (
+\begin{DoxyParamCaption}
+\item[{{\bf Timing\-\_\-\-Net} $\ast$}]{net}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_ab17571917e751e2d9bdd8dc11404bb66}
+
+
+Sets pointer to \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}} & $\ast$ net \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_aab60710f64cbc89f7316515aaca8ea17}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!required\-\_\-time@{required\-\_\-time}}
+\index{required\-\_\-time@{required\-\_\-time}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{required\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::required\-\_\-time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_aab60710f64cbc89f7316515aaca8ea17}
+
+
+Returns \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} required time. 
+
+\begin{DoxyReturn}{Returns}
+const \hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_af5a20a073bd09092700ceed49a74e3e7}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!slack@{slack}}
+\index{slack@{slack}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{slack}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::slack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_af5a20a073bd09092700ceed49a74e3e7}
+
+
+Returns \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} slack time. 
+
+\begin{DoxyReturn}{Returns}
+const \hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a18a4b15b4612ea98ebba0f1f1e25db18}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!slack@{slack}}
+\index{slack@{slack}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{slack}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::slack (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transitions}$<$ double $>$ \&}]{slack}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_a18a4b15b4612ea98ebba0f1f1e25db18}
+
+
+Sets the slack time of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classTransitions}{Transitions$<$double$>$}} & \& slack \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_ae4d46c6ca5f00b75088e2edb5a3bac21}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!slew@{slew}}
+\index{slew@{slew}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{slew}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::slew (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_ae4d46c6ca5f00b75088e2edb5a3bac21}
+
+
+Returns \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} slew time. 
+
+\begin{DoxyReturn}{Returns}
+const \hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_ac8040357b9d6e8bc62d2958b4ffb4da4}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!slew@{slew}}
+\index{slew@{slew}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{slew}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::slew (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transitions}$<$ double $>$ \&}]{slew}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_ac8040357b9d6e8bc62d2958b4ffb4da4}
+
+
+Sets the slew time of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classTransitions}{Transitions$<$double$>$}} & \& slew \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a62c2af027f267f45294b593f880bfe2d}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!update\-\_\-slack@{update\-\_\-slack}}
+\index{update\-\_\-slack@{update\-\_\-slack}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{update\-\_\-slack}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::update\-\_\-slack (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transitions}$<$ double $>$}]{required\-\_\-time}
+\end{DoxyParamCaption}
+)}}\label{classTiming__Analysis_1_1Timing__Point_a62c2af027f267f45294b593f880bfe2d}
+
+
+Returns updated slack. Slack = required\-\_\-time -\/ arrival\-\_\-time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{classTransitions}{Transitions$<$double$>$} required\-\_\-time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_a9ff76c936a6e34e8de6e1335f9d94663}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Timing\-\_\-\-Point} \&}]{tp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classTiming__Analysis_1_1Timing__Point_a9ff76c936a6e34e8de6e1335f9d94663}
+
+
+Redefinition of $<$$<$ operator. Inserts formatted description including arrival, required and slack times. 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+tcc\-Chrystian/src/include/timing\-\_\-point.\-h\end{DoxyCompactItemize}

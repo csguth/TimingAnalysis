@@ -1,0 +1,89 @@
+\hypertarget{classLibertyLookupTableInterpolator}{\section{Liberty\-Lookup\-Table\-Interpolator Class Reference}
+\label{classLibertyLookupTableInterpolator}\index{Liberty\-Lookup\-Table\-Interpolator@{Liberty\-Lookup\-Table\-Interpolator}}
+}
+Inheritance diagram for Liberty\-Lookup\-Table\-Interpolator\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLibertyLookupTableInterpolator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \hyperlink{classLibertyLookupTableInterpolator_ae12e0b9e427488bc933b54a427586f47}{interpolate} (const \hyperlink{structLibertyLookupTable}{Liberty\-Lookup\-Table} \&lut, const double load, const double transition)=0
+\begin{DoxyCompactList}\small\item\em Returns interpolation of L\-U\-T. \end{DoxyCompactList}\item 
+virtual const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classLibertyLookupTableInterpolator_a3f840a4246b193e9e620b3ec8cadb720}{interpolate} (const \hyperlink{structLibertyLookupTable}{Liberty\-Lookup\-Table} \&rise\-Lut, const \hyperlink{structLibertyLookupTable}{Liberty\-Lookup\-Table} \&fall\-Lut, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ load, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ transition, Unateness unateness=N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-U\-N\-A\-T\-E, bool is\-\_\-input\-\_\-driver=false)=0
+\begin{DoxyCompactList}\small\item\em Returns interpolation of L\-U\-T$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLibertyLookupTableInterpolator_a41f28d4091ef57ce488a26f0a3aedb0b}{void {\bfseries round} (\hyperlink{classTransitions}{Transitions}$<$ double $>$ \&transitions, const int decimal\-\_\-places)}\label{classLibertyLookupTableInterpolator_a41f28d4091ef57ce488a26f0a3aedb0b}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLibertyLookupTableInterpolator_ad2d3a3313189ba7c9bb10dfbbef1a367}{static const int {\bfseries D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-E\-C\-I\-M\-A\-L\-\_\-\-P\-L\-A\-C\-E\-S}}\label{classLibertyLookupTableInterpolator_ad2d3a3313189ba7c9bb10dfbbef1a367}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLibertyLookupTableInterpolator_ae12e0b9e427488bc933b54a427586f47}{\index{Liberty\-Lookup\-Table\-Interpolator@{Liberty\-Lookup\-Table\-Interpolator}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!LibertyLookupTableInterpolator@{Liberty\-Lookup\-Table\-Interpolator}}
+\subsubsection[{interpolate}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Liberty\-Lookup\-Table\-Interpolator\-::interpolate (
+\begin{DoxyParamCaption}
+\item[{const {\bf Liberty\-Lookup\-Table} \&}]{lut, }
+\item[{const double}]{load, }
+\item[{const double}]{transition}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classLibertyLookupTableInterpolator_ae12e0b9e427488bc933b54a427586f47}
+
+
+Returns interpolation of L\-U\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{structLibertyLookupTable}{Liberty\-Lookup\-Table} \& lut, const double load, const double transition\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classLinearLibertyLookupTableInterpolator_afd4bc7bfcf9e969478fbc9505b588bf3}{Linear\-Liberty\-Lookup\-Table\-Interpolator}.
+
+\hypertarget{classLibertyLookupTableInterpolator_a3f840a4246b193e9e620b3ec8cadb720}{\index{Liberty\-Lookup\-Table\-Interpolator@{Liberty\-Lookup\-Table\-Interpolator}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!LibertyLookupTableInterpolator@{Liberty\-Lookup\-Table\-Interpolator}}
+\subsubsection[{interpolate}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf Transitions}$<$double$>$ Liberty\-Lookup\-Table\-Interpolator\-::interpolate (
+\begin{DoxyParamCaption}
+\item[{const {\bf Liberty\-Lookup\-Table} \&}]{rise\-Lut, }
+\item[{const {\bf Liberty\-Lookup\-Table} \&}]{fall\-Lut, }
+\item[{const {\bf Transitions}$<$ double $>$}]{load, }
+\item[{const {\bf Transitions}$<$ double $>$}]{transition, }
+\item[{Unateness}]{unateness = {\ttfamily NEGATIVE\-\_\-UNATE}, }
+\item[{bool}]{is\-\_\-input\-\_\-driver = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classLibertyLookupTableInterpolator_a3f840a4246b193e9e620b3ec8cadb720}
+
+
+Returns interpolation of L\-U\-T$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{structLibertyLookupTable}{Liberty\-Lookup\-Table} \& rise\-Lut, const \hyperlink{structLibertyLookupTable}{Liberty\-Lookup\-Table} \& fall\-Lut, const \hyperlink{classTransitions}{Transitions$<$double$>$} load, const \hyperlink{classTransitions}{Transitions$<$double$>$} transition, Unateness unateness(default N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-U\-N\-A\-T\-E), bool is\-\_\-input\-\_\-driver(default false)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classLinearLibertyLookupTableInterpolator_a9b0f96185327e7cb0e5c315691eb6579}{Linear\-Liberty\-Lookup\-Table\-Interpolator}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+tcc\-Chrystian/src/include/liberty\-\_\-library.\-h\end{DoxyCompactItemize}

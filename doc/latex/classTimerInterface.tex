@@ -1,0 +1,35 @@
+\hypertarget{classTimerInterface}{\section{Timer\-Interface Class Reference}
+\label{classTimerInterface}\index{Timer\-Interface@{Timer\-Interface}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Status} \{ \\*
+{\bfseries T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D} = 0, 
+{\bfseries T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y}, 
+{\bfseries T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S}, 
+{\bfseries T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R}, 
+\\*
+{\bfseries T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}{static Status {\bfseries get\-Timer\-Status} (const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark)}\label{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}
+
+\item 
+\hypertarget{classTimerInterface_ada94a843a56747a6a7b34373a266ab92}{static Status {\bfseries run\-Timing\-Analysis\-Blocking} (const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&sizes, const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark, const unsigned polling\-Time)}\label{classTimerInterface_ada94a843a56747a6a7b34373a266ab92}
+
+\item 
+\hypertarget{classTimerInterface_a9a9b69817bbbd603c3d47089b0bad829}{static Status {\bfseries start\-Timing\-Analysis\-Non\-Blocking} (const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&sizes, const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark)}\label{classTimerInterface_a9a9b69817bbbd603c3d47089b0bad829}
+
+\item 
+\hypertarget{classTimerInterface_aa62e01d4dd296f8bf9f716ff2da7c5fc}{static void {\bfseries wait} (int seconds)}\label{classTimerInterface_aa62e01d4dd296f8bf9f716ff2da7c5fc}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+tcc\-Chrystian/src/include/timer\-\_\-interface.\-h\end{DoxyCompactItemize}

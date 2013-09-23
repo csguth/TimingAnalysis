@@ -1,0 +1,57 @@
+\hypertarget{classWireDelayModel}{\section{Wire\-Delay\-Model Class Reference}
+\label{classWireDelayModel}\index{Wire\-Delay\-Model@{Wire\-Delay\-Model}}
+}
+Inheritance diagram for Wire\-Delay\-Model\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classWireDelayModel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classWireDelayModel_a0fd2defb581f6d8bcd67e5c935387d95}{{\bfseries Wire\-Delay\-Model} (const double \&lumped\-\_\-capacitance)}\label{classWireDelayModel_a0fd2defb581f6d8bcd67e5c935387d95}
+
+\item 
+\hypertarget{classWireDelayModel_a8375f713365be98c03672dbeb28eb930}{virtual const \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries simulate} (const \hyperlink{structLibertyCellInfo}{Liberty\-Cell\-Info} \&cell\-Info, const int input, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ slew, bool is\-\_\-input\-\_\-driver)=0}\label{classWireDelayModel_a8375f713365be98c03672dbeb28eb930}
+
+\item 
+\hypertarget{classWireDelayModel_a45a83dd192bcbf2a70ee13899256fe0d}{virtual const \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries delay\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const =0}\label{classWireDelayModel_a45a83dd192bcbf2a70ee13899256fe0d}
+
+\item 
+\hypertarget{classWireDelayModel_adaf486017e2ad91a900a9bef4e6f9340}{virtual const \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries slew\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const =0}\label{classWireDelayModel_adaf486017e2ad91a900a9bef4e6f9340}
+
+\item 
+\hypertarget{classWireDelayModel_a27d557bc1f2ed7e5e9787a8a5d82ecb2}{virtual void {\bfseries set\-Fanout\-Pin\-Capacitance} (const string fanout\-Name\-And\-Pin, const double pin\-Capacitance)=0}\label{classWireDelayModel_a27d557bc1f2ed7e5e9787a8a5d82ecb2}
+
+\item 
+\hypertarget{classWireDelayModel_a4f4ab93810af8ad90fd9fca0b06de141}{virtual \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries root\-\_\-delay} (int arc\-\_\-number)=0}\label{classWireDelayModel_a4f4ab93810af8ad90fd9fca0b06de141}
+
+\item 
+\hypertarget{classWireDelayModel_a9e5344c26b73f549a2b5c38fea8af13d}{virtual \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries root\-\_\-slew} (int arc\-\_\-number)=0}\label{classWireDelayModel_a9e5344c26b73f549a2b5c38fea8af13d}
+
+\item 
+\hypertarget{classWireDelayModel_a74869a3a66deb53507e8bc6f16eff45c}{virtual void {\bfseries clear} ()=0}\label{classWireDelayModel_a74869a3a66deb53507e8bc6f16eff45c}
+
+\item 
+\hypertarget{classWireDelayModel_a05f509843dfa07e17c9b6cc16ba9aaa0}{double {\bfseries lumped\-\_\-capacitance} () const }\label{classWireDelayModel_a05f509843dfa07e17c9b6cc16ba9aaa0}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classWireDelayModel_ab03b1640710e81c9dcd4cbe9b7fed329}{double {\bfseries \-\_\-lumped\-\_\-capacitance}}\label{classWireDelayModel_ab03b1640710e81c9dcd4cbe9b7fed329}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classWireDelayModel_aa8f767316492b902c13ec68651b30247}{static \\*
+\hyperlink{classLinearLibertyLookupTableInterpolator}{Linear\-Liberty\-Lookup\-Table\-Interpolator} {\bfseries interpolator}}\label{classWireDelayModel_aa8f767316492b902c13ec68651b30247}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+tcc\-Chrystian/src/include/wire\-\_\-delay\-\_\-model.\-h\end{DoxyCompactItemize}
