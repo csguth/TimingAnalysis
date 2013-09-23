@@ -24,16 +24,18 @@ using std::ostream;
 
 #include "transitions.h"
 
-// Look up table to store delay or slew functions
+/**
+* @brief Look up table to store delay or slew functions
+*/ 
 struct LibertyLookupTable {
 
-  // Look up table is indexed by the output load and the input transition values
-  // Example:
-  //   Let L = loadIndices[i]
-  //       T = transitionIndices[j]
-  //   Then, the table value corresponding to L and T will be:
-  //       table[i][j]
-  //
+  /** @brief Look up table is indexed by the output load and the input transition values
+  * Example:
+  *   Let L = loadIndices[i]
+  *       T = transitionIndices[j]
+  *   Then, the table value corresponding to L and T will be:
+  *       table[i][j]
+  */
   vector<double> loadIndices ;
   vector<double> transitionIndices ;
   vector<vector<double> > tableVals ;
@@ -46,10 +48,11 @@ struct LibertyTimingInfo {
 
   string fromPin ;
   string toPin ;
-  string timingSense ; // "non_unate" or "negative_unate" or "positive_unate".
-  // Note that ISPD-13 library will have only negative-unate combinational cells. The clock arcs
-  // for sequentials will be non_unate (which can be ignored because of the simplified sequential
-  // timing model for ISPD-13).
+  string timingSense ;
+  /** @brief "non_unate" or "negative_unate" or "positive_unate".
+  * Note that ISPD-13 library will have only negative-unate combinational cells. The clock arcs
+  * for sequentials will be non_unate (which can be ignored because of the simplified sequential
+  */ timing model for ISPD-13).
 
   
   LibertyLookupTable fallDelay ;
@@ -58,7 +61,10 @@ struct LibertyTimingInfo {
   LibertyLookupTable riseTransition ;
 
 } ;
-
+/** @brief Redefinition of << operator. Inserts formatted description*****incomplete
+ *
+ *  @param ostream& os, LibertyTimingInfo& timing
+ */
 ostream& operator<< (ostream& os, LibertyTimingInfo& timing) ;
 
 struct LibertyPinInfo {
@@ -69,6 +75,10 @@ struct LibertyPinInfo {
   bool isInput ; // whether the pin is input or output pin
   bool isClock ; // whether the pin is a clock pin or not
 
+/** @brief LibertyPinInfo default constructor***********
+*
+*
+*/
   LibertyPinInfo () : capacitance (0.0)
   , maxCapacitance (std::numeric_limits<double>::max())
   , isInput(true)
@@ -76,7 +86,10 @@ struct LibertyPinInfo {
   
 };
 
-
+/** @brief Redefinition of << operator. Inserts formatted description*****incomplete
+ *
+ *  @param ostream& os, LibertyPinInfo& pin
+ */
 ostream& operator<< (ostream& os, LibertyPinInfo& pin) ;
 
 struct LibertyCellInfo {
@@ -92,10 +105,18 @@ struct LibertyCellInfo {
   vector<LibertyPinInfo> pins ;
   vector<LibertyTimingInfo> timingArcs ;
 
+/** @brief LibertyCellInfo default constructor***********
+*
+*
+*/
   LibertyCellInfo () : leakagePower (0.0), area (0.0), isSequential (false), dontTouch(false), primaryOutput(false) {}
   
 } ;
 
+/** @brief Redefinition of << operator. Inserts formatted description*****incomplete
+ *
+ *  @param ostream& os, LibertyCellInfo& cell
+ */
 ostream& operator<< (ostream& os, LibertyCellInfo& cell) ;
 
 
@@ -110,18 +131,58 @@ class LibertyLibrary
   // fazer um map de celltype para footprint
 
 public:
+/** @brief LibertyLibrary default constructor
+ *
+ *  @param const double MaxTransition
+ */
   LibertyLibrary(const double maxTransition = 0.0f);
+
+/** @brief Empty LibertyLibrary desctructor
+ *
+ */
   virtual ~LibertyLibrary();
 
-
+/** @brief Returns pair<footprint index, option index>
+ *
+ *  @param const LibertyCellInfo & cellInfo
+ *
+ *  @return const pair<int, int>
+ */
   const pair<int, int> addCellInfo(const LibertyCellInfo & cellInfo); // return = [footprint index][option index]
 
-
+/** @brief Returns LibertyCellInfo of footprint at index i
+ *
+ *  @param const string & footPrint, const int & i
+ *
+ *  @return const LibertyCellInfo &
+ */
   const LibertyCellInfo & getCellInfo(const string & footPrint, const int & i) const;
+/** @brief Returns LibertyCellInfo of cellName name
+ *
+ *  @param const string & cellName
+ *
+ *  @return const LibertyCellInfo &
+ */
   const LibertyCellInfo & getCellInfo(const string & cellName) const;
+/** @brief Returns LibertyCellInfo of footprint footPrintIndex at index i
+ *
+ *  @param const string & footPrintIndex, const int & optionIndex
+ *
+ *  @return const LibertyCellInfo &
+ */
   const LibertyCellInfo & getCellInfo(const int & footPrintIndex, const int & optionIndex) const;
 
+/** @brief Returns index of cell cellName
+ *
+ *  @param const string &cellName
+ *
+ *  @return const pair<int, int>
+ */
   const pair<int, int> getCellIndex(const string &cellName) const;
+/** @brief Returns maxTransition
+ *
+ *  @return double
+ */
   double getMaxTransition() const ;
 
 
@@ -139,7 +200,19 @@ protected:
     static const int DEFAULT_DECIMAL_PLACES;
     void round(Transitions<double> & transitions, const int decimal_places);
 public:
+/** @brief Returns interpolation of LUT
+ *
+ *  @param const LibertyLookupTable & lut, const double load, const double transition
+ *
+ *  @return double
+ */
   virtual double interpolate(const LibertyLookupTable & lut, const double load, const double transition) = 0;
+/** @brief Returns interpolation of LUT*******************
+ *
+ *  @param const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness(default NEGATIVE_UNATE), bool is_input_driver(default false)
+ *
+ *  @return const Transitions<double>
+ */
   virtual const Transitions<double> interpolate(const LibertyLookupTable & riseLut, const LibertyLookupTable & fallLut, const Transitions<double> load, const Transitions<double> transition, Unateness unateness = NEGATIVE_UNATE, bool is_input_driver = false) = 0;
 
   /* data */

@@ -7,14 +7,16 @@
 #include <string>
 using std::string;
 
-/*
-
-	This is a Configuration File
-	To switch between ISPD2012 (Lumped Capacitance Wire Delay Model) or ISPD2013 (Distributed RC Wire Delay Model) SPEF format
-
+/**
+*
+*	This is a Configuration File
+*	To switch between ISPD2012 (Lumped Capacitance Wire Delay Model) or ISPD2013 (Distributed RC Wire Delay Model) SPEF format
+*
 */
 
-// STATIC METAPROGRAMMED IF
+/**
+*@brief STATIC METAPROGRAMMED IF
+*/ 
 template<bool cond, class ThenType, class ElseType>
 struct IF
 {
@@ -27,13 +29,13 @@ struct IF<false, ThenType, ElseType>
 };
 
 
-// User configurable {
-
+/** User configurable {
+*/
 
 class Traits 
 {
 public:
-    static const bool ISPD_2012 = false;
+    static const bool ISPD_2012 = true;
     static const double STD_THRESHOLD = 0.01;
     static string ispd_contest_root;
     static string ispd_contest_benchmark;

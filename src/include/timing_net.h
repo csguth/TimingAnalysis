@@ -16,18 +16,33 @@ namespace Timing_Analysis {
         WireDelayModel * _wire_delay_model;
 
     public:
+	/** @brief Timing_Net constructor
+	*
+	* @param const string & name, Timing_Point * from, WireDelayModel * wire_delay_model
+	*/
         Timing_Net(const string & name, Timing_Point * from, WireDelayModel * wire_delay_model)
         :Multi_Fanout_Edge<Timing_Point>(from), _name(name),_wire_delay_model(wire_delay_model)
         {
         }
+	/** @brief Empty Timing_Net destructor
+	*
+	*/
         virtual ~Timing_Net(){}
 
+	/** @brief Returns Timing_Net name
+	*
+	* @return const string
+	*/
         const string name() const;
+	/** @brief Redefinition of << operator. Inserts formatted description including Timing_Net name
+	*
+	*/
         friend ostream & operator<<(ostream & out, const Timing_Net & tn);
-
-
-
-       WireDelayModel * wire_delay_model() {return _wire_delay_model;}
+	/** @brief Returns pointer to WireDelayModel
+	*
+	* @return WireDelayModel *
+	*/
+        WireDelayModel * wire_delay_model() {return _wire_delay_model;}
     };
 }
 

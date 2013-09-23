@@ -90,9 +90,6 @@ public:
 	T aggregate() const { return clsValue[RISE] + clsValue[FALL]; }
 }; // end class
 
-
-
-
 namespace std {
     template<>
     class numeric_limits<Transitions<double> > {

@@ -15,7 +15,7 @@ class WireDelayModel
 {
 protected:
     double _lumped_capacitance;
-	static LinearLibertyLookupTableInterpolator interpolator;
+    static LinearLibertyLookupTableInterpolator interpolator;
 
 public:
     WireDelayModel(const double & lumped_capacitance) : _lumped_capacitance(lumped_capacitance){}
@@ -23,7 +23,7 @@ public:
     virtual const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver) = 0;
     virtual const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const = 0;
     virtual const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const = 0;
-	virtual void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) = 0;
+    virtual void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) = 0;
 
 
     virtual Transitions<double> root_delay(int arc_number) = 0;
@@ -38,7 +38,7 @@ class LumpedCapacitanceWireDelayModel : public WireDelayModel
     Transitions<double> _delay;
     Transitions<double> _slew;
 public:
-    LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string root_node, const bool dummy_edge = false) : WireDelayModel(descriptor.netLumpedCap){	}
+    LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string root_node, const bool dummy_edge = false) : WireDelayModel(descriptor.netLumpedCap){}
     const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> _slew, bool is_input_driver);
     const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const;
     const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const;
