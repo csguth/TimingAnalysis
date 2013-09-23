@@ -90,50 +90,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Circuit_Netlist Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Describes que set of elements of the circuit, within its nets(which connect them together)  
+ <a href="classCircuit__Netlist.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="circuit__netlist_8h_source.html">circuit_netlist.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct which represents a logic gate.  <a href="structCircuit__Netlist_1_1Logic__Gate.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct which represents a <a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Net</a>, which connect two or more circuit elements together.  <a href="structCircuit__Netlist_1_1Net.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Sink.html">Sink</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct which represents a <a class="el" href="structCircuit__Netlist_1_1Sink.html" title="Struct which represents a Sink. A sink is a vertex which has input edges, but no output edges(outdegr...">Sink</a>. A sink is a vertex which has input edges, but no output edges(outdegree zerp).  <a href="structCircuit__Netlist_1_1Sink.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aae9b9e9ea0db3af35377d67a6e4d3d98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#aae9b9e9ea0db3af35377d67a6e4d3d98">Circuit_Netlist</a> ()</td></tr>
-<tr class="memdesc:aae9b9e9ea0db3af35377d67a6e4d3d98"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classCircuit__Netlist.html">Circuit_Netlist</a> default constructor.  <a href="#aae9b9e9ea0db3af35377d67a6e4d3d98">More...</a><br/></td></tr>
+<tr class="memdesc:aae9b9e9ea0db3af35377d67a6e4d3d98"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classCircuit__Netlist.html" title="Describes que set of elements of the circuit, within its nets(which connect them together) ...">Circuit_Netlist</a> default constructor.  <a href="#aae9b9e9ea0db3af35377d67a6e4d3d98">More...</a><br/></td></tr>
 <tr class="separator:aae9b9e9ea0db3af35377d67a6e4d3d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a976bdf13baf79ba608b0c2eff6682efc"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a976bdf13baf79ba608b0c2eff6682efc">~Circuit_Netlist</a> ()</td></tr>
-<tr class="memdesc:a976bdf13baf79ba608b0c2eff6682efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty <a class="el" href="classCircuit__Netlist.html">Circuit_Netlist</a> destructor.  <a href="#a976bdf13baf79ba608b0c2eff6682efc">More...</a><br/></td></tr>
+<tr class="memdesc:a976bdf13baf79ba608b0c2eff6682efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty <a class="el" href="classCircuit__Netlist.html" title="Describes que set of elements of the circuit, within its nets(which connect them together) ...">Circuit_Netlist</a> destructor.  <a href="#a976bdf13baf79ba608b0c2eff6682efc">More...</a><br/></td></tr>
 <tr class="separator:a976bdf13baf79ba608b0c2eff6682efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a325723d10f874b1f37fae290929bb05e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a325723d10f874b1f37fae290929bb05e">addCellInst</a> (const string name, const string cellType, vector&lt; pair&lt; string, string &gt; &gt; inputPinPairs, const bool isSequential=false, const bool isInputDriver=false, const bool primary_output=false)</td></tr>
-<tr class="memdesc:a325723d10f874b1f37fae290929bb05e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds net to nets list.  <a href="#a325723d10f874b1f37fae290929bb05e">More...</a><br/></td></tr>
+<tr class="memdesc:a325723d10f874b1f37fae290929bb05e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><hr/>
+  <a href="#a325723d10f874b1f37fae290929bb05e">More...</a><br/></td></tr>
 <tr class="separator:a325723d10f874b1f37fae290929bb05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5ab8d692eb5d18bed59e41d2c55b678"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#ac5ab8d692eb5d18bed59e41d2c55b678">updateTopology</a> ()</td></tr>
-<tr class="memdesc:ac5ab8d692eb5d18bed59e41d2c55b678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates topology****incomplete.  <a href="#ac5ab8d692eb5d18bed59e41d2c55b678">More...</a><br/></td></tr>
+<tr class="memdesc:ac5ab8d692eb5d18bed59e41d2c55b678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates topology**********************.  <a href="#ac5ab8d692eb5d18bed59e41d2c55b678">More...</a><br/></td></tr>
 <tr class="separator:ac5ab8d692eb5d18bed59e41d2c55b678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bcee2cb05504ee65f3e70df9f89f576"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a9bcee2cb05504ee65f3e70df9f89f576">getNetsSize</a> () const </td></tr>
-<tr class="memdesc:a9bcee2cb05504ee65f3e70df9f89f576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number os elements in nets list.  <a href="#a9bcee2cb05504ee65f3e70df9f89f576">More...</a><br/></td></tr>
+<tr class="memdesc:a9bcee2cb05504ee65f3e70df9f89f576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number of nets.  <a href="#a9bcee2cb05504ee65f3e70df9f89f576">More...</a><br/></td></tr>
 <tr class="separator:a9bcee2cb05504ee65f3e70df9f89f576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad894dfb5dabad7c657c450d32adda23d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#ad894dfb5dabad7c657c450d32adda23d">getNet</a> (const size_t &amp;i)</td></tr>
-<tr class="memdesc:ad894dfb5dabad7c657c450d32adda23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a> at index i.  <a href="#ad894dfb5dabad7c657c450d32adda23d">More...</a><br/></td></tr>
+<tr class="memdesc:ad894dfb5dabad7c657c450d32adda23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Net</a> at index i.  <a href="#ad894dfb5dabad7c657c450d32adda23d">More...</a><br/></td></tr>
 <tr class="separator:ad894dfb5dabad7c657c450d32adda23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3413fe728fb06a6b5b71be6d676b59de"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a3413fe728fb06a6b5b71be6d676b59de">getGateT</a> (const size_t &amp;i) const </td></tr>
-<tr class="memdesc:a3413fe728fb06a6b5b71be6d676b59de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> at index i***********************.  <a href="#a3413fe728fb06a6b5b71be6d676b59de">More...</a><br/></td></tr>
+<tr class="memdesc:a3413fe728fb06a6b5b71be6d676b59de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html" title="Struct which represents a logic gate. ">Logic_Gate</a> at index i****************************************.  <a href="#a3413fe728fb06a6b5b71be6d676b59de">More...</a><br/></td></tr>
 <tr class="separator:a3413fe728fb06a6b5b71be6d676b59de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a287e1aaee9b917ce7d1192b7c3914009"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a287e1aaee9b917ce7d1192b7c3914009">getTopologicIndex</a> (const int &amp;i) const </td></tr>
 <tr class="memdesc:a287e1aaee9b917ce7d1192b7c3914009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns Topologic index at index i********************.  <a href="#a287e1aaee9b917ce7d1192b7c3914009">More...</a><br/></td></tr>
 <tr class="separator:a287e1aaee9b917ce7d1192b7c3914009"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0abd4b9e4a774c8baf83a5b1c141e67"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#aa0abd4b9e4a774c8baf83a5b1c141e67">getGatesSize</a> () const </td></tr>
-<tr class="memdesc:aa0abd4b9e4a774c8baf83a5b1c141e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number os elements in gates list.  <a href="#aa0abd4b9e4a774c8baf83a5b1c141e67">More...</a><br/></td></tr>
+<tr class="memdesc:aa0abd4b9e4a774c8baf83a5b1c141e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number of gates.  <a href="#aa0abd4b9e4a774c8baf83a5b1c141e67">More...</a><br/></td></tr>
 <tr class="separator:aa0abd4b9e4a774c8baf83a5b1c141e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c7c0bc6951c71564f8158682678d118"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a2c7c0bc6951c71564f8158682678d118">getGate</a> (const size_t &amp;i)</td></tr>
-<tr class="memdesc:a2c7c0bc6951c71564f8158682678d118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> at index i.  <a href="#a2c7c0bc6951c71564f8158682678d118">More...</a><br/></td></tr>
+<tr class="memdesc:a2c7c0bc6951c71564f8158682678d118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html" title="Struct which represents a logic gate. ">Logic_Gate</a> at index i.  <a href="#a2c7c0bc6951c71564f8158682678d118">More...</a><br/></td></tr>
 <tr class="separator:a2c7c0bc6951c71564f8158682678d118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dfc3ea50ca3a6f87ffac564011b85e2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a9dfc3ea50ca3a6f87ffac564011b85e2">getNetT</a> (const size_t &amp;i) const </td></tr>
-<tr class="memdesc:a9dfc3ea50ca3a6f87ffac564011b85e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a> at index i***************************.  <a href="#a9dfc3ea50ca3a6f87ffac564011b85e2">More...</a><br/></td></tr>
+<tr class="memdesc:a9dfc3ea50ca3a6f87ffac564011b85e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Net</a> at index i***************************.  <a href="#a9dfc3ea50ca3a6f87ffac564011b85e2">More...</a><br/></td></tr>
 <tr class="separator:a9dfc3ea50ca3a6f87ffac564011b85e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92fd5d0cfc1c5951b5ff1f31dfff2f05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a92fd5d0cfc1c5951b5ff1f31dfff2f05">get_net_topologic_index</a> (const size_t &amp;i) const </td></tr>
 <tr class="memdesc:a92fd5d0cfc1c5951b5ff1f31dfff2f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns index of NetTopology****************************.  <a href="#a92fd5d0cfc1c5951b5ff1f31dfff2f05">More...</a><br/></td></tr>
@@ -142,10 +151,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4638908b9a2c640b61f534edf048cdf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns ***************************.  <a href="#a4638908b9a2c640b61f534edf048cdf7">More...</a><br/></td></tr>
 <tr class="separator:a4638908b9a2c640b61f534edf048cdf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ada85e3c30b4787a46c7b8396cf640a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a8ada85e3c30b4787a46c7b8396cf640a">timing_arcs</a> () const </td></tr>
-<tr class="memdesc:a8ada85e3c30b4787a46c7b8396cf640a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns timings arcs.  <a href="#a8ada85e3c30b4787a46c7b8396cf640a">More...</a><br/></td></tr>
+<tr class="memdesc:a8ada85e3c30b4787a46c7b8396cf640a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number of timings arcs.  <a href="#a8ada85e3c30b4787a46c7b8396cf640a">More...</a><br/></td></tr>
 <tr class="separator:a8ada85e3c30b4787a46c7b8396cf640a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a070452269f2c7109f6ca089ae34dd752"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a070452269f2c7109f6ca089ae34dd752">timing_points</a> () const </td></tr>
-<tr class="memdesc:a070452269f2c7109f6ca089ae34dd752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns timings points.  <a href="#a070452269f2c7109f6ca089ae34dd752">More...</a><br/></td></tr>
+<tr class="memdesc:a070452269f2c7109f6ca089ae34dd752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number of timings points.  <a href="#a070452269f2c7109f6ca089ae34dd752">More...</a><br/></td></tr>
 <tr class="separator:a070452269f2c7109f6ca089ae34dd752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -154,16 +163,18 @@ Friends</h2></td></tr>
 <tr class="memdesc:a89e0a93d3704bd2eef19ab4ef0f1aa93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinition of &lt;&lt; operator. Inserts formatted description of Netlist including net/gate lists' size and elements.  <a href="#a89e0a93d3704bd2eef19ab4ef0f1aa93">More...</a><br/></td></tr>
 <tr class="separator:a89e0a93d3704bd2eef19ab4ef0f1aa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27d57f1e1851e567c639f9f60314bb35"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a27d57f1e1851e567c639f9f60314bb35">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="structCircuit__Netlist_1_1Net.html">Circuit_Netlist::Net</a> net)</td></tr>
-<tr class="memdesc:a27d57f1e1851e567c639f9f60314bb35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a> including source node/pin and list of sinks.  <a href="#a27d57f1e1851e567c639f9f60314bb35">More...</a><br/></td></tr>
+<tr class="memdesc:a27d57f1e1851e567c639f9f60314bb35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Net</a> including source node/pin and list of sinks.  <a href="#a27d57f1e1851e567c639f9f60314bb35">More...</a><br/></td></tr>
 <tr class="separator:a27d57f1e1851e567c639f9f60314bb35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac126ec5485445418dca89714e6127245"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#ac126ec5485445418dca89714e6127245">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="structCircuit__Netlist_1_1Sink.html">Circuit_Netlist::Sink</a> sink)</td></tr>
-<tr class="memdesc:ac126ec5485445418dca89714e6127245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Sink.html">Sink</a> including gate and pin name.  <a href="#ac126ec5485445418dca89714e6127245">More...</a><br/></td></tr>
+<tr class="memdesc:ac126ec5485445418dca89714e6127245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Sink.html" title="Struct which represents a Sink. A sink is a vertex which has input edges, but no output edges(outdegr...">Sink</a> including gate and pin name.  <a href="#ac126ec5485445418dca89714e6127245">More...</a><br/></td></tr>
 <tr class="separator:ac126ec5485445418dca89714e6127245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14704ccb54893bee9c46df994cb63686"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCircuit__Netlist.html#a14704ccb54893bee9c46df994cb63686">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Circuit_Netlist::Logic_Gate</a> gate)</td></tr>
-<tr class="memdesc:a14704ccb54893bee9c46df994cb63686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> including cell type, name, and input identifiers.  <a href="#a14704ccb54893bee9c46df994cb63686">More...</a><br/></td></tr>
+<tr class="memdesc:a14704ccb54893bee9c46df994cb63686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html" title="Struct which represents a logic gate. ">Logic_Gate</a> including cell type, name, and input identifiers.  <a href="#a14704ccb54893bee9c46df994cb63686">More...</a><br/></td></tr>
 <tr class="separator:a14704ccb54893bee9c46df994cb63686"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Describes que set of elements of the circuit, within its nets(which connect them together) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aae9b9e9ea0db3af35377d67a6e4d3d98"></a>
 <div class="memitem">
 <div class="memproto">
@@ -185,7 +196,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classCircuit__Netlist.html">Circuit_Netlist</a> default constructor. </p>
+<p><a class="el" href="classCircuit__Netlist.html" title="Describes que set of elements of the circuit, within its nets(which connect them together) ...">Circuit_Netlist</a> default constructor. </p>
 
 </div>
 </div>
@@ -210,7 +221,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Empty <a class="el" href="classCircuit__Netlist.html">Circuit_Netlist</a> destructor. </p>
+<p>Empty <a class="el" href="classCircuit__Netlist.html" title="Describes que set of elements of the circuit, within its nets(which connect them together) ...">Circuit_Netlist</a> destructor. </p>
 
 </div>
 </div>
@@ -263,10 +274,11 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds net to nets list. </p>
+<p><hr/>
+ </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td>string name, const string cellType, vector&lt;pair&lt;string, string&gt; &gt; inputPinPairs, const bool isSequential(false default), const bool isInputDriver(false default), const bool primary_output(false default)</td></tr>
+    <tr><td class="paramname">const</td><td>string name, const string cellType, vector&lt;pair&lt;string, string&gt; &gt; inputPinPairs, const bool isSequential(false default), const bool isInputDriver(false default), const bool *primary_output(false default)</td></tr>
   </table>
   </dd>
 </dl>
@@ -329,14 +341,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> at index i. </p>
+<p>Returns <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html" title="Struct which represents a logic gate. ">Logic_Gate</a> at index i. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>size_t &amp; i</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> &amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html" title="Struct which represents a logic gate. ">Logic_Gate</a> &amp; </dd></dl>
 
 </div>
 </div>
@@ -361,7 +373,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns number os elements in gates list. </p>
+<p>Returns number of gates. </p>
 <dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
 
 </div>
@@ -388,14 +400,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> at index i***********************. </p>
+<p>Returns <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html" title="Struct which represents a logic gate. ">Logic_Gate</a> at index i****************************************. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>size_t &amp; i</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> &amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html" title="Struct which represents a logic gate. ">Logic_Gate</a> &amp; </dd></dl>
 
 </div>
 </div>
@@ -421,14 +433,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns <a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a> at index i. </p>
+<p>Returns <a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Net</a> at index i. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>size_t &amp; i</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a> &amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Net</a> &amp; </dd></dl>
 
 </div>
 </div>
@@ -453,7 +465,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns number os elements in nets list. </p>
+<p>Returns number of nets. </p>
 <dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
 
 </div>
@@ -480,14 +492,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns <a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a> at index i***************************. </p>
+<p>Returns <a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Net</a> at index i***************************. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>size_t &amp; i</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a> &amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Net</a> &amp; </dd></dl>
 
 </div>
 </div>
@@ -537,7 +549,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns timings arcs. </p>
+<p>Returns number of timings arcs. </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
@@ -555,7 +567,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns timings points. </p>
+<p>Returns number of timings points. </p>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
@@ -573,7 +585,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Updates topology****incomplete. </p>
+<p>Updates topology**********************. </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
 </div>
@@ -632,7 +644,7 @@ Friends</h2></td></tr>
 <p>Redefinition of &lt;&lt; operator. Inserts formatted description of Netlist including net/gate lists' size and elements. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ostream</td><td>&amp; out, const <a class="el" href="classCircuit__Netlist.html">Circuit_Netlist</a> netlist </td></tr>
+    <tr><td class="paramname">ostream</td><td>&amp; out, const <a class="el" href="classCircuit__Netlist.html" title="Describes que set of elements of the circuit, within its nets(which connect them together) ...">Circuit_Netlist</a> netlist </td></tr>
   </table>
   </dd>
 </dl>
@@ -671,10 +683,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Net.html">Net</a> including source node/pin and list of sinks. </p>
+<p>Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Net</a> including source node/pin and list of sinks. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ostream</td><td>&amp; out, const <a class="el" href="structCircuit__Netlist_1_1Net.html">Circuit_Netlist::Net</a> net </td></tr>
+    <tr><td class="paramname">ostream</td><td>&amp; out, const <a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Circuit_Netlist::Net</a> net </td></tr>
   </table>
   </dd>
 </dl>
@@ -713,10 +725,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Sink.html">Sink</a> including gate and pin name. </p>
+<p>Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Sink.html" title="Struct which represents a Sink. A sink is a vertex which has input edges, but no output edges(outdegr...">Sink</a> including gate and pin name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ostream</td><td>&amp; out, const <a class="el" href="structCircuit__Netlist_1_1Sink.html">Sink</a> sink </td></tr>
+    <tr><td class="paramname">ostream</td><td>&amp; out, const <a class="el" href="structCircuit__Netlist_1_1Sink.html" title="Struct which represents a Sink. A sink is a vertex which has input edges, but no output edges(outdegr...">Sink</a> sink </td></tr>
   </table>
   </dd>
 </dl>
@@ -755,10 +767,10 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> including cell type, name, and input identifiers. </p>
+<p>Redefinition of &lt;&lt; operator. Inserts formatted description of <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html" title="Struct which represents a logic gate. ">Logic_Gate</a> including cell type, name, and input identifiers. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ostream</td><td>&amp; out, const <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html">Logic_Gate</a> gate </td></tr>
+    <tr><td class="paramname">ostream</td><td>&amp; out, const <a class="el" href="structCircuit__Netlist_1_1Logic__Gate.html" title="Struct which represents a logic gate. ">Logic_Gate</a> gate </td></tr>
   </table>
   </dd>
 </dl>
@@ -771,7 +783,7 @@ Friends</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 23 2013 09:51:32 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 23 2013 17:01:13 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

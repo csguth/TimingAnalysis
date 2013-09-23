@@ -18,21 +18,21 @@ struct \hyperlink{structSpefNetISPD2013_1_1Resistor}{Resistor}
 virtual \hyperlink{classSpefNetISPD2013_a6bd1c7cc6d7bdf677fb69bb577a6327f}{$\sim$\-Spef\-Net\-I\-S\-P\-D2013} ()
 \begin{DoxyCompactList}\small\item\em Empty Spef\-Net destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classSpefNetISPD2013_ac837ca5049dd0fc8301b1c51a8508bfd}{add\-Resistor} (const string \&node1, const string \&node2, const double \&value)
-\begin{DoxyCompactList}\small\item\em Adds new resistor to nodes list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds new resistor to nodes/resistors list. \end{DoxyCompactList}\item 
 void \hyperlink{classSpefNetISPD2013_a9d5344541f303241af6bec439a692850}{add\-Capacitor} (const string \&node, const double \&value)
-\begin{DoxyCompactList}\small\item\em Adds new capacitor to nodes list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Adds new capacitor to nodes/capacitors list. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classSpefNetISPD2013_a68ae22df2961b88537802d444dd20588}{nodes\-Size} () const 
 \begin{DoxyCompactList}\small\item\em Returns number of nodes. \end{DoxyCompactList}\item 
 const \hyperlink{structSpefNetISPD2013_1_1Node}{Node} \& \hyperlink{classSpefNetISPD2013_a8beeae8a280358ba32eedab9367b1006}{get\-Node} (const unsigned \&i) const 
 \begin{DoxyCompactList}\small\item\em Gets node at index i. \end{DoxyCompactList}\item 
 int \hyperlink{classSpefNetISPD2013_aa5143da0b98e3fa1613562061238f4ee}{get\-Node\-Index} (const string \&name) const 
-\begin{DoxyCompactList}\small\item\em Returns index of node. If not found, returns -\/1. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns index of node name. If not found, returns -\/1. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classSpefNetISPD2013_a1a15314aec6fae289f90b9e7de201fe8}{resistors\-Size} () const 
 \begin{DoxyCompactList}\small\item\em Retuns number of resistors. \end{DoxyCompactList}\item 
 const \hyperlink{structSpefNetISPD2013_1_1Resistor}{Resistor} \& \hyperlink{classSpefNetISPD2013_a1baa70cdf4b2c65a7e695849c2ad2525}{get\-Resistor} (const unsigned \&i) const 
 \begin{DoxyCompactList}\small\item\em Returns resistor at index i. \end{DoxyCompactList}\item 
 void \hyperlink{classSpefNetISPD2013_a3a0ed208b150100bda0544112fb1c0ba}{set} (string name, double lumped\-Capacitance)
-\begin{DoxyCompactList}\small\item\em Sets name and lumped\-Capacitance attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets S\-P\-E\-F netlist atributtes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,7 +46,7 @@ void \hyperlink{classSpefNetISPD2013_a3a0ed208b150100bda0544112fb1c0ba}{set} (st
 \begin{DoxyCompactItemize}
 \item 
 ostream \& \hyperlink{classSpefNetISPD2013_a6a52417a5250abf94d511910add3415e}{operator$<$$<$} (ostream \&out, const \hyperlink{classSpefNetISPD2013}{Spef\-Net\-I\-S\-P\-D2013} \&descriptor)
-\begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts description including node name, index, capacitance and resistors list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts description including node name, index, capacitance and resistances list. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -85,7 +85,7 @@ Empty Spef\-Net destructor.
 )}}\label{classSpefNetISPD2013_a9d5344541f303241af6bec439a692850}
 
 
-Adds new capacitor to nodes list. 
+Adds new capacitor to nodes/capacitors list. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -106,7 +106,7 @@ void
 )}}\label{classSpefNetISPD2013_ac837ca5049dd0fc8301b1c51a8508bfd}
 
 
-Adds new resistor to nodes list. 
+Adds new resistor to nodes/resistors list. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -144,7 +144,7 @@ const \hyperlink{structSpefNetISPD2013_1_1Node}{Node}
 ) const}}\label{classSpefNetISPD2013_aa5143da0b98e3fa1613562061238f4ee}
 
 
-Returns index of node. If not found, returns -\/1. 
+Returns index of node name. If not found, returns -\/1. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -211,7 +211,7 @@ size\-\_\-t
 )}}\label{classSpefNetISPD2013_a3a0ed208b150100bda0544112fb1c0ba}
 
 
-Sets name and lumped\-Capacitance attributes. 
+Sets S\-P\-E\-F netlist atributtes. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -234,7 +234,7 @@ void
 )\hspace{0.3cm}{\ttfamily [friend]}}}\label{classSpefNetISPD2013_a6a52417a5250abf94d511910add3415e}
 
 
-Redefinition of $<$$<$ operator. Inserts description including node name, index, capacitance and resistors list. 
+Redefinition of $<$$<$ operator. Inserts description including node name, index, capacitance and resistances list. 
 
 
 

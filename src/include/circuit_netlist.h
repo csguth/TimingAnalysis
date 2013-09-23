@@ -24,11 +24,15 @@ using std::endl;
 using std::queue;
 
 #include <cassert>
-
+/** @brief Describes que set of elements of the circuit, within its nets(which connect them together)
+*
+*/
 class Circuit_Netlist
 {
 public:
-
+	/** @brief Struct which represents a logic gate
+	*
+	*/
     struct Logic_Gate {
 		string name;
 		string cellType;
@@ -46,7 +50,9 @@ public:
 			name(name), cellType(cellType), inNets(inputs), fanoutNetIndex(fanoutNetIndex), inputDriver(inputDriver), primary_output(primary_output)
 			{};
 	};
-
+	/** @brief Struct which represents a Sink. A sink is a vertex which has input edges, but no output edges(outdegree zerp). 
+	*
+	*/
 	struct Sink {
 		int gate;
 		string pinName;
@@ -56,7 +62,9 @@ public:
 		*/
 		Sink(const int gate, const string pinName) : gate(gate), pinName(pinName){};
 	};
-
+	/** @brief Struct which represents a Net, which connect two or more circuit elements together
+	*
+	*/
 	struct Net {
 		string name;
 		int sourceNode;
@@ -171,20 +179,20 @@ public:
 	*/
     virtual ~Circuit_Netlist(){}
 
-	/** @brief Adds net to nets list
+	/** @brief ********************************
 	*
-	* @param const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential(false default), const bool isInputDriver(false default), const bool 		primary_output(false default)
+	* @param const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential(false default), const bool isInputDriver(false default), const bool *primary_output(false default)
 	*
 	* @return void
 	*/
 	void addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential = false, const bool isInputDriver = false, const bool primary_output = false);
 
-	/** @brief Updates topology****incomplete
+	/** @brief Updates topology**********************
 	*
 	* @return void
 	*/
 	void updateTopology();
-	/** @brief Returns number os elements in nets list
+	/** @brief Returns number of nets
 	*
 	* @return size_t
 	*/
@@ -196,7 +204,7 @@ public:
 	* @return Net &
 	*/
     Net & getNet(const size_t & i) { return nets[i]; }
-	/** @brief Returns Logic_Gate at index i***********************
+	/** @brief Returns Logic_Gate at index i****************************************
 	*
 	*@param const size_t & i
 	*
@@ -211,7 +219,7 @@ public:
 	*/
     int getTopologicIndex(const int & i) const { return (i==-1?-1:inverseTopology.at(i)); }
 
-	/** @brief Returns number os elements in gates list
+	/** @brief Returns number of gates
 	*
 	* @return size_t
 	*/
@@ -244,12 +252,12 @@ public:
 	*/
 	const vector<pair<int, string> > verilog() const;
 
-	/** @brief Returns timings arcs
+	/** @brief Returns number of timings arcs
 	*
 	*@return int
 	*/
     int timing_arcs() const;
-	/** @brief Returns timings points
+	/** @brief Returns number of timings points
 	*
 	*@return int
 	*/

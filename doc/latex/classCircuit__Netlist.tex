@@ -1,15 +1,24 @@
 \hypertarget{classCircuit__Netlist}{\section{Circuit\-\_\-\-Netlist Class Reference}
 \label{classCircuit__Netlist}\index{Circuit\-\_\-\-Netlist@{Circuit\-\_\-\-Netlist}}
 }
+
+
+Describes que set of elements of the circuit, within its nets(which connect them together)  
+
+
+
+
+{\ttfamily \#include $<$circuit\-\_\-netlist.\-h$>$}
+
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate}
-\item 
+\begin{DoxyCompactList}\small\item\em Struct which represents a logic gate. \end{DoxyCompactList}\item 
 struct \hyperlink{structCircuit__Netlist_1_1Net}{Net}
-\item 
+\begin{DoxyCompactList}\small\item\em Struct which represents a \hyperlink{structCircuit__Netlist_1_1Net}{Net}, which connect two or more circuit elements together. \end{DoxyCompactList}\item 
 struct \hyperlink{structCircuit__Netlist_1_1Sink}{Sink}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Struct which represents a \hyperlink{structCircuit__Netlist_1_1Sink}{Sink}. A sink is a vertex which has input edges, but no output edges(outdegree zerp). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,19 +27,21 @@ struct \hyperlink{structCircuit__Netlist_1_1Sink}{Sink}
 virtual \hyperlink{classCircuit__Netlist_a976bdf13baf79ba608b0c2eff6682efc}{$\sim$\-Circuit\-\_\-\-Netlist} ()
 \begin{DoxyCompactList}\small\item\em Empty \hyperlink{classCircuit__Netlist}{Circuit\-\_\-\-Netlist} destructor. \end{DoxyCompactList}\item 
 void \hyperlink{classCircuit__Netlist_a325723d10f874b1f37fae290929bb05e}{add\-Cell\-Inst} (const string name, const string cell\-Type, vector$<$ pair$<$ string, string $>$ $>$ input\-Pin\-Pairs, const bool is\-Sequential=false, const bool is\-Input\-Driver=false, const bool primary\-\_\-output=false)
-\begin{DoxyCompactList}\small\item\em Adds net to nets list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em 
+
+ \end{DoxyCompactList}\item 
 void \hyperlink{classCircuit__Netlist_ac5ab8d692eb5d18bed59e41d2c55b678}{update\-Topology} ()
-\begin{DoxyCompactList}\small\item\em Updates topology$\ast$$\ast$$\ast$$\ast$incomplete. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Updates topology$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classCircuit__Netlist_a9bcee2cb05504ee65f3e70df9f89f576}{get\-Nets\-Size} () const 
-\begin{DoxyCompactList}\small\item\em Returns number os elements in nets list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns number of nets. \end{DoxyCompactList}\item 
 \hyperlink{structCircuit__Netlist_1_1Net}{Net} \& \hyperlink{classCircuit__Netlist_ad894dfb5dabad7c657c450d32adda23d}{get\-Net} (const size\-\_\-t \&i)
 \begin{DoxyCompactList}\small\item\em Returns \hyperlink{structCircuit__Netlist_1_1Net}{Net} at index i. \end{DoxyCompactList}\item 
 const \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} \& \hyperlink{classCircuit__Netlist_a3413fe728fb06a6b5b71be6d676b59de}{get\-Gate\-T} (const size\-\_\-t \&i) const 
-\begin{DoxyCompactList}\small\item\em Returns \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
 int \hyperlink{classCircuit__Netlist_a287e1aaee9b917ce7d1192b7c3914009}{get\-Topologic\-Index} (const int \&i) const 
 \begin{DoxyCompactList}\small\item\em Returns Topologic index at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
 size\-\_\-t \hyperlink{classCircuit__Netlist_aa0abd4b9e4a774c8baf83a5b1c141e67}{get\-Gates\-Size} () const 
-\begin{DoxyCompactList}\small\item\em Returns number os elements in gates list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns number of gates. \end{DoxyCompactList}\item 
 \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} \& \hyperlink{classCircuit__Netlist_a2c7c0bc6951c71564f8158682678d118}{get\-Gate} (const size\-\_\-t \&i)
 \begin{DoxyCompactList}\small\item\em Returns \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} at index i. \end{DoxyCompactList}\item 
 const \hyperlink{structCircuit__Netlist_1_1Net}{Net} \& \hyperlink{classCircuit__Netlist_a9dfc3ea50ca3a6f87ffac564011b85e2}{get\-Net\-T} (const size\-\_\-t \&i) const 
@@ -40,9 +51,9 @@ int \hyperlink{classCircuit__Netlist_a92fd5d0cfc1c5951b5ff1f31dfff2f05}{get\-\_\
 const vector$<$ pair$<$ int, string $>$ $>$ \hyperlink{classCircuit__Netlist_a4638908b9a2c640b61f534edf048cdf7}{verilog} () const 
 \begin{DoxyCompactList}\small\item\em Returns $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
 int \hyperlink{classCircuit__Netlist_a8ada85e3c30b4787a46c7b8396cf640a}{timing\-\_\-arcs} () const 
-\begin{DoxyCompactList}\small\item\em Returns timings arcs. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns number of timings arcs. \end{DoxyCompactList}\item 
 int \hyperlink{classCircuit__Netlist_a070452269f2c7109f6ca089ae34dd752}{timing\-\_\-points} () const 
-\begin{DoxyCompactList}\small\item\em Returns timings points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns number of timings points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,6 +65,11 @@ ostream \& \hyperlink{classCircuit__Netlist_ac126ec5485445418dca89714e6127245}{o
 \begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts formatted description of \hyperlink{structCircuit__Netlist_1_1Sink}{Sink} including gate and pin name. \end{DoxyCompactList}\item 
 ostream \& \hyperlink{classCircuit__Netlist_a14704ccb54893bee9c46df994cb63686}{operator$<$$<$} (ostream \&out, const \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Circuit\-\_\-\-Netlist\-::\-Logic\-\_\-\-Gate} gate)
 \begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts formatted description of \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} including cell type, name, and input identifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Describes que set of elements of the circuit, within its nets(which connect them together) 
+
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -96,11 +112,13 @@ Empty \hyperlink{classCircuit__Netlist}{Circuit\-\_\-\-Netlist} destructor.
 )}}\label{classCircuit__Netlist_a325723d10f874b1f37fae290929bb05e}
 
 
-Adds net to nets list. 
+
+
+ 
 
 
 \begin{DoxyParams}{Parameters}
-{\em const} & string name, const string cell\-Type, vector$<$pair$<$string, string$>$ $>$ input\-Pin\-Pairs, const bool is\-Sequential(false default), const bool is\-Input\-Driver(false default), const bool primary\-\_\-output(false default)\\
+{\em const} & string name, const string cell\-Type, vector$<$pair$<$string, string$>$ $>$ input\-Pin\-Pairs, const bool is\-Sequential(false default), const bool is\-Input\-Driver(false default), const bool $\ast$primary\-\_\-output(false default)\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -153,7 +171,7 @@ Returns \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} at 
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_aa0abd4b9e4a774c8baf83a5b1c141e67}
 
 
-Returns number os elements in gates list. 
+Returns number of gates. 
 
 \begin{DoxyReturn}{Returns}
 size\-\_\-t 
@@ -167,7 +185,7 @@ size\-\_\-t
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_a3413fe728fb06a6b5b71be6d676b59de}
 
 
-Returns \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+Returns \hyperlink{structCircuit__Netlist_1_1Logic__Gate}{Logic\-\_\-\-Gate} at index i$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -205,7 +223,7 @@ Returns \hyperlink{structCircuit__Netlist_1_1Net}{Net} at index i.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classCircuit__Netlist_a9bcee2cb05504ee65f3e70df9f89f576}
 
 
-Returns number os elements in nets list. 
+Returns number of nets. 
 
 \begin{DoxyReturn}{Returns}
 size\-\_\-t 
@@ -257,7 +275,7 @@ int
 ) const}}\label{classCircuit__Netlist_a8ada85e3c30b4787a46c7b8396cf640a}
 
 
-Returns timings arcs. 
+Returns number of timings arcs. 
 
 \begin{DoxyReturn}{Returns}
 int 
@@ -271,7 +289,7 @@ int
 ) const}}\label{classCircuit__Netlist_a070452269f2c7109f6ca089ae34dd752}
 
 
-Returns timings points. 
+Returns number of timings points. 
 
 \begin{DoxyReturn}{Returns}
 int 
@@ -285,7 +303,7 @@ int
 )}}\label{classCircuit__Netlist_ac5ab8d692eb5d18bed59e41d2c55b678}
 
 
-Updates topology$\ast$$\ast$$\ast$$\ast$incomplete. 
+Updates topology$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
 
 \begin{DoxyReturn}{Returns}
 void 

@@ -9,13 +9,13 @@ using std::string;
 
 /**
 *
-*	This is a Configuration File
+*@brief	This is a Configuration File
 *	To switch between ISPD2012 (Lumped Capacitance Wire Delay Model) or ISPD2013 (Distributed RC Wire Delay Model) SPEF format
 *
 */
 
 /**
-*@brief STATIC METAPROGRAMMED IF
+* STATIC METAPROGRAMMED IF
 */ 
 template<bool cond, class ThenType, class ElseType>
 struct IF
