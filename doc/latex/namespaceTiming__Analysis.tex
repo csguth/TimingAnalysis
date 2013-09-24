@@ -1,0 +1,44 @@
+\hypertarget{namespaceTiming__Analysis}{\section{Timing\-\_\-\-Analysis Namespace Reference}
+\label{namespaceTiming__Analysis}\index{Timing\-\_\-\-Analysis@{Timing\-\_\-\-Analysis}}
+}
+
+
+Describes a timing point of the timing graph model.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classTiming__Analysis_1_1Edge}{Edge}
+\begin{DoxyCompactList}\small\item\em Template class which represents an edge of the graph model. An edge in graph theory is a connection between vertices. \end{DoxyCompactList}\item 
+class \hyperlink{classTiming__Analysis_1_1Multi__Fanout__Edge}{Multi\-\_\-\-Fanout\-\_\-\-Edge}
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classTiming__Analysis_1_1Edge}{Edge}. Template class which represents a single edge of the graph model. In a circuit, a multi fanout edge is a logic gate output which has multiple inputs connected to it. \end{DoxyCompactList}\item 
+class \hyperlink{classTiming__Analysis_1_1Single__Fanout__Edge}{Single\-\_\-\-Fanout\-\_\-\-Edge}
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classTiming__Analysis_1_1Edge}{Edge}. Template class which represents a single edge of the graph model. In a circuit, a single fanout edge is a logic gate output which has only one input connected to it. \end{DoxyCompactList}\item 
+class \hyperlink{classTiming__Analysis_1_1Option}{Option}
+\item 
+class \hyperlink{classTiming__Analysis_1_1Timing__Analysis}{Timing\-\_\-\-Analysis}
+\item 
+class \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc}
+\begin{DoxyCompactList}\small\item\em Describes a timing arc of the timing graph model. \end{DoxyCompactList}\item 
+class \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}
+\item 
+class \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Timing\-\_\-\-Point\-\_\-\-Type} \{ \\*
+{\bfseries I\-N\-P\-U\-T}, 
+{\bfseries O\-U\-T\-P\-U\-T}, 
+{\bfseries P\-I\-\_\-\-I\-N\-P\-U\-T}, 
+{\bfseries R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-I\-N\-P\-U\-T}, 
+\\*
+{\bfseries P\-I}, 
+{\bfseries P\-O}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Describes a timing point of the timing graph model. 

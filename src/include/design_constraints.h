@@ -15,7 +15,9 @@ using std::make_pair;
 #include <iostream>
 using std::endl;
 using std::cout;
-
+/** @brief Configuration class where the constraints of the case in study are set
+*
+*/
 class Design_Constraints
 {
     double _clock;

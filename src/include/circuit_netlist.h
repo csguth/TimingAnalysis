@@ -24,7 +24,7 @@ using std::endl;
 using std::queue;
 
 #include <cassert>
-/** @brief Describes que set of elements of the circuit, within its nets(which connect them together)
+/** @brief Describes que set of elements of the circuit, within its nets(which connect them together)******incomplete
 *
 */
 class Circuit_Netlist

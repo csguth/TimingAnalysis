@@ -1,6 +1,15 @@
 \hypertarget{classTiming__Analysis_1_1Timing__Point}{\section{Timing\-\_\-\-Analysis\-:\-:Timing\-\_\-\-Point Class Reference}
 \label{classTiming__Analysis_1_1Timing__Point}\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
 }
+
+
+Describes a timing point of the timing graph model.  
+
+
+
+
+{\ttfamily \#include $<$timing\-\_\-point.\-h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -9,7 +18,7 @@
 virtual \hyperlink{classTiming__Analysis_1_1Timing__Point_a2c676cc95977d209cfa8fe0bcb40ec49}{$\sim$\-Timing\-\_\-\-Point} ()
 \begin{DoxyCompactList}\small\item\em Empty \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} destructor. \end{DoxyCompactList}\item 
 double \hyperlink{classTiming__Analysis_1_1Timing__Point_aaca34298e068bdcc1655c50ee914b9f4}{load} () const 
-\begin{DoxyCompactList}\small\item\em Returns $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns capacitive load of timing point. \end{DoxyCompactList}\item 
 \hypertarget{classTiming__Analysis_1_1Timing__Point_aa68be5e44a1d56f3e6c98dff1efe60e5}{\hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries ceff} () const }\label{classTiming__Analysis_1_1Timing__Point_aa68be5e44a1d56f3e6c98dff1efe60e5}
 
 \item 
@@ -44,7 +53,7 @@ void \hyperlink{classTiming__Analysis_1_1Timing__Point_a7db0f9baed61c0534e19c200
 const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTiming__Analysis_1_1Timing__Point_a62c2af027f267f45294b593f880bfe2d}{update\-\_\-slack} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTiming__Analysis_1_1Timing__Point_aab60710f64cbc89f7316515aaca8ea17}{required\-\_\-time})
 \begin{DoxyCompactList}\small\item\em Returns updated slack. Slack = required\-\_\-time -\/ arrival\-\_\-time. \end{DoxyCompactList}\item 
 void \hyperlink{classTiming__Analysis_1_1Timing__Point_a737bfc39dc3271c9b605d1d16ba8816c}{clear\-\_\-timing\-\_\-info} ()
-\begin{DoxyCompactList}\small\item\em Slack, slew and arrival\-\_\-time parameters are set to zero. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Slack, slew and arrival time parameters are set to zero. \end{DoxyCompactList}\item 
 bool \hyperlink{classTiming__Analysis_1_1Timing__Point_a2223c8ec07ef018d39db5c7e03df90a9}{is\-\_\-\-P\-O} () const 
 \begin{DoxyCompactList}\small\item\em Returns true if caller is a primary ouput. \end{DoxyCompactList}\item 
 bool \hyperlink{classTiming__Analysis_1_1Timing__Point_a0c943d53edbf2fbffa188ebf883a5b9f}{is\-\_\-\-P\-I} () const 
@@ -65,6 +74,11 @@ bool \hyperlink{classTiming__Analysis_1_1Timing__Point_aabcd5ebf7151be22c98753d1
 \item 
 ostream \& \hyperlink{classTiming__Analysis_1_1Timing__Point_a9ff76c936a6e34e8de6e1335f9d94663}{operator$<$$<$} (ostream \&out, const \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} \&tp)
 \begin{DoxyCompactList}\small\item\em Redefinition of $<$$<$ operator. Inserts formatted description including arrival, required and slack times. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Describes a timing point of the timing graph model. 
+
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -185,7 +199,7 @@ Sets the effective capacitance of the \hyperlink{classTiming__Analysis_1_1Timing
 )}}\label{classTiming__Analysis_1_1Timing__Point_a737bfc39dc3271c9b605d1d16ba8816c}
 
 
-Slack, slew and arrival\-\_\-time parameters are set to zero. 
+Slack, slew and arrival time parameters are set to zero. 
 
 \begin{DoxyReturn}{Returns}
 void 
@@ -297,7 +311,7 @@ bool
 ) const}}\label{classTiming__Analysis_1_1Timing__Point_aaca34298e068bdcc1655c50ee914b9f4}
 
 
-Returns $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+Returns capacitive load of timing point. 
 
 \begin{DoxyReturn}{Returns}
 double 

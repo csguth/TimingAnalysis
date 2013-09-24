@@ -1,6 +1,15 @@
 \hypertarget{classTiming__Analysis_1_1Timing__Arc}{\section{Timing\-\_\-\-Analysis\-:\-:Timing\-\_\-\-Arc Class Reference}
 \label{classTiming__Analysis_1_1Timing__Arc}\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
 }
+
+
+Describes a timing arc of the timing graph model.  
+
+
+
+
+{\ttfamily \#include $<$timing\-\_\-arc.\-h$>$}
+
 Inheritance diagram for Timing\-\_\-\-Analysis\-:\-:Timing\-\_\-\-Arc\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,37 +19,184 @@ Inheritance diagram for Timing\-\_\-\-Analysis\-:\-:Timing\-\_\-\-Arc\-:\begin{f
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classTiming__Analysis_1_1Timing__Arc_a38312efc7070c651743a667568514162}{{\bfseries Timing\-\_\-\-Arc} (\hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} $\ast$\hyperlink{classTiming__Analysis_1_1Edge_a47020ea89fd9fde438adc814a731a23d}{from}, \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} $\ast$\hyperlink{classTiming__Analysis_1_1Single__Fanout__Edge_ac01deccce158b6cee6883924e6dcb788}{to}, const int arc\-Number, const int gate\-\_\-number)}\label{classTiming__Analysis_1_1Timing__Arc_a38312efc7070c651743a667568514162}
-
-\item 
-\hypertarget{classTiming__Analysis_1_1Timing__Arc_a092de659dd0846a3e899f0efd9c34397}{void {\bfseries clear} ()}\label{classTiming__Analysis_1_1Timing__Arc_a092de659dd0846a3e899f0efd9c34397}
-
-\item 
-\hypertarget{classTiming__Analysis_1_1Timing__Arc_a6561e6eb77cc7536f5515db318b233ce}{\hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries delay} () const }\label{classTiming__Analysis_1_1Timing__Arc_a6561e6eb77cc7536f5515db318b233ce}
-
-\item 
-\hypertarget{classTiming__Analysis_1_1Timing__Arc_a9846eb6bd9afc2cd8cbb0f926daf39a5}{\hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries slew} () const }\label{classTiming__Analysis_1_1Timing__Arc_a9846eb6bd9afc2cd8cbb0f926daf39a5}
-
-\item 
-\hypertarget{classTiming__Analysis_1_1Timing__Arc_a74682f1b90b14cb0902dca32e6430fd2}{void {\bfseries delay} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \&delay)}\label{classTiming__Analysis_1_1Timing__Arc_a74682f1b90b14cb0902dca32e6430fd2}
-
-\item 
-\hypertarget{classTiming__Analysis_1_1Timing__Arc_a5521ea0890331cb77e6b0ea72a7062a3}{void {\bfseries slew} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \&slew)}\label{classTiming__Analysis_1_1Timing__Arc_a5521ea0890331cb77e6b0ea72a7062a3}
-
-\item 
-\hypertarget{classTiming__Analysis_1_1Timing__Arc_aa4a54ed3cd6762bd26a3fdf566b5a234}{int {\bfseries arc\-\_\-number} () const }\label{classTiming__Analysis_1_1Timing__Arc_aa4a54ed3cd6762bd26a3fdf566b5a234}
-
-\item 
-\hypertarget{classTiming__Analysis_1_1Timing__Arc_abd085ce8fe10d00d6e0be2668773b32f}{int {\bfseries gate\-\_\-number} () const }\label{classTiming__Analysis_1_1Timing__Arc_abd085ce8fe10d00d6e0be2668773b32f}
-
-\end{DoxyCompactItemize}
+\hyperlink{classTiming__Analysis_1_1Timing__Arc_a38312efc7070c651743a667568514162}{Timing\-\_\-\-Arc} (\hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} $\ast$\hyperlink{classTiming__Analysis_1_1Edge_a47020ea89fd9fde438adc814a731a23d}{from}, \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} $\ast$\hyperlink{classTiming__Analysis_1_1Single__Fanout__Edge_ac01deccce158b6cee6883924e6dcb788}{to}, const int arc\-Number, const int \hyperlink{classTiming__Analysis_1_1Timing__Arc_abd085ce8fe10d00d6e0be2668773b32f}{gate\-\_\-number})
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classTiming__Analysis_1_1Timing__Arc_a32909fb0fdc3bd5f2a13cdb9f9b351b8}{$\sim$\-Timing\-\_\-\-Arc} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Timing__Arc_a092de659dd0846a3e899f0efd9c34397}{clear} ()
+\begin{DoxyCompactList}\small\item\em Sets delay and slew time to zero. \end{DoxyCompactList}\item 
+\hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTiming__Analysis_1_1Timing__Arc_a6561e6eb77cc7536f5515db318b233ce}{delay} () const 
+\begin{DoxyCompactList}\small\item\em Returns delay time. \end{DoxyCompactList}\item 
+\hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTiming__Analysis_1_1Timing__Arc_a9846eb6bd9afc2cd8cbb0f926daf39a5}{slew} () const 
+\begin{DoxyCompactList}\small\item\em Returns slew time. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Timing__Arc_a74682f1b90b14cb0902dca32e6430fd2}{delay} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \&delay)
+\begin{DoxyCompactList}\small\item\em Sets delay time. \end{DoxyCompactList}\item 
+void \hyperlink{classTiming__Analysis_1_1Timing__Arc_a5521ea0890331cb77e6b0ea72a7062a3}{slew} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \&slew)
+\begin{DoxyCompactList}\small\item\em Sets slew time. \end{DoxyCompactList}\item 
+int \hyperlink{classTiming__Analysis_1_1Timing__Arc_aa4a54ed3cd6762bd26a3fdf566b5a234}{arc\-\_\-number} () const 
+\begin{DoxyCompactList}\small\item\em Returns arc number. \end{DoxyCompactList}\item 
+int \hyperlink{classTiming__Analysis_1_1Timing__Arc_abd085ce8fe10d00d6e0be2668773b32f}{gate\-\_\-number} () const 
+\begin{DoxyCompactList}\small\item\em Returns gate number. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classTiming__Analysis_1_1Timing__Arc_ae33a875fefadb96a5cdf5a17791c4d24}{ostream \& {\bfseries operator$<$$<$} (ostream \&out, const \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} \&ta)}\label{classTiming__Analysis_1_1Timing__Arc_ae33a875fefadb96a5cdf5a17791c4d24}
-
-\end{DoxyCompactItemize}
+ostream \& \hyperlink{classTiming__Analysis_1_1Timing__Arc_ae33a875fefadb96a5cdf5a17791c4d24}{operator$<$$<$} (ostream \&out, const \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} \&ta)
+\begin{DoxyCompactList}\small\item\em Inserts formatted description of timing arc, including the origin vertex and destiny vertex. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Describes a timing arc of the timing graph model. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTiming__Analysis_1_1Timing__Arc_a38312efc7070c651743a667568514162}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}!Timing\-\_\-\-Arc@{Timing\-\_\-\-Arc}}
+\index{Timing\-\_\-\-Arc@{Timing\-\_\-\-Arc}!Timing_Analysis::Timing_Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
+\subsubsection[{Timing\-\_\-\-Arc}]{\setlength{\rightskip}{0pt plus 5cm}Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc\-::\-Timing\-\_\-\-Arc (
+\begin{DoxyParamCaption}
+\item[{{\bf Timing\-\_\-\-Point} $\ast$}]{from, }
+\item[{{\bf Timing\-\_\-\-Point} $\ast$}]{to, }
+\item[{const int}]{arc\-Number, }
+\item[{const int}]{gate\-\_\-number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Arc_a38312efc7070c651743a667568514162}
+
+
+\hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point}} & $\ast$ from, \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} $\ast$ to, const int arc\-Number, const int gate\-\_\-number) \-: \hyperlink{classTiming__Analysis_1_1Single__Fanout__Edge}{Single\-\_\-\-Fanout\-\_\-\-Edge$<$\-Timing\-\_\-\-Point$>$(from, to)}, \-\_\-delay(0.\-0f, 0.\-0f), \-\_\-slew(0.\-0f, 0.\-0f), \-\_\-arc\-\_\-number (arc\-Number), \-\_\-gate\-\_\-number(gate\-\_\-number) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classTiming__Analysis_1_1Timing__Arc_a32909fb0fdc3bd5f2a13cdb9f9b351b8}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}!$\sim$\-Timing\-\_\-\-Arc@{$\sim$\-Timing\-\_\-\-Arc}}
+\index{$\sim$\-Timing\-\_\-\-Arc@{$\sim$\-Timing\-\_\-\-Arc}!Timing_Analysis::Timing_Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
+\subsubsection[{$\sim$\-Timing\-\_\-\-Arc}]{\setlength{\rightskip}{0pt plus 5cm}virtual Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc\-::$\sim$\-Timing\-\_\-\-Arc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classTiming__Analysis_1_1Timing__Arc_a32909fb0fdc3bd5f2a13cdb9f9b351b8}
+
+
+\hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTiming__Analysis_1_1Timing__Arc_aa4a54ed3cd6762bd26a3fdf566b5a234}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}!arc\-\_\-number@{arc\-\_\-number}}
+\index{arc\-\_\-number@{arc\-\_\-number}!Timing_Analysis::Timing_Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
+\subsubsection[{arc\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}int Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc\-::arc\-\_\-number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Arc_aa4a54ed3cd6762bd26a3fdf566b5a234}
+
+
+Returns arc number. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Arc_a092de659dd0846a3e899f0efd9c34397}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}!clear@{clear}}
+\index{clear@{clear}!Timing_Analysis::Timing_Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTiming__Analysis_1_1Timing__Arc_a092de659dd0846a3e899f0efd9c34397}
+
+
+Sets delay and slew time to zero. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Arc_a6561e6eb77cc7536f5515db318b233ce}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}!delay@{delay}}
+\index{delay@{delay}!Timing_Analysis::Timing_Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
+\subsubsection[{delay}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transitions}$<$double$>$ Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc\-::delay (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Arc_a6561e6eb77cc7536f5515db318b233ce}
+
+
+Returns delay time. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Arc_a74682f1b90b14cb0902dca32e6430fd2}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}!delay@{delay}}
+\index{delay@{delay}!Timing_Analysis::Timing_Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
+\subsubsection[{delay}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc\-::delay (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transitions}$<$ double $>$ \&}]{delay}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Arc_a74682f1b90b14cb0902dca32e6430fd2}
+
+
+Sets delay time. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Arc_abd085ce8fe10d00d6e0be2668773b32f}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}!gate\-\_\-number@{gate\-\_\-number}}
+\index{gate\-\_\-number@{gate\-\_\-number}!Timing_Analysis::Timing_Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
+\subsubsection[{gate\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}int Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc\-::gate\-\_\-number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Arc_abd085ce8fe10d00d6e0be2668773b32f}
+
+
+Returns gate number. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Arc_a9846eb6bd9afc2cd8cbb0f926daf39a5}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}!slew@{slew}}
+\index{slew@{slew}!Timing_Analysis::Timing_Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
+\subsubsection[{slew}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transitions}$<$double$>$ Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc\-::slew (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Arc_a9846eb6bd9afc2cd8cbb0f926daf39a5}
+
+
+Returns slew time. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Arc_a5521ea0890331cb77e6b0ea72a7062a3}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}!slew@{slew}}
+\index{slew@{slew}!Timing_Analysis::Timing_Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
+\subsubsection[{slew}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc\-::slew (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transitions}$<$ double $>$ \&}]{slew}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Arc_a5521ea0890331cb77e6b0ea72a7062a3}
+
+
+Sets slew time. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classTiming__Analysis_1_1Timing__Arc_ae33a875fefadb96a5cdf5a17791c4d24}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Timing_Analysis::Timing_Arc@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Arc}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{out, }
+\item[{const {\bf Timing\-\_\-\-Arc} \&}]{ta}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classTiming__Analysis_1_1Timing__Arc_ae33a875fefadb96a5cdf5a17791c4d24}
+
+
+Inserts formatted description of timing arc, including the origin vertex and destiny vertex. 
+
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

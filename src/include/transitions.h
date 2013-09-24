@@ -94,8 +94,20 @@ namespace std {
     template<>
     class numeric_limits<Transitions<double> > {
     public:
+		/** @brief Sets Returns a Transition with the minimum values of rise and fall times possible in IEEE floating point double precision representation
+		*
+		*@return Transitions<double>
+		*/
         static Transitions<double> min(){return Transitions<double>(numeric_limits<double>::min(), numeric_limits<double>::min());}
+		/** @brief Sets Returns a Transition with the minimum values of rise and fall times possible in IEEE floating point double precision representation
+		*
+		*@return Transitions<double>
+		*/
         static Transitions<double> max(){return Transitions<double>(numeric_limits<double>::max(), numeric_limits<double>::max());}
+		/** @brief Sets Returns a Transition with value zero for rise and fall times
+		*
+		*@return Transitions<double>
+		*/
         static Transitions<double> zero(){return Transitions<double>(0.0f, 0.0f);}
     };
 }

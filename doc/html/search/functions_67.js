@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['gate_5fnumber',['gate_number',['../classTiming__Analysis_1_1Timing__Point.html#a9f8c6bbc7bc46a3d1ff81a984e76126f',1,'Timing_Analysis::Timing_Point']]],
+  ['gate_5fnumber',['gate_number',['../classTiming__Analysis_1_1Timing__Arc.html#abd085ce8fe10d00d6e0be2668773b32f',1,'Timing_Analysis::Timing_Arc::gate_number()'],['../classTiming__Analysis_1_1Timing__Point.html#a9f8c6bbc7bc46a3d1ff81a984e76126f',1,'Timing_Analysis::Timing_Point::gate_number()']]],
   ['get_5fnet_5ftopologic_5findex',['get_net_topologic_index',['../classCircuit__Netlist.html#a92fd5d0cfc1c5951b5ff1f31dfff2f05',1,'Circuit_Netlist']]],
   ['getcellindex',['getCellIndex',['../classLibertyLibrary.html#a08a8b3ab2b9e91574d1cdc39376839c8',1,'LibertyLibrary']]],
   ['getcellinfo',['getCellInfo',['../classLibertyLibrary.html#a917ae50f0af17b1b68be754f1ae6dd07',1,'LibertyLibrary::getCellInfo(const string &amp;footPrint, const int &amp;i) const '],['../classLibertyLibrary.html#a57c64ca6abd02f1e549eeb25178724c9',1,'LibertyLibrary::getCellInfo(const string &amp;cellName) const '],['../classLibertyLibrary.html#a227638e4b3a4b00faa659c45e20c0aaa',1,'LibertyLibrary::getCellInfo(const int &amp;footPrintIndex, const int &amp;optionIndex) const ']]],

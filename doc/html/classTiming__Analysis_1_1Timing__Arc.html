@@ -93,6 +93,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Timing_Analysis::Timing_Arc Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Describes a timing arc of the timing graph model.  
+ <a href="classTiming__Analysis_1_1Timing__Arc.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="timing__arc_8h_source.html">timing_arc.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Timing_Analysis::Timing_Arc:</div>
 <div class="dyncontent">
@@ -106,29 +111,32 @@ Inheritance diagram for Timing_Analysis::Timing_Arc:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a38312efc7070c651743a667568514162"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a38312efc7070c651743a667568514162"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Timing_Arc</b> (<a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *<a class="el" href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">from</a>, <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *<a class="el" href="classTiming__Analysis_1_1Single__Fanout__Edge.html#ac01deccce158b6cee6883924e6dcb788">to</a>, const int arcNumber, const int gate_number)</td></tr>
+<tr class="memitem:a38312efc7070c651743a667568514162"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#a38312efc7070c651743a667568514162">Timing_Arc</a> (<a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *<a class="el" href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">from</a>, <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *<a class="el" href="classTiming__Analysis_1_1Single__Fanout__Edge.html#ac01deccce158b6cee6883924e6dcb788">to</a>, const int arcNumber, const int <a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#abd085ce8fe10d00d6e0be2668773b32f">gate_number</a>)</td></tr>
+<tr class="memdesc:a38312efc7070c651743a667568514162"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. ">Timing_Arc</a> constructor.  <a href="#a38312efc7070c651743a667568514162">More...</a><br/></td></tr>
 <tr class="separator:a38312efc7070c651743a667568514162"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a092de659dd0846a3e899f0efd9c34397"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a092de659dd0846a3e899f0efd9c34397"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memitem:a32909fb0fdc3bd5f2a13cdb9f9b351b8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#a32909fb0fdc3bd5f2a13cdb9f9b351b8">~Timing_Arc</a> ()</td></tr>
+<tr class="memdesc:a32909fb0fdc3bd5f2a13cdb9f9b351b8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. ">Timing_Arc</a> destructor.  <a href="#a32909fb0fdc3bd5f2a13cdb9f9b351b8">More...</a><br/></td></tr>
+<tr class="separator:a32909fb0fdc3bd5f2a13cdb9f9b351b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092de659dd0846a3e899f0efd9c34397"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#a092de659dd0846a3e899f0efd9c34397">clear</a> ()</td></tr>
+<tr class="memdesc:a092de659dd0846a3e899f0efd9c34397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets delay and slew time to zero.  <a href="#a092de659dd0846a3e899f0efd9c34397">More...</a><br/></td></tr>
 <tr class="separator:a092de659dd0846a3e899f0efd9c34397"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6561e6eb77cc7536f5515db318b233ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6561e6eb77cc7536f5515db318b233ce"></a>
-<a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>delay</b> () const </td></tr>
+<tr class="memitem:a6561e6eb77cc7536f5515db318b233ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#a6561e6eb77cc7536f5515db318b233ce">delay</a> () const </td></tr>
+<tr class="memdesc:a6561e6eb77cc7536f5515db318b233ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns delay time.  <a href="#a6561e6eb77cc7536f5515db318b233ce">More...</a><br/></td></tr>
 <tr class="separator:a6561e6eb77cc7536f5515db318b233ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9846eb6bd9afc2cd8cbb0f926daf39a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9846eb6bd9afc2cd8cbb0f926daf39a5"></a>
-<a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>slew</b> () const </td></tr>
+<tr class="memitem:a9846eb6bd9afc2cd8cbb0f926daf39a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#a9846eb6bd9afc2cd8cbb0f926daf39a5">slew</a> () const </td></tr>
+<tr class="memdesc:a9846eb6bd9afc2cd8cbb0f926daf39a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns slew time.  <a href="#a9846eb6bd9afc2cd8cbb0f926daf39a5">More...</a><br/></td></tr>
 <tr class="separator:a9846eb6bd9afc2cd8cbb0f926daf39a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74682f1b90b14cb0902dca32e6430fd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74682f1b90b14cb0902dca32e6430fd2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>delay</b> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; &amp;delay)</td></tr>
+<tr class="memitem:a74682f1b90b14cb0902dca32e6430fd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#a74682f1b90b14cb0902dca32e6430fd2">delay</a> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; &amp;delay)</td></tr>
+<tr class="memdesc:a74682f1b90b14cb0902dca32e6430fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets delay time.  <a href="#a74682f1b90b14cb0902dca32e6430fd2">More...</a><br/></td></tr>
 <tr class="separator:a74682f1b90b14cb0902dca32e6430fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5521ea0890331cb77e6b0ea72a7062a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5521ea0890331cb77e6b0ea72a7062a3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>slew</b> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; &amp;slew)</td></tr>
+<tr class="memitem:a5521ea0890331cb77e6b0ea72a7062a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#a5521ea0890331cb77e6b0ea72a7062a3">slew</a> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; &amp;slew)</td></tr>
+<tr class="memdesc:a5521ea0890331cb77e6b0ea72a7062a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets slew time.  <a href="#a5521ea0890331cb77e6b0ea72a7062a3">More...</a><br/></td></tr>
 <tr class="separator:a5521ea0890331cb77e6b0ea72a7062a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4a54ed3cd6762bd26a3fdf566b5a234"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa4a54ed3cd6762bd26a3fdf566b5a234"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>arc_number</b> () const </td></tr>
+<tr class="memitem:aa4a54ed3cd6762bd26a3fdf566b5a234"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#aa4a54ed3cd6762bd26a3fdf566b5a234">arc_number</a> () const </td></tr>
+<tr class="memdesc:aa4a54ed3cd6762bd26a3fdf566b5a234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns arc number.  <a href="#aa4a54ed3cd6762bd26a3fdf566b5a234">More...</a><br/></td></tr>
 <tr class="separator:aa4a54ed3cd6762bd26a3fdf566b5a234"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd085ce8fe10d00d6e0be2668773b32f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd085ce8fe10d00d6e0be2668773b32f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>gate_number</b> () const </td></tr>
+<tr class="memitem:abd085ce8fe10d00d6e0be2668773b32f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#abd085ce8fe10d00d6e0be2668773b32f">gate_number</a> () const </td></tr>
+<tr class="memdesc:abd085ce8fe10d00d6e0be2668773b32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns gate number.  <a href="#abd085ce8fe10d00d6e0be2668773b32f">More...</a><br/></td></tr>
 <tr class="separator:abd085ce8fe10d00d6e0be2668773b32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classTiming__Analysis_1_1Single__Fanout__Edge"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classTiming__Analysis_1_1Single__Fanout__Edge')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classTiming__Analysis_1_1Single__Fanout__Edge.html">Timing_Analysis::Single_Fanout_Edge&lt; Timing_Point &gt;</a></td></tr>
 <tr class="memitem:ac588152ff213288a57a744374039790a inherit pub_methods_classTiming__Analysis_1_1Single__Fanout__Edge"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Single__Fanout__Edge.html#ac588152ff213288a57a744374039790a">Single_Fanout_Edge</a> (<a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *<a class="el" href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">from</a>, <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *<a class="el" href="classTiming__Analysis_1_1Single__Fanout__Edge.html#ac01deccce158b6cee6883924e6dcb788">to</a>)</td></tr>
@@ -147,8 +155,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>gate_number</b> () con
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:ae33a875fefadb96a5cdf5a17791c4d24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae33a875fefadb96a5cdf5a17791c4d24"></a>
-ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (ostream &amp;out, const <a class="el" href="classTiming__Analysis_1_1Timing__Arc.html">Timing_Arc</a> &amp;ta)</td></tr>
+<tr class="memitem:ae33a875fefadb96a5cdf5a17791c4d24"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#ae33a875fefadb96a5cdf5a17791c4d24">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="classTiming__Analysis_1_1Timing__Arc.html">Timing_Arc</a> &amp;ta)</td></tr>
+<tr class="memdesc:ae33a875fefadb96a5cdf5a17791c4d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts formatted description of timing arc, including the origin vertex and destiny vertex.  <a href="#ae33a875fefadb96a5cdf5a17791c4d24">More...</a><br/></td></tr>
 <tr class="separator:ae33a875fefadb96a5cdf5a17791c4d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -171,13 +179,309 @@ Additional Inherited Members</h2></td></tr>
 vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_to</b></td></tr>
 <tr class="separator:ae1bc9c1f6a84a2b4a116d5c4571fba02 inherit pro_attribs_classTiming__Analysis_1_1Edge"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Describes a timing arc of the timing graph model. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a38312efc7070c651743a667568514162"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Timing_Analysis::Timing_Arc::Timing_Arc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *&#160;</td>
+          <td class="paramname"><em>to</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>arcNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>gate_number</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. ">Timing_Arc</a> constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classTiming__Analysis_1_1Timing__Point.html" title="Describes a timing point of the timing graph model. ">Timing_Point</a></td><td>* from, <a class="el" href="classTiming__Analysis_1_1Timing__Point.html" title="Describes a timing point of the timing graph model. ">Timing_Point</a> * to, const int arcNumber, const int gate_number) : <a class="el" href="classTiming__Analysis_1_1Single__Fanout__Edge.html">Single_Fanout_Edge&lt;Timing_Point&gt;(from, to)</a>, _delay(0.0f, 0.0f), _slew(0.0f, 0.0f), _arc_number (arcNumber), _gate_number(gate_number) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a32909fb0fdc3bd5f2a13cdb9f9b351b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Timing_Analysis::Timing_Arc::~Timing_Arc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. ">Timing_Arc</a> destructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aa4a54ed3cd6762bd26a3fdf566b5a234"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Timing_Analysis::Timing_Arc::arc_number </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns arc number. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a092de659dd0846a3e899f0efd9c34397"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Timing_Analysis::Timing_Arc::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets delay and slew time to zero. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6561e6eb77cc7536f5515db318b233ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt;double&gt; Timing_Analysis::Timing_Arc::delay </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns delay time. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a74682f1b90b14cb0902dca32e6430fd2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Timing_Analysis::Timing_Arc::delay </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>delay</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets delay time. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abd085ce8fe10d00d6e0be2668773b32f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Timing_Analysis::Timing_Arc::gate_number </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns gate number. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9846eb6bd9afc2cd8cbb0f926daf39a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt;double&gt; Timing_Analysis::Timing_Arc::slew </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns slew time. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5521ea0890331cb77e6b0ea72a7062a3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Timing_Analysis::Timing_Arc::slew </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>slew</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets slew time. </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="ae33a875fefadb96a5cdf5a17791c4d24"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTiming__Analysis_1_1Timing__Arc.html">Timing_Arc</a> &amp;&#160;</td>
+          <td class="paramname"><em>ta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts formatted description of timing arc, including the origin vertex and destiny vertex. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>tccChrystian/src/include/<a class="el" href="timing__arc_8h_source.html">timing_arc.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 23 2013 17:01:15 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Sep 24 2013 09:42:57 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
