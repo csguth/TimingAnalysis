@@ -3,7 +3,7 @@
 }
 
 
-Look up table to store delay or slew functions.  
+Struct representing a lookup table to store delay or slew functions.  
 
 
 
@@ -13,9 +13,9 @@ Look up table to store delay or slew functions.
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{structLibertyLookupTable_aa9185452db835be3f9c603c3f3df5562}{vector$<$ double $>$ \hyperlink{structLibertyLookupTable_aa9185452db835be3f9c603c3f3df5562}{load\-Indices}}\label{structLibertyLookupTable_aa9185452db835be3f9c603c3f3df5562}
+\hypertarget{structLibertyLookupTable_aa9185452db835be3f9c603c3f3df5562}{vector$<$ double $>$ {\bfseries load\-Indices}}\label{structLibertyLookupTable_aa9185452db835be3f9c603c3f3df5562}
 
-\begin{DoxyCompactList}\small\item\em Look up table is indexed by the output load and the input transition values Example\-: Let L = load\-Indices\mbox{[}i\mbox{]} T = transition\-Indices\mbox{[}j\mbox{]} Then, the table value corresponding to L and T will be\-: table\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}. \end{DoxyCompactList}\item 
+\item 
 \hypertarget{structLibertyLookupTable_a1f7a1d2e84535f8c7df9bac33732634d}{vector$<$ double $>$ {\bfseries transition\-Indices}}\label{structLibertyLookupTable_a1f7a1d2e84535f8c7df9bac33732634d}
 
 \item 
@@ -25,7 +25,11 @@ Look up table to store delay or slew functions.
 
 
 \subsection{Detailed Description}
-Look up table to store delay or slew functions. 
+Struct representing a lookup table to store delay or slew functions. 
+
+Look up table is indexed by the output load and the input transition values
+
+Let L = load\-Indices\mbox{[}i\mbox{]} T = transition\-Indices\mbox{[}j\mbox{]} Then, the table value corresponding to L and T will be\-: table\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} 
 
 The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

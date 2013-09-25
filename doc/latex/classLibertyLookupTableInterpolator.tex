@@ -1,6 +1,15 @@
 \hypertarget{classLibertyLookupTableInterpolator}{\section{Liberty\-Lookup\-Table\-Interpolator Class Reference}
 \label{classLibertyLookupTableInterpolator}\index{Liberty\-Lookup\-Table\-Interpolator@{Liberty\-Lookup\-Table\-Interpolator}}
 }
+
+
+Interpolation calculator.  
+
+
+
+
+{\ttfamily \#include $<$liberty\-\_\-library.\-h$>$}
+
 Inheritance diagram for Liberty\-Lookup\-Table\-Interpolator\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,15 +20,14 @@ Inheritance diagram for Liberty\-Lookup\-Table\-Interpolator\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 virtual double \hyperlink{classLibertyLookupTableInterpolator_ae12e0b9e427488bc933b54a427586f47}{interpolate} (const \hyperlink{structLibertyLookupTable}{Liberty\-Lookup\-Table} \&lut, const double load, const double transition)=0
-\begin{DoxyCompactList}\small\item\em Returns interpolation of L\-U\-T. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Returns interpolated value. \end{DoxyCompactList}\item 
 virtual const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classLibertyLookupTableInterpolator_a3f840a4246b193e9e620b3ec8cadb720}{interpolate} (const \hyperlink{structLibertyLookupTable}{Liberty\-Lookup\-Table} \&rise\-Lut, const \hyperlink{structLibertyLookupTable}{Liberty\-Lookup\-Table} \&fall\-Lut, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ load, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ transition, Unateness unateness=N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-U\-N\-A\-T\-E, bool is\-\_\-input\-\_\-driver=false)=0
-\begin{DoxyCompactList}\small\item\em Returns interpolation of L\-U\-T$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns Transitions$<$double, double$>$ with its rise and fall delay values interpolated. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classLibertyLookupTableInterpolator_a41f28d4091ef57ce488a26f0a3aedb0b}{void {\bfseries round} (\hyperlink{classTransitions}{Transitions}$<$ double $>$ \&transitions, const int decimal\-\_\-places)}\label{classLibertyLookupTableInterpolator_a41f28d4091ef57ce488a26f0a3aedb0b}
-
-\end{DoxyCompactItemize}
+void \hyperlink{classLibertyLookupTableInterpolator_a41f28d4091ef57ce488a26f0a3aedb0b}{round} (\hyperlink{classTransitions}{Transitions}$<$ double $>$ \&transitions, const int decimal\-\_\-places)
+\begin{DoxyCompactList}\small\item\em Truncates \hyperlink{classTransitions}{Transitions$<$double$>$} to \hyperlink{classTransitions}{Transitions$<$double$>$} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ does nothing... \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,6 +35,9 @@ virtual const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink
 
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Interpolation calculator. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classLibertyLookupTableInterpolator_ae12e0b9e427488bc933b54a427586f47}{\index{Liberty\-Lookup\-Table\-Interpolator@{Liberty\-Lookup\-Table\-Interpolator}!interpolate@{interpolate}}
@@ -40,7 +51,7 @@ virtual const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classLibertyLookupTableInterpolator_ae12e0b9e427488bc933b54a427586f47}
 
 
-Returns interpolation of L\-U\-T. 
+Returns interpolated value. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -68,7 +79,7 @@ Implemented in \hyperlink{classLinearLibertyLookupTableInterpolator_afd4bc7bfcf9
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classLibertyLookupTableInterpolator_a3f840a4246b193e9e620b3ec8cadb720}
 
 
-Returns interpolation of L\-U\-T$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$. 
+Returns Transitions$<$double, double$>$ with its rise and fall delay values interpolated. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -82,6 +93,26 @@ const \hyperlink{classTransitions}{Transitions$<$double$>$}
 
 Implemented in \hyperlink{classLinearLibertyLookupTableInterpolator_a9b0f96185327e7cb0e5c315691eb6579}{Linear\-Liberty\-Lookup\-Table\-Interpolator}.
 
+\hypertarget{classLibertyLookupTableInterpolator_a41f28d4091ef57ce488a26f0a3aedb0b}{\index{Liberty\-Lookup\-Table\-Interpolator@{Liberty\-Lookup\-Table\-Interpolator}!round@{round}}
+\index{round@{round}!LibertyLookupTableInterpolator@{Liberty\-Lookup\-Table\-Interpolator}}
+\subsubsection[{round}]{\setlength{\rightskip}{0pt plus 5cm}void Liberty\-Lookup\-Table\-Interpolator\-::round (
+\begin{DoxyParamCaption}
+\item[{{\bf Transitions}$<$ double $>$ \&}]{transitions, }
+\item[{const int}]{decimal\-\_\-places}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classLibertyLookupTableInterpolator_a41f28d4091ef57ce488a26f0a3aedb0b}
+
+
+Truncates \hyperlink{classTransitions}{Transitions$<$double$>$} to \hyperlink{classTransitions}{Transitions$<$double$>$} $\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ does nothing... 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classTransitions}{Transitions$<$double$>$}} & \& transitions, const int decimal\-\_\-places\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

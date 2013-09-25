@@ -14,25 +14,77 @@ using std::endl;
 class WireDelayModel
 {
 protected:
+
     double _lumped_capacitance;
     static LinearLibertyLookupTableInterpolator interpolator;
 
 public:
+	/** @brief WireDelayModel default constructor
+	*
+	* @param const double & lumped_capacitance
+	*/
     WireDelayModel(const double & lumped_capacitance) : _lumped_capacitance(lumped_capacitance){}
+	/** @brief Empty WideDelayModel destructor
+	*/
     virtual ~WireDelayModel(){}
+	/** @brief 
+	*
+	* @param const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver
+	*
+	* @return Transitions<double>
+	*/
     virtual const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver) = 0;
+	/** @brief Returns Transitions with rise and fall delay time values set to zero
+	*
+	* @param const string fanout_node_name
+	*
+	* @return Transitions<double>
+	*/
     virtual const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const = 0;
+	/** @brief Returns Transitions with rise and fall slew time values set to zero
+	*
+	* @param const string fanout_node_name
+	*
+	* @return Transitions<double>
+	*/
     virtual const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const = 0;
+	/** @brief Increments lumped capacitance of the wire
+	*
+	* @param const string fanoutNameAndPin, const double capacitance
+	*
+	* @return void
+	*/
     virtual void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) = 0;
 
-
+	/** @brief not yet implemented***********************
+	*
+	* @param int arc_number
+	*
+	* @return Transitions<double>
+	*/
     virtual Transitions<double> root_delay(int arc_number) = 0;
+	/** @brief not yet implemented***********************
+	*
+	* @param int arc_number
+	*
+	* @return Transitions<double>
+	*/
     virtual Transitions<double> root_slew(int arc_number) = 0;
+	/** @brief not yet implemented**********************
+	*
+	* @return void
+	*/
     virtual void clear() = 0;
 
+	/** @brief Returns lumped capacitance of the wire
+	*
+	* @return double
+	*/
     double lumped_capacitance() const;
 };
 
+/** @brief Describes the Lumped Capacitance Model
+*/
 class LumpedCapacitanceWireDelayModel : public WireDelayModel
 {
     Transitions<double> _delay;

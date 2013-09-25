@@ -6,7 +6,7 @@
 namespace Timing_Analysis {
 
     template<class T>
-	/** @brief Inherits from Edge. Template class which represents a single edge of the graph model. In a circuit, a single fanout edge is a logic gate output which has only one input connected to it.
+	/** @brief Inherits from Edge. In a circuit, a single fanout edge is a logic gate output which has only one input connected to it.
 	*
 	*/
     class Single_Fanout_Edge : public Edge<T>

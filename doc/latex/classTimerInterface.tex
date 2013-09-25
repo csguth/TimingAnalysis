@@ -1,6 +1,15 @@
 \hypertarget{classTimerInterface}{\section{Timer\-Interface Class Reference}
 \label{classTimerInterface}\index{Timer\-Interface@{Timer\-Interface}}
 }
+
+
+This class contains functions for the timing analysis interface. To use any function belonging to this class, call \hyperlink{classTimerInterface}{Timer\-Interface}\-:\-:$<$function\-\_\-name$>$($<$argument\-\_\-list$>$);.  
+
+
+
+
+{\ttfamily \#include $<$timer\-\_\-interface.\-h$>$}
+
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,19 +25,70 @@ enum {\bfseries Status} \{ \\*
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}{static Status {\bfseries get\-Timer\-Status} (const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark)}\label{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}
-
+static Status \hyperlink{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}{get\-Timer\-Status} (const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark)
 \item 
-\hypertarget{classTimerInterface_ada94a843a56747a6a7b34373a266ab92}{static Status {\bfseries run\-Timing\-Analysis\-Blocking} (const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&sizes, const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark, const unsigned polling\-Time)}\label{classTimerInterface_ada94a843a56747a6a7b34373a266ab92}
-
+static Status \hyperlink{classTimerInterface_ada94a843a56747a6a7b34373a266ab92}{run\-Timing\-Analysis\-Blocking} (const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&sizes, const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark, const unsigned polling\-Time)
 \item 
-\hypertarget{classTimerInterface_a9a9b69817bbbd603c3d47089b0bad829}{static Status {\bfseries start\-Timing\-Analysis\-Non\-Blocking} (const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&sizes, const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark)}\label{classTimerInterface_a9a9b69817bbbd603c3d47089b0bad829}
-
+static Status \hyperlink{classTimerInterface_a9a9b69817bbbd603c3d47089b0bad829}{start\-Timing\-Analysis\-Non\-Blocking} (const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&sizes, const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark)
 \item 
-\hypertarget{classTimerInterface_aa62e01d4dd296f8bf9f716ff2da7c5fc}{static void {\bfseries wait} (int seconds)}\label{classTimerInterface_aa62e01d4dd296f8bf9f716ff2da7c5fc}
-
+static void \hyperlink{classTimerInterface_aa62e01d4dd296f8bf9f716ff2da7c5fc}{wait} (int seconds)
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+This class contains functions for the timing analysis interface. To use any function belonging to this class, call \hyperlink{classTimerInterface}{Timer\-Interface}\-:\-:$<$function\-\_\-name$>$($<$argument\-\_\-list$>$);. 
+
+Timing Analysis Interface helper class to interface with the timer. This code is provided for description purposes only. The contest organizers cannot guarantee that the provided code is free of bugs or defects. !!!! U\-S\-E T\-H\-I\-S C\-O\-D\-E A\-T Y\-O\-U\-R O\-W\-N R\-I\-S\-K !!!!!
+
+The contestants are free to use these functions as-\/is or make modifications. If the contestants choose to use the provided code, they are responsible for making sure that it works as expected.
+
+The code provided here has no real or implied warranties. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}{\index{Timer\-Interface@{Timer\-Interface}!get\-Timer\-Status@{get\-Timer\-Status}}
+\index{get\-Timer\-Status@{get\-Timer\-Status}!TimerInterface@{Timer\-Interface}}
+\subsubsection[{get\-Timer\-Status}]{\setlength{\rightskip}{0pt plus 5cm}static Status Timer\-Interface\-::get\-Timer\-Status (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{contest\-\_\-root, }
+\item[{const std\-::string \&}]{benchmark}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}
+Get timer status Inputs\-: contest root directory (string) benchmark name (string) Return\-: status (see enum Status above) \hypertarget{classTimerInterface_ada94a843a56747a6a7b34373a266ab92}{\index{Timer\-Interface@{Timer\-Interface}!run\-Timing\-Analysis\-Blocking@{run\-Timing\-Analysis\-Blocking}}
+\index{run\-Timing\-Analysis\-Blocking@{run\-Timing\-Analysis\-Blocking}!TimerInterface@{Timer\-Interface}}
+\subsubsection[{run\-Timing\-Analysis\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}static Status Timer\-Interface\-::run\-Timing\-Analysis\-Blocking (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&}]{sizes, }
+\item[{const std\-::string \&}]{contest\-\_\-root, }
+\item[{const std\-::string \&}]{benchmark, }
+\item[{const unsigned}]{polling\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTimerInterface_ada94a843a56747a6a7b34373a266ab92}
+Write sizes and run timing analysis in blocking mode
+\begin{DoxyEnumerate}
+\item Write sizes
+\item Starts timing analysis
+\item Waits for timing analysis to be completed Inputs\-: vector of pairs where first value is instance name (string) and second value is cell name (string) contest root directory (string) benchmark name (string) polling time (number of seconds that the function should wait before polling timer status to check whether timer is done) Return\-: timer status 
+\end{DoxyEnumerate}\hypertarget{classTimerInterface_a9a9b69817bbbd603c3d47089b0bad829}{\index{Timer\-Interface@{Timer\-Interface}!start\-Timing\-Analysis\-Non\-Blocking@{start\-Timing\-Analysis\-Non\-Blocking}}
+\index{start\-Timing\-Analysis\-Non\-Blocking@{start\-Timing\-Analysis\-Non\-Blocking}!TimerInterface@{Timer\-Interface}}
+\subsubsection[{start\-Timing\-Analysis\-Non\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}static Status Timer\-Interface\-::start\-Timing\-Analysis\-Non\-Blocking (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&}]{sizes, }
+\item[{const std\-::string \&}]{contest\-\_\-root, }
+\item[{const std\-::string \&}]{benchmark}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTimerInterface_a9a9b69817bbbd603c3d47089b0bad829}
+Start timing analysis in non-\/blocking mode
+\begin{DoxyEnumerate}
+\item Write sizes
+\item Starts timing analysis and returns (does not wait for timing analysis to be completed) Inputs\-: vector of pairs where first value is instance name (string) and second value is cell name (string) contest root directory (string) benchmark name (string) Return\-: timer status 
+\end{DoxyEnumerate}\hypertarget{classTimerInterface_aa62e01d4dd296f8bf9f716ff2da7c5fc}{\index{Timer\-Interface@{Timer\-Interface}!wait@{wait}}
+\index{wait@{wait}!TimerInterface@{Timer\-Interface}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}static void Timer\-Interface\-::wait (
+\begin{DoxyParamCaption}
+\item[{int}]{seconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTimerInterface_aa62e01d4dd296f8bf9f716ff2da7c5fc}
+Wait for given number of seconds (useful function if you want to wait before checking timer status after calling start\-Timing\-Analysis\-Non\-Blocking) Input\-: seconds to wait 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

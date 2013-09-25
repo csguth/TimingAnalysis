@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,6 +92,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">std::numeric_limits&lt; Transitions&lt; double &gt; &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class used to make easier to work with double variable numeric limits.  
+ <a href="classstd_1_1numeric__limits_3_01Transitions_3_01double_01_4_01_4.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="transitions_8h_source.html">transitions.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -99,13 +104,18 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:aaf2bf171cb5f11b864b09798f6d63460"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Returns a Transition with the minimum values of rise and fall times possible in IEEE floating point double precision representation.  <a href="#aaf2bf171cb5f11b864b09798f6d63460">More...</a><br/></td></tr>
 <tr class="separator:aaf2bf171cb5f11b864b09798f6d63460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac0b30f8990c636cda3f083b95e626a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstd_1_1numeric__limits_3_01Transitions_3_01double_01_4_01_4.html#aac0b30f8990c636cda3f083b95e626a4">max</a> ()</td></tr>
-<tr class="memdesc:aac0b30f8990c636cda3f083b95e626a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Returns a Transition with the minimum values of rise and fall times possible in IEEE floating point double precision representation.  <a href="#aac0b30f8990c636cda3f083b95e626a4">More...</a><br/></td></tr>
+<tr class="memdesc:aac0b30f8990c636cda3f083b95e626a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Returns a Transition with the maximum values of rise and fall times possible in IEEE floating point double precision representation.  <a href="#aac0b30f8990c636cda3f083b95e626a4">More...</a><br/></td></tr>
 <tr class="separator:aac0b30f8990c636cda3f083b95e626a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab17fbee311d6e67204ca678d02ba1e80"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstd_1_1numeric__limits_3_01Transitions_3_01double_01_4_01_4.html#ab17fbee311d6e67204ca678d02ba1e80">zero</a> ()</td></tr>
 <tr class="memdesc:ab17fbee311d6e67204ca678d02ba1e80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Returns a Transition with value zero for rise and fall times.  <a href="#ab17fbee311d6e67204ca678d02ba1e80">More...</a><br/></td></tr>
 <tr class="separator:ab17fbee311d6e67204ca678d02ba1e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;&gt;<br/>
+class std::numeric_limits&lt; Transitions&lt; double &gt; &gt;</h3>
+
+<p>Class used to make easier to work with double variable numeric limits. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aac0b30f8990c636cda3f083b95e626a4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +137,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Sets Returns a Transition with the minimum values of rise and fall times possible in IEEE floating point double precision representation. </p>
+<p>Sets Returns a Transition with the maximum values of rise and fall times possible in IEEE floating point double precision representation. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> </dd></dl>
 
 </div>
@@ -190,7 +200,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 24 2013 09:42:57 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 25 2013 16:02:29 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

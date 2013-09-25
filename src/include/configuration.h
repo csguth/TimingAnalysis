@@ -18,19 +18,23 @@ using std::string;
 * STATIC METAPROGRAMMED IF
 */ 
 template<bool cond, class ThenType, class ElseType>
+/** @brief Metaprogrammed IF
+*/
 struct IF
 {
 	typedef ThenType RET;
 };
 template<class ThenType, class ElseType>
+/** @brief Metaprogrammed IF
+*/
 struct IF<false, ThenType, ElseType>
 {
 	typedef ElseType RET;
 };
 
-
-/** User configurable {
+/** @brief User configurable 
 */
+// {
 
 class Traits 
 {

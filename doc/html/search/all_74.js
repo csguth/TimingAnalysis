@@ -12,6 +12,6 @@ var searchData=
   ['timing_5fpoints',['timing_points',['../classCircuit__Netlist.html#a070452269f2c7109f6ca089ae34dd752',1,'Circuit_Netlist']]],
   ['to',['to',['../classTiming__Analysis_1_1Multi__Fanout__Edge.html#a77ac79088e9ef11d222e777e2963f676',1,'Timing_Analysis::Multi_Fanout_Edge::to()'],['../classTiming__Analysis_1_1Single__Fanout__Edge.html#ac01deccce158b6cee6883924e6dcb788',1,'Timing_Analysis::Single_Fanout_Edge::to()']]],
   ['traits',['Traits',['../classTraits.html',1,'']]],
-  ['transitions',['Transitions',['../classTransitions.html',1,'']]],
+  ['transitions',['Transitions',['../classTransitions.html',1,'Transitions&lt; T &gt;'],['../classTransitions.html#a0aae6de65968e98353b1fd9b6f394221',1,'Transitions::Transitions(const T rise, const T fall)'],['../classTransitions.html#a5eb22fbf6b9a14410efc696742ee34df',1,'Transitions::Transitions()']]],
   ['transitions_3c_20double_20_3e',['Transitions&lt; double &gt;',['../classTransitions.html',1,'']]]
 ];

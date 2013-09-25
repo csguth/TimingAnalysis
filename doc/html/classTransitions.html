@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,77 +89,791 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Transitions&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it.  
+ <a href="classTransitions.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="transitions_8h_source.html">transitions.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a79a4be6a8415710583c6c811a27c3b9d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79a4be6a8415710583c6c811a27c3b9d"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const EdgeType edgeType)</td></tr>
+<tr class="memitem:a79a4be6a8415710583c6c811a27c3b9d"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a79a4be6a8415710583c6c811a27c3b9d">operator[]</a> (const EdgeType edgeType)</td></tr>
+<tr class="memdesc:a79a4be6a8415710583c6c811a27c3b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refefinition of [] operator. Returns value of edgeType.  <a href="#a79a4be6a8415710583c6c811a27c3b9d">More...</a><br/></td></tr>
 <tr class="separator:a79a4be6a8415710583c6c811a27c3b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9dddcc4c48658b8adf8739ac139c34f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af9dddcc4c48658b8adf8739ac139c34f"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const EdgeType edgeType) const </td></tr>
+<tr class="memitem:af9dddcc4c48658b8adf8739ac139c34f"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#af9dddcc4c48658b8adf8739ac139c34f">operator[]</a> (const EdgeType edgeType) const </td></tr>
+<tr class="memdesc:af9dddcc4c48658b8adf8739ac139c34f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refefinition of [] operator. Returns value of edgeType.  <a href="#af9dddcc4c48658b8adf8739ac139c34f">More...</a><br/></td></tr>
 <tr class="separator:af9dddcc4c48658b8adf8739ac139c34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a280ca4245034d6f298935392f8172cea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a280ca4245034d6f298935392f8172cea"></a>
-<a class="el" href="classTransitions.html">Transitions</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classTransitions.html">Transitions</a> &amp;array)</td></tr>
+<tr class="memitem:a280ca4245034d6f298935392f8172cea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a280ca4245034d6f298935392f8172cea">operator=</a> (const <a class="el" href="classTransitions.html">Transitions</a> &amp;array)</td></tr>
+<tr class="memdesc:a280ca4245034d6f298935392f8172cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refefinition of = operator. Sets caller transition time values to array time values and returns a pointer to it.  <a href="#a280ca4245034d6f298935392f8172cea">More...</a><br/></td></tr>
 <tr class="separator:a280ca4245034d6f298935392f8172cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0aae6de65968e98353b1fd9b6f394221"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0aae6de65968e98353b1fd9b6f394221"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Transitions</b> (const T rise, const T fall)</td></tr>
+<tr class="memitem:a0aae6de65968e98353b1fd9b6f394221"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a0aae6de65968e98353b1fd9b6f394221">Transitions</a> (const T rise, const T fall)</td></tr>
+<tr class="memdesc:a0aae6de65968e98353b1fd9b6f394221"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> default constructor.  <a href="#a0aae6de65968e98353b1fd9b6f394221">More...</a><br/></td></tr>
 <tr class="separator:a0aae6de65968e98353b1fd9b6f394221"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa237e34f678bd0aae62be692dc4059dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa237e34f678bd0aae62be692dc4059dc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (const T rise, const T fall)</td></tr>
+<tr class="memitem:a5eb22fbf6b9a14410efc696742ee34df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a5eb22fbf6b9a14410efc696742ee34df">Transitions</a> ()</td></tr>
+<tr class="memdesc:a5eb22fbf6b9a14410efc696742ee34df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty <a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> constructor.  <a href="#a5eb22fbf6b9a14410efc696742ee34df">More...</a><br/></td></tr>
+<tr class="separator:a5eb22fbf6b9a14410efc696742ee34df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa237e34f678bd0aae62be692dc4059dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#aa237e34f678bd0aae62be692dc4059dc">set</a> (const T rise, const T fall)</td></tr>
+<tr class="memdesc:aa237e34f678bd0aae62be692dc4059dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets rise and fall time values.  <a href="#aa237e34f678bd0aae62be692dc4059dc">More...</a><br/></td></tr>
 <tr class="separator:aa237e34f678bd0aae62be692dc4059dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59e47d34d366733da94f784c0177f8d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59e47d34d366733da94f784c0177f8d9"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>getMax</b> () const </td></tr>
+<tr class="memitem:a59e47d34d366733da94f784c0177f8d9"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a59e47d34d366733da94f784c0177f8d9">getMax</a> () const </td></tr>
+<tr class="memdesc:a59e47d34d366733da94f784c0177f8d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns max value between rise and fall time.  <a href="#a59e47d34d366733da94f784c0177f8d9">More...</a><br/></td></tr>
 <tr class="separator:a59e47d34d366733da94f784c0177f8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37bb8749642ad21d22b264f39003d2ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37bb8749642ad21d22b264f39003d2ce"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>getMin</b> () const </td></tr>
+<tr class="memitem:a37bb8749642ad21d22b264f39003d2ce"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a37bb8749642ad21d22b264f39003d2ce">getMin</a> () const </td></tr>
+<tr class="memdesc:a37bb8749642ad21d22b264f39003d2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns min value between rise and fall time.  <a href="#a37bb8749642ad21d22b264f39003d2ce">More...</a><br/></td></tr>
 <tr class="separator:a37bb8749642ad21d22b264f39003d2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad88835ca81b7008ecfb7824bc5c17045"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad88835ca81b7008ecfb7824bc5c17045"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>getRise</b> () const </td></tr>
+<tr class="memitem:ad88835ca81b7008ecfb7824bc5c17045"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#ad88835ca81b7008ecfb7824bc5c17045">getRise</a> () const </td></tr>
+<tr class="memdesc:ad88835ca81b7008ecfb7824bc5c17045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns rise time value.  <a href="#ad88835ca81b7008ecfb7824bc5c17045">More...</a><br/></td></tr>
 <tr class="separator:ad88835ca81b7008ecfb7824bc5c17045"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affdb33e440b6ac3e6e685d83d46b3189"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affdb33e440b6ac3e6e685d83d46b3189"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>getFall</b> () const </td></tr>
+<tr class="memitem:affdb33e440b6ac3e6e685d83d46b3189"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#affdb33e440b6ac3e6e685d83d46b3189">getFall</a> () const </td></tr>
+<tr class="memdesc:affdb33e440b6ac3e6e685d83d46b3189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns fall time value.  <a href="#affdb33e440b6ac3e6e685d83d46b3189">More...</a><br/></td></tr>
 <tr class="separator:affdb33e440b6ac3e6e685d83d46b3189"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6e5a9efd02d3da3751fcaa845c7955b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6e5a9efd02d3da3751fcaa845c7955b"></a>
-<a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getReversed</b> () const </td></tr>
+<tr class="memitem:ac6e5a9efd02d3da3751fcaa845c7955b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#ac6e5a9efd02d3da3751fcaa845c7955b">getReversed</a> () const </td></tr>
+<tr class="memdesc:ac6e5a9efd02d3da3751fcaa845c7955b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> with exchanged value. Ex: If called by Transitions&lt;rise, fall&gt;, returns Transitions&lt;fall, rise&gt;  <a href="#ac6e5a9efd02d3da3751fcaa845c7955b">More...</a><br/></td></tr>
 <tr class="separator:ac6e5a9efd02d3da3751fcaa845c7955b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae547df9c8b8d6191aa95ca8f3e850605"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae547df9c8b8d6191aa95ca8f3e850605"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>reverse</b> ()</td></tr>
+<tr class="memitem:ae547df9c8b8d6191aa95ca8f3e850605"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#ae547df9c8b8d6191aa95ca8f3e850605">reverse</a> ()</td></tr>
+<tr class="memdesc:ae547df9c8b8d6191aa95ca8f3e850605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchanges rise and fall time values. Ex: Transitions&lt;rise, fall&gt; becomes Transitions&lt;fall, rise&gt;  <a href="#ae547df9c8b8d6191aa95ca8f3e850605">More...</a><br/></td></tr>
 <tr class="separator:ae547df9c8b8d6191aa95ca8f3e850605"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab89e328a131f4ccf8882c67a30d6726c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab89e328a131f4ccf8882c67a30d6726c"></a>
-T&#160;</td><td class="memItemRight" valign="bottom"><b>aggregate</b> () const </td></tr>
+<tr class="memitem:ab89e328a131f4ccf8882c67a30d6726c"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#ab89e328a131f4ccf8882c67a30d6726c">aggregate</a> () const </td></tr>
+<tr class="memdesc:ab89e328a131f4ccf8882c67a30d6726c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sum of rise and fall time values.  <a href="#ab89e328a131f4ccf8882c67a30d6726c">More...</a><br/></td></tr>
 <tr class="separator:ab89e328a131f4ccf8882c67a30d6726c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a1f38245bca1673c266b44e9e2107c13d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f38245bca1673c266b44e9e2107c13d"></a>
-ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (ostream &amp;out, const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; array)</td></tr>
+<tr class="memitem:a1f38245bca1673c266b44e9e2107c13d"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a1f38245bca1673c266b44e9e2107c13d">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; array)</td></tr>
+<tr class="memdesc:a1f38245bca1673c266b44e9e2107c13d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinition of &lt;&lt; operator. Inserts formatted description including rise and fall times, in this order.  <a href="#a1f38245bca1673c266b44e9e2107c13d">More...</a><br/></td></tr>
 <tr class="separator:a1f38245bca1673c266b44e9e2107c13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af72b4da733791d7d350ed72162d8ea0f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af72b4da733791d7d350ed72162d8ea0f"></a>
-<a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>max</b> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v0, const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v1)</td></tr>
+<tr class="memitem:af72b4da733791d7d350ed72162d8ea0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#af72b4da733791d7d350ed72162d8ea0f">max</a> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v0, const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:af72b4da733791d7d350ed72162d8ea0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of max operator. Returns Transition&lt;T&gt; with the higher values for rise and fall transition times.  <a href="#af72b4da733791d7d350ed72162d8ea0f">More...</a><br/></td></tr>
 <tr class="separator:af72b4da733791d7d350ed72162d8ea0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff6065ed38f85bcd39d2c2f8ce45f1d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff6065ed38f85bcd39d2c2f8ce45f1d9"></a>
-<a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>min</b> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v0, const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v1)</td></tr>
+<tr class="memitem:aff6065ed38f85bcd39d2c2f8ce45f1d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#aff6065ed38f85bcd39d2c2f8ce45f1d9">min</a> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v0, const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v1)</td></tr>
+<tr class="memdesc:aff6065ed38f85bcd39d2c2f8ce45f1d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of min operator. Returns Transition&lt;T&gt; with the lower values for rise and fall transition times.  <a href="#aff6065ed38f85bcd39d2c2f8ce45f1d9">More...</a><br/></td></tr>
 <tr class="separator:aff6065ed38f85bcd39d2c2f8ce45f1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b968e944feed8bcb98aa1e6286fe175"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b968e944feed8bcb98aa1e6286fe175"></a>
-<a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>abs</b> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v)</td></tr>
+<tr class="memitem:a3b968e944feed8bcb98aa1e6286fe175"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a3b968e944feed8bcb98aa1e6286fe175">abs</a> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v)</td></tr>
+<tr class="memdesc:a3b968e944feed8bcb98aa1e6286fe175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of abs operator. Returns Transition&lt;T&gt; with the absolute values in IEEE floating point representation of rise and fall transition times.  <a href="#a3b968e944feed8bcb98aa1e6286fe175">More...</a><br/></td></tr>
 <tr class="separator:a3b968e944feed8bcb98aa1e6286fe175"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34f2a85ed601558365305cdcab645914"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34f2a85ed601558365305cdcab645914"></a>
-<a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>pow</b> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v, const double exp)</td></tr>
+<tr class="memitem:a34f2a85ed601558365305cdcab645914"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a34f2a85ed601558365305cdcab645914">pow</a> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v, const double <a class="el" href="classTransitions.html#ac02e6f8b007f44d55ed6b202c18ac0f8">exp</a>)</td></tr>
+<tr class="memdesc:a34f2a85ed601558365305cdcab645914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of pow operator. Returns Transition&lt;T&gt; with rise and fall transition time values raised to exp.  <a href="#a34f2a85ed601558365305cdcab645914">More...</a><br/></td></tr>
 <tr class="separator:a34f2a85ed601558365305cdcab645914"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba9a3cd675e2077b57456b6ff699660d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba9a3cd675e2077b57456b6ff699660d"></a>
-<a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sqrt</b> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v)</td></tr>
+<tr class="memitem:aba9a3cd675e2077b57456b6ff699660d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#aba9a3cd675e2077b57456b6ff699660d">sqrt</a> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v)</td></tr>
+<tr class="memdesc:aba9a3cd675e2077b57456b6ff699660d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of abs operator. Returns Transition&lt;T&gt; with the square root values of rise and fall transition times.  <a href="#aba9a3cd675e2077b57456b6ff699660d">More...</a><br/></td></tr>
 <tr class="separator:aba9a3cd675e2077b57456b6ff699660d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac02e6f8b007f44d55ed6b202c18ac0f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac02e6f8b007f44d55ed6b202c18ac0f8"></a>
-<a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>exp</b> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v)</td></tr>
+<tr class="memitem:ac02e6f8b007f44d55ed6b202c18ac0f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#ac02e6f8b007f44d55ed6b202c18ac0f8">exp</a> (const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; v)</td></tr>
+<tr class="memdesc:ac02e6f8b007f44d55ed6b202c18ac0f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of abs operator. Returns Transition&lt;T&gt; with rise and fall transition time values in the form: &lt;e^(rise time), e^(fall time)&gt;, where 'e' is the Euler number e=2.718...  <a href="#ac02e6f8b007f44d55ed6b202c18ac0f8">More...</a><br/></td></tr>
 <tr class="separator:ac02e6f8b007f44d55ed6b202c18ac0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br/>
+class Transitions&lt; T &gt;</h3>
+
+<p>Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a0aae6de65968e98353b1fd9b6f394221"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::<a class="el" href="classTransitions.html">Transitions</a> </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>rise</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>fall</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> default constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>T rise, const T fall </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5eb22fbf6b9a14410efc696742ee34df"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::<a class="el" href="classTransitions.html">Transitions</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Empty <a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> constructor. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab89e328a131f4ccf8882c67a30d6726c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::aggregate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the sum of rise and fall time values. </p>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="affdb33e440b6ac3e6e685d83d46b3189"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::getFall </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns fall time value. </p>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a59e47d34d366733da94f784c0177f8d9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::getMax </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns max value between rise and fall time. </p>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a37bb8749642ad21d22b264f39003d2ce"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::getMin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns min value between rise and fall time. </p>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac6e5a9efd02d3da3751fcaa845c7955b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt;T&gt; <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::getReversed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns <a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> with exchanged value. Ex: If called by Transitions&lt;rise, fall&gt;, returns Transitions&lt;fall, rise&gt; </p>
+<dl class="section return"><dt>Returns</dt><dd>Transitions&lt;T&gt; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad88835ca81b7008ecfb7824bc5c17045"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::getRise </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns rise time value. </p>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a280ca4245034d6f298935392f8172cea"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&amp; <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refefinition of = operator. Sets caller transition time values to array time values and returns a pointer to it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td><a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> &amp; array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a79a4be6a8415710583c6c811a27c3b9d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp; <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const EdgeType&#160;</td>
+          <td class="paramname"><em>edgeType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refefinition of [] operator. Returns value of edgeType. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>EdgeType edgeType </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af9dddcc4c48658b8adf8739ac139c34f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const EdgeType&#160;</td>
+          <td class="paramname"><em>edgeType</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refefinition of [] operator. Returns value of edgeType. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>EdgeType edgeType </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae547df9c8b8d6191aa95ca8f3e850605"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::reverse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Exchanges rise and fall time values. Ex: Transitions&lt;rise, fall&gt; becomes Transitions&lt;fall, rise&gt; </p>
+<dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa237e34f678bd0aae62be692dc4059dc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::set </td>
+          <td>(</td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>rise</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>fall</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets rise and fall time values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>T rise, const T fall</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="a3b968e944feed8bcb98aa1e6286fe175"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt;T&gt; abs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition of abs operator. Returns Transition&lt;T&gt; with the absolute values in IEEE floating point representation of rise and fall transition times. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>Transitions&lt;T&gt; v</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transition&lt;T&gt; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac02e6f8b007f44d55ed6b202c18ac0f8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt;T&gt; exp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition of abs operator. Returns Transition&lt;T&gt; with rise and fall transition time values in the form: &lt;e^(rise time), e^(fall time)&gt;, where 'e' is the Euler number e=2.718... </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>Transitions&lt;T&gt; v</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transition&lt;T&gt; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af72b4da733791d7d350ed72162d8ea0f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt;T&gt; max </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition of max operator. Returns Transition&lt;T&gt; with the higher values for rise and fall transition times. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>Transitions&lt;T&gt; v0</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transition&lt;T&gt; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aff6065ed38f85bcd39d2c2f8ce45f1d9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt;T&gt; min </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition of min operator. Returns Transition&lt;T&gt; with the lower values for rise and fall transition times. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>Transitions&lt;T&gt; v0, const Transitions&lt;T&gt; v1</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transition&lt;T&gt; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1f38245bca1673c266b44e9e2107c13d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>array</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Redefinition of &lt;&lt; operator. Inserts formatted description including rise and fall times, in this order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ostream</td><td>&amp;out, const Transitions&lt;T&gt; array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a34f2a85ed601558365305cdcab645914"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt;T&gt; pow </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>exp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition of pow operator. Returns Transition&lt;T&gt; with rise and fall transition time values raised to exp. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>Transitions&lt;T&gt; v, const double exp</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transition&lt;T&gt; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aba9a3cd675e2077b57456b6ff699660d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTransitions.html">Transitions</a>&lt;T&gt; sqrt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition of abs operator. Returns Transition&lt;T&gt; with the square root values of rise and fall transition times. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>Transitions&lt;T&gt; v</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transition&lt;T&gt; </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>tccChrystian/src/include/<a class="el" href="transitions_8h_source.html">transitions.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 24 2013 09:42:57 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 25 2013 16:02:29 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

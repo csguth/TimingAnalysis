@@ -1,0 +1,49 @@
+\hypertarget{classThis}{\section{This Class Reference}
+\label{classThis}\index{This@{This}}
+}
+
+
+Get timer status Inputs\-: contest root directory (string) benchmark name (string) Return\-: status (see enum Status above) /$\ast$/ static Status get\-Timer\-Status(const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark); /$\ast$$\ast$.  
+
+
+
+
+\subsection{Detailed Description}
+Get timer status Inputs\-: contest root directory (string) benchmark name (string) Return\-: status (see enum Status above) /$\ast$/ static Status get\-Timer\-Status(const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark); /$\ast$$\ast$. 
+
+Timing Analysis Interface helper class to interface with the timer.
+
+\hyperlink{classThis}{This} code is provided for description purposes only. The contest organizers cannot guarantee that the provided code is free of bugs or defects. !!!! U\-S\-E T\-H\-I\-S C\-O\-D\-E A\-T Y\-O\-U\-R O\-W\-N R\-I\-S\-K !!!!!
+
+The contestants are free to use these functions as-\/is or make modifications. If the contestants choose to use the provided code, they are responsible for making sure that it works as expected.
+
+The code provided here has no real or implied warranties.
+
+\hyperlink{classThis}{This} class contains functions for the timing analysis interface. To use any function belonging to this class, call Timer\-Interface\-:\-:$<$function\-\_\-name$>$($<$argument\-\_\-list$>$);
+
+/$\ast$/ 
+
+
+
+using std\-::cout; using std\-::endl;
+
+functions for the timing analysis interface. To use any function belonging to this class, call Timer\-Interface\-:\-:$<$function\-\_\-name$>$($<$argument\-\_\-list$>$);
+
+class Timer\-Interface \{
+
+Declarations L\-O\-O\-K A\-T T\-H\-I\-S P\-U\-B\-L\-I\-C S\-E\-C\-T\-I\-O\-N -\/ F\-U\-N\-C\-T\-I\-O\-N I\-M\-P\-L\-E\-M\-E\-N\-T\-A\-T\-I\-O\-N\-S B\-E\-L\-O\-W I\-N T\-H\-I\-S F\-I\-L\-E public\-: Status (outside of this class, you must use Timer\-Interface\-::\-Status to define variables of this type) enum Status \{ T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D = 0, // Timing analysis has not been started T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y, // Timer is busy (is reading design or performing timing analysis) T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S, // Timing analysis finished successfully T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R, // Error occured during timing analysis T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R // Error indicating that the program could not get timer status (could not read status file) \}; /$\ast$$\ast$
+
+\begin{DoxyVerb}Write sizes and run timing analysis in blocking mode
+1. Write sizes
+2. Starts timing analysis
+3. Waits for timing analysis to be completed
+Inputs: vector of pairs where first value is instance name (string) and second value is cell name (string)
+        contest root directory (string)
+        benchmark name (string)
+        polling time (number of seconds that the function should wait before polling timer status to check whether timer is done)
+Return: timer status\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+tcc\-Chrystian/src/include/timer\-\_\-interface.\-h\end{DoxyCompactItemize}

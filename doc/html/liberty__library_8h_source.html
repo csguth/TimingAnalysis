@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,158 +112,142 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;transitions.h&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structLibertyLookupTable.html">   30</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structLibertyLookupTable.html#aa9185452db835be3f9c603c3f3df5562">   39</a></span>&#160;  vector&lt;double&gt; <a class="code" href="structLibertyLookupTable.html#aa9185452db835be3f9c603c3f3df5562">loadIndices</a> ;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  vector&lt;double&gt; transitionIndices ;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  vector&lt;vector&lt;double&gt; &gt; tableVals ;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;ostream&amp; operator&lt;&lt; (ostream&amp; os, <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a>&amp; lut) ;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structLibertyTimingInfo.html">   47</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structLibertyTimingInfo.html">LibertyTimingInfo</a> {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">string</span> fromPin ;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">string</span> toPin ;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">string</span> timingSense ; timing model <span class="keywordflow">for</span> ISPD-13).</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structLibertyTimingInfo.html#a4fdd676db9841962ef570a064ff97c81">   58</a></span>&#160;  <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> <a class="code" href="structLibertyTimingInfo.html#a4fdd676db9841962ef570a064ff97c81">fallDelay</a> ;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> riseDelay ;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> fallTransition ;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> riseTransition ;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} ;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;ostream&amp; operator&lt;&lt; (ostream&amp; os, <a class="code" href="structLibertyTimingInfo.html">LibertyTimingInfo</a>&amp; timing) ;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structLibertyLookupTable.html">   38</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  vector&lt;double&gt; loadIndices ;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  vector&lt;double&gt; transitionIndices ;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  vector&lt;vector&lt;double&gt; &gt; tableVals ;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;ostream&amp; operator&lt;&lt; (ostream&amp; os, <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a>&amp; lut) ;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structLibertyTimingInfo.html">   57</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structLibertyTimingInfo.html">LibertyTimingInfo</a> {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">string</span> fromPin ;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">string</span> toPin ;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">string</span> timingSense ;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  timing model <span class="keywordflow">for</span> ISPD-13).</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> fallDelay ;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> riseDelay ;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> fallTransition ;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> riseTransition ;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structLibertyPinInfo.html">   70</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structLibertyPinInfo.html">LibertyPinInfo</a> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">string</span> name ; <span class="comment">// pin name</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">double</span> capacitance ; <span class="comment">// input pin cap (not defined for output pins)</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">double</span> maxCapacitance ; <span class="comment">// the max load this pin can drive</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">bool</span> isInput ; <span class="comment">// whether the pin is input or output pin</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">bool</span> isClock ; <span class="comment">// whether the pin is a clock pin or not</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structLibertyPinInfo.html#a268a64137463b6b6fdc87ed036184e45">   82</a></span>&#160;  <a class="code" href="structLibertyPinInfo.html#a268a64137463b6b6fdc87ed036184e45">LibertyPinInfo</a> () : capacitance (0.0)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  , maxCapacitance (std::numeric_limits&lt;double&gt;::max())</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  , isInput(true)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  , isClock(false) {};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;ostream&amp; operator&lt;&lt; (ostream&amp; os, <a class="code" href="structLibertyPinInfo.html">LibertyPinInfo</a>&amp; pin) ;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structLibertyCellInfo.html">   95</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a> {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordtype">string</span> name ; <span class="comment">// cell name</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">string</span> footprint ; <span class="comment">// only the cells with the same footprint are swappable</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordtype">double</span> leakagePower ; <span class="comment">// cell leakage power</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordtype">double</span> area ; <span class="comment">// cell area (will not be a metric for ISPD-13)</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordtype">bool</span> isSequential ; <span class="comment">// if true then sequential cell, else combinational</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">bool</span> dontTouch ; <span class="comment">// is the sizer allowed to size this cell? </span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordtype">bool</span> primaryOutput;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  vector&lt;LibertyPinInfo&gt; pins ;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  vector&lt;LibertyTimingInfo&gt; timingArcs ;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="structLibertyCellInfo.html#a3250ab70b0c778ef0881b949c008814b">  112</a></span>&#160;  <a class="code" href="structLibertyCellInfo.html#a3250ab70b0c778ef0881b949c008814b">LibertyCellInfo</a> () : leakagePower (0.0), area (0.0), isSequential (false), dontTouch(false), primaryOutput(false) {}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;} ;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;ostream&amp; operator&lt;&lt; (ostream&amp; os, <a class="code" href="structLibertyTimingInfo.html">LibertyTimingInfo</a>&amp; timing) ;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structLibertyPinInfo.html">   79</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structLibertyPinInfo.html">LibertyPinInfo</a> {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">string</span> name ; <span class="comment">// pin name</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">double</span> capacitance ; <span class="comment">// input pin cap (not defined for output pins)</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">double</span> maxCapacitance ; <span class="comment">// the max load this pin can drive</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">bool</span> isInput ; <span class="comment">// whether the pin is input or output pin</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">bool</span> isClock ; <span class="comment">// whether the pin is a clock pin or not</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structLibertyPinInfo.html#a268a64137463b6b6fdc87ed036184e45">   89</a></span>&#160;  <a class="code" href="structLibertyPinInfo.html#a268a64137463b6b6fdc87ed036184e45">LibertyPinInfo</a> () : capacitance (0.0)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  , maxCapacitance (std::numeric_limits&lt;double&gt;::max())</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  , isInput(true)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  , isClock(false) {};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;ostream&amp; operator&lt;&lt; (ostream&amp; os, <a class="code" href="structLibertyPinInfo.html">LibertyPinInfo</a>&amp; pin) ;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structLibertyCellInfo.html">  104</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a> {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">string</span> name ; <span class="comment">// cell name</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">string</span> footprint ; <span class="comment">// only the cells with the same footprint are swappable</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">double</span> leakagePower ; <span class="comment">// cell leakage power</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">double</span> area ; <span class="comment">// cell area (will not be a metric for ISPD-13)</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordtype">bool</span> isSequential ; <span class="comment">// if true then sequential cell, else combinational</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">bool</span> dontTouch ; <span class="comment">// is the sizer allowed to size this cell? </span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">bool</span> primaryOutput;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} ;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;ostream&amp; operator&lt;&lt; (ostream&amp; os, <a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a>&amp; cell) ;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classLibertyLibrary.html">  123</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLibertyLibrary.html">LibertyLibrary</a></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordtype">double</span> maxTransition;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  vector&lt; vector&lt;LibertyCellInfo&gt; &gt; library;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  map&lt;string, int&gt; footPrintToIndex;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  map&lt;string, int&gt; cellOptionNumber; <span class="comment">// ex cellOptionNumber[in01f01] = 0 </span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  map&lt;string, int&gt; cellToFootprintIndex;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="comment">// fazer um map de celltype para footprint</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <a class="code" href="classLibertyLibrary.html#a3b7513ef68e791245f60e16f6b4ee5d4">LibertyLibrary</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> maxTransition = 0.0f);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classLibertyLibrary.html#ade99b2247c7d5eb9ef885bc4ec57091d">~LibertyLibrary</a>();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="keyword">const</span> pair&lt;int, int&gt; <a class="code" href="classLibertyLibrary.html#a4d9ec0ea6af3949878d9b14042e761e6">addCellInfo</a>(<span class="keyword">const</span> <a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; cellInfo); <span class="comment">// return = [footprint index][option index]</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keyword">const</span> <a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; <a class="code" href="classLibertyLibrary.html#a917ae50f0af17b1b68be754f1ae6dd07">getCellInfo</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; footPrint, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp; i) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keyword">const</span> <a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; <a class="code" href="classLibertyLibrary.html#a917ae50f0af17b1b68be754f1ae6dd07">getCellInfo</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; cellName) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keyword">const</span> <a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; <a class="code" href="classLibertyLibrary.html#a917ae50f0af17b1b68be754f1ae6dd07">getCellInfo</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp; footPrintIndex, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp; optionIndex) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keyword">const</span> pair&lt;int, int&gt; <a class="code" href="classLibertyLibrary.html#a08a8b3ab2b9e91574d1cdc39376839c8">getCellIndex</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;cellName) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classLibertyLibrary.html#a954497f3bf2fe4ab640be24c23f976f4">getMaxTransition</a>() <span class="keyword">const</span> ;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="comment">/* data */</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;};</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="keyword">enum</span> Unateness {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  NEGATIVE_UNATE, POSITIVE_UNATE, NON_UNATE</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;};</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  vector&lt;LibertyPinInfo&gt; pins ;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  vector&lt;LibertyTimingInfo&gt; timingArcs ;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="structLibertyCellInfo.html#a3250ab70b0c778ef0881b949c008814b">  120</a></span>&#160;  <a class="code" href="structLibertyCellInfo.html#a3250ab70b0c778ef0881b949c008814b">LibertyCellInfo</a> () : leakagePower (0.0), area (0.0), isSequential (false), dontTouch(false), primaryOutput(false) {}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;} ;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;ostream&amp; operator&lt;&lt; (ostream&amp; os, <a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a>&amp; cell) ;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classLibertyLibrary.html">  132</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLibertyLibrary.html">LibertyLibrary</a></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordtype">double</span> maxTransition;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  vector&lt; vector&lt;LibertyCellInfo&gt; &gt; library;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  map&lt;string, int&gt; footPrintToIndex;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  map&lt;string, int&gt; cellOptionNumber; <span class="comment">// ex cellOptionNumber[in01f01] = 0 </span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  map&lt;string, int&gt; cellToFootprintIndex;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="comment">// fazer um map de celltype para footprint</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="classLibertyLibrary.html#a3b7513ef68e791245f60e16f6b4ee5d4">LibertyLibrary</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> maxTransition = 0.0f);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classLibertyLibrary.html#ade99b2247c7d5eb9ef885bc4ec57091d">~LibertyLibrary</a>();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keyword">const</span> pair&lt;int, int&gt; <a class="code" href="classLibertyLibrary.html#a4d9ec0ea6af3949878d9b14042e761e6">addCellInfo</a>(<span class="keyword">const</span> <a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; cellInfo); <span class="comment">// return = [footprint index][option index]</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keyword">const</span> <a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; <a class="code" href="classLibertyLibrary.html#a917ae50f0af17b1b68be754f1ae6dd07">getCellInfo</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; footPrint, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp; i) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keyword">const</span> <a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; <a class="code" href="classLibertyLibrary.html#a917ae50f0af17b1b68be754f1ae6dd07">getCellInfo</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp; cellName) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="keyword">const</span> <a class="code" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; <a class="code" href="classLibertyLibrary.html#a917ae50f0af17b1b68be754f1ae6dd07">getCellInfo</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp; footPrintIndex, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp; optionIndex) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keyword">const</span> pair&lt;int, int&gt; <a class="code" href="classLibertyLibrary.html#a08a8b3ab2b9e91574d1cdc39376839c8">getCellIndex</a>(<span class="keyword">const</span> <span class="keywordtype">string</span> &amp;cellName) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classLibertyLibrary.html#a954497f3bf2fe4ab640be24c23f976f4">getMaxTransition</a>() <span class="keyword">const</span> ;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classLibertyLookupTableInterpolator.html">  197</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLibertyLookupTableInterpolator.html">LibertyLookupTableInterpolator</a></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;{</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> DEFAULT_DECIMAL_PLACES;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordtype">void</span> round(<a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> &amp; transitions, <span class="keyword">const</span> <span class="keywordtype">int</span> decimal_places);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classLibertyLookupTableInterpolator.html#ae12e0b9e427488bc933b54a427586f47">interpolate</a>(<span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; lut, <span class="keyword">const</span> <span class="keywordtype">double</span> load, <span class="keyword">const</span> <span class="keywordtype">double</span> transition) = 0;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> <a class="code" href="classLibertyLookupTableInterpolator.html#ae12e0b9e427488bc933b54a427586f47">interpolate</a>(<span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; riseLut, <span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; fallLut, <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> load, <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> transition, Unateness unateness = NEGATIVE_UNATE, <span class="keywordtype">bool</span> is_input_driver = <span class="keyword">false</span>) = 0;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <span class="comment">/* data */</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;};</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
-<div class="line"><a name="l00221"></a><span class="lineno"><a class="line" href="classLinearLibertyLookupTableInterpolator.html">  221</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLinearLibertyLookupTableInterpolator.html">LinearLibertyLookupTableInterpolator</a> : <span class="keyword">public</span> <a class="code" href="classLibertyLookupTableInterpolator.html">LibertyLookupTableInterpolator</a></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;{</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classLinearLibertyLookupTableInterpolator.html#afd4bc7bfcf9e969478fbc9505b588bf3">interpolate</a>(<span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; lut, <span class="keyword">const</span> <span class="keywordtype">double</span> load, <span class="keyword">const</span> <span class="keywordtype">double</span> transition);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> <a class="code" href="classLinearLibertyLookupTableInterpolator.html#afd4bc7bfcf9e969478fbc9505b588bf3">interpolate</a>(<span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; riseLut, <span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; fallLut, <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> load, <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> transition, Unateness unateness = NEGATIVE_UNATE, <span class="keywordtype">bool</span> is_input_driver = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;};</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="comment">/* data */</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;};</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keyword">enum</span> Unateness {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  NEGATIVE_UNATE, POSITIVE_UNATE, NON_UNATE</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;};</div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="classLibertyLookupTableInterpolator.html">  205</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLibertyLookupTableInterpolator.html">LibertyLookupTableInterpolator</a></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> DEFAULT_DECIMAL_PLACES;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLibertyLookupTableInterpolator.html#a41f28d4091ef57ce488a26f0a3aedb0b">round</a>(<a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> &amp; transitions, <span class="keyword">const</span> <span class="keywordtype">int</span> decimal_places);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classLibertyLookupTableInterpolator.html#ae12e0b9e427488bc933b54a427586f47">interpolate</a>(<span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; lut, <span class="keyword">const</span> <span class="keywordtype">double</span> load, <span class="keyword">const</span> <span class="keywordtype">double</span> transition) = 0;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> <a class="code" href="classLibertyLookupTableInterpolator.html#ae12e0b9e427488bc933b54a427586f47">interpolate</a>(<span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; riseLut, <span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; fallLut, <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> load, <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> transition, Unateness unateness = NEGATIVE_UNATE, <span class="keywordtype">bool</span> is_input_driver = <span class="keyword">false</span>) = 0;</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="ttc" id="structLibertyCellInfo_html"><div class="ttname"><a href="structLibertyCellInfo.html">LibertyCellInfo</a></div><div class="ttdef"><b>Definition:</b> liberty_library.h:95</div></div>
-<div class="ttc" id="classLibertyLibrary_html_a08a8b3ab2b9e91574d1cdc39376839c8"><div class="ttname"><a href="classLibertyLibrary.html#a08a8b3ab2b9e91574d1cdc39376839c8">LibertyLibrary::getCellIndex</a></div><div class="ttdeci">const pair&lt; int, int &gt; getCellIndex(const string &amp;cellName) const </div><div class="ttdoc">Returns index of cell cellName. </div></div>
-<div class="ttc" id="structLibertyTimingInfo_html"><div class="ttname"><a href="structLibertyTimingInfo.html">LibertyTimingInfo</a></div><div class="ttdef"><b>Definition:</b> liberty_library.h:47</div></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="comment">/* data */</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;};</div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="classLinearLibertyLookupTableInterpolator.html">  236</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLinearLibertyLookupTableInterpolator.html">LinearLibertyLookupTableInterpolator</a> : <span class="keyword">public</span> <a class="code" href="classLibertyLookupTableInterpolator.html">LibertyLookupTableInterpolator</a></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classLinearLibertyLookupTableInterpolator.html#afd4bc7bfcf9e969478fbc9505b588bf3">interpolate</a>(<span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; lut, <span class="keyword">const</span> <span class="keywordtype">double</span> load, <span class="keyword">const</span> <span class="keywordtype">double</span> transition);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> <a class="code" href="classLinearLibertyLookupTableInterpolator.html#afd4bc7bfcf9e969478fbc9505b588bf3">interpolate</a>(<span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; riseLut, <span class="keyword">const</span> <a class="code" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp; fallLut, <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> load, <span class="keyword">const</span> <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> transition, Unateness unateness = NEGATIVE_UNATE, <span class="keywordtype">bool</span> is_input_driver = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;};</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="structLibertyCellInfo_html"><div class="ttname"><a href="structLibertyCellInfo.html">LibertyCellInfo</a></div><div class="ttdoc">Struct which has informations about a cell. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:104</div></div>
+<div class="ttc" id="classLibertyLibrary_html_a08a8b3ab2b9e91574d1cdc39376839c8"><div class="ttname"><a href="classLibertyLibrary.html#a08a8b3ab2b9e91574d1cdc39376839c8">LibertyLibrary::getCellIndex</a></div><div class="ttdeci">const pair&lt; int, int &gt; getCellIndex(const string &amp;cellName) const </div><div class="ttdoc">Returns pair&amp;lt;footprint index, option index&amp;gt; </div></div>
+<div class="ttc" id="structLibertyTimingInfo_html"><div class="ttname"><a href="structLibertyTimingInfo.html">LibertyTimingInfo</a></div><div class="ttdoc">Struct which has informations about timing. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:57</div></div>
+<div class="ttc" id="classLibertyLookupTableInterpolator_html_a41f28d4091ef57ce488a26f0a3aedb0b"><div class="ttname"><a href="classLibertyLookupTableInterpolator.html#a41f28d4091ef57ce488a26f0a3aedb0b">LibertyLookupTableInterpolator::round</a></div><div class="ttdeci">void round(Transitions&lt; double &gt; &amp;transitions, const int decimal_places)</div><div class="ttdoc">Truncates Transitions&amp;lt;double&amp;gt; to Transitions&amp;lt;double&amp;gt; ****************** does nothing... </div></div>
 <div class="ttc" id="classTransitions_html"><div class="ttname"><a href="classTransitions.html">Transitions&lt; double &gt;</a></div></div>
-<div class="ttc" id="structLibertyCellInfo_html_a3250ab70b0c778ef0881b949c008814b"><div class="ttname"><a href="structLibertyCellInfo.html#a3250ab70b0c778ef0881b949c008814b">LibertyCellInfo::LibertyCellInfo</a></div><div class="ttdeci">LibertyCellInfo()</div><div class="ttdoc">LibertyCellInfo default constructor***********. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:112</div></div>
-<div class="ttc" id="structLibertyLookupTable_html_aa9185452db835be3f9c603c3f3df5562"><div class="ttname"><a href="structLibertyLookupTable.html#aa9185452db835be3f9c603c3f3df5562">LibertyLookupTable::loadIndices</a></div><div class="ttdeci">vector&lt; double &gt; loadIndices</div><div class="ttdoc">Look up table is indexed by the output load and the input transition values Example: Let L = loadIndi...</div><div class="ttdef"><b>Definition:</b> liberty_library.h:39</div></div>
-<div class="ttc" id="structLibertyPinInfo_html"><div class="ttname"><a href="structLibertyPinInfo.html">LibertyPinInfo</a></div><div class="ttdef"><b>Definition:</b> liberty_library.h:70</div></div>
-<div class="ttc" id="classLinearLibertyLookupTableInterpolator_html_afd4bc7bfcf9e969478fbc9505b588bf3"><div class="ttname"><a href="classLinearLibertyLookupTableInterpolator.html#afd4bc7bfcf9e969478fbc9505b588bf3">LinearLibertyLookupTableInterpolator::interpolate</a></div><div class="ttdeci">double interpolate(const LibertyLookupTable &amp;lut, const double load, const double transition)</div><div class="ttdoc">Returns interpolation of LUT. </div></div>
-<div class="ttc" id="classLibertyLibrary_html"><div class="ttname"><a href="classLibertyLibrary.html">LibertyLibrary</a></div><div class="ttdef"><b>Definition:</b> liberty_library.h:123</div></div>
-<div class="ttc" id="classLibertyLibrary_html_a917ae50f0af17b1b68be754f1ae6dd07"><div class="ttname"><a href="classLibertyLibrary.html#a917ae50f0af17b1b68be754f1ae6dd07">LibertyLibrary::getCellInfo</a></div><div class="ttdeci">const LibertyCellInfo &amp; getCellInfo(const string &amp;footPrint, const int &amp;i) const </div><div class="ttdoc">Returns LibertyCellInfo of footprint at index i. </div></div>
-<div class="ttc" id="structLibertyLookupTable_html"><div class="ttname"><a href="structLibertyLookupTable.html">LibertyLookupTable</a></div><div class="ttdoc">Look up table to store delay or slew functions. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:30</div></div>
+<div class="ttc" id="structLibertyCellInfo_html_a3250ab70b0c778ef0881b949c008814b"><div class="ttname"><a href="structLibertyCellInfo.html#a3250ab70b0c778ef0881b949c008814b">LibertyCellInfo::LibertyCellInfo</a></div><div class="ttdeci">LibertyCellInfo()</div><div class="ttdoc">LibertyCellInfo default constructor. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:120</div></div>
+<div class="ttc" id="structLibertyPinInfo_html"><div class="ttname"><a href="structLibertyPinInfo.html">LibertyPinInfo</a></div><div class="ttdoc">Struct which has informations about a pin. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:79</div></div>
+<div class="ttc" id="classLinearLibertyLookupTableInterpolator_html_afd4bc7bfcf9e969478fbc9505b588bf3"><div class="ttname"><a href="classLinearLibertyLookupTableInterpolator.html#afd4bc7bfcf9e969478fbc9505b588bf3">LinearLibertyLookupTableInterpolator::interpolate</a></div><div class="ttdeci">double interpolate(const LibertyLookupTable &amp;lut, const double load, const double transition)</div><div class="ttdoc">Returns interpolated value. </div></div>
+<div class="ttc" id="classLibertyLibrary_html"><div class="ttname"><a href="classLibertyLibrary.html">LibertyLibrary</a></div><div class="ttdoc">Library which makes easier to get the description of a particular cell. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:132</div></div>
+<div class="ttc" id="classLibertyLibrary_html_a917ae50f0af17b1b68be754f1ae6dd07"><div class="ttname"><a href="classLibertyLibrary.html#a917ae50f0af17b1b68be754f1ae6dd07">LibertyLibrary::getCellInfo</a></div><div class="ttdeci">const LibertyCellInfo &amp; getCellInfo(const string &amp;footPrint, const int &amp;i) const </div><div class="ttdoc">Returns LibertyCellInfo in footPrint parameter, at index i. </div></div>
+<div class="ttc" id="structLibertyLookupTable_html"><div class="ttname"><a href="structLibertyLookupTable.html">LibertyLookupTable</a></div><div class="ttdoc">Struct representing a lookup table to store delay or slew functions. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:38</div></div>
 <div class="ttc" id="classLibertyLibrary_html_a3b7513ef68e791245f60e16f6b4ee5d4"><div class="ttname"><a href="classLibertyLibrary.html#a3b7513ef68e791245f60e16f6b4ee5d4">LibertyLibrary::LibertyLibrary</a></div><div class="ttdeci">LibertyLibrary(const double maxTransition=0.0f)</div><div class="ttdoc">LibertyLibrary default constructor. </div></div>
-<div class="ttc" id="structLibertyPinInfo_html_a268a64137463b6b6fdc87ed036184e45"><div class="ttname"><a href="structLibertyPinInfo.html#a268a64137463b6b6fdc87ed036184e45">LibertyPinInfo::LibertyPinInfo</a></div><div class="ttdeci">LibertyPinInfo()</div><div class="ttdoc">LibertyPinInfo default constructor***********. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:82</div></div>
-<div class="ttc" id="structLibertyTimingInfo_html_a4fdd676db9841962ef570a064ff97c81"><div class="ttname"><a href="structLibertyTimingInfo.html#a4fdd676db9841962ef570a064ff97c81">LibertyTimingInfo::fallDelay</a></div><div class="ttdeci">timing model for ISPD LibertyLookupTable fallDelay</div><div class="ttdoc">&amp;quot;non_unate&amp;quot; or &amp;quot;negative_unate&amp;quot; or &amp;quot;positive_unate&amp;quot;. Note that ISPD-13 library will have only negativ...</div><div class="ttdef"><b>Definition:</b> liberty_library.h:58</div></div>
+<div class="ttc" id="structLibertyPinInfo_html_a268a64137463b6b6fdc87ed036184e45"><div class="ttname"><a href="structLibertyPinInfo.html#a268a64137463b6b6fdc87ed036184e45">LibertyPinInfo::LibertyPinInfo</a></div><div class="ttdeci">LibertyPinInfo()</div><div class="ttdoc">LibertyPinInfo default constructor. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:89</div></div>
 <div class="ttc" id="classLibertyLibrary_html_a4d9ec0ea6af3949878d9b14042e761e6"><div class="ttname"><a href="classLibertyLibrary.html#a4d9ec0ea6af3949878d9b14042e761e6">LibertyLibrary::addCellInfo</a></div><div class="ttdeci">const pair&lt; int, int &gt; addCellInfo(const LibertyCellInfo &amp;cellInfo)</div><div class="ttdoc">Returns pair&amp;lt;footprint index, option index&amp;gt; </div></div>
 <div class="ttc" id="classLibertyLibrary_html_ade99b2247c7d5eb9ef885bc4ec57091d"><div class="ttname"><a href="classLibertyLibrary.html#ade99b2247c7d5eb9ef885bc4ec57091d">LibertyLibrary::~LibertyLibrary</a></div><div class="ttdeci">virtual ~LibertyLibrary()</div><div class="ttdoc">Empty LibertyLibrary desctructor. </div></div>
-<div class="ttc" id="classLibertyLookupTableInterpolator_html_ae12e0b9e427488bc933b54a427586f47"><div class="ttname"><a href="classLibertyLookupTableInterpolator.html#ae12e0b9e427488bc933b54a427586f47">LibertyLookupTableInterpolator::interpolate</a></div><div class="ttdeci">virtual double interpolate(const LibertyLookupTable &amp;lut, const double load, const double transition)=0</div><div class="ttdoc">Returns interpolation of LUT. </div></div>
-<div class="ttc" id="classLinearLibertyLookupTableInterpolator_html"><div class="ttname"><a href="classLinearLibertyLookupTableInterpolator.html">LinearLibertyLookupTableInterpolator</a></div><div class="ttdef"><b>Definition:</b> liberty_library.h:221</div></div>
+<div class="ttc" id="classLibertyLookupTableInterpolator_html_ae12e0b9e427488bc933b54a427586f47"><div class="ttname"><a href="classLibertyLookupTableInterpolator.html#ae12e0b9e427488bc933b54a427586f47">LibertyLookupTableInterpolator::interpolate</a></div><div class="ttdeci">virtual double interpolate(const LibertyLookupTable &amp;lut, const double load, const double transition)=0</div><div class="ttdoc">Returns interpolated value. </div></div>
+<div class="ttc" id="classLinearLibertyLookupTableInterpolator_html"><div class="ttname"><a href="classLinearLibertyLookupTableInterpolator.html">LinearLibertyLookupTableInterpolator</a></div><div class="ttdoc">Linear interpolation calculator. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:236</div></div>
 <div class="ttc" id="classLibertyLibrary_html_a954497f3bf2fe4ab640be24c23f976f4"><div class="ttname"><a href="classLibertyLibrary.html#a954497f3bf2fe4ab640be24c23f976f4">LibertyLibrary::getMaxTransition</a></div><div class="ttdeci">double getMaxTransition() const </div><div class="ttdoc">Returns maxTransition. </div></div>
-<div class="ttc" id="classLibertyLookupTableInterpolator_html"><div class="ttname"><a href="classLibertyLookupTableInterpolator.html">LibertyLookupTableInterpolator</a></div><div class="ttdef"><b>Definition:</b> liberty_library.h:197</div></div>
+<div class="ttc" id="classLibertyLookupTableInterpolator_html"><div class="ttname"><a href="classLibertyLookupTableInterpolator.html">LibertyLookupTableInterpolator</a></div><div class="ttdoc">Interpolation calculator. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:205</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 24 2013 09:42:56 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 25 2013 16:02:27 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

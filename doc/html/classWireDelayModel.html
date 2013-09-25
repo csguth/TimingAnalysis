@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,39 +96,42 @@ Inheritance diagram for WireDelayModel:</div>
  <div class="center">
   <img src="classWireDelayModel.png" usemap="#WireDelayModel_map" alt=""/>
   <map id="WireDelayModel_map" name="WireDelayModel_map">
-<area href="classLumpedCapacitanceWireDelayModel.html" alt="LumpedCapacitanceWireDelayModel" shape="rect" coords="0,56,221,80"/>
+<area href="classLumpedCapacitanceWireDelayModel.html" title="Describes the Lumped Capacitance Model. " alt="LumpedCapacitanceWireDelayModel" shape="rect" coords="0,56,221,80"/>
 <area href="classRCTreeWireDelayModel.html" alt="RCTreeWireDelayModel" shape="rect" coords="231,56,452,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0fd2defb581f6d8bcd67e5c935387d95"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0fd2defb581f6d8bcd67e5c935387d95"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>WireDelayModel</b> (const double &amp;lumped_capacitance)</td></tr>
+<tr class="memitem:a0fd2defb581f6d8bcd67e5c935387d95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#a0fd2defb581f6d8bcd67e5c935387d95">WireDelayModel</a> (const double &amp;<a class="el" href="classWireDelayModel.html#a05f509843dfa07e17c9b6cc16ba9aaa0">lumped_capacitance</a>)</td></tr>
+<tr class="memdesc:a0fd2defb581f6d8bcd67e5c935387d95"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classWireDelayModel.html">WireDelayModel</a> default constructor.  <a href="#a0fd2defb581f6d8bcd67e5c935387d95">More...</a><br/></td></tr>
 <tr class="separator:a0fd2defb581f6d8bcd67e5c935387d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8375f713365be98c03672dbeb28eb930"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8375f713365be98c03672dbeb28eb930"></a>
-virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>simulate</b> (const <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp;cellInfo, const int input, const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; slew, bool is_input_driver)=0</td></tr>
+<tr class="memitem:ad9103d46909b96ad4015c818dcd2988c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9103d46909b96ad4015c818dcd2988c"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#ad9103d46909b96ad4015c818dcd2988c">~WireDelayModel</a> ()</td></tr>
+<tr class="memdesc:ad9103d46909b96ad4015c818dcd2988c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty WideDelayModel destructor. <br/></td></tr>
+<tr class="separator:ad9103d46909b96ad4015c818dcd2988c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8375f713365be98c03672dbeb28eb930"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#a8375f713365be98c03672dbeb28eb930">simulate</a> (const <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp;cellInfo, const int input, const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; slew, bool is_input_driver)=0</td></tr>
 <tr class="separator:a8375f713365be98c03672dbeb28eb930"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45a83dd192bcbf2a70ee13899256fe0d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a45a83dd192bcbf2a70ee13899256fe0d"></a>
-virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>delay_at_fanout_node</b> (const string fanout_node_name) const =0</td></tr>
+<tr class="memitem:a45a83dd192bcbf2a70ee13899256fe0d"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#a45a83dd192bcbf2a70ee13899256fe0d">delay_at_fanout_node</a> (const string fanout_node_name) const =0</td></tr>
+<tr class="memdesc:a45a83dd192bcbf2a70ee13899256fe0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> with rise and fall delay time values set to zero.  <a href="#a45a83dd192bcbf2a70ee13899256fe0d">More...</a><br/></td></tr>
 <tr class="separator:a45a83dd192bcbf2a70ee13899256fe0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaf486017e2ad91a900a9bef4e6f9340"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adaf486017e2ad91a900a9bef4e6f9340"></a>
-virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>slew_at_fanout_node</b> (const string fanout_node_name) const =0</td></tr>
+<tr class="memitem:adaf486017e2ad91a900a9bef4e6f9340"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#adaf486017e2ad91a900a9bef4e6f9340">slew_at_fanout_node</a> (const string fanout_node_name) const =0</td></tr>
+<tr class="memdesc:adaf486017e2ad91a900a9bef4e6f9340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> with rise and fall slew time values set to zero.  <a href="#adaf486017e2ad91a900a9bef4e6f9340">More...</a><br/></td></tr>
 <tr class="separator:adaf486017e2ad91a900a9bef4e6f9340"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27d557bc1f2ed7e5e9787a8a5d82ecb2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27d557bc1f2ed7e5e9787a8a5d82ecb2"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setFanoutPinCapacitance</b> (const string fanoutNameAndPin, const double pinCapacitance)=0</td></tr>
+<tr class="memitem:a27d557bc1f2ed7e5e9787a8a5d82ecb2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#a27d557bc1f2ed7e5e9787a8a5d82ecb2">setFanoutPinCapacitance</a> (const string fanoutNameAndPin, const double pinCapacitance)=0</td></tr>
+<tr class="memdesc:a27d557bc1f2ed7e5e9787a8a5d82ecb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments lumped capacitance of the wire.  <a href="#a27d557bc1f2ed7e5e9787a8a5d82ecb2">More...</a><br/></td></tr>
 <tr class="separator:a27d557bc1f2ed7e5e9787a8a5d82ecb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f4ab93810af8ad90fd9fca0b06de141"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f4ab93810af8ad90fd9fca0b06de141"></a>
-virtual <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>root_delay</b> (int arc_number)=0</td></tr>
+<tr class="memitem:a4f4ab93810af8ad90fd9fca0b06de141"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#a4f4ab93810af8ad90fd9fca0b06de141">root_delay</a> (int arc_number)=0</td></tr>
+<tr class="memdesc:a4f4ab93810af8ad90fd9fca0b06de141"><td class="mdescLeft">&#160;</td><td class="mdescRight">not yet implemented***********************  <a href="#a4f4ab93810af8ad90fd9fca0b06de141">More...</a><br/></td></tr>
 <tr class="separator:a4f4ab93810af8ad90fd9fca0b06de141"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e5344c26b73f549a2b5c38fea8af13d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e5344c26b73f549a2b5c38fea8af13d"></a>
-virtual <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>root_slew</b> (int arc_number)=0</td></tr>
+<tr class="memitem:a9e5344c26b73f549a2b5c38fea8af13d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#a9e5344c26b73f549a2b5c38fea8af13d">root_slew</a> (int arc_number)=0</td></tr>
+<tr class="memdesc:a9e5344c26b73f549a2b5c38fea8af13d"><td class="mdescLeft">&#160;</td><td class="mdescRight">not yet implemented***********************  <a href="#a9e5344c26b73f549a2b5c38fea8af13d">More...</a><br/></td></tr>
 <tr class="separator:a9e5344c26b73f549a2b5c38fea8af13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74869a3a66deb53507e8bc6f16eff45c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a74869a3a66deb53507e8bc6f16eff45c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()=0</td></tr>
+<tr class="memitem:a74869a3a66deb53507e8bc6f16eff45c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#a74869a3a66deb53507e8bc6f16eff45c">clear</a> ()=0</td></tr>
+<tr class="memdesc:a74869a3a66deb53507e8bc6f16eff45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">not yet implemented**********************  <a href="#a74869a3a66deb53507e8bc6f16eff45c">More...</a><br/></td></tr>
 <tr class="separator:a74869a3a66deb53507e8bc6f16eff45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05f509843dfa07e17c9b6cc16ba9aaa0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05f509843dfa07e17c9b6cc16ba9aaa0"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>lumped_capacitance</b> () const </td></tr>
+<tr class="memitem:a05f509843dfa07e17c9b6cc16ba9aaa0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#a05f509843dfa07e17c9b6cc16ba9aaa0">lumped_capacitance</a> () const </td></tr>
+<tr class="memdesc:a05f509843dfa07e17c9b6cc16ba9aaa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns lumped capacitance of the wire.  <a href="#a05f509843dfa07e17c9b6cc16ba9aaa0">More...</a><br/></td></tr>
 <tr class="separator:a05f509843dfa07e17c9b6cc16ba9aaa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -144,13 +147,333 @@ static <br class="typebreak"/>
 <a class="el" href="classLinearLibertyLookupTableInterpolator.html">LinearLibertyLookupTableInterpolator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>interpolator</b></td></tr>
 <tr class="separator:aa8f767316492b902c13ec68651b30247"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a0fd2defb581f6d8bcd67e5c935387d95"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WireDelayModel::WireDelayModel </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>lumped_capacitance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classWireDelayModel.html">WireDelayModel</a> default constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>double &amp; lumped_capacitance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a74869a3a66deb53507e8bc6f16eff45c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WireDelayModel::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>not yet implemented********************** </p>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="classRCTreeWireDelayModel.html#acb14554ad26108d350770391b1923c51">RCTreeWireDelayModel</a>, and <a class="el" href="classLumpedCapacitanceWireDelayModel.html#acca0415a76729b616be06543262ef441">LumpedCapacitanceWireDelayModel</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a45a83dd192bcbf2a70ee13899256fe0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt;double&gt; WireDelayModel::delay_at_fanout_node </td>
+          <td>(</td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>fanout_node_name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns <a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> with rise and fall delay time values set to zero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>string fanout_node_name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="classRCTreeWireDelayModel.html#a7c769d54e8a520db1c5d4537d7e8b608">RCTreeWireDelayModel</a>, and <a class="el" href="classLumpedCapacitanceWireDelayModel.html#a0266cb676908d95bdfcb64d1137898b0">LumpedCapacitanceWireDelayModel</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05f509843dfa07e17c9b6cc16ba9aaa0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double WireDelayModel::lumped_capacitance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns lumped capacitance of the wire. </p>
+<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f4ab93810af8ad90fd9fca0b06de141"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classTransitions.html">Transitions</a>&lt;double&gt; WireDelayModel::root_delay </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arc_number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>not yet implemented*********************** </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>arc_number</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="classRCTreeWireDelayModel.html#a5575e4f4e598047dd87fee0707d135d3">RCTreeWireDelayModel</a>, and <a class="el" href="classLumpedCapacitanceWireDelayModel.html#ab090355a74a21b5d6008352ff2a7d137">LumpedCapacitanceWireDelayModel</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9e5344c26b73f549a2b5c38fea8af13d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classTransitions.html">Transitions</a>&lt;double&gt; WireDelayModel::root_slew </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arc_number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>not yet implemented*********************** </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>arc_number</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="classRCTreeWireDelayModel.html#aa314aa73bf2e25008d330ad19544e210">RCTreeWireDelayModel</a>, and <a class="el" href="classLumpedCapacitanceWireDelayModel.html#a65e4141bbf97638c2334f71dfbf0ccfd">LumpedCapacitanceWireDelayModel</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a27d557bc1f2ed7e5e9787a8a5d82ecb2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void WireDelayModel::setFanoutPinCapacitance </td>
+          <td>(</td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>fanoutNameAndPin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>pinCapacitance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Increments lumped capacitance of the wire. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>string fanoutNameAndPin, const double capacitance</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+<p>Implemented in <a class="el" href="classRCTreeWireDelayModel.html#a106079b64e0e6b84327fc5a9b4c29a6a">RCTreeWireDelayModel</a>, and <a class="el" href="classLumpedCapacitanceWireDelayModel.html#a888f7e6a4951837072b937ae30e93073">LumpedCapacitanceWireDelayModel</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8375f713365be98c03672dbeb28eb930"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt;double&gt; WireDelayModel::simulate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>cellInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td>
+          <td class="paramname"><em>slew</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_input_driver</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td><a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> &amp; cellInfo, const int input, const <a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> slew, bool is_input_driver</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="classRCTreeWireDelayModel.html#a06312bef3b98f0903335227fd7ea0f31">RCTreeWireDelayModel</a>, and <a class="el" href="classLumpedCapacitanceWireDelayModel.html#a1bba0aef3bebe8df97a63e05b307b19a">LumpedCapacitanceWireDelayModel</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adaf486017e2ad91a900a9bef4e6f9340"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt;double&gt; WireDelayModel::slew_at_fanout_node </td>
+          <td>(</td>
+          <td class="paramtype">const string&#160;</td>
+          <td class="paramname"><em>fanout_node_name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns <a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> with rise and fall slew time values set to zero. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>string fanout_node_name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> </dd></dl>
+
+<p>Implemented in <a class="el" href="classRCTreeWireDelayModel.html#aea4c7315bdd3715ca0c67707b2c32a8c">RCTreeWireDelayModel</a>, and <a class="el" href="classLumpedCapacitanceWireDelayModel.html#aaedd69e811e7220e48493c51fb0443ed">LumpedCapacitanceWireDelayModel</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>tccChrystian/src/include/<a class="el" href="wire__delay__model_8h_source.html">wire_delay_model.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 24 2013 09:42:57 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 25 2013 16:02:29 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

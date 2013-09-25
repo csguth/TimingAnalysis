@@ -13,28 +13,180 @@ Inheritance diagram for R\-C\-Tree\-Wire\-Delay\-Model\-:\begin{figure}[H]
 \hypertarget{classRCTreeWireDelayModel_a239d4784b2d39b6042fe39bee4838c6b}{{\bfseries R\-C\-Tree\-Wire\-Delay\-Model} (const \hyperlink{classSpefNetISPD2013}{Spef\-Net\-I\-S\-P\-D2013} \&descriptor, const string root\-Node, const size\-\_\-t arcs\-\_\-size, const bool dummy\-Edge=false)}\label{classRCTreeWireDelayModel_a239d4784b2d39b6042fe39bee4838c6b}
 
 \item 
-\hypertarget{classRCTreeWireDelayModel_a06312bef3b98f0903335227fd7ea0f31}{const \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries simulate} (const \hyperlink{structLibertyCellInfo}{Liberty\-Cell\-Info} \&cell\-Info, const int input, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ slew, bool is\-\_\-input\-\_\-driver)}\label{classRCTreeWireDelayModel_a06312bef3b98f0903335227fd7ea0f31}
-
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classRCTreeWireDelayModel_a06312bef3b98f0903335227fd7ea0f31}{simulate} (const \hyperlink{structLibertyCellInfo}{Liberty\-Cell\-Info} \&cell\-Info, const int input, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ slew, bool is\-\_\-input\-\_\-driver)
 \item 
-\hypertarget{classRCTreeWireDelayModel_a7c769d54e8a520db1c5d4537d7e8b608}{const \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries delay\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const }\label{classRCTreeWireDelayModel_a7c769d54e8a520db1c5d4537d7e8b608}
-
-\item 
-\hypertarget{classRCTreeWireDelayModel_aea4c7315bdd3715ca0c67707b2c32a8c}{const \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries slew\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const }\label{classRCTreeWireDelayModel_aea4c7315bdd3715ca0c67707b2c32a8c}
-
-\item 
-\hypertarget{classRCTreeWireDelayModel_a106079b64e0e6b84327fc5a9b4c29a6a}{void {\bfseries set\-Fanout\-Pin\-Capacitance} (const string fanout\-Name\-And\-Pin, const double pin\-Capacitance)}\label{classRCTreeWireDelayModel_a106079b64e0e6b84327fc5a9b4c29a6a}
-
-\item 
-\hypertarget{classRCTreeWireDelayModel_a5575e4f4e598047dd87fee0707d135d3}{\hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries root\-\_\-delay} (int arc\-\_\-number)}\label{classRCTreeWireDelayModel_a5575e4f4e598047dd87fee0707d135d3}
-
-\item 
-\hypertarget{classRCTreeWireDelayModel_aa314aa73bf2e25008d330ad19544e210}{\hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries root\-\_\-slew} (int arc\-\_\-number)}\label{classRCTreeWireDelayModel_aa314aa73bf2e25008d330ad19544e210}
-
-\item 
-\hypertarget{classRCTreeWireDelayModel_acb14554ad26108d350770391b1923c51}{void {\bfseries clear} ()}\label{classRCTreeWireDelayModel_acb14554ad26108d350770391b1923c51}
-
-\end{DoxyCompactItemize}
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classRCTreeWireDelayModel_a7c769d54e8a520db1c5d4537d7e8b608}{delay\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTransitions}{Transitions} with rise and fall delay time values set to zero. \end{DoxyCompactList}\item 
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classRCTreeWireDelayModel_aea4c7315bdd3715ca0c67707b2c32a8c}{slew\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTransitions}{Transitions} with rise and fall slew time values set to zero. \end{DoxyCompactList}\item 
+void \hyperlink{classRCTreeWireDelayModel_a106079b64e0e6b84327fc5a9b4c29a6a}{set\-Fanout\-Pin\-Capacitance} (const string fanout\-Name\-And\-Pin, const double pin\-Capacitance)
+\begin{DoxyCompactList}\small\item\em Increments lumped capacitance of the wire. \end{DoxyCompactList}\item 
+\hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classRCTreeWireDelayModel_a5575e4f4e598047dd87fee0707d135d3}{root\-\_\-delay} (int arc\-\_\-number)
+\begin{DoxyCompactList}\small\item\em not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \end{DoxyCompactList}\item 
+\hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classRCTreeWireDelayModel_aa314aa73bf2e25008d330ad19544e210}{root\-\_\-slew} (int arc\-\_\-number)
+\begin{DoxyCompactList}\small\item\em not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \end{DoxyCompactList}\item 
+void \hyperlink{classRCTreeWireDelayModel_acb14554ad26108d350770391b1923c51}{clear} ()
+\begin{DoxyCompactList}\small\item\em not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRCTreeWireDelayModel_acb14554ad26108d350770391b1923c51}{\index{R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}!clear@{clear}}
+\index{clear@{clear}!RCTreeWireDelayModel@{R\-C\-Tree\-Wire\-Delay\-Model}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void R\-C\-Tree\-Wire\-Delay\-Model\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRCTreeWireDelayModel_acb14554ad26108d350770391b1923c51}
+
+
+not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a74869a3a66deb53507e8bc6f16eff45c}{Wire\-Delay\-Model}.
+
+\hypertarget{classRCTreeWireDelayModel_a7c769d54e8a520db1c5d4537d7e8b608}{\index{R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}!delay\-\_\-at\-\_\-fanout\-\_\-node@{delay\-\_\-at\-\_\-fanout\-\_\-node}}
+\index{delay\-\_\-at\-\_\-fanout\-\_\-node@{delay\-\_\-at\-\_\-fanout\-\_\-node}!RCTreeWireDelayModel@{R\-C\-Tree\-Wire\-Delay\-Model}}
+\subsubsection[{delay\-\_\-at\-\_\-fanout\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ R\-C\-Tree\-Wire\-Delay\-Model\-::delay\-\_\-at\-\_\-fanout\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{const string}]{fanout\-\_\-node\-\_\-name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRCTreeWireDelayModel_a7c769d54e8a520db1c5d4537d7e8b608}
+
+
+Returns \hyperlink{classTransitions}{Transitions} with rise and fall delay time values set to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string fanout\-\_\-node\-\_\-name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a45a83dd192bcbf2a70ee13899256fe0d}{Wire\-Delay\-Model}.
+
+\hypertarget{classRCTreeWireDelayModel_a5575e4f4e598047dd87fee0707d135d3}{\index{R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}!root\-\_\-delay@{root\-\_\-delay}}
+\index{root\-\_\-delay@{root\-\_\-delay}!RCTreeWireDelayModel@{R\-C\-Tree\-Wire\-Delay\-Model}}
+\subsubsection[{root\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transitions}$<$double$>$ R\-C\-Tree\-Wire\-Delay\-Model\-::root\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{int}]{arc\-\_\-number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRCTreeWireDelayModel_a5575e4f4e598047dd87fee0707d135d3}
+
+
+not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & arc\-\_\-number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a4f4ab93810af8ad90fd9fca0b06de141}{Wire\-Delay\-Model}.
+
+\hypertarget{classRCTreeWireDelayModel_aa314aa73bf2e25008d330ad19544e210}{\index{R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}!root\-\_\-slew@{root\-\_\-slew}}
+\index{root\-\_\-slew@{root\-\_\-slew}!RCTreeWireDelayModel@{R\-C\-Tree\-Wire\-Delay\-Model}}
+\subsubsection[{root\-\_\-slew}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transitions}$<$double$>$ R\-C\-Tree\-Wire\-Delay\-Model\-::root\-\_\-slew (
+\begin{DoxyParamCaption}
+\item[{int}]{arc\-\_\-number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRCTreeWireDelayModel_aa314aa73bf2e25008d330ad19544e210}
+
+
+not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & arc\-\_\-number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a9e5344c26b73f549a2b5c38fea8af13d}{Wire\-Delay\-Model}.
+
+\hypertarget{classRCTreeWireDelayModel_a106079b64e0e6b84327fc5a9b4c29a6a}{\index{R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}!set\-Fanout\-Pin\-Capacitance@{set\-Fanout\-Pin\-Capacitance}}
+\index{set\-Fanout\-Pin\-Capacitance@{set\-Fanout\-Pin\-Capacitance}!RCTreeWireDelayModel@{R\-C\-Tree\-Wire\-Delay\-Model}}
+\subsubsection[{set\-Fanout\-Pin\-Capacitance}]{\setlength{\rightskip}{0pt plus 5cm}void R\-C\-Tree\-Wire\-Delay\-Model\-::set\-Fanout\-Pin\-Capacitance (
+\begin{DoxyParamCaption}
+\item[{const string}]{fanout\-Name\-And\-Pin, }
+\item[{const double}]{pin\-Capacitance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRCTreeWireDelayModel_a106079b64e0e6b84327fc5a9b4c29a6a}
+
+
+Increments lumped capacitance of the wire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string fanout\-Name\-And\-Pin, const double capacitance\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a27d557bc1f2ed7e5e9787a8a5d82ecb2}{Wire\-Delay\-Model}.
+
+\hypertarget{classRCTreeWireDelayModel_a06312bef3b98f0903335227fd7ea0f31}{\index{R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}!simulate@{simulate}}
+\index{simulate@{simulate}!RCTreeWireDelayModel@{R\-C\-Tree\-Wire\-Delay\-Model}}
+\subsubsection[{simulate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ R\-C\-Tree\-Wire\-Delay\-Model\-::simulate (
+\begin{DoxyParamCaption}
+\item[{const {\bf Liberty\-Cell\-Info} \&}]{cell\-Info, }
+\item[{const int}]{input, }
+\item[{const {\bf Transitions}$<$ double $>$}]{slew, }
+\item[{bool}]{is\-\_\-input\-\_\-driver}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRCTreeWireDelayModel_a06312bef3b98f0903335227fd7ea0f31}
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{structLibertyCellInfo}{Liberty\-Cell\-Info} \& cell\-Info, const int input, const \hyperlink{classTransitions}{Transitions$<$double$>$} slew, bool is\-\_\-input\-\_\-driver\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a8375f713365be98c03672dbeb28eb930}{Wire\-Delay\-Model}.
+
+\hypertarget{classRCTreeWireDelayModel_aea4c7315bdd3715ca0c67707b2c32a8c}{\index{R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}!slew\-\_\-at\-\_\-fanout\-\_\-node@{slew\-\_\-at\-\_\-fanout\-\_\-node}}
+\index{slew\-\_\-at\-\_\-fanout\-\_\-node@{slew\-\_\-at\-\_\-fanout\-\_\-node}!RCTreeWireDelayModel@{R\-C\-Tree\-Wire\-Delay\-Model}}
+\subsubsection[{slew\-\_\-at\-\_\-fanout\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ R\-C\-Tree\-Wire\-Delay\-Model\-::slew\-\_\-at\-\_\-fanout\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{const string}]{fanout\-\_\-node\-\_\-name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classRCTreeWireDelayModel_aea4c7315bdd3715ca0c67707b2c32a8c}
+
+
+Returns \hyperlink{classTransitions}{Transitions} with rise and fall slew time values set to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string fanout\-\_\-node\-\_\-name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_adaf486017e2ad91a900a9bef4e6f9340}{Wire\-Delay\-Model}.
+
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

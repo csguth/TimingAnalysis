@@ -50,7 +50,7 @@ public:
 			name(name), cellType(cellType), inNets(inputs), fanoutNetIndex(fanoutNetIndex), inputDriver(inputDriver), primary_output(primary_output)
 			{};
 	};
-	/** @brief Struct which represents a Sink. A sink is a vertex which has input edges, but no output edges(outdegree zerp). 
+	/** @brief Struct which represents a Sink. A sink is a vertex which has input edges, but no output edges(outdegree zero). 
 	*
 	*/
 	struct Sink {

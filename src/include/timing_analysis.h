@@ -43,7 +43,8 @@ using std::stack;
 
 namespace Timing_Analysis
 {
-
+	/** @brief 
+	*/
     class Option
 	{
         friend class Timing_Analysis;
@@ -57,9 +58,10 @@ namespace Timing_Analysis
 
 	};
 
-
     class Timing_Net;
     class Timing_Arc;
+	/** @brief 
+	*/
     class Timing_Analysis
 	{
 

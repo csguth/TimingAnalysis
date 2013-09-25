@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,29 +90,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">LibertyLookupTableInterpolator Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interpolation calculator.  
+ <a href="classLibertyLookupTableInterpolator.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="liberty__library_8h_source.html">liberty_library.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for LibertyLookupTableInterpolator:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classLibertyLookupTableInterpolator.png" usemap="#LibertyLookupTableInterpolator_map" alt=""/>
   <map id="LibertyLookupTableInterpolator_map" name="LibertyLookupTableInterpolator_map">
-<area href="classLinearLibertyLookupTableInterpolator.html" alt="LinearLibertyLookupTableInterpolator" shape="rect" coords="0,56,223,80"/>
+<area href="classLinearLibertyLookupTableInterpolator.html" title="Linear interpolation calculator. " alt="LinearLibertyLookupTableInterpolator" shape="rect" coords="0,56,223,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae12e0b9e427488bc933b54a427586f47"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLookupTableInterpolator.html#ae12e0b9e427488bc933b54a427586f47">interpolate</a> (const <a class="el" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp;lut, const double load, const double transition)=0</td></tr>
-<tr class="memdesc:ae12e0b9e427488bc933b54a427586f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns interpolation of LUT.  <a href="#ae12e0b9e427488bc933b54a427586f47">More...</a><br/></td></tr>
+<tr class="memdesc:ae12e0b9e427488bc933b54a427586f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns interpolated value.  <a href="#ae12e0b9e427488bc933b54a427586f47">More...</a><br/></td></tr>
 <tr class="separator:ae12e0b9e427488bc933b54a427586f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f840a4246b193e9e620b3ec8cadb720"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLookupTableInterpolator.html#a3f840a4246b193e9e620b3ec8cadb720">interpolate</a> (const <a class="el" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp;riseLut, const <a class="el" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp;fallLut, const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; load, const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; transition, Unateness unateness=NEGATIVE_UNATE, bool is_input_driver=false)=0</td></tr>
-<tr class="memdesc:a3f840a4246b193e9e620b3ec8cadb720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns interpolation of LUT*******************.  <a href="#a3f840a4246b193e9e620b3ec8cadb720">More...</a><br/></td></tr>
+<tr class="memdesc:a3f840a4246b193e9e620b3ec8cadb720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns Transitions&lt;double, double&gt; with its rise and fall delay values interpolated.  <a href="#a3f840a4246b193e9e620b3ec8cadb720">More...</a><br/></td></tr>
 <tr class="separator:a3f840a4246b193e9e620b3ec8cadb720"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a41f28d4091ef57ce488a26f0a3aedb0b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41f28d4091ef57ce488a26f0a3aedb0b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>round</b> (<a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; &amp;transitions, const int decimal_places)</td></tr>
+<tr class="memitem:a41f28d4091ef57ce488a26f0a3aedb0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLookupTableInterpolator.html#a41f28d4091ef57ce488a26f0a3aedb0b">round</a> (<a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; &amp;transitions, const int decimal_places)</td></tr>
+<tr class="memdesc:a41f28d4091ef57ce488a26f0a3aedb0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncates <a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> to <a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> ****************** does nothing...  <a href="#a41f28d4091ef57ce488a26f0a3aedb0b">More...</a><br/></td></tr>
 <tr class="separator:a41f28d4091ef57ce488a26f0a3aedb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
@@ -121,7 +126,9 @@ Static Protected Attributes</h2></td></tr>
 static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_DECIMAL_PLACES</b></td></tr>
 <tr class="separator:ad2d3a3313189ba7c9bb10dfbbef1a367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interpolation calculator. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="ae12e0b9e427488bc933b54a427586f47"></a>
 <div class="memitem">
 <div class="memproto">
@@ -160,10 +167,10 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_D
 </table>
 </div><div class="memdoc">
 
-<p>Returns interpolation of LUT. </p>
+<p>Returns interpolated value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td><a class="el" href="structLibertyLookupTable.html" title="Look up table to store delay or slew functions. ">LibertyLookupTable</a> &amp; lut, const double load, const double transition</td></tr>
+    <tr><td class="paramname">const</td><td><a class="el" href="structLibertyLookupTable.html" title="Struct representing a lookup table to store delay or slew functions. ">LibertyLookupTable</a> &amp; lut, const double load, const double transition</td></tr>
   </table>
   </dd>
 </dl>
@@ -229,10 +236,10 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_D
 </table>
 </div><div class="memdoc">
 
-<p>Returns interpolation of LUT*******************. </p>
+<p>Returns Transitions&lt;double, double&gt; with its rise and fall delay values interpolated. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td><a class="el" href="structLibertyLookupTable.html" title="Look up table to store delay or slew functions. ">LibertyLookupTable</a> &amp; riseLut, const <a class="el" href="structLibertyLookupTable.html" title="Look up table to store delay or slew functions. ">LibertyLookupTable</a> &amp; fallLut, const <a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> load, const <a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> transition, Unateness unateness(default NEGATIVE_UNATE), bool is_input_driver(default false)</td></tr>
+    <tr><td class="paramname">const</td><td><a class="el" href="structLibertyLookupTable.html" title="Struct representing a lookup table to store delay or slew functions. ">LibertyLookupTable</a> &amp; riseLut, const <a class="el" href="structLibertyLookupTable.html" title="Struct representing a lookup table to store delay or slew functions. ">LibertyLookupTable</a> &amp; fallLut, const <a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> load, const <a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> transition, Unateness unateness(default NEGATIVE_UNATE), bool is_input_driver(default false)</td></tr>
   </table>
   </dd>
 </dl>
@@ -242,13 +249,56 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_D
 
 </div>
 </div>
+<a class="anchor" id="a41f28d4091ef57ce488a26f0a3aedb0b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LibertyLookupTableInterpolator::round </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>transitions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>decimal_places</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Truncates <a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> to <a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a> ****************** does nothing... </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="classTransitions.html">Transitions&lt;double&gt;</a></td><td>&amp; transitions, const int decimal_places</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>tccChrystian/src/include/<a class="el" href="liberty__library_8h_source.html">liberty_library.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 24 2013 09:42:56 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 25 2013 16:02:28 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

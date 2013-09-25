@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -89,6 +89,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">TimerInterface Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class contains functions for the timing analysis interface. To use any function belonging to this class, call <a class="el" href="classTimerInterface.html" title="This class contains functions for the timing analysis interface. To use any function belonging to thi...">TimerInterface</a>::&lt;function_name&gt;(&lt;argument_list&gt;);.  
+ <a href="classTimerInterface.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="timer__interface_8h_source.html">timer_interface.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -105,26 +110,185 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a42077a21e0b9a07b6768e5131415bd2d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a42077a21e0b9a07b6768e5131415bd2d"></a>
-static Status&#160;</td><td class="memItemRight" valign="bottom"><b>getTimerStatus</b> (const std::string &amp;contest_root, const std::string &amp;benchmark)</td></tr>
+<tr class="memitem:a42077a21e0b9a07b6768e5131415bd2d"><td class="memItemLeft" align="right" valign="top">static Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#a42077a21e0b9a07b6768e5131415bd2d">getTimerStatus</a> (const std::string &amp;contest_root, const std::string &amp;benchmark)</td></tr>
 <tr class="separator:a42077a21e0b9a07b6768e5131415bd2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada94a843a56747a6a7b34373a266ab92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada94a843a56747a6a7b34373a266ab92"></a>
-static Status&#160;</td><td class="memItemRight" valign="bottom"><b>runTimingAnalysisBlocking</b> (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark, const unsigned pollingTime)</td></tr>
+<tr class="memitem:ada94a843a56747a6a7b34373a266ab92"><td class="memItemLeft" align="right" valign="top">static Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#ada94a843a56747a6a7b34373a266ab92">runTimingAnalysisBlocking</a> (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark, const unsigned pollingTime)</td></tr>
 <tr class="separator:ada94a843a56747a6a7b34373a266ab92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a9b69817bbbd603c3d47089b0bad829"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a9b69817bbbd603c3d47089b0bad829"></a>
-static Status&#160;</td><td class="memItemRight" valign="bottom"><b>startTimingAnalysisNonBlocking</b> (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark)</td></tr>
+<tr class="memitem:a9a9b69817bbbd603c3d47089b0bad829"><td class="memItemLeft" align="right" valign="top">static Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#a9a9b69817bbbd603c3d47089b0bad829">startTimingAnalysisNonBlocking</a> (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark)</td></tr>
 <tr class="separator:a9a9b69817bbbd603c3d47089b0bad829"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa62e01d4dd296f8bf9f716ff2da7c5fc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa62e01d4dd296f8bf9f716ff2da7c5fc"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>wait</b> (int seconds)</td></tr>
+<tr class="memitem:aa62e01d4dd296f8bf9f716ff2da7c5fc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#aa62e01d4dd296f8bf9f716ff2da7c5fc">wait</a> (int seconds)</td></tr>
 <tr class="separator:aa62e01d4dd296f8bf9f716ff2da7c5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class contains functions for the timing analysis interface. To use any function belonging to this class, call <a class="el" href="classTimerInterface.html" title="This class contains functions for the timing analysis interface. To use any function belonging to thi...">TimerInterface</a>::&lt;function_name&gt;(&lt;argument_list&gt;);. </p>
+<p>Timing Analysis Interface helper class to interface with the timer. This code is provided for description purposes only. The contest organizers cannot guarantee that the provided code is free of bugs or defects. !!!! USE THIS CODE AT YOUR OWN RISK !!!!!</p>
+<p>The contestants are free to use these functions as-is or make modifications. If the contestants choose to use the provided code, they are responsible for making sure that it works as expected.</p>
+<p>The code provided here has no real or implied warranties. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a42077a21e0b9a07b6768e5131415bd2d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Status TimerInterface::getTimerStatus </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>contest_root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>benchmark</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get timer status Inputs: contest root directory (string) benchmark name (string) Return: status (see enum Status above) </p>
+
+</div>
+</div>
+<a class="anchor" id="ada94a843a56747a6a7b34373a266ab92"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Status TimerInterface::runTimingAnalysisBlocking </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sizes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>contest_root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>benchmark</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned&#160;</td>
+          <td class="paramname"><em>pollingTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Write sizes and run timing analysis in blocking mode</p>
+<ol type="1">
+<li>Write sizes</li>
+<li>Starts timing analysis</li>
+<li>Waits for timing analysis to be completed Inputs: vector of pairs where first value is instance name (string) and second value is cell name (string) contest root directory (string) benchmark name (string) polling time (number of seconds that the function should wait before polling timer status to check whether timer is done) Return: timer status </li>
+</ol>
+
+</div>
+</div>
+<a class="anchor" id="a9a9b69817bbbd603c3d47089b0bad829"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static Status TimerInterface::startTimingAnalysisNonBlocking </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>sizes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>contest_root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>benchmark</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Start timing analysis in non-blocking mode</p>
+<ol type="1">
+<li>Write sizes</li>
+<li>Starts timing analysis and returns (does not wait for timing analysis to be completed) Inputs: vector of pairs where first value is instance name (string) and second value is cell name (string) contest root directory (string) benchmark name (string) Return: timer status </li>
+</ol>
+
+</div>
+</div>
+<a class="anchor" id="aa62e01d4dd296f8bf9f716ff2da7c5fc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void TimerInterface::wait </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>seconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Wait for given number of seconds (useful function if you want to wait before checking timer status after calling startTimingAnalysisNonBlocking) Input: seconds to wait </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>tccChrystian/src/include/<a class="el" href="timer__interface_8h_source.html">timer_interface.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 24 2013 09:42:57 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 25 2013 16:02:29 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -1,6 +1,15 @@
 \hypertarget{classLumpedCapacitanceWireDelayModel}{\section{Lumped\-Capacitance\-Wire\-Delay\-Model Class Reference}
 \label{classLumpedCapacitanceWireDelayModel}\index{Lumped\-Capacitance\-Wire\-Delay\-Model@{Lumped\-Capacitance\-Wire\-Delay\-Model}}
 }
+
+
+Describes the Lumped Capacitance Model.  
+
+
+
+
+{\ttfamily \#include $<$wire\-\_\-delay\-\_\-model.\-h$>$}
+
 Inheritance diagram for Lumped\-Capacitance\-Wire\-Delay\-Model\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,28 +22,183 @@ Inheritance diagram for Lumped\-Capacitance\-Wire\-Delay\-Model\-:\begin{figure}
 \hypertarget{classLumpedCapacitanceWireDelayModel_ae147cdba517e3f6152ed8234473e5443}{{\bfseries Lumped\-Capacitance\-Wire\-Delay\-Model} (const Spef\-Net \&descriptor, const string root\-\_\-node, const bool dummy\-\_\-edge=false)}\label{classLumpedCapacitanceWireDelayModel_ae147cdba517e3f6152ed8234473e5443}
 
 \item 
-\hypertarget{classLumpedCapacitanceWireDelayModel_a1bba0aef3bebe8df97a63e05b307b19a}{const \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries simulate} (const \hyperlink{structLibertyCellInfo}{Liberty\-Cell\-Info} \&cell\-Info, const int input, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \-\_\-slew, bool is\-\_\-input\-\_\-driver)}\label{classLumpedCapacitanceWireDelayModel_a1bba0aef3bebe8df97a63e05b307b19a}
-
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classLumpedCapacitanceWireDelayModel_a1bba0aef3bebe8df97a63e05b307b19a}{simulate} (const \hyperlink{structLibertyCellInfo}{Liberty\-Cell\-Info} \&cell\-Info, const int input, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \-\_\-slew, bool is\-\_\-input\-\_\-driver)
 \item 
-\hypertarget{classLumpedCapacitanceWireDelayModel_a0266cb676908d95bdfcb64d1137898b0}{const \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries delay\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const }\label{classLumpedCapacitanceWireDelayModel_a0266cb676908d95bdfcb64d1137898b0}
-
-\item 
-\hypertarget{classLumpedCapacitanceWireDelayModel_aaedd69e811e7220e48493c51fb0443ed}{const \hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries slew\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const }\label{classLumpedCapacitanceWireDelayModel_aaedd69e811e7220e48493c51fb0443ed}
-
-\item 
-\hypertarget{classLumpedCapacitanceWireDelayModel_a888f7e6a4951837072b937ae30e93073}{void {\bfseries set\-Fanout\-Pin\-Capacitance} (const string fanout\-\_\-name\-\_\-and\-\_\-pin, const double pin\-Capacitance)}\label{classLumpedCapacitanceWireDelayModel_a888f7e6a4951837072b937ae30e93073}
-
-\item 
-\hypertarget{classLumpedCapacitanceWireDelayModel_ab090355a74a21b5d6008352ff2a7d137}{\hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries root\-\_\-delay} (int arc\-\_\-number)}\label{classLumpedCapacitanceWireDelayModel_ab090355a74a21b5d6008352ff2a7d137}
-
-\item 
-\hypertarget{classLumpedCapacitanceWireDelayModel_a65e4141bbf97638c2334f71dfbf0ccfd}{\hyperlink{classTransitions}{Transitions}$<$ double $>$ {\bfseries root\-\_\-slew} (int arc\-\_\-number)}\label{classLumpedCapacitanceWireDelayModel_a65e4141bbf97638c2334f71dfbf0ccfd}
-
-\item 
-\hypertarget{classLumpedCapacitanceWireDelayModel_acca0415a76729b616be06543262ef441}{void {\bfseries clear} ()}\label{classLumpedCapacitanceWireDelayModel_acca0415a76729b616be06543262ef441}
-
-\end{DoxyCompactItemize}
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classLumpedCapacitanceWireDelayModel_a0266cb676908d95bdfcb64d1137898b0}{delay\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTransitions}{Transitions} with rise and fall delay time values set to zero. \end{DoxyCompactList}\item 
+const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classLumpedCapacitanceWireDelayModel_aaedd69e811e7220e48493c51fb0443ed}{slew\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const 
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classTransitions}{Transitions} with rise and fall slew time values set to zero. \end{DoxyCompactList}\item 
+void \hyperlink{classLumpedCapacitanceWireDelayModel_a888f7e6a4951837072b937ae30e93073}{set\-Fanout\-Pin\-Capacitance} (const string fanout\-\_\-name\-\_\-and\-\_\-pin, const double pin\-Capacitance)
+\begin{DoxyCompactList}\small\item\em Increments lumped capacitance of the wire. \end{DoxyCompactList}\item 
+\hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classLumpedCapacitanceWireDelayModel_ab090355a74a21b5d6008352ff2a7d137}{root\-\_\-delay} (int arc\-\_\-number)
+\begin{DoxyCompactList}\small\item\em not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \end{DoxyCompactList}\item 
+\hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classLumpedCapacitanceWireDelayModel_a65e4141bbf97638c2334f71dfbf0ccfd}{root\-\_\-slew} (int arc\-\_\-number)
+\begin{DoxyCompactList}\small\item\em not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \end{DoxyCompactList}\item 
+void \hyperlink{classLumpedCapacitanceWireDelayModel_acca0415a76729b616be06543262ef441}{clear} ()
+\begin{DoxyCompactList}\small\item\em not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Describes the Lumped Capacitance Model. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classLumpedCapacitanceWireDelayModel_acca0415a76729b616be06543262ef441}{\index{Lumped\-Capacitance\-Wire\-Delay\-Model@{Lumped\-Capacitance\-Wire\-Delay\-Model}!clear@{clear}}
+\index{clear@{clear}!LumpedCapacitanceWireDelayModel@{Lumped\-Capacitance\-Wire\-Delay\-Model}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Lumped\-Capacitance\-Wire\-Delay\-Model\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLumpedCapacitanceWireDelayModel_acca0415a76729b616be06543262ef441}
+
+
+not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a74869a3a66deb53507e8bc6f16eff45c}{Wire\-Delay\-Model}.
+
+\hypertarget{classLumpedCapacitanceWireDelayModel_a0266cb676908d95bdfcb64d1137898b0}{\index{Lumped\-Capacitance\-Wire\-Delay\-Model@{Lumped\-Capacitance\-Wire\-Delay\-Model}!delay\-\_\-at\-\_\-fanout\-\_\-node@{delay\-\_\-at\-\_\-fanout\-\_\-node}}
+\index{delay\-\_\-at\-\_\-fanout\-\_\-node@{delay\-\_\-at\-\_\-fanout\-\_\-node}!LumpedCapacitanceWireDelayModel@{Lumped\-Capacitance\-Wire\-Delay\-Model}}
+\subsubsection[{delay\-\_\-at\-\_\-fanout\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Lumped\-Capacitance\-Wire\-Delay\-Model\-::delay\-\_\-at\-\_\-fanout\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{const string}]{fanout\-\_\-node\-\_\-name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLumpedCapacitanceWireDelayModel_a0266cb676908d95bdfcb64d1137898b0}
+
+
+Returns \hyperlink{classTransitions}{Transitions} with rise and fall delay time values set to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string fanout\-\_\-node\-\_\-name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a45a83dd192bcbf2a70ee13899256fe0d}{Wire\-Delay\-Model}.
+
+\hypertarget{classLumpedCapacitanceWireDelayModel_ab090355a74a21b5d6008352ff2a7d137}{\index{Lumped\-Capacitance\-Wire\-Delay\-Model@{Lumped\-Capacitance\-Wire\-Delay\-Model}!root\-\_\-delay@{root\-\_\-delay}}
+\index{root\-\_\-delay@{root\-\_\-delay}!LumpedCapacitanceWireDelayModel@{Lumped\-Capacitance\-Wire\-Delay\-Model}}
+\subsubsection[{root\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transitions}$<$double$>$ Lumped\-Capacitance\-Wire\-Delay\-Model\-::root\-\_\-delay (
+\begin{DoxyParamCaption}
+\item[{int}]{arc\-\_\-number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLumpedCapacitanceWireDelayModel_ab090355a74a21b5d6008352ff2a7d137}
+
+
+not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & arc\-\_\-number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a4f4ab93810af8ad90fd9fca0b06de141}{Wire\-Delay\-Model}.
+
+\hypertarget{classLumpedCapacitanceWireDelayModel_a65e4141bbf97638c2334f71dfbf0ccfd}{\index{Lumped\-Capacitance\-Wire\-Delay\-Model@{Lumped\-Capacitance\-Wire\-Delay\-Model}!root\-\_\-slew@{root\-\_\-slew}}
+\index{root\-\_\-slew@{root\-\_\-slew}!LumpedCapacitanceWireDelayModel@{Lumped\-Capacitance\-Wire\-Delay\-Model}}
+\subsubsection[{root\-\_\-slew}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transitions}$<$double$>$ Lumped\-Capacitance\-Wire\-Delay\-Model\-::root\-\_\-slew (
+\begin{DoxyParamCaption}
+\item[{int}]{arc\-\_\-number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLumpedCapacitanceWireDelayModel_a65e4141bbf97638c2334f71dfbf0ccfd}
+
+
+not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em int} & arc\-\_\-number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a9e5344c26b73f549a2b5c38fea8af13d}{Wire\-Delay\-Model}.
+
+\hypertarget{classLumpedCapacitanceWireDelayModel_a888f7e6a4951837072b937ae30e93073}{\index{Lumped\-Capacitance\-Wire\-Delay\-Model@{Lumped\-Capacitance\-Wire\-Delay\-Model}!set\-Fanout\-Pin\-Capacitance@{set\-Fanout\-Pin\-Capacitance}}
+\index{set\-Fanout\-Pin\-Capacitance@{set\-Fanout\-Pin\-Capacitance}!LumpedCapacitanceWireDelayModel@{Lumped\-Capacitance\-Wire\-Delay\-Model}}
+\subsubsection[{set\-Fanout\-Pin\-Capacitance}]{\setlength{\rightskip}{0pt plus 5cm}void Lumped\-Capacitance\-Wire\-Delay\-Model\-::set\-Fanout\-Pin\-Capacitance (
+\begin{DoxyParamCaption}
+\item[{const string}]{fanout\-Name\-And\-Pin, }
+\item[{const double}]{pin\-Capacitance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classLumpedCapacitanceWireDelayModel_a888f7e6a4951837072b937ae30e93073}
+
+
+Increments lumped capacitance of the wire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string fanout\-Name\-And\-Pin, const double capacitance\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a27d557bc1f2ed7e5e9787a8a5d82ecb2}{Wire\-Delay\-Model}.
+
+\hypertarget{classLumpedCapacitanceWireDelayModel_a1bba0aef3bebe8df97a63e05b307b19a}{\index{Lumped\-Capacitance\-Wire\-Delay\-Model@{Lumped\-Capacitance\-Wire\-Delay\-Model}!simulate@{simulate}}
+\index{simulate@{simulate}!LumpedCapacitanceWireDelayModel@{Lumped\-Capacitance\-Wire\-Delay\-Model}}
+\subsubsection[{simulate}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Lumped\-Capacitance\-Wire\-Delay\-Model\-::simulate (
+\begin{DoxyParamCaption}
+\item[{const {\bf Liberty\-Cell\-Info} \&}]{cell\-Info, }
+\item[{const int}]{input, }
+\item[{const {\bf Transitions}$<$ double $>$}]{slew, }
+\item[{bool}]{is\-\_\-input\-\_\-driver}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLumpedCapacitanceWireDelayModel_a1bba0aef3bebe8df97a63e05b307b19a}
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{structLibertyCellInfo}{Liberty\-Cell\-Info} \& cell\-Info, const int input, const \hyperlink{classTransitions}{Transitions$<$double$>$} slew, bool is\-\_\-input\-\_\-driver\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_a8375f713365be98c03672dbeb28eb930}{Wire\-Delay\-Model}.
+
+\hypertarget{classLumpedCapacitanceWireDelayModel_aaedd69e811e7220e48493c51fb0443ed}{\index{Lumped\-Capacitance\-Wire\-Delay\-Model@{Lumped\-Capacitance\-Wire\-Delay\-Model}!slew\-\_\-at\-\_\-fanout\-\_\-node@{slew\-\_\-at\-\_\-fanout\-\_\-node}}
+\index{slew\-\_\-at\-\_\-fanout\-\_\-node@{slew\-\_\-at\-\_\-fanout\-\_\-node}!LumpedCapacitanceWireDelayModel@{Lumped\-Capacitance\-Wire\-Delay\-Model}}
+\subsubsection[{slew\-\_\-at\-\_\-fanout\-\_\-node}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transitions}$<$double$>$ Lumped\-Capacitance\-Wire\-Delay\-Model\-::slew\-\_\-at\-\_\-fanout\-\_\-node (
+\begin{DoxyParamCaption}
+\item[{const string}]{fanout\-\_\-node\-\_\-name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLumpedCapacitanceWireDelayModel_aaedd69e811e7220e48493c51fb0443ed}
+
+
+Returns \hyperlink{classTransitions}{Transitions} with rise and fall slew time values set to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string fanout\-\_\-node\-\_\-name\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classTransitions}{Transitions$<$double$>$} 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classWireDelayModel_adaf486017e2ad91a900a9bef4e6f9340}{Wire\-Delay\-Model}.
+
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,35 +88,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">LibertyLibrary Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Library which makes easier to get the description of a particular cell.  
+ <a href="classLibertyLibrary.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="liberty__library_8h_source.html">liberty_library.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b7513ef68e791245f60e16f6b4ee5d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLibrary.html#a3b7513ef68e791245f60e16f6b4ee5d4">LibertyLibrary</a> (const double maxTransition=0.0f)</td></tr>
-<tr class="memdesc:a3b7513ef68e791245f60e16f6b4ee5d4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classLibertyLibrary.html">LibertyLibrary</a> default constructor.  <a href="#a3b7513ef68e791245f60e16f6b4ee5d4">More...</a><br/></td></tr>
+<tr class="memdesc:a3b7513ef68e791245f60e16f6b4ee5d4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classLibertyLibrary.html" title="Library which makes easier to get the description of a particular cell. ">LibertyLibrary</a> default constructor.  <a href="#a3b7513ef68e791245f60e16f6b4ee5d4">More...</a><br/></td></tr>
 <tr class="separator:a3b7513ef68e791245f60e16f6b4ee5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade99b2247c7d5eb9ef885bc4ec57091d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLibrary.html#ade99b2247c7d5eb9ef885bc4ec57091d">~LibertyLibrary</a> ()</td></tr>
-<tr class="memdesc:ade99b2247c7d5eb9ef885bc4ec57091d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty <a class="el" href="classLibertyLibrary.html">LibertyLibrary</a> desctructor.  <a href="#ade99b2247c7d5eb9ef885bc4ec57091d">More...</a><br/></td></tr>
+<tr class="memdesc:ade99b2247c7d5eb9ef885bc4ec57091d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty <a class="el" href="classLibertyLibrary.html" title="Library which makes easier to get the description of a particular cell. ">LibertyLibrary</a> desctructor.  <a href="#ade99b2247c7d5eb9ef885bc4ec57091d">More...</a><br/></td></tr>
 <tr class="separator:ade99b2247c7d5eb9ef885bc4ec57091d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d9ec0ea6af3949878d9b14042e761e6"><td class="memItemLeft" align="right" valign="top">const pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLibrary.html#a4d9ec0ea6af3949878d9b14042e761e6">addCellInfo</a> (const <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp;cellInfo)</td></tr>
 <tr class="memdesc:a4d9ec0ea6af3949878d9b14042e761e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pair&lt;footprint index, option index&gt;  <a href="#a4d9ec0ea6af3949878d9b14042e761e6">More...</a><br/></td></tr>
 <tr class="separator:a4d9ec0ea6af3949878d9b14042e761e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a917ae50f0af17b1b68be754f1ae6dd07"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLibrary.html#a917ae50f0af17b1b68be754f1ae6dd07">getCellInfo</a> (const string &amp;footPrint, const int &amp;i) const </td></tr>
-<tr class="memdesc:a917ae50f0af17b1b68be754f1ae6dd07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> of footprint at index i.  <a href="#a917ae50f0af17b1b68be754f1ae6dd07">More...</a><br/></td></tr>
+<tr class="memdesc:a917ae50f0af17b1b68be754f1ae6dd07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> in footPrint parameter, at index i.  <a href="#a917ae50f0af17b1b68be754f1ae6dd07">More...</a><br/></td></tr>
 <tr class="separator:a917ae50f0af17b1b68be754f1ae6dd07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57c64ca6abd02f1e549eeb25178724c9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLibrary.html#a57c64ca6abd02f1e549eeb25178724c9">getCellInfo</a> (const string &amp;cellName) const </td></tr>
-<tr class="memdesc:a57c64ca6abd02f1e549eeb25178724c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> of cellName name.  <a href="#a57c64ca6abd02f1e549eeb25178724c9">More...</a><br/></td></tr>
+<tr class="memdesc:a57c64ca6abd02f1e549eeb25178724c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> of cellName name.  <a href="#a57c64ca6abd02f1e549eeb25178724c9">More...</a><br/></td></tr>
 <tr class="separator:a57c64ca6abd02f1e549eeb25178724c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a227638e4b3a4b00faa659c45e20c0aaa"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLibrary.html#a227638e4b3a4b00faa659c45e20c0aaa">getCellInfo</a> (const int &amp;footPrintIndex, const int &amp;optionIndex) const </td></tr>
-<tr class="memdesc:a227638e4b3a4b00faa659c45e20c0aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> of footprint footPrintIndex at index i.  <a href="#a227638e4b3a4b00faa659c45e20c0aaa">More...</a><br/></td></tr>
+<tr class="memdesc:a227638e4b3a4b00faa659c45e20c0aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> at index i, of footPrint footPrintIndex.  <a href="#a227638e4b3a4b00faa659c45e20c0aaa">More...</a><br/></td></tr>
 <tr class="separator:a227638e4b3a4b00faa659c45e20c0aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08a8b3ab2b9e91574d1cdc39376839c8"><td class="memItemLeft" align="right" valign="top">const pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLibrary.html#a08a8b3ab2b9e91574d1cdc39376839c8">getCellIndex</a> (const string &amp;cellName) const </td></tr>
-<tr class="memdesc:a08a8b3ab2b9e91574d1cdc39376839c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns index of cell cellName.  <a href="#a08a8b3ab2b9e91574d1cdc39376839c8">More...</a><br/></td></tr>
+<tr class="memdesc:a08a8b3ab2b9e91574d1cdc39376839c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pair&lt;footprint index, option index&gt;  <a href="#a08a8b3ab2b9e91574d1cdc39376839c8">More...</a><br/></td></tr>
 <tr class="separator:a08a8b3ab2b9e91574d1cdc39376839c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a954497f3bf2fe4ab640be24c23f976f4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLibrary.html#a954497f3bf2fe4ab640be24c23f976f4">getMaxTransition</a> () const </td></tr>
 <tr class="memdesc:a954497f3bf2fe4ab640be24c23f976f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns maxTransition.  <a href="#a954497f3bf2fe4ab640be24c23f976f4">More...</a><br/></td></tr>
 <tr class="separator:a954497f3bf2fe4ab640be24c23f976f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Library which makes easier to get the description of a particular cell. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3b7513ef68e791245f60e16f6b4ee5d4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -131,7 +138,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classLibertyLibrary.html">LibertyLibrary</a> default constructor. </p>
+<p><a class="el" href="classLibertyLibrary.html" title="Library which makes easier to get the description of a particular cell. ">LibertyLibrary</a> default constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>double MaxTransition </td></tr>
@@ -162,7 +169,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Empty <a class="el" href="classLibertyLibrary.html">LibertyLibrary</a> desctructor. </p>
+<p>Empty <a class="el" href="classLibertyLibrary.html" title="Library which makes easier to get the description of a particular cell. ">LibertyLibrary</a> desctructor. </p>
 
 </div>
 </div>
@@ -184,7 +191,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns pair&lt;footprint index, option index&gt; </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">const</td><td><a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; cellInfo</td></tr>
+    <tr><td class="paramname">const</td><td><a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> &amp; cellInfo</td></tr>
   </table>
   </dd>
 </dl>
@@ -206,7 +213,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns index of cell cellName. </p>
+<p>Returns pair&lt;footprint index, option index&gt; </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>string &amp;cellName</td></tr>
@@ -241,14 +248,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> of footprint at index i. </p>
+<p>Returns <a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> in footPrint parameter, at index i. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>string &amp; footPrint, const int &amp; i</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> &amp; </dd></dl>
 
 </div>
 </div>
@@ -266,14 +273,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> of cellName name. </p>
+<p>Returns <a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> of cellName name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>string &amp; cellName</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> &amp; </dd></dl>
 
 </div>
 </div>
@@ -301,14 +308,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> of footprint footPrintIndex at index i. </p>
+<p>Returns <a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> at index i, of footPrint footPrintIndex. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>string &amp; footPrintIndex, const int &amp; optionIndex</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structLibertyCellInfo.html">LibertyCellInfo</a> &amp; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structLibertyCellInfo.html" title="Struct which has informations about a cell. ">LibertyCellInfo</a> &amp; </dd></dl>
 
 </div>
 </div>
@@ -336,7 +343,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 24 2013 09:42:56 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 25 2013 16:02:27 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

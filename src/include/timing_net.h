@@ -8,6 +8,9 @@
 namespace Timing_Analysis {
 
     class Timing_Point;
+	/** @brief Describes a timing net of the timing graph model.
+	*
+	*/
     class Timing_Net : public Multi_Fanout_Edge<Timing_Point>
     {
         friend class Timing_Analysis;

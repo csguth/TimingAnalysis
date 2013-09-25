@@ -33,7 +33,6 @@ public:
 	virtual ~Parser();
 };
 
-
 class Prime_Time_Output_Parser : public Parser
 {
 public:

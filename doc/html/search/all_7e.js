@@ -5,5 +5,6 @@ var searchData=
   ['_7espefnetispd2013',['~SpefNetISPD2013',['../classSpefNetISPD2013.html#a6bd1c7cc6d7bdf677fb69bb577a6327f',1,'SpefNetISPD2013']]],
   ['_7etiming_5farc',['~Timing_Arc',['../classTiming__Analysis_1_1Timing__Arc.html#a32909fb0fdc3bd5f2a13cdb9f9b351b8',1,'Timing_Analysis::Timing_Arc']]],
   ['_7etiming_5fnet',['~Timing_Net',['../classTiming__Analysis_1_1Timing__Net.html#a919bdd9eb5b7d00b1c6b692bb34d6b6b',1,'Timing_Analysis::Timing_Net']]],
-  ['_7etiming_5fpoint',['~Timing_Point',['../classTiming__Analysis_1_1Timing__Point.html#a2c676cc95977d209cfa8fe0bcb40ec49',1,'Timing_Analysis::Timing_Point']]]
+  ['_7etiming_5fpoint',['~Timing_Point',['../classTiming__Analysis_1_1Timing__Point.html#a2c676cc95977d209cfa8fe0bcb40ec49',1,'Timing_Analysis::Timing_Point']]],
+  ['_7ewiredelaymodel',['~WireDelayModel',['../classWireDelayModel.html#ad9103d46909b96ad4015c818dcd2988c',1,'WireDelayModel']]]
 ];
