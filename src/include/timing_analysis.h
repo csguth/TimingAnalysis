@@ -90,6 +90,9 @@ namespace Timing_Analysis
         map<string, Transitions<double> > _max_ceff;
         map<string, Transitions<double> > _min_ceff;
 
+
+        int _first_PO_index;
+
         // PRIVATE GETTERS
         const LibertyCellInfo & liberty_cell_info(const int node_index) const;
         const Transitions<double> calculate_timing_arc_delay(const Timing_Arc & timing_arc, const Transitions<double> transition, const Transitions<double> ceff);
@@ -133,6 +136,9 @@ namespace Timing_Analysis
         double pin_capacitance(const int timing_point_index) const;
         double pin_load(const int timing_point_index) const;
         int option(const int gate_number);
+
+
+        int first_PO_index() const { return _first_PO_index; }
 
 		// SETTERS
         bool option(const int gate_index, const int option);

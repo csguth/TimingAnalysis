@@ -9,7 +9,7 @@ namespace Timing_Analysis
 */
 
 	
-    Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyLibrary * lib, const Parasitics * parasitics, const Design_Constraints * sdc) : _gate_index_to_timing_point_index(netlist.getGatesSize()), _verilog(netlist.verilog()), _sizes(_verilog.size()), _library(lib), _parasitics(parasitics)
+Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyLibrary * lib, const Parasitics * parasitics, const Design_Constraints * sdc) : _gate_index_to_timing_point_index(netlist.getGatesSize()), _verilog(netlist.verilog()), _sizes(_verilog.size()), _library(lib), _parasitics(parasitics), _first_PO_index(-1)
 	{
 
         _target_delay = Transitions<double>(sdc->clock(), sdc->clock());
@@ -73,7 +73,8 @@ namespace Timing_Analysis
 
             if(tp.is_PO())
 			{
-
+                if(_first_PO_index != -1)
+                    _first_PO_index = i;
                 const LibertyCellInfo & opt = liberty_cell_info(tp.gate_number());
 				if(opt.isSequential)
 					continue;
@@ -718,6 +719,8 @@ namespace Timing_Analysis
     {
         return _options.at(gate_number)._option_index;
     }
+
+
 
     void Timing_Analysis::get_sizes_vector()
 	{
