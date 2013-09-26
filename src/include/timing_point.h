@@ -74,7 +74,7 @@ namespace Timing_Analysis {
 		* @return const Transitions<double>
 		*/
         const Transitions<double> slew() const { return _slew; }
-		/** @brief Returns Timing_Point arrical time
+		/** @brief Returns Timing_Point arrival time
 		*
 		* @return const Transitions<double>
 		*/

@@ -1,6 +1,15 @@
 \hypertarget{classRCTreeWireDelayModel}{\section{R\-C\-Tree\-Wire\-Delay\-Model Class Reference}
 \label{classRCTreeWireDelayModel}\index{R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}}
 }
+
+
+This model describes the parasitic elements(capacitors and resistors) distributed along a wire as a single circuit element.  
+
+
+
+
+{\ttfamily \#include $<$wire\-\_\-delay\-\_\-model.\-h$>$}
+
 Inheritance diagram for R\-C\-Tree\-Wire\-Delay\-Model\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,9 +19,8 @@ Inheritance diagram for R\-C\-Tree\-Wire\-Delay\-Model\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classRCTreeWireDelayModel_a239d4784b2d39b6042fe39bee4838c6b}{{\bfseries R\-C\-Tree\-Wire\-Delay\-Model} (const \hyperlink{classSpefNetISPD2013}{Spef\-Net\-I\-S\-P\-D2013} \&descriptor, const string root\-Node, const size\-\_\-t arcs\-\_\-size, const bool dummy\-Edge=false)}\label{classRCTreeWireDelayModel_a239d4784b2d39b6042fe39bee4838c6b}
-
-\item 
+\hyperlink{classRCTreeWireDelayModel_a239d4784b2d39b6042fe39bee4838c6b}{R\-C\-Tree\-Wire\-Delay\-Model} (const \hyperlink{classSpefNetISPD2013}{Spef\-Net\-I\-S\-P\-D2013} \&descriptor, const string root\-Node, const size\-\_\-t arcs\-\_\-size, const bool dummy\-Edge=false)
+\begin{DoxyCompactList}\small\item\em R\-Ctree\-Wire\-Delay\-Model default constructor. \end{DoxyCompactList}\item 
 const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classRCTreeWireDelayModel_a06312bef3b98f0903335227fd7ea0f31}{simulate} (const \hyperlink{structLibertyCellInfo}{Liberty\-Cell\-Info} \&cell\-Info, const int input, const \hyperlink{classTransitions}{Transitions}$<$ double $>$ slew, bool is\-\_\-input\-\_\-driver)
 \item 
 const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classRCTreeWireDelayModel_a7c769d54e8a520db1c5d4537d7e8b608}{delay\-\_\-at\-\_\-fanout\-\_\-node} (const string fanout\-\_\-node\-\_\-name) const 
@@ -28,6 +36,31 @@ void \hyperlink{classRCTreeWireDelayModel_a106079b64e0e6b84327fc5a9b4c29a6a}{set
 void \hyperlink{classRCTreeWireDelayModel_acb14554ad26108d350770391b1923c51}{clear} ()
 \begin{DoxyCompactList}\small\item\em not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This model describes the parasitic elements(capacitors and resistors) distributed along a wire as a single circuit element. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRCTreeWireDelayModel_a239d4784b2d39b6042fe39bee4838c6b}{\index{R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}!R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}}
+\index{R\-C\-Tree\-Wire\-Delay\-Model@{R\-C\-Tree\-Wire\-Delay\-Model}!RCTreeWireDelayModel@{R\-C\-Tree\-Wire\-Delay\-Model}}
+\subsubsection[{R\-C\-Tree\-Wire\-Delay\-Model}]{\setlength{\rightskip}{0pt plus 5cm}R\-C\-Tree\-Wire\-Delay\-Model\-::\-R\-C\-Tree\-Wire\-Delay\-Model (
+\begin{DoxyParamCaption}
+\item[{const {\bf Spef\-Net\-I\-S\-P\-D2013} \&}]{descriptor, }
+\item[{const string}]{root\-Node, }
+\item[{const size\-\_\-t}]{arcs\-\_\-size, }
+\item[{const bool}]{dummy\-Edge = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classRCTreeWireDelayModel_a239d4784b2d39b6042fe39bee4838c6b}
+
+
+R\-Ctree\-Wire\-Delay\-Model default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & \hyperlink{classSpefNetISPD2013}{Spef\-Net\-I\-S\-P\-D2013} \& descriptor, const string root\-Node, const size\-\_\-t arcs\-\_\-size, const bool dummy\-Edge(false default) \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}

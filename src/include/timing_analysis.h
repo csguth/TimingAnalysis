@@ -53,7 +53,13 @@ namespace Timing_Analysis
         bool _dont_touch;
 
     public:
+		/** @brief Option default constructor
+		*/
         Option():_footprint_index(-1), _option_index(-1), _dont_touch(false){}
+		/** @brief Option default constructor
+		*
+		* @param const int footprintIndex, const int optionIndex
+		*/
         Option(const int footprintIndex, const int optionIndex) : _footprint_index(footprintIndex), _option_index(optionIndex), _dont_touch(false){}
 
 	};
@@ -64,8 +70,6 @@ namespace Timing_Analysis
 	*/
     class Timing_Analysis
 	{
-
-
         vector<Timing_Point> _points;
         vector<Timing_Arc> _arcs;
         vector<Timing_Net> _nets;
@@ -93,7 +97,20 @@ namespace Timing_Analysis
         map<string, Transitions<double> > _min_ceff;
 
         // PRIVATE GETTERS
+
+		/** @brief Private. Returns LibertyCellInfo object reference at node_index
+		*
+		* @param const int node_index
+		*
+		* @return const LibertyCellInfo &
+		*/
         const LibertyCellInfo & liberty_cell_info(const int node_index) const;
+		/** @brief Private. Returns Transitions containing the timing arc delay calculated by interpolating both parameters values using the time values table of the timing_arc
+		*
+		* @param const Timing_Arc & timing_arc, const Transitions<double> transition, const Transitions<double> ceff
+		*
+		* @return const Transitions<double>
+		*/
         const Transitions<double> calculate_timing_arc_delay(const Timing_Arc & timing_arc, const Transitions<double> transition, const Transitions<double> ceff);
 
         // STATIC TIMING ANALYSIS

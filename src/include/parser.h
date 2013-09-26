@@ -29,7 +29,11 @@ protected:
 	bool readLineAsTokens(istream& is, vector<string>& tokens, bool includeSpecialChars = false);
 	fstream is;
 public:
+	/** @brief Empty Parser constructor
+	*/
 	Parser();
+	/** @brief Empty Parser destructor
+	*/
 	virtual ~Parser();
 };
 

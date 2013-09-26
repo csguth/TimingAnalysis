@@ -90,21 +90,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">WireDelayModel Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Describes parasitc elements present in wires in a circuit which cause significant delay and are take into account in static timing analysis.  
+ <a href="classWireDelayModel.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="wire__delay__model_8h_source.html">wire_delay_model.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for WireDelayModel:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classWireDelayModel.png" usemap="#WireDelayModel_map" alt=""/>
   <map id="WireDelayModel_map" name="WireDelayModel_map">
-<area href="classLumpedCapacitanceWireDelayModel.html" title="Describes the Lumped Capacitance Model. " alt="LumpedCapacitanceWireDelayModel" shape="rect" coords="0,56,221,80"/>
-<area href="classRCTreeWireDelayModel.html" alt="RCTreeWireDelayModel" shape="rect" coords="231,56,452,80"/>
+<area href="classLumpedCapacitanceWireDelayModel.html" title="This model describes the parasitic capacitances distributed along a wire as a single circuit element..." alt="LumpedCapacitanceWireDelayModel" shape="rect" coords="0,56,221,80"/>
+<area href="classRCTreeWireDelayModel.html" title="This model describes the parasitic elements(capacitors and resistors) distributed along a wire as a s..." alt="RCTreeWireDelayModel" shape="rect" coords="231,56,452,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0fd2defb581f6d8bcd67e5c935387d95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#a0fd2defb581f6d8bcd67e5c935387d95">WireDelayModel</a> (const double &amp;<a class="el" href="classWireDelayModel.html#a05f509843dfa07e17c9b6cc16ba9aaa0">lumped_capacitance</a>)</td></tr>
-<tr class="memdesc:a0fd2defb581f6d8bcd67e5c935387d95"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classWireDelayModel.html">WireDelayModel</a> default constructor.  <a href="#a0fd2defb581f6d8bcd67e5c935387d95">More...</a><br/></td></tr>
+<tr class="memdesc:a0fd2defb581f6d8bcd67e5c935387d95"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classWireDelayModel.html" title="Describes parasitc elements present in wires in a circuit which cause significant delay and are take ...">WireDelayModel</a> default constructor.  <a href="#a0fd2defb581f6d8bcd67e5c935387d95">More...</a><br/></td></tr>
 <tr class="separator:a0fd2defb581f6d8bcd67e5c935387d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9103d46909b96ad4015c818dcd2988c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9103d46909b96ad4015c818dcd2988c"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWireDelayModel.html#ad9103d46909b96ad4015c818dcd2988c">~WireDelayModel</a> ()</td></tr>
@@ -147,7 +152,9 @@ static <br class="typebreak"/>
 <a class="el" href="classLinearLibertyLookupTableInterpolator.html">LinearLibertyLookupTableInterpolator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>interpolator</b></td></tr>
 <tr class="separator:aa8f767316492b902c13ec68651b30247"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Describes parasitc elements present in wires in a circuit which cause significant delay and are take into account in static timing analysis. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a0fd2defb581f6d8bcd67e5c935387d95"></a>
 <div class="memitem">
 <div class="memproto">
@@ -170,7 +177,7 @@ static <br class="typebreak"/>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classWireDelayModel.html">WireDelayModel</a> default constructor. </p>
+<p><a class="el" href="classWireDelayModel.html" title="Describes parasitc elements present in wires in a circuit which cause significant delay and are take ...">WireDelayModel</a> default constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>double &amp; lumped_capacitance </td></tr>
@@ -473,7 +480,7 @@ static <br class="typebreak"/>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 25 2013 16:02:29 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 26 2013 15:04:49 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

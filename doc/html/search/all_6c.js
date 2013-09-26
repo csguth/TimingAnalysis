@@ -12,5 +12,5 @@ var searchData=
   ['logic_5fgate',['Logic_Gate',['../structCircuit__Netlist_1_1Logic__Gate.html',1,'Circuit_Netlist']]],
   ['logic_5fgate',['Logic_Gate',['../structCircuit__Netlist_1_1Logic__Gate.html#a81569a5c27c575b1725c5da2c2090f54',1,'Circuit_Netlist::Logic_Gate']]],
   ['lumped_5fcapacitance',['lumped_capacitance',['../classWireDelayModel.html#a05f509843dfa07e17c9b6cc16ba9aaa0',1,'WireDelayModel']]],
-  ['lumpedcapacitancewiredelaymodel',['LumpedCapacitanceWireDelayModel',['../classLumpedCapacitanceWireDelayModel.html',1,'']]]
+  ['lumpedcapacitancewiredelaymodel',['LumpedCapacitanceWireDelayModel',['../classLumpedCapacitanceWireDelayModel.html',1,'LumpedCapacitanceWireDelayModel'],['../classLumpedCapacitanceWireDelayModel.html#ae147cdba517e3f6152ed8234473e5443',1,'LumpedCapacitanceWireDelayModel::LumpedCapacitanceWireDelayModel()']]]
 ];

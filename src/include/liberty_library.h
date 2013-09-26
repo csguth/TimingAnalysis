@@ -159,7 +159,7 @@ public:
  */
   const pair<int, int> addCellInfo(const LibertyCellInfo & cellInfo); // return = [footprint index][option index]
 
-/** @brief Returns LibertyCellInfo in footPrint parameter, at index i
+/** @brief Returns LibertyCellInfo in footPrint, at index i
  *
  *  @param const string & footPrint, const int & i
  *
@@ -173,7 +173,7 @@ public:
  *  @return const LibertyCellInfo &
  */
   const LibertyCellInfo & getCellInfo(const string & cellName) const;
-/** @brief Returns LibertyCellInfo at index i, of footPrint footPrintIndex
+/** @brief Returns LibertyCellInfo at index i, in footPrint of footPrintIndex
  *
  *  @param const string & footPrintIndex, const int & optionIndex
  *

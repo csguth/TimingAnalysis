@@ -136,7 +136,7 @@ public:
 		clsValue[FALL] = fall;
 	} // end constructor
 
-	/** @brief Empty Transitions constructor
+   /** @brief Empty Transitions constructor
 	*
 	*/
 	Transitions(){};
