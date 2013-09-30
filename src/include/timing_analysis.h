@@ -36,7 +36,6 @@ using std::stack;
 
 #include "parser.h"
 
-
 #include "timing_net.h"
 #include "timing_point.h"
 #include "timing_net.h"
@@ -114,6 +113,12 @@ namespace Timing_Analysis
         const Transitions<double> calculate_timing_arc_delay(const Timing_Arc & timing_arc, const Transitions<double> transition, const Transitions<double> ceff);
 
         // STATIC TIMING ANALYSIS
+		/** @brief Private. 
+		*
+		* @param const int timing_point_index
+		*
+		* @return void
+		*/
         void update_timing(const int timing_point_index);
         void update_slacks(const int timing_point_index);
 
@@ -132,7 +137,6 @@ namespace Timing_Analysis
 	public:
         Timing_Analysis(const Circuit_Netlist & netlist, const LibertyLibrary * lib, const Parasitics * _parasitics, const Design_Constraints * sdc);
         virtual ~Timing_Analysis();
-
 
         //
 
