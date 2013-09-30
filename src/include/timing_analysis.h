@@ -95,6 +95,9 @@ namespace Timing_Analysis
         map<string, Transitions<double> > _max_ceff;
         map<string, Transitions<double> > _min_ceff;
 
+
+        int _first_PO_index;
+
         // PRIVATE GETTERS
 
 		/** @brief Private. Returns LibertyCellInfo object reference at node_index
@@ -156,6 +159,9 @@ namespace Timing_Analysis
         double pin_capacitance(const int timing_point_index) const;
         double pin_load(const int timing_point_index) const;
         int option(const int gate_number);
+
+
+        int first_PO_index() const { return _first_PO_index; }
 
 		// SETTERS
         bool option(const int gate_index, const int option);
