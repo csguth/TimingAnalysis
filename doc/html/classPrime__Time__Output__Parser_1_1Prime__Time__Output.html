@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,20 +94,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Prime_Time_Output_Parser::Prime_Time_Output Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents Prime Time output. Provides access methods to it.  
+ <a href="classPrime__Time__Output__Parser_1_1Prime__Time__Output.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="parser_8h_source.html">parser.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af89e7f909821e56d0e89ae62cebc5b81"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af89e7f909821e56d0e89ae62cebc5b81"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>pins_size</b> () const </td></tr>
+<tr class="memitem:af89e7f909821e56d0e89ae62cebc5b81"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrime__Time__Output__Parser_1_1Prime__Time__Output.html#af89e7f909821e56d0e89ae62cebc5b81">pins_size</a> () const </td></tr>
+<tr class="memdesc:af89e7f909821e56d0e89ae62cebc5b81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number of pins.  <a href="#af89e7f909821e56d0e89ae62cebc5b81">More...</a><br/></td></tr>
 <tr class="separator:af89e7f909821e56d0e89ae62cebc5b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fdf8bbe0ea6ecdcdecec62e0922625f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6fdf8bbe0ea6ecdcdecec62e0922625f"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>ports_size</b> () const </td></tr>
+<tr class="memitem:a6fdf8bbe0ea6ecdcdecec62e0922625f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrime__Time__Output__Parser_1_1Prime__Time__Output.html#a6fdf8bbe0ea6ecdcdecec62e0922625f">ports_size</a> () const </td></tr>
+<tr class="memdesc:a6fdf8bbe0ea6ecdcdecec62e0922625f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number of ports.  <a href="#a6fdf8bbe0ea6ecdcdecec62e0922625f">More...</a><br/></td></tr>
 <tr class="separator:a6fdf8bbe0ea6ecdcdecec62e0922625f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfa3dff9af20ebb0872d4c775b3eeecc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfa3dff9af20ebb0872d4c775b3eeecc"></a>
-const <a class="el" href="structPrime__Time__Output__Parser_1_1Pin__Timing.html">Pin_Timing</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>pin</b> (const size_t i) const </td></tr>
+<tr class="memitem:adfa3dff9af20ebb0872d4c775b3eeecc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structPrime__Time__Output__Parser_1_1Pin__Timing.html">Pin_Timing</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrime__Time__Output__Parser_1_1Prime__Time__Output.html#adfa3dff9af20ebb0872d4c775b3eeecc">pin</a> (const size_t i) const </td></tr>
+<tr class="memdesc:adfa3dff9af20ebb0872d4c775b3eeecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structPrime__Time__Output__Parser_1_1Pin__Timing.html" title="Struct containing the timing values of a pin. ">Pin_Timing</a> reference at index i.  <a href="#adfa3dff9af20ebb0872d4c775b3eeecc">More...</a><br/></td></tr>
 <tr class="separator:adfa3dff9af20ebb0872d4c775b3eeecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36d4fa1cf4175cce9bac2fb27ea98f72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36d4fa1cf4175cce9bac2fb27ea98f72"></a>
-const <a class="el" href="structPrime__Time__Output__Parser_1_1Port__Timing.html">Port_Timing</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>port</b> (const size_t i) const </td></tr>
+<tr class="memitem:a36d4fa1cf4175cce9bac2fb27ea98f72"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structPrime__Time__Output__Parser_1_1Port__Timing.html">Port_Timing</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPrime__Time__Output__Parser_1_1Prime__Time__Output.html#a36d4fa1cf4175cce9bac2fb27ea98f72">port</a> (const size_t i) const </td></tr>
+<tr class="memdesc:a36d4fa1cf4175cce9bac2fb27ea98f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="structPrime__Time__Output__Parser_1_1Pin__Timing.html" title="Struct containing the timing values of a pin. ">Pin_Timing</a> reference at index i.  <a href="#a36d4fa1cf4175cce9bac2fb27ea98f72">More...</a><br/></td></tr>
 <tr class="separator:a36d4fa1cf4175cce9bac2fb27ea98f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -115,13 +121,134 @@ Friends</h2></td></tr>
 class&#160;</td><td class="memItemRight" valign="bottom"><b>Prime_Time_Output_Parser</b></td></tr>
 <tr class="separator:add497bc1a470cf507522a48873d2b9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents Prime Time output. Provides access methods to it. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="adfa3dff9af20ebb0872d4c775b3eeecc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structPrime__Time__Output__Parser_1_1Pin__Timing.html">Pin_Timing</a>&amp; Prime_Time_Output_Parser::Prime_Time_Output::pin </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns <a class="el" href="structPrime__Time__Output__Parser_1_1Pin__Timing.html" title="Struct containing the timing values of a pin. ">Pin_Timing</a> reference at index i. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>size_t i</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structPrime__Time__Output__Parser_1_1Pin__Timing.html" title="Struct containing the timing values of a pin. ">Pin_Timing</a> &amp; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af89e7f909821e56d0e89ae62cebc5b81"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Prime_Time_Output_Parser::Prime_Time_Output::pins_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns number of pins. </p>
+<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a36d4fa1cf4175cce9bac2fb27ea98f72"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structPrime__Time__Output__Parser_1_1Port__Timing.html">Port_Timing</a>&amp; Prime_Time_Output_Parser::Prime_Time_Output::port </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns <a class="el" href="structPrime__Time__Output__Parser_1_1Pin__Timing.html" title="Struct containing the timing values of a pin. ">Pin_Timing</a> reference at index i. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">const</td><td>size_t i</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structPrime__Time__Output__Parser_1_1Port__Timing.html" title="Struct containing the timing values of a port. ">Port_Timing</a> &amp; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6fdf8bbe0ea6ecdcdecec62e0922625f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Prime_Time_Output_Parser::Prime_Time_Output::ports_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns number of ports. </p>
+<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>tccChrystian/src/include/<a class="el" href="parser_8h_source.html">parser.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 26 2013 15:04:49 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 2 2013 16:10:03 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

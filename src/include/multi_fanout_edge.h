@@ -7,7 +7,7 @@ namespace Timing_Analysis
 {
 
     template <class T>
-	/** @brief Inherits from Edge. In a circuit, a multi fanout edge is a logic gate output which has multiple inputs connected to it.
+	/** @brief Inherits from Edge. An multi fanout edge is a group of edges which connect a vertex to more than one vertexes
 	*
 	*/
     class Multi_Fanout_Edge : public Edge<T>

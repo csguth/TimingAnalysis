@@ -1,6 +1,15 @@
 \hypertarget{classLibertyParser}{\section{Liberty\-Parser Class Reference}
 \label{classLibertyParser}\index{Liberty\-Parser@{Liberty\-Parser}}
 }
+
+
+Inherits from \hyperlink{classParser}{Parser}. Used to generate a \hyperlink{classLibertyLibrary}{Liberty\-Library} object from a file.  
+
+
+
+
+{\ttfamily \#include $<$parser.\-h$>$}
+
 Inheritance diagram for Liberty\-Parser\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,10 +19,39 @@ Inheritance diagram for Liberty\-Parser\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classLibertyParser_a474451e29a86949f6ebef6948363874d}{const \hyperlink{classLibertyLibrary}{Liberty\-Library} {\bfseries read\-File} (const string filename)}\label{classLibertyParser_a474451e29a86949f6ebef6948363874d}
-
-\end{DoxyCompactItemize}
+const \hyperlink{classLibertyLibrary}{Liberty\-Library} \hyperlink{classLibertyParser_a474451e29a86949f6ebef6948363874d}{read\-File} (const string filename)
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classLibertyLibrary}{Liberty\-Library} generated using values read from file passed as filename parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Inherits from \hyperlink{classParser}{Parser}. Used to generate a \hyperlink{classLibertyLibrary}{Liberty\-Library} object from a file. 
+
+\begin{DoxyRemark}{Remarks}
+See test\-\_\-lib\-\_\-parser () function in parser\-\_\-helper.\-cpp for an example of how to use this class. 
+\end{DoxyRemark}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLibertyParser_a474451e29a86949f6ebef6948363874d}{\index{Liberty\-Parser@{Liberty\-Parser}!read\-File@{read\-File}}
+\index{read\-File@{read\-File}!LibertyParser@{Liberty\-Parser}}
+\subsubsection[{read\-File}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Liberty\-Library} Liberty\-Parser\-::read\-File (
+\begin{DoxyParamCaption}
+\item[{const string}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classLibertyParser_a474451e29a86949f6ebef6948363874d}
+
+
+Returns \hyperlink{classLibertyLibrary}{Liberty\-Library} generated using values read from file passed as filename parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string filename\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Liberty\-Livrary 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

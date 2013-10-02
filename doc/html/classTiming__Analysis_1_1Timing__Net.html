@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>Timing_Analysis</b></li><li class="navelem"><a class="el" href="classTiming__Analysis_1_1Timing__Net.html">Timing_Net</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceTiming__Analysis.html">Timing_Analysis</a></li><li class="navelem"><a class="el" href="classTiming__Analysis_1_1Timing__Net.html">Timing_Net</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -94,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Describes a timing net of the timing graph model.  
+<p>Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple timing points.  
  <a href="classTiming__Analysis_1_1Timing__Net.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="timing__net_8h_source.html">timing_net.h</a>&gt;</code></p>
@@ -112,13 +113,13 @@ Inheritance diagram for Timing_Analysis::Timing_Net:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa31562b888cce5b1ad2a4198ad6c37d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Net.html#aa31562b888cce5b1ad2a4198ad6c37d1">Timing_Net</a> (const string &amp;<a class="el" href="classTiming__Analysis_1_1Timing__Net.html#aa21494aaaade42ab7578e697b9fc5d14">name</a>, <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *<a class="el" href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">from</a>, <a class="el" href="classWireDelayModel.html">WireDelayModel</a> *<a class="el" href="classTiming__Analysis_1_1Timing__Net.html#ac8cd484d33ccb714f2611a04dd653a66">wire_delay_model</a>)</td></tr>
-<tr class="memdesc:aa31562b888cce5b1ad2a4198ad6c37d1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. ">Timing_Net</a> constructor.  <a href="#aa31562b888cce5b1ad2a4198ad6c37d1">More...</a><br/></td></tr>
+<tr class="memdesc:aa31562b888cce5b1ad2a4198ad6c37d1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple ...">Timing_Net</a> constructor.  <a href="#aa31562b888cce5b1ad2a4198ad6c37d1">More...</a><br/></td></tr>
 <tr class="separator:aa31562b888cce5b1ad2a4198ad6c37d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a919bdd9eb5b7d00b1c6b692bb34d6b6b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Net.html#a919bdd9eb5b7d00b1c6b692bb34d6b6b">~Timing_Net</a> ()</td></tr>
-<tr class="memdesc:a919bdd9eb5b7d00b1c6b692bb34d6b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. ">Timing_Net</a> destructor.  <a href="#a919bdd9eb5b7d00b1c6b692bb34d6b6b">More...</a><br/></td></tr>
+<tr class="memdesc:a919bdd9eb5b7d00b1c6b692bb34d6b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empty <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple ...">Timing_Net</a> destructor.  <a href="#a919bdd9eb5b7d00b1c6b692bb34d6b6b">More...</a><br/></td></tr>
 <tr class="separator:a919bdd9eb5b7d00b1c6b692bb34d6b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa21494aaaade42ab7578e697b9fc5d14"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Net.html#aa21494aaaade42ab7578e697b9fc5d14">name</a> () const </td></tr>
-<tr class="memdesc:aa21494aaaade42ab7578e697b9fc5d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. ">Timing_Net</a> name.  <a href="#aa21494aaaade42ab7578e697b9fc5d14">More...</a><br/></td></tr>
+<tr class="memdesc:aa21494aaaade42ab7578e697b9fc5d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple ...">Timing_Net</a> name.  <a href="#aa21494aaaade42ab7578e697b9fc5d14">More...</a><br/></td></tr>
 <tr class="separator:aa21494aaaade42ab7578e697b9fc5d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8cd484d33ccb714f2611a04dd653a66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classWireDelayModel.html">WireDelayModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Net.html#ac8cd484d33ccb714f2611a04dd653a66">wire_delay_model</a> ()</td></tr>
 <tr class="memdesc:ac8cd484d33ccb714f2611a04dd653a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to <a class="el" href="classWireDelayModel.html" title="Describes parasitc elements present in wires in a circuit which cause significant delay and are take ...">WireDelayModel</a>.  <a href="#ac8cd484d33ccb714f2611a04dd653a66">More...</a><br/></td></tr>
@@ -147,7 +148,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Timing_Analysis</b><
 class&#160;</td><td class="memItemRight" valign="bottom"><b>Timing_Point</b></td></tr>
 <tr class="separator:a2562d249ea959d9e392abdffe35cdbad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affa1b519dc847065ac579b4c8726c740"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Net.html#affa1b519dc847065ac579b4c8726c740">operator&lt;&lt;</a> (ostream &amp;out, const <a class="el" href="classTiming__Analysis_1_1Timing__Net.html">Timing_Net</a> &amp;tn)</td></tr>
-<tr class="memdesc:affa1b519dc847065ac579b4c8726c740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinition of &lt;&lt; operator. Inserts formatted description including <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. ">Timing_Net</a> name.  <a href="#affa1b519dc847065ac579b4c8726c740">More...</a><br/></td></tr>
+<tr class="memdesc:affa1b519dc847065ac579b4c8726c740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinition of &lt;&lt; operator. Inserts formatted description including <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple ...">Timing_Net</a> name.  <a href="#affa1b519dc847065ac579b4c8726c740">More...</a><br/></td></tr>
 <tr class="separator:affa1b519dc847065ac579b4c8726c740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -171,7 +172,7 @@ vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timi
 <tr class="separator:ae1bc9c1f6a84a2b4a116d5c4571fba02 inherit pro_attribs_classTiming__Analysis_1_1Edge"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Describes a timing net of the timing graph model. </p>
+<div class="textblock"><p>Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple timing points. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa31562b888cce5b1ad2a4198ad6c37d1"></a>
 <div class="memitem">
@@ -211,7 +212,7 @@ vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timi
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. ">Timing_Net</a> constructor. </p>
+<p><a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple ...">Timing_Net</a> constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">const</td><td>string &amp; name, <a class="el" href="classTiming__Analysis_1_1Timing__Point.html" title="Describes a timing point of the timing graph model. ">Timing_Point</a> * from, <a class="el" href="classWireDelayModel.html" title="Describes parasitc elements present in wires in a circuit which cause significant delay and are take ...">WireDelayModel</a> * wire_delay_model </td></tr>
@@ -242,7 +243,7 @@ vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timi
 </table>
 </div><div class="memdoc">
 
-<p>Empty <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. ">Timing_Net</a> destructor. </p>
+<p>Empty <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple ...">Timing_Net</a> destructor. </p>
 
 </div>
 </div>
@@ -260,7 +261,7 @@ vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timi
       </table>
 </div><div class="memdoc">
 
-<p>Returns <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. ">Timing_Net</a> name. </p>
+<p>Returns <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple ...">Timing_Net</a> name. </p>
 <dl class="section return"><dt>Returns</dt><dd>const string </dd></dl>
 
 </div>
@@ -324,7 +325,7 @@ vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timi
 </table>
 </div><div class="memdoc">
 
-<p>Redefinition of &lt;&lt; operator. Inserts formatted description including <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. ">Timing_Net</a> name. </p>
+<p>Redefinition of &lt;&lt; operator. Inserts formatted description including <a class="el" href="classTiming__Analysis_1_1Timing__Net.html" title="Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple ...">Timing_Net</a> name. </p>
 
 </div>
 </div>
@@ -334,7 +335,7 @@ vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timi
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 26 2013 15:04:50 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 2 2013 16:10:04 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

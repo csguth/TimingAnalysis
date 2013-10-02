@@ -40,7 +40,9 @@ public:
 
     SpefNetISPD2012():netName("DEFAULT_NET_NAME"), netLumpedCap(0){}
 };
-
+/** @brief SPEF stands for Standard Parasitic Exchange Format. Describes the set of parasitic elements of the wires in a circuit, within its descriptions and values.
+*
+*/
 class SpefNetISPD2013
 {
 public:
@@ -184,11 +186,11 @@ public:
 
 };
 
-	/** @brief Name redefinition: from map<string> to SpefNetISPD2012>
+	/** @brief Name redefinition: from map<string, SpefNetISPD2012> to SpefNetISPD2012>
 	 *
 	 */
 typedef map<string, SpefNetISPD2012> Parasitics2012;
-	/** @brief Name redefinition: from map<string> to SpefNetISPD2013>
+	/** @brief Name redefinition: from map<string, SpefNetISPD2013> to SpefNetISPD2013>
 	 *
 	 */
 typedef map<string, SpefNetISPD2013> Parasitics2013;

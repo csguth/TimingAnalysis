@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -70,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -81,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>Timing_Analysis</b></li><li class="navelem"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html">Timing_Arc</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceTiming__Analysis.html">Timing_Analysis</a></li><li class="navelem"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html">Timing_Arc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -94,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Describes a timing arc of the timing graph model.  
+<p>Describes a timing arc of the timing graph model. Vertex which connects one timing point to another timing point only.  
  <a href="classTiming__Analysis_1_1Timing__Arc.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="timing__arc_8h_source.html">timing_arc.h</a>&gt;</code></p>
@@ -112,10 +113,10 @@ Inheritance diagram for Timing_Analysis::Timing_Arc:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a38312efc7070c651743a667568514162"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#a38312efc7070c651743a667568514162">Timing_Arc</a> (<a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *<a class="el" href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">from</a>, <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a> *<a class="el" href="classTiming__Analysis_1_1Single__Fanout__Edge.html#ac01deccce158b6cee6883924e6dcb788">to</a>, const int arcNumber, const int <a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#abd085ce8fe10d00d6e0be2668773b32f">gate_number</a>)</td></tr>
-<tr class="memdesc:a38312efc7070c651743a667568514162"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. ">Timing_Arc</a> constructor.  <a href="#a38312efc7070c651743a667568514162">More...</a><br/></td></tr>
+<tr class="memdesc:a38312efc7070c651743a667568514162"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. Vertex which connects one timing point to another t...">Timing_Arc</a> constructor.  <a href="#a38312efc7070c651743a667568514162">More...</a><br/></td></tr>
 <tr class="separator:a38312efc7070c651743a667568514162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32909fb0fdc3bd5f2a13cdb9f9b351b8"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#a32909fb0fdc3bd5f2a13cdb9f9b351b8">~Timing_Arc</a> ()</td></tr>
-<tr class="memdesc:a32909fb0fdc3bd5f2a13cdb9f9b351b8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. ">Timing_Arc</a> destructor.  <a href="#a32909fb0fdc3bd5f2a13cdb9f9b351b8">More...</a><br/></td></tr>
+<tr class="memdesc:a32909fb0fdc3bd5f2a13cdb9f9b351b8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. Vertex which connects one timing point to another t...">Timing_Arc</a> destructor.  <a href="#a32909fb0fdc3bd5f2a13cdb9f9b351b8">More...</a><br/></td></tr>
 <tr class="separator:a32909fb0fdc3bd5f2a13cdb9f9b351b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a092de659dd0846a3e899f0efd9c34397"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html#a092de659dd0846a3e899f0efd9c34397">clear</a> ()</td></tr>
 <tr class="memdesc:a092de659dd0846a3e899f0efd9c34397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets delay and slew time to zero.  <a href="#a092de659dd0846a3e899f0efd9c34397">More...</a><br/></td></tr>
@@ -180,7 +181,7 @@ vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timi
 <tr class="separator:ae1bc9c1f6a84a2b4a116d5c4571fba02 inherit pro_attribs_classTiming__Analysis_1_1Edge"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Describes a timing arc of the timing graph model. </p>
+<div class="textblock"><p>Describes a timing arc of the timing graph model. Vertex which connects one timing point to another timing point only. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a38312efc7070c651743a667568514162"></a>
 <div class="memitem">
@@ -226,7 +227,7 @@ vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timi
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. ">Timing_Arc</a> constructor. </p>
+<p><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. Vertex which connects one timing point to another t...">Timing_Arc</a> constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="classTiming__Analysis_1_1Timing__Point.html" title="Describes a timing point of the timing graph model. ">Timing_Point</a></td><td>* from, <a class="el" href="classTiming__Analysis_1_1Timing__Point.html" title="Describes a timing point of the timing graph model. ">Timing_Point</a> * to, const int arcNumber, const int gate_number) : <a class="el" href="classTiming__Analysis_1_1Single__Fanout__Edge.html">Single_Fanout_Edge&lt;Timing_Point&gt;(from, to)</a>, _delay(0.0f, 0.0f), _slew(0.0f, 0.0f), _arc_number (arcNumber), _gate_number(gate_number) </td></tr>
@@ -257,7 +258,7 @@ vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timi
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. ">Timing_Arc</a> destructor. </p>
+<p><a class="el" href="classTiming__Analysis_1_1Timing__Arc.html" title="Describes a timing arc of the timing graph model. Vertex which connects one timing point to another t...">Timing_Arc</a> destructor. </p>
 
 </div>
 </div>
@@ -481,7 +482,7 @@ vector&lt; <a class="el" href="classTiming__Analysis_1_1Timing__Point.html">Timi
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 26 2013 15:04:50 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 2 2013 16:10:04 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

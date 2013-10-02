@@ -22,6 +22,8 @@ using std::fstream;
 #include "spef_net.h"
 #include "design_constraints.h"
 
+/** @brief Superclass. A Parser is a program which reads an input and creates a data structure. In this case, the Parser will read a string, validate it and build essential files for use in the program using information read from the string  
+*/
 class Parser
 {
 protected:
@@ -37,44 +39,84 @@ public:
 	virtual ~Parser();
 };
 
+/** @brief Inherits from Parser. Parse the Prime Time output. Used to generate a Prime_Time_Output object for later use
+*/
 class Prime_Time_Output_Parser : public Parser
 {
 public:
+	/** @brief Struct containing the timing values of a pin
+	*/
 	struct Pin_Timing {
 		string pin_name;
 		Transitions<double> slack;
 		Transitions<double> slew;
 		Transitions<double> arrival_time;
+		/** @brief Redefinition of << operator. Inserts formatted description including pin name and slack, slew and arrival time values
+		*/
 		friend ostream & operator <<( ostream & out, const Pin_Timing & pin)
 		{
 			return out << pin.pin_name << " " << pin.slack << " " <<  pin.slew << " " << pin.arrival_time;
 		}
 	};
+	/** @brief Struct containing the timing values of a port
+	*/
 	struct Port_Timing {
 		string port_name;
 		Transitions<double> slack;
 		Transitions<double> slew;
-
+		/** @brief Redefinition of << operator. Inserts formatted description including port name, slack and slew time values
+		*/
 		friend ostream & operator <<( ostream & out, const Port_Timing & port)
 		{
 			return out << port.port_name << " " << port.slack << " " << port.slew;
 		}
 	};
+	/** @brief Represents Prime Time output. Provides access methods to it
+ 	*/
 	class Prime_Time_Output{
 		friend class Prime_Time_Output_Parser;
 		vector<Pin_Timing> _pins;
 		vector<Port_Timing> _ports;
 	public:
+		/** @brief Returns number of pins
+		*
+		* @return size_t
+		*/
         size_t pins_size() const { return _pins.size(); }
+		/** @brief Returns number of ports
+		*
+		* @return size_t
+		*/
         size_t ports_size() const { return _ports.size(); }
+		/** @brief Returns Pin_Timing reference at index i
+		*
+		* @param const size_t i
+		*
+		* @return Pin_Timing &
+		*/
 		const Pin_Timing & pin(const size_t i) const { return _pins.at(i); }
+		/** @brief Returns Pin_Timing reference at index i
+		*
+		* @param const size_t i
+		*
+		* @return Port_Timing &
+		*/
 		const Port_Timing & port(const size_t i) const { return _ports.at(i); }
 	};
+	/** @brief Prime_Time_Output_Parser empty constructor
+	*/
     Prime_Time_Output_Parser(){}
+	/** @brief Returns Prime_Time_Output object generated using values read from file passed as filename parameter
+	*
+	* @param const string filename
+	*
+	* @return const Prime_Time_Output
+	*/
 	const Prime_Time_Output parse_prime_time_output_file(const string filename);
 };
 
-
+/**  @brief Inherits from Parser. Parse verilog files. Used to generate circuit netlists
+*/
 class VerilogParser : public Parser
 {
 	static const string SEQUENTIAL_CELL;
@@ -82,107 +124,250 @@ class VerilogParser : public Parser
 	static const string PRIMARY_OUTPUT_CELL;
 	static const string CLOCK_NET;
 
-	// Read the module definition
+	/** @brief Reads the module definition
+	*
+	* @param string& moduleName
+	*
+	* @return bool
+	*/
 	bool read_module(string& moduleName);
 
-	// Read the next primary input.
-	// Return value indicates if the last read was successful or not.
+	/** @brief Reads the next primary input. Return value indicates if the last read was successful or not
+	*
+	* @param string& primaryInput
+	*
+	* @return bool
+	*/
 	bool read_primary_input(string& primaryInput);
-
-	// Read the next primary output.
-	// Return value indicates if the last read was successful or not.
-	bool read_primary_output(string& primaryInput);
-
-	// Read the next net.
-	// Return value indicates if the last read was successful or not.
+	
+	/** @brief Reads the next primary output. Return value indicates if the last read was successful or not.
+	*
+	* @param string& primaryOutput
+	*
+	* @return bool
+	*/
+	bool read_primary_output(string& primaryOutput);
+	
+	/** @brief Reads the next net. Return value indicates if the last read was successful or not.
+	*
+	* @param string& primaryInput
+	*
+	* @return bool
+	*/
 	bool read_wire(string& wire);
-
-	// Read the next cell instance.
-	// Return value indicates if the last read was successful or not.
+	
+	/** @brief Reads the next cell instance. Return value indicates if the last read was successful or not.
+	*
+	* @param string& cellType, string& cellInstName, vector<std::pair<string, string> >& pinNetPairs
+	*
+	* @return bool
+	*/
 	bool read_cell_inst(string& cellType, string& cellInstName, vector<std::pair<string, string> >& pinNetPairs);
+	/** @brief Reads the assignment pair. Return value indicates if the read was successful or not.
+	*
+	* @param pair<string, string> & assignment
+	*
+	* @return bool
+	*/
 	bool read_assign(pair<string, string> & assignment);
 public:
+	/** @brief Returns Circuit_Netlist object generated by information read from file passed as filename parameter
+	*
+	* @param const string filename
+	*
+	* @return const Circuit_Netlist
+	*/
 	const Circuit_Netlist readFile(const string filename);
-	
 
+	/** @brief Empty VerilogParser destructor
+	*/
 	virtual ~VerilogParser()
 	{
-
 	};
 };
 
-// See test_lib_parser () function in parser_helper.cpp for an
-// example of how to use this class.
+/** @brief Inherits from Parser. Used to generate a LibertyLibrary object from a file
+*
+* @remarks See test_lib_parser () function in parser_helper.cpp for an example of how to use this class.
+*/
 class LibertyParser : public Parser
 {
-
+	/** @brief 3D LUTs are ignored. Just assert its correctness
+	*
+	* @return void
+	*/
   void _skip_lut_3D () ;
+	/** @brief Asserts fstream correctness and sets lut with parsed values from fstream
+	*
+	* @param LibertyLookupTable& lut
+	*
+	* @return void
+	*/
   void _begin_read_lut (LibertyLookupTable& lut) ;
+	/** @brief Asserts fstream correctness and sets the LibertyTimingInfo with timing values parsed from fstream
+	*
+	* @param string pinName, LibertyTimingInfo& cell
+	*
+	* @return void
+	*/
   void _begin_read_timing_info (string pinName, LibertyTimingInfo& cell) ;
+	/** @brief Asserts fstream correctness and sets the LibertyPinInfo with timing values parsed from fstream
+	*
+	* @param string pinName, LibertyTimingInfo& cell, LibertyPinInfo& pin
+	*
+	* @return void
+	*/
   void _begin_read_pin_info (string pinName, LibertyCellInfo& cell, LibertyPinInfo& pin) ;
+	/** @brief Asserts fstream correctness and sets the LibertyCellInfo with timing values parsed from fstream
+	*
+	* @param string cellName, LibertyCellInfo& cell
+	*
+	* @return void
+	*/
   void _begin_read_cell_info (string cellName, LibertyCellInfo& cell) ;
-    // Read the default max_transition defined for the library.
-  // Return value indicates if the last read was successful or not.  
-  // This function must be called in the beginning before any read_cell_info function call.
+
+	/** @brief Read the default max_transition defined for the library. Return value indicates if the last read was successful or not.
+	*
+	* @param pair<string, string> & assignment
+	*
+	* @return bool
+	*
+	* @remarks This function must be called in the beginning before any read_cell_info function call.
+	*/
   bool read_default_max_transition (double& maxTransition) ;
 
-  
-  // Read the next standard cell definition.
-  // Return value indicates if the last read was successful or not.  
+	/** @brief Read the next standard cell definition. Return value indicates if the last read was successful or not.  
+	*
+	* @param pair<string, string> & assignment
+	*
+	* @return bool
+	*/
   bool read_cell_info (LibertyCellInfo& cell) ;
 public:
-
+	/** @brief Returns LibertyLibrary generated using values read from file passed as filename parameter
+	*
+	* @param const string filename
+	*
+	* @return LibertyLivrary
+	*/
   const LibertyLibrary readFile(const string filename);
 
 };
 
-
+/** @brief Inherits from Parser. Used to generate Spef files from an input. 2013 version
+*/
 class SpefParserISPD2013 : public Parser
 {
+	/** @brief The return value indicates whether the *CONN section has been read or not
+	*
+	* @param SpefNetISPD2013 & net
+	*
+	* @return bool
+	*/
 	bool read_connections(SpefNetISPD2013 & net);
+	/** @brief Asserts fstream correctness and sets the SpefNetISPD2013 with capacitance values parsed from fstream
+	*
+	* @param SpefNetISPD2013 & net
+	*
+	* @return void
+	*/
 	void read_capacitances(SpefNetISPD2013 & net);
+	/** @brief Asserts fstream correctness and sets the SpefNetISPD2013 with resistance values parsed from fstream
+	*
+	* @param SpefNetISPD2013 & net
+	*
+	* @return void
+	*/
 	void read_resistances(SpefNetISPD2013 & net);
+	/** @brief Asserts fstream correctness and sets the SpefNetISPD2013 with parasit values parsed from fstream. Returns false if info read from the fstream are not valid
+	*
+	* @param SpefNetISPD2013 & spefNet
+	*
+	* @return bool
+	*/
 	bool read_net_data(SpefNetISPD2013& spefNet);
 public:
+	/** @brief Returns Parasitics2013 object generated using informations read from file passed as filename parameter
+	*
+	* @param const string filename
+	*
+	* @return Parasitics2013
+	*/
 	const Parasitics2013 readFile(const string filename);
 
 	/* data */
 };
 
+/** @brief Inherits from Parser. Used to generate Spef files from an input. 2012 version
+*/
 class SpefParserISPD2012 : public Parser
 {
 	bool read_net_cap(string & net, double & cap);
 public:
+	/** @brief Returns Parasitics2012 object generated using informations read from file passed as filename parameter
+	*
+	* @param const string filename
+	*
+	* @return Parasitics2012
+	*/
 	const Parasitics2012 readFile(const string filename);
 
 	/* data */
 };
 
+/** @brief Inherits from Parser. SDC stands for Synopsys Design Constraints. Used to generate a Design_Constraints object from file
+*/
 class SDCParser : public Parser
 {
 	// The following functions must be issued in a particular order
 	// See test_sdc_parser function for an example
 
-	// Read clock definition
-	// Return value indicates if the last read was successful or not.
+	/** @brief Read clock definition. Return value indicates if the last read was successful or not.
+	*
+	* @param string& clockName, string& clockPort, double& period
+	*
+	* @return bool
+	*/	
 	bool read_clock(string& clockName, string& clockPort, double& period);
 
-	// Read input delay
-	// Return value indicates if the last read was successful or not.
+	/** @brief Reads input delay. Return value indicates if the last read was successful or not.
+	*
+	* @param string& portName, double& delay
+	*
+	* @return bool
+	*/	
 	bool read_input_delay(string& portName, double& delay);
 
-	// Read driver info for the input port
-	// Return value indicates if the last read was successful or not.
+	/** @brief Driver info for the input port. Return value indicates if the last read was successful or not.
+	*
+	* @param string& inPortName, string& driverSize, string& driverPin, double& inputTransitionFall, double& inputTransitionRise
+	*
+	* @return bool
+	*/
 	bool read_driver_info(string& inPortName, string& driverSize, string& driverPin, double& inputTransitionFall, double& inputTransitionRise);
 
-	// Read output delay
-	// Return value indicates if the last read was successful or not.
+	/** @brief Reads output delay. Return value indicates if the last read was successful or not.
+	*
+	* @param string& portName, double& delay
+	*
+	* @return bool
+	*/
 	bool read_output_delay(string& portName, double& delay);
 
-	// Read output load
-	// Return value indicates if the last read was successful or not.
+	/** @brief Reads output load. Return value indicates if the last read was successful or not.
+	*
+	* @param string& outPortName, double& load
+	*
+	* @return bool
+	*/
 	bool read_output_load(string& outPortName, double& load);
 public:
+	/** @brief Returns Design_Constraints object generated using informations read from file passed as filename parameter
+	*
+	* @param const string filename
+	*
+	* @return const Design_Constraints
+	*/
 	const Design_Constraints readFile(const string filename);
 };
 

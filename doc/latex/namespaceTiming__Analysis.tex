@@ -3,7 +3,7 @@
 }
 
 
-Describes a timing point of the timing graph model.  
+Namespace which contains classes relative to timing analysis graph model.  
 
 
 \subsection*{Classes}
@@ -12,19 +12,19 @@ Describes a timing point of the timing graph model.
 class \hyperlink{classTiming__Analysis_1_1Edge}{Edge}
 \begin{DoxyCompactList}\small\item\em Template class which represents an edge of the graph model. An edge in graph theory is a connection between vertices. \end{DoxyCompactList}\item 
 class \hyperlink{classTiming__Analysis_1_1Multi__Fanout__Edge}{Multi\-\_\-\-Fanout\-\_\-\-Edge}
-\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classTiming__Analysis_1_1Edge}{Edge}. Template class which represents a single edge of the graph model. In a circuit, a multi fanout edge is a logic gate output which has multiple inputs connected to it. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classTiming__Analysis_1_1Edge}{Edge}. An multi fanout edge is a group of edges which connect a vertex to more than one vertexes. \end{DoxyCompactList}\item 
 class \hyperlink{classTiming__Analysis_1_1Single__Fanout__Edge}{Single\-\_\-\-Fanout\-\_\-\-Edge}
-\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classTiming__Analysis_1_1Edge}{Edge}. Template class which represents a single edge of the graph model. In a circuit, a single fanout edge is a logic gate output which has only one input connected to it. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classTiming__Analysis_1_1Edge}{Edge}. A single fanout edge is an edge which connects one vertex to only one other. \end{DoxyCompactList}\item 
 class \hyperlink{classTiming__Analysis_1_1Option}{Option}
-\item 
+\begin{DoxyCompactList}\small\item\em Refers to the implementation option of a logic gate. \end{DoxyCompactList}\item 
 class \hyperlink{classTiming__Analysis_1_1Timing__Analysis}{Timing\-\_\-\-Analysis}
-\item 
+\begin{DoxyCompactList}\small\item\em Class which perform the timing analysis. \end{DoxyCompactList}\item 
 class \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc}
-\begin{DoxyCompactList}\small\item\em Describes a timing arc of the timing graph model. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Describes a timing arc of the timing graph model. Vertex which connects one timing point to another timing point only. \end{DoxyCompactList}\item 
 class \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}
-\item 
+\begin{DoxyCompactList}\small\item\em Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple timing points. \end{DoxyCompactList}\item 
 class \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Describes a timing point of the timing graph model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,4 +41,4 @@ enum {\bfseries Timing\-\_\-\-Point\-\_\-\-Type} \{ \\*
 
 
 \subsection{Detailed Description}
-Describes a timing point of the timing graph model. 
+Namespace which contains classes relative to timing analysis graph model. 

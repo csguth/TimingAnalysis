@@ -39,10 +39,11 @@ using std::stack;
 #include "timing_net.h"
 #include "timing_point.h"
 #include "timing_net.h"
-
+/** @brief Namespace which contains classes relative to timing analysis graph model
+*/
 namespace Timing_Analysis
 {
-	/** @brief 
+	/** @brief Refers to the implementation option of a logic gate
 	*/
     class Option
 	{
@@ -60,12 +61,11 @@ namespace Timing_Analysis
 		* @param const int footprintIndex, const int optionIndex
 		*/
         Option(const int footprintIndex, const int optionIndex) : _footprint_index(footprintIndex), _option_index(optionIndex), _dont_touch(false){}
-
 	};
 
     class Timing_Net;
     class Timing_Arc;
-	/** @brief 
+	/** @brief Class which perform the timing analysis
 	*/
     class Timing_Analysis
 	{
@@ -98,8 +98,7 @@ namespace Timing_Analysis
 
         int _first_PO_index;
 
-        // PRIVATE GETTERS
-
+        // PRIVATE GETTERS********************************************************************************************************
 		/** @brief Private. Returns LibertyCellInfo object reference at node_index
 		*
 		* @param const int node_index
@@ -115,61 +114,186 @@ namespace Timing_Analysis
 		*/
         const Transitions<double> calculate_timing_arc_delay(const Timing_Arc & timing_arc, const Transitions<double> transition, const Transitions<double> ceff);
 
-        // STATIC TIMING ANALYSIS
-		/** @brief Private. 
+        // STATIC TIMING ANALYSIS**********************************************************************************************
+		/** @brief Private. Updates effective capacitance, critical path transition, capacitive violations, of timing point at index i
 		*
 		* @param const int timing_point_index
 		*
 		* @return void
 		*/
         void update_timing(const int timing_point_index);
+		/** @brief Private. Updates slew vilations and total negative slack of timing point at index i
+		*
+		* @param const int timing_point_index
+		*
+		* @return void
+		*/
         void update_slacks(const int timing_point_index);
 
-		// TOPOLOGY INIT
+		// TOPOLOGY INIT*********************************************************************************************************
+		/** @brief Private. Creates timing points from gate 
+		*
+		* @param const int i,const Circuit_Netlist::Logic_Gate & gate,const pair<int, int> cellIndex, const LibertyCellInfo & cellInfo
+		*
+		* @return const pair<size_t, size_t>
+		*/
         const pair<size_t, size_t> create_timing_points(const int i,const Circuit_Netlist::Logic_Gate & gate,const pair<int, int> cellIndex, const LibertyCellInfo & cellInfo);
+		/** @brief Private.  Updates number of timing ponts and timing arcs from netlist
+		*
+		* @param int & numberOfTimingPoints, int & numberOfTimingArcs, const Circuit_Netlist & netlist, const LibertyLibrary * lib
+		*
+		* @return void
+		*/
         void number_of_timing_points_and_timing_arcs(int & numberOfTimingPoints, int & numberOfTimingArcs, const Circuit_Netlist & netlist, const LibertyLibrary * lib);
-        void create_timing_arcs(const pair<size_t, size_t> tpIndexes, const bool is_pi , const bool is_po );
+		/** @brief Private. Creates timing arcs from tpIndexes
+		*
+		* @param const pair<size_t, size_t> tpIndexes, const bool is_pi , const bool is_po
+		*
+		* @return void
+		*/
+        void create_timing_arcs(const pair<size_t, size_t> tpIndexes, const bool is_pi , const bool is_po);
 
-		// PRIMETIME CALLING
+		// PRIMETIME CALLING********************************************************************************************************
+		/** @brief Private. Creates an iterator to iterate the verilog descriptions vector
+		*
+		* @return void
+		*/
         void get_sizes_vector();
+		/** @brief Private. Checks timing file for errors and prints it
+		*
+		* @param const string timing_file
+		*
+		* @return bool
+		*/
 		bool check_timing_file(const string timing_file);
 
-		// OUTPUT METHODS
+		// OUTPUT METHODS**************************************************************************************************************
+		/** @brief Private. Inserts formatted description of the sizes of the verilog descriptions
+		*
+		* @param const string filename
+		*
+		* @return void
+		*/
         void write_sizes_file(const string filename);
 
 	public:
+		/** @brief Timing_Analysis default constructor
+		*
+		* @param const Circuit_Netlist & netlist, const LibertyLibrary * lib, const Parasitics * _parasitics, const Design_Constraints * sdc
+		*
+		*/
         Timing_Analysis(const Circuit_Netlist & netlist, const LibertyLibrary * lib, const Parasitics * _parasitics, const Design_Constraints * sdc);
+		/** @breaf Timing_Analysis empty destructor
+		*/
         virtual ~Timing_Analysis();
 
         //
-
+		/** @brief Calls prime time to set time values
+		*
+		* @return void
+		*/
         void call_prime_time();
+		/** @brief Updates all timing values of all elements
+		*
+		* @return void
+		*/
         void full_timing_analysis();
 
-		// GETTERS
+		// GETTERS******************************************************************************
+		/** @brief Returns number of timing points
+		*
+		* @return size_t
+		*/
         size_t timing_points_size() { return _points.size(); }
+		/** @brief Returns timing point reference at index i
+		*
+		* @param const int i
+		*
+		* @return const Timing_Point &
+		*/
         const Timing_Point & timing_point( const int i ) { return _points.at(i); }
-
+		/** @brief Returns number of timing arcs
+		*
+		* @return size_t
+		*/
         size_t timing_arcs_size() { return _arcs.size(); }
+		/** @brief Returns timing arc reference at index i
+		*
+ 		* @param const int i
+		*
+		* @return const Timing_Arc &
+		*/
         const Timing_Arc & timing_arc( const int i ) { return _arcs.at(i); }
-
+		/** @brief Returns number of timing nets
+		*
+		* @return size_t
+		*/
         size_t timing_nets_size() { return _nets.size(); }
+		/** @brief Returns timing net reference at index i
+		*
+ 		* @param const int i
+		*
+		* @return const Timing_Net &
+		*/
         const Timing_Net & timing_net( const int i ) { return _nets.at(i); }
 
+		/** @brief Returns pin capacitance at timing point index
+		*
+ 		* @param const int timing_point_index 
+		*
+		* @return double
+		*/
         double pin_capacitance(const int timing_point_index) const;
+		/** @brief Returns pin load at timing point index
+		*
+ 		* @param const int i
+		*
+		* @return const Timing_Net &
+		*/
         double pin_load(const int timing_point_index) const;
+		/** @brief Returns option index at gate_number index
+		*
+ 		* @param const int gate_number
+		*
+		* @return int
+		*/
         int option(const int gate_number);
 
-
+		/** @brief Returns first primary output index
+		*
+		* @return int
+		*/
         int first_PO_index() const { return _first_PO_index; }
 
-		// SETTERS
+		// SETTERS*******************************************************************************
+		/** @brief Returns true if gate_index option is "don't touch"
+		*
+ 		* @param const int gate_index, const int option
+		*
+		* @return bool
+		*/
         bool option(const int gate_index, const int option);
 
-        // DEBUG
+        // DEBUG*********************************************************************************
+		/** @brief Validates timing_file with prime time, prints results and returns true
+		*
+		* @return bool
+		*/
         bool validate_with_prime_time();
+		/** @brief Prints graph and circuit info
+		*
+		* @return void
+		*/
         void print_info();
+		/** @brief Prints timing info
+		*
+		* @return void
+		*/
         void print_circuit_info();
+		/** @brief Prints results from analysis
+		*
+		* @return void
+		*/
         void report_timing();
 
 

@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -180,9 +181,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Point_html_ad5a21b6fae7de267768c6f108a96cc4b"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Point.html#ad5a21b6fae7de267768c6f108a96cc4b">Timing_Analysis::Timing_Point::arrival_time</a></div><div class="ttdeci">const Transitions&lt; double &gt; arrival_time() const </div><div class="ttdoc">Returns Timing_Point arrival time. </div><div class="ttdef"><b>Definition:</b> timing_point.h:81</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Point_html_aaca34298e068bdcc1655c50ee914b9f4"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Point.html#aaca34298e068bdcc1655c50ee914b9f4">Timing_Analysis::Timing_Point::load</a></div><div class="ttdeci">double load() const </div><div class="ttdoc">Returns capacitive load of timing point. </div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Point_html_ac8040357b9d6e8bc62d2958b4ffb4da4"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Point.html#ac8040357b9d6e8bc62d2958b4ffb4da4">Timing_Analysis::Timing_Point::slew</a></div><div class="ttdeci">void slew(const Transitions&lt; double &gt; &amp;slew)</div><div class="ttdoc">Sets the slew time of the Timing_Net. </div><div class="ttdef"><b>Definition:</b> timing_point.h:112</div></div>
-<div class="ttc" id="classTiming__Analysis_1_1Timing__Arc_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Arc.html">Timing_Analysis::Timing_Arc</a></div><div class="ttdoc">Describes a timing arc of the timing graph model. </div><div class="ttdef"><b>Definition:</b> timing_arc.h:15</div></div>
+<div class="ttc" id="classTiming__Analysis_1_1Timing__Arc_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Arc.html">Timing_Analysis::Timing_Arc</a></div><div class="ttdoc">Describes a timing arc of the timing graph model. Vertex which connects one timing point to another t...</div><div class="ttdef"><b>Definition:</b> timing_arc.h:15</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Point_html_a7db0f9baed61c0534e19c2009ac41db5"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Point.html#a7db0f9baed61c0534e19c2009ac41db5">Timing_Analysis::Timing_Point::arc</a></div><div class="ttdeci">void arc(Timing_Arc *arc)</div><div class="ttdoc">Sets pointer to Timing_Arc. </div><div class="ttdef"><b>Definition:</b> timing_point.h:127</div></div>
-<div class="ttc" id="classTiming__Analysis_1_1Timing__Net_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Net.html">Timing_Analysis::Timing_Net</a></div><div class="ttdoc">Describes a timing net of the timing graph model. </div><div class="ttdef"><b>Definition:</b> timing_net.h:14</div></div>
+<div class="ttc" id="classTiming__Analysis_1_1Timing__Net_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Net.html">Timing_Analysis::Timing_Net</a></div><div class="ttdoc">Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple ...</div><div class="ttdef"><b>Definition:</b> timing_net.h:14</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Point_html_af5a20a073bd09092700ceed49a74e3e7"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Point.html#af5a20a073bd09092700ceed49a74e3e7">Timing_Analysis::Timing_Point::slack</a></div><div class="ttdeci">const Transitions&lt; double &gt; slack() const </div><div class="ttdoc">Returns Timing_Point slack time. </div><div class="ttdef"><b>Definition:</b> timing_point.h:71</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Point_html_a737bfc39dc3271c9b605d1d16ba8816c"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Point.html#a737bfc39dc3271c9b605d1d16ba8816c">Timing_Analysis::Timing_Point::clear_timing_info</a></div><div class="ttdeci">void clear_timing_info()</div><div class="ttdoc">Slack, slew and arrival time parameters are set to zero. </div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Point_html_a5c8883bd6dae6b49cb5c80e16b612d70"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Point.html#a5c8883bd6dae6b49cb5c80e16b612d70">Timing_Analysis::Timing_Point::is_output_pin</a></div><div class="ttdeci">bool is_output_pin() const </div><div class="ttdoc">Returns true if caller is a ouput pin. </div><div class="ttdef"><b>Definition:</b> timing_point.h:161</div></div>
@@ -191,7 +192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 26 2013 15:04:47 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 2 2013 16:10:02 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

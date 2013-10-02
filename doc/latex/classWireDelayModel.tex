@@ -33,11 +33,11 @@ virtual const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink
 virtual void \hyperlink{classWireDelayModel_a27d557bc1f2ed7e5e9787a8a5d82ecb2}{set\-Fanout\-Pin\-Capacitance} (const string fanout\-Name\-And\-Pin, const double pin\-Capacitance)=0
 \begin{DoxyCompactList}\small\item\em Increments lumped capacitance of the wire. \end{DoxyCompactList}\item 
 virtual \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classWireDelayModel_a4f4ab93810af8ad90fd9fca0b06de141}{root\-\_\-delay} (int arc\-\_\-number)=0
-\begin{DoxyCompactList}\small\item\em not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Virtual. Must be implemented by child class. Returns \hyperlink{classTransitions}{Transitions$<$double$>$} representing delay of the wire. \end{DoxyCompactList}\item 
 virtual \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classWireDelayModel_a9e5344c26b73f549a2b5c38fea8af13d}{root\-\_\-slew} (int arc\-\_\-number)=0
-\begin{DoxyCompactList}\small\item\em not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Virtual. Must be implemented by child class. Returns \hyperlink{classTransitions}{Transitions$<$double$>$} representing delay of the wire. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classWireDelayModel_a74869a3a66deb53507e8bc6f16eff45c}{clear} ()=0
-\begin{DoxyCompactList}\small\item\em not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Virtual. Must be implemented by child class. Clears attributes. \end{DoxyCompactList}\item 
 double \hyperlink{classWireDelayModel_a05f509843dfa07e17c9b6cc16ba9aaa0}{lumped\-\_\-capacitance} () const 
 \begin{DoxyCompactList}\small\item\em Returns lumped capacitance of the wire. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
@@ -87,7 +87,7 @@ Describes parasitc elements present in wires in a circuit which cause significan
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classWireDelayModel_a74869a3a66deb53507e8bc6f16eff45c}
 
 
-not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+Virtual. Must be implemented by child class. Clears attributes. 
 
 \begin{DoxyReturn}{Returns}
 void 
@@ -142,7 +142,7 @@ double
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classWireDelayModel_a4f4ab93810af8ad90fd9fca0b06de141}
 
 
-not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+Virtual. Must be implemented by child class. Returns \hyperlink{classTransitions}{Transitions$<$double$>$} representing delay of the wire. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -165,7 +165,7 @@ Implemented in \hyperlink{classRCTreeWireDelayModel_a5575e4f4e598047dd87fee0707d
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classWireDelayModel_a9e5344c26b73f549a2b5c38fea8af13d}
 
 
-not yet implemented$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+Virtual. Must be implemented by child class. Returns \hyperlink{classTransitions}{Transitions$<$double$>$} representing delay of the wire. 
 
 
 \begin{DoxyParams}{Parameters}

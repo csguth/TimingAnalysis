@@ -1,6 +1,15 @@
 \hypertarget{classSDCParser}{\section{S\-D\-C\-Parser Class Reference}
 \label{classSDCParser}\index{S\-D\-C\-Parser@{S\-D\-C\-Parser}}
 }
+
+
+Inherits from \hyperlink{classParser}{Parser}. S\-D\-C stands for Synopsys Design Constraints. Used to generate a \hyperlink{classDesign__Constraints}{Design\-\_\-\-Constraints} object from file.  
+
+
+
+
+{\ttfamily \#include $<$parser.\-h$>$}
+
 Inheritance diagram for S\-D\-C\-Parser\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,10 +19,34 @@ Inheritance diagram for S\-D\-C\-Parser\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classSDCParser_afc0ae26ac89138dd7b84e2986375785f}{const \hyperlink{classDesign__Constraints}{Design\-\_\-\-Constraints} {\bfseries read\-File} (const string filename)}\label{classSDCParser_afc0ae26ac89138dd7b84e2986375785f}
-
-\end{DoxyCompactItemize}
+const \hyperlink{classDesign__Constraints}{Design\-\_\-\-Constraints} \hyperlink{classSDCParser_afc0ae26ac89138dd7b84e2986375785f}{read\-File} (const string filename)
+\begin{DoxyCompactList}\small\item\em Returns \hyperlink{classDesign__Constraints}{Design\-\_\-\-Constraints} object generated using informations read from file passed as filename parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Inherits from \hyperlink{classParser}{Parser}. S\-D\-C stands for Synopsys Design Constraints. Used to generate a \hyperlink{classDesign__Constraints}{Design\-\_\-\-Constraints} object from file. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classSDCParser_afc0ae26ac89138dd7b84e2986375785f}{\index{S\-D\-C\-Parser@{S\-D\-C\-Parser}!read\-File@{read\-File}}
+\index{read\-File@{read\-File}!SDCParser@{S\-D\-C\-Parser}}
+\subsubsection[{read\-File}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Design\-\_\-\-Constraints} S\-D\-C\-Parser\-::read\-File (
+\begin{DoxyParamCaption}
+\item[{const string}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classSDCParser_afc0ae26ac89138dd7b84e2986375785f}
+
+
+Returns \hyperlink{classDesign__Constraints}{Design\-\_\-\-Constraints} object generated using informations read from file passed as filename parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & string filename\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const \hyperlink{classDesign__Constraints}{Design\-\_\-\-Constraints} 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

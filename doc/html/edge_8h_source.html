@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>Timing_Analysis {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="namespaceTiming__Analysis.html">   11</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html">Timing_Analysis</a> {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Edge.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classTiming__Analysis_1_1Edge.html">Edge</a> {</div>
@@ -143,6 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif // EDGE_H</span></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html_a64a07a7a08de0e2fd29b1d1db98c5d2d"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#a64a07a7a08de0e2fd29b1d1db98c5d2d">Timing_Analysis::Edge::Edge</a></div><div class="ttdeci">Edge(T *from)</div><div class="ttdoc">Edge constructor. </div><div class="ttdef"><b>Definition:</b> edge.h:25</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html_a60c70172e973450774a8ec5d4dadbcb5"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#a60c70172e973450774a8ec5d4dadbcb5">Timing_Analysis::Edge::fanouts_size</a></div><div class="ttdeci">size_t fanouts_size() const </div><div class="ttdoc">Returns fan out. </div><div class="ttdef"><b>Definition:</b> edge.h:75</div></div>
+<div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html">Timing_Analysis::Timing_Analysis</a></div><div class="ttdoc">Class which perform the timing analysis. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:70</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html_a47020ea89fd9fde438adc814a731a23d"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">Timing_Analysis::Edge::from</a></div><div class="ttdeci">T * from() const </div><div class="ttdoc">Returns _from*******. </div><div class="ttdef"><b>Definition:</b> edge.h:66</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html">Timing_Analysis::Edge</a></div><div class="ttdoc">Template class which represents an edge of the graph model. An edge in graph theory is a connection b...</div><div class="ttdef"><b>Definition:</b> edge.h:17</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html_ab9195f5c50f8a66b29f6856c9629fcc8"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#ab9195f5c50f8a66b29f6856c9629fcc8">Timing_Analysis::Edge::add_fanout</a></div><div class="ttdeci">void add_fanout(T *tp)</div><div class="ttdoc">Inserts T pointer. </div><div class="ttdef"><b>Definition:</b> edge.h:54</div></div>
@@ -150,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 26 2013 15:04:47 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 2 2013 16:10:02 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

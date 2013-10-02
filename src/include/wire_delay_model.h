@@ -58,21 +58,21 @@ public:
 	*/
     virtual void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance) = 0;
 
-	/** @brief not yet implemented***********************
+	/** @brief Virtual. Must be implemented by child class. Returns Transitions<double> representing delay of the wire
 	*
 	* @param int arc_number
 	*
 	* @return Transitions<double>
 	*/
     virtual Transitions<double> root_delay(int arc_number) = 0;
-	/** @brief not yet implemented***********************
+	/** @brief Virtual. Must be implemented by child class. Returns Transitions<double> representing delay of the wire
 	*
 	* @param int arc_number
 	*
 	* @return Transitions<double>
 	*/
     virtual Transitions<double> root_slew(int arc_number) = 0;
-	/** @brief not yet implemented**********************
+	/** @brief Virtual. Must be implemented by child class. Clears attributes
 	*
 	* @return void
 	*/
@@ -174,11 +174,16 @@ class RCTreeWireDelayModel : public WireDelayModel
 		}
 		;
 	};
-
+	/** @brief Struct which represents a node and resistor association
+	*/
 	struct NodeAndResistor
 	{
 		int nodeIndex;
 		int resistorIndex;
+		/** @brief NodeAndResistor default constructor
+		*
+		* @param const int & node, const int & resistor
+		*/
 		NodeAndResistor(const int & node, const int & resistor) :
 				nodeIndex(node), resistorIndex(resistor)
 		{
@@ -186,10 +191,27 @@ class RCTreeWireDelayModel : public WireDelayModel
 		;
 	};
 
-
+	/** @brief Updates slew and delay time values
+	*
+	* @param const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver
+	*
+	* @return void
+	*/
     void updateSlews(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
+	/** @brief Updates effective capacitance value
+	*
+	* @return void
+	*/
 	void updateEffectiveCapacitances();
+	/** @brief *********************
+	*
+	* @return void
+	*/
 	void updateDownstreamCapacitances();
+	/** @brief Sets the effective capacitance of each node as its total capacitance
+	*
+	* @return void
+	*/
 	void initializeEffectiveCapacitances();
 
 	vector<Node> nodes;
@@ -209,20 +231,54 @@ public:
 	* @param const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge(false default)
 	*/
     RCTreeWireDelayModel(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false);
-	/** @brief 
+	/** @brief Calculates and returns Transitions<double> representing effective capacitance of the wire
 	*
 	* @param const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver
 	*
-	* @return Transitions<double>
+	* @return const Transitions<double>
 	*/
     const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
+	/** @brief Returns maximum delay time value at node fanout_node_name
+	*
+	* @param const string fanout_node_name
+	*
+	* @return const Transitions<double>
+	*/
     const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const;
+	/** @brief Returns maximum slew time value at node fanout_node_name
+	*
+	* @param const string fanout_node_name
+	*
+	* @return const Transitions<double>
+	*/
     const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const;
+	/** @brief Increments effective capacitance of fanoutNameAndPin by pinCapacitance
+	*
+	* @param const string fanoutNameAndPin, const double pinCapacitance
+	*
+	* @return void
+	*/
 	void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance);
 
 
+	/** @brief Returns Transitions<double> representing delay time value at arc_number
+	*
+	* @param int arc_number
+	*
+	* @return Transitions<double>
+	*/
     Transitions<double> root_delay(int arc_number);
+	/** @brief Returns Transitions<double> representing slew time value at arc_number
+	*
+	* @param int arc_number
+	*
+	* @return Transitions<double>
+	*/
     Transitions<double> root_slew(int arc_number);
+	/** @brief Sets slew and delay time values to zero
+	*
+	* @return void
+	*/
     void clear();
 };
 

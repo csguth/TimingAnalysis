@@ -6,7 +6,7 @@
 namespace Timing_Analysis {
 
     template<class T>
-	/** @brief Inherits from Edge. In a circuit, a single fanout edge is a logic gate output which has only one input connected to it.
+	/** @brief Inherits from Edge. A single fanout edge is an edge which connects one vertex to only one other
 	*
 	*/
     class Single_Fanout_Edge : public Edge<T>
