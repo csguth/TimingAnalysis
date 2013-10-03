@@ -254,7 +254,7 @@ public:
 
 };
 
-/** @brief Inherits from Parser. Used to generate Spef files from an input. 2013 version
+/** @brief Inherits from Parser. Used to generate SpefNetISPD2013 file from an input
 */
 class SpefParserISPD2013 : public Parser
 {
@@ -298,7 +298,7 @@ public:
 	/* data */
 };
 
-/** @brief Inherits from Parser. Used to generate Spef files from an input. 2012 version
+/** @brief Inherits from Parser. Used to generate SpefNetISPD2012 files from an input
 */
 class SpefParserISPD2012 : public Parser
 {

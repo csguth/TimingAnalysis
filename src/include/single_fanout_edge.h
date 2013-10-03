@@ -6,7 +6,7 @@
 namespace Timing_Analysis {
 
     template<class T>
-	/** @brief Inherits from Edge. A single fanout edge is an edge which connects one vertex to only one other
+	/** @brief Inherits from Edge. A single fanout edge is an edge which two vertex to each other
 	*
 	*/
     class Single_Fanout_Edge : public Edge<T>
