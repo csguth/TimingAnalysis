@@ -828,7 +828,7 @@ const LibertyLibrary LibertyParser::readFile(const string filename)
 	LibertyLibrary lib(maxTransition);
 
 	assert (valid) ;
-	 cout << "The default max transition defined is " << maxTransition << endl ;
+//	 cout << "The default max transition defined is " << maxTransition << endl ;
 
 	int readCnt = 0 ;
 	do {
@@ -1015,7 +1015,7 @@ bool SpefParserISPD2013::read_net_data(SpefNetISPD2013& spefNet)
 
 const Parasitics2013 SpefParserISPD2013::readFile(const string filename)
 {
-	cout << "SPEF model is ISPD2013" << endl;
+//	cout << "SPEF model is ISPD2013" << endl;
 	is.open(filename.c_str(), fstream::in);
 	Parasitics2013 parasitics;
 	SpefNetISPD2013 spefNet;
@@ -1030,7 +1030,7 @@ const Parasitics2013 SpefParserISPD2013::readFile(const string filename)
 		valid = read_net_data(spefNet);
 	}
 
-	cout << "Read " << readCnt << " nets in the spef file." << endl;
+//	cout << "Read " << readCnt << " nets in the spef file." << endl;
 	is.close();
 	return parasitics;
 }
@@ -1060,7 +1060,7 @@ bool SpefParserISPD2012::read_net_cap(string & net, double & cap)
 
 const Parasitics2012 SpefParserISPD2012::readFile(const string filename)
 {
-	cout << "SPEF model is ISPD2012" << endl;
+//	cout << "SPEF model is ISPD2012" << endl;
 	is.open(filename.c_str(), fstream::in);
 	Parasitics2012 parasitics;
 

@@ -366,7 +366,6 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
             const bool is_the_first_input_pin_of_a_gate = !_dirty.at(output_pin.gate_number());
             const LibertyCellInfo & cell_info = liberty_cell_info(timing_point.gate_number());
 
-
             if( is_the_first_input_pin_of_a_gate )
 			{
                 assert(output_pin.gate_number() < _dirty.size());
@@ -375,7 +374,8 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
                 output_net.wire_delay_model()->clear();
 			}
 		
-            const Transitions<double> ceff_by_this_timing_arc = output_net.wire_delay_model()->simulate(cell_info, timing_arc.arc_number(), timing_point.slew(), timing_point.is_PI_input());
+            //const Transitions<double> ceff_by_this_timing_arc = output_net.wire_delay_model()->simulate(cell_info, timing_arc.arc_number(), timing_point.slew(), timing_point.is_PI_input());
+
 
             if(_max_ceff.find(output_pin.name()) == _max_ceff.end())
                 _max_ceff[output_pin.name()] = ceff_by_this_timing_arc;
@@ -389,11 +389,6 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 
             const Transitions<double> current_arc_delay_at_output_pin = calculate_timing_arc_delay(timing_arc, timing_point.slew(), ceff_by_this_timing_arc);
             const Transitions<double> current_arc_slew_at_output_pin = output_net.wire_delay_model()->root_slew(timing_arc.arc_number());
-//            if(timing_point.is_PI_input())  // INPUT DRIVER DELAY = DELAY WITH CEFF - DELAY WITH 0 OUTPUT LOAD
-//			{
-//                const Transitions<double> delay_with_0_output_load = this->calculate_gate_delay(timing_point.gate_number(), 0, timing_point.slew(), numeric_limits<Transitions<double> >::zero());
-//                current_arc_delay_at_output_pin -= delay_with_0_output_load;
-//			}
 
             timing_arc.delay(current_arc_delay_at_output_pin);
             timing_arc.slew(current_arc_slew_at_output_pin);
@@ -637,10 +632,10 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
         get_sizes_vector();
         const unsigned pollingTime = 1;
 
-		cout << "Running timing analysis" << endl;
+        cout << "Running timing analysis" << endl;
 
         TimerInterface::Status s = TimerInterface::runTimingAnalysisBlocking(_sizes,  Traits::ispd_contest_root, Traits::ispd_contest_benchmark, pollingTime);
-		cout << "Timing analysis finished with status: " << s << endl;
+        cout << "Timing analysis finished with status: " << s << endl;
 
 		return check_timing_file(timing_file);
 	}
@@ -720,7 +715,10 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
         return _options.at(gate_number)._option_index;
     }
 
-
+    size_t Timing_Analysis::number_of_options(const int gate_index)
+    {
+        return _library->number_of_options(_options.at(gate_index)._footprint_index);
+    }
 
     void Timing_Analysis::get_sizes_vector()
 	{
@@ -844,6 +842,17 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 
 
 
+
+        const Prime_Time_Output_Parser::Pin_Timing worst_pin_timing_rise = prime_time_output.pin(worst_pin_index.getRise());
+        const Timing_Point & worst_pin_timing_point_rise = _points.at(_pin_name_to_timing_point_index.at(worst_pin_timing_rise.pin_name));
+
+        const Prime_Time_Output_Parser::Pin_Timing worst_pin_timing_fall = prime_time_output.pin(worst_pin_index.getFall());
+        const Timing_Point & worst_pin_timing_point_fall = _points.at(_pin_name_to_timing_point_index.at(worst_pin_timing_fall.pin_name));
+
+
+        cout << "worst pin timing:: " << worst_pin_timing_point_rise.name() << endl;
+        cout << "slew " << worst_pin_timing_point_rise.slew() << " pt " << worst_pin_timing_rise.slew << endl;
+
         cout << "## Slack Error" << endl;
         cout << "min = " << min_slack_error << endl;
         cout << "max = " << max_slack_error << endl;
@@ -856,19 +865,23 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
         cout << "average = " << (average_port_slew_error * prime_time_output.ports_size() + average_pin_slew_error * prime_time_output.pins_size()) / (prime_time_output.ports_size() + prime_time_output.pins_size()) << endl;
 
         cout << endl;
-
-        const Prime_Time_Output_Parser::Pin_Timing worst_pin_timing_rise = prime_time_output.pin(worst_pin_index.getRise());
-        const Timing_Point & worst_pin_timing_point_rise = _points.at(_pin_name_to_timing_point_index.at(worst_pin_timing_rise.pin_name));
-
-        const Prime_Time_Output_Parser::Pin_Timing worst_pin_timing_fall = prime_time_output.pin(worst_pin_index.getFall());
-        const Timing_Point & worst_pin_timing_point_fall = _points.at(_pin_name_to_timing_point_index.at(worst_pin_timing_fall.pin_name));
-
         cout << "## Arrival Time Error" << endl;
         cout << "min = " << min_arrival_time_error << endl;
-        cout << "max = " << max_arrival_time_error << ": " << worst_pin_timing_point_rise.name() << " " << worst_pin_timing_point_rise.arrival_time() << " vs prime time " << worst_pin_timing_rise.arrival_time << endl;
-
+        cout << "max = " << max_arrival_time_error << endl;
         cout << "average = " << average_pin_arrival_time_error << endl;
 
+        Transitions<double> average_error;
+        average_error = (average_port_slack_error + average_port_slew_error) * prime_time_output.ports_size();
+        average_error += (average_pin_slack_error + average_pin_slew_error + average_pin_arrival_time_error) * prime_time_output.pins_size();
+        average_error /= (prime_time_output.ports_size() + 2*prime_time_output.pins_size());
+
+//        cout << "## error reporting" << endl;
+//        cout << "min " << min(min(min_slack_error, min_arrival_time_error), min_slew_error) << endl;
+//        cout << "max " << max(max(max_slack_error, max_arrival_time_error), max_slew_error) << endl;
+//        cout << "avg " << average_error << endl;
+
+        cout << "worst pin rise " << worst_pin_timing_point_rise.name() << endl;
+        cout << "worst pin fall " << worst_pin_timing_point_fall.name() << endl;
 
 
         return true;

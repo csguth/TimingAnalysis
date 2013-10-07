@@ -136,6 +136,7 @@ namespace Timing_Analysis
         double pin_capacitance(const int timing_point_index) const;
         double pin_load(const int timing_point_index) const;
         int option(const int gate_number);
+        size_t number_of_options(const int gate_index);
 
 
         int first_PO_index() const { return _first_PO_index; }

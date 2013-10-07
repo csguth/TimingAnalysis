@@ -136,6 +136,10 @@ const Transitions<double> RCTreeWireDelayModel::simulate(const LibertyCellInfo &
 
 	}
     while (error.getRise() > Traits::STD_THRESHOLD/100 || error.getFall() > Traits::STD_THRESHOLD/100);
+
+//    updateSlews(cellInfo, input, slew, is_input_driver);
+
+
     for(int j = 0; j < _delays[input].size(); j++)
     {
         _max_delays[j] = max(_max_delays[j], _delays[input][j]);

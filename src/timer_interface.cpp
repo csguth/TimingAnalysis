@@ -27,7 +27,7 @@ TimerInterface::Status TimerInterface::getTimerStatus(const std::string &contest
 
 // Write sizes and run timing analysis in blocking mode
 TimerInterface::Status TimerInterface::runTimingAnalysisBlocking(const std::vector<std::pair<std::string, std::string> > &sizes, const std::string &contest_root, const std::string &benchmark, const unsigned pollingTime) {
-cout << "runTimingAnalysisBlocking: " << contest_root << "/" << benchmark << endl;
+//cout << "runTimingAnalysisBlocking: " << contest_root << "/" << benchmark << endl;
 	if (!writeSizesForTimer(sizes, contest_root, benchmark)) {
     std::cout << "-E- runTimingAnalysisBlocking: problem writing sizes" << std::endl;
     return TIMER_INTERFACEERROR;

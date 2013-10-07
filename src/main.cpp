@@ -9,6 +9,7 @@ using std::endl;
 #include "include/spef_net.h"
 
 #include "include/configuration.h"
+#include "include/timer.h"
 
 using std::make_pair;
 
@@ -31,10 +32,10 @@ struct ISPDContestFiles
 		liberty = contestRoot + "/lib/contest.lib";
 
 
-		cout << "Verilog file: " << verilog << endl;
-		cout << "Spef File: " << spef << endl;
-		cout << "SDC File: " << designConstraints << endl;
-		cout << "Liberty File: " << liberty << endl;
+//		cout << "Verilog file: " << verilog << endl;
+//		cout << "Spef File: " << spef << endl;
+//		cout << "SDC File: " << designConstraints << endl;
+//		cout << "Liberty File: " << liberty << endl;
 	};
 };
 
@@ -50,6 +51,8 @@ int main(int argc, char const *argv[])
     Traits::ispd_contest_root = argv[1];
     Traits::ispd_contest_benchmark = argv[2];
 
+
+    cout << "#### " << Traits::ispd_contest_benchmark << endl;
 	VerilogParser vp;
 	LibertyParser lp;
 	SpefParser sp;
@@ -66,28 +69,14 @@ int main(int argc, char const *argv[])
 
     Timing_Analysis::Timing_Analysis ta(netlist, &library, &parasitics, &constraints);
 
-
-
-//    for(size_t i = 0; i < ta.timing_points_size(); i++)
-//	{
-//        const Timing_Analysis::Timing_Point & tp = ta.timing_point(i);
-//		// cout << "tp " << tp.getName() << " gate number = " << tp.getGateNumber() << endl;
-//		// cout << "setting gate " << tp.getGateNumber() << " option to 0"<< endl;
-//        ta.option(tp.gate_number(), 0);
-//	}
-
-
+    Timer timer;
+    timer.start();
     ta.full_timing_analysis();
-//    ta.report_timing();
-//    ta.print_info();
-
-//    ta.call_prime_time();
+    timer.end();
 	
     ta.validate_with_prime_time();
 
-    ta.print_circuit_info();
-
-	cout << "-- DONE!" << endl;
-
+    cout << "runtime " << timer.value(Timer::MICRO) << endl;
+    cout << endl << endl;
 	return 0;
 }

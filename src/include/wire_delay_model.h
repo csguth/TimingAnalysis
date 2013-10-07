@@ -30,6 +30,7 @@ public:
     virtual Transitions<double> root_slew(int arc_number) = 0;
     virtual void clear() = 0;
 
+
     double lumped_capacitance() const;
 };
 
@@ -48,6 +49,7 @@ public:
     Transitions<double> root_delay(int arc_number);
     Transitions<double> root_slew(int arc_number);
     void clear();
+
 
 };
 

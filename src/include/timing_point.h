@@ -46,7 +46,7 @@ namespace Timing_Analysis {
         const Transitions<double> slew() const { return _slew; }
         const Transitions<double> arrival_time() const { return _arrival_time; }
         const Transitions<double> required_time() const {return _slack + _arrival_time;}
-        Timing_Net & net() { return *_net; }
+        Timing_Net & net() const { return *_net; }
         Timing_Arc & arc () const { return *_arc; }
 
 

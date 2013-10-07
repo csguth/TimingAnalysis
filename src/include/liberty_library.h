@@ -120,6 +120,7 @@ public:
   const LibertyCellInfo & getCellInfo(const string & footPrint, const int & i) const;
   const LibertyCellInfo & getCellInfo(const string & cellName) const;
   const LibertyCellInfo & getCellInfo(const int & footPrintIndex, const int & optionIndex) const;
+  size_t number_of_options(const int footprint_index) const;
 
   const pair<int, int> getCellIndex(const string &cellName) const;
   double getMaxTransition() const ;

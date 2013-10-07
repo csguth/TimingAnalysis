@@ -57,7 +57,12 @@ const LibertyCellInfo & LibertyLibrary::getCellInfo(const string & cellName) con
 
 const LibertyCellInfo & LibertyLibrary::getCellInfo(const int & footPrintIndex, const int & optionIndex) const
 {
-	return library.at(footPrintIndex).at(optionIndex);
+    return library.at(footPrintIndex).at(optionIndex);
+}
+
+size_t LibertyLibrary::number_of_options(const int footprint_index) const
+{
+    return library.at(footprint_index).size();
 }
 
 
