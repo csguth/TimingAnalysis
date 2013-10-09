@@ -9,7 +9,7 @@ namespace Timing_Analysis
 {
 
     class Timing_Point;
-	/** @brief Describes a timing arc of the timing graph model. Vertex which connects one timing point to another timing point only
+	/** @brief Describes a Timing_Arc of the timing graph model. Vertex which connects one Timing_Point to another timing point only
 	*
 	*/
     class Timing_Arc : public Single_Fanout_Edge<Timing_Point>

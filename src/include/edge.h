@@ -59,23 +59,23 @@ namespace Timing_Analysis {
 
     public:
 
-	/** @brief Returns _from*******
+	/** @brief Returns origin vertex
 	*
 	* @return T *
 	*/
-        T * from() const
-        {
-            return _from;
-        }
+    T * from() const
+    {
+    	return _from;
+    }
 
 	/** @brief Returns fan out
 	*
 	* @return size_t
 	*/
-        size_t fanouts_size() const
-        {
-            return _to.size();
-        }
+    size_t fanouts_size() const
+    {
+    	return _to.size();
+    }
 
     };
 }

@@ -3,7 +3,7 @@
 }
 
 
-Describes a timing point of the timing graph model.  
+Describes a \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} of the timing graph model.  
 
 
 
@@ -38,8 +38,14 @@ const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{classTi
 \begin{DoxyCompactList}\small\item\em Returns reference to \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} net. \end{DoxyCompactList}\item 
 \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} \& \hyperlink{classTiming__Analysis_1_1Timing__Point_adfac3529231393d429f746d9e1f1bfb6}{arc} () const 
 \begin{DoxyCompactList}\small\item\em Returns reference to \hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} arc. \end{DoxyCompactList}\item 
-void \hyperlink{classTiming__Analysis_1_1Timing__Point_ab4f9a99d6dad95ec709f165f57478e66}{ceff} (\hyperlink{classTransitions}{Transitions}$<$ double $>$ \&ceff)
+\hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} \& \hyperlink{classTiming__Analysis_1_1Timing__Point_aa63fa25bd56985d8deca58355c48867b}{net} () const 
 \begin{DoxyCompactList}\small\item\em Sets the effective capacitance of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. \end{DoxyCompactList}\item 
+\hypertarget{classTiming__Analysis_1_1Timing__Point_adfac3529231393d429f746d9e1f1bfb6}{\hyperlink{classTiming__Analysis_1_1Timing__Arc}{Timing\-\_\-\-Arc} \& {\bfseries arc} () const }\label{classTiming__Analysis_1_1Timing__Point_adfac3529231393d429f746d9e1f1bfb6}
+
+\item 
+\hypertarget{classTiming__Analysis_1_1Timing__Point_ab4f9a99d6dad95ec709f165f57478e66}{void {\bfseries ceff} (\hyperlink{classTransitions}{Transitions}$<$ double $>$ \&ceff)}\label{classTiming__Analysis_1_1Timing__Point_ab4f9a99d6dad95ec709f165f57478e66}
+
+\item 
 void \hyperlink{classTiming__Analysis_1_1Timing__Point_a18a4b15b4612ea98ebba0f1f1e25db18}{slack} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \&slack)
 \begin{DoxyCompactList}\small\item\em Sets the slack time of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. \end{DoxyCompactList}\item 
 void \hyperlink{classTiming__Analysis_1_1Timing__Point_ac8040357b9d6e8bc62d2958b4ffb4da4}{slew} (const \hyperlink{classTransitions}{Transitions}$<$ double $>$ \&slew)
@@ -77,7 +83,7 @@ ostream \& \hyperlink{classTiming__Analysis_1_1Timing__Point_a9ff76c936a6e34e8de
 
 
 \subsection{Detailed Description}
-Describes a timing point of the timing graph model. 
+Describes a \hyperlink{classTiming__Analysis_1_1Timing__Point}{Timing\-\_\-\-Point} of the timing graph model. 
 
 
 
@@ -172,22 +178,6 @@ Sets the arrival time of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Ti
 
 \begin{DoxyParams}{Parameters}
 {\em \hyperlink{classTransitions}{Transitions$<$double$>$}} & \& arrival\-\_\-time \\
-\hline
-\end{DoxyParams}
-\hypertarget{classTiming__Analysis_1_1Timing__Point_ab4f9a99d6dad95ec709f165f57478e66}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!ceff@{ceff}}
-\index{ceff@{ceff}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
-\subsubsection[{ceff}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::ceff (
-\begin{DoxyParamCaption}
-\item[{{\bf Transitions}$<$ double $>$ \&}]{ceff}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_ab4f9a99d6dad95ec709f165f57478e66}
-
-
-Sets the effective capacitance of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em \hyperlink{classTransitions}{Transitions$<$double$>$}} & \& ceff \\
 \hline
 \end{DoxyParams}
 \hypertarget{classTiming__Analysis_1_1Timing__Point_a737bfc39dc3271c9b605d1d16ba8816c}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!clear\-\_\-timing\-\_\-info@{clear\-\_\-timing\-\_\-info}}
@@ -344,6 +334,22 @@ Returns reference to \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_
 \begin{DoxyReturn}{Returns}
 \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net} \& 
 \end{DoxyReturn}
+\hypertarget{classTiming__Analysis_1_1Timing__Point_aa63fa25bd56985d8deca58355c48867b}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!net@{net}}
+\index{net@{net}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
+\subsubsection[{net}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Timing\-\_\-\-Net}\& Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::net (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classTiming__Analysis_1_1Timing__Point_aa63fa25bd56985d8deca58355c48867b}
+
+
+Sets the effective capacitance of the \hyperlink{classTiming__Analysis_1_1Timing__Net}{Timing\-\_\-\-Net}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \hyperlink{classTransitions}{Transitions$<$double$>$}} & \& ceff \\
+\hline
+\end{DoxyParams}
 \hypertarget{classTiming__Analysis_1_1Timing__Point_ab17571917e751e2d9bdd8dc11404bb66}{\index{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}!net@{net}}
 \index{net@{net}!Timing_Analysis::Timing_Point@{Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point}}
 \subsubsection[{net}]{\setlength{\rightskip}{0pt plus 5cm}void Timing\-\_\-\-Analysis\-::\-Timing\-\_\-\-Point\-::net (

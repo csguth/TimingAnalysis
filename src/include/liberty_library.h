@@ -42,7 +42,7 @@ struct LibertyLookupTable {
   vector<vector<double> > tableVals ;
 
 };
-/** @brief Redefinition of <<s operator. Inserts formatted description of *****not implemented
+/** @brief Redefinition of <<s operator. Included for completeness, not implemented
 *
 *@param ostream& os, LibertyLookupTable& lut
 */
@@ -68,7 +68,7 @@ struct LibertyTimingInfo {
   LibertyLookupTable riseTransition ;
 
 } ;
-/** @brief Redefinition of << operator. Inserts formatted description***** not implemented
+/** @brief Redefinition of << operator. Included for completeness, not implemented
  *
  *  @param ostream& os, LibertyTimingInfo& timing
  */
@@ -93,7 +93,7 @@ struct LibertyPinInfo {
   
 };
 
-/** @brief Redefinition of << operator. Inserts formatted description***** not implemented
+/** @brief Redefinition of << operator. Included for completeness, not implemented
  *
  *  @param ostream& os, LibertyPinInfo& pin
  */
@@ -121,7 +121,7 @@ struct LibertyCellInfo {
   
 } ;
 
-/** @brief Redefinition of << operator. Inserts formatted description***** not implemented
+/** @brief Redefinition of << operator. Included for completeness, not implemented
  *
  *  @param ostream& os, LibertyCellInfo& cell
  */
@@ -180,6 +180,7 @@ public:
  *  @return const LibertyCellInfo &
  */
   const LibertyCellInfo & getCellInfo(const int & footPrintIndex, const int & optionIndex) const;
+  size_t number_of_options(const int footprint_index) const;
 
 /** @brief Returns pair<footprint index, option index>
  *
@@ -206,7 +207,7 @@ class LibertyLookupTableInterpolator
 {
 protected:
     static const int DEFAULT_DECIMAL_PLACES;
-/** @brief Truncates Transitions<double> to Transitions<double> ****************** does nothing...
+/** @brief Truncates Transitions<double> to Transitions<double> . Not implemented
  *
  *  @param Transitions<double> & transitions, const int decimal_places
  *

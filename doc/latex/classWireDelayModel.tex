@@ -3,7 +3,7 @@
 }
 
 
-Describes parasitc elements present in wires in a circuit which cause significant delay and are take into account in static timing analysis.  
+Describes parasitc elements present in wires in a circuit which cause significant delay and are taken into account in static timing analysis.  
 
 
 
@@ -19,7 +19,7 @@ Inheritance diagram for Wire\-Delay\-Model\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classWireDelayModel_a0fd2defb581f6d8bcd67e5c935387d95}{Wire\-Delay\-Model} (const double \&\hyperlink{classWireDelayModel_a05f509843dfa07e17c9b6cc16ba9aaa0}{lumped\-\_\-capacitance})
+\hyperlink{classWireDelayModel_a0fd2defb581f6d8bcd67e5c935387d95}{Wire\-Delay\-Model} (const double \&lumped\-\_\-capacitance)
 \begin{DoxyCompactList}\small\item\em \hyperlink{classWireDelayModel}{Wire\-Delay\-Model} default constructor. \end{DoxyCompactList}\item 
 \hypertarget{classWireDelayModel_ad9103d46909b96ad4015c818dcd2988c}{virtual \hyperlink{classWireDelayModel_ad9103d46909b96ad4015c818dcd2988c}{$\sim$\-Wire\-Delay\-Model} ()}\label{classWireDelayModel_ad9103d46909b96ad4015c818dcd2988c}
 
@@ -38,8 +38,9 @@ virtual \hyperlink{classTransitions}{Transitions}$<$ double $>$ \hyperlink{class
 \begin{DoxyCompactList}\small\item\em Virtual. Must be implemented by child class. Returns \hyperlink{classTransitions}{Transitions$<$double$>$} representing delay of the wire. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classWireDelayModel_a74869a3a66deb53507e8bc6f16eff45c}{clear} ()=0
 \begin{DoxyCompactList}\small\item\em Virtual. Must be implemented by child class. Clears attributes. \end{DoxyCompactList}\item 
-double \hyperlink{classWireDelayModel_a05f509843dfa07e17c9b6cc16ba9aaa0}{lumped\-\_\-capacitance} () const 
-\begin{DoxyCompactList}\small\item\em Returns lumped capacitance of the wire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hypertarget{classWireDelayModel_ab9daf37e347fb28b4b40eb8f6c5674a2}{$<$$<$$<$$<$$<$$<$$<$ H\-E\-A\-D=======$>$$>$$>$$>$$>$$>$ double {\bfseries lumped\-\_\-capacitance} () const }\label{classWireDelayModel_ab9daf37e347fb28b4b40eb8f6c5674a2}
+
+\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -56,7 +57,7 @@ double \hyperlink{classWireDelayModel_a05f509843dfa07e17c9b6cc16ba9aaa0}{lumped\
 
 
 \subsection{Detailed Description}
-Describes parasitc elements present in wires in a circuit which cause significant delay and are take into account in static timing analysis. 
+Describes parasitc elements present in wires in a circuit which cause significant delay and are taken into account in static timing analysis. 
 
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classWireDelayModel_a0fd2defb581f6d8bcd67e5c935387d95}{\index{Wire\-Delay\-Model@{Wire\-Delay\-Model}!Wire\-Delay\-Model@{Wire\-Delay\-Model}}
@@ -119,20 +120,6 @@ Returns \hyperlink{classTransitions}{Transitions} with rise and fall delay time 
 
 Implemented in \hyperlink{classRCTreeWireDelayModel_a7c769d54e8a520db1c5d4537d7e8b608}{R\-C\-Tree\-Wire\-Delay\-Model}, and \hyperlink{classLumpedCapacitanceWireDelayModel_a0266cb676908d95bdfcb64d1137898b0}{Lumped\-Capacitance\-Wire\-Delay\-Model}.
 
-\hypertarget{classWireDelayModel_a05f509843dfa07e17c9b6cc16ba9aaa0}{\index{Wire\-Delay\-Model@{Wire\-Delay\-Model}!lumped\-\_\-capacitance@{lumped\-\_\-capacitance}}
-\index{lumped\-\_\-capacitance@{lumped\-\_\-capacitance}!WireDelayModel@{Wire\-Delay\-Model}}
-\subsubsection[{lumped\-\_\-capacitance}]{\setlength{\rightskip}{0pt plus 5cm}double Wire\-Delay\-Model\-::lumped\-\_\-capacitance (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}}\label{classWireDelayModel_a05f509843dfa07e17c9b6cc16ba9aaa0}
-
-
-Returns lumped capacitance of the wire. 
-
-\begin{DoxyReturn}{Returns}
-double 
-\end{DoxyReturn}
 \hypertarget{classWireDelayModel_a4f4ab93810af8ad90fd9fca0b06de141}{\index{Wire\-Delay\-Model@{Wire\-Delay\-Model}!root\-\_\-delay@{root\-\_\-delay}}
 \index{root\-\_\-delay@{root\-\_\-delay}!WireDelayModel@{Wire\-Delay\-Model}}
 \subsubsection[{root\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Transitions}$<$double$>$ Wire\-Delay\-Model\-::root\-\_\-delay (

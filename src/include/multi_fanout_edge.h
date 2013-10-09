@@ -7,7 +7,7 @@ namespace Timing_Analysis
 {
 
     template <class T>
-	/** @brief Inherits from Edge. An multi fanout edge is a group of edges which connect a vertex to more than one vertexes
+	/** @brief Inherits from Edge. An multi fanout edge is a group of edges which connects a vertex to more than one vertexes
 	*
 	*/
     class Multi_Fanout_Edge : public Edge<T>

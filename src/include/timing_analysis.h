@@ -65,7 +65,7 @@ namespace Timing_Analysis
 
     class Timing_Net;
     class Timing_Arc;
-	/** @brief Class which perform the timing analysis
+	/** @brief Class which performs the timing analysis
 	*/
     class Timing_Analysis
 	{
@@ -258,6 +258,7 @@ namespace Timing_Analysis
 		* @return int
 		*/
         int option(const int gate_number);
+        size_t number_of_options(const int gate_index);
 
 		/** @brief Returns first primary output index
 		*

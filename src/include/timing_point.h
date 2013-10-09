@@ -14,7 +14,7 @@ namespace Timing_Analysis {
 
     class Timing_Arc;
     class Timing_Net;
-	/** @brief Describes a timing point of the timing graph model
+	/** @brief Describes a Timing_Point of the timing graph model
 	*
 	*/
     class Timing_Point
@@ -84,6 +84,7 @@ namespace Timing_Analysis {
 		* @return const Transitions<double>
 		*/
         const Transitions<double> required_time() const {return _slack + _arrival_time;}
+
 		/** @brief Returns reference to Timing_Net net
 		*		
 		* @return Timing_Net &
@@ -99,6 +100,10 @@ namespace Timing_Analysis {
 		*
 		* @param Transitions<double> & ceff
 		*/
+
+        Timing_Net & net() const { return *_net; }
+        Timing_Arc & arc () const { return *_arc; }
+
         void ceff(Transitions<double> & ceff) { _ceff = ceff; }
 		/** @brief Sets the slack time of the Timing_Net
 		*

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['timer',['Timer',['../classTimer.html',1,'']]],
   ['timerinterface',['TimerInterface',['../classTimerInterface.html',1,'']]],
   ['timing_5fanalysis',['Timing_Analysis',['../classTiming__Analysis_1_1Timing__Analysis.html',1,'Timing_Analysis']]],
   ['timing_5farc',['Timing_Arc',['../classTiming__Analysis_1_1Timing__Arc.html',1,'Timing_Analysis']]],

@@ -8,7 +8,7 @@
 namespace Timing_Analysis {
 
     class Timing_Point;
-	/** @brief Describes a timing net of the timing graph model. Vertex which connects one timing point to multiple timing points
+	/** @brief Describes a Timing_Net of the timing graph model. Vertex which connects one Timing_Point to multiple Timing_Point's
 	*
 	*/
     class Timing_Net : public Multi_Fanout_Edge<Timing_Point>

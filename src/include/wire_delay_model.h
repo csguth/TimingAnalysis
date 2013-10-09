@@ -11,7 +11,7 @@ using std::endl;
 
 #include <cassert>
 
-/** @brief Describes parasitc elements present in wires in a circuit which cause significant delay and are take into account in static timing analysis
+/** @brief Describes parasitc elements present in wires in a circuit which cause significant delay and are taken into account in static timing analysis
 */
 class WireDelayModel
 {
@@ -78,10 +78,14 @@ public:
 	*/
     virtual void clear() = 0;
 
+<<<<<<< HEAD
 	/** @brief Returns lumped capacitance of the wire
 	*
 	* @return double
 	*/
+=======
+
+>>>>>>> 446b97bafca002152e56b68479259d4268f35f0a
     double lumped_capacitance() const;
 };
 
@@ -145,6 +149,7 @@ public:
 	* @return void
 	*/
     void clear();
+
 
 };
 

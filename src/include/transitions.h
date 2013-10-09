@@ -49,7 +49,7 @@ class Transitions {
 	MAKE_SELF_OPERATOR(-=);
 	MAKE_SELF_OPERATOR(*=);
 	MAKE_SELF_OPERATOR(/=);
-	/** @brief Redefinition of (-) operator. Inserts formatted description of Transitions<T> containing its sign of rise and fall time values with inverted signs
+	/** @brief Redefinition of (-) operator. Returns Transitions<T> containing its sign of rise and fall time values with inverted signs
 	 *
 	 *@param const Transitions<T> &v0
 	 *

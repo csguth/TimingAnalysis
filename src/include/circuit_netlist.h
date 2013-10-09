@@ -30,7 +30,7 @@ using std::queue;
 class Circuit_Netlist
 {
 public:
-	/** @brief Struct which represents a logic gate
+	/** @brief Struct which represents a Logic_Gate
 	*
 	*/
     struct Logic_Gate {
@@ -50,7 +50,7 @@ public:
 			name(name), cellType(cellType), inNets(inputs), fanoutNetIndex(fanoutNetIndex), inputDriver(inputDriver), primary_output(primary_output)
 			{};
 	};
-	/** @brief Struct which represents a Sink. A sink is a vertex which has input edges, but no output edges(outdegree zero). 
+	/** @brief Struct which represents a Sink. A sink is a vertex which has input Edge's, but no output Edge's (outdegree zero). 
 	*
 	*/
 	struct Sink {
@@ -179,7 +179,7 @@ public:
 	*/
     virtual ~Circuit_Netlist(){}
 
-	/** @brief ********************************
+	/** @brief Adds a cell instance
 	*
 	* @param const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential(false default), const bool isInputDriver(false default), const bool *primary_output(false default)
 	*
@@ -187,7 +187,7 @@ public:
 	*/
 	void addCellInst(const string name, const string cellType, vector<pair<string, string> > inputPinPairs, const bool isSequential = false, const bool isInputDriver = false, const bool primary_output = false);
 
-	/** @brief Updates topology**********************
+	/** @brief Updates netlist topology
 	*
 	* @return void
 	*/
@@ -197,21 +197,21 @@ public:
 	* @return size_t
 	*/
     size_t getNetsSize() const { return nets.size(); }
-	/** @brief Returns Net at index i
+	/** @brief Returns Net & at index i
 	*
 	*@param const size_t & i
 	*
 	* @return Net &
 	*/
     Net & getNet(const size_t & i) { return nets[i]; }
-	/** @brief Returns Logic_Gate at index i****************************************
+	/** @brief Returns Logic_Gate & at index i
 	*
 	*@param const size_t & i
 	*
 	* @return const Logic_Gate &
 	*/
     const Logic_Gate & getGateT(const size_t & i) const { return gates.at(topology.at(i)); }
-	/** @brief Returns Topologic index at index i********************
+	/** @brief Returns Topologic index of element at index i
 	*
 	*@param const size_t & i
 	*
@@ -224,28 +224,28 @@ public:
 	* @return size_t
 	*/
     size_t getGatesSize() const { return gates.size(); }
-	/** @brief Returns Logic_Gate at index i
+	/** @brief Returns Logic_Gate & at index i
 	*
 	*@param const size_t & i
 	*
 	* @return Logic_Gate &
 	*/
     Logic_Gate & getGate(const size_t & i) { return gates[i]; }
-	/** @brief Returns Net at index i***************************
+	/** @brief Returns Net & at index i
 	*
 	*@param const size_t & i
 	*
 	* @return const Net &
 	*/
     const Net & getNetT(const size_t & i) const { return nets.at(netTopology.at(i)); }
-	/** @brief Returns index of NetTopology****************************
+	/** @brief Returns topologic index of Net at index i
 	*
 	*@param const size_t & i
 	*
 	* @return int
 	*/
     int get_net_topologic_index(const size_t & i) const { return inverseNetTopology.at(i); }
-	/** @brief Returns ***************************
+	/** @brief Returns list of pairs containing Logic_Gate topologic number and its name
 	*
 	*
 	* @return const vector<pair<int, string> >
