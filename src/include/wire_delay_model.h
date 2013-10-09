@@ -78,14 +78,10 @@ public:
 	*/
     virtual void clear() = 0;
 
-<<<<<<< HEAD
 	/** @brief Returns lumped capacitance of the wire
 	*
 	* @return double
 	*/
-=======
-
->>>>>>> 446b97bafca002152e56b68479259d4268f35f0a
     double lumped_capacitance() const;
 };
 
@@ -264,7 +260,6 @@ public:
 	* @return void
 	*/
 	void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance);
-
 
 	/** @brief Returns Transitions<double> representing delay time value at arc_number
 	*
