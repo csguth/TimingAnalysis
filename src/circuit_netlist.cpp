@@ -55,17 +55,24 @@ void Circuit_Netlist::updateTopology()
         topology.push_back(current_index);
         inverseTopology[current_index] = topology.size() - 1;
 
+
+//        cout << gate.name << " " << (gate.sequential?"SEQUENTIAL":"") << endl;
+
+
         // push fanout gates to the process queue
         for(size_t i = 0; i < fanout_net.sinks.size(); i++)
 		{
             const size_t fanoutIndex = fanout_net.sinks.at(i).gate;
             const Logic_Gate & fanout = gates[fanoutIndex];
+
             if(!inserted_gate.at(fanoutIndex))
 			{
                 if(++num_of_visited_inputs[fanoutIndex] == fanout.inNets.size())
 				{
-                    if(fanout.primary_output)
+                    if(fanout.primary_output || fanout.sequential && !fanout.inputDriver)
+                    {
                         primary_output_queue.push(fanoutIndex);
+                    }
                     else
                         gates_queue.push(fanoutIndex);
                     inserted_gate[fanoutIndex] = true;
@@ -79,6 +86,8 @@ void Circuit_Netlist::updateTopology()
         const int PO_index = primary_output_queue.front();
         primary_output_queue.pop();
         Logic_Gate & gate = gates.at(PO_index);
+
+//        cout << gate.name << " " << (gate.sequential?"SEQUENTIAL":"") << endl;
 
         // Insert Input Nets
         for(size_t i = 0; i < gate.inNets.size(); i++)
