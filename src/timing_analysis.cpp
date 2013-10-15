@@ -419,15 +419,9 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
                 output_pin.clear_timing_info();
                 output_net.wire_delay_model()->clear();
 			}
-<<<<<<< HEAD
 
             const Transitions<double> ceff_by_this_timing_arc = output_net.wire_delay_model()->simulate(cell_info, timing_arc.arc_number(), timing_point.slew(), timing_point.is_PI_input());
-=======
-		
-//            const Transitions<double> ceff_by_this_timing_arc = output_net.wire_delay_model()->simulate(cell_info, timing_arc.arc_number(), timing_point.slew(), timing_point.is_PI_input());
 
-            const Transitions<double> ceff_by_this_timing_arc = (timing_point.name() == "inp1:a" ? Transitions<double>(2.32, 2.32) : (timing_point.name() == "f1:d" ? Transitions<double>(3.578, 3.578) : Transitions<double>(0, 0)));
->>>>>>> 8007acb7105fc158c20fd4857260d1139522427a
 
             if(_max_ceff.find(output_pin.name()) == _max_ceff.end())
                 _max_ceff[output_pin.name()] = ceff_by_this_timing_arc;
@@ -473,9 +467,7 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 		}
         else if(timing_point.is_output_pin() || timing_point.is_PI())
 		{
-<<<<<<< HEAD
             timing_point.ceff(_max_ceff.at(timing_point.name()));
-//            cout << timing_point.name() << ": " << timing_point.ceff() << endl;
             Timing_Net & output_net = timing_point.net();
 
             for(size_t i = 0; i < output_net.fanouts_size(); i++)
@@ -484,22 +476,13 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 
                 fanout_timing_point.arrival_time(timing_point.arrival_time() + output_net.wire_delay_model()->delay_at_fanout_node(fanout_timing_point.name()) * 0.69f);
                 fanout_timing_point.slew(timing_point.slew() + output_net.wire_delay_model()->slew_at_fanout_node(fanout_timing_point.name()));
-=======
-//            Timing_Net & output_net = timing_point.net();
 
-//            for(size_t i = 0; i < output_net.fanouts_size(); i++)
-//			{
-//                Timing_Point & fanout_timing_point = output_net.to(i);
-
-//                fanout_timing_point.arrival_time(timing_point.arrival_time() + output_net.wire_delay_model()->delay_at_fanout_node(fanout_timing_point.name()));
-//                fanout_timing_point.slew(timing_point.slew() + output_net.wire_delay_model()->slew_at_fanout_node(fanout_timing_point.name()));
->>>>>>> 8007acb7105fc158c20fd4857260d1139522427a
 
 //                assert(fanout_timing_point.arrival_time().getRise() >= timing_point.arrival_time().getRise());
 //                assert(fanout_timing_point.arrival_time().getFall() >= timing_point.arrival_time().getFall());
 //                assert(fanout_timing_point.slew().getRise() >= timing_point.slew().getRise());
 //                assert(fanout_timing_point.slew().getFall() >= timing_point.slew().getFall());
-//            }
+            }
 		}
         else if(timing_point.is_PO())
         {

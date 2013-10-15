@@ -75,8 +75,6 @@ int main(int argc, char const *argv[])
 	
 //    ta.validate_with_prime_time();
 
-<<<<<<< HEAD
-
 //    ta.print_effective_capacitances();
 
 //    pair<pair<int, int>, pair<Transitions<double>, Transitions<double> > > first_error = ta.check_ceffs(0.01f);
@@ -84,9 +82,7 @@ int main(int argc, char const *argv[])
 //        cout << "ceffs NOT OK with primetime!\nfirst error = " << ta.timing_point(first_error.first.first).name() << "\n" << "tool ceff " << first_error.second.first << " pt ceff " << first_error.second.second << " error " << abs(first_error.second.first-first_error.second.second)/max(abs(first_error.second.first), abs(first_error.second.second)) << endl;
 //    else
 //        cout << "ceffs OK with primetime!" << endl;
-=======
-    ta.print_info();
->>>>>>> 8007acb7105fc158c20fd4857260d1139522427a
+
 
 //    cout << "runtime " << timer.value(Timer::MICRO) << endl;
 //    cout << endl << endl;
