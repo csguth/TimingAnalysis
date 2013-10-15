@@ -74,7 +74,9 @@ int main(int argc, char const *argv[])
     ta.full_timing_analysis();
     timer.end();
 	
-    ta.validate_with_prime_time();
+//    ta.validate_with_prime_time();
+
+    ta.print_info();
 
     cout << "runtime " << timer.value(Timer::MICRO) << endl;
     cout << endl << endl;
