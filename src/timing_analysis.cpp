@@ -434,8 +434,6 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 
             output_pin.ceff(_max_ceff[output_pin.name()]);
 
-            output_pin.ceff(_max_ceff[output_pin.name()]);
-
             const Transitions<double> current_arc_delay_at_output_pin = calculate_timing_arc_delay(timing_arc, timing_point.slew(), ceff_by_this_timing_arc);
 //            const Transitions<double> current_arc_slew_at_output_pin = output_net.wire_delay_model()->root_slew(timing_arc.arc_number());
             const Transitions<double> current_arc_slew_at_output_pin =  (0.8/0.6)*_interpolator->interpolate(cell_info.timingArcs.at(0).riseTransition, cell_info.timingArcs.at(0).fallTransition, ceff_by_this_timing_arc*(0.8/0.6), timing_point.slew()*(0.8/0.6), (cell_info.isSequential ? NON_UNATE : NEGATIVE_UNATE));
