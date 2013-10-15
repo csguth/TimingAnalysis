@@ -2,7 +2,7 @@
 
 namespace Timing_Analysis {
 
-    Timing_Point::Timing_Point(std::string name, const size_t gate_number, Timing_Point_Type type): _name(name), _net(0), _arc(0), _slack(0.0f, 0.0f), _slew(0.0f, 0.0f), _arrival_time(0.0f, 0.0f), _gate_number(gate_number), _type(type)
+Timing_Point::Timing_Point(std::string name, const size_t gate_number, Timing_Point_Type type): _name(name), _net(0), _arc(0), _slack(0.0f, 0.0f), _slew(0.0f, 0.0f), _arrival_time(0.0f, 0.0f), _gate_number(gate_number), _type(type), _logic_level(0)
     {
         if(type == REGISTER_INPUT)
             _slew = Transitions<double>(80.0f, 80.0f);

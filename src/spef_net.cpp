@@ -30,6 +30,27 @@ void SpefNetISPD2013::addResistor(const string & node1, const string & node2, co
         nodes.at(node2Index).capacitance = nodes.at(node1Index).capacitance / 2;
         nodes.at(node1Index).capacitance = nodes.at(node1Index).capacitance / 2;
     }
+
+//    if(nodes.at(node1Index).capacitance == 0.0f)
+//    {
+//        nodes.at(node1Index).capacitance = nodes.at(node2Index).capacitance * 2;
+////        nodes.at(node2Index).capacitance = nodes.at(node2Index).capacitance / 2;
+//        this->netLumpedCap += nodes.at(node1Index).capacitance;
+//    } else if(nodes.at(node2Index).capacitance == 0.0f)
+//    {
+//        nodes.at(node2Index).capacitance = nodes.at(node1Index).capacitance * 2;
+//        this->netLumpedCap += nodes.at(node2Index).capacitance;
+//    }
+
+//    if(nodes.at(node1Index).capacitance == 0.0f)
+//    {
+//        nodes.at(node1Index).capacitance = nodes.at(node2Index).capacitance;
+//        this->netLumpedCap += nodes.at(node1Index).capacitance;
+//    } else if(nodes.at(node2Index).capacitance == 0.0f)
+//    {
+//        nodes.at(node2Index).capacitance = nodes.at(node1Index).capacitance;
+//        this->netLumpedCap += nodes.at(node1Index).capacitance;
+//    }
 	nodes.at(node1Index).resistors.push_back(newResistorIndex);
 	nodes.at(node2Index).resistors.push_back(newResistorIndex);
 }

@@ -28,6 +28,7 @@ namespace Timing_Analysis {
         Timing_Point_Type _type;
 
         Transitions<double> _ceff;
+        int _logic_level;
 
 
 
@@ -48,7 +49,7 @@ namespace Timing_Analysis {
         const Transitions<double> required_time() const {return _slack + _arrival_time;}
         Timing_Net & net() const { return *_net; }
         Timing_Arc & arc () const { return *_arc; }
-
+        int logic_level() const { return _logic_level; }
 
         void ceff(Transitions<double> & ceff) { _ceff = ceff; }
         void slack(const Transitions<double> & slack ) { _slack = slack; }
@@ -56,6 +57,9 @@ namespace Timing_Analysis {
         void arrival_time(const Transitions<double> & arrival_time ) { _arrival_time = arrival_time; }
         void net(Timing_Net * net) { _net = net; }
         void arc(Timing_Arc * arc) { _arc = arc; }
+        void logic_level(int level) { _logic_level = level; }
+
+
         // TIMING ANALYSIS
         const Transitions<double> update_slack(const Transitions<double> required_time);
         void clear_timing_info();

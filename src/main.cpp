@@ -36,7 +36,7 @@ struct ISPDContestFiles
 //		cout << "Spef File: " << spef << endl;
 //		cout << "SDC File: " << designConstraints << endl;
 //		cout << "Liberty File: " << liberty << endl;
-	};
+    }
 };
 
 int main(int argc, char const *argv[])
@@ -51,16 +51,13 @@ int main(int argc, char const *argv[])
     Traits::ispd_contest_root = argv[1];
     Traits::ispd_contest_benchmark = argv[2];
 
-
     cout << "#### " << Traits::ispd_contest_benchmark << endl;
 	VerilogParser vp;
 	LibertyParser lp;
 	SpefParser sp;
 	SDCParser dcp;
 
-	
 	ISPDContestFiles files(argv[1], argv[2]);
-	
 
 	const Circuit_Netlist netlist = vp.readFile(files.verilog);
 	const LibertyLibrary library = lp.readFile(files.liberty);
@@ -73,10 +70,21 @@ int main(int argc, char const *argv[])
     timer.start();
     ta.full_timing_analysis();
     timer.end();
-	
-    ta.validate_with_prime_time();
 
-    cout << "runtime " << timer.value(Timer::MICRO) << endl;
-    cout << endl << endl;
+//    ta.print_info();
+	
+//    ta.validate_with_prime_time();
+
+
+//    ta.print_effective_capacitances();
+
+//    pair<pair<int, int>, pair<Transitions<double>, Transitions<double> > > first_error = ta.check_ceffs(0.01f);
+//    if(first_error.first.second < numeric_limits<int>::max())
+//        cout << "ceffs NOT OK with primetime!\nfirst error = " << ta.timing_point(first_error.first.first).name() << "\n" << "tool ceff " << first_error.second.first << " pt ceff " << first_error.second.second << " error " << abs(first_error.second.first-first_error.second.second)/max(abs(first_error.second.first), abs(first_error.second.second)) << endl;
+//    else
+//        cout << "ceffs OK with primetime!" << endl;
+
+//    cout << "runtime " << timer.value(Timer::MICRO) << endl;
+//    cout << endl << endl;
 	return 0;
 }

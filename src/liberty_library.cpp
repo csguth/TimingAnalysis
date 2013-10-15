@@ -141,7 +141,7 @@ double LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTabl
 	t[1][0] = lut.tableVals[row2][column1];
 	t[1][1] = lut.tableVals[row2][column2];
 
-	return ((1 - wTransition) * (1 - wLoad) * t[0][0]) + (wTransition * (1 - wLoad) * t[0][1]) + ((1 - wTransition) * wLoad * t[1][0]) + (wTransition * wLoad * t[1][1]);
+    return ((1 - wTransition) * (1 - wLoad) * t[0][0]) + (wTransition * (1 - wLoad) * t[0][1]) + ((1 - wTransition) * wLoad * t[1][0]) + (wTransition * wLoad * t[1][1]);
  }
 
 

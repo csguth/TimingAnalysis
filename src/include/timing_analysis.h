@@ -149,6 +149,8 @@ namespace Timing_Analysis
         void print_info();
         void print_circuit_info();
         void report_timing();
+        void print_effective_capacitances();
+        pair<pair<int, int>, pair<Transitions<double>, Transitions<double> > > check_ceffs(double precision);
 
 
 	};
