@@ -11,6 +11,8 @@ using std::endl;
 #include "include/configuration.h"
 #include "include/timer.h"
 
+#include <cstdio>
+
 using std::make_pair;
 
 struct PassingArgs {
@@ -70,8 +72,12 @@ int main(int argc, char const *argv[])
     ta.full_timing_analysis();
     timer.end();
 
+//    for(int i = 0; i < ta.timing_points_size(); i++)
+//    {
+//        cout << ta.timing_point(i) << endl;
+//    }
 
-    cout << Traits::ispd_contest_benchmark << "\t";
+//    printf("%s\t%f", Traits::ispd_contest_benchmark, ta.total_negative_slack().aggregate(), ta.total_violating_POs());
 
 //    ta.print_info();
 	

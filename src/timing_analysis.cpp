@@ -217,8 +217,8 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 		{
 			for(size_t j = 1; j < cellInfo.pins.size(); j++)
 			{	
-				if(cellInfo.pins.at(j).name == "ck")
-					continue;
+                if(cellInfo.pins.at(j).name == "d")
+                    continue;
 				timingPointName = gateName + ":" + cellInfo.pins.at(j).name;
                 if(is_sequential)
 					type = REGISTER_INPUT;

@@ -84,8 +84,11 @@ namespace Timing_Analysis
         Transitions<double> _max_transition;
         Transitions<double> _critical_path;
         Transitions<double> _total_negative_slack;
+        Transitions<double> _worst_slack;
         Transitions<double> _slew_violations;
         Transitions<double> _capacitance_violations;
+
+        unsigned _total_violating_POs;
 
         map<string, Transitions<double> > _max_ceff;
         map<string, Transitions<double> > _min_ceff;
@@ -137,6 +140,11 @@ namespace Timing_Analysis
         double pin_load(const int timing_point_index) const;
         int option(const int gate_number);
         size_t number_of_options(const int gate_index);
+
+        Transitions<double> total_negative_slack() const { return _total_negative_slack; }
+        Transitions<double> worst_slack() const { return _worst_slack; }
+        Transitions<double> target_delay() const { return _target_delay; }
+        unsigned total_violating_POs() const { return _total_violating_POs; }
 
 
         int first_PO_index() const { return _first_PO_index; }
