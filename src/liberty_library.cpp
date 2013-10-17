@@ -171,7 +171,8 @@ const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES = 2;
     case NON_UNATE:
         rise_delay = max(interpolate(rise_lut, load.getRise(), transition.getFall()), interpolate(rise_lut, load.getRise(), transition.getRise()));
         fall_delay = max(interpolate(fall_lut, load.getFall(), transition.getRise()), interpolate(fall_lut, load.getFall(), transition.getFall()));
-
+//        rise_delay = 16.0f + 0.0390625f * load.getRise();
+//        fall_delay = rise_delay;
         break;
     }
 

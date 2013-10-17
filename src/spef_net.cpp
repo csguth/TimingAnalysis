@@ -21,15 +21,15 @@ void SpefNetISPD2013::addResistor(const string & node1, const string & node2, co
 	const int node2Index = addNode(node2);
 	const int newResistorIndex = resistors.size();
 	resistors.push_back(Resistor(node1Index, node2Index, value));
-    if(nodes.at(node1Index).capacitance == 0.0f)
-    {
-        nodes.at(node1Index).capacitance = nodes.at(node2Index).capacitance / 2;
-        nodes.at(node2Index).capacitance = nodes.at(node2Index).capacitance / 2;
-    } else if(nodes.at(node2Index).capacitance == 0.0f)
-    {
-        nodes.at(node2Index).capacitance = nodes.at(node1Index).capacitance / 2;
-        nodes.at(node1Index).capacitance = nodes.at(node1Index).capacitance / 2;
-    }
+//    if(nodes.at(node1Index).capacitance == 0.0f)
+//    {
+//        nodes.at(node1Index).capacitance = nodes.at(node2Index).capacitance / 2;
+//        nodes.at(node2Index).capacitance = nodes.at(node2Index).capacitance / 2;
+//    } else if(nodes.at(node2Index).capacitance == 0.0f)
+//    {
+//        nodes.at(node2Index).capacitance = nodes.at(node1Index).capacitance / 2;
+//        nodes.at(node1Index).capacitance = nodes.at(node1Index).capacitance / 2;
+//    }
 
 //    if(nodes.at(node1Index).capacitance == 0.0f)
 //    {

@@ -94,7 +94,7 @@ protected:
 
     vector<Transitions<double> > _max_delays;
     vector<Transitions<double> > _max_slews;
-    map<std::string, int> _fanout_name_to_node_number;
+    map<std::string, int> _node_name_to_node_number;
 
 
     void IBM_update_downstream_capacitances();
@@ -107,8 +107,8 @@ protected:
 public:
     RC_Tree_Wire_Delay_Model(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false);
     virtual const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver) = 0;
-    virtual const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const = 0;
-    virtual const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const = 0;
+    const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const;
+    const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const;
 	void setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance);
 
 
@@ -118,7 +118,13 @@ public:
 };
 
 
+/*
 
+  DRIVER: CEFF
+  INTERCONNECT: ELMORE + CEFF
+  SLEW: PURI02 (IBM)
+
+*/
 class Full: public RC_Tree_Wire_Delay_Model
 {
 
@@ -131,9 +137,28 @@ public:
     }
 
     const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
-    const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const;
-    const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const;
+};
 
+
+/*
+
+  DRIVER: LUMPED
+  INTERCONNECT: ELMORE
+  SLEW: PURI02 (IBM)
+
+*/
+class Elmore_Wire_Delay_Model: public RC_Tree_Wire_Delay_Model
+{
+
+
+public:
+    Elmore_Wire_Delay_Model(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false)
+        : RC_Tree_Wire_Delay_Model(descriptor, rootNode, arcs_size, dummyEdge)
+    {
+
+    }
+
+    const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
 };
 
 class Reduced_Pi : public RC_Tree_Wire_Delay_Model

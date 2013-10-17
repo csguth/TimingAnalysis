@@ -107,8 +107,9 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 
 				if(parasitics->find(net.name) != parasitics->end())
                 {
-                    delay_model = new Full(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
-//                    delay_model = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name), driver_timing_point.name());
+//                      delay_model = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name), driver_timing_point.name());
+                      delay_model = new Full(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
+//                      delay_model = new Elmore_Wire_Delay_Model(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
 //                    delay_model = new Reduced_Pi(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
 				}
 				// }
@@ -422,21 +423,17 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 
             const Transitions<double> ceff_by_this_timing_arc = output_net.wire_delay_model()->simulate(cell_info, timing_arc.arc_number(), timing_point.slew(), timing_point.is_PI_input());
 
-
-            if(_max_ceff.find(output_pin.name()) == _max_ceff.end())
-                _max_ceff[output_pin.name()] = ceff_by_this_timing_arc;
-            else
-                _max_ceff[output_pin.name()] = max(_max_ceff.at(output_pin.name()), ceff_by_this_timing_arc);
-            if(_min_ceff.find(output_pin.name()) == _min_ceff.end())
-                _min_ceff[output_pin.name()] = ceff_by_this_timing_arc;
-            else
-                _min_ceff[output_pin.name()] = max(_min_ceff.at(output_pin.name()), ceff_by_this_timing_arc);
-
-            output_pin.ceff(_max_ceff[output_pin.name()]);
+//            if(_max_ceff.find(output_pin.name()) == _max_ceff.end())
+//                _max_ceff[output_pin.name()] = ceff_by_this_timing_arc;
+//            else
+//                _max_ceff[output_pin.name()] = max(_max_ceff.at(output_pin.name()), ceff_by_this_timing_arc);
+//            if(_min_ceff.find(output_pin.name()) == _min_ceff.end())
+//                _min_ceff[output_pin.name()] = ceff_by_this_timing_arc;
+//            else
+//                _min_ceff[output_pin.name()] = max(_min_ceff.at(output_pin.name()), ceff_by_this_timing_arc);
 
             const Transitions<double> current_arc_delay_at_output_pin = calculate_timing_arc_delay(timing_arc, timing_point.slew(), ceff_by_this_timing_arc);
-//            const Transitions<double> current_arc_slew_at_output_pin = output_net.wire_delay_model()->root_slew(timing_arc.arc_number());
-            const Transitions<double> current_arc_slew_at_output_pin =  (0.8/0.6)*_interpolator->interpolate(cell_info.timingArcs.at(0).riseTransition, cell_info.timingArcs.at(0).fallTransition, ceff_by_this_timing_arc*(0.8/0.6), timing_point.slew()*(0.8/0.6), (cell_info.isSequential ? NON_UNATE : NEGATIVE_UNATE));
+            const Transitions<double> current_arc_slew_at_output_pin = output_net.wire_delay_model()->root_slew(timing_arc.arc_number());
 
             timing_arc.delay(current_arc_delay_at_output_pin);
             timing_arc.slew(current_arc_slew_at_output_pin);
@@ -454,7 +451,6 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 //            assert(output_pin.slew().getRise() >= timing_arc.slew().getRise());
 //            assert(output_pin.slew().getFall() >= timing_arc.slew().getFall());
 
-
 			// SETTING OUTPUT PIN VIOLATIONS
             if( is_the_first_input_pin_of_a_gate )
 			{
@@ -465,14 +461,14 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 		}
         else if(timing_point.is_output_pin() || timing_point.is_PI())
 		{
-            timing_point.ceff(_max_ceff.at(timing_point.name()));
+//            timing_point.ceff(_max_ceff.at(timing_point.name()));
             Timing_Net & output_net = timing_point.net();
 
             for(size_t i = 0; i < output_net.fanouts_size(); i++)
             {
                 Timing_Point & fanout_timing_point = output_net.to(i);
 
-                fanout_timing_point.arrival_time(timing_point.arrival_time() + output_net.wire_delay_model()->delay_at_fanout_node(fanout_timing_point.name()) * 0.69f);
+                fanout_timing_point.arrival_time(timing_point.arrival_time() + output_net.wire_delay_model()->delay_at_fanout_node(fanout_timing_point.name()));
                 fanout_timing_point.slew(timing_point.slew() + output_net.wire_delay_model()->slew_at_fanout_node(fanout_timing_point.name()));
 
 
@@ -547,13 +543,13 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 		queue<int> sequentials;
 
 
-        cout << "Ceff" << endl;
-        for(size_t i = 0; i < _points.size(); i++)
-        {
-            if(_points.at(i).is_PI() || _points.at(i).is_output_pin())
-                cout << "ceff " << _points.at(i).name() << " = " << _points.at(i).ceff() << endl;
-        }
-        cout << "##" << endl;
+//        cout << "Ceff" << endl;
+//        for(size_t i = 0; i < _points.size(); i++)
+//        {
+//            if(_points.at(i).is_PI() || _points.at(i).is_output_pin())
+//                cout << "ceff " << _points.at(i).name() << " = " << _points.at(i).ceff() << endl;
+//        }
+//        cout << "##" << endl;
 
 		queue<int> pins;
         for(size_t i = 0 ; i < _points.size(); i++)
@@ -730,11 +726,11 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 
                 if(ceff_error.getMax() >= precision)
                 {
-//                    cout << "pin " << pin_name << " ceff " << tp.ceff() << " pt ceff " << ceff << " CEFF ERROR > " << precision*100 << "% = " << ceff_error << endl;
+                    cout << "pin " << pin_name << " ceff " << tp.ceff() << " pt ceff " << ceff << " CEFF ERROR > " << precision*100 << "% = " << ceff_error << endl;
                     if(tp.logic_level() < first_logic_level)
                     {
                         first_point_index = &tp - &_points.at(0);
-//                        cout << "new first logic level " <<  tp.logic_level()  << "(old = " << first_logic_level << ")" << endl;
+                        cout << "new first logic level " <<  tp.logic_level()  << "(old = " << first_logic_level << ")" << endl;
                         first_logic_level = tp.logic_level();
 
                         tool_ceff = tp.ceff();
@@ -863,7 +859,7 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 		const Prime_Time_Output_Parser::Prime_Time_Output prime_time_output = prime_time_parser.parse_prime_time_output_file(timing_file);
 
         string output_errors = timing_file;
-        output_errors.append(".errors");
+        output_errors.append("_errors");
 
         fstream out;
         out.open(output_errors.c_str(), fstream::out);
@@ -916,8 +912,8 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
             average_pin_arrival_time_error += pin_arrival_time_error;
 
 
-            out << pin_timing.pin_name << "\t" << pin_slack_error << "\t" << pin_slew_error << "\t" << pin_arrival_time_error << endl;
-
+//            out << pin_timing.pin_name << "\t" << pin_slack_error << "\t" << pin_slew_error << "\t" << pin_arrival_time_error << endl;
+            out << timing_point.logic_level() << "\t" << pin_arrival_time_error.getMax() << endl;
 
 //            assert(fabs(timing_point.slack().getRise() - pin_timing.slack.getRise()) < Traits::STD_THRESHOLD);
 //            assert(fabs(timing_point.slack().getFall() - pin_timing.slack.getFall()) < Traits::STD_THRESHOLD);
@@ -949,7 +945,7 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
             min_slack_error = min(min_slack_error, port_slack_error);
             min_slew_error = min(min_slew_error, port_slew_error);
 
-            out << port_timing.port_name << "\t" << abs(timing_point.slack() - port_timing.slack)/max(abs(timing_point.slack()), abs(port_timing.slack)) << "\t" << abs(timing_point.slew() - port_timing.slew) / max(abs(timing_point.slew()), abs(port_timing.slew)) << endl;
+//            out << port_timing.port_name << "\t" << abs(timing_point.slack() - port_timing.slack)/max(abs(timing_point.slack()), abs(port_timing.slack)) << "\t" << abs(timing_point.slew() - port_timing.slew) / max(abs(timing_point.slew()), abs(port_timing.slew)) << endl;
 
 
 //            assert(fabs(timing_point.slack().getRise() - port_timing.slack.getRise()) < Traits::STD_THRESHOLD);

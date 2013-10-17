@@ -46,13 +46,15 @@ RC_Tree_Wire_Delay_Model::RC_Tree_Wire_Delay_Model(const SpefNetISPD2013 & descr
 	const SpefNetISPD2013::Node & root = descriptor.getNode(rootIndex);
 	queue<NodeAndResistor> q;
 	vector<bool> added(descriptor.resistorsSize(), false);
+    vector<bool> nodes_added(_nodes.size(), false);
 
 	for (unsigned i = 0; i < root.resistors.size(); i++)
 	{
 		const int resistorIndex = root.resistors[i];
 		const SpefNetISPD2013::Resistor & resistor = descriptor.getResistor(resistorIndex);
 		q.push(NodeAndResistor(resistor.getOtherNode(rootIndex), resistorIndex));
-		added[resistorIndex] = true;
+        nodes_added.at(resistor.getOtherNode(rootIndex)) = true;
+        added.at(resistorIndex) = true;
 	}
 	int neighbourhood;
     vector<int> topology(_nodes.size(), -1);
@@ -63,6 +65,9 @@ RC_Tree_Wire_Delay_Model::RC_Tree_Wire_Delay_Model(const SpefNetISPD2013 & descr
     _nodes_names[0] = rootNode;
 	reverseTopology[rootIndex] = 0;
 	int counter = 1;
+
+    if(descriptor.netName == "FE_RN_7542_0")
+        cout << endl;
 
 	while (!q.empty())
 	{
@@ -84,20 +89,22 @@ RC_Tree_Wire_Delay_Model::RC_Tree_Wire_Delay_Model(const SpefNetISPD2013 & descr
 		neighbourhood = 0;
 		for (unsigned i = 0; i < nDescriptor.resistors.size(); i++)
 		{
-			if (!added[nDescriptor.resistors[i]])
+            if (!added.at(nDescriptor.resistors[i]))
 			{
 				const SpefNetISPD2013::Resistor & resistor = descriptor.getResistor(nDescriptor.resistors[i]);
-				q.push(NodeAndResistor(resistor.getOtherNode(nDescriptor.nodeIndex), nDescriptor.resistors[i]));
+                if(!nodes_added.at(resistor.getOtherNode(nDescriptor.nodeIndex)))
+                {
+                    q.push(NodeAndResistor(resistor.getOtherNode(nDescriptor.nodeIndex), nDescriptor.resistors[i]));
+                    nodes_added.at(resistor.getOtherNode(nDescriptor.nodeIndex)) = true;
+                }
 				added[nDescriptor.resistors[i]] = true;
 				neighbourhood++;
 			}
 		}
 
         _nodes[counter].sink = (neighbourhood == 0);
-        if (_nodes[counter].sink)
-		{
-            _fanout_name_to_node_number[nDescriptor.name] = counter;
-		}
+
+        _node_name_to_node_number[nDescriptor.name] = counter;
 
 		counter++;
 	}
@@ -117,8 +124,8 @@ void RC_Tree_Wire_Delay_Model::IBM_update_slews(const LibertyCellInfo & cellInfo
 {
     _nodes[0].delay.set(0.0f, 0.0f);
 
-//    _max_slews[0] = max(_max_slews[0], nodes[0].slew);
-//    _max_delays[0] = max(_max_delays[0], nodes[0].delay);
+    _max_slews[0] = max(_max_slews[0], _nodes[0].slew);
+    _max_delays[0] = max(_max_delays[0], _nodes[0].delay);
 
     _delays[input][0] = _nodes[0].delay;
     _slews[input][0] = _nodes[0].slew;
@@ -130,7 +137,6 @@ void RC_Tree_Wire_Delay_Model::IBM_update_slews(const LibertyCellInfo & cellInfo
         Transitions<double> & ceff_1 = _nodes[i].effectiveCapacitance;
         Transitions<double> & s_1 = _nodes[i].slew;
 
-
         t_0_to_1 = _nodes[_nodes[i].parent].delay + r_1 * ceff_1;
 
         const Transitions<double> x = r_1 * ceff_1 / s_0;
@@ -138,11 +144,11 @@ void RC_Tree_Wire_Delay_Model::IBM_update_slews(const LibertyCellInfo & cellInfo
 
         if (_nodes[i].sink)
 		{
-            _slews[input][_fanout_name_to_node_number[_nodes_names[i]]] = s_1;
-            _delays[input][_fanout_name_to_node_number[_nodes_names[i]]] = t_0_to_1;
+            _slews[input][_node_name_to_node_number[_nodes_names[i]]] = s_1;
+            _delays[input][_node_name_to_node_number[_nodes_names[i]]] = t_0_to_1;
 
-//            _max_slews[fanoutNameToNodeNumber[nodesNames[i]]] = max(_max_slews[fanoutNameToNodeNumber[nodesNames[i]]], _slews[input][fanoutNameToNodeNumber[nodesNames[i]]]);
-//            _max_delays[fanoutNameToNodeNumber[nodesNames[i]]] = max(_max_delays[fanoutNameToNodeNumber[nodesNames[i]]], _delays[input][fanoutNameToNodeNumber[nodesNames[i]]]);
+            _max_slews[_node_name_to_node_number[_nodes_names[i]]] = max(_max_slews[_node_name_to_node_number[_nodes_names[i]]], _slews[input][_node_name_to_node_number[_nodes_names[i]]]);
+            _max_delays[_node_name_to_node_number[_nodes_names[i]]] = max(_max_delays[_node_name_to_node_number[_nodes_names[i]]], _delays[input][_node_name_to_node_number[_nodes_names[i]]]);
 		}
 
 
@@ -255,27 +261,13 @@ const Transitions<double> RC_Tree_Wire_Delay_Model::run_IBM_algorithm(const Libe
     return _nodes.front().effectiveCapacitance;
 }
 
-const Transitions<double> Full::delay_at_fanout_node(const string fanout_node_name) const
-{
-    if(fanout_node_name == _nodes_names.front())
-        return _max_delays.front();
-    assert(_max_delays.at(_fanout_name_to_node_number.at(fanout_node_name)).getRise() > _max_delays.front().getRise());
-    assert(_max_delays.at(_fanout_name_to_node_number.at(fanout_node_name)).getFall() > _max_delays.front().getFall());
-    return _max_delays.at(_fanout_name_to_node_number.at(fanout_node_name));
-}	
-const Transitions<double> Full::slew_at_fanout_node(const string fanout_node_name) const
-{
-    if(fanout_node_name == _nodes_names.front())
-        return _max_slews.front();
-    assert(_max_slews.at(_fanout_name_to_node_number.at(fanout_node_name)).getRise() > _max_slews.front().getRise());
-    assert(_max_slews.at(_fanout_name_to_node_number.at(fanout_node_name)).getFall() > _max_slews.front().getFall());
-    return _max_slews.at(_fanout_name_to_node_number.at(fanout_node_name)) - _max_slews.front();
-}
+
 
 
 void RC_Tree_Wire_Delay_Model::setFanoutPinCapacitance(const string fanoutNameAndPin, const double pinCapacitance)
 {
-    _nodes.at(_fanout_name_to_node_number.at(fanoutNameAndPin)).nodeCapacitance += pinCapacitance;
+    _nodes.at(_node_name_to_node_number.at(fanoutNameAndPin)).nodeCapacitance += pinCapacitance;
+    _nodes.at(_node_name_to_node_number.at(fanoutNameAndPin)).sink = true;
     _lumped_capacitance += pinCapacitance;
 }
 
@@ -431,4 +423,32 @@ const Transitions<double> Reduced_Pi::delay_at_fanout_node(const string fanout_n
 const Transitions<double> Reduced_Pi::slew_at_fanout_node(const string fanout_node_name) const
 {
     return _slew_fanout;
+}
+
+
+const Transitions<double> Elmore_Wire_Delay_Model::simulate(const LibertyCellInfo &cellInfo, const int input, const Transitions<double> slew, bool is_input_driver)
+{
+    IBM_update_downstream_capacitances();
+    IBM_initialize_effective_capacitances();
+    const Transitions<double> root_slew = RC_Tree_Wire_Delay_Model::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, _nodes.front().effectiveCapacitance, slew, (cellInfo.isSequential?NON_UNATE:NEGATIVE_UNATE));
+    _nodes.front().slew = root_slew;
+    IBM_update_slews(cellInfo, input, slew, is_input_driver);
+    return Transitions<double>(_lumped_capacitance, _lumped_capacitance);
+}
+
+const Transitions<double> RC_Tree_Wire_Delay_Model::delay_at_fanout_node(const string fanout_node_name) const
+{
+    if(fanout_node_name == _nodes_names.front())
+        return _max_delays.front();
+    assert(_max_delays.at(_node_name_to_node_number.at(fanout_node_name)).getRise() >= _max_delays.front().getRise());
+    assert(_max_delays.at(_node_name_to_node_number.at(fanout_node_name)).getFall() >= _max_delays.front().getFall());
+    return _max_delays.at(_node_name_to_node_number.at(fanout_node_name));
+}
+const Transitions<double> RC_Tree_Wire_Delay_Model::slew_at_fanout_node(const string fanout_node_name) const
+{
+    if(fanout_node_name == _nodes_names.front())
+        return _max_slews.front();
+    assert(_max_slews.at(_node_name_to_node_number.at(fanout_node_name)).getRise() >= _max_slews.front().getRise());
+    assert(_max_slews.at(_node_name_to_node_number.at(fanout_node_name)).getFall() >= _max_slews.front().getFall());
+    return _max_slews.at(_node_name_to_node_number.at(fanout_node_name)) - _max_slews.front();
 }

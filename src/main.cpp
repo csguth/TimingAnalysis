@@ -51,7 +51,6 @@ int main(int argc, char const *argv[])
     Traits::ispd_contest_root = argv[1];
     Traits::ispd_contest_benchmark = argv[2];
 
-    cout << "#### " << Traits::ispd_contest_benchmark << endl;
 	VerilogParser vp;
 	LibertyParser lp;
 	SpefParser sp;
@@ -71,6 +70,9 @@ int main(int argc, char const *argv[])
     ta.full_timing_analysis();
     timer.end();
 
+
+    cout << Traits::ispd_contest_benchmark << "\t";
+
 //    ta.print_info();
 	
 //    ta.validate_with_prime_time();
@@ -84,7 +86,7 @@ int main(int argc, char const *argv[])
 //        cout << "ceffs OK with primetime!" << endl;
 
 
-//    cout << "runtime " << timer.value(Timer::MICRO) << endl;
-//    cout << endl << endl;
+    cout << "Runtime " << timer.value(Timer::MICRO) << endl;
+    cout << endl << endl;
 	return 0;
 }

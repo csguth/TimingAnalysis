@@ -63,7 +63,7 @@ public:
 		string name;
 		vector<int> resistors;
 		double capacitance;
-        Node(const int & index, const string & name) : nodeIndex(index), name(name), capacitance(0.0f) { }
+        Node(const int & index, const string & name) : nodeIndex(index), name(name), capacitance(1e-6) { }
 	};
 private:
 	vector<Node> nodes;
