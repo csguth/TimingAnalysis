@@ -1,0 +1,637 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classCircuit__Netlist">
+<title>Circuit_Netlist class Reference</title>
+<para>
+    <programlisting>#include <link linkend="circuit__netlist_8h">&lt;circuit_netlist.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structCircuit__Netlist_1_1Logic__Gate">Circuit_Netlist::Logic_Gate</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structCircuit__Netlist_1_1Net">Circuit_Netlist::Net</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structCircuit__Netlist_1_1Sink">Circuit_Netlist::Sink</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, int &gt; gateNameToGateIndex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, int &gt; netNameToNetIndex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Logic_Gate &gt; gates</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Net &gt; nets</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; int &gt; topology</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; int &gt; netTopology</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; int &gt; inverseTopology</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; int &gt; inverseNetTopology</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int _numberOfGates</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int _timing_arcs</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int _timing_points</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classCircuit__Netlist_1ae8b92a57a8a2e3cb6a60f1ad334f7d0c">addGate</link> (
+const string name, const string cellType, const int inputs, const bool isInputDriver, const bool primary_output)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classCircuit__Netlist_1a63b685cde3d19e885650dacb75de470f">addNet</link> (
+const string name, const int sourceNode, const string sourcePin)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classCircuit__Netlist_1a4302e898c835dc0f0cc8809a62a992dd">addNet</link> (
+const string name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classCircuit__Netlist_1aae9b9e9ea0db3af35377d67a6e4d3d98">Circuit_Netlist</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classCircuit__Netlist_1a976bdf13baf79ba608b0c2eff6682efc">~Circuit_Netlist</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classCircuit__Netlist_1a325723d10f874b1f37fae290929bb05e">addCellInst</link> (
+const string name, const string cellType, vector&lt; pair&lt; string, string &gt; &gt; inputPinPairs, const bool isSequential, const bool isInputDriver, const bool primary_output)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classCircuit__Netlist_1ac5ab8d692eb5d18bed59e41d2c55b678">updateTopology</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classCircuit__Netlist_1a9bcee2cb05504ee65f3e70df9f89f576">getNetsSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structCircuit__Netlist_1_1Net">Net</link> &amp; <link linkend="classCircuit__Netlist_1ad894dfb5dabad7c657c450d32adda23d">getNet</link> (
+const size_t &amp; i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="structCircuit__Netlist_1_1Logic__Gate">Logic_Gate</link> &amp; <link linkend="classCircuit__Netlist_1a3413fe728fb06a6b5b71be6d676b59de">getGateT</link> (
+const size_t &amp; i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classCircuit__Netlist_1a287e1aaee9b917ce7d1192b7c3914009">getTopologicIndex</link> (
+const int &amp; i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classCircuit__Netlist_1aa0abd4b9e4a774c8baf83a5b1c141e67">getGatesSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="structCircuit__Netlist_1_1Logic__Gate">Logic_Gate</link> &amp; <link linkend="classCircuit__Netlist_1a2c7c0bc6951c71564f8158682678d118">getGate</link> (
+const size_t &amp; i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="structCircuit__Netlist_1_1Net">Net</link> &amp; <link linkend="classCircuit__Netlist_1a9dfc3ea50ca3a6f87ffac564011b85e2">getNetT</link> (
+const size_t &amp; i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classCircuit__Netlist_1a92fd5d0cfc1c5951b5ff1f31dfff2f05">get_net_topologic_index</link> (
+const size_t &amp; i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const vector&lt; pair&lt; int, string &gt; &gt; <link linkend="classCircuit__Netlist_1a4638908b9a2c640b61f534edf048cdf7">verilog</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classCircuit__Netlist_1a8ada85e3c30b4787a46c7b8396cf640a">timing_arcs</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classCircuit__Netlist_1a070452269f2c7109f6ca089ae34dd752">timing_points</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>File which describe the set of elements of the circuit. Generated by the <link linkend="classVerilogParser">VerilogParser</link> class. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 31 of file circuit_netlist.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>circuit_netlist.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classCircuit__Netlist_1ae8b92a57a8a2e3cb6a60f1ad334f7d0c">
+                <title>int Circuit_Netlist::addGate (const string name, const string cellType, const int inputs, const bool isInputDriver=false, const bool primary_output=false)</title> <emphasis>Adds gate to gates list. Returns its index.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="structCircuit__Netlist_1_1Sink">Sink</link> sinkNode</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a63b685cde3d19e885650dacb75de470f">
+                <title>int Circuit_Netlist::addNet (const string name, const int sourceNode, const string sourcePin)</title> <emphasis>Adds net to nets list. Returns its index.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string name, const int sourceNode, const string sourcePin</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a4302e898c835dc0f0cc8809a62a992dd">
+                <title>int Circuit_Netlist::addNet (const string name)</title> <emphasis>Adds net to nets list. Returns its index.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1aae9b9e9ea0db3af35377d67a6e4d3d98">
+                <title>Circuit_Netlist::Circuit_Netlist ()</title> <emphasis>Circuit_Netlist default constructor.</emphasis>
+                
+            </section>
+            <section xml:id="classCircuit__Netlist_1a976bdf13baf79ba608b0c2eff6682efc">
+                <title>virtual Circuit_Netlist::~Circuit_Netlist ()</title> <emphasis>Empty Circuit_Netlist destructor.</emphasis>
+                
+            </section>
+            <section xml:id="classCircuit__Netlist_1a325723d10f874b1f37fae290929bb05e">
+                <title>void Circuit_Netlist::addCellInst (const string name, const string cellType, vector&lt; pair&lt; string, string &gt; &gt; inputPinPairs, const bool isSequential=false, const bool isInputDriver=false, const bool primary_output=false)</title> <emphasis>Adds a cell instance.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string name, const string cellType, vector&lt;pair&lt;string, string&gt; &gt; inputPinPairs, const bool isSequential(false default), const bool isInputDriver(false default), const bool *primary_output(false default)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1ac5ab8d692eb5d18bed59e41d2c55b678">
+                <title>void Circuit_Netlist::updateTopology ()</title> <emphasis>Updates netlist topology.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a9bcee2cb05504ee65f3e70df9f89f576">
+                <title>size_t Circuit_Netlist::getNetsSize () const </title> <emphasis>Returns number of nets.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1ad894dfb5dabad7c657c450d32adda23d">
+                <title>Net&amp; Circuit_Netlist::getNet (const size_t &amp;i)</title> <emphasis>Returns Net &amp; at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>size_t &amp; i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="structCircuit__Netlist_1_1Net">Net</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a3413fe728fb06a6b5b71be6d676b59de">
+                <title>const Logic_Gate&amp; Circuit_Netlist::getGateT (const size_t &amp;i) const </title> <emphasis>Returns Logic_Gate &amp; at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>size_t &amp; i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="structCircuit__Netlist_1_1Logic__Gate">Logic_Gate</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a287e1aaee9b917ce7d1192b7c3914009">
+                <title>int Circuit_Netlist::getTopologicIndex (const int &amp;i) const </title> <emphasis>Returns Topologic index of element at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>size_t &amp; i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1aa0abd4b9e4a774c8baf83a5b1c141e67">
+                <title>size_t Circuit_Netlist::getGatesSize () const </title> <emphasis>Returns number of gates.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a2c7c0bc6951c71564f8158682678d118">
+                <title>Logic_Gate&amp; Circuit_Netlist::getGate (const size_t &amp;i)</title> <emphasis>Returns Logic_Gate &amp; at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>size_t &amp; i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="structCircuit__Netlist_1_1Logic__Gate">Logic_Gate</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a9dfc3ea50ca3a6f87ffac564011b85e2">
+                <title>const Net&amp; Circuit_Netlist::getNetT (const size_t &amp;i) const </title> <emphasis>Returns Net &amp; at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>size_t &amp; i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="structCircuit__Netlist_1_1Net">Net</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a92fd5d0cfc1c5951b5ff1f31dfff2f05">
+                <title>int Circuit_Netlist::get_net_topologic_index (const size_t &amp;i) const </title> <emphasis>Returns topologic index of Net at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>size_t &amp; i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a4638908b9a2c640b61f534edf048cdf7">
+                <title>const vector&lt;pair&lt;int, string&gt; &gt; Circuit_Netlist::verilog () const </title> <emphasis>Returns list of pairs containing Logic_Gate topologic number and its name.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>const vector&lt;pair&lt;int, string&gt; &gt; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a8ada85e3c30b4787a46c7b8396cf640a">
+                <title>int Circuit_Netlist::timing_arcs () const </title> <emphasis>Returns number of timings arcs.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classCircuit__Netlist_1a070452269f2c7109f6ca089ae34dd752">
+                <title>int Circuit_Netlist::timing_points () const </title> <emphasis>Returns number of timings points.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

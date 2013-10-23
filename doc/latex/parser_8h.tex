@@ -1,0 +1,52 @@
+\hypertarget{parser_8h}{\section{Timing\-Analysis/src/include/parser.h File Reference}
+\label{parser_8h}\index{Timing\-Analysis/src/include/parser.\-h@{Timing\-Analysis/src/include/parser.\-h}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$istream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$cassert$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include \char`\"{}circuit\-\_\-netlist.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}liberty\-\_\-library.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}spef\-\_\-net.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}design\-\_\-constraints.\-h\char`\"{}}\\*
+Include dependency graph for parser.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{parser_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{parser_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classParser}{Parser}
+\begin{DoxyCompactList}\small\item\em Superclass. A \hyperlink{classParser}{Parser} is a program which reads an input and creates a data structure. In this case, the \hyperlink{classParser}{Parser} will read a string, validate it and build essential files for use in the program using information read from the string. \end{DoxyCompactList}\item 
+class \hyperlink{classPrime__Time__Output__Parser}{Prime\-\_\-\-Time\-\_\-\-Output\-\_\-\-Parser}
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classParser}{Parser}. Parse the Prime Time output. Used to generate a \hyperlink{classPrime__Time__Output__Parser_1_1Prime__Time__Output}{Prime\-\_\-\-Time\-\_\-\-Output} object for later use. \end{DoxyCompactList}\item 
+struct \hyperlink{structPrime__Time__Output__Parser_1_1Pin__Timing}{Prime\-\_\-\-Time\-\_\-\-Output\-\_\-\-Parser\-::\-Pin\-\_\-\-Timing}
+\begin{DoxyCompactList}\small\item\em Struct containing the timing values of a pin. \end{DoxyCompactList}\item 
+struct \hyperlink{structPrime__Time__Output__Parser_1_1Port__Timing}{Prime\-\_\-\-Time\-\_\-\-Output\-\_\-\-Parser\-::\-Port\-\_\-\-Timing}
+\begin{DoxyCompactList}\small\item\em Struct containing the timing values of a port. \end{DoxyCompactList}\item 
+class \hyperlink{classPrime__Time__Output__Parser_1_1Prime__Time__Output}{Prime\-\_\-\-Time\-\_\-\-Output\-\_\-\-Parser\-::\-Prime\-\_\-\-Time\-\_\-\-Output}
+\begin{DoxyCompactList}\small\item\em Represents Prime Time output. Provides access methods to it. \end{DoxyCompactList}\item 
+class \hyperlink{classVerilogParser}{Verilog\-Parser}
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classParser}{Parser}. Parse verilog files. Used to generate circuit netlists. \end{DoxyCompactList}\item 
+class \hyperlink{classLibertyParser}{Liberty\-Parser}
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classParser}{Parser}. Used to generate a \hyperlink{classLibertyLibrary}{Liberty\-Library} object from a file. \end{DoxyCompactList}\item 
+class \hyperlink{classSpefParserISPD2013}{Spef\-Parser\-I\-S\-P\-D2013}
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classParser}{Parser}. Used to generate \hyperlink{classSpefNetISPD2013}{Spef\-Net\-I\-S\-P\-D2013} file from an input. \end{DoxyCompactList}\item 
+class \hyperlink{classSpefParserISPD2012}{Spef\-Parser\-I\-S\-P\-D2012}
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classParser}{Parser}. Used to generate \hyperlink{classSpefNetISPD2012}{Spef\-Net\-I\-S\-P\-D2012} files from an input. \end{DoxyCompactList}\item 
+class \hyperlink{classSDCParser}{S\-D\-C\-Parser}
+\begin{DoxyCompactList}\small\item\em Inherits from \hyperlink{classParser}{Parser}. S\-D\-C stands for Synopsys Design Constraints. Used to generate a \hyperlink{classDesign__Constraints}{Design\-\_\-\-Constraints} object from file. \end{DoxyCompactList}\end{DoxyCompactItemize}

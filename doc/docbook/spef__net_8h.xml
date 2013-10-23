@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="spef__net_8h">
+    <title>spef_net.h File Reference</title>
+    <programlisting>#include &lt;string&gt;</programlisting>
+    <programlisting>#include &lt;vector&gt;</programlisting>
+    <programlisting>#include &lt;map&gt;</programlisting>
+    <programlisting>#include &lt;ostream&gt;</programlisting>
+    <programlisting>#include &lt;iostream&gt;</programlisting>
+    <programlisting>#include &lt;queue&gt;</programlisting>
+    <programlisting>#include &quot;transitions.h&quot;</programlisting>
+    <programlisting>#include &lt;cassert&gt;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classSpefNetISPD2012">SpefNetISPD2012</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classSpefNetISPD2013">SpefNetISPD2013</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structSpefNetISPD2013_1_1Resistor">SpefNetISPD2013::Resistor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structSpefNetISPD2013_1_1Capacitor">SpefNetISPD2013::Capacitor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structSpefNetISPD2013_1_1Node">SpefNetISPD2013::Node</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Typedefs</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef map&lt; string, <link linkend="classSpefNetISPD2012">SpefNetISPD2012</link> &gt;  <link linkend="spef__net_8h_1a37551e9359ee22bb0821ca94784447d4">Parasitics2012</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef map&lt; string, <link linkend="classSpefNetISPD2013">SpefNetISPD2013</link> &gt;  <link linkend="spef__net_8h_1adc6130507d68ab3a34d98dfc3ef83672">Parasitics2013</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/decio/Documentos/estudos/tccChrystian/src/include/spef_net.h</para>
+    </simplesect>
+</section>

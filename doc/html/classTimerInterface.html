@@ -62,7 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,27 +95,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="classTimerInterface.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="timer__interface_8h_source.html">timer_interface.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for TimerInterface:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTimerInterface__coll__graph.png" border="0" usemap="#TimerInterface_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:afc6cca620922cd5a3d90ea9ad7d7d25d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>Status</b> { <br/>
-&#160;&#160;<b>TIMER_NOT_STARTED</b> = 0, 
-<b>TIMER_BUSY</b>, 
-<b>TIMER_FINISHED_SUCCESS</b>, 
-<b>TIMER_FINISHED_ERROR</b>, 
+<tr class="memitem:afc6cca620922cd5a3d90ea9ad7d7d25d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25d">Status</a> { <br/>
+&#160;&#160;<a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25da465cc75852c1feab52c2236ed80ef6da">TIMER_NOT_STARTED</a> = 0, 
+<a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25dac7ae064c5a418037be5e05d69a27f34f">TIMER_BUSY</a>, 
+<a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25da134d1131be13795c3f8248c82fa52b9e">TIMER_FINISHED_SUCCESS</a>, 
+<a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25da5cbb1b932558e1136faa93a49acc0252">TIMER_FINISHED_ERROR</a>, 
 <br/>
-&#160;&#160;<b>TIMER_INTERFACEERROR</b>
+&#160;&#160;<a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25daf5aa3834e4e74e57e8264fdb3b7eb757">TIMER_INTERFACEERROR</a>
 <br/>
  }</td></tr>
 <tr class="separator:afc6cca620922cd5a3d90ea9ad7d7d25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a42077a21e0b9a07b6768e5131415bd2d"><td class="memItemLeft" align="right" valign="top">static Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#a42077a21e0b9a07b6768e5131415bd2d">getTimerStatus</a> (const std::string &amp;contest_root, const std::string &amp;benchmark)</td></tr>
+<tr class="memitem:a42077a21e0b9a07b6768e5131415bd2d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25d">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#a42077a21e0b9a07b6768e5131415bd2d">getTimerStatus</a> (const std::string &amp;contest_root, const std::string &amp;benchmark)</td></tr>
 <tr class="separator:a42077a21e0b9a07b6768e5131415bd2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada94a843a56747a6a7b34373a266ab92"><td class="memItemLeft" align="right" valign="top">static Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#ada94a843a56747a6a7b34373a266ab92">runTimingAnalysisBlocking</a> (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark, const unsigned pollingTime)</td></tr>
+<tr class="memitem:ada94a843a56747a6a7b34373a266ab92"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25d">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#ada94a843a56747a6a7b34373a266ab92">runTimingAnalysisBlocking</a> (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark, const unsigned pollingTime)</td></tr>
 <tr class="separator:ada94a843a56747a6a7b34373a266ab92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a9b69817bbbd603c3d47089b0bad829"><td class="memItemLeft" align="right" valign="top">static Status&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#a9a9b69817bbbd603c3d47089b0bad829">startTimingAnalysisNonBlocking</a> (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark)</td></tr>
+<tr class="memitem:a9a9b69817bbbd603c3d47089b0bad829"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25d">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#a9a9b69817bbbd603c3d47089b0bad829">startTimingAnalysisNonBlocking</a> (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark)</td></tr>
 <tr class="separator:a9a9b69817bbbd603c3d47089b0bad829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa62e01d4dd296f8bf9f716ff2da7c5fc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimerInterface.html#aa62e01d4dd296f8bf9f716ff2da7c5fc">wait</a> (int seconds)</td></tr>
 <tr class="separator:aa62e01d4dd296f8bf9f716ff2da7c5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,7 +130,32 @@ Static Public Member Functions</h2></td></tr>
 <p>Timing Analysis Interface helper class to interface with the timer. This code is provided for description purposes only. The contest organizers cannot guarantee that the provided code is free of bugs or defects. !!!! USE THIS CODE AT YOUR OWN RISK !!!!!</p>
 <p>The contestants are free to use these functions as-is or make modifications. If the contestants choose to use the provided code, they are responsible for making sure that it works as expected.</p>
 <p>The code provided here has no real or implied warranties. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="afc6cca620922cd5a3d90ea9ad7d7d25d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25d">TimerInterface::Status</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="afc6cca620922cd5a3d90ea9ad7d7d25da465cc75852c1feab52c2236ed80ef6da"></a>TIMER_NOT_STARTED</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="afc6cca620922cd5a3d90ea9ad7d7d25dac7ae064c5a418037be5e05d69a27f34f"></a>TIMER_BUSY</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="afc6cca620922cd5a3d90ea9ad7d7d25da134d1131be13795c3f8248c82fa52b9e"></a>TIMER_FINISHED_SUCCESS</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="afc6cca620922cd5a3d90ea9ad7d7d25da5cbb1b932558e1136faa93a49acc0252"></a>TIMER_FINISHED_ERROR</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="afc6cca620922cd5a3d90ea9ad7d7d25daf5aa3834e4e74e57e8264fdb3b7eb757"></a>TIMER_INTERFACEERROR</em>&nbsp;</td><td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a42077a21e0b9a07b6768e5131415bd2d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -134,7 +164,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Status TimerInterface::getTimerStatus </td>
+          <td class="memname">static <a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25d">Status</a> TimerInterface::getTimerStatus </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>contest_root</em>, </td>
@@ -169,7 +199,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Status TimerInterface::runTimingAnalysisBlocking </td>
+          <td class="memname">static <a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25d">Status</a> TimerInterface::runTimingAnalysisBlocking </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>sizes</em>, </td>
@@ -221,7 +251,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static Status TimerInterface::startTimingAnalysisNonBlocking </td>
+          <td class="memname">static <a class="el" href="classTimerInterface.html#afc6cca620922cd5a3d90ea9ad7d7d25d">Status</a> TimerInterface::startTimingAnalysisNonBlocking </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>sizes</em>, </td>
@@ -284,12 +314,12 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>tccChrystian/src/include/<a class="el" href="timer__interface_8h_source.html">timer_interface.h</a></li>
+<li>TimingAnalysis/src/include/<a class="el" href="timer__interface_8h_source.html">timer_interface.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 9 2013 10:26:55 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2013 15:22:25 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="timing__net_8h">
+    <title>timing_net.h File Reference</title>
+    <programlisting>#include &quot;wire_delay_model.h&quot;</programlisting>
+    <programlisting>#include &quot;multi_fanout_edge.h&quot;</programlisting>
+    <programlisting>#include &quot;timing_point.h&quot;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classTiming__Analysis_1_1Timing__Net">Timing_Analysis::Timing_Net</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespaceTiming__Analysis">Timing_Analysis</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/decio/Documentos/estudos/tccChrystian/src/include/timing_net.h</para>
+    </simplesect>
+</section>

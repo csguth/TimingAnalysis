@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classLibertyLibrary">
+<title>LibertyLibrary class Reference</title>
+<para>
+    <programlisting>#include <link linkend="liberty__library_8h">&lt;liberty_library.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double maxTransition</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; vector&lt; LibertyCellInfo &gt; &gt; library</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, int &gt; footPrintToIndex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, int &gt; cellOptionNumber</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, int &gt; cellToFootprintIndex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classLibertyLibrary_1a3b7513ef68e791245f60e16f6b4ee5d4">LibertyLibrary</link> (
+const double maxTransition)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classLibertyLibrary_1ade99b2247c7d5eb9ef885bc4ec57091d">~LibertyLibrary</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const pair&lt; int, int &gt; <link linkend="classLibertyLibrary_1a4d9ec0ea6af3949878d9b14042e761e6">addCellInfo</link> (
+const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; <link linkend="classLibertyLibrary_1a917ae50f0af17b1b68be754f1ae6dd07">getCellInfo</link> (
+const string &amp; footPrint, const int &amp; i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; <link linkend="classLibertyLibrary_1a57c64ca6abd02f1e549eeb25178724c9">getCellInfo</link> (
+const string &amp; cellName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; <link linkend="classLibertyLibrary_1a227638e4b3a4b00faa659c45e20c0aaa">getCellInfo</link> (
+const int &amp; footPrintIndex, const int &amp; optionIndex)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classLibertyLibrary_1a411ffb8700a4dc393650ec341f33a2a7">number_of_options</link> (
+const int footprint_index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const pair&lt; int, int &gt; <link linkend="classLibertyLibrary_1a08a8b3ab2b9e91574d1cdc39376839c8">getCellIndex</link> (
+const string &amp; cellName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="classLibertyLibrary_1a954497f3bf2fe4ab640be24c23f976f4">getMaxTransition</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Standard cell Library is a collection of logic functions info. Contains details about implementations of logic functions, within its layout, parasitic models, Verilog models, and more. Generated by the <link linkend="classLibertyParser">LibertyParser</link> class. </para>
+    </simplesect>
+            <section xml:id="classLibertyLibrary_1a3b7513ef68e791245f60e16f6b4ee5d4">
+                <title>LibertyLibrary::LibertyLibrary (const double maxTransition=0.0f)</title> <emphasis>LibertyLibrary default constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>double MaxTransition </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classLibertyLibrary_1ade99b2247c7d5eb9ef885bc4ec57091d">
+                <title>virtual LibertyLibrary::~LibertyLibrary ()</title> <emphasis>Empty LibertyLibrary desctructor.</emphasis>
+                
+            </section>
+            <section xml:id="classLibertyLibrary_1a4d9ec0ea6af3949878d9b14042e761e6">
+                <title>const pair&lt;int, int&gt; LibertyLibrary::addCellInfo (const LibertyCellInfo &amp;cellInfo)</title> <emphasis>Returns pair&lt;footprint index, option index&gt;</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const pair&lt;int, int&gt; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyLibrary_1a917ae50f0af17b1b68be754f1ae6dd07">
+                <title>const LibertyCellInfo&amp; LibertyLibrary::getCellInfo (const string &amp;footPrint, const int &amp;i) const </title> <emphasis>Returns LibertyCellInfo in footPrint, at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; footPrint, const int &amp; i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyLibrary_1a57c64ca6abd02f1e549eeb25178724c9">
+                <title>const LibertyCellInfo&amp; LibertyLibrary::getCellInfo (const string &amp;cellName) const </title> <emphasis>Returns LibertyCellInfo of cellName name.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; cellName</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyLibrary_1a227638e4b3a4b00faa659c45e20c0aaa">
+                <title>const LibertyCellInfo&amp; LibertyLibrary::getCellInfo (const int &amp;footPrintIndex, const int &amp;optionIndex) const </title> <emphasis>Returns LibertyCellInfo at index i, in footPrint of footPrintIndex.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; footPrintIndex, const int &amp; optionIndex</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyLibrary_1a411ffb8700a4dc393650ec341f33a2a7">
+                <title>size_t LibertyLibrary::number_of_options (const int footprint_index) const </title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classLibertyLibrary_1a08a8b3ab2b9e91574d1cdc39376839c8">
+                <title>const pair&lt;int, int&gt; LibertyLibrary::getCellIndex (const string &amp;cellName) const </title> <emphasis>Returns pair&lt;footprint index, option index&gt;</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp;cellName</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const pair&lt;int, int&gt; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyLibrary_1a954497f3bf2fe4ab640be24c23f976f4">
+                <title>double LibertyLibrary::getMaxTransition () const </title> <emphasis>Returns maxTransition.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>double </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

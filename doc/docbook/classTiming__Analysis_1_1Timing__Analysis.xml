@@ -1,0 +1,990 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTiming__Analysis_1_1Timing__Analysis">
+<title>Timing_Analysis::Timing_Analysis class Reference</title>
+<para>
+    <programlisting>#include <link linkend="timing__analysis_8h">&lt;timing_analysis.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Timing_Point &gt; _points</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Timing_Arc &gt; _arcs</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Timing_Net &gt; _nets</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Option &gt; _options</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; int, double &gt; _PO_loads</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, int &gt; _pin_name_to_timing_point_index</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; pair&lt; size_t, size_t &gt; &gt; _gate_index_to_timing_point_index</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; pair&lt; int, string &gt; &gt; _verilog</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; pair&lt; string, string &gt; &gt; _sizes</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; bool &gt; _dirty</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const LibertyLibrary * _library</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const Parasitics * _parasitics</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>LibertyLookupTableInterpolator * _interpolator</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _target_delay</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _max_transition</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _critical_path</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _total_negative_slack</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _slew_violations</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _capacitance_violations</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, Transitions&lt; double &gt; &gt; _max_ceff</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, Transitions&lt; double &gt; &gt; _min_ceff</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int _first_PO_index</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a1dd188390d9c38ebdf351dfe5e95b2b2">liberty_cell_info</link> (
+const int node_index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classTiming__Analysis_1_1Timing__Analysis_1ab0d26e381724760afa88e53849094e6d">calculate_timing_arc_delay</link> (
+const <link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Arc</link> &amp; timing_arc, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; transition, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; ceff)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1af6df043a78fafeddef36e0c739c6d60b">update_timing</link> (
+const int timing_point_index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a7f218973ac5489962e3c580762b88b74">update_slacks</link> (
+const int timing_point_index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const pair&lt; size_t, size_t &gt; <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a40aacdfe2612284690688d8decacce10">create_timing_points</link> (
+const int i, const <link linkend="structCircuit__Netlist_1_1Logic__Gate">Circuit_Netlist::Logic_Gate</link> &amp; gate, const pair&lt; int, int &gt; cellIndex, const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1ae07d76ed5b1cb4198bd8d1bab47d7c04">number_of_timing_points_and_timing_arcs</link> (
+int &amp; numberOfTimingPoints, int &amp; numberOfTimingArcs, const <link linkend="classCircuit__Netlist">Circuit_Netlist</link> &amp; netlist, const <link linkend="classLibertyLibrary">LibertyLibrary</link> * lib)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1ad1a620193899eb5e9c6a8fd94b47a906">create_timing_arcs</link> (
+const pair&lt; size_t, size_t &gt; tpIndexes, const bool is_pi, const bool is_po)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1aa8f2c79cba97f15a9910c4ed1b56184c">get_sizes_vector</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a13785d2590e937443cbb09329d9396a5">check_timing_file</link> (
+const string timing_file)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1abada174457c31e718e33c5aefb370a91">write_sizes_file</link> (
+const string filename)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTiming__Analysis_1_1Timing__Analysis_1aea46c3c9e4015f3b6802eca8a9c6d798">Timing_Analysis</link> (
+const <link linkend="classCircuit__Netlist">Circuit_Netlist</link> &amp; netlist, const <link linkend="classLibertyLibrary">LibertyLibrary</link> * lib, const <link linkend="configuration_8h_1ac77efd4436b2f78ddba37713fc5d597c">Parasitics</link> * _parasitics, const <link linkend="classDesign__Constraints">Design_Constraints</link> * sdc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a769abb84f8a930cc46972ec6b1b6c9f5">~Timing_Analysis</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1ae98e3de81890f6e7b23b58af151e17ab">call_prime_time</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a16566352c5a2b9da08b2c65fadd774de">full_timing_analysis</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classTiming__Analysis_1_1Timing__Analysis_1accd0fc851f665860214942e93242585b">timing_points_size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link> &amp; <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a15ebc83dc364a1e6ec06723658059377">timing_point</link> (
+const int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a239195867157ea06264afcdc3bb54e53">timing_arcs_size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Arc</link> &amp; <link linkend="classTiming__Analysis_1_1Timing__Analysis_1ab51fd160e68b13a059efdcc460da1e83">timing_arc</link> (
+const int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a0d0a28110de2017c754373f7a73c160d">timing_nets_size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTiming__Analysis_1_1Timing__Net">Timing_Net</link> &amp; <link linkend="classTiming__Analysis_1_1Timing__Analysis_1ab113f7930936110307c215a90e410769">timing_net</link> (
+const int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a0263a18b53ef152589a3396423490f78">pin_capacitance</link> (
+const int timing_point_index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a6569529b1614d4507d48293c7ea9f544">pin_load</link> (
+const int timing_point_index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a578a7940a493f7e6ab5ca4518984b8d4">option</link> (
+const int gate_number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a392a426d13c3d2258e07c553039af878">number_of_options</link> (
+const int gate_index)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a5c2fd4b82fa80ea43fa1f519b230c8fe">first_PO_index</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classTiming__Analysis_1_1Timing__Analysis_1ad5d0274622ee3f7d2c2f3d731b35ac9a">option</link> (
+const int gate_index, const int option)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classTiming__Analysis_1_1Timing__Analysis_1aa4220574cd239b38b7905636a6a4e43b">validate_with_prime_time</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1ad88fd0b79ae6d221a5691da10b0aa9e4">print_info</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a2c45b5a9fd71b7197a327593d54663a3">print_circuit_info</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Analysis_1a6d3fd296c18a72b05d36addc14068e16">report_timing</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Class which performs the timing analysis. </para>
+    </simplesect>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a1dd188390d9c38ebdf351dfe5e95b2b2">
+                <title>const LibertyCellInfo&amp; Timing_Analysis::Timing_Analysis::liberty_cell_info (const int node_index) const </title> <emphasis>Private. Returns LibertyCellInfo object reference at node_index.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int node_index</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1ab0d26e381724760afa88e53849094e6d">
+                <title>const Transitions&lt;double&gt; Timing_Analysis::Timing_Analysis::calculate_timing_arc_delay (const Timing_Arc &amp;timing_arc, const Transitions&lt; double &gt; transition, const Transitions&lt; double &gt; ceff)</title> <emphasis>Private. Returns Transitions containing the timing arc delay calculated by interpolating both parameters values using the time values table of the timing_arc.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Arc</link> &amp; timing_arc, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> transition, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> ceff</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1af6df043a78fafeddef36e0c739c6d60b">
+                <title>void Timing_Analysis::Timing_Analysis::update_timing (const int timing_point_index)</title> <emphasis>Private. Updates effective capacitance, critical path transition, capacitive violations, of timing point at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int timing_point_index</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a7f218973ac5489962e3c580762b88b74">
+                <title>void Timing_Analysis::Timing_Analysis::update_slacks (const int timing_point_index)</title> <emphasis>Private. Updates slew vilations and total negative slack of timing point at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int timing_point_index</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a40aacdfe2612284690688d8decacce10">
+                <title>const pair&lt;size_t, size_t&gt; Timing_Analysis::Timing_Analysis::create_timing_points (const int i, const Circuit_Netlist::Logic_Gate &amp;gate, const pair&lt; int, int &gt; cellIndex, const LibertyCellInfo &amp;cellInfo)</title> <emphasis>Private. Creates timing points from gate.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int i,const <link linkend="structCircuit__Netlist_1_1Logic__Gate">Circuit_Netlist::Logic_Gate</link> &amp; gate,const pair&lt;int, int&gt; cellIndex, const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const pair&lt;size_t, size_t&gt; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1ae07d76ed5b1cb4198bd8d1bab47d7c04">
+                <title>void Timing_Analysis::Timing_Analysis::number_of_timing_points_and_timing_arcs (int &amp;numberOfTimingPoints, int &amp;numberOfTimingArcs, const Circuit_Netlist &amp;netlist, const LibertyLibrary *lib)</title> <emphasis>Private.  Updates number of timing ponts and timing arcs from netlist.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>int</entry>
+                                <entry>
+<para>&amp; numberOfTimingPoints, int &amp; numberOfTimingArcs, const <link linkend="classCircuit__Netlist">Circuit_Netlist</link> &amp; netlist, const <link linkend="classLibertyLibrary">LibertyLibrary</link> * lib</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1ad1a620193899eb5e9c6a8fd94b47a906">
+                <title>void Timing_Analysis::Timing_Analysis::create_timing_arcs (const pair&lt; size_t, size_t &gt; tpIndexes, const bool is_pi, const bool is_po)</title> <emphasis>Private. Creates timing arcs from tpIndexes.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>pair&lt;size_t, size_t&gt; tpIndexes, const bool is_pi , const bool is_po</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1aa8f2c79cba97f15a9910c4ed1b56184c">
+                <title>void Timing_Analysis::Timing_Analysis::get_sizes_vector ()</title> <emphasis>Private. Creates an iterator to iterate the verilog descriptions vector.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a13785d2590e937443cbb09329d9396a5">
+                <title>bool Timing_Analysis::Timing_Analysis::check_timing_file (const string timing_file)</title> <emphasis>Private. Checks timing file for errors and prints it.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string timing_file</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1abada174457c31e718e33c5aefb370a91">
+                <title>void Timing_Analysis::Timing_Analysis::write_sizes_file (const string filename)</title> <emphasis>Private. Inserts formatted description of the sizes of the verilog descriptions.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string filename</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1aea46c3c9e4015f3b6802eca8a9c6d798">
+                <title>Timing_Analysis::Timing_Analysis::Timing_Analysis (const Circuit_Netlist &amp;netlist, const LibertyLibrary *lib, const Parasitics *_parasitics, const Design_Constraints *sdc)</title> <emphasis>Timing_Analysis default constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="classCircuit__Netlist">Circuit_Netlist</link> &amp; netlist, const <link linkend="classLibertyLibrary">LibertyLibrary</link> * lib, const Parasitics * _parasitics, const <link linkend="classDesign__Constraints">Design_Constraints</link> * sdc </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a769abb84f8a930cc46972ec6b1b6c9f5">
+                <title>virtual Timing_Analysis::Timing_Analysis::~Timing_Analysis ()</title> <emphasis></emphasis>
+                
+<para><link linkend="classTiming__Analysis_1_1Timing__Analysis">Timing_Analysis</link> empty destructor </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1ae98e3de81890f6e7b23b58af151e17ab">
+                <title>void Timing_Analysis::Timing_Analysis::call_prime_time ()</title> <emphasis>Calls prime time to set time values.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a16566352c5a2b9da08b2c65fadd774de">
+                <title>void Timing_Analysis::Timing_Analysis::full_timing_analysis ()</title> <emphasis>Updates all timing values of all elements.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1accd0fc851f665860214942e93242585b">
+                <title>size_t Timing_Analysis::Timing_Analysis::timing_points_size ()</title> <emphasis>Returns number of timing points.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a15ebc83dc364a1e6ec06723658059377">
+                <title>const Timing_Point&amp; Timing_Analysis::Timing_Analysis::timing_point (const int i)</title> <emphasis>Returns timing point reference at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a239195867157ea06264afcdc3bb54e53">
+                <title>size_t Timing_Analysis::Timing_Analysis::timing_arcs_size ()</title> <emphasis>Returns number of timing arcs.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1ab51fd160e68b13a059efdcc460da1e83">
+                <title>const Timing_Arc&amp; Timing_Analysis::Timing_Analysis::timing_arc (const int i)</title> <emphasis>Returns timing arc reference at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Arc</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a0d0a28110de2017c754373f7a73c160d">
+                <title>size_t Timing_Analysis::Timing_Analysis::timing_nets_size ()</title> <emphasis>Returns number of timing nets.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1ab113f7930936110307c215a90e410769">
+                <title>const Timing_Net&amp; Timing_Analysis::Timing_Analysis::timing_net (const int i)</title> <emphasis>Returns timing net reference at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTiming__Analysis_1_1Timing__Net">Timing_Net</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a0263a18b53ef152589a3396423490f78">
+                <title>double Timing_Analysis::Timing_Analysis::pin_capacitance (const int timing_point_index) const </title> <emphasis>Returns pin capacitance at timing point index.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int timing_point_index</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>double </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a6569529b1614d4507d48293c7ea9f544">
+                <title>double Timing_Analysis::Timing_Analysis::pin_load (const int timing_point_index) const </title> <emphasis>Returns pin load at timing point index.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTiming__Analysis_1_1Timing__Net">Timing_Net</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a578a7940a493f7e6ab5ca4518984b8d4">
+                <title>int Timing_Analysis::Timing_Analysis::option (const int gate_number)</title> <emphasis>Returns option index at gate_number index.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int gate_number</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a392a426d13c3d2258e07c553039af878">
+                <title>size_t Timing_Analysis::Timing_Analysis::number_of_options (const int gate_index)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a5c2fd4b82fa80ea43fa1f519b230c8fe">
+                <title>int Timing_Analysis::Timing_Analysis::first_PO_index () const </title> <emphasis>Returns first primary output index.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1ad5d0274622ee3f7d2c2f3d731b35ac9a">
+                <title>bool Timing_Analysis::Timing_Analysis::option (const int gate_index, const int option)</title> <emphasis>Returns true if gate_index option is &quot;don&apos;t touch&quot;.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int gate_index, const int option</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1aa4220574cd239b38b7905636a6a4e43b">
+                <title>bool Timing_Analysis::Timing_Analysis::validate_with_prime_time ()</title> <emphasis>Validates timing_file with prime time, prints results and returns true.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1ad88fd0b79ae6d221a5691da10b0aa9e4">
+                <title>void Timing_Analysis::Timing_Analysis::print_info ()</title> <emphasis>Prints graph and circuit info.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a2c45b5a9fd71b7197a327593d54663a3">
+                <title>void Timing_Analysis::Timing_Analysis::print_circuit_info ()</title> <emphasis>Prints timing info.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Analysis_1a6d3fd296c18a72b05d36addc14068e16">
+                <title>void Timing_Analysis::Timing_Analysis::report_timing ()</title> <emphasis>Prints results from analysis.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

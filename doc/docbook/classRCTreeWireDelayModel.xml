@@ -1,0 +1,435 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classRCTreeWireDelayModel">
+<title>RCTreeWireDelayModel class Reference</title>
+<para>
+    <programlisting>#include <link linkend="wire__delay__model_8h">&lt;wire_delay_model.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structRCTreeWireDelayModel_1_1Node">RCTreeWireDelayModel::Node</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structRCTreeWireDelayModel_1_1NodeAndResistor">RCTreeWireDelayModel::NodeAndResistor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Node &gt; nodes</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; string &gt; nodesNames</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; vector&lt; Transitions&lt; double &gt; &gt; &gt; _slews</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; vector&lt; Transitions&lt; double &gt; &gt; &gt; _delays</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Transitions&lt; double &gt; &gt; _max_delays</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Transitions&lt; double &gt; &gt; _max_slews</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; std::string, int &gt; fanoutNameToNodeNumber</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classRCTreeWireDelayModel_1af279bc833fc37963d90755a39699f8b0">updateSlews</link> (
+const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo, const int input, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; slew, bool is_input_driver)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classRCTreeWireDelayModel_1af9d8ad0825829c78d4715d665c6108fd">updateEffectiveCapacitances</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classRCTreeWireDelayModel_1a4a404846c1a2415011341b080b30c288">updateDownstreamCapacitances</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classRCTreeWireDelayModel_1aebc17987045e543d07baac2e7fc63f2a">initializeEffectiveCapacitances</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classRCTreeWireDelayModel_1a239d4784b2d39b6042fe39bee4838c6b">RCTreeWireDelayModel</link> (
+const <link linkend="classSpefNetISPD2013">SpefNetISPD2013</link> &amp; descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classRCTreeWireDelayModel_1a06312bef3b98f0903335227fd7ea0f31">simulate</link> (
+const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo, const int input, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; slew, bool is_input_driver)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classRCTreeWireDelayModel_1a7c769d54e8a520db1c5d4537d7e8b608">delay_at_fanout_node</link> (
+const string fanout_node_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classRCTreeWireDelayModel_1aea4c7315bdd3715ca0c67707b2c32a8c">slew_at_fanout_node</link> (
+const string fanout_node_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classRCTreeWireDelayModel_1a106079b64e0e6b84327fc5a9b4c29a6a">setFanoutPinCapacitance</link> (
+const string fanoutNameAndPin, const double pinCapacitance)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classRCTreeWireDelayModel_1a5575e4f4e598047dd87fee0707d135d3">root_delay</link> (
+int arc_number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classRCTreeWireDelayModel_1aa314aa73bf2e25008d330ad19544e210">root_slew</link> (
+int arc_number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classRCTreeWireDelayModel_1acb14554ad26108d350770391b1923c51">clear</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>This model describes the parasitic elements(capacitors and resistors) distributed along a wire as a single circuit element. </para>
+    </simplesect>
+            <section xml:id="classRCTreeWireDelayModel_1af279bc833fc37963d90755a39699f8b0">
+                <title>void RCTreeWireDelayModel::updateSlews (const LibertyCellInfo &amp;cellInfo, const int input, const Transitions&lt; double &gt; slew, bool is_input_driver)</title> <emphasis>Updates slew and delay time values.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo, const int input, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> slew, bool is_input_driver</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1af9d8ad0825829c78d4715d665c6108fd">
+                <title>void RCTreeWireDelayModel::updateEffectiveCapacitances ()</title> <emphasis>Updates effective capacitance value.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1a4a404846c1a2415011341b080b30c288">
+                <title>void RCTreeWireDelayModel::updateDownstreamCapacitances ()</title> <emphasis>&lt;hr&gt;</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1aebc17987045e543d07baac2e7fc63f2a">
+                <title>void RCTreeWireDelayModel::initializeEffectiveCapacitances ()</title> <emphasis>Sets the effective capacitance of each node as its total capacitance.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1a239d4784b2d39b6042fe39bee4838c6b">
+                <title>RCTreeWireDelayModel::RCTreeWireDelayModel (const SpefNetISPD2013 &amp;descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge=false)</title> <emphasis>RCtreeWireDelayModel default constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="classSpefNetISPD2013">SpefNetISPD2013</link> &amp; descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge(false default) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1a06312bef3b98f0903335227fd7ea0f31">
+                <title>const Transitions&lt;double&gt; RCTreeWireDelayModel::simulate (const LibertyCellInfo &amp;cellInfo, const int input, const Transitions&lt; double &gt; slew, bool is_input_driver)</title> <emphasis>Calculates and returns Transitions&lt;double&gt; representing effective capacitance of the wire.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo, const int input, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> slew, bool is_input_driver</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1a7c769d54e8a520db1c5d4537d7e8b608">
+                <title>const Transitions&lt;double&gt; RCTreeWireDelayModel::delay_at_fanout_node (const string fanout_node_name) const </title> <emphasis>Returns maximum delay time value at node fanout_node_name.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string fanout_node_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1aea4c7315bdd3715ca0c67707b2c32a8c">
+                <title>const Transitions&lt;double&gt; RCTreeWireDelayModel::slew_at_fanout_node (const string fanout_node_name) const </title> <emphasis>Returns maximum slew time value at node fanout_node_name.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string fanout_node_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1a106079b64e0e6b84327fc5a9b4c29a6a">
+                <title>void RCTreeWireDelayModel::setFanoutPinCapacitance (const string fanoutNameAndPin, const double pinCapacitance)</title> <emphasis>Increments effective capacitance of fanoutNameAndPin by pinCapacitance.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string fanoutNameAndPin, const double pinCapacitance</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1a5575e4f4e598047dd87fee0707d135d3">
+                <title>Transitions&lt;double&gt; RCTreeWireDelayModel::root_delay (int arc_number)</title> <emphasis>Returns Transitions&lt;double&gt; representing delay time value at arc_number.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>int</entry>
+                                <entry>
+<para>arc_number</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1aa314aa73bf2e25008d330ad19544e210">
+                <title>Transitions&lt;double&gt; RCTreeWireDelayModel::root_slew (int arc_number)</title> <emphasis>Returns Transitions&lt;double&gt; representing slew time value at arc_number.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>int</entry>
+                                <entry>
+<para>arc_number</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classRCTreeWireDelayModel_1acb14554ad26108d350770391b1923c51">
+                <title>void RCTreeWireDelayModel::clear ()</title> <emphasis>Sets slew and delay time values to zero.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

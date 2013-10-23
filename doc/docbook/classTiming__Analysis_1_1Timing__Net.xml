@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTiming__Analysis_1_1Timing__Net">
+<title>Timing_Analysis::Timing_Net class Reference</title>
+<para>
+    <programlisting>#include <link linkend="timing__net_8h">&lt;timing_net.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>WireDelayModel * _wire_delay_model</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTiming__Analysis_1_1Timing__Net_1aa31562b888cce5b1ad2a4198ad6c37d1">Timing_Net</link> (
+const string &amp; name, <link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link> * from, <link linkend="classWireDelayModel">WireDelayModel</link> * wire_delay_model)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classTiming__Analysis_1_1Timing__Net_1a919bdd9eb5b7d00b1c6b692bb34d6b6b">~Timing_Net</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const string <link linkend="classTiming__Analysis_1_1Timing__Net_1aa21494aaaade42ab7578e697b9fc5d14">name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classWireDelayModel">WireDelayModel</link> * <link linkend="classTiming__Analysis_1_1Timing__Net_1ac8cd484d33ccb714f2611a04dd653a66">wire_delay_model</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Describes a <link linkend="classTiming__Analysis_1_1Timing__Net">Timing_Net</link> of the timing graph model. Vertex which connects one <link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link> to multiple <link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link>&apos;s. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 15 of file timing_net.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>timing_net.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classTiming__Analysis_1_1Timing__Net_1aa31562b888cce5b1ad2a4198ad6c37d1">
+                <title>Timing_Analysis::Timing_Net::Timing_Net (const string &amp;name, Timing_Point *from, WireDelayModel *wire_delay_model)</title> <emphasis>Timing_Net constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; name, <link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link> * from, <link linkend="classWireDelayModel">WireDelayModel</link> * wire_delay_model </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Net_1a919bdd9eb5b7d00b1c6b692bb34d6b6b">
+                <title>virtual Timing_Analysis::Timing_Net::~Timing_Net ()</title> <emphasis>Empty Timing_Net destructor.</emphasis>
+                
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Net_1aa21494aaaade42ab7578e697b9fc5d14">
+                <title>const string Timing_Analysis::Timing_Net::name () const </title> <emphasis>Returns Timing_Net name.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>const string </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Net_1ac8cd484d33ccb714f2611a04dd653a66">
+                <title>WireDelayModel* Timing_Analysis::Timing_Net::wire_delay_model ()</title> <emphasis>Returns pointer to WireDelayModel.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para><link linkend="classWireDelayModel">WireDelayModel</link> * </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

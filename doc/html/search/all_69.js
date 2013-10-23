@@ -2,13 +2,26 @@ var searchData=
 [
   ['if',['IF',['../structIF.html',1,'']]],
   ['if_3c_20false_2c_20thentype_2c_20elsetype_20_3e',['IF&lt; false, ThenType, ElseType &gt;',['../structIF_3_01false_00_01ThenType_00_01ElseType_01_4.html',1,'']]],
+  ['index_2edox',['Index.dox',['../Index_8dox.html',1,'']]],
+  ['innets',['inNets',['../structCircuit__Netlist_1_1Logic__Gate.html#a0ada4f530d1846973daed17e35eb10a7',1,'Circuit_Netlist::Logic_Gate']]],
+  ['input',['INPUT',['../namespaceTiming__Analysis.html#a16a3b48fc06525858e635c3cde4d0ff9a0ca512a1b74ecb8439f173c72e8afa6d',1,'Timing_Analysis']]],
   ['input_5fdelay',['input_delay',['../classDesign__Constraints.html#ab9e466f0f2ad7cfd16f8fe0d0b814b16',1,'Design_Constraints::input_delay(const string input_name, const Transitions&lt; double &gt; delay)'],['../classDesign__Constraints.html#ae67988a0cd0ba0ab5ad1463c273eb287',1,'Design_Constraints::input_delay(const string input_name) const ']]],
   ['input_5ftransition',['input_transition',['../classDesign__Constraints.html#afd86c8844a5a62d1a6bbd7138d548cf9',1,'Design_Constraints::input_transition(const string input_name, const Transitions&lt; double &gt; transition)'],['../classDesign__Constraints.html#a2fedb3b4d77d0b029e00bf0200fb84a2',1,'Design_Constraints::input_transition(const string input_name) const ']]],
+  ['inputdriver',['inputDriver',['../structCircuit__Netlist_1_1Logic__Gate.html#ad08611514342cd0293640fac9eebc61a',1,'Circuit_Netlist::Logic_Gate']]],
   ['interpolate',['interpolate',['../classLibertyLookupTableInterpolator.html#ae12e0b9e427488bc933b54a427586f47',1,'LibertyLookupTableInterpolator::interpolate(const LibertyLookupTable &amp;lut, const double load, const double transition)=0'],['../classLibertyLookupTableInterpolator.html#a3f840a4246b193e9e620b3ec8cadb720',1,'LibertyLookupTableInterpolator::interpolate(const LibertyLookupTable &amp;riseLut, const LibertyLookupTable &amp;fallLut, const Transitions&lt; double &gt; load, const Transitions&lt; double &gt; transition, Unateness unateness=NEGATIVE_UNATE, bool is_input_driver=false)=0'],['../classLinearLibertyLookupTableInterpolator.html#afd4bc7bfcf9e969478fbc9505b588bf3',1,'LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable &amp;lut, const double load, const double transition)'],['../classLinearLibertyLookupTableInterpolator.html#a9b0f96185327e7cb0e5c315691eb6579',1,'LinearLibertyLookupTableInterpolator::interpolate(const LibertyLookupTable &amp;riseLut, const LibertyLookupTable &amp;fallLut, const Transitions&lt; double &gt; load, const Transitions&lt; double &gt; transition, Unateness unateness=NEGATIVE_UNATE, bool is_input_driver=false)']]],
+  ['interpolator',['interpolator',['../classWireDelayModel.html#aa8f767316492b902c13ec68651b30247',1,'WireDelayModel']]],
+  ['is',['is',['../classParser.html#a74c323dd4798b459fa982295b8e871bc',1,'Parser']]],
   ['is_5finput_5fpin',['is_input_pin',['../classTiming__Analysis_1_1Timing__Point.html#aebb2497a057619c1cc9206253238f969',1,'Timing_Analysis::Timing_Point']]],
   ['is_5foutput_5fpin',['is_output_pin',['../classTiming__Analysis_1_1Timing__Point.html#a5c8883bd6dae6b49cb5c80e16b612d70',1,'Timing_Analysis::Timing_Point']]],
   ['is_5fpi',['is_PI',['../classTiming__Analysis_1_1Timing__Point.html#a0c943d53edbf2fbffa188ebf883a5b9f',1,'Timing_Analysis::Timing_Point']]],
   ['is_5fpi_5finput',['is_PI_input',['../classTiming__Analysis_1_1Timing__Point.html#a1353ea265660f4bada0367f9a0d4251c',1,'Timing_Analysis::Timing_Point']]],
   ['is_5fpo',['is_PO',['../classTiming__Analysis_1_1Timing__Point.html#a2223c8ec07ef018d39db5c7e03df90a9',1,'Timing_Analysis::Timing_Point']]],
-  ['is_5freg_5finput',['is_reg_input',['../classTiming__Analysis_1_1Timing__Point.html#aabcd5ebf7151be22c98753d16f26c84c',1,'Timing_Analysis::Timing_Point']]]
+  ['is_5freg_5finput',['is_reg_input',['../classTiming__Analysis_1_1Timing__Point.html#aabcd5ebf7151be22c98753d16f26c84c',1,'Timing_Analysis::Timing_Point']]],
+  ['isclock',['isClock',['../structLibertyPinInfo.html#a8200642f454380e2e22f4158d471c302',1,'LibertyPinInfo']]],
+  ['isinput',['isInput',['../structLibertyPinInfo.html#a57daad21ecac17f40631e0c563f7f39d',1,'LibertyPinInfo']]],
+  ['ispd_5f2012',['ISPD_2012',['../classTraits.html#a6be4a9876454c3e6e139e7d213a74884',1,'Traits']]],
+  ['ispd_5fcontest_5fbenchmark',['ispd_contest_benchmark',['../classTraits.html#af167fe41eea5cdd9e190a0807f39b3f4',1,'Traits']]],
+  ['ispd_5fcontest_5froot',['ispd_contest_root',['../classTraits.html#a418b8b76f68ab0a74e58119f32330547',1,'Traits']]],
+  ['issequential',['isSequential',['../structLibertyCellInfo.html#a7d8643908315b2a90faf453fa475b2ea',1,'LibertyCellInfo']]],
+  ['isspecialchar',['isSpecialChar',['../classParser.html#a83c7ac58f2c98cc54e9c750b29e6b0f0',1,'Parser']]]
 ];

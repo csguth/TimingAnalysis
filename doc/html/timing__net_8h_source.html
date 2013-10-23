@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>TimingAnalysis: tccChrystian/src/include/timing_net.h Source File</title>
+<title>TimingAnalysis: TimingAnalysis/src/include/timing_net.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_24ec47c0a6bdbcbca00af9fb6c6b9d83.html">tccChrystian</a></li><li class="navelem"><a class="el" href="dir_eb81c6257e1a53e833c20a1d2b693c4b.html">src</a></li><li class="navelem"><a class="el" href="dir_3125b4672bc50daf2b8ec1bf3083b828.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_5bfb5c4ab9a51b2d4e793d77905e678f.html">TimingAnalysis</a></li><li class="navelem"><a class="el" href="dir_a3b1ee914c9cf90eb25554d126c05f83.html">src</a></li><li class="navelem"><a class="el" href="dir_9f32e12a0c8b00327ae449b12edb6d5c.html">include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -87,20 +88,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">timing_net.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TIMING_NET_H</span></div>
+<a href="timing__net_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TIMING_NET_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TIMING_NET_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;wire_delay_model.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;multi_fanout_edge.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;timing_point.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="wire__delay__model_8h.html">wire_delay_model.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multi__fanout__edge_8h.html">multi_fanout_edge.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="timing__point_8h.html">timing_point.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>Timing_Analysis {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">class </span>Timing_Point;</div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Timing__Net.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classTiming__Analysis_1_1Timing__Net.html">Timing_Net</a> : <span class="keyword">public</span> <a class="code" href="classTiming__Analysis_1_1Multi__Fanout__Edge.html">Multi_Fanout_Edge</a>&lt;Timing_Point&gt;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html">Timing_Analysis</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Timing__Net.html#aab560f9cdcd55852a6a08a29a54a2b16">   16</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html">Timing_Analysis</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Timing__Net.html#a2562d249ea959d9e392abdffe35cdbad">   17</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classTiming__Analysis_1_1Timing__Point.html">Timing_Point</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">string</span> _name;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classWireDelayModel.html">WireDelayModel</a> * _wire_delay_model;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
@@ -118,21 +119,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif // TIMING_NET_H</span></div>
+<div class="ttc" id="timing__point_8h_html"><div class="ttname"><a href="timing__point_8h.html">timing_point.h</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Net_html_aa21494aaaade42ab7578e697b9fc5d14"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Net.html#aa21494aaaade42ab7578e697b9fc5d14">Timing_Analysis::Timing_Net::name</a></div><div class="ttdeci">const string name() const </div><div class="ttdoc">Returns Timing_Net name. </div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Point_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Point.html">Timing_Analysis::Timing_Point</a></div><div class="ttdoc">Describes a Timing_Point of the timing graph model. </div><div class="ttdef"><b>Definition:</b> timing_point.h:20</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Net_html_ac8cd484d33ccb714f2611a04dd653a66"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Net.html#ac8cd484d33ccb714f2611a04dd653a66">Timing_Analysis::Timing_Net::wire_delay_model</a></div><div class="ttdeci">WireDelayModel * wire_delay_model()</div><div class="ttdoc">Returns pointer to WireDelayModel. </div><div class="ttdef"><b>Definition:</b> timing_net.h:48</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Net_html_affa1b519dc847065ac579b4c8726c740"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Net.html#affa1b519dc847065ac579b4c8726c740">Timing_Analysis::Timing_Net::operator&lt;&lt;</a></div><div class="ttdeci">friend ostream &amp; operator&lt;&lt;(ostream &amp;out, const Timing_Net &amp;tn)</div><div class="ttdoc">Redefinition of &amp;lt;&amp;lt; operator. Inserts formatted description including Timing_Net name. </div></div>
+<div class="ttc" id="multi__fanout__edge_8h_html"><div class="ttname"><a href="multi__fanout__edge_8h.html">multi_fanout_edge.h</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html">Timing_Analysis::Timing_Analysis</a></div><div class="ttdoc">Class which performs the timing analysis. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:70</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Net_html_aa31562b888cce5b1ad2a4198ad6c37d1"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Net.html#aa31562b888cce5b1ad2a4198ad6c37d1">Timing_Analysis::Timing_Net::Timing_Net</a></div><div class="ttdeci">Timing_Net(const string &amp;name, Timing_Point *from, WireDelayModel *wire_delay_model)</div><div class="ttdoc">Timing_Net constructor. </div><div class="ttdef"><b>Definition:</b> timing_net.h:26</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html_a47020ea89fd9fde438adc814a731a23d"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">Timing_Analysis::Edge&lt; Timing_Point &gt;::from</a></div><div class="ttdeci">Timing_Point * from() const</div><div class="ttdoc">Returns origin vertex. </div><div class="ttdef"><b>Definition:</b> edge.h:66</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Net_html_a919bdd9eb5b7d00b1c6b692bb34d6b6b"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Net.html#a919bdd9eb5b7d00b1c6b692bb34d6b6b">Timing_Analysis::Timing_Net::~Timing_Net</a></div><div class="ttdeci">virtual ~Timing_Net()</div><div class="ttdoc">Empty Timing_Net destructor. </div><div class="ttdef"><b>Definition:</b> timing_net.h:33</div></div>
+<div class="ttc" id="wire__delay__model_8h_html"><div class="ttname"><a href="wire__delay__model_8h.html">wire_delay_model.h</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Net_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Net.html">Timing_Analysis::Timing_Net</a></div><div class="ttdoc">Describes a Timing_Net of the timing graph model. Vertex which connects one Timing_Point to multiple ...</div><div class="ttdef"><b>Definition:</b> timing_net.h:14</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Multi__Fanout__Edge_html"><div class="ttname"><a href="classTiming__Analysis_1_1Multi__Fanout__Edge.html">Timing_Analysis::Multi_Fanout_Edge</a></div><div class="ttdoc">Inherits from Edge. An multi fanout edge is a group of edges which connects a vertex to more than one...</div><div class="ttdef"><b>Definition:</b> multi_fanout_edge.h:13</div></div>
 <div class="ttc" id="classWireDelayModel_html"><div class="ttname"><a href="classWireDelayModel.html">WireDelayModel</a></div><div class="ttdoc">Describes parasitc elements present in wires in a circuit which cause significant delay and are taken...</div><div class="ttdef"><b>Definition:</b> wire_delay_model.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 9 2013 10:26:53 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2013 15:22:25 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

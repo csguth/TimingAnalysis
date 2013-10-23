@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>TimingAnalysis: tccChrystian/src/include/timing_analysis.h Source File</title>
+<title>TimingAnalysis: TimingAnalysis/src/include/timing_analysis.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_24ec47c0a6bdbcbca00af9fb6c6b9d83.html">tccChrystian</a></li><li class="navelem"><a class="el" href="dir_eb81c6257e1a53e833c20a1d2b693c4b.html">src</a></li><li class="navelem"><a class="el" href="dir_3125b4672bc50daf2b8ec1bf3083b828.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_5bfb5c4ab9a51b2d4e793d77905e678f.html">TimingAnalysis</a></li><li class="navelem"><a class="el" href="dir_a3b1ee914c9cf90eb25554d126c05f83.html">src</a></li><li class="navelem"><a class="el" href="dir_9f32e12a0c8b00327ae449b12edb6d5c.html">include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -87,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">timing_analysis.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TIMING_ANALYSIS_H_</span></div>
+<a href="timing__analysis_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TIMING_ANALYSIS_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define TIMING_ANALYSIS_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
@@ -113,26 +114,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;timer_interface.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="timer__interface_8h.html">timer_interface.h</a>&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;transitions.h&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;circuit_netlist.h&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;wire_delay_model.h&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;liberty_library.h&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;design_constraints.h&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="transitions_8h.html">transitions.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="circuit__netlist_8h.html">circuit_netlist.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="wire__delay__model_8h.html">wire_delay_model.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="liberty__library_8h.html">liberty_library.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="design__constraints_8h.html">design_constraints.h</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;configuration.h&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="configuration_8h.html">configuration.h</a>&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;parser.h&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="parser_8h.html">parser.h</a>&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;timing_net.h&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;timing_point.h&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;timing_net.h&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="timing__net_8h.html">timing_net.h</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="timing__point_8h.html">timing_point.h</a>&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="timing__net_8h.html">timing_net.h</a>&quot;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span>Timing_Analysis</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Option.html">   48</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classTiming__Analysis_1_1Option.html">Option</a></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html">Timing_Analysis</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Option.html#aab560f9cdcd55852a6a08a29a54a2b16">   50</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html">Timing_Analysis</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">int</span> _footprint_index;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">int</span> _option_index;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">bool</span> _dont_touch;</div>
@@ -159,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        vector&lt;bool&gt; _dirty;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">const</span> <a class="code" href="classLibertyLibrary.html">LibertyLibrary</a> * _library;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> Parasitics * _parasitics;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">const</span> <a class="code" href="configuration_8h.html#ac77efd4436b2f78ddba37713fc5d597c">Parasitics</a> * _parasitics;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classLibertyLookupTableInterpolator.html">LibertyLookupTableInterpolator</a> * _interpolator;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classTransitions.html">Transitions&lt;double&gt;</a> _target_delay;</div>
@@ -196,7 +197,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment"></span>        <span class="keywordtype">void</span> write_sizes_file(<span class="keyword">const</span> <span class="keywordtype">string</span> filename);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html#aea46c3c9e4015f3b6802eca8a9c6d798">Timing_Analysis</a>(<span class="keyword">const</span> <a class="code" href="classCircuit__Netlist.html">Circuit_Netlist</a> &amp; netlist, <span class="keyword">const</span> <a class="code" href="classLibertyLibrary.html">LibertyLibrary</a> * lib, <span class="keyword">const</span> Parasitics * _parasitics, <span class="keyword">const</span> <a class="code" href="classDesign__Constraints.html">Design_Constraints</a> * sdc);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html#aea46c3c9e4015f3b6802eca8a9c6d798">Timing_Analysis</a>(<span class="keyword">const</span> <a class="code" href="classCircuit__Netlist.html">Circuit_Netlist</a> &amp; netlist, <span class="keyword">const</span> <a class="code" href="classLibertyLibrary.html">LibertyLibrary</a> * lib, <span class="keyword">const</span> <a class="code" href="configuration_8h.html#ac77efd4436b2f78ddba37713fc5d597c">Parasitics</a> * _parasitics, <span class="keyword">const</span> <a class="code" href="classDesign__Constraints.html">Design_Constraints</a> * sdc);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html#a769abb84f8a930cc46972ec6b1b6c9f5">~Timing_Analysis</a>();</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">//</span></div>
@@ -214,7 +215,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html#a0263a18b53ef152589a3396423490f78">pin_capacitance</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> timing_point_index) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html#a6569529b1614d4507d48293c7ea9f544">pin_load</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> timing_point_index) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html#a578a7940a493f7e6ab5ca4518984b8d4">option</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> gate_number);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordtype">size_t</span> number_of_options(<span class="keyword">const</span> <span class="keywordtype">int</span> gate_index);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html#a392a426d13c3d2258e07c553039af878">number_of_options</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> gate_index);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
 <div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Timing__Analysis.html#a5c2fd4b82fa80ea43fa1f519b230c8fe">  267</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classTiming__Analysis_1_1Timing__Analysis.html#a5c2fd4b82fa80ea43fa1f519b230c8fe">first_PO_index</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _first_PO_index; }</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
@@ -234,6 +235,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="structLibertyCellInfo_html"><div class="ttname"><a href="structLibertyCellInfo.html">LibertyCellInfo</a></div><div class="ttdoc">Struct which has informations about a cell. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:104</div></div>
+<div class="ttc" id="timing__point_8h_html"><div class="ttname"><a href="timing__point_8h.html">timing_point.h</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_ad88fd0b79ae6d221a5691da10b0aa9e4"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#ad88fd0b79ae6d221a5691da10b0aa9e4">Timing_Analysis::Timing_Analysis::print_info</a></div><div class="ttdeci">void print_info()</div><div class="ttdoc">Prints graph and circuit info. </div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_a16566352c5a2b9da08b2c65fadd774de"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#a16566352c5a2b9da08b2c65fadd774de">Timing_Analysis::Timing_Analysis::full_timing_analysis</a></div><div class="ttdeci">void full_timing_analysis()</div><div class="ttdoc">Updates all timing values of all elements. </div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Option_html_ac426169d74c9d432f168255b6cb52544"><div class="ttname"><a href="classTiming__Analysis_1_1Option.html#ac426169d74c9d432f168255b6cb52544">Timing_Analysis::Option::Option</a></div><div class="ttdeci">Option()</div><div class="ttdoc">Option default constructor. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:58</div></div>
@@ -241,14 +243,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_a6d3fd296c18a72b05d36addc14068e16"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#a6d3fd296c18a72b05d36addc14068e16">Timing_Analysis::Timing_Analysis::report_timing</a></div><div class="ttdeci">void report_timing()</div><div class="ttdoc">Prints results from analysis. </div></div>
 <div class="ttc" id="classTransitions_html"><div class="ttname"><a href="classTransitions.html">Transitions&lt; double &gt;</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_aa4220574cd239b38b7905636a6a4e43b"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#aa4220574cd239b38b7905636a6a4e43b">Timing_Analysis::Timing_Analysis::validate_with_prime_time</a></div><div class="ttdeci">bool validate_with_prime_time()</div><div class="ttdoc">Validates timing_file with prime time, prints results and returns true. </div></div>
+<div class="ttc" id="timer__interface_8h_html"><div class="ttname"><a href="timer__interface_8h.html">timer_interface.h</a></div></div>
+<div class="ttc" id="timing__net_8h_html"><div class="ttname"><a href="timing__net_8h.html">timing_net.h</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Point_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Point.html">Timing_Analysis::Timing_Point</a></div><div class="ttdoc">Describes a Timing_Point of the timing graph model. </div><div class="ttdef"><b>Definition:</b> timing_point.h:20</div></div>
+<div class="ttc" id="liberty__library_8h_html"><div class="ttname"><a href="liberty__library_8h.html">liberty_library.h</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_a2c45b5a9fd71b7197a327593d54663a3"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#a2c45b5a9fd71b7197a327593d54663a3">Timing_Analysis::Timing_Analysis::print_circuit_info</a></div><div class="ttdeci">void print_circuit_info()</div><div class="ttdoc">Prints timing info. </div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_a769abb84f8a930cc46972ec6b1b6c9f5"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#a769abb84f8a930cc46972ec6b1b6c9f5">Timing_Analysis::Timing_Analysis::~Timing_Analysis</a></div><div class="ttdeci">virtual ~Timing_Analysis()</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html">Timing_Analysis::Timing_Analysis</a></div><div class="ttdoc">Class which performs the timing analysis. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:70</div></div>
+<div class="ttc" id="parser_8h_html"><div class="ttname"><a href="parser_8h.html">parser.h</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_ab113f7930936110307c215a90e410769"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#ab113f7930936110307c215a90e410769">Timing_Analysis::Timing_Analysis::timing_net</a></div><div class="ttdeci">const Timing_Net &amp; timing_net(const int i)</div><div class="ttdoc">Returns timing net reference at index i. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:238</div></div>
 <div class="ttc" id="classLibertyLibrary_html"><div class="ttname"><a href="classLibertyLibrary.html">LibertyLibrary</a></div><div class="ttdoc">Standard cell Library is a collection of logic functions info. Contains details about implementations...</div><div class="ttdef"><b>Definition:</b> liberty_library.h:132</div></div>
+<div class="ttc" id="transitions_8h_html"><div class="ttname"><a href="transitions_8h.html">transitions.h</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_a6569529b1614d4507d48293c7ea9f544"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#a6569529b1614d4507d48293c7ea9f544">Timing_Analysis::Timing_Analysis::pin_load</a></div><div class="ttdeci">double pin_load(const int timing_point_index) const </div><div class="ttdoc">Returns pin load at timing point index. </div></div>
 <div class="ttc" id="structCircuit__Netlist_1_1Logic__Gate_html"><div class="ttname"><a href="structCircuit__Netlist_1_1Logic__Gate.html">Circuit_Netlist::Logic_Gate</a></div><div class="ttdoc">Struct which represents a Logic_Gate. </div><div class="ttdef"><b>Definition:</b> circuit_netlist.h:36</div></div>
+<div class="ttc" id="configuration_8h_html"><div class="ttname"><a href="configuration_8h.html">configuration.h</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_aea46c3c9e4015f3b6802eca8a9c6d798"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#aea46c3c9e4015f3b6802eca8a9c6d798">Timing_Analysis::Timing_Analysis::Timing_Analysis</a></div><div class="ttdeci">Timing_Analysis(const Circuit_Netlist &amp;netlist, const LibertyLibrary *lib, const Parasitics *_parasitics, const Design_Constraints *sdc)</div><div class="ttdoc">Timing_Analysis default constructor. </div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_ae98e3de81890f6e7b23b58af151e17ab"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#ae98e3de81890f6e7b23b58af151e17ab">Timing_Analysis::Timing_Analysis::call_prime_time</a></div><div class="ttdeci">void call_prime_time()</div><div class="ttdoc">Calls prime time to set time values. </div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_a0d0a28110de2017c754373f7a73c160d"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#a0d0a28110de2017c754373f7a73c160d">Timing_Analysis::Timing_Analysis::timing_nets_size</a></div><div class="ttdeci">size_t timing_nets_size()</div><div class="ttdoc">Returns number of timing nets. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:231</div></div>
@@ -257,18 +265,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classTiming__Analysis_1_1Option_html"><div class="ttname"><a href="classTiming__Analysis_1_1Option.html">Timing_Analysis::Option</a></div><div class="ttdoc">Refers to the implementation option of a logic gate. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:48</div></div>
 <div class="ttc" id="classCircuit__Netlist_html"><div class="ttname"><a href="classCircuit__Netlist.html">Circuit_Netlist</a></div><div class="ttdoc">File which describe the set of elements of the circuit. Generated by the VerilogParser class...</div><div class="ttdef"><b>Definition:</b> circuit_netlist.h:30</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_ab51fd160e68b13a059efdcc460da1e83"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#ab51fd160e68b13a059efdcc460da1e83">Timing_Analysis::Timing_Analysis::timing_arc</a></div><div class="ttdeci">const Timing_Arc &amp; timing_arc(const int i)</div><div class="ttdoc">Returns timing arc reference at index i. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:226</div></div>
+<div class="ttc" id="configuration_8h_html_ac77efd4436b2f78ddba37713fc5d597c"><div class="ttname"><a href="configuration_8h.html#ac77efd4436b2f78ddba37713fc5d597c">Parasitics</a></div><div class="ttdeci">IF&lt; Traits::ISPD_2012, Parasitics2012, Parasitics2013 &gt;::RET Parasitics</div><div class="ttdef"><b>Definition:</b> configuration.h:66</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Arc_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Arc.html">Timing_Analysis::Timing_Arc</a></div><div class="ttdoc">Describes a Timing_Arc of the timing graph model. Vertex which connects one Timing_Point to another t...</div><div class="ttdef"><b>Definition:</b> timing_arc.h:15</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_a5c2fd4b82fa80ea43fa1f519b230c8fe"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#a5c2fd4b82fa80ea43fa1f519b230c8fe">Timing_Analysis::Timing_Analysis::first_PO_index</a></div><div class="ttdeci">int first_PO_index() const </div><div class="ttdoc">Returns first primary output index. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:267</div></div>
+<div class="ttc" id="wire__delay__model_8h_html"><div class="ttname"><a href="wire__delay__model_8h.html">wire_delay_model.h</a></div></div>
+<div class="ttc" id="circuit__netlist_8h_html"><div class="ttname"><a href="circuit__netlist_8h.html">circuit_netlist.h</a></div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Option_html_a1d95559d49ea714e293a8679cefe8295"><div class="ttname"><a href="classTiming__Analysis_1_1Option.html#a1d95559d49ea714e293a8679cefe8295">Timing_Analysis::Option::Option</a></div><div class="ttdeci">Option(const int footprintIndex, const int optionIndex)</div><div class="ttdoc">Option default constructor. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:63</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_a578a7940a493f7e6ab5ca4518984b8d4"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#a578a7940a493f7e6ab5ca4518984b8d4">Timing_Analysis::Timing_Analysis::option</a></div><div class="ttdeci">int option(const int gate_number)</div><div class="ttdoc">Returns option index at gate_number index. </div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Net_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Net.html">Timing_Analysis::Timing_Net</a></div><div class="ttdoc">Describes a Timing_Net of the timing graph model. Vertex which connects one Timing_Point to multiple ...</div><div class="ttdef"><b>Definition:</b> timing_net.h:14</div></div>
+<div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_a392a426d13c3d2258e07c553039af878"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#a392a426d13c3d2258e07c553039af878">Timing_Analysis::Timing_Analysis::number_of_options</a></div><div class="ttdeci">size_t number_of_options(const int gate_index)</div></div>
 <div class="ttc" id="classDesign__Constraints_html"><div class="ttname"><a href="classDesign__Constraints.html">Design_Constraints</a></div><div class="ttdoc">Represents the design constraints of the case in study. Generated by the SDCParser class...</div><div class="ttdef"><b>Definition:</b> design_constraints.h:21</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html_accd0fc851f665860214942e93242585b"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html#accd0fc851f665860214942e93242585b">Timing_Analysis::Timing_Analysis::timing_points_size</a></div><div class="ttdeci">size_t timing_points_size()</div><div class="ttdoc">Returns number of timing points. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:207</div></div>
+<div class="ttc" id="design__constraints_8h_html"><div class="ttname"><a href="design__constraints_8h.html">design_constraints.h</a></div></div>
 <div class="ttc" id="classLibertyLookupTableInterpolator_html"><div class="ttname"><a href="classLibertyLookupTableInterpolator.html">LibertyLookupTableInterpolator</a></div><div class="ttdoc">Interpolation calculator. </div><div class="ttdef"><b>Definition:</b> liberty_library.h:206</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 9 2013 10:26:53 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2013 15:22:25 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

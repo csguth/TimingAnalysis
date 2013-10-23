@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structCircuit__Netlist_1_1Logic__Gate">
+<title>Circuit_Netlist::Logic_Gate struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="circuit__netlist_8h">&lt;circuit_netlist.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string cellType</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; int &gt; inNets</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int fanoutNetIndex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool inputDriver</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool sequential</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool primary_output</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structCircuit__Netlist_1_1Logic__Gate_1a81569a5c27c575b1725c5da2c2090f54">Logic_Gate</link> (
+const string name, const string cellType, const unsigned inputs, int fanoutNetIndex, const bool inputDriver, const bool primary_output)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Struct which represents a <link linkend="structCircuit__Netlist_1_1Logic__Gate">Logic_Gate</link>. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 36 of file circuit_netlist.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>circuit_netlist.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="structCircuit__Netlist_1_1Logic__Gate_1a81569a5c27c575b1725c5da2c2090f54">
+                <title>Circuit_Netlist::Logic_Gate::Logic_Gate (const string name, const string cellType, const unsigned inputs, int fanoutNetIndex, const bool inputDriver=false, const bool primary_output=false)</title> <emphasis>Logic_Gate constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string name, const string cellType, const unsigned inputs, int fanoutNetIndex, const bool inputDriver(false default), const bool primary_output(false default) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+</section>

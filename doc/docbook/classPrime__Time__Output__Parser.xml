@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classPrime__Time__Output__Parser">
+<title>Prime_Time_Output_Parser class Reference</title>
+<para>
+    <programlisting>#include <link linkend="parser_8h">&lt;parser.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structPrime__Time__Output__Parser_1_1Pin__Timing">Prime_Time_Output_Parser::Pin_Timing</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structPrime__Time__Output__Parser_1_1Port__Timing">Prime_Time_Output_Parser::Port_Timing</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classPrime__Time__Output__Parser_1_1Prime__Time__Output">Prime_Time_Output_Parser::Prime_Time_Output</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classPrime__Time__Output__Parser_1abbd1008efff182a6b8ce0f676b4ee823">Prime_Time_Output_Parser</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classPrime__Time__Output__Parser_1_1Prime__Time__Output">Prime_Time_Output</link> <link linkend="classPrime__Time__Output__Parser_1af43de199ba4575214a4d6e07fb980ca5">parse_prime_time_output_file</link> (
+const string filename)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Inherits from <link linkend="classParser">Parser</link>. Parse the Prime Time output. Used to generate a <link linkend="classPrime__Time__Output__Parser_1_1Prime__Time__Output">Prime_Time_Output</link> object for later use. </para>
+    </simplesect>
+            <section xml:id="classPrime__Time__Output__Parser_1abbd1008efff182a6b8ce0f676b4ee823">
+                <title>Prime_Time_Output_Parser::Prime_Time_Output_Parser ()</title> <emphasis>Prime_Time_Output_Parser empty constructor.</emphasis>
+                
+            </section>
+            <section xml:id="classPrime__Time__Output__Parser_1af43de199ba4575214a4d6e07fb980ca5">
+                <title>const Prime_Time_Output Prime_Time_Output_Parser::parse_prime_time_output_file (const string filename)</title> <emphasis>Returns Prime_Time_Output object generated using values read from file passed as filename parameter.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string filename</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classPrime__Time__Output__Parser_1_1Prime__Time__Output">Prime_Time_Output</link> </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

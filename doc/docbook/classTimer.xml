@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTimer">
+<title>Timer class Reference</title>
+<para>
+    <programlisting>#include <link linkend="timer_8h">&lt;timer.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classTimer_1_1Result">Timer::Result</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct timeval _start_time</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct timeval _stop_time</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Timer::Result _execution_time</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double MICRO</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const double MILI</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTimer_1a5f16e8da27d2a5a5242dead46de05d97">Timer</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classTimer_1ad3c95ce902fce977d280256256856d64">~Timer</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTimer_1a3a8b5272198d029779dc9302a54305a8">start</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTimer_1accef2f2b25869fbca2947a56b494d2a0">end</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTimer_1_1Result">Timer::Result</link> &amp; <link linkend="classTimer_1a8a8f26ec48ce04dc4b87b88b6e789fea">value</link> (
+const double time_definition)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Represents a <link linkend="classTimer">Timer</link>. </para>
+    </simplesect>
+            <section xml:id="classTimer_1a5f16e8da27d2a5a5242dead46de05d97">
+                <title>Timer::Timer ()</title> <emphasis>Timer empty constructor.</emphasis>
+                
+            </section>
+            <section xml:id="classTimer_1ad3c95ce902fce977d280256256856d64">
+                <title>virtual Timer::~Timer ()</title> <emphasis>Timer empty destructor.</emphasis>
+                
+            </section>
+            <section xml:id="classTimer_1a3a8b5272198d029779dc9302a54305a8">
+                <title>void Timer::start ()</title> <emphasis>Starts Timer counting.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTimer_1accef2f2b25869fbca2947a56b494d2a0">
+                <title>void Timer::end ()</title> <emphasis>Ends the counting and sets the execution time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTimer_1a8a8f26ec48ce04dc4b87b88b6e789fea">
+                <title>const Timer::Result&amp; Timer::value (const double time_definition)</title> <emphasis>Returns execution time.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>double time_definition</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTimer_1_1Result">Timer::Result</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

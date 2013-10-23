@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="liberty__library_8h">
+    <title>liberty_library.h File Reference</title>
+    <programlisting>#include &lt;utility&gt;</programlisting>
+    <programlisting>#include &lt;vector&gt;</programlisting>
+    <programlisting>#include &lt;string&gt;</programlisting>
+    <programlisting>#include &lt;map&gt;</programlisting>
+    <programlisting>#include &lt;limits&gt;</programlisting>
+    <programlisting>#include &lt;ostream&gt;</programlisting>
+    <programlisting>#include &lt;cassert&gt;</programlisting>
+    <programlisting>#include &quot;transitions.h&quot;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structLibertyLookupTable">LibertyLookupTable</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structLibertyTimingInfo">LibertyTimingInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structLibertyPinInfo">LibertyPinInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structLibertyCellInfo">LibertyCellInfo</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classLibertyLibrary">LibertyLibrary</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classLibertyLookupTableInterpolator">LibertyLookupTableInterpolator</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classLinearLibertyLookupTableInterpolator">LinearLibertyLookupTableInterpolator</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Enumerations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="liberty__library_8h_1aec44423ef220f800b99f85740d9cc011">Unateness</link>{<link linkend="liberty__library_8h_1aec44423ef220f800b99f85740d9cc011a9f0596f72cc1d35d8a8f5a6d75171948">NEGATIVE_UNATE</link>, <link linkend="liberty__library_8h_1aec44423ef220f800b99f85740d9cc011a90482e6e6994de7ac2e85bfcf7b0346d">POSITIVE_UNATE</link>, <link linkend="liberty__library_8h_1aec44423ef220f800b99f85740d9cc011aab515e260cc4d843f8cfbeec954186a1">NON_UNATE</link>}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Functions</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ostream &amp; <link linkend="liberty__library_8h_1a2b5c2afb61d8db43b4145136b45aafbc">operator&lt;&lt;</link> (
+ostream &amp; os, <link linkend="structLibertyLookupTable">LibertyLookupTable</link> &amp; lut)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ostream &amp; <link linkend="liberty__library_8h_1ad9d786dfc262410d71a4f19f7442e590">operator&lt;&lt;</link> (
+ostream &amp; os, <link linkend="structLibertyTimingInfo">LibertyTimingInfo</link> &amp; timing)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ostream &amp; <link linkend="liberty__library_8h_1a1718f15f691be2f2bc3898720b414d9a">operator&lt;&lt;</link> (
+ostream &amp; os, <link linkend="structLibertyPinInfo">LibertyPinInfo</link> &amp; pin)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>ostream &amp; <link linkend="liberty__library_8h_1a41de515972eee9a86010b52bdf98909b">operator&lt;&lt;</link> (
+ostream &amp; os, <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cell)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/decio/Documentos/estudos/tccChrystian/src/include/liberty_library.h</para>
+    </simplesect>
+</section>

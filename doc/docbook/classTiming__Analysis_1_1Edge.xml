@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTiming__Analysis_1_1Edge">
+<title>Timing_Analysis::Edge class Reference</title>
+<para>
+    <programlisting>#include <link linkend="edge_8h">&lt;edge.h&gt;</link></programlisting>
+</para>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+        <simplesect>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T * _from</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; T * &gt; _to</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTiming__Analysis_1_1Edge_1a64a07a7a08de0e2fd29b1d1db98c5d2d">Edge</link> (
+T * from)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Edge_1a81bc4f5f07902385b2234bf591822a52">set_fanout</link> (
+const int i, T * tp)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Edge_1ab9195f5c50f8a66b29f6856c9629fcc8">add_fanout</link> (
+T * tp)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T * <link linkend="classTiming__Analysis_1_1Edge_1a47020ea89fd9fde438adc814a731a23d">from</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classTiming__Analysis_1_1Edge_1a60c70172e973450774a8ec5d4dadbcb5">fanouts_size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Template class which represents an edge of the graph model. An edge in graph theory is a connection between vertices. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 17 of file edge.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>edge.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classTiming__Analysis_1_1Edge_1a64a07a7a08de0e2fd29b1d1db98c5d2d">
+                <title>Timing_Analysis::Edge&lt; T &gt;::Edge (T *from)</title> <emphasis>Edge constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>* from </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Edge_1a81bc4f5f07902385b2234bf591822a52">
+                <title>void Timing_Analysis::Edge&lt; T &gt;::set_fanout (const int i, T *tp)</title> <emphasis>Inserts T pointer at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int i, T *tp</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Edge_1ab9195f5c50f8a66b29f6856c9629fcc8">
+                <title>void Timing_Analysis::Edge&lt; T &gt;::add_fanout (T *tp)</title> <emphasis>Inserts T pointer.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>T</entry>
+                                <entry>
+<para>*tp</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Edge_1a47020ea89fd9fde438adc814a731a23d">
+                <title>T* Timing_Analysis::Edge&lt; T &gt;::from () const </title> <emphasis>Returns origin vertex.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>T * </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Edge_1a60c70172e973450774a8ec5d4dadbcb5">
+                <title>size_t Timing_Analysis::Edge&lt; T &gt;::fanouts_size () const </title> <emphasis>Returns fan out.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

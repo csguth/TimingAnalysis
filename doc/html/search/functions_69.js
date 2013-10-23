@@ -8,5 +8,6 @@ var searchData=
   ['is_5fpi',['is_PI',['../classTiming__Analysis_1_1Timing__Point.html#a0c943d53edbf2fbffa188ebf883a5b9f',1,'Timing_Analysis::Timing_Point']]],
   ['is_5fpi_5finput',['is_PI_input',['../classTiming__Analysis_1_1Timing__Point.html#a1353ea265660f4bada0367f9a0d4251c',1,'Timing_Analysis::Timing_Point']]],
   ['is_5fpo',['is_PO',['../classTiming__Analysis_1_1Timing__Point.html#a2223c8ec07ef018d39db5c7e03df90a9',1,'Timing_Analysis::Timing_Point']]],
-  ['is_5freg_5finput',['is_reg_input',['../classTiming__Analysis_1_1Timing__Point.html#aabcd5ebf7151be22c98753d16f26c84c',1,'Timing_Analysis::Timing_Point']]]
+  ['is_5freg_5finput',['is_reg_input',['../classTiming__Analysis_1_1Timing__Point.html#aabcd5ebf7151be22c98753d16f26c84c',1,'Timing_Analysis::Timing_Point']]],
+  ['isspecialchar',['isSpecialChar',['../classParser.html#a83c7ac58f2c98cc54e9c750b29e6b0f0',1,'Parser']]]
 ];

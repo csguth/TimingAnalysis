@@ -1,0 +1,3 @@
+<map id="Transitions::getRise" name="Transitions::getRise">
+<area shape="rect" id="node3" href="$classTransitions.html#ac6e5a9efd02d3da3751fcaa845c7955b" title="Returns Transitions with exchanged value. Ex: If called by Transitions&lt;rise, fall&gt;, returns Transitions&lt;fall, rise&gt; " alt="" coords="192,5,328,51"/>
+</map>

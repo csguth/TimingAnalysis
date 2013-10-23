@@ -62,7 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,13 +95,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="classTransitions.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="transitions_8h_source.html">transitions.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Transitions&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTransitions__inherit__graph.png" border="0" usemap="#Transitions_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="Transitions_3_01T_01_4_inherit__map" id="Transitions_3_01T_01_4_inherit__map">
+<area shape="rect" id="node3" href="classTransitions.html" title="{Transitions\&lt; double \&gt;\n||+ operator[]()\l+ operator[]()\l+ operator=()\l+ Transitions()\l+ Transitions()\l+ set()\l+ getMax()\l+ getMin()\l+ getRise()\l+ getFall()\l+ getReversed()\l+ reverse()\l+ aggregate()\l}" alt="" coords="5,365,152,659"/></map>
+</div>
+<div class="dynheader">
+Collaboration diagram for Transitions&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTransitions__coll__graph.png" border="0" usemap="#Transitions_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a79a4be6a8415710583c6c811a27c3b9d"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a79a4be6a8415710583c6c811a27c3b9d">operator[]</a> (const EdgeType edgeType)</td></tr>
+<tr class="memitem:a79a4be6a8415710583c6c811a27c3b9d"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a79a4be6a8415710583c6c811a27c3b9d">operator[]</a> (const <a class="el" href="transitions_8h.html#a424a64da753a3cd5e96ab8d0553a04c4">EdgeType</a> edgeType)</td></tr>
 <tr class="memdesc:a79a4be6a8415710583c6c811a27c3b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refefinition of [] operator. Returns value of edgeType.  <a href="#a79a4be6a8415710583c6c811a27c3b9d">More...</a><br/></td></tr>
 <tr class="separator:a79a4be6a8415710583c6c811a27c3b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9dddcc4c48658b8adf8739ac139c34f"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#af9dddcc4c48658b8adf8739ac139c34f">operator[]</a> (const EdgeType edgeType) const </td></tr>
+<tr class="memitem:af9dddcc4c48658b8adf8739ac139c34f"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#af9dddcc4c48658b8adf8739ac139c34f">operator[]</a> (const <a class="el" href="transitions_8h.html#a424a64da753a3cd5e96ab8d0553a04c4">EdgeType</a> edgeType) const </td></tr>
 <tr class="memdesc:af9dddcc4c48658b8adf8739ac139c34f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refefinition of [] operator. Returns value of edgeType.  <a href="#af9dddcc4c48658b8adf8739ac139c34f">More...</a><br/></td></tr>
 <tr class="separator:af9dddcc4c48658b8adf8739ac139c34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a280ca4245034d6f298935392f8172cea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTransitions.html">Transitions</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransitions.html#a280ca4245034d6f298935392f8172cea">operator=</a> (const <a class="el" href="classTransitions.html">Transitions</a> &amp;array)</td></tr>
@@ -237,6 +249,15 @@ template&lt;typename T&gt; </div>
 
 <p>Empty <a class="el" href="classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it...">Transitions</a> constructor. </p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTransitions_a5eb22fbf6b9a14410efc696742ee34df_icgraph.png" border="0" usemap="#classTransitions_a5eb22fbf6b9a14410efc696742ee34df_icgraph" alt=""/></div>
+<map name="classTransitions_a5eb22fbf6b9a14410efc696742ee34df_icgraph" id="classTransitions_a5eb22fbf6b9a14410efc696742ee34df_icgraph">
+<area shape="rect" id="node3" href="classTransitions.html#ac6e5a9efd02d3da3751fcaa845c7955b" title="Returns Transitions with exchanged value. Ex: If called by Transitions&lt;rise, fall&gt;, returns Transitions&lt;fall, rise&gt; " alt="" coords="213,5,349,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -293,6 +314,15 @@ template&lt;typename T&gt; </div>
 
 <p>Returns fall time value. </p>
 <dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTransitions_affdb33e440b6ac3e6e685d83d46b3189_icgraph.png" border="0" usemap="#classTransitions_affdb33e440b6ac3e6e685d83d46b3189_icgraph" alt=""/></div>
+<map name="classTransitions_affdb33e440b6ac3e6e685d83d46b3189_icgraph" id="classTransitions_affdb33e440b6ac3e6e685d83d46b3189_icgraph">
+<area shape="rect" id="node3" href="classTransitions.html#ac6e5a9efd02d3da3751fcaa845c7955b" title="Returns Transitions with exchanged value. Ex: If called by Transitions&lt;rise, fall&gt;, returns Transitions&lt;fall, rise&gt; " alt="" coords="187,5,323,51"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -406,6 +436,15 @@ template&lt;typename T&gt; </div>
 <p>Returns rise time value. </p>
 <dl class="section return"><dt>Returns</dt><dd>T </dd></dl>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classTransitions_ad88835ca81b7008ecfb7824bc5c17045_icgraph.png" border="0" usemap="#classTransitions_ad88835ca81b7008ecfb7824bc5c17045_icgraph" alt=""/></div>
+<map name="classTransitions_ad88835ca81b7008ecfb7824bc5c17045_icgraph" id="classTransitions_ad88835ca81b7008ecfb7824bc5c17045_icgraph">
+<area shape="rect" id="node3" href="classTransitions.html#ac6e5a9efd02d3da3751fcaa845c7955b" title="Returns Transitions with exchanged value. Ex: If called by Transitions&lt;rise, fall&gt;, returns Transitions&lt;fall, rise&gt; " alt="" coords="192,5,328,51"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a280ca4245034d6f298935392f8172cea"></a>
@@ -454,7 +493,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">T&amp; <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">const EdgeType&#160;</td>
+          <td class="paramtype">const <a class="el" href="transitions_8h.html#a424a64da753a3cd5e96ab8d0553a04c4">EdgeType</a>&#160;</td>
           <td class="paramname"><em>edgeType</em></td><td>)</td>
           <td></td>
         </tr>
@@ -488,7 +527,7 @@ template&lt;typename T&gt; </div>
         <tr>
           <td class="memname">T <a class="el" href="classTransitions.html">Transitions</a>&lt; T &gt;::operator[] </td>
           <td>(</td>
-          <td class="paramtype">const EdgeType&#160;</td>
+          <td class="paramtype">const <a class="el" href="transitions_8h.html#a424a64da753a3cd5e96ab8d0553a04c4">EdgeType</a>&#160;</td>
           <td class="paramname"><em>edgeType</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -869,12 +908,12 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>tccChrystian/src/include/<a class="el" href="transitions_8h_source.html">transitions.h</a></li>
+<li>TimingAnalysis/src/include/<a class="el" href="transitions_8h_source.html">transitions.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 9 2013 10:26:55 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2013 15:22:25 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

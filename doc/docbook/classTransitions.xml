@@ -1,0 +1,437 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTransitions">
+<title>Transitions class Reference</title>
+<para>
+    <programlisting>#include <link linkend="transitions_8h">&lt;transitions.h&gt;</link></programlisting>
+</para>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T clsValue[2]</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTransitions_1a8aa43dd10cb4d9158fe092bf6c88a2d5">MAKE_OPERATOR</link> (
++ )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTransitions_1a14369e2ded58c0ddbc0b8fa405dc7317">MAKE_OPERATOR</link> (
+- )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>MAKE_OPERATOR * <link linkend="classTransitions_1a383dff9db56d3cea50b93d640167fe4e">MAKE_OPERATOR</link> (
+/ )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTransitions_1ae30c7e027352b3f4e7398024ca54b40a">MAKE_SELF_OPERATOR</link> (
+- )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>MAKE_SELF_OPERATOR * <link linkend="classTransitions_1a868e15a410ae487bd651973243eed5ee">MAKE_SELF_OPERATOR</link> (
+/ )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T &amp; <link linkend="classTransitions_1a79a4be6a8415710583c6c811a27c3b9d">operator[]</link> (
+const <link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4">EdgeType</link> edgeType)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T <link linkend="classTransitions_1af9dddcc4c48658b8adf8739ac139c34f">operator[]</link> (
+const <link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4">EdgeType</link> edgeType)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTransitions">Transitions</link> &amp; <link linkend="classTransitions_1a280ca4245034d6f298935392f8172cea">operator=</link> (
+const <link linkend="classTransitions">Transitions</link> &amp; array)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTransitions_1a0aae6de65968e98353b1fd9b6f394221">Transitions</link> (
+const T rise, const T fall)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTransitions_1a5eb22fbf6b9a14410efc696742ee34df">Transitions</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTransitions_1aa237e34f678bd0aae62be692dc4059dc">set</link> (
+const T rise, const T fall)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T <link linkend="classTransitions_1a59e47d34d366733da94f784c0177f8d9">getMax</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T <link linkend="classTransitions_1a37bb8749642ad21d22b264f39003d2ce">getMin</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T <link linkend="classTransitions_1ad88835ca81b7008ecfb7824bc5c17045">getRise</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T <link linkend="classTransitions_1affdb33e440b6ac3e6e685d83d46b3189">getFall</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTransitions">Transitions</link>&lt; T &gt; <link linkend="classTransitions_1ac6e5a9efd02d3da3751fcaa845c7955b">getReversed</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTransitions_1ae547df9c8b8d6191aa95ca8f3e850605">reverse</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T <link linkend="classTransitions_1ab89e328a131f4ccf8882c67a30d6726c">aggregate</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it. </para>
+    </simplesect>
+            <section xml:id="classTransitions_1a8aa43dd10cb4d9158fe092bf6c88a2d5">
+                <title>Transitions&lt; T &gt;::MAKE_OPERATOR (+)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classTransitions_1a14369e2ded58c0ddbc0b8fa405dc7317">
+                <title>Transitions&lt; T &gt;::MAKE_OPERATOR (-)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classTransitions_1a383dff9db56d3cea50b93d640167fe4e">
+                <title>MAKE_OPERATOR* Transitions&lt; T &gt;::MAKE_OPERATOR (/);MAKE_SELF_OPERATOR(+=</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classTransitions_1ae30c7e027352b3f4e7398024ca54b40a">
+                <title>Transitions&lt; T &gt;::MAKE_SELF_OPERATOR (-=)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classTransitions_1a868e15a410ae487bd651973243eed5ee">
+                <title>MAKE_SELF_OPERATOR* Transitions&lt; T &gt;::MAKE_SELF_OPERATOR (/=);friend Transitions&lt; T &gt; operator-(const Transitions&lt; T &gt; &amp;v0</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classTransitions_1a79a4be6a8415710583c6c811a27c3b9d">
+                <title>T&amp; Transitions&lt; T &gt;::operator[] (const EdgeType edgeType)</title> <emphasis>Refefinition of [] operator. Returns value of edgeType.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>EdgeType edgeType </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTransitions_1af9dddcc4c48658b8adf8739ac139c34f">
+                <title>T Transitions&lt; T &gt;::operator[] (const EdgeType edgeType) const </title> <emphasis>Refefinition of [] operator. Returns value of edgeType.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>EdgeType edgeType </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTransitions_1a280ca4245034d6f298935392f8172cea">
+                <title>Transitions&amp; Transitions&lt; T &gt;::operator= (const Transitions &amp;array)</title> <emphasis>Refefinition of = operator. Sets caller transition time values to array time values and returns a pointer to it.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="classTransitions">Transitions</link> &amp; array </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTransitions_1a0aae6de65968e98353b1fd9b6f394221">
+                <title>Transitions&lt; T &gt;::Transitions (const T rise, const T fall)</title> <emphasis>Transitions default constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>T rise, const T fall </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTransitions_1a5eb22fbf6b9a14410efc696742ee34df">
+                <title>Transitions&lt; T &gt;::Transitions ()</title> <emphasis>Empty Transitions constructor.</emphasis>
+                
+            </section>
+            <section xml:id="classTransitions_1aa237e34f678bd0aae62be692dc4059dc">
+                <title>void Transitions&lt; T &gt;::set (const T rise, const T fall)</title> <emphasis>Sets rise and fall time values.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>T rise, const T fall</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTransitions_1a59e47d34d366733da94f784c0177f8d9">
+                <title>T Transitions&lt; T &gt;::getMax () const </title> <emphasis>Returns max value between rise and fall time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>T </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTransitions_1a37bb8749642ad21d22b264f39003d2ce">
+                <title>T Transitions&lt; T &gt;::getMin () const </title> <emphasis>Returns min value between rise and fall time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>T </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTransitions_1ad88835ca81b7008ecfb7824bc5c17045">
+                <title>T Transitions&lt; T &gt;::getRise () const </title> <emphasis>Returns rise time value.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>T </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTransitions_1affdb33e440b6ac3e6e685d83d46b3189">
+                <title>T Transitions&lt; T &gt;::getFall () const </title> <emphasis>Returns fall time value.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>T </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTransitions_1ac6e5a9efd02d3da3751fcaa845c7955b">
+                <title>Transitions&lt;T&gt; Transitions&lt; T &gt;::getReversed () const </title> <emphasis>Returns Transitions with exchanged value. Ex: If called by Transitions&lt;rise, fall&gt;, returns Transitions&lt;fall, rise&gt;</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>Transitions&lt;T&gt; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTransitions_1ae547df9c8b8d6191aa95ca8f3e850605">
+                <title>void Transitions&lt; T &gt;::reverse ()</title> <emphasis>Exchanges rise and fall time values. Ex: Transitions&lt;rise, fall&gt; becomes Transitions&lt;fall, rise&gt;</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>T </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTransitions_1ab89e328a131f4ccf8882c67a30d6726c">
+                <title>T Transitions&lt; T &gt;::aggregate () const </title> <emphasis>Returns the sum of rise and fall time values.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>T </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

@@ -1,0 +1,4 @@
+<map id="Prime_Time_Output_Parser::Port_Timing" name="Prime_Time_Output_Parser::Port_Timing">
+<area shape="rect" id="node2" href="$classTransitions.html" title="{Transitions\&lt; double \&gt;\n||+ operator[]()\l+ operator[]()\l+ operator=()\l+ Transitions()\l+ Transitions()\l+ set()\l+ getMax()\l+ getMin()\l+ getRise()\l+ getFall()\l+ getReversed()\l+ reverse()\l+ aggregate()\l}" alt="" coords="5,365,152,659"/>
+<area shape="rect" id="node4" href="$classTransitions.html" title="Template class which encapsulates any [rise,fall] twosome values and provides methods to work with it..." alt="" coords="20,5,137,299"/>
+</map>

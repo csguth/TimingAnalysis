@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="configuration_8h">
+    <title>configuration.h File Reference</title>
+    <programlisting>#include &quot;spef_net.h&quot;</programlisting>
+    <programlisting>#include &quot;parser.h&quot;</programlisting>
+    <programlisting>#include &lt;string&gt;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIF">IF</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structIF_3_01false_00_01ThenType_00_01ElseType_01_4">IF&lt; false, ThenType, ElseType &gt;</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classTraits">Traits</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Typedefs</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="structIF">IF</link>&lt; <link linkend="classTraits_1a6be4a9876454c3e6e139e7d213a74884">Traits::ISPD_2012</link>, <link linkend="classSpefParserISPD2012">SpefParserISPD2012</link>, <link linkend="classSpefParserISPD2013">SpefParserISPD2013</link> &gt;::RET  <link linkend="configuration_8h_1a20d6a6ce6bb39f0fac47a6b3e7786fe6">SpefParser</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="structIF">IF</link>&lt; <link linkend="classTraits_1a6be4a9876454c3e6e139e7d213a74884">Traits::ISPD_2012</link>, <link linkend="classSpefNetISPD2012">SpefNetISPD2012</link>, <link linkend="classSpefNetISPD2013">SpefNetISPD2013</link> &gt;::RET  <link linkend="configuration_8h_1ab11dad9e61bc038c56517ca2735fb449">SpefNet</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef <link linkend="structIF">IF</link>&lt; <link linkend="classTraits_1a6be4a9876454c3e6e139e7d213a74884">Traits::ISPD_2012</link>, <link linkend="spef__net_8h_1a37551e9359ee22bb0821ca94784447d4">Parasitics2012</link>, <link linkend="spef__net_8h_1adc6130507d68ab3a34d98dfc3ef83672">Parasitics2013</link> &gt;::RET  <link linkend="configuration_8h_1ac77efd4436b2f78ddba37713fc5d597c">Parasitics</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/decio/Documentos/estudos/tccChrystian/src/include/configuration.h</para>
+    </simplesect>
+</section>

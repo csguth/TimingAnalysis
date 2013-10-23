@@ -1,0 +1,8 @@
+<map id="Parser" name="Parser">
+<area shape="rect" id="node3" href="$classLibertyParser.html" title="Inherits from Parser. Used to generate a LibertyLibrary object from a file. " alt="" coords="5,201,104,287"/>
+<area shape="rect" id="node5" href="$classPrime__Time__Output__Parser.html" title="Inherits from Parser. Parse the Prime Time output. Used to generate a Prime_Time_Output object for la..." alt="" coords="128,193,339,295"/>
+<area shape="rect" id="node7" href="$classSDCParser.html" title="Inherits from Parser. SDC stands for Synopsys Design Constraints. Used to generate a Design_Constrain..." alt="" coords="363,201,451,287"/>
+<area shape="rect" id="node9" href="$classSpefParserISPD2012.html" title="Inherits from Parser. Used to generate SpefNetISPD2012 files from an input. " alt="" coords="475,201,621,287"/>
+<area shape="rect" id="node11" href="$classSpefParserISPD2013.html" title="Inherits from Parser. Used to generate SpefNetISPD2013 file from an input. " alt="" coords="645,201,792,287"/>
+<area shape="rect" id="node13" href="$classVerilogParser.html" title="Inherits from Parser. Parse verilog files. Used to generate circuit netlists. " alt="" coords="816,193,944,295"/>
+</map>

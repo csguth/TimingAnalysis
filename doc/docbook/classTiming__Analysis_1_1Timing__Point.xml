@@ -1,0 +1,690 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTiming__Analysis_1_1Timing__Point">
+<title>Timing_Analysis::Timing_Point class Reference</title>
+<para>
+    <programlisting>#include <link linkend="timing__point_8h">&lt;timing_point.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string _name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Timing_Net * _net</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Timing_Arc * _arc</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _slack</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _slew</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _arrival_time</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t _gate_number</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Timing_Point_Type _type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _ceff</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTiming__Analysis_1_1Timing__Point_1a05b02a7c4e302a256b20bdabf79b37d1">Timing_Point</link> (
+string name, const size_t gate_number, <link linkend="namespaceTiming__Analysis_1a16a3b48fc06525858e635c3cde4d0ff9">Timing_Point_Type</link> type)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classTiming__Analysis_1_1Timing__Point_1a2c676cc95977d209cfa8fe0bcb40ec49">~Timing_Point</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="classTiming__Analysis_1_1Timing__Point_1aaca34298e068bdcc1655c50ee914b9f4">load</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classTiming__Analysis_1_1Timing__Point_1aa68be5e44a1d56f3e6c98dff1efe60e5">ceff</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const string <link linkend="classTiming__Analysis_1_1Timing__Point_1aa4e767553f03fb8dea972d4443edc615">name</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classTiming__Analysis_1_1Timing__Point_1a9f8c6bbc7bc46a3d1ff81a984e76126f">gate_number</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classTiming__Analysis_1_1Timing__Point_1af5a20a073bd09092700ceed49a74e3e7">slack</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classTiming__Analysis_1_1Timing__Point_1ae4d46c6ca5f00b75088e2edb5a3bac21">slew</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classTiming__Analysis_1_1Timing__Point_1ad5a21b6fae7de267768c6f108a96cc4b">arrival_time</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classTiming__Analysis_1_1Timing__Point_1aab60710f64cbc89f7316515aaca8ea17">required_time</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTiming__Analysis_1_1Timing__Net">Timing_Net</link> &amp; <link linkend="classTiming__Analysis_1_1Timing__Point_1ae5be69561ff151feb055e8081911d4c1">net</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Arc</link> &amp; <link linkend="classTiming__Analysis_1_1Timing__Point_1adfac3529231393d429f746d9e1f1bfb6">arc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTiming__Analysis_1_1Timing__Net">Timing_Net</link> &amp; <link linkend="classTiming__Analysis_1_1Timing__Point_1aa63fa25bd56985d8deca58355c48867b">net</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Arc</link> &amp; <link linkend="classTiming__Analysis_1_1Timing__Point_1adfac3529231393d429f746d9e1f1bfb6">arc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Point_1ab4f9a99d6dad95ec709f165f57478e66">ceff</link> (
+<link linkend="classTransitions">Transitions</link>&lt; double &gt; &amp; ceff)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Point_1a18a4b15b4612ea98ebba0f1f1e25db18">slack</link> (
+const <link linkend="classTransitions">Transitions</link>&lt; double &gt; &amp; slack)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Point_1ac8040357b9d6e8bc62d2958b4ffb4da4">slew</link> (
+const <link linkend="classTransitions">Transitions</link>&lt; double &gt; &amp; slew)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Point_1a28f687613d6d4d9ec544f6b90c8d16e6">arrival_time</link> (
+const <link linkend="classTransitions">Transitions</link>&lt; double &gt; &amp; arrival_time)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Point_1ab17571917e751e2d9bdd8dc11404bb66">net</link> (
+<link linkend="classTiming__Analysis_1_1Timing__Net">Timing_Net</link> * net)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Point_1a7db0f9baed61c0534e19c2009ac41db5">arc</link> (
+<link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Arc</link> * arc)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classTiming__Analysis_1_1Timing__Point_1a62c2af027f267f45294b593f880bfe2d">update_slack</link> (
+const <link linkend="classTransitions">Transitions</link>&lt; double &gt; required_time)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Point_1a737bfc39dc3271c9b605d1d16ba8816c">clear_timing_info</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classTiming__Analysis_1_1Timing__Point_1a2223c8ec07ef018d39db5c7e03df90a9">is_PO</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classTiming__Analysis_1_1Timing__Point_1a0c943d53edbf2fbffa188ebf883a5b9f">is_PI</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classTiming__Analysis_1_1Timing__Point_1aebb2497a057619c1cc9206253238f969">is_input_pin</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classTiming__Analysis_1_1Timing__Point_1a5c8883bd6dae6b49cb5c80e16b612d70">is_output_pin</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classTiming__Analysis_1_1Timing__Point_1a1353ea265660f4bada0367f9a0d4251c">is_PI_input</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classTiming__Analysis_1_1Timing__Point_1aabcd5ebf7151be22c98753d16f26c84c">is_reg_input</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Describes a <link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link> of the timing graph model. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 21 of file timing_point.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>timing_point.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a05b02a7c4e302a256b20bdabf79b37d1">
+                <title>Timing_Analysis::Timing_Point::Timing_Point (string name, const size_t gate_number, Timing_Point_Type type)</title> <emphasis>Timing_Point default constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string</entry>
+                                <entry>
+<para>name, const size_t gate_number, Timing_Point_Type type </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a2c676cc95977d209cfa8fe0bcb40ec49">
+                <title>virtual Timing_Analysis::Timing_Point::~Timing_Point ()</title> <emphasis>Empty Timing_Point destructor.</emphasis>
+                
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1aaca34298e068bdcc1655c50ee914b9f4">
+                <title>double Timing_Analysis::Timing_Point::load () const </title> <emphasis>Returns capacitive load of timing point.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>double </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1aa68be5e44a1d56f3e6c98dff1efe60e5">
+                <title>Transitions&lt;double&gt; Timing_Analysis::Timing_Point::ceff () const </title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1aa4e767553f03fb8dea972d4443edc615">
+                <title>const string Timing_Analysis::Timing_Point::name () const </title> <emphasis>Returns Timing_Net name.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>const string </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a9f8c6bbc7bc46a3d1ff81a984e76126f">
+                <title>int Timing_Analysis::Timing_Point::gate_number () const </title> <emphasis>Returns Timing_Net gate number.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1af5a20a073bd09092700ceed49a74e3e7">
+                <title>const Transitions&lt;double&gt; Timing_Analysis::Timing_Point::slack () const </title> <emphasis>Returns Timing_Point slack time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1ae4d46c6ca5f00b75088e2edb5a3bac21">
+                <title>const Transitions&lt;double&gt; Timing_Analysis::Timing_Point::slew () const </title> <emphasis>Returns Timing_Point slew time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1ad5a21b6fae7de267768c6f108a96cc4b">
+                <title>const Transitions&lt;double&gt; Timing_Analysis::Timing_Point::arrival_time () const </title> <emphasis>Returns Timing_Point arrival time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1aab60710f64cbc89f7316515aaca8ea17">
+                <title>const Transitions&lt;double&gt; Timing_Analysis::Timing_Point::required_time () const </title> <emphasis>Returns Timing_Point required time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1ae5be69561ff151feb055e8081911d4c1">
+                <title>Timing_Net&amp; Timing_Analysis::Timing_Point::net ()</title> <emphasis>Returns reference to Timing_Net net.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para><link linkend="classTiming__Analysis_1_1Timing__Net">Timing_Net</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1adfac3529231393d429f746d9e1f1bfb6">
+                <title>Timing_Arc&amp; Timing_Analysis::Timing_Point::arc () const </title> <emphasis>Returns reference to Timing_Arc arc.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para><link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Arc</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1aa63fa25bd56985d8deca58355c48867b">
+                <title>Timing_Net&amp; Timing_Analysis::Timing_Point::net () const </title> <emphasis>Sets the effective capacitance of the Timing_Net.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classTransitions">Transitions&lt;double&gt;</link></entry>
+                                <entry>
+<para>&amp; ceff </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1adfac3529231393d429f746d9e1f1bfb6">
+                <title>Timing_Arc&amp; Timing_Analysis::Timing_Point::arc () const </title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1ab4f9a99d6dad95ec709f165f57478e66">
+                <title>void Timing_Analysis::Timing_Point::ceff (Transitions&lt; double &gt; &amp;ceff)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a18a4b15b4612ea98ebba0f1f1e25db18">
+                <title>void Timing_Analysis::Timing_Point::slack (const Transitions&lt; double &gt; &amp;slack)</title> <emphasis>Sets the slack time of the Timing_Net.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classTransitions">Transitions&lt;double&gt;</link></entry>
+                                <entry>
+<para>&amp; slack </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1ac8040357b9d6e8bc62d2958b4ffb4da4">
+                <title>void Timing_Analysis::Timing_Point::slew (const Transitions&lt; double &gt; &amp;slew)</title> <emphasis>Sets the slew time of the Timing_Net.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classTransitions">Transitions&lt;double&gt;</link></entry>
+                                <entry>
+<para>&amp; slew </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a28f687613d6d4d9ec544f6b90c8d16e6">
+                <title>void Timing_Analysis::Timing_Point::arrival_time (const Transitions&lt; double &gt; &amp;arrival_time)</title> <emphasis>Sets the arrival time of the Timing_Net.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classTransitions">Transitions&lt;double&gt;</link></entry>
+                                <entry>
+<para>&amp; arrival_time </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1ab17571917e751e2d9bdd8dc11404bb66">
+                <title>void Timing_Analysis::Timing_Point::net (Timing_Net *net)</title> <emphasis>Sets pointer to Timing_Net.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classTiming__Analysis_1_1Timing__Net">Timing_Net</link></entry>
+                                <entry>
+<para>* net </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a7db0f9baed61c0534e19c2009ac41db5">
+                <title>void Timing_Analysis::Timing_Point::arc (Timing_Arc *arc)</title> <emphasis>Sets pointer to Timing_Arc.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Arc</link></entry>
+                                <entry>
+<para>* arc </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a62c2af027f267f45294b593f880bfe2d">
+                <title>const Transitions&lt;double&gt; Timing_Analysis::Timing_Point::update_slack (const Transitions&lt; double &gt; required_time)</title> <emphasis>Returns updated slack. Slack = required_time - arrival_time.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> required_time</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a737bfc39dc3271c9b605d1d16ba8816c">
+                <title>void Timing_Analysis::Timing_Point::clear_timing_info ()</title> <emphasis>Slack, slew and arrival time parameters are set to zero.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a2223c8ec07ef018d39db5c7e03df90a9">
+                <title>bool Timing_Analysis::Timing_Point::is_PO () const </title> <emphasis>Returns true if caller is a primary ouput.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a0c943d53edbf2fbffa188ebf883a5b9f">
+                <title>bool Timing_Analysis::Timing_Point::is_PI () const </title> <emphasis>Returns true if caller is a primary input.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1aebb2497a057619c1cc9206253238f969">
+                <title>bool Timing_Analysis::Timing_Point::is_input_pin () const </title> <emphasis>Returns true if caller is a input pin.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a5c8883bd6dae6b49cb5c80e16b612d70">
+                <title>bool Timing_Analysis::Timing_Point::is_output_pin () const </title> <emphasis>Returns true if caller is a ouput pin.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1a1353ea265660f4bada0367f9a0d4251c">
+                <title>bool Timing_Analysis::Timing_Point::is_PI_input () const </title> <emphasis>Returns true if caller is a primary_input input.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Point_1aabcd5ebf7151be22c98753d16f26c84c">
+                <title>bool Timing_Analysis::Timing_Point::is_reg_input () const </title> <emphasis>Returns true if caller is a register input.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

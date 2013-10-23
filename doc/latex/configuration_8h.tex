@@ -1,0 +1,58 @@
+\hypertarget{configuration_8h}{\section{Timing\-Analysis/src/include/configuration.h File Reference}
+\label{configuration_8h}\index{Timing\-Analysis/src/include/configuration.\-h@{Timing\-Analysis/src/include/configuration.\-h}}
+}
+{\ttfamily \#include \char`\"{}spef\-\_\-net.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}parser.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$string$>$}\\*
+Include dependency graph for configuration.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{configuration_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{configuration_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structIF}{I\-F$<$ cond, Then\-Type, Else\-Type $>$}
+\begin{DoxyCompactList}\small\item\em This is a Configuration File To switch between I\-S\-P\-D2012 (Lumped Capacitance Wire Delay Model) or I\-S\-P\-D2013 (Distributed R\-C Wire Delay Model) S\-P\-E\-F format. \end{DoxyCompactList}\item 
+struct \hyperlink{structIF_3_01false_00_01ThenType_00_01ElseType_01_4}{I\-F$<$ false, Then\-Type, Else\-Type $>$}
+\begin{DoxyCompactList}\small\item\em Metaprogrammed \hyperlink{structIF}{I\-F}. \end{DoxyCompactList}\item 
+class \hyperlink{classTraits}{Traits}
+\begin{DoxyCompactList}\small\item\em User configurable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structIF}{I\-F}$<$ \hyperlink{classTraits_a6be4a9876454c3e6e139e7d213a74884}{Traits\-::\-I\-S\-P\-D\-\_\-2012}, \\*
+\hyperlink{classSpefParserISPD2012}{Spef\-Parser\-I\-S\-P\-D2012}, \\*
+\hyperlink{classSpefParserISPD2013}{Spef\-Parser\-I\-S\-P\-D2013} $>$\-::R\-E\-T \hyperlink{configuration_8h_a20d6a6ce6bb39f0fac47a6b3e7786fe6}{Spef\-Parser}
+\item 
+typedef \hyperlink{structIF}{I\-F}$<$ \hyperlink{classTraits_a6be4a9876454c3e6e139e7d213a74884}{Traits\-::\-I\-S\-P\-D\-\_\-2012}, \\*
+\hyperlink{classSpefNetISPD2012}{Spef\-Net\-I\-S\-P\-D2012}, \\*
+\hyperlink{classSpefNetISPD2013}{Spef\-Net\-I\-S\-P\-D2013} $>$\-::R\-E\-T \hyperlink{configuration_8h_ab11dad9e61bc038c56517ca2735fb449}{Spef\-Net}
+\item 
+typedef \hyperlink{structIF}{I\-F}$<$ \hyperlink{classTraits_a6be4a9876454c3e6e139e7d213a74884}{Traits\-::\-I\-S\-P\-D\-\_\-2012}, \\*
+\hyperlink{spef__net_8h_a37551e9359ee22bb0821ca94784447d4}{Parasitics2012}, \hyperlink{spef__net_8h_adc6130507d68ab3a34d98dfc3ef83672}{Parasitics2013} $>$\\*
+\-::R\-E\-T \hyperlink{configuration_8h_ac77efd4436b2f78ddba37713fc5d597c}{Parasitics}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{configuration_8h_ac77efd4436b2f78ddba37713fc5d597c}{\index{configuration.\-h@{configuration.\-h}!Parasitics@{Parasitics}}
+\index{Parasitics@{Parasitics}!configuration.h@{configuration.\-h}}
+\subsubsection[{Parasitics}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf I\-F}$<${\bf Traits\-::\-I\-S\-P\-D\-\_\-2012}, {\bf Parasitics2012}, {\bf Parasitics2013}$>$\-::R\-E\-T {\bf Parasitics}}}\label{configuration_8h_ac77efd4436b2f78ddba37713fc5d597c}
+\hypertarget{configuration_8h_ab11dad9e61bc038c56517ca2735fb449}{\index{configuration.\-h@{configuration.\-h}!Spef\-Net@{Spef\-Net}}
+\index{Spef\-Net@{Spef\-Net}!configuration.h@{configuration.\-h}}
+\subsubsection[{Spef\-Net}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf I\-F}$<${\bf Traits\-::\-I\-S\-P\-D\-\_\-2012}, {\bf Spef\-Net\-I\-S\-P\-D2012}, {\bf Spef\-Net\-I\-S\-P\-D2013}$>$\-::R\-E\-T {\bf Spef\-Net}}}\label{configuration_8h_ab11dad9e61bc038c56517ca2735fb449}
+\hypertarget{configuration_8h_a20d6a6ce6bb39f0fac47a6b3e7786fe6}{\index{configuration.\-h@{configuration.\-h}!Spef\-Parser@{Spef\-Parser}}
+\index{Spef\-Parser@{Spef\-Parser}!configuration.h@{configuration.\-h}}
+\subsubsection[{Spef\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf I\-F}$<${\bf Traits\-::\-I\-S\-P\-D\-\_\-2012}, {\bf Spef\-Parser\-I\-S\-P\-D2012}, {\bf Spef\-Parser\-I\-S\-P\-D2013}$>$\-::R\-E\-T {\bf Spef\-Parser}}}\label{configuration_8h_a20d6a6ce6bb39f0fac47a6b3e7786fe6}

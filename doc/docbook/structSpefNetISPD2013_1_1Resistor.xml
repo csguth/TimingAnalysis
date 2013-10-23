@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structSpefNetISPD2013_1_1Resistor">
+<title>SpefNetISPD2013::Resistor struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="spef__net_8h">&lt;spef_net.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int node1</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int node2</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structSpefNetISPD2013_1_1Resistor_1ac84e89149ed6b112e9c7f65d6970eedc">Resistor</link> (
+const int &amp; node1, const int &amp; node2, const double &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="structSpefNetISPD2013_1_1Resistor_1a3a0476c9c8c01861071eb667cc79ca22">getOtherNode</link> (
+const int &amp; node)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Struct which represents a resistor. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 53 of file spef_net.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>spef_net.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="structSpefNetISPD2013_1_1Resistor_1ac84e89149ed6b112e9c7f65d6970eedc">
+                <title>SpefNetISPD2013::Resistor::Resistor (const int &amp;node1, const int &amp;node2, const double &amp;value)</title> <emphasis>Resistor constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; node1, const string &amp; node2, const double &amp; value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="structSpefNetISPD2013_1_1Resistor_1a3a0476c9c8c01861071eb667cc79ca22">
+                <title>int SpefNetISPD2013::Resistor::getOtherNode (const int &amp;node) const </title> <emphasis>If called by node1, returns node2, and vice versa.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; node1, const string &amp; node2, const double &amp; value</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

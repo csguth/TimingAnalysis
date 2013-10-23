@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classLibertyLookupTableInterpolator">
+<title>LibertyLookupTableInterpolator class Reference</title>
+<para>
+    <programlisting>#include <link linkend="liberty__library_8h">&lt;liberty_library.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const int DEFAULT_DECIMAL_PLACES</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classLibertyLookupTableInterpolator_1a41f28d4091ef57ce488a26f0a3aedb0b">round</link> (
+<link linkend="classTransitions">Transitions</link>&lt; double &gt; &amp; transitions, const int decimal_places)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual double <link linkend="classLibertyLookupTableInterpolator_1ae12e0b9e427488bc933b54a427586f47">interpolate</link> (
+const <link linkend="structLibertyLookupTable">LibertyLookupTable</link> &amp; lut, const double load, const double transition)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classLibertyLookupTableInterpolator_1a3f840a4246b193e9e620b3ec8cadb720">interpolate</link> (
+const <link linkend="structLibertyLookupTable">LibertyLookupTable</link> &amp; riseLut, const <link linkend="structLibertyLookupTable">LibertyLookupTable</link> &amp; fallLut, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; load, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; transition, <link linkend="liberty__library_8h_1aec44423ef220f800b99f85740d9cc011">Unateness</link> unateness, bool is_input_driver)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Interpolation calculator. </para>
+    </simplesect>
+            <section xml:id="classLibertyLookupTableInterpolator_1a41f28d4091ef57ce488a26f0a3aedb0b">
+                <title>void LibertyLookupTableInterpolator::round (Transitions&lt; double &gt; &amp;transitions, const int decimal_places)</title> <emphasis>Truncates Transitions&lt;double&gt; to Transitions&lt;double&gt; . Not implemented.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classTransitions">Transitions&lt;double&gt;</link></entry>
+                                <entry>
+<para>&amp; transitions, const int decimal_places</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyLookupTableInterpolator_1ae12e0b9e427488bc933b54a427586f47">
+                <title>virtual double LibertyLookupTableInterpolator::interpolate (const LibertyLookupTable &amp;lut, const double load, const double transition)=0</title> <emphasis>Returns interpolated value.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="structLibertyLookupTable">LibertyLookupTable</link> &amp; lut, const double load, const double transition</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>double </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyLookupTableInterpolator_1a3f840a4246b193e9e620b3ec8cadb720">
+                <title>virtual const Transitions&lt;double&gt; LibertyLookupTableInterpolator::interpolate (const LibertyLookupTable &amp;riseLut, const LibertyLookupTable &amp;fallLut, const Transitions&lt; double &gt; load, const Transitions&lt; double &gt; transition, Unateness unateness=NEGATIVE_UNATE, bool is_input_driver=false)=0</title> <emphasis>Returns Transitions&lt;double, double&gt; with its rise and fall delay values interpolated.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="structLibertyLookupTable">LibertyLookupTable</link> &amp; riseLut, const <link linkend="structLibertyLookupTable">LibertyLookupTable</link> &amp; fallLut, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> load, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> transition, Unateness unateness(default NEGATIVE_UNATE), bool is_input_driver(default false)</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

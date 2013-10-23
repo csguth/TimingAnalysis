@@ -1,0 +1,4 @@
+<map id="WireDelayModel" name="WireDelayModel">
+<area shape="rect" id="node3" href="$classLumpedCapacitanceWireDelayModel.html" title="This model describes the parasitic capacitances distributed along a wire as a single circuit element..." alt="" coords="5,313,219,554"/>
+<area shape="rect" id="node5" href="$classRCTreeWireDelayModel.html" title="This model describes the parasitic elements(capacitors and resistors) distributed along a wire as a s..." alt="" coords="243,330,435,537"/>
+</map>

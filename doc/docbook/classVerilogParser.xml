@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classVerilogParser">
+<title>VerilogParser class Reference</title>
+<para>
+    <programlisting>#include <link linkend="parser_8h">&lt;parser.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const string SEQUENTIAL_CELL</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const string INPUT_DRIVER_CELL</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const string PRIMARY_OUTPUT_CELL</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static const string CLOCK_NET</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classVerilogParser_1aa8a17e3cc1cad22e051a23796a47d538">read_module</link> (
+string &amp; moduleName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classVerilogParser_1af268cc04728d0f6786687bdced5fb1d1">read_primary_input</link> (
+string &amp; primaryInput)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classVerilogParser_1a72532150c5498ac80d05deca6e39ed95">read_primary_output</link> (
+string &amp; primaryOutput)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classVerilogParser_1a4b3b8ea17e44cdfd7b5d8cc0cb2a258e">read_wire</link> (
+string &amp; wire)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classVerilogParser_1a7042652ea559fa9b54b894159dd73a90">read_cell_inst</link> (
+string &amp; cellType, string &amp; cellInstName, vector&lt; std::pair&lt; string, string &gt; &gt; &amp; pinNetPairs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classVerilogParser_1a4751673cc81bcdacb1389a7215a249f5">read_assign</link> (
+pair&lt; string, string &gt; &amp; assignment)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classCircuit__Netlist">Circuit_Netlist</link> <link linkend="classVerilogParser_1a9f8740c184e8129a87597a1eae3ed3c4">readFile</link> (
+const string filename)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classVerilogParser_1aee565da994b012a04f4d7120b9148ab3">~VerilogParser</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Inherits from <link linkend="classParser">Parser</link>. Parse verilog files. Used to generate circuit netlists. </para>
+    </simplesect>
+            <section xml:id="classVerilogParser_1aa8a17e3cc1cad22e051a23796a47d538">
+                <title>bool VerilogParser::read_module (string &amp;moduleName)</title> <emphasis>Reads the module definition.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string&amp;</entry>
+                                <entry>
+<para>moduleName</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classVerilogParser_1af268cc04728d0f6786687bdced5fb1d1">
+                <title>bool VerilogParser::read_primary_input (string &amp;primaryInput)</title> <emphasis>Reads the next primary input. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string&amp;</entry>
+                                <entry>
+<para>primaryInput</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classVerilogParser_1a72532150c5498ac80d05deca6e39ed95">
+                <title>bool VerilogParser::read_primary_output (string &amp;primaryOutput)</title> <emphasis>Reads the next primary output. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string&amp;</entry>
+                                <entry>
+<para>primaryOutput</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classVerilogParser_1a4b3b8ea17e44cdfd7b5d8cc0cb2a258e">
+                <title>bool VerilogParser::read_wire (string &amp;wire)</title> <emphasis>Reads the next net. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string&amp;</entry>
+                                <entry>
+<para>primaryInput</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classVerilogParser_1a7042652ea559fa9b54b894159dd73a90">
+                <title>bool VerilogParser::read_cell_inst (string &amp;cellType, string &amp;cellInstName, vector&lt; std::pair&lt; string, string &gt; &gt; &amp;pinNetPairs)</title> <emphasis>Reads the next cell instance. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string&amp;</entry>
+                                <entry>
+<para>cellType, string&amp; cellInstName, vector&lt;std::pair&lt;string, string&gt; &gt;&amp; pinNetPairs</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classVerilogParser_1a4751673cc81bcdacb1389a7215a249f5">
+                <title>bool VerilogParser::read_assign (pair&lt; string, string &gt; &amp;assignment)</title> <emphasis>Reads the assignment pair. Return value indicates if the read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>pair&lt;string, string&gt;</entry>
+                                <entry>
+<para>&amp; assignment</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classVerilogParser_1a9f8740c184e8129a87597a1eae3ed3c4">
+                <title>const Circuit_Netlist VerilogParser::readFile (const string filename)</title> <emphasis>Returns Circuit_Netlist object generated by information read from file passed as filename parameter.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string filename</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classCircuit__Netlist">Circuit_Netlist</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classVerilogParser_1aee565da994b012a04f4d7120b9148ab3">
+                <title>virtual VerilogParser::~VerilogParser ()</title> <emphasis>Empty VerilogParser destructor.</emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classDesign__Constraints">
+<title>Design_Constraints class Reference</title>
+<para>
+    <programlisting>#include <link linkend="design__constraints_8h">&lt;design_constraints.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double _clock</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, string &gt; _driving_cells</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, Transitions&lt; double &gt; &gt; _input_transitions</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, Transitions&lt; double &gt; &gt; _input_delays</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, Transitions&lt; double &gt; &gt; _output_delays</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, double &gt; _output_loads</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classDesign__Constraints_1a3d8381f421422cdaa12e78216a3b46a8">clock</link> (
+const double clock)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classDesign__Constraints_1ab9e466f0f2ad7cfd16f8fe0d0b814b16">input_delay</link> (
+const string input_name, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; delay)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classDesign__Constraints_1a295b66d558e3aefea0b2d2629752517d">output_delay</link> (
+const string output_name, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; delay)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classDesign__Constraints_1a3a670a53112e18db745a6f3de9597cd3">output_load</link> (
+const string output_name, const double output_load)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classDesign__Constraints_1a54c18f5ebd9dbcdc9d3ab8f2d363fc04">driving_cell</link> (
+const string input_name, const string driving_cell)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classDesign__Constraints_1afd86c8844a5a62d1a6bbd7138d548cf9">input_transition</link> (
+const string input_name, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; transition)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="classDesign__Constraints_1a535cc6d955b52c959b566510c1e3544a">clock</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classDesign__Constraints_1ae67988a0cd0ba0ab5ad1463c273eb287">input_delay</link> (
+const string input_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classDesign__Constraints_1a07810050c6ae8a62d1e77ee23ad1f660">output_delay</link> (
+const string output_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="classDesign__Constraints_1ab21387336a70852447a1d16e11358840">output_load</link> (
+const string output_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classDesign__Constraints_1a840bdfc3346651f9925ef35590f8c55b">output_loads_size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const string <link linkend="classDesign__Constraints_1a3155a41841b4c24e3f79e6e1a280d6df">driving_cell</link> (
+const string input_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classDesign__Constraints_1a2fedb3b4d77d0b029e00bf0200fb84a2">input_transition</link> (
+const string input_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Represents the design constraints of the case in study. Generated by the <link linkend="classSDCParser">SDCParser</link> class. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 22 of file design_constraints.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>design_constraints.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classDesign__Constraints_1a3d8381f421422cdaa12e78216a3b46a8">
+                <title>void Design_Constraints::clock (const double clock)</title> <emphasis>Sets clock period. frequency = 1 / clock_period.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1ab9e466f0f2ad7cfd16f8fe0d0b814b16">
+                <title>bool Design_Constraints::input_delay (const string input_name, const Transitions&lt; double &gt; delay)</title> <emphasis>Tries to set input delay. Returns true if succeeded.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string input_name, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> delay</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1a295b66d558e3aefea0b2d2629752517d">
+                <title>bool Design_Constraints::output_delay (const string output_name, const Transitions&lt; double &gt; delay)</title> <emphasis>Tries to set output delay. Returns true if succeeded.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string input_name, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> delay</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1a3a670a53112e18db745a6f3de9597cd3">
+                <title>bool Design_Constraints::output_load (const string output_name, const double output_load)</title> <emphasis>Tries to set output load. Returns true if succeeded.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string input_name, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> output_load</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1a54c18f5ebd9dbcdc9d3ab8f2d363fc04">
+                <title>bool Design_Constraints::driving_cell (const string input_name, const string driving_cell)</title> <emphasis>Tries to set driving cell. Returns true if succeeded.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string input_name, const string driving_cell</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1afd86c8844a5a62d1a6bbd7138d548cf9">
+                <title>bool Design_Constraints::input_transition (const string input_name, const Transitions&lt; double &gt; transition)</title> <emphasis>Tries to set input transitions. Returns true if succeeded.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string input_name, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> transition</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1a535cc6d955b52c959b566510c1e3544a">
+                <title>double Design_Constraints::clock () const </title> <emphasis>Returns clock period.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>double </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1ae67988a0cd0ba0ab5ad1463c273eb287">
+                <title>const Transitions&lt;double&gt; Design_Constraints::input_delay (const string input_name) const </title> <emphasis>Returns Transitions&lt;double&gt; input_delay with input_name name.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string input_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1a07810050c6ae8a62d1e77ee23ad1f660">
+                <title>const Transitions&lt;double&gt; Design_Constraints::output_delay (const string output_name) const </title> <emphasis>Returns Transitions&lt;double&gt; output_delay with output_name name.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string output_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1ab21387336a70852447a1d16e11358840">
+                <title>double Design_Constraints::output_load (const string output_name) const </title> <emphasis>Returns output load with output_name name.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string output_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>double </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1a840bdfc3346651f9925ef35590f8c55b">
+                <title>size_t Design_Constraints::output_loads_size () const </title> <emphasis>Returns output loads size.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1a3155a41841b4c24e3f79e6e1a280d6df">
+                <title>const string Design_Constraints::driving_cell (const string input_name) const </title> <emphasis>Returns driving cell with input_name name.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string input_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const string </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classDesign__Constraints_1a2fedb3b4d77d0b029e00bf0200fb84a2">
+                <title>const Transitions&lt;double&gt; Design_Constraints::input_transition (const string input_name) const </title> <emphasis>Returns Transition&lt;double&gt; input_transition with input_name name.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string input_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const Transition&lt;double&gt; </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

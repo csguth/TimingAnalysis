@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="timing__analysis_8h">
+    <title>timing_analysis.h File Reference</title>
+    <programlisting>#include &lt;vector&gt;</programlisting>
+    <programlisting>#include &lt;string&gt;</programlisting>
+    <programlisting>#include &lt;ostream&gt;</programlisting>
+    <programlisting>#include &lt;map&gt;</programlisting>
+    <programlisting>#include &lt;utility&gt;</programlisting>
+    <programlisting>#include &lt;fstream&gt;</programlisting>
+    <programlisting>#include &lt;stack&gt;</programlisting>
+    <programlisting>#include &lt;cstdlib&gt;</programlisting>
+    <programlisting>#include &quot;timer_interface.h&quot;</programlisting>
+    <programlisting>#include &quot;transitions.h&quot;</programlisting>
+    <programlisting>#include &quot;circuit_netlist.h&quot;</programlisting>
+    <programlisting>#include &quot;wire_delay_model.h&quot;</programlisting>
+    <programlisting>#include &quot;liberty_library.h&quot;</programlisting>
+    <programlisting>#include &quot;design_constraints.h&quot;</programlisting>
+    <programlisting>#include &quot;configuration.h&quot;</programlisting>
+    <programlisting>#include &quot;parser.h&quot;</programlisting>
+    <programlisting>#include &quot;timing_net.h&quot;</programlisting>
+    <programlisting>#include &quot;timing_point.h&quot;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classTiming__Analysis_1_1Option">Timing_Analysis::Option</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classTiming__Analysis_1_1Timing__Analysis">Timing_Analysis::Timing_Analysis</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespaceTiming__Analysis">Timing_Analysis</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/decio/Documentos/estudos/tccChrystian/src/include/timing_analysis.h</para>
+    </simplesect>
+</section>

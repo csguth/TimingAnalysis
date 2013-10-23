@@ -10,26 +10,35 @@ This class contains functions for the timing analysis interface. To use any func
 
 {\ttfamily \#include $<$timer\-\_\-interface.\-h$>$}
 
+
+
+Collaboration diagram for Timer\-Interface\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classTimerInterface__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-enum {\bfseries Status} \{ \\*
-{\bfseries T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D} = 0, 
-{\bfseries T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y}, 
-{\bfseries T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S}, 
-{\bfseries T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R}, 
+enum \hyperlink{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25d}{Status} \{ \\*
+\hyperlink{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25da465cc75852c1feab52c2236ed80ef6da}{T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D} = 0, 
+\hyperlink{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25dac7ae064c5a418037be5e05d69a27f34f}{T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y}, 
+\hyperlink{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25da134d1131be13795c3f8248c82fa52b9e}{T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S}, 
+\hyperlink{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25da5cbb1b932558e1136faa93a49acc0252}{T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R}, 
 \\*
-{\bfseries T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R}
+\hyperlink{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25daf5aa3834e4e74e57e8264fdb3b7eb757}{T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R}
  \}
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static Status \hyperlink{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}{get\-Timer\-Status} (const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark)
+static \hyperlink{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25d}{Status} \hyperlink{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}{get\-Timer\-Status} (const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark)
 \item 
-static Status \hyperlink{classTimerInterface_ada94a843a56747a6a7b34373a266ab92}{run\-Timing\-Analysis\-Blocking} (const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&sizes, const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark, const unsigned polling\-Time)
+static \hyperlink{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25d}{Status} \hyperlink{classTimerInterface_ada94a843a56747a6a7b34373a266ab92}{run\-Timing\-Analysis\-Blocking} (const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&sizes, const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark, const unsigned polling\-Time)
 \item 
-static Status \hyperlink{classTimerInterface_a9a9b69817bbbd603c3d47089b0bad829}{start\-Timing\-Analysis\-Non\-Blocking} (const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&sizes, const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark)
+static \hyperlink{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25d}{Status} \hyperlink{classTimerInterface_a9a9b69817bbbd603c3d47089b0bad829}{start\-Timing\-Analysis\-Non\-Blocking} (const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&sizes, const std\-::string \&contest\-\_\-root, const std\-::string \&benchmark)
 \item 
 static void \hyperlink{classTimerInterface_aa62e01d4dd296f8bf9f716ff2da7c5fc}{wait} (int seconds)
 \end{DoxyCompactItemize}
@@ -44,10 +53,31 @@ The contestants are free to use these functions as-\/is or make modifications. I
 
 The code provided here has no real or implied warranties. 
 
+\subsection{Member Enumeration Documentation}
+\hypertarget{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25d}{\index{Timer\-Interface@{Timer\-Interface}!Status@{Status}}
+\index{Status@{Status}!TimerInterface@{Timer\-Interface}}
+\subsubsection[{Status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Timer\-Interface\-::\-Status}}}\label{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25d}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D@{T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D}!Timer\-Interface@{Timer\-Interface}}\index{Timer\-Interface@{Timer\-Interface}!T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D@{T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D}}\item[{\em 
+\hypertarget{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25da465cc75852c1feab52c2236ed80ef6da}{T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D}\label{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25da465cc75852c1feab52c2236ed80ef6da}
+}]\index{T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y@{T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y}!Timer\-Interface@{Timer\-Interface}}\index{Timer\-Interface@{Timer\-Interface}!T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y@{T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y}}\item[{\em 
+\hypertarget{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25dac7ae064c5a418037be5e05d69a27f34f}{T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y}\label{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25dac7ae064c5a418037be5e05d69a27f34f}
+}]\index{T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S@{T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S}!Timer\-Interface@{Timer\-Interface}}\index{Timer\-Interface@{Timer\-Interface}!T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S@{T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S}}\item[{\em 
+\hypertarget{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25da134d1131be13795c3f8248c82fa52b9e}{T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S}\label{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25da134d1131be13795c3f8248c82fa52b9e}
+}]\index{T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R@{T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R}!Timer\-Interface@{Timer\-Interface}}\index{Timer\-Interface@{Timer\-Interface}!T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R@{T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25da5cbb1b932558e1136faa93a49acc0252}{T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R}\label{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25da5cbb1b932558e1136faa93a49acc0252}
+}]\index{T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R@{T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R}!Timer\-Interface@{Timer\-Interface}}\index{Timer\-Interface@{Timer\-Interface}!T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R@{T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25daf5aa3834e4e74e57e8264fdb3b7eb757}{T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R}\label{classTimerInterface_afc6cca620922cd5a3d90ea9ad7d7d25daf5aa3834e4e74e57e8264fdb3b7eb757}
+}]\end{description}
+\end{Desc}
+
+
 \subsection{Member Function Documentation}
 \hypertarget{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}{\index{Timer\-Interface@{Timer\-Interface}!get\-Timer\-Status@{get\-Timer\-Status}}
 \index{get\-Timer\-Status@{get\-Timer\-Status}!TimerInterface@{Timer\-Interface}}
-\subsubsection[{get\-Timer\-Status}]{\setlength{\rightskip}{0pt plus 5cm}static Status Timer\-Interface\-::get\-Timer\-Status (
+\subsubsection[{get\-Timer\-Status}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Status} Timer\-Interface\-::get\-Timer\-Status (
 \begin{DoxyParamCaption}
 \item[{const std\-::string \&}]{contest\-\_\-root, }
 \item[{const std\-::string \&}]{benchmark}
@@ -55,7 +85,7 @@ The code provided here has no real or implied warranties.
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classTimerInterface_a42077a21e0b9a07b6768e5131415bd2d}
 Get timer status Inputs\-: contest root directory (string) benchmark name (string) Return\-: status (see enum Status above) \hypertarget{classTimerInterface_ada94a843a56747a6a7b34373a266ab92}{\index{Timer\-Interface@{Timer\-Interface}!run\-Timing\-Analysis\-Blocking@{run\-Timing\-Analysis\-Blocking}}
 \index{run\-Timing\-Analysis\-Blocking@{run\-Timing\-Analysis\-Blocking}!TimerInterface@{Timer\-Interface}}
-\subsubsection[{run\-Timing\-Analysis\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}static Status Timer\-Interface\-::run\-Timing\-Analysis\-Blocking (
+\subsubsection[{run\-Timing\-Analysis\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Status} Timer\-Interface\-::run\-Timing\-Analysis\-Blocking (
 \begin{DoxyParamCaption}
 \item[{const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&}]{sizes, }
 \item[{const std\-::string \&}]{contest\-\_\-root, }
@@ -70,7 +100,7 @@ Write sizes and run timing analysis in blocking mode
 \item Waits for timing analysis to be completed Inputs\-: vector of pairs where first value is instance name (string) and second value is cell name (string) contest root directory (string) benchmark name (string) polling time (number of seconds that the function should wait before polling timer status to check whether timer is done) Return\-: timer status 
 \end{DoxyEnumerate}\hypertarget{classTimerInterface_a9a9b69817bbbd603c3d47089b0bad829}{\index{Timer\-Interface@{Timer\-Interface}!start\-Timing\-Analysis\-Non\-Blocking@{start\-Timing\-Analysis\-Non\-Blocking}}
 \index{start\-Timing\-Analysis\-Non\-Blocking@{start\-Timing\-Analysis\-Non\-Blocking}!TimerInterface@{Timer\-Interface}}
-\subsubsection[{start\-Timing\-Analysis\-Non\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}static Status Timer\-Interface\-::start\-Timing\-Analysis\-Non\-Blocking (
+\subsubsection[{start\-Timing\-Analysis\-Non\-Blocking}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Status} Timer\-Interface\-::start\-Timing\-Analysis\-Non\-Blocking (
 \begin{DoxyParamCaption}
 \item[{const std\-::vector$<$ std\-::pair$<$ std\-::string, std\-::string $>$ $>$ \&}]{sizes, }
 \item[{const std\-::string \&}]{contest\-\_\-root, }
@@ -92,4 +122,4 @@ Wait for given number of seconds (useful function if you want to wait before che
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-tcc\-Chrystian/src/include/timer\-\_\-interface.\-h\end{DoxyCompactItemize}
+Timing\-Analysis/src/include/\hyperlink{timer__interface_8h}{timer\-\_\-interface.\-h}\end{DoxyCompactItemize}

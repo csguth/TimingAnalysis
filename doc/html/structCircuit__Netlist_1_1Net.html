@@ -62,7 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,10 +99,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="structCircuit__Netlist_1_1Net.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="circuit__netlist_8h_source.html">circuit_netlist.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Circuit_Netlist::Net:</div>
+<div class="dyncontent">
+<div class="center"><img src="structCircuit__Netlist_1_1Net__coll__graph.png" border="0" usemap="#Circuit__Netlist_1_1Net_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acebd510f80cda6c9c480b5e313978895"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Net.html#acebd510f80cda6c9c480b5e313978895">Net</a> (const string name, const int sourceNode, const string sourcePin, const bool dummyNet=false)</td></tr>
+<tr class="memitem:acebd510f80cda6c9c480b5e313978895"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Net.html#acebd510f80cda6c9c480b5e313978895">Net</a> (const string <a class="el" href="structCircuit__Netlist_1_1Net.html#aaf85019638c09259b055dc0d1352054a">name</a>, const int <a class="el" href="structCircuit__Netlist_1_1Net.html#a92ee3950fbcbe247f1d98c180ebb4813">sourceNode</a>, const string <a class="el" href="structCircuit__Netlist_1_1Net.html#a44ebd7aa36b2d81b127527a09654f99e">sourcePin</a>, const bool <a class="el" href="structCircuit__Netlist_1_1Net.html#aad21a10a91330fd07d89ffccf21b55f8">dummyNet</a>=false)</td></tr>
 <tr class="memdesc:acebd510f80cda6c9c480b5e313978895"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structCircuit__Netlist_1_1Net.html" title="Struct which represents a Net, which connect two or more circuit elements together. ">Net</a> constructor.  <a href="#acebd510f80cda6c9c480b5e313978895">More...</a><br/></td></tr>
 <tr class="separator:acebd510f80cda6c9c480b5e313978895"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5bf832949516e3d7e16957206809027"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Net.html#af5bf832949516e3d7e16957206809027">addSink</a> (const <a class="el" href="structCircuit__Netlist_1_1Sink.html">Sink</a> sinkNode)</td></tr>
@@ -111,20 +116,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:aaf85019638c09259b055dc0d1352054a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf85019638c09259b055dc0d1352054a"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="memitem:aaf85019638c09259b055dc0d1352054a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Net.html#aaf85019638c09259b055dc0d1352054a">name</a></td></tr>
 <tr class="separator:aaf85019638c09259b055dc0d1352054a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92ee3950fbcbe247f1d98c180ebb4813"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92ee3950fbcbe247f1d98c180ebb4813"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>sourceNode</b></td></tr>
+<tr class="memitem:a92ee3950fbcbe247f1d98c180ebb4813"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Net.html#a92ee3950fbcbe247f1d98c180ebb4813">sourceNode</a></td></tr>
 <tr class="separator:a92ee3950fbcbe247f1d98c180ebb4813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44ebd7aa36b2d81b127527a09654f99e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44ebd7aa36b2d81b127527a09654f99e"></a>
-string&#160;</td><td class="memItemRight" valign="bottom"><b>sourcePin</b></td></tr>
+<tr class="memitem:a44ebd7aa36b2d81b127527a09654f99e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Net.html#a44ebd7aa36b2d81b127527a09654f99e">sourcePin</a></td></tr>
 <tr class="separator:a44ebd7aa36b2d81b127527a09654f99e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99d49ffd915347f780cae8fa9cbbd841"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99d49ffd915347f780cae8fa9cbbd841"></a>
-vector&lt; <a class="el" href="structCircuit__Netlist_1_1Sink.html">Sink</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>sinks</b></td></tr>
+<tr class="memitem:a99d49ffd915347f780cae8fa9cbbd841"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="structCircuit__Netlist_1_1Sink.html">Sink</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Net.html#a99d49ffd915347f780cae8fa9cbbd841">sinks</a></td></tr>
 <tr class="separator:a99d49ffd915347f780cae8fa9cbbd841"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad21a10a91330fd07d89ffccf21b55f8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad21a10a91330fd07d89ffccf21b55f8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>dummyNet</b></td></tr>
+<tr class="memitem:aad21a10a91330fd07d89ffccf21b55f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCircuit__Netlist_1_1Net.html#aad21a10a91330fd07d89ffccf21b55f8">dummyNet</a></td></tr>
 <tr class="separator:aad21a10a91330fd07d89ffccf21b55f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -218,13 +218,74 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>dummyNet</b></td></tr
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aad21a10a91330fd07d89ffccf21b55f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Circuit_Netlist::Net::dummyNet</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaf85019638c09259b055dc0d1352054a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Circuit_Netlist::Net::name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a99d49ffd915347f780cae8fa9cbbd841"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="structCircuit__Netlist_1_1Sink.html">Sink</a>&gt; Circuit_Netlist::Net::sinks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a92ee3950fbcbe247f1d98c180ebb4813"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Circuit_Netlist::Net::sourceNode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a44ebd7aa36b2d81b127527a09654f99e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Circuit_Netlist::Net::sourcePin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>tccChrystian/src/include/<a class="el" href="circuit__netlist_8h_source.html">circuit_netlist.h</a></li>
+<li>TimingAnalysis/src/include/<a class="el" href="circuit__netlist_8h_source.html">circuit_netlist.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 9 2013 10:26:53 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2013 15:22:25 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

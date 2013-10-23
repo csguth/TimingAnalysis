@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTiming__Analysis_1_1Single__Fanout__Edge">
+<title>Timing_Analysis::Single_Fanout_Edge class Reference</title>
+<para>
+    <programlisting>#include <link linkend="single__fanout__edge_8h">&lt;single_fanout_edge.h&gt;</link></programlisting>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTiming__Analysis_1_1Single__Fanout__Edge_1ac588152ff213288a57a744374039790a">Single_Fanout_Edge</link> (
+T * from, T * to)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T &amp; <link linkend="classTiming__Analysis_1_1Single__Fanout__Edge_1ac01deccce158b6cee6883924e6dcb788">to</link> (
+void )</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Inherits from <link linkend="classTiming__Analysis_1_1Edge">Edge</link>. A single fanout edge is an edge which connects two vertex to each other. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 13 of file single_fanout_edge.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>single_fanout_edge.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classTiming__Analysis_1_1Single__Fanout__Edge_1ac588152ff213288a57a744374039790a">
+                <title>Timing_Analysis::Single_Fanout_Edge&lt; T &gt;::Single_Fanout_Edge (T *from, T *to)</title> <emphasis>Single_Fanout_Edge constructor.</emphasis>
+                
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Single__Fanout__Edge_1ac01deccce158b6cee6883924e6dcb788">
+                <title>T&amp; Timing_Analysis::Single_Fanout_Edge&lt; T &gt;::to (void) const </title> <emphasis>Returns Edge&lt;T&gt;</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>T &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

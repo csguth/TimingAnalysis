@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structCircuit__Netlist_1_1Net">
+<title>Circuit_Netlist::Net struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="circuit__netlist_8h">&lt;circuit_netlist.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int sourceNode</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string sourcePin</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Sink &gt; sinks</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool dummyNet</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structCircuit__Netlist_1_1Net_1acebd510f80cda6c9c480b5e313978895">Net</link> (
+const string name, const int sourceNode, const string sourcePin, const bool dummyNet)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="structCircuit__Netlist_1_1Net_1af5bf832949516e3d7e16957206809027">addSink</link> (
+const <link linkend="structCircuit__Netlist_1_1Sink">Sink</link> sinkNode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Struct which represents a <link linkend="structCircuit__Netlist_1_1Net">Net</link>, which connect two or more circuit elements together. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 68 of file circuit_netlist.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>circuit_netlist.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="structCircuit__Netlist_1_1Net_1acebd510f80cda6c9c480b5e313978895">
+                <title>Circuit_Netlist::Net::Net (const string name, const int sourceNode, const string sourcePin, const bool dummyNet=false)</title> <emphasis>Net constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string name, const int sourceNode, const string sourcePin, const bool dummyNet(false default) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="structCircuit__Netlist_1_1Net_1af5bf832949516e3d7e16957206809027">
+                <title>void Circuit_Netlist::Net::addSink (const Sink sinkNode)</title> <emphasis>Adds sink to sinks list.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="structCircuit__Netlist_1_1Sink">Sink</link> sinkNode</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

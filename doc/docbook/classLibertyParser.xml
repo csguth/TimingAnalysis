@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classLibertyParser">
+<title>LibertyParser class Reference</title>
+<para>
+    <programlisting>#include <link linkend="parser_8h">&lt;parser.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classLibertyParser_1a7bf13448034e3e0ac1250d918240ac8a">_skip_lut_3D</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classLibertyParser_1a1546b0a7fd3f640abf01e97e4b9e1f13">_begin_read_lut</link> (
+<link linkend="structLibertyLookupTable">LibertyLookupTable</link> &amp; lut)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classLibertyParser_1a5a41f4955b4db3f09e640f92ed42ff2c">_begin_read_timing_info</link> (
+string pinName, <link linkend="structLibertyTimingInfo">LibertyTimingInfo</link> &amp; cell)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classLibertyParser_1a9f34204e4af14ba1a1f436324113a550">_begin_read_pin_info</link> (
+string pinName, <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cell, <link linkend="structLibertyPinInfo">LibertyPinInfo</link> &amp; pin)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classLibertyParser_1a7b989f4396a25cb76217e7c0e0efd536">_begin_read_cell_info</link> (
+string cellName, <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cell)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classLibertyParser_1ac596ffc2475cf2d9166e7a945d436cd1">read_default_max_transition</link> (
+double &amp; maxTransition)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classLibertyParser_1a797b223e51e8b1f9400801c18cc6d934">read_cell_info</link> (
+<link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cell)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classLibertyLibrary">LibertyLibrary</link> <link linkend="classLibertyParser_1a474451e29a86949f6ebef6948363874d">readFile</link> (
+const string filename)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Inherits from <link linkend="classParser">Parser</link>. Used to generate a <link linkend="classLibertyLibrary">LibertyLibrary</link> object from a file. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para><formalpara><title>Remarks: </title>
+
+<para>See test_lib_parser () function in parser_helper.cpp for an example of how to use this class. </para>
+</formalpara>
+</para>
+                <para>Definition at line 194 of file parser.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>parser.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classLibertyParser_1a7bf13448034e3e0ac1250d918240ac8a">
+                <title>void LibertyParser::_skip_lut_3D ()</title> <emphasis>3D LUTs are ignored. Just assert its correctness</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyParser_1a1546b0a7fd3f640abf01e97e4b9e1f13">
+                <title>void LibertyParser::_begin_read_lut (LibertyLookupTable &amp;lut)</title> <emphasis>Asserts fstream correctness and sets lut with parsed values from fstream.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>LibertyLookupTable&amp;</entry>
+                                <entry>
+<para>lut</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyParser_1a5a41f4955b4db3f09e640f92ed42ff2c">
+                <title>void LibertyParser::_begin_read_timing_info (string pinName, LibertyTimingInfo &amp;cell)</title> <emphasis>Asserts fstream correctness and sets the LibertyTimingInfo with timing values parsed from fstream.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string</entry>
+                                <entry>
+<para>pinName, <link linkend="structLibertyTimingInfo">LibertyTimingInfo</link>&amp; cell</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyParser_1a9f34204e4af14ba1a1f436324113a550">
+                <title>void LibertyParser::_begin_read_pin_info (string pinName, LibertyCellInfo &amp;cell, LibertyPinInfo &amp;pin)</title> <emphasis>Asserts fstream correctness and sets the LibertyPinInfo with timing values parsed from fstream.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string</entry>
+                                <entry>
+<para>pinName, <link linkend="structLibertyTimingInfo">LibertyTimingInfo</link>&amp; cell, <link linkend="structLibertyPinInfo">LibertyPinInfo</link>&amp; pin</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyParser_1a7b989f4396a25cb76217e7c0e0efd536">
+                <title>void LibertyParser::_begin_read_cell_info (string cellName, LibertyCellInfo &amp;cell)</title> <emphasis>Asserts fstream correctness and sets the LibertyCellInfo with timing values parsed from fstream.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string</entry>
+                                <entry>
+<para>cellName, <link linkend="structLibertyCellInfo">LibertyCellInfo</link>&amp; cell</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyParser_1ac596ffc2475cf2d9166e7a945d436cd1">
+                <title>bool LibertyParser::read_default_max_transition (double &amp;maxTransition)</title> <emphasis>Read the default max_transition defined for the library. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>pair&lt;string, string&gt;</entry>
+                                <entry>
+<para>&amp; assignment</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool</para>
+</formalpara>
+<formalpara><title>Remarks: </title>
+
+<para>This function must be called in the beginning before any read_cell_info function call. </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyParser_1a797b223e51e8b1f9400801c18cc6d934">
+                <title>bool LibertyParser::read_cell_info (LibertyCellInfo &amp;cell)</title> <emphasis>Read the next standard cell definition. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>pair&lt;string, string&gt;</entry>
+                                <entry>
+<para>&amp; assignment</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLibertyParser_1a474451e29a86949f6ebef6948363874d">
+                <title>const LibertyLibrary LibertyParser::readFile (const string filename)</title> <emphasis>Returns LibertyLibrary generated using values read from file passed as filename parameter.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string filename</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>LibertyLivrary </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

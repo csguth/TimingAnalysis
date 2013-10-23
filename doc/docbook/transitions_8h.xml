@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="transitions_8h">
+    <title>transitions.h File Reference</title>
+    <programlisting>#include &lt;algorithm&gt;</programlisting>
+    <programlisting>#include &lt;ostream&gt;</programlisting>
+    <programlisting>#include &lt;cmath&gt;</programlisting>
+    <programlisting>#include &lt;limits&gt;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classTransitions">Transitions</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classstd_1_1numeric__limits_3_01Transitions_3_01double_01_4_01_4">std::numeric_limits&lt; Transitions&lt; double &gt; &gt;</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespacestd">std</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Defines</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="transitions_8h_1a2e27fd3cb3f7f096809eded93d9f7622">MAKE_SELF_OPERATOR</link> friend void operator OP ( <link linkend="classTransitions">Transitions</link>&lt;T&gt; &amp;v0, const <link linkend="classTransitions">Transitions</link>&lt;T&gt; v1 ) { v0[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6">RISE</link>] OP v1[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6">RISE</link>], v0[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498">FALL</link>] OP v1[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498">FALL</link>]; } \
+friend void operator OP ( <link linkend="classTransitions">Transitions</link>&lt;T&gt; &amp;v0, const T            v1 ) { v0[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6">RISE</link>] OP v1; v0[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498">FALL</link>] OP v1; }</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>#define <link linkend="transitions_8h_1a2e4ff0f970d5db7545567795c8db01f5">MAKE_OPERATOR</link> friend <link linkend="classTransitions">Transitions</link>&lt;T&gt; operator OP ( const <link linkend="classTransitions">Transitions</link>&lt;T&gt; v0, const <link linkend="classTransitions">Transitions</link>&lt;T&gt; v1 ) { return <link linkend="classTransitions">Transitions</link>&lt;T&gt;(v0[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6">RISE</link>] OP v1[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6">RISE</link>], v0[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498">FALL</link>] OP v1[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498">FALL</link>]); } \
+friend <link linkend="classTransitions">Transitions</link>&lt;T&gt; operator OP ( const T            v0, const <link linkend="classTransitions">Transitions</link>&lt;T&gt; v1 ) { return <link linkend="classTransitions">Transitions</link>&lt;T&gt;(v0       OP v1[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6">RISE</link>], v0       OP v1[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498">FALL</link>]); } \
+friend <link linkend="classTransitions">Transitions</link>&lt;T&gt; operator OP ( const <link linkend="classTransitions">Transitions</link>&lt;T&gt; v0, const T            v1 ) { return <link linkend="classTransitions">Transitions</link>&lt;T&gt;(v0[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6">RISE</link>] OP v1      , v0[<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498">FALL</link>] OP v1      ); }</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Enumerations</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4">EdgeType</link>{<link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6">RISE</link>== 0, <link linkend="transitions_8h_1a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498">FALL</link>== 1}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/decio/Documentos/estudos/tccChrystian/src/include/transitions.h</para>
+    </simplesect>
+</section>

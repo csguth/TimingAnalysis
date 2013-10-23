@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTimerInterface">
+<title>TimerInterface class Reference</title>
+<para>
+    <programlisting>#include <link linkend="timer__interface_8h">&lt;timer_interface.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>enum <link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25d">Status</link>{<link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25da465cc75852c1feab52c2236ed80ef6da">TIMER_NOT_STARTED</link>== 0, <link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25dac7ae064c5a418037be5e05d69a27f34f">TIMER_BUSY</link>, <link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25da134d1131be13795c3f8248c82fa52b9e">TIMER_FINISHED_SUCCESS</link>, <link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25da5cbb1b932558e1136faa93a49acc0252">TIMER_FINISHED_ERROR</link>, <link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25daf5aa3834e4e74e57e8264fdb3b7eb757">TIMER_INTERFACEERROR</link>}</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25d">Status</link> <link linkend="classTimerInterface_1a42077a21e0b9a07b6768e5131415bd2d">getTimerStatus</link> (
+const std::string &amp; contest_root, const std::string &amp; benchmark)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25d">Status</link> <link linkend="classTimerInterface_1ada94a843a56747a6a7b34373a266ab92">runTimingAnalysisBlocking</link> (
+const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp; sizes, const std::string &amp; contest_root, const std::string &amp; benchmark, const unsigned pollingTime)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25d">Status</link> <link linkend="classTimerInterface_1a9a9b69817bbbd603c3d47089b0bad829">startTimingAnalysisNonBlocking</link> (
+const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp; sizes, const std::string &amp; contest_root, const std::string &amp; benchmark)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="classTimerInterface_1aa62e01d4dd296f8bf9f716ff2da7c5fc">wait</link> (
+int seconds)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static std::string <link linkend="classTimerInterface_1ae2edb6250d2bbbe99147f536eaa9254b">getTimerStatusString</link> (
+const std::vector&lt; std::string &gt; &amp; files)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="classTimerInterface_1a275298b87183ae404c20bedf2a211014">doesFileExist</link> (
+const std::string &amp; file)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="classTimerInterface_1af1133c9d55c65fba0dfa431a9d42560d">getFiles</link> (
+std::vector&lt; std::string &gt; &amp; files, const std::string &amp; dir)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="classTimerInterface_1a97256fe72997d4a6d024d82796478fed">removeFile</link> (
+const std::string &amp; dir, const std::string &amp; file)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="classTimerInterface_1ae073d8e9b7852d13242bf72efca35c61">writeSizesForTimer</link> (
+const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp; sizes, const std::string &amp; contest_root, const std::string &amp; benchmark)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="classTimerInterface_1adb8cb927530d02802dfaf17b954d2a42">startTimingAnalysis</link> (
+const std::string &amp; contest_root, const std::string &amp; benchmark)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25d">Status</link> <link linkend="classTimerInterface_1a2f88cd8e3f43b2832e995ce95025fcf7">runTimingAnalysisBlocking</link> (
+const std::string &amp; contest_root, const std::string &amp; benchmark, const unsigned pollingTime)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static <link linkend="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25d">Status</link> <link linkend="classTimerInterface_1af2721f07452257a91b7aeb3aed8c26d0">startTimingAnalysisNonBlocking</link> (
+const std::string &amp; contest_root, const std::string &amp; benchmark)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>This class contains functions for the timing analysis interface. To use any function belonging to this class, call <link linkend="classTimerInterface">TimerInterface</link>::&lt;function_name&gt;(&lt;argument_list&gt;);. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>Timing Analysis Interface helper class to interface with the timer. This code is provided for description purposes only. The contest organizers cannot guarantee that the provided code is free of bugs or defects. !!!! USE THIS CODE AT YOUR OWN RISK !!!!!</para>
+
+<para>The contestants are free to use these functions as-is or make modifications. If the contestants choose to use the provided code, they are responsible for making sure that it works as expected.</para>
+
+<para>The code provided here has no real or implied warranties. </para>
+                <para>Definition at line 31 of file timer_interface.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>timer_interface.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25d">
+               <title>enum Status </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25da465cc75852c1feab52c2236ed80ef6da">
+                            <term>TIMER_NOT_STARTED</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25dac7ae064c5a418037be5e05d69a27f34f">
+                            <term>TIMER_BUSY</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25da134d1131be13795c3f8248c82fa52b9e">
+                            <term>TIMER_FINISHED_SUCCESS</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25da5cbb1b932558e1136faa93a49acc0252">
+                            <term>TIMER_FINISHED_ERROR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="classTimerInterface_1afc6cca620922cd5a3d90ea9ad7d7d25daf5aa3834e4e74e57e8264fdb3b7eb757">
+                            <term>TIMER_INTERFACEERROR</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 38 of file timer_interface.h
+                    <programlisting>
+{
+TIMER_NOT_STARTED== 0, 
+TIMER_BUSY, 
+TIMER_FINISHED_SUCCESS, 
+TIMER_FINISHED_ERROR, 
+TIMER_INTERFACEERROR, 
+}Status;
+                    </programlisting>
+                </para>
+            </section>
+            <section xml:id="classTimerInterface_1a42077a21e0b9a07b6768e5131415bd2d">
+                <title>static Status TimerInterface::getTimerStatus (const std::string &amp;contest_root, const std::string &amp;benchmark)</title> <emphasis></emphasis>
+                
+<para>Get timer status Inputs: contest root directory (string) benchmark name (string) Return: status (see enum Status above) </para>
+
+            </section>
+            <section xml:id="classTimerInterface_1ada94a843a56747a6a7b34373a266ab92">
+                <title>static Status TimerInterface::runTimingAnalysisBlocking (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark, const unsigned pollingTime)</title> <emphasis></emphasis>
+                
+<para>Write sizes and run timing analysis in blocking mode<orderedlist>
+<listitem>
+<para>Write sizes</para>
+</listitem><listitem>
+<para>Starts timing analysis</para>
+</listitem><listitem>
+<para>Waits for timing analysis to be completed Inputs: vector of pairs where first value is instance name (string) and second value is cell name (string) contest root directory (string) benchmark name (string) polling time (number of seconds that the function should wait before polling timer status to check whether timer is done) Return: timer status </para>
+</listitem></orderedlist>
+</para>
+
+            </section>
+            <section xml:id="classTimerInterface_1a9a9b69817bbbd603c3d47089b0bad829">
+                <title>static Status TimerInterface::startTimingAnalysisNonBlocking (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark)</title> <emphasis></emphasis>
+                
+<para>Start timing analysis in non-blocking mode<orderedlist>
+<listitem>
+<para>Write sizes</para>
+</listitem><listitem>
+<para>Starts timing analysis and returns (does not wait for timing analysis to be completed) Inputs: vector of pairs where first value is instance name (string) and second value is cell name (string) contest root directory (string) benchmark name (string) Return: timer status </para>
+</listitem></orderedlist>
+</para>
+
+            </section>
+            <section xml:id="classTimerInterface_1aa62e01d4dd296f8bf9f716ff2da7c5fc">
+                <title>static void TimerInterface::wait (int seconds)</title> <emphasis></emphasis>
+                
+<para>Wait for given number of seconds (useful function if you want to wait before checking timer status after calling startTimingAnalysisNonBlocking) Input: seconds to wait </para>
+
+            </section>
+            <section xml:id="classTimerInterface_1ae2edb6250d2bbbe99147f536eaa9254b">
+                <title>static std::string TimerInterface::getTimerStatusString (const std::vector&lt; std::string &gt; &amp;files)</title> <emphasis></emphasis>
+                
+<para>Get timer status (helper function for isTimerDone) Input: vector of file names (returned by getFiles) Return: string indicating timer status </para>
+
+            </section>
+            <section xml:id="classTimerInterface_1a275298b87183ae404c20bedf2a211014">
+                <title>static bool TimerInterface::doesFileExist (const std::string &amp;file)</title> <emphasis></emphasis>
+                
+<para>Checks if a file exists (returns true if it does, false otherwise) Input: filename including path (string) Return: true if the file exists and is readable, false otherwise </para>
+
+            </section>
+            <section xml:id="classTimerInterface_1af1133c9d55c65fba0dfa431a9d42560d">
+                <title>static bool TimerInterface::getFiles (std::vector&lt; std::string &gt; &amp;files, const std::string &amp;dir)</title> <emphasis></emphasis>
+                
+<para>Get a list of files from given directory (used by getTimerStatus to check if timer is done) Input: directory name (string) Output: vector of file names (strings), argument passed by reference Return: true if directory could be read, false otherwise </para>
+
+            </section>
+            <section xml:id="classTimerInterface_1a97256fe72997d4a6d024d82796478fed">
+                <title>static bool TimerInterface::removeFile (const std::string &amp;dir, const std::string &amp;file)</title> <emphasis></emphasis>
+                
+<para>Remove a file from the given directory (helper function used by startTimingAnalysis) Inputs: name of the file without directory name (string) directory name (string) Return: true if file was removed successfully, false otherwise </para>
+
+            </section>
+            <section xml:id="classTimerInterface_1ae073d8e9b7852d13242bf72efca35c61">
+                <title>static bool TimerInterface::writeSizesForTimer (const std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt; &amp;sizes, const std::string &amp;contest_root, const std::string &amp;benchmark)</title> <emphasis></emphasis>
+                
+<para>Write sizes to a file for timing analysis call Inputs: vector of pairs where first value is instance name (string) and second value is cell name (string) contest root directory (string) benchmark name (string) Return: true if sizes were written successfully to .int.sizes file, false otherwise </para>
+
+            </section>
+            <section xml:id="classTimerInterface_1adb8cb927530d02802dfaf17b954d2a42">
+                <title>static bool TimerInterface::startTimingAnalysis (const std::string &amp;contest_root, const std::string &amp;benchmark)</title> <emphasis></emphasis>
+                
+<para>Start timing analysis (does not wait for it to finish) Input: contest root directory (string) benchmark name (string) Return: true if successfully wrote command to start timing analysis, false otherwse </para>
+
+            </section>
+            <section xml:id="classTimerInterface_1a2f88cd8e3f43b2832e995ce95025fcf7">
+                <title>static Status TimerInterface::runTimingAnalysisBlocking (const std::string &amp;contest_root, const std::string &amp;benchmark, const unsigned pollingTime)</title> <emphasis></emphasis>
+                
+<para>Run timing analysis in blocking mode<orderedlist>
+<listitem>
+<para>Starts timing analysis</para>
+</listitem><listitem>
+<para>Waits for timing analysis to be completed Input: contest root directory (string) benchmark name (string) polling time (number of seconds that the function should wait before polling timer status to check whether timer is done) Return: timer status </para>
+</listitem></orderedlist>
+</para>
+
+            </section>
+            <section xml:id="classTimerInterface_1af2721f07452257a91b7aeb3aed8c26d0">
+                <title>static Status TimerInterface::startTimingAnalysisNonBlocking (const std::string &amp;contest_root, const std::string &amp;benchmark)</title> <emphasis></emphasis>
+                
+<para>Start timing analysis in non-blocking mode<orderedlist>
+<listitem>
+<para>Starts timing analysis and returns (does not wait for timing analysis to be completed) Input: contest root directory (string) benchmark name (string) Return: timer status </para>
+</listitem></orderedlist>
+</para>
+
+            </section>
+</section>

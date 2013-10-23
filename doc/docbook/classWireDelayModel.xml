@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classWireDelayModel">
+<title>WireDelayModel class Reference</title>
+<para>
+    <programlisting>#include <link linkend="wire__delay__model_8h">&lt;wire_delay_model.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double _lumped_capacitance</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static LinearLibertyLookupTableInterpolator interpolator</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classWireDelayModel_1a0fd2defb581f6d8bcd67e5c935387d95">WireDelayModel</link> (
+const double &amp; lumped_capacitance)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classWireDelayModel_1ad9103d46909b96ad4015c818dcd2988c">~WireDelayModel</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classWireDelayModel_1a8375f713365be98c03672dbeb28eb930">simulate</link> (
+const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo, const int input, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; slew, bool is_input_driver)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classWireDelayModel_1a45a83dd192bcbf2a70ee13899256fe0d">delay_at_fanout_node</link> (
+const string fanout_node_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classWireDelayModel_1adaf486017e2ad91a900a9bef4e6f9340">slew_at_fanout_node</link> (
+const string fanout_node_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="classWireDelayModel_1a27d557bc1f2ed7e5e9787a8a5d82ecb2">setFanoutPinCapacitance</link> (
+const string fanoutNameAndPin, const double pinCapacitance)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classWireDelayModel_1a4f4ab93810af8ad90fd9fca0b06de141">root_delay</link> (
+int arc_number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classWireDelayModel_1a9e5344c26b73f549a2b5c38fea8af13d">root_slew</link> (
+int arc_number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="classWireDelayModel_1a74869a3a66deb53507e8bc6f16eff45c">clear</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double <link linkend="classWireDelayModel_1a05f509843dfa07e17c9b6cc16ba9aaa0">lumped_capacitance</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Describes parasitc elements present in wires in a circuit which cause significant delay and are taken into account in static timing analysis. </para>
+    </simplesect>
+            <section xml:id="classWireDelayModel_1a0fd2defb581f6d8bcd67e5c935387d95">
+                <title>WireDelayModel::WireDelayModel (const double &amp;lumped_capacitance)</title> <emphasis>WireDelayModel default constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>double &amp; lumped_capacitance </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classWireDelayModel_1ad9103d46909b96ad4015c818dcd2988c">
+                <title>virtual WireDelayModel::~WireDelayModel ()</title> <emphasis>Empty WideDelayModel destructor.</emphasis>
+                
+            </section>
+            <section xml:id="classWireDelayModel_1a8375f713365be98c03672dbeb28eb930">
+                <title>virtual const Transitions&lt;double&gt; WireDelayModel::simulate (const LibertyCellInfo &amp;cellInfo, const int input, const Transitions&lt; double &gt; slew, bool is_input_driver)=0</title> <emphasis></emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo, const int input, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> slew, bool is_input_driver</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classWireDelayModel_1a45a83dd192bcbf2a70ee13899256fe0d">
+                <title>virtual const Transitions&lt;double&gt; WireDelayModel::delay_at_fanout_node (const string fanout_node_name) const =0</title> <emphasis>Returns Transitions with rise and fall delay time values set to zero.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string fanout_node_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classWireDelayModel_1adaf486017e2ad91a900a9bef4e6f9340">
+                <title>virtual const Transitions&lt;double&gt; WireDelayModel::slew_at_fanout_node (const string fanout_node_name) const =0</title> <emphasis>Returns Transitions with rise and fall slew time values set to zero.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string fanout_node_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classWireDelayModel_1a27d557bc1f2ed7e5e9787a8a5d82ecb2">
+                <title>virtual void WireDelayModel::setFanoutPinCapacitance (const string fanoutNameAndPin, const double pinCapacitance)=0</title> <emphasis>Increments lumped capacitance of the wire.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string fanoutNameAndPin, const double capacitance</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classWireDelayModel_1a4f4ab93810af8ad90fd9fca0b06de141">
+                <title>virtual Transitions&lt;double&gt; WireDelayModel::root_delay (int arc_number)=0</title> <emphasis>Virtual. Must be implemented by child class. Returns Transitions&lt;double&gt; representing delay of the wire.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>int</entry>
+                                <entry>
+<para>arc_number</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classWireDelayModel_1a9e5344c26b73f549a2b5c38fea8af13d">
+                <title>virtual Transitions&lt;double&gt; WireDelayModel::root_slew (int arc_number)=0</title> <emphasis>Virtual. Must be implemented by child class. Returns Transitions&lt;double&gt; representing delay of the wire.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>int</entry>
+                                <entry>
+<para>arc_number</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classWireDelayModel_1a74869a3a66deb53507e8bc6f16eff45c">
+                <title>virtual void WireDelayModel::clear ()=0</title> <emphasis>Virtual. Must be implemented by child class. Clears attributes.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classWireDelayModel_1a05f509843dfa07e17c9b6cc16ba9aaa0">
+                <title>double WireDelayModel::lumped_capacitance () const </title> <emphasis>Returns lumped capacitance of the wire.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>double </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

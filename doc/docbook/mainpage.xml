@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title></title>
+
+<para>Set ISPD Contest Edition in the include/Configuration.h file</para>
+
+<para><formalpara><title>Naming Convention </title></formalpara>
+</para>
+
+<para>Class Name: Class_Name Header File: src/include/class_name.h Source File: src/class_name.cpp</para>
+
+<para><formalpara><title>Code Style </title></formalpara>
+</para>
+
+<para>Class_Name::class_method(int method_parameter) { .....int local_var = 0; .....return local_var; }</para>
+
+<para>..... is a &lt;TAB&gt;</para>
+
+<para><formalpara><title>To run </title></formalpara>
+</para>
+
+<para>./RunTimer &lt;BENCHMARK&gt; &lt;2012 or 2013&gt; </para>
+
+</chapter>

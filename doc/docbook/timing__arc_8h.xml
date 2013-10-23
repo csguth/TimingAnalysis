@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="timing__arc_8h">
+    <title>timing_arc.h File Reference</title>
+    <programlisting>#include &quot;single_fanout_edge.h&quot;</programlisting>
+    <programlisting>#include &quot;transitions.h&quot;</programlisting>
+    <programlisting>#include &quot;timing_point.h&quot;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Analysis::Timing_Arc</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespaceTiming__Analysis">Timing_Analysis</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/decio/Documentos/estudos/tccChrystian/src/include/timing_arc.h</para>
+    </simplesect>
+</section>

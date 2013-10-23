@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structCircuit__Netlist_1_1Sink">
+<title>Circuit_Netlist::Sink struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="circuit__netlist_8h">&lt;circuit_netlist.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int gate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string pinName</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structCircuit__Netlist_1_1Sink_1ad56d7d6a65455ec3e328d4bb8876936f">Sink</link> (
+const int gate, const string pinName)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Struct which represents a <link linkend="structCircuit__Netlist_1_1Sink">Sink</link>. A sink is a vertex which has input Edge&apos;s, but no output Edge&apos;s (outdegree zero). </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 56 of file circuit_netlist.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>circuit_netlist.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="structCircuit__Netlist_1_1Sink_1ad56d7d6a65455ec3e328d4bb8876936f">
+                <title>Circuit_Netlist::Sink::Sink (const int gate, const string pinName)</title> <emphasis>Sink constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int gate, const string pinName </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+</section>

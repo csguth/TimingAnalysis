@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTiming__Analysis_1_1Timing__Arc">
+<title>Timing_Analysis::Timing_Arc class Reference</title>
+<para>
+    <programlisting>#include <link linkend="timing__arc_8h">&lt;timing_arc.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _delay</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _slew</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int _arc_number</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int _gate_number</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTiming__Analysis_1_1Timing__Arc_1a38312efc7070c651743a667568514162">Timing_Arc</link> (
+<link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link> * from, <link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link> * to, const int arcNumber, const int gate_number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classTiming__Analysis_1_1Timing__Arc_1a32909fb0fdc3bd5f2a13cdb9f9b351b8">~Timing_Arc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Arc_1a092de659dd0846a3e899f0efd9c34397">clear</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classTiming__Analysis_1_1Timing__Arc_1a6561e6eb77cc7536f5515db318b233ce">delay</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classTiming__Analysis_1_1Timing__Arc_1a9846eb6bd9afc2cd8cbb0f926daf39a5">slew</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Arc_1a74682f1b90b14cb0902dca32e6430fd2">delay</link> (
+const <link linkend="classTransitions">Transitions</link>&lt; double &gt; &amp; delay)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classTiming__Analysis_1_1Timing__Arc_1a5521ea0890331cb77e6b0ea72a7062a3">slew</link> (
+const <link linkend="classTransitions">Transitions</link>&lt; double &gt; &amp; slew)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classTiming__Analysis_1_1Timing__Arc_1aa4a54ed3cd6762bd26a3fdf566b5a234">arc_number</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classTiming__Analysis_1_1Timing__Arc_1abd085ce8fe10d00d6e0be2668773b32f">gate_number</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Describes a <link linkend="classTiming__Analysis_1_1Timing__Arc">Timing_Arc</link> of the timing graph model. Vertex which connects one <link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link> to another timing point only. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 16 of file timing_arc.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>timing_arc.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classTiming__Analysis_1_1Timing__Arc_1a38312efc7070c651743a667568514162">
+                <title>Timing_Analysis::Timing_Arc::Timing_Arc (Timing_Point *from, Timing_Point *to, const int arcNumber, const int gate_number)</title> <emphasis>Timing_Arc constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link></entry>
+                                <entry>
+<para>* from, <link linkend="classTiming__Analysis_1_1Timing__Point">Timing_Point</link> * to, const int arcNumber, const int gate_number) : <link linkend="classTiming__Analysis_1_1Single__Fanout__Edge">Single_Fanout_Edge&lt;Timing_Point&gt;(from, to)</link>, _delay(0.0f, 0.0f), _slew(0.0f, 0.0f), _arc_number (arcNumber), _gate_number(gate_number) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Arc_1a32909fb0fdc3bd5f2a13cdb9f9b351b8">
+                <title>virtual Timing_Analysis::Timing_Arc::~Timing_Arc ()</title> <emphasis>Timing_Arc destructor.</emphasis>
+                
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Arc_1a092de659dd0846a3e899f0efd9c34397">
+                <title>void Timing_Analysis::Timing_Arc::clear ()</title> <emphasis>Sets delay and slew time to zero.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Arc_1a6561e6eb77cc7536f5515db318b233ce">
+                <title>Transitions&lt;double&gt; Timing_Analysis::Timing_Arc::delay () const </title> <emphasis>Returns delay time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Arc_1a9846eb6bd9afc2cd8cbb0f926daf39a5">
+                <title>Transitions&lt;double&gt; Timing_Analysis::Timing_Arc::slew () const </title> <emphasis>Returns slew time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Arc_1a74682f1b90b14cb0902dca32e6430fd2">
+                <title>void Timing_Analysis::Timing_Arc::delay (const Transitions&lt; double &gt; &amp;delay)</title> <emphasis>Sets delay time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Arc_1a5521ea0890331cb77e6b0ea72a7062a3">
+                <title>void Timing_Analysis::Timing_Arc::slew (const Transitions&lt; double &gt; &amp;slew)</title> <emphasis>Sets slew time.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Arc_1aa4a54ed3cd6762bd26a3fdf566b5a234">
+                <title>int Timing_Analysis::Timing_Arc::arc_number () const </title> <emphasis>Returns arc number.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Timing__Arc_1abd085ce8fe10d00d6e0be2668773b32f">
+                <title>int Timing_Analysis::Timing_Arc::gate_number () const </title> <emphasis>Returns gate number.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

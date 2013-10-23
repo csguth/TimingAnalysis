@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIF_3_01false_00_01ThenType_00_01ElseType_01_4">
+<title>IF&lt; false, ThenType, ElseType &gt; struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="configuration_8h">&lt;configuration.h&gt;</link></programlisting>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class ThenType</type>
+      </param>
+      <param>
+        <type>class ElseType</type>
+      </param>
+    </templateparamlist>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef ElseType  <link linkend="structIF_3_01false_00_01ThenType_00_01ElseType_01_4_1aa7d9ee5d71d3235a17de49470e2a00a0">RET</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Metaprogrammed <link linkend="structIF">IF</link>. </para>
+    </simplesect>
+            <section xml:id="structIF_3_01false_00_01ThenType_00_01ElseType_01_4_1aa7d9ee5d71d3235a17de49470e2a00a0">
+                <title>typedef ElseType IF&lt; false, ThenType, ElseType &gt;::RET</title> <emphasis></emphasis>
+                
+            </section>
+</section>

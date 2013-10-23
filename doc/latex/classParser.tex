@@ -10,41 +10,98 @@ Superclass. A \hyperlink{classParser}{Parser} is a program which reads an input 
 
 {\ttfamily \#include $<$parser.\-h$>$}
 
-Inheritance diagram for Parser\-:\begin{figure}[H]
+
+
+Inheritance diagram for Parser\-:\nopagebreak
+\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.072797cm]{classParser}
+\includegraphics[width=350pt]{classParser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Parser\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classParser__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classParser_a12234f6cd36b61af4b50c94a179422c1}{\hyperlink{classParser_a12234f6cd36b61af4b50c94a179422c1}{Parser} ()}\label{classParser_a12234f6cd36b61af4b50c94a179422c1}
-
+\hyperlink{classParser_a12234f6cd36b61af4b50c94a179422c1}{Parser} ()
 \begin{DoxyCompactList}\small\item\em Empty \hyperlink{classParser}{Parser} constructor. \end{DoxyCompactList}\item 
-\hypertarget{classParser_ad576b92b9cc324f6f41b0269a9a1a546}{virtual \hyperlink{classParser_ad576b92b9cc324f6f41b0269a9a1a546}{$\sim$\-Parser} ()}\label{classParser_ad576b92b9cc324f6f41b0269a9a1a546}
-
+virtual \hyperlink{classParser_ad576b92b9cc324f6f41b0269a9a1a546}{$\sim$\-Parser} ()
 \begin{DoxyCompactList}\small\item\em Empty \hyperlink{classParser}{Parser} destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classParser_a83c7ac58f2c98cc54e9c750b29e6b0f0}{bool {\bfseries is\-Special\-Char} (const char \&c)}\label{classParser_a83c7ac58f2c98cc54e9c750b29e6b0f0}
-
+bool \hyperlink{classParser_a83c7ac58f2c98cc54e9c750b29e6b0f0}{is\-Special\-Char} (const char \&c)
 \item 
-\hypertarget{classParser_ae42067f51acd49ccccb0b0373321a421}{bool {\bfseries read\-Line\-As\-Tokens} (istream \&is, vector$<$ string $>$ \&tokens, bool include\-Special\-Chars=false)}\label{classParser_ae42067f51acd49ccccb0b0373321a421}
-
+bool \hyperlink{classParser_ae42067f51acd49ccccb0b0373321a421}{read\-Line\-As\-Tokens} (istream \&\hyperlink{classParser_a74c323dd4798b459fa982295b8e871bc}{is}, vector$<$ string $>$ \&tokens, bool include\-Special\-Chars=false)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classParser_a74c323dd4798b459fa982295b8e871bc}{fstream {\bfseries is}}\label{classParser_a74c323dd4798b459fa982295b8e871bc}
-
+fstream \hyperlink{classParser_a74c323dd4798b459fa982295b8e871bc}{is}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Superclass. A \hyperlink{classParser}{Parser} is a program which reads an input and creates a data structure. In this case, the \hyperlink{classParser}{Parser} will read a string, validate it and build essential files for use in the program using information read from the string. 
 
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classParser_a12234f6cd36b61af4b50c94a179422c1}{\index{Parser@{Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!Parser@{Parser}}
+\subsubsection[{Parser}]{\setlength{\rightskip}{0pt plus 5cm}Parser\-::\-Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classParser_a12234f6cd36b61af4b50c94a179422c1}
+
+
+Empty \hyperlink{classParser}{Parser} constructor. 
+
+\hypertarget{classParser_ad576b92b9cc324f6f41b0269a9a1a546}{\index{Parser@{Parser}!$\sim$\-Parser@{$\sim$\-Parser}}
+\index{$\sim$\-Parser@{$\sim$\-Parser}!Parser@{Parser}}
+\subsubsection[{$\sim$\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}virtual Parser\-::$\sim$\-Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classParser_ad576b92b9cc324f6f41b0269a9a1a546}
+
+
+Empty \hyperlink{classParser}{Parser} destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classParser_a83c7ac58f2c98cc54e9c750b29e6b0f0}{\index{Parser@{Parser}!is\-Special\-Char@{is\-Special\-Char}}
+\index{is\-Special\-Char@{is\-Special\-Char}!Parser@{Parser}}
+\subsubsection[{is\-Special\-Char}]{\setlength{\rightskip}{0pt plus 5cm}bool Parser\-::is\-Special\-Char (
+\begin{DoxyParamCaption}
+\item[{const char \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParser_a83c7ac58f2c98cc54e9c750b29e6b0f0}
+\hypertarget{classParser_ae42067f51acd49ccccb0b0373321a421}{\index{Parser@{Parser}!read\-Line\-As\-Tokens@{read\-Line\-As\-Tokens}}
+\index{read\-Line\-As\-Tokens@{read\-Line\-As\-Tokens}!Parser@{Parser}}
+\subsubsection[{read\-Line\-As\-Tokens}]{\setlength{\rightskip}{0pt plus 5cm}bool Parser\-::read\-Line\-As\-Tokens (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{is, }
+\item[{vector$<$ string $>$ \&}]{tokens, }
+\item[{bool}]{include\-Special\-Chars = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParser_ae42067f51acd49ccccb0b0373321a421}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classParser_a74c323dd4798b459fa982295b8e871bc}{\index{Parser@{Parser}!is@{is}}
+\index{is@{is}!Parser@{Parser}}
+\subsubsection[{is}]{\setlength{\rightskip}{0pt plus 5cm}fstream Parser\-::is\hspace{0.3cm}{\ttfamily [protected]}}}\label{classParser_a74c323dd4798b459fa982295b8e871bc}
+
+
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-tcc\-Chrystian/src/include/parser.\-h\end{DoxyCompactItemize}
+Timing\-Analysis/src/include/\hyperlink{parser_8h}{parser.\-h}\end{DoxyCompactItemize}

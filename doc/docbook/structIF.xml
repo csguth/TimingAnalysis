@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structIF">
+<title>IF struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="configuration_8h">&lt;configuration.h&gt;</link></programlisting>
+</para>
+    <templateparamlist>
+      <param>
+        <type>bool</type>
+        <declname>cond</declname>
+        <defname>cond</defname>
+      </param>
+      <param>
+        <type>class</type>
+        <declname>ThenType</declname>
+        <defname>ThenType</defname>
+      </param>
+      <param>
+        <type>class ElseType</type>
+      </param>
+    </templateparamlist>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para>typedef ThenType  <link linkend="structIF_1af93da5fd47eed555ff23c8d9022f8212">RET</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>This is a Configuration File To switch between ISPD2012 (Lumped Capacitance Wire Delay Model) or ISPD2013 (Distributed RC Wire Delay Model) SPEF format. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>STATIC METAPROGRAMMED IFMetaprogrammed <link linkend="structIF">IF</link> </para>
+                <para>Definition at line 24 of file configuration.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>configuration.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="structIF_1af93da5fd47eed555ff23c8d9022f8212">
+                <title>typedef ThenType IF&lt; cond, ThenType, ElseType &gt;::RET</title> <emphasis></emphasis>
+                
+            </section>
+</section>

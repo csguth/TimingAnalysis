@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structLibertyTimingInfo">
+<title>LibertyTimingInfo struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="liberty__library_8h">&lt;liberty_library.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string fromPin</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string toPin</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string timingSense</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>timing model for ISPD LibertyLookupTable fallDelay</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>LibertyLookupTable riseDelay</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>LibertyLookupTable fallTransition</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>LibertyLookupTable riseTransition</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Struct which has informations about timing. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+
+<para>&quot;non_unate&quot; or &quot;negative_unate&quot; or &quot;positive_unate&quot;. Note that ISPD-13 library will have only negative-unate combinational cells. The clock arcs for sequentials will be non_unate (which can be ignored because of the simplified sequential </para>
+                <para>Definition at line 57 of file liberty_library.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>liberty_library.h</para></listitem></itemizedlist></para>
+        </simplesect>
+</section>

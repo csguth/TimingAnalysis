@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="wire__delay__model_8h">
+    <title>wire_delay_model.h File Reference</title>
+    <programlisting>#include &lt;iostream&gt;</programlisting>
+    <programlisting>#include &quot;spef_net.h&quot;</programlisting>
+    <programlisting>#include &quot;liberty_library.h&quot;</programlisting>
+    <programlisting>#include &quot;configuration.h&quot;</programlisting>
+    <programlisting>#include &lt;cassert&gt;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classWireDelayModel">WireDelayModel</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classLumpedCapacitanceWireDelayModel">LumpedCapacitanceWireDelayModel</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classRCTreeWireDelayModel">RCTreeWireDelayModel</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structRCTreeWireDelayModel_1_1Node">RCTreeWireDelayModel::Node</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structRCTreeWireDelayModel_1_1NodeAndResistor">RCTreeWireDelayModel::NodeAndResistor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/decio/Documentos/estudos/tccChrystian/src/include/wire_delay_model.h</para>
+    </simplesect>
+</section>

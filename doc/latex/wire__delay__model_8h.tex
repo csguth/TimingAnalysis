@@ -1,0 +1,33 @@
+\hypertarget{wire__delay__model_8h}{\section{Timing\-Analysis/src/include/wire\-\_\-delay\-\_\-model.h File Reference}
+\label{wire__delay__model_8h}\index{Timing\-Analysis/src/include/wire\-\_\-delay\-\_\-model.\-h@{Timing\-Analysis/src/include/wire\-\_\-delay\-\_\-model.\-h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}spef\-\_\-net.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}liberty\-\_\-library.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}configuration.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$cassert$>$}\\*
+Include dependency graph for wire\-\_\-delay\-\_\-model.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{wire__delay__model_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{wire__delay__model_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classWireDelayModel}{Wire\-Delay\-Model}
+\begin{DoxyCompactList}\small\item\em Describes parasitc elements present in wires in a circuit which cause significant delay and are taken into account in static timing analysis. \end{DoxyCompactList}\item 
+class \hyperlink{classLumpedCapacitanceWireDelayModel}{Lumped\-Capacitance\-Wire\-Delay\-Model}
+\begin{DoxyCompactList}\small\item\em This model describes the parasitic capacitances distributed along a wire as a single circuit element. Does not take resistors into account. \end{DoxyCompactList}\item 
+class \hyperlink{classRCTreeWireDelayModel}{R\-C\-Tree\-Wire\-Delay\-Model}
+\begin{DoxyCompactList}\small\item\em This model describes the parasitic elements(capacitors and resistors) distributed along a wire as a single circuit element. \end{DoxyCompactList}\end{DoxyCompactItemize}

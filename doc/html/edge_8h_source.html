@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>TimingAnalysis: tccChrystian/src/include/edge.h Source File</title>
+<title>TimingAnalysis: TimingAnalysis/src/include/edge.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_24ec47c0a6bdbcbca00af9fb6c6b9d83.html">tccChrystian</a></li><li class="navelem"><a class="el" href="dir_eb81c6257e1a53e833c20a1d2b693c4b.html">src</a></li><li class="navelem"><a class="el" href="dir_3125b4672bc50daf2b8ec1bf3083b828.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_5bfb5c4ab9a51b2d4e793d77905e678f.html">TimingAnalysis</a></li><li class="navelem"><a class="el" href="dir_a3b1ee914c9cf90eb25554d126c05f83.html">src</a></li><li class="navelem"><a class="el" href="dir_9f32e12a0c8b00327ae449b12edb6d5c.html">include</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -87,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">edge.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef EDGE_H</span></div>
+<a href="edge_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef EDGE_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define EDGE_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
@@ -103,26 +104,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Edge.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classTiming__Analysis_1_1Edge.html">Edge</a> {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Edge.html#a64a07a7a08de0e2fd29b1d1db98c5d2d">   25</a></span>&#160;        <a class="code" href="classTiming__Analysis_1_1Edge.html#a64a07a7a08de0e2fd29b1d1db98c5d2d">Edge</a>(T * <a class="code" href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">from</a>) : _from(from)</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Edge.html#a64a07a7a08de0e2fd29b1d1db98c5d2d">   25</a></span>&#160;        <a class="code" href="classTiming__Analysis_1_1Edge.html#a64a07a7a08de0e2fd29b1d1db98c5d2d">Edge</a>(T * <a class="code" href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">from</a>) : <a class="code" href="classTiming__Analysis_1_1Edge.html#a718ef7f37c4d9ddf867ef15eaa96ae43">_from</a>(from)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        T * _from;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        vector&lt;T *&gt; _to;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Edge.html#a718ef7f37c4d9ddf867ef15eaa96ae43">   30</a></span>&#160;        T * <a class="code" href="classTiming__Analysis_1_1Edge.html#a718ef7f37c4d9ddf867ef15eaa96ae43">_from</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Edge.html#ae1bc9c1f6a84a2b4a116d5c4571fba02">   31</a></span>&#160;        vector&lt;T *&gt; <a class="code" href="classTiming__Analysis_1_1Edge.html#ae1bc9c1f6a84a2b4a116d5c4571fba02">_to</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Edge.html#a81bc4f5f07902385b2234bf591822a52">   39</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classTiming__Analysis_1_1Edge.html#a81bc4f5f07902385b2234bf591822a52">set_fanout</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> i, T *tp)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span>(_to.empty() &amp;&amp; !i)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                _to.push_back(tp);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="classTiming__Analysis_1_1Edge.html#ae1bc9c1f6a84a2b4a116d5c4571fba02">_to</a>.empty() &amp;&amp; !i)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="classTiming__Analysis_1_1Edge.html#ae1bc9c1f6a84a2b4a116d5c4571fba02">_to</a>.push_back(tp);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                _to[i] = tp;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            assert(_to.size() == 1);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="classTiming__Analysis_1_1Edge.html#ae1bc9c1f6a84a2b4a116d5c4571fba02">_to</a>[i] = tp;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            assert(<a class="code" href="classTiming__Analysis_1_1Edge.html#ae1bc9c1f6a84a2b4a116d5c4571fba02">_to</a>.size() == 1);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Edge.html#ab9195f5c50f8a66b29f6856c9629fcc8">   54</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classTiming__Analysis_1_1Edge.html#ab9195f5c50f8a66b29f6856c9629fcc8">add_fanout</a>(T *tp)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            _to.push_back(tp);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="classTiming__Analysis_1_1Edge.html#ae1bc9c1f6a84a2b4a116d5c4571fba02">_to</a>.push_back(tp);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
@@ -130,12 +131,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">   66</a></span>&#160;    T * <a class="code" href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">from</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> _from;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classTiming__Analysis_1_1Edge.html#a718ef7f37c4d9ddf867ef15eaa96ae43">_from</a>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classTiming__Analysis_1_1Edge.html#a60c70172e973450774a8ec5d4dadbcb5">   75</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classTiming__Analysis_1_1Edge.html#a60c70172e973450774a8ec5d4dadbcb5">fanouts_size</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> _to.size();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classTiming__Analysis_1_1Edge.html#ae1bc9c1f6a84a2b4a116d5c4571fba02">_to</a>.size();</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    };</div>
@@ -144,15 +145,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif // EDGE_H</span></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html_a64a07a7a08de0e2fd29b1d1db98c5d2d"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#a64a07a7a08de0e2fd29b1d1db98c5d2d">Timing_Analysis::Edge::Edge</a></div><div class="ttdeci">Edge(T *from)</div><div class="ttdoc">Edge constructor. </div><div class="ttdef"><b>Definition:</b> edge.h:25</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html_a60c70172e973450774a8ec5d4dadbcb5"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#a60c70172e973450774a8ec5d4dadbcb5">Timing_Analysis::Edge::fanouts_size</a></div><div class="ttdeci">size_t fanouts_size() const </div><div class="ttdoc">Returns fan out. </div><div class="ttdef"><b>Definition:</b> edge.h:75</div></div>
+<div class="ttc" id="classTiming__Analysis_1_1Edge_html_a718ef7f37c4d9ddf867ef15eaa96ae43"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#a718ef7f37c4d9ddf867ef15eaa96ae43">Timing_Analysis::Edge::_from</a></div><div class="ttdeci">T * _from</div><div class="ttdef"><b>Definition:</b> edge.h:30</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Timing__Analysis_html"><div class="ttname"><a href="classTiming__Analysis_1_1Timing__Analysis.html">Timing_Analysis::Timing_Analysis</a></div><div class="ttdoc">Class which performs the timing analysis. </div><div class="ttdef"><b>Definition:</b> timing_analysis.h:70</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html_a47020ea89fd9fde438adc814a731a23d"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#a47020ea89fd9fde438adc814a731a23d">Timing_Analysis::Edge::from</a></div><div class="ttdeci">T * from() const </div><div class="ttdoc">Returns origin vertex. </div><div class="ttdef"><b>Definition:</b> edge.h:66</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html">Timing_Analysis::Edge</a></div><div class="ttdoc">Template class which represents an edge of the graph model. An edge in graph theory is a connection b...</div><div class="ttdef"><b>Definition:</b> edge.h:17</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html_ab9195f5c50f8a66b29f6856c9629fcc8"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#ab9195f5c50f8a66b29f6856c9629fcc8">Timing_Analysis::Edge::add_fanout</a></div><div class="ttdeci">void add_fanout(T *tp)</div><div class="ttdoc">Inserts T pointer. </div><div class="ttdef"><b>Definition:</b> edge.h:54</div></div>
+<div class="ttc" id="classTiming__Analysis_1_1Edge_html_ae1bc9c1f6a84a2b4a116d5c4571fba02"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#ae1bc9c1f6a84a2b4a116d5c4571fba02">Timing_Analysis::Edge::_to</a></div><div class="ttdeci">vector&lt; T * &gt; _to</div><div class="ttdef"><b>Definition:</b> edge.h:31</div></div>
 <div class="ttc" id="classTiming__Analysis_1_1Edge_html_a81bc4f5f07902385b2234bf591822a52"><div class="ttname"><a href="classTiming__Analysis_1_1Edge.html#a81bc4f5f07902385b2234bf591822a52">Timing_Analysis::Edge::set_fanout</a></div><div class="ttdeci">void set_fanout(const int i, T *tp)</div><div class="ttdoc">Inserts T pointer at index i. </div><div class="ttdef"><b>Definition:</b> edge.h:39</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 9 2013 10:26:53 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2013 15:22:25 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

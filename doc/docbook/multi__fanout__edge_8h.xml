@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="multi__fanout__edge_8h">
+    <title>multi_fanout_edge.h File Reference</title>
+    <programlisting>#include &quot;edge.h&quot;</programlisting>
+    <programlisting>#include &quot;timing_point.h&quot;</programlisting>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="classTiming__Analysis_1_1Multi__Fanout__Edge">Timing_Analysis::Multi_Fanout_Edge</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespaceTiming__Analysis">Timing_Analysis</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file /home/decio/Documentos/estudos/tccChrystian/src/include/multi_fanout_edge.h</para>
+    </simplesect>
+</section>

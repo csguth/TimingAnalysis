@@ -62,7 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,11 +94,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="structIF_3_01false_00_01ThenType_00_01ElseType_01_4.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="configuration_8h_source.html">configuration.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for IF&lt; false, ThenType, ElseType &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="structIF_3_01false_00_01ThenType_00_01ElseType_01_4__coll__graph.png" border="0" usemap="#IF_3_01false_00_01ThenType_00_01ElseType_01_4_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aa7d9ee5d71d3235a17de49470e2a00a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7d9ee5d71d3235a17de49470e2a00a0"></a>
-typedef ElseType&#160;</td><td class="memItemRight" valign="bottom"><b>RET</b></td></tr>
+<tr class="memitem:aa7d9ee5d71d3235a17de49470e2a00a0"><td class="memItemLeft" align="right" valign="top">typedef ElseType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIF_3_01false_00_01ThenType_00_01ElseType_01_4.html#aa7d9ee5d71d3235a17de49470e2a00a0">RET</a></td></tr>
 <tr class="separator:aa7d9ee5d71d3235a17de49470e2a00a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -106,13 +110,28 @@ typedef ElseType&#160;</td><td class="memItemRight" valign="bottom"><b>RET</b></
 struct IF&lt; false, ThenType, ElseType &gt;</h3>
 
 <p>Metaprogrammed <a class="el" href="structIF.html" title="This is a Configuration File To switch between ISPD2012 (Lumped Capacitance Wire Delay Model) or ISPD...">IF</a>. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>tccChrystian/src/include/<a class="el" href="configuration_8h_source.html">configuration.h</a></li>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="aa7d9ee5d71d3235a17de49470e2a00a0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ThenType , class ElseType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef ElseType <a class="el" href="structIF.html">IF</a>&lt; false, ThenType, ElseType &gt;::<a class="el" href="structIF_3_01false_00_01ThenType_00_01ElseType_01_4.html#aa7d9ee5d71d3235a17de49470e2a00a0">RET</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>TimingAnalysis/src/include/<a class="el" href="configuration_8h_source.html">configuration.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 9 2013 10:26:53 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2013 15:22:25 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

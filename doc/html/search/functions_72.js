@@ -2,6 +2,7 @@ var searchData=
 [
   ['rctreewiredelaymodel',['RCTreeWireDelayModel',['../classRCTreeWireDelayModel.html#a239d4784b2d39b6042fe39bee4838c6b',1,'RCTreeWireDelayModel']]],
   ['readfile',['readFile',['../classVerilogParser.html#a9f8740c184e8129a87597a1eae3ed3c4',1,'VerilogParser::readFile()'],['../classLibertyParser.html#a474451e29a86949f6ebef6948363874d',1,'LibertyParser::readFile()'],['../classSpefParserISPD2013.html#a11c71d121883895a367a99b052aada73',1,'SpefParserISPD2013::readFile()'],['../classSpefParserISPD2012.html#a130209fe17a1d791cd03543304e48d5e',1,'SpefParserISPD2012::readFile()'],['../classSDCParser.html#afc0ae26ac89138dd7b84e2986375785f',1,'SDCParser::readFile()']]],
+  ['readlineastokens',['readLineAsTokens',['../classParser.html#ae42067f51acd49ccccb0b0373321a421',1,'Parser']]],
   ['report_5ftiming',['report_timing',['../classTiming__Analysis_1_1Timing__Analysis.html#a6d3fd296c18a72b05d36addc14068e16',1,'Timing_Analysis::Timing_Analysis']]],
   ['required_5ftime',['required_time',['../classTiming__Analysis_1_1Timing__Point.html#aab60710f64cbc89f7316515aaca8ea17',1,'Timing_Analysis::Timing_Point']]],
   ['resistor',['Resistor',['../structSpefNetISPD2013_1_1Resistor.html#ac84e89149ed6b112e9c7f65d6970eedc',1,'SpefNetISPD2013::Resistor']]],

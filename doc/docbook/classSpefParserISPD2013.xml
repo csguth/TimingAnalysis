@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classSpefParserISPD2013">
+<title>SpefParserISPD2013 class Reference</title>
+<para>
+    <programlisting>#include <link linkend="parser_8h">&lt;parser.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classSpefParserISPD2013_1aced0ce8639149d6a8abb95c862f28697">read_connections</link> (
+<link linkend="classSpefNetISPD2013">SpefNetISPD2013</link> &amp; net)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classSpefParserISPD2013_1af27f208d210a50f9786dc7c40eb2544b">read_capacitances</link> (
+<link linkend="classSpefNetISPD2013">SpefNetISPD2013</link> &amp; net)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classSpefParserISPD2013_1a44ac4b867225c7c90feeecc8ec209905">read_resistances</link> (
+<link linkend="classSpefNetISPD2013">SpefNetISPD2013</link> &amp; net)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classSpefParserISPD2013_1a07e47c4922c6a3ae67285ab8d10901cb">read_net_data</link> (
+<link linkend="classSpefNetISPD2013">SpefNetISPD2013</link> &amp; spefNet)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="spef__net_8h_1adc6130507d68ab3a34d98dfc3ef83672">Parasitics2013</link> <link linkend="classSpefParserISPD2013_1a11c71d121883895a367a99b052aada73">readFile</link> (
+const string filename)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Inherits from <link linkend="classParser">Parser</link>. Used to generate <link linkend="classSpefNetISPD2013">SpefNetISPD2013</link> file from an input. </para>
+    </simplesect>
+            <section xml:id="classSpefParserISPD2013_1aced0ce8639149d6a8abb95c862f28697">
+                <title>bool SpefParserISPD2013::read_connections (SpefNetISPD2013 &amp;net)</title> <emphasis>The return value indicates whether the *CONN section has been read or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classSpefNetISPD2013">SpefNetISPD2013</link></entry>
+                                <entry>
+<para>&amp; net</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefParserISPD2013_1af27f208d210a50f9786dc7c40eb2544b">
+                <title>void SpefParserISPD2013::read_capacitances (SpefNetISPD2013 &amp;net)</title> <emphasis>Asserts fstream correctness and sets the SpefNetISPD2013 with capacitance values parsed from fstream.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classSpefNetISPD2013">SpefNetISPD2013</link></entry>
+                                <entry>
+<para>&amp; net</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefParserISPD2013_1a44ac4b867225c7c90feeecc8ec209905">
+                <title>void SpefParserISPD2013::read_resistances (SpefNetISPD2013 &amp;net)</title> <emphasis>Asserts fstream correctness and sets the SpefNetISPD2013 with resistance values parsed from fstream.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classSpefNetISPD2013">SpefNetISPD2013</link></entry>
+                                <entry>
+<para>&amp; net</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefParserISPD2013_1a07e47c4922c6a3ae67285ab8d10901cb">
+                <title>bool SpefParserISPD2013::read_net_data (SpefNetISPD2013 &amp;spefNet)</title> <emphasis>Asserts fstream correctness and sets the SpefNetISPD2013 with parasit values parsed from fstream. Returns false if info read from the fstream are not valid.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry><link linkend="classSpefNetISPD2013">SpefNetISPD2013</link></entry>
+                                <entry>
+<para>&amp; spefNet</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefParserISPD2013_1a11c71d121883895a367a99b052aada73">
+                <title>const Parasitics2013 SpefParserISPD2013::readFile (const string filename)</title> <emphasis>Returns Parasitics2013 object generated using informations read from file passed as filename parameter.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string filename</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Parasitics2013 </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

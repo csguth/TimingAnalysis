@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classParser">
+<title>Parser class Reference</title>
+<para>
+    <programlisting>#include <link linkend="parser_8h">&lt;parser.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Protected Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>fstream is</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classParser_1a83c7ac58f2c98cc54e9c750b29e6b0f0">isSpecialChar</link> (
+const char &amp; c)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classParser_1ae42067f51acd49ccccb0b0373321a421">readLineAsTokens</link> (
+istream &amp; is, vector&lt; string &gt; &amp; tokens, bool includeSpecialChars)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classParser_1a12234f6cd36b61af4b50c94a179422c1">Parser</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classParser_1ad576b92b9cc324f6f41b0269a9a1a546">~Parser</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Superclass. A <link linkend="classParser">Parser</link> is a program which reads an input and creates a data structure. In this case, the <link linkend="classParser">Parser</link> will read a string, validate it and build essential files for use in the program using information read from the string. </para>
+    </simplesect>
+            <section xml:id="classParser_1a83c7ac58f2c98cc54e9c750b29e6b0f0">
+                <title>bool Parser::isSpecialChar (const char &amp;c)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1ae42067f51acd49ccccb0b0373321a421">
+                <title>bool Parser::readLineAsTokens (istream &amp;is, vector&lt; string &gt; &amp;tokens, bool includeSpecialChars=false)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classParser_1a12234f6cd36b61af4b50c94a179422c1">
+                <title>Parser::Parser ()</title> <emphasis>Empty Parser constructor.</emphasis>
+                
+            </section>
+            <section xml:id="classParser_1ad576b92b9cc324f6f41b0269a9a1a546">
+                <title>virtual Parser::~Parser ()</title> <emphasis>Empty Parser destructor.</emphasis>
+                
+            </section>
+</section>

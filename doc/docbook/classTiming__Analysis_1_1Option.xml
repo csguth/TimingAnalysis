@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTiming__Analysis_1_1Option">
+<title>Timing_Analysis::Option class Reference</title>
+<para>
+    <programlisting>#include <link linkend="timing__analysis_8h">&lt;timing_analysis.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int _footprint_index</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int _option_index</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _dont_touch</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTiming__Analysis_1_1Option_1ac426169d74c9d432f168255b6cb52544">Option</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTiming__Analysis_1_1Option_1a1d95559d49ea714e293a8679cefe8295">Option</link> (
+const int footprintIndex, const int optionIndex)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Refers to the implementation option of a logic gate. </para>
+    </simplesect>
+            <section xml:id="classTiming__Analysis_1_1Option_1ac426169d74c9d432f168255b6cb52544">
+                <title>Timing_Analysis::Option::Option ()</title> <emphasis>Option default constructor.</emphasis>
+                
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Option_1a1d95559d49ea714e293a8679cefe8295">
+                <title>Timing_Analysis::Option::Option (const int footprintIndex, const int optionIndex)</title> <emphasis>Option default constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int footprintIndex, const int optionIndex </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+</section>

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structSpefNetISPD2013_1_1Capacitor">
+<title>SpefNetISPD2013::Capacitor struct Reference</title>
+<para>
+    <programlisting>#include <link linkend="spef__net_8h">&lt;spef_net.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int node</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double value</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structSpefNetISPD2013_1_1Capacitor_1a4aa1ee73d32e9e916057e24a229f3757">Capacitor</link> (
+const int &amp; node, const double &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Struct which represents a capacitor. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 76 of file spef_net.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>spef_net.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="structSpefNetISPD2013_1_1Capacitor_1a4aa1ee73d32e9e916057e24a229f3757">
+                <title>SpefNetISPD2013::Capacitor::Capacitor (const int &amp;node, const double &amp;value)</title> <emphasis>Capacitor constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; node, const double &amp; value </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+</section>

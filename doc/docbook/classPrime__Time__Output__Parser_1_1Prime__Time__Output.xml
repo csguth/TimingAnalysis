@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classPrime__Time__Output__Parser_1_1Prime__Time__Output">
+<title>Prime_Time_Output_Parser::Prime_Time_Output class Reference</title>
+<para>
+    <programlisting>#include <link linkend="parser_8h">&lt;parser.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Pin_Timing &gt; _pins</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Port_Timing &gt; _ports</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classPrime__Time__Output__Parser_1_1Prime__Time__Output_1af89e7f909821e56d0e89ae62cebc5b81">pins_size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classPrime__Time__Output__Parser_1_1Prime__Time__Output_1a6fdf8bbe0ea6ecdcdecec62e0922625f">ports_size</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="structPrime__Time__Output__Parser_1_1Pin__Timing">Pin_Timing</link> &amp; <link linkend="classPrime__Time__Output__Parser_1_1Prime__Time__Output_1adfa3dff9af20ebb0872d4c775b3eeecc">pin</link> (
+const size_t i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="structPrime__Time__Output__Parser_1_1Port__Timing">Port_Timing</link> &amp; <link linkend="classPrime__Time__Output__Parser_1_1Prime__Time__Output_1a36d4fa1cf4175cce9bac2fb27ea98f72">port</link> (
+const size_t i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Represents Prime Time output. Provides access methods to it. </para>
+    </simplesect>
+            <section xml:id="classPrime__Time__Output__Parser_1_1Prime__Time__Output_1af89e7f909821e56d0e89ae62cebc5b81">
+                <title>size_t Prime_Time_Output_Parser::Prime_Time_Output::pins_size () const </title> <emphasis>Returns number of pins.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classPrime__Time__Output__Parser_1_1Prime__Time__Output_1a6fdf8bbe0ea6ecdcdecec62e0922625f">
+                <title>size_t Prime_Time_Output_Parser::Prime_Time_Output::ports_size () const </title> <emphasis>Returns number of ports.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classPrime__Time__Output__Parser_1_1Prime__Time__Output_1adfa3dff9af20ebb0872d4c775b3eeecc">
+                <title>const Pin_Timing&amp; Prime_Time_Output_Parser::Prime_Time_Output::pin (const size_t i) const </title> <emphasis>Returns Pin_Timing reference at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>size_t i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="structPrime__Time__Output__Parser_1_1Pin__Timing">Pin_Timing</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classPrime__Time__Output__Parser_1_1Prime__Time__Output_1a36d4fa1cf4175cce9bac2fb27ea98f72">
+                <title>const Port_Timing&amp; Prime_Time_Output_Parser::Prime_Time_Output::port (const size_t i) const </title> <emphasis>Returns Pin_Timing reference at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>size_t i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="structPrime__Time__Output__Parser_1_1Port__Timing">Port_Timing</link> &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

@@ -1,0 +1,1376 @@
+\begin{theindex}
+
+  \item {$\sim $\discretionary {-}{}{}Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{19}
+  \item {$\sim $\discretionary {-}{}{}Liberty\discretionary {-}{}{}Library}
+    \subitem {Liberty\discretionary {-}{}{}Library}, \hyperpage{37}
+  \item {$\sim $\discretionary {-}{}{}Parser}
+    \subitem {Parser}, \hyperpage{69}
+  \item {$\sim $\discretionary {-}{}{}Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{95}
+  \item {$\sim $\discretionary {-}{}{}Timer}
+    \subitem {Timer}, \hyperpage{102}
+  \item {$\sim $\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{106}
+  \item {$\sim $\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{113}
+  \item {$\sim $\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{119}
+  \item {$\sim $\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{122}
+  \item {$\sim $\discretionary {-}{}{}Verilog\discretionary {-}{}{}Parser}
+    \subitem {Verilog\discretionary {-}{}{}Parser}, \hyperpage{140}
+  \item {$\sim $\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{144}
+  \item {\discretionary {-}{}{}\_\discretionary {-}{}{}from}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Edge}, 
+		\hyperpage{32}
+  \item {\discretionary {-}{}{}\_\discretionary {-}{}{}lumped\discretionary {-}{}{}\_\discretionary {-}{}{}capacitance}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{146}
+  \item {\discretionary {-}{}{}\_\discretionary {-}{}{}to}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Edge}, 
+		\hyperpage{32}
+
+  \indexspace
+
+  \item {abs}
+    \subitem {Transitions}, \hyperpage{137}
+  \item {add\discretionary {-}{}{}\_\discretionary {-}{}{}fanout}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Edge}, 
+		\hyperpage{30}
+  \item {add\discretionary {-}{}{}Capacitor}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{95}
+  \item {add\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}
+    \subitem {Liberty\discretionary {-}{}{}Library}, \hyperpage{37}
+  \item {add\discretionary {-}{}{}Cell\discretionary {-}{}{}Inst}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{19}
+  \item {add\discretionary {-}{}{}Resistor}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{95}
+  \item {add\discretionary {-}{}{}Sink}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Net}, 
+		\hyperpage{62}
+  \item {aggregate}
+    \subitem {Transitions}, \hyperpage{135}
+  \item {arc}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{122}
+  \item {arc\discretionary {-}{}{}\_\discretionary {-}{}{}number}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{113}
+  \item {area}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+  \item {arrival\discretionary {-}{}{}\_\discretionary {-}{}{}time}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Pin\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{71}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{123}
+
+  \indexspace
+
+  \item {call\discretionary {-}{}{}\_\discretionary {-}{}{}prime\discretionary {-}{}{}\_\discretionary {-}{}{}time}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{107}
+  \item {capacitance}
+    \subitem {Liberty\discretionary {-}{}{}Pin\discretionary {-}{}{}Info}, 
+		\hyperpage{46}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Node}, 
+		\hyperpage{65}
+  \item {Capacitor}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Capacitor}, 
+		\hyperpage{15}
+  \item {ceff}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{124}
+  \item {cell\discretionary {-}{}{}Type}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}, 
+		\hyperpage{52}
+  \item {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{17}
+    \subitem {$\sim $\discretionary {-}{}{}Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{19}
+    \subitem {add\discretionary {-}{}{}Cell\discretionary {-}{}{}Inst}, 
+		\hyperpage{19}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{19}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{19}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}net\discretionary {-}{}{}\_\discretionary {-}{}{}topologic\discretionary {-}{}{}\_\discretionary {-}{}{}index}, 
+		\hyperpage{19}
+    \subitem {get\discretionary {-}{}{}Gate}, \hyperpage{19}
+    \subitem {get\discretionary {-}{}{}Gate\discretionary {-}{}{}T}, 
+		\hyperpage{20}
+    \subitem {get\discretionary {-}{}{}Gates\discretionary {-}{}{}Size}, 
+		\hyperpage{19}
+    \subitem {get\discretionary {-}{}{}Net}, \hyperpage{20}
+    \subitem {get\discretionary {-}{}{}Net\discretionary {-}{}{}T}, 
+		\hyperpage{20}
+    \subitem {get\discretionary {-}{}{}Nets\discretionary {-}{}{}Size}, 
+		\hyperpage{20}
+    \subitem {get\discretionary {-}{}{}Topologic\discretionary {-}{}{}Index}, 
+		\hyperpage{20}
+    \subitem {operator$<$$<$}, \hyperpage{21, 22}
+    \subitem {timing\discretionary {-}{}{}\_\discretionary {-}{}{}arcs}, 
+		\hyperpage{21}
+    \subitem {timing\discretionary {-}{}{}\_\discretionary {-}{}{}points}, 
+		\hyperpage{21}
+    \subitem {update\discretionary {-}{}{}Topology}, \hyperpage{21}
+    \subitem {verilog}, \hyperpage{21}
+  \item {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}, 
+		\hyperpage{51}
+    \subitem {cell\discretionary {-}{}{}Type}, \hyperpage{52}
+    \subitem {fanout\discretionary {-}{}{}Net\discretionary {-}{}{}Index}, 
+		\hyperpage{52}
+    \subitem {in\discretionary {-}{}{}Nets}, \hyperpage{52}
+    \subitem {input\discretionary {-}{}{}Driver}, \hyperpage{52}
+    \subitem {Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}, 
+		\hyperpage{52}
+    \subitem {name}, \hyperpage{52}
+    \subitem {primary\discretionary {-}{}{}\_\discretionary {-}{}{}output}, 
+		\hyperpage{52}
+    \subitem {sequential}, \hyperpage{52}
+  \item {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Net}, 
+		\hyperpage{60}
+    \subitem {add\discretionary {-}{}{}Sink}, \hyperpage{62}
+    \subitem {dummy\discretionary {-}{}{}Net}, \hyperpage{62}
+    \subitem {name}, \hyperpage{62}
+    \subitem {Net}, \hyperpage{62}
+    \subitem {sinks}, \hyperpage{62}
+    \subitem {source\discretionary {-}{}{}Node}, \hyperpage{62}
+    \subitem {source\discretionary {-}{}{}Pin}, \hyperpage{62}
+  \item {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Sink}, 
+		\hyperpage{90}
+    \subitem {gate}, \hyperpage{91}
+    \subitem {pin\discretionary {-}{}{}Name}, \hyperpage{91}
+    \subitem {Sink}, \hyperpage{91}
+  \item {clear}
+    \subitem {Lumped\discretionary {-}{}{}Capacitance\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{55}
+    \subitem {R\discretionary {-}{}{}C\discretionary {-}{}{}Tree\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{80}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{113}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{144}
+  \item {clear\discretionary {-}{}{}\_\discretionary {-}{}{}timing\discretionary {-}{}{}\_\discretionary {-}{}{}info}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{125}
+  \item {clock}
+    \subitem {Design\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Constraints}, 
+		\hyperpage{24}
+  \item {configuration.\discretionary {-}{}{}h}
+    \subitem {Parasitics}, \hyperpage{150}
+    \subitem {Spef\discretionary {-}{}{}Net}, \hyperpage{150}
+    \subitem {Spef\discretionary {-}{}{}Parser}, \hyperpage{150}
+
+  \indexspace
+
+  \item {delay}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{114}
+  \item {delay\discretionary {-}{}{}\_\discretionary {-}{}{}at\discretionary {-}{}{}\_\discretionary {-}{}{}fanout\discretionary {-}{}{}\_\discretionary {-}{}{}node}
+    \subitem {Lumped\discretionary {-}{}{}Capacitance\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{55}
+    \subitem {R\discretionary {-}{}{}C\discretionary {-}{}{}Tree\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{80}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{144}
+  \item {Design\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Constraints}, 
+		\hyperpage{22}
+    \subitem {clock}, \hyperpage{24}
+    \subitem {driving\discretionary {-}{}{}\_\discretionary {-}{}{}cell}, 
+		\hyperpage{24}
+    \subitem {input\discretionary {-}{}{}\_\discretionary {-}{}{}delay}, 
+		\hyperpage{24, 25}
+    \subitem {input\discretionary {-}{}{}\_\discretionary {-}{}{}transition}, 
+		\hyperpage{25}
+    \subitem {output\discretionary {-}{}{}\_\discretionary {-}{}{}delay}, 
+		\hyperpage{25}
+    \subitem {output\discretionary {-}{}{}\_\discretionary {-}{}{}load}, 
+		\hyperpage{27}
+    \subitem {output\discretionary {-}{}{}\_\discretionary {-}{}{}loads\discretionary {-}{}{}\_\discretionary {-}{}{}size}, 
+		\hyperpage{27}
+  \item {dont\discretionary {-}{}{}Touch}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+  \item {driving\discretionary {-}{}{}\_\discretionary {-}{}{}cell}
+    \subitem {Design\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Constraints}, 
+		\hyperpage{24}
+  \item {dummy\discretionary {-}{}{}Net}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Net}, 
+		\hyperpage{62}
+
+  \indexspace
+
+  \item {Edge}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Edge}, 
+		\hyperpage{30}
+  \item {Edge\discretionary {-}{}{}Type}
+    \subitem {transitions.\discretionary {-}{}{}h}, \hyperpage{172}
+  \item {end}
+    \subitem {Timer}, \hyperpage{102}
+  \item {exp}
+    \subitem {Transitions}, \hyperpage{137}
+
+  \indexspace
+
+  \item {F\-A\-L\-L}
+    \subitem {transitions.\-h}, \hyperpage{172}
+  \item {fall\discretionary {-}{}{}Delay}
+    \subitem {Liberty\discretionary {-}{}{}Timing\discretionary {-}{}{}Info}, 
+		\hyperpage{48}
+  \item {fall\discretionary {-}{}{}Transition}
+    \subitem {Liberty\discretionary {-}{}{}Timing\discretionary {-}{}{}Info}, 
+		\hyperpage{48}
+  \item {fanout\discretionary {-}{}{}Net\discretionary {-}{}{}Index}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}, 
+		\hyperpage{52}
+  \item {fanouts\discretionary {-}{}{}\_\discretionary {-}{}{}size}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Edge}, 
+		\hyperpage{30}
+  \item {first\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}O\discretionary {-}{}{}\_\discretionary {-}{}{}index}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{107}
+  \item {footprint}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+  \item {from}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Edge}, 
+		\hyperpage{30}
+  \item {from\discretionary {-}{}{}Pin}
+    \subitem {Liberty\discretionary {-}{}{}Timing\discretionary {-}{}{}Info}, 
+		\hyperpage{48}
+  \item {full\discretionary {-}{}{}\_\discretionary {-}{}{}timing\discretionary {-}{}{}\_\discretionary {-}{}{}analysis}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{107}
+
+  \indexspace
+
+  \item {gate}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Sink}, 
+		\hyperpage{91}
+  \item {gate\discretionary {-}{}{}\_\discretionary {-}{}{}number}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{114}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{125}
+  \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}net\discretionary {-}{}{}\_\discretionary {-}{}{}topologic\discretionary {-}{}{}\_\discretionary {-}{}{}index}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{19}
+  \item {get\discretionary {-}{}{}Cell\discretionary {-}{}{}Index}
+    \subitem {Liberty\discretionary {-}{}{}Library}, \hyperpage{37}
+  \item {get\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}
+    \subitem {Liberty\discretionary {-}{}{}Library}, \hyperpage{37, 38}
+  \item {get\discretionary {-}{}{}Fall}
+    \subitem {Transitions}, \hyperpage{135}
+  \item {get\discretionary {-}{}{}Gate}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{19}
+  \item {get\discretionary {-}{}{}Gate\discretionary {-}{}{}T}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{20}
+  \item {get\discretionary {-}{}{}Gates\discretionary {-}{}{}Size}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{19}
+  \item {get\discretionary {-}{}{}Max}
+    \subitem {Transitions}, \hyperpage{135}
+  \item {get\discretionary {-}{}{}Max\discretionary {-}{}{}Transition}
+    \subitem {Liberty\discretionary {-}{}{}Library}, \hyperpage{38}
+  \item {get\discretionary {-}{}{}Min}
+    \subitem {Transitions}, \hyperpage{135}
+  \item {get\discretionary {-}{}{}Net}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{20}
+  \item {get\discretionary {-}{}{}Net\discretionary {-}{}{}T}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{20}
+  \item {get\discretionary {-}{}{}Nets\discretionary {-}{}{}Size}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{20}
+  \item {get\discretionary {-}{}{}Node}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{95}
+  \item {get\discretionary {-}{}{}Node\discretionary {-}{}{}Index}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{95}
+  \item {get\discretionary {-}{}{}Other\discretionary {-}{}{}Node}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Resistor}, 
+		\hyperpage{83}
+  \item {get\discretionary {-}{}{}Resistor}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{96}
+  \item {get\discretionary {-}{}{}Reversed}
+    \subitem {Transitions}, \hyperpage{136}
+  \item {get\discretionary {-}{}{}Rise}
+    \subitem {Transitions}, \hyperpage{136}
+  \item {get\discretionary {-}{}{}Timer\discretionary {-}{}{}Status}
+    \subitem {Timer\discretionary {-}{}{}Interface}, \hyperpage{104}
+  \item {get\discretionary {-}{}{}Topologic\discretionary {-}{}{}Index}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{20}
+
+  \indexspace
+
+  \item {I\-N\-P\-U\-T}
+    \subitem {Timing\-\_\-\-Analysis}, \hyperpage{14}
+  \item {I\discretionary {-}{}{}F}
+    \subitem {R\discretionary {-}{}{}E\discretionary {-}{}{}T}, 
+		\hyperpage{33}
+  \item {I\discretionary {-}{}{}F$<$ cond, Then\discretionary {-}{}{}Type, Else\discretionary {-}{}{}Type $>$}, 
+		\hyperpage{32}
+  \item {I\discretionary {-}{}{}F$<$ false, Then\discretionary {-}{}{}Type, Else\discretionary {-}{}{}Type $>$}, 
+		\hyperpage{33}
+    \subitem {R\discretionary {-}{}{}E\discretionary {-}{}{}T}, 
+		\hyperpage{34}
+  \item {I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}2012}
+    \subitem {Traits}, \hyperpage{130}
+  \item {in\discretionary {-}{}{}Nets}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}, 
+		\hyperpage{52}
+  \item {input\discretionary {-}{}{}\_\discretionary {-}{}{}delay}
+    \subitem {Design\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Constraints}, 
+		\hyperpage{24, 25}
+  \item {input\discretionary {-}{}{}\_\discretionary {-}{}{}transition}
+    \subitem {Design\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Constraints}, 
+		\hyperpage{25}
+  \item {input\discretionary {-}{}{}Driver}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}, 
+		\hyperpage{52}
+  \item {interpolate}
+    \subitem {Liberty\discretionary {-}{}{}Lookup\discretionary {-}{}{}Table\discretionary {-}{}{}Interpolator}, 
+		\hyperpage{41}
+    \subitem {Linear\discretionary {-}{}{}Liberty\discretionary {-}{}{}Lookup\discretionary {-}{}{}Table\discretionary {-}{}{}Interpolator}, 
+		\hyperpage{50}
+  \item {interpolator}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{146}
+  \item {is}
+    \subitem {Parser}, \hyperpage{69}
+  \item {is\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}I}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{125}
+  \item {is\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}input}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{125}
+  \item {is\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}O}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{126}
+  \item {is\discretionary {-}{}{}\_\discretionary {-}{}{}input\discretionary {-}{}{}\_\discretionary {-}{}{}pin}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{125}
+  \item {is\discretionary {-}{}{}\_\discretionary {-}{}{}output\discretionary {-}{}{}\_\discretionary {-}{}{}pin}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{125}
+  \item {is\discretionary {-}{}{}\_\discretionary {-}{}{}reg\discretionary {-}{}{}\_\discretionary {-}{}{}input}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{126}
+  \item {is\discretionary {-}{}{}Clock}
+    \subitem {Liberty\discretionary {-}{}{}Pin\discretionary {-}{}{}Info}, 
+		\hyperpage{46}
+  \item {is\discretionary {-}{}{}Input}
+    \subitem {Liberty\discretionary {-}{}{}Pin\discretionary {-}{}{}Info}, 
+		\hyperpage{46}
+  \item {is\discretionary {-}{}{}Sequential}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+  \item {is\discretionary {-}{}{}Special\discretionary {-}{}{}Char}
+    \subitem {Parser}, \hyperpage{69}
+  \item {ispd\discretionary {-}{}{}\_\discretionary {-}{}{}contest\discretionary {-}{}{}\_\discretionary {-}{}{}benchmark}
+    \subitem {Traits}, \hyperpage{130}
+  \item {ispd\discretionary {-}{}{}\_\discretionary {-}{}{}contest\discretionary {-}{}{}\_\discretionary {-}{}{}root}
+    \subitem {Traits}, \hyperpage{130}
+
+  \indexspace
+
+  \item {leakage\discretionary {-}{}{}Power}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+  \item {liberty\-\_\-library.\-h}
+    \subitem {N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-U\-N\-A\-T\-E}, 
+		\hyperpage{155}
+    \subitem {N\-O\-N\-\_\-\-U\-N\-A\-T\-E}, \hyperpage{155}
+    \subitem {P\-O\-S\-I\-T\-I\-V\-E\-\_\-\-U\-N\-A\-T\-E}, 
+		\hyperpage{155}
+  \item {liberty\discretionary {-}{}{}\_\discretionary {-}{}{}library.\discretionary {-}{}{}h}
+    \subitem {operator$<$$<$}, \hyperpage{155}
+    \subitem {Unateness}, \hyperpage{155}
+  \item {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{34}
+    \subitem {area}, \hyperpage{35}
+    \subitem {dont\discretionary {-}{}{}Touch}, \hyperpage{35}
+    \subitem {footprint}, \hyperpage{35}
+    \subitem {is\discretionary {-}{}{}Sequential}, \hyperpage{35}
+    \subitem {leakage\discretionary {-}{}{}Power}, \hyperpage{35}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+    \subitem {name}, \hyperpage{35}
+    \subitem {pins}, \hyperpage{35}
+    \subitem {primary\discretionary {-}{}{}Output}, \hyperpage{35}
+    \subitem {timing\discretionary {-}{}{}Arcs}, \hyperpage{35}
+  \item {Liberty\discretionary {-}{}{}Library}, \hyperpage{35}
+    \subitem {$\sim $\discretionary {-}{}{}Liberty\discretionary {-}{}{}Library}, 
+		\hyperpage{37}
+    \subitem {add\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{37}
+    \subitem {get\discretionary {-}{}{}Cell\discretionary {-}{}{}Index}, 
+		\hyperpage{37}
+    \subitem {get\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{37, 38}
+    \subitem {get\discretionary {-}{}{}Max\discretionary {-}{}{}Transition}, 
+		\hyperpage{38}
+    \subitem {Liberty\discretionary {-}{}{}Library}, \hyperpage{36}
+    \subitem {Liberty\discretionary {-}{}{}Library}, \hyperpage{36}
+    \subitem {number\discretionary {-}{}{}\_\discretionary {-}{}{}of\discretionary {-}{}{}\_\discretionary {-}{}{}options}, 
+		\hyperpage{38}
+  \item {Liberty\discretionary {-}{}{}Lookup\discretionary {-}{}{}Table}, 
+		\hyperpage{38}
+    \subitem {load\discretionary {-}{}{}Indices}, \hyperpage{39}
+    \subitem {table\discretionary {-}{}{}Vals}, \hyperpage{39}
+    \subitem {transition\discretionary {-}{}{}Indices}, \hyperpage{39}
+  \item {Liberty\discretionary {-}{}{}Lookup\discretionary {-}{}{}Table\discretionary {-}{}{}Interpolator}, 
+		\hyperpage{40}
+    \subitem {interpolate}, \hyperpage{41}
+    \subitem {round}, \hyperpage{41}
+  \item {Liberty\discretionary {-}{}{}Parser}, \hyperpage{42}
+    \subitem {read\discretionary {-}{}{}File}, \hyperpage{43}
+  \item {Liberty\discretionary {-}{}{}Pin\discretionary {-}{}{}Info}, 
+		\hyperpage{45}
+    \subitem {capacitance}, \hyperpage{46}
+    \subitem {is\discretionary {-}{}{}Clock}, \hyperpage{46}
+    \subitem {is\discretionary {-}{}{}Input}, \hyperpage{46}
+    \subitem {Liberty\discretionary {-}{}{}Pin\discretionary {-}{}{}Info}, 
+		\hyperpage{46}
+    \subitem {Liberty\discretionary {-}{}{}Pin\discretionary {-}{}{}Info}, 
+		\hyperpage{46}
+    \subitem {max\discretionary {-}{}{}Capacitance}, \hyperpage{46}
+    \subitem {name}, \hyperpage{46}
+  \item {Liberty\discretionary {-}{}{}Timing\discretionary {-}{}{}Info}, 
+		\hyperpage{46}
+    \subitem {fall\discretionary {-}{}{}Delay}, \hyperpage{48}
+    \subitem {fall\discretionary {-}{}{}Transition}, \hyperpage{48}
+    \subitem {from\discretionary {-}{}{}Pin}, \hyperpage{48}
+    \subitem {rise\discretionary {-}{}{}Delay}, \hyperpage{48}
+    \subitem {rise\discretionary {-}{}{}Transition}, \hyperpage{48}
+    \subitem {timing\discretionary {-}{}{}Sense}, \hyperpage{48}
+    \subitem {to\discretionary {-}{}{}Pin}, \hyperpage{48}
+  \item {Linear\discretionary {-}{}{}Liberty\discretionary {-}{}{}Lookup\discretionary {-}{}{}Table\discretionary {-}{}{}Interpolator}, 
+		\hyperpage{48}
+    \subitem {interpolate}, \hyperpage{50}
+  \item {load}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{126}
+  \item {load\discretionary {-}{}{}Indices}
+    \subitem {Liberty\discretionary {-}{}{}Lookup\discretionary {-}{}{}Table}, 
+		\hyperpage{39}
+  \item {Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}, 
+		\hyperpage{52}
+  \item {lumped\discretionary {-}{}{}\_\discretionary {-}{}{}capacitance}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{145}
+  \item {Lumped\discretionary {-}{}{}Capacitance\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{52}
+    \subitem {clear}, \hyperpage{55}
+    \subitem {delay\discretionary {-}{}{}\_\discretionary {-}{}{}at\discretionary {-}{}{}\_\discretionary {-}{}{}fanout\discretionary {-}{}{}\_\discretionary {-}{}{}node}, 
+		\hyperpage{55}
+    \subitem {Lumped\discretionary {-}{}{}Capacitance\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{55}
+    \subitem {Lumped\discretionary {-}{}{}Capacitance\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{55}
+    \subitem {root\discretionary {-}{}{}\_\discretionary {-}{}{}delay}, 
+		\hyperpage{56}
+    \subitem {root\discretionary {-}{}{}\_\discretionary {-}{}{}slew}, 
+		\hyperpage{56}
+    \subitem {set\discretionary {-}{}{}Fanout\discretionary {-}{}{}Pin\discretionary {-}{}{}Capacitance}, 
+		\hyperpage{56}
+    \subitem {simulate}, \hyperpage{56}
+    \subitem {slew\discretionary {-}{}{}\_\discretionary {-}{}{}at\discretionary {-}{}{}\_\discretionary {-}{}{}fanout\discretionary {-}{}{}\_\discretionary {-}{}{}node}, 
+		\hyperpage{57}
+
+  \indexspace
+
+  \item {M\discretionary {-}{}{}A\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}O\discretionary {-}{}{}R}
+    \subitem {transitions.\discretionary {-}{}{}h}, \hyperpage{172}
+  \item {M\discretionary {-}{}{}A\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}F\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}O\discretionary {-}{}{}R}
+    \subitem {transitions.\discretionary {-}{}{}h}, \hyperpage{172}
+  \item {M\discretionary {-}{}{}I\discretionary {-}{}{}C\discretionary {-}{}{}R\discretionary {-}{}{}O}
+    \subitem {Timer}, \hyperpage{103}
+  \item {M\discretionary {-}{}{}I\discretionary {-}{}{}L\discretionary {-}{}{}I}
+    \subitem {Timer}, \hyperpage{103}
+  \item {max}
+    \subitem {std\discretionary {-}{}{}::numeric\discretionary {-}{}{}\_\discretionary {-}{}{}limits$<$ Transitions$<$ double $>$ $>$}, 
+		\hyperpage{66}
+    \subitem {Transitions}, \hyperpage{138}
+  \item {max\discretionary {-}{}{}Capacitance}
+    \subitem {Liberty\discretionary {-}{}{}Pin\discretionary {-}{}{}Info}, 
+		\hyperpage{46}
+  \item {min}
+    \subitem {std\discretionary {-}{}{}::numeric\discretionary {-}{}{}\_\discretionary {-}{}{}limits$<$ Transitions$<$ double $>$ $>$}, 
+		\hyperpage{66}
+    \subitem {Transitions}, \hyperpage{138}
+  \item {Multi\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Multi\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge}, 
+		\hyperpage{60}
+
+  \indexspace
+
+  \item {N\-E\-G\-A\-T\-I\-V\-E\-\_\-\-U\-N\-A\-T\-E}
+    \subitem {liberty\-\_\-library.\-h}, \hyperpage{155}
+  \item {N\-O\-N\-\_\-\-U\-N\-A\-T\-E}
+    \subitem {liberty\-\_\-library.\-h}, \hyperpage{155}
+  \item {name}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}, 
+		\hyperpage{52}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Net}, 
+		\hyperpage{62}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+    \subitem {Liberty\discretionary {-}{}{}Pin\discretionary {-}{}{}Info}, 
+		\hyperpage{46}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Node}, 
+		\hyperpage{65}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{119}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{126}
+  \item {Net}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Net}, 
+		\hyperpage{62}
+  \item {net}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{126, 127}
+  \item {net\discretionary {-}{}{}Lumped\discretionary {-}{}{}Cap}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2012}, 
+		\hyperpage{93}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{97}
+  \item {net\discretionary {-}{}{}Name}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2012}, 
+		\hyperpage{93}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{97}
+  \item {Node}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Node}, 
+		\hyperpage{63}
+  \item {node}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Capacitor}, 
+		\hyperpage{17}
+  \item {node1}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Resistor}, 
+		\hyperpage{83}
+  \item {node2}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Resistor}, 
+		\hyperpage{83}
+  \item {node\discretionary {-}{}{}Index}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Node}, 
+		\hyperpage{65}
+  \item {nodes\discretionary {-}{}{}Size}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{96}
+  \item {number\discretionary {-}{}{}\_\discretionary {-}{}{}of\discretionary {-}{}{}\_\discretionary {-}{}{}options}
+    \subitem {Liberty\discretionary {-}{}{}Library}, \hyperpage{38}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{107}
+
+  \indexspace
+
+  \item {O\-U\-T\-P\-U\-T}
+    \subitem {Timing\-\_\-\-Analysis}, \hyperpage{14}
+  \item {operator$<$$<$}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{21, 22}
+    \subitem {liberty\discretionary {-}{}{}\_\discretionary {-}{}{}library.\discretionary {-}{}{}h}, 
+		\hyperpage{155}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Pin\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{71}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Port\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{73}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{96}
+    \subitem {Timer\discretionary {-}{}{}::\discretionary {-}{}{}Result}, 
+		\hyperpage{84}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{116}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{120}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{129}
+    \subitem {Transitions}, \hyperpage{138}
+  \item {operator=}
+    \subitem {Transitions}, \hyperpage{136}
+  \item {Option}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Option}, 
+		\hyperpage{67}
+  \item {option}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{107}
+  \item {output\discretionary {-}{}{}\_\discretionary {-}{}{}delay}
+    \subitem {Design\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Constraints}, 
+		\hyperpage{25}
+  \item {output\discretionary {-}{}{}\_\discretionary {-}{}{}load}
+    \subitem {Design\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Constraints}, 
+		\hyperpage{27}
+  \item {output\discretionary {-}{}{}\_\discretionary {-}{}{}loads\discretionary {-}{}{}\_\discretionary {-}{}{}size}
+    \subitem {Design\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Constraints}, 
+		\hyperpage{27}
+
+  \indexspace
+
+  \item {P\-I}
+    \subitem {Timing\-\_\-\-Analysis}, \hyperpage{14}
+  \item {P\-I\-\_\-\-I\-N\-P\-U\-T}
+    \subitem {Timing\-\_\-\-Analysis}, \hyperpage{14}
+  \item {P\-O}
+    \subitem {Timing\-\_\-\-Analysis}, \hyperpage{14}
+  \item {P\-O\-S\-I\-T\-I\-V\-E\-\_\-\-U\-N\-A\-T\-E}
+    \subitem {liberty\-\_\-library.\-h}, \hyperpage{155}
+  \item {Parasitics}
+    \subitem {configuration.\discretionary {-}{}{}h}, \hyperpage{150}
+  \item {Parasitics2012}
+    \subitem {spef\discretionary {-}{}{}\_\discretionary {-}{}{}net.\discretionary {-}{}{}h}, 
+		\hyperpage{163}
+  \item {Parasitics2013}
+    \subitem {spef\discretionary {-}{}{}\_\discretionary {-}{}{}net.\discretionary {-}{}{}h}, 
+		\hyperpage{163}
+  \item {parse\discretionary {-}{}{}\_\discretionary {-}{}{}prime\discretionary {-}{}{}\_\discretionary {-}{}{}time\discretionary {-}{}{}\_\discretionary {-}{}{}output\discretionary {-}{}{}\_\discretionary {-}{}{}file}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser}, 
+		\hyperpage{77}
+  \item {Parser}, \hyperpage{68}
+    \subitem {$\sim $\discretionary {-}{}{}Parser}, \hyperpage{69}
+    \subitem {is}, \hyperpage{69}
+    \subitem {is\discretionary {-}{}{}Special\discretionary {-}{}{}Char}, 
+		\hyperpage{69}
+    \subitem {Parser}, \hyperpage{69}
+    \subitem {read\discretionary {-}{}{}Line\discretionary {-}{}{}As\discretionary {-}{}{}Tokens}, 
+		\hyperpage{69}
+  \item {pin}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output}, 
+		\hyperpage{74}
+  \item {pin\discretionary {-}{}{}\_\discretionary {-}{}{}capacitance}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{107}
+  \item {pin\discretionary {-}{}{}\_\discretionary {-}{}{}load}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{108}
+  \item {pin\discretionary {-}{}{}\_\discretionary {-}{}{}name}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Pin\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{71}
+  \item {pin\discretionary {-}{}{}Name}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Sink}, 
+		\hyperpage{91}
+  \item {pins}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+  \item {pins\discretionary {-}{}{}\_\discretionary {-}{}{}size}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output}, 
+		\hyperpage{74}
+  \item {port}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output}, 
+		\hyperpage{74}
+  \item {port\discretionary {-}{}{}\_\discretionary {-}{}{}name}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Port\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{73}
+  \item {ports\discretionary {-}{}{}\_\discretionary {-}{}{}size}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output}, 
+		\hyperpage{74}
+  \item {pow}
+    \subitem {Transitions}, \hyperpage{138}
+  \item {primary\discretionary {-}{}{}\_\discretionary {-}{}{}output}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}, 
+		\hyperpage{52}
+  \item {primary\discretionary {-}{}{}Output}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+  \item {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser}, 
+		\hyperpage{75}
+    \subitem {parse\discretionary {-}{}{}\_\discretionary {-}{}{}prime\discretionary {-}{}{}\_\discretionary {-}{}{}time\discretionary {-}{}{}\_\discretionary {-}{}{}output\discretionary {-}{}{}\_\discretionary {-}{}{}file}, 
+		\hyperpage{77}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser}, 
+		\hyperpage{77}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser}, 
+		\hyperpage{77}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output}, 
+		\hyperpage{75}
+  \item {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Pin\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{69}
+    \subitem {arrival\discretionary {-}{}{}\_\discretionary {-}{}{}time}, 
+		\hyperpage{71}
+    \subitem {operator$<$$<$}, \hyperpage{71}
+    \subitem {pin\discretionary {-}{}{}\_\discretionary {-}{}{}name}, 
+		\hyperpage{71}
+    \subitem {slack}, \hyperpage{71}
+    \subitem {slew}, \hyperpage{71}
+  \item {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Port\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{71}
+    \subitem {operator$<$$<$}, \hyperpage{73}
+    \subitem {port\discretionary {-}{}{}\_\discretionary {-}{}{}name}, 
+		\hyperpage{73}
+    \subitem {slack}, \hyperpage{73}
+    \subitem {slew}, \hyperpage{73}
+  \item {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output}, 
+		\hyperpage{73}
+    \subitem {pin}, \hyperpage{74}
+    \subitem {pins\discretionary {-}{}{}\_\discretionary {-}{}{}size}, 
+		\hyperpage{74}
+    \subitem {port}, \hyperpage{74}
+    \subitem {ports\discretionary {-}{}{}\_\discretionary {-}{}{}size}, 
+		\hyperpage{74}
+  \item {print\discretionary {-}{}{}\_\discretionary {-}{}{}circuit\discretionary {-}{}{}\_\discretionary {-}{}{}info}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{108}
+  \item {print\discretionary {-}{}{}\_\discretionary {-}{}{}info}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{108}
+
+  \indexspace
+
+  \item {R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-I\-N\-P\-U\-T}
+    \subitem {Timing\-\_\-\-Analysis}, \hyperpage{14}
+  \item {R\-I\-S\-E}
+    \subitem {transitions.\-h}, \hyperpage{172}
+  \item {R\discretionary {-}{}{}C\discretionary {-}{}{}Tree\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{77}
+    \subitem {clear}, \hyperpage{80}
+    \subitem {delay\discretionary {-}{}{}\_\discretionary {-}{}{}at\discretionary {-}{}{}\_\discretionary {-}{}{}fanout\discretionary {-}{}{}\_\discretionary {-}{}{}node}, 
+		\hyperpage{80}
+    \subitem {R\discretionary {-}{}{}C\discretionary {-}{}{}Tree\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{80}
+    \subitem {R\discretionary {-}{}{}C\discretionary {-}{}{}Tree\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{80}
+    \subitem {root\discretionary {-}{}{}\_\discretionary {-}{}{}delay}, 
+		\hyperpage{81}
+    \subitem {root\discretionary {-}{}{}\_\discretionary {-}{}{}slew}, 
+		\hyperpage{81}
+    \subitem {set\discretionary {-}{}{}Fanout\discretionary {-}{}{}Pin\discretionary {-}{}{}Capacitance}, 
+		\hyperpage{81}
+    \subitem {simulate}, \hyperpage{81}
+    \subitem {slew\discretionary {-}{}{}\_\discretionary {-}{}{}at\discretionary {-}{}{}\_\discretionary {-}{}{}fanout\discretionary {-}{}{}\_\discretionary {-}{}{}node}, 
+		\hyperpage{82}
+  \item {R\discretionary {-}{}{}E\discretionary {-}{}{}T}
+    \subitem {I\discretionary {-}{}{}F}, \hyperpage{33}
+    \subitem {I\discretionary {-}{}{}F$<$ false, Then\discretionary {-}{}{}Type, Else\discretionary {-}{}{}Type $>$}, 
+		\hyperpage{34}
+  \item {read\discretionary {-}{}{}File}
+    \subitem {Liberty\discretionary {-}{}{}Parser}, \hyperpage{43}
+    \subitem {S\discretionary {-}{}{}D\discretionary {-}{}{}C\discretionary {-}{}{}Parser}, 
+		\hyperpage{86}
+    \subitem {Spef\discretionary {-}{}{}Parser\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2012}, 
+		\hyperpage{98}
+    \subitem {Spef\discretionary {-}{}{}Parser\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{100}
+    \subitem {Verilog\discretionary {-}{}{}Parser}, \hyperpage{141}
+  \item {read\discretionary {-}{}{}Line\discretionary {-}{}{}As\discretionary {-}{}{}Tokens}
+    \subitem {Parser}, \hyperpage{69}
+  \item {report\discretionary {-}{}{}\_\discretionary {-}{}{}timing}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{108}
+  \item {required\discretionary {-}{}{}\_\discretionary {-}{}{}time}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{127}
+  \item {Resistor}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Resistor}, 
+		\hyperpage{83}
+  \item {resistors}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Node}, 
+		\hyperpage{65}
+  \item {resistors\discretionary {-}{}{}Size}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{96}
+  \item {reverse}
+    \subitem {Transitions}, \hyperpage{137}
+  \item {rise\discretionary {-}{}{}Delay}
+    \subitem {Liberty\discretionary {-}{}{}Timing\discretionary {-}{}{}Info}, 
+		\hyperpage{48}
+  \item {rise\discretionary {-}{}{}Transition}
+    \subitem {Liberty\discretionary {-}{}{}Timing\discretionary {-}{}{}Info}, 
+		\hyperpage{48}
+  \item {root\discretionary {-}{}{}\_\discretionary {-}{}{}delay}
+    \subitem {Lumped\discretionary {-}{}{}Capacitance\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{56}
+    \subitem {R\discretionary {-}{}{}C\discretionary {-}{}{}Tree\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{81}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{145}
+  \item {root\discretionary {-}{}{}\_\discretionary {-}{}{}slew}
+    \subitem {Lumped\discretionary {-}{}{}Capacitance\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{56}
+    \subitem {R\discretionary {-}{}{}C\discretionary {-}{}{}Tree\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{81}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{145}
+  \item {round}
+    \subitem {Liberty\discretionary {-}{}{}Lookup\discretionary {-}{}{}Table\discretionary {-}{}{}Interpolator}, 
+		\hyperpage{41}
+  \item {run\discretionary {-}{}{}Timing\discretionary {-}{}{}Analysis\discretionary {-}{}{}Blocking}
+    \subitem {Timer\discretionary {-}{}{}Interface}, \hyperpage{104}
+
+  \indexspace
+
+  \item {S\discretionary {-}{}{}D\discretionary {-}{}{}C\discretionary {-}{}{}Parser}, 
+		\hyperpage{85}
+    \subitem {read\discretionary {-}{}{}File}, \hyperpage{86}
+  \item {S\discretionary {-}{}{}T\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}H\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D}
+    \subitem {Traits}, \hyperpage{130}
+  \item {sequential}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Logic\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Gate}, 
+		\hyperpage{52}
+  \item {set}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{96}
+    \subitem {Timer\discretionary {-}{}{}::\discretionary {-}{}{}Result}, 
+		\hyperpage{84}
+    \subitem {Transitions}, \hyperpage{137}
+  \item {set\discretionary {-}{}{}\_\discretionary {-}{}{}fanout}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Edge}, 
+		\hyperpage{30}
+  \item {set\discretionary {-}{}{}Fanout\discretionary {-}{}{}Pin\discretionary {-}{}{}Capacitance}
+    \subitem {Lumped\discretionary {-}{}{}Capacitance\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{56}
+    \subitem {R\discretionary {-}{}{}C\discretionary {-}{}{}Tree\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{81}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{145}
+  \item {simulate}
+    \subitem {Lumped\discretionary {-}{}{}Capacitance\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{56}
+    \subitem {R\discretionary {-}{}{}C\discretionary {-}{}{}Tree\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{81}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{146}
+  \item {Single\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Single\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge}, 
+		\hyperpage{90}
+  \item {Sink}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Sink}, 
+		\hyperpage{91}
+  \item {sinks}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Net}, 
+		\hyperpage{62}
+  \item {slack}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Pin\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{71}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Port\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{73}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{127, 128}
+  \item {slew}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Pin\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{71}
+    \subitem {Prime\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Time\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Output\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Parser\discretionary {-}{}{}::\discretionary {-}{}{}Port\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Timing}, 
+		\hyperpage{73}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{115}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{128}
+  \item {slew\discretionary {-}{}{}\_\discretionary {-}{}{}at\discretionary {-}{}{}\_\discretionary {-}{}{}fanout\discretionary {-}{}{}\_\discretionary {-}{}{}node}
+    \subitem {Lumped\discretionary {-}{}{}Capacitance\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{57}
+    \subitem {R\discretionary {-}{}{}C\discretionary {-}{}{}Tree\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{82}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{146}
+  \item {source\discretionary {-}{}{}Node}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Net}, 
+		\hyperpage{62}
+  \item {source\discretionary {-}{}{}Pin}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist\discretionary {-}{}{}::\discretionary {-}{}{}Net}, 
+		\hyperpage{62}
+  \item {spef\discretionary {-}{}{}\_\discretionary {-}{}{}net.\discretionary {-}{}{}h}
+    \subitem {Parasitics2012}, \hyperpage{163}
+    \subitem {Parasitics2013}, \hyperpage{163}
+  \item {Spef\discretionary {-}{}{}Net}
+    \subitem {configuration.\discretionary {-}{}{}h}, \hyperpage{150}
+  \item {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2012}, 
+		\hyperpage{92}
+    \subitem {net\discretionary {-}{}{}Lumped\discretionary {-}{}{}Cap}, 
+		\hyperpage{93}
+    \subitem {net\discretionary {-}{}{}Name}, \hyperpage{93}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2012}, 
+		\hyperpage{93}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2012}, 
+		\hyperpage{93}
+  \item {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{93}
+    \subitem {$\sim $\discretionary {-}{}{}Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{95}
+    \subitem {add\discretionary {-}{}{}Capacitor}, \hyperpage{95}
+    \subitem {add\discretionary {-}{}{}Resistor}, \hyperpage{95}
+    \subitem {get\discretionary {-}{}{}Node}, \hyperpage{95}
+    \subitem {get\discretionary {-}{}{}Node\discretionary {-}{}{}Index}, 
+		\hyperpage{95}
+    \subitem {get\discretionary {-}{}{}Resistor}, \hyperpage{96}
+    \subitem {net\discretionary {-}{}{}Lumped\discretionary {-}{}{}Cap}, 
+		\hyperpage{97}
+    \subitem {net\discretionary {-}{}{}Name}, \hyperpage{97}
+    \subitem {nodes\discretionary {-}{}{}Size}, \hyperpage{96}
+    \subitem {operator$<$$<$}, \hyperpage{96}
+    \subitem {resistors\discretionary {-}{}{}Size}, \hyperpage{96}
+    \subitem {set}, \hyperpage{96}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{95}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{95}
+  \item {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Capacitor}, 
+		\hyperpage{15}
+    \subitem {Capacitor}, \hyperpage{15}
+    \subitem {node}, \hyperpage{17}
+    \subitem {value}, \hyperpage{17}
+  \item {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Node}, 
+		\hyperpage{62}
+    \subitem {capacitance}, \hyperpage{65}
+    \subitem {name}, \hyperpage{65}
+    \subitem {Node}, \hyperpage{63}
+    \subitem {node\discretionary {-}{}{}Index}, \hyperpage{65}
+    \subitem {resistors}, \hyperpage{65}
+  \item {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Resistor}, 
+		\hyperpage{82}
+    \subitem {get\discretionary {-}{}{}Other\discretionary {-}{}{}Node}, 
+		\hyperpage{83}
+    \subitem {node1}, \hyperpage{83}
+    \subitem {node2}, \hyperpage{83}
+    \subitem {Resistor}, \hyperpage{83}
+    \subitem {value}, \hyperpage{83}
+  \item {Spef\discretionary {-}{}{}Parser}
+    \subitem {configuration.\discretionary {-}{}{}h}, \hyperpage{150}
+  \item {Spef\discretionary {-}{}{}Parser\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2012}, 
+		\hyperpage{97}
+    \subitem {read\discretionary {-}{}{}File}, \hyperpage{98}
+  \item {Spef\discretionary {-}{}{}Parser\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013}, 
+		\hyperpage{99}
+    \subitem {read\discretionary {-}{}{}File}, \hyperpage{100}
+  \item {sqrt}
+    \subitem {Transitions}, \hyperpage{138}
+  \item {start}
+    \subitem {Timer}, \hyperpage{102}
+  \item {start\discretionary {-}{}{}Timing\discretionary {-}{}{}Analysis\discretionary {-}{}{}Non\discretionary {-}{}{}Blocking}
+    \subitem {Timer\discretionary {-}{}{}Interface}, \hyperpage{104}
+  \item {Status}
+    \subitem {Timer\discretionary {-}{}{}Interface}, \hyperpage{104}
+  \item {std}, \hyperpage{13}
+  \item {std\discretionary {-}{}{}::numeric\discretionary {-}{}{}\_\discretionary {-}{}{}limits$<$ Transitions$<$ double $>$ $>$}, 
+		\hyperpage{65}
+    \subitem {max}, \hyperpage{66}
+    \subitem {min}, \hyperpage{66}
+    \subitem {zero}, \hyperpage{66}
+
+  \indexspace
+
+  \item {T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y}
+    \subitem {Timer\-Interface}, \hyperpage{104}
+  \item {T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R}
+    \subitem {Timer\-Interface}, \hyperpage{104}
+  \item {T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S}
+    \subitem {Timer\-Interface}, \hyperpage{104}
+  \item {T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R}
+    \subitem {Timer\-Interface}, \hyperpage{104}
+  \item {T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D}
+    \subitem {Timer\-Interface}, \hyperpage{104}
+  \item {table\discretionary {-}{}{}Vals}
+    \subitem {Liberty\discretionary {-}{}{}Lookup\discretionary {-}{}{}Table}, 
+		\hyperpage{39}
+  \item {Timer}, \hyperpage{101}
+    \subitem {$\sim $\discretionary {-}{}{}Timer}, \hyperpage{102}
+    \subitem {end}, \hyperpage{102}
+    \subitem {M\discretionary {-}{}{}I\discretionary {-}{}{}C\discretionary {-}{}{}R\discretionary {-}{}{}O}, 
+		\hyperpage{103}
+    \subitem {M\discretionary {-}{}{}I\discretionary {-}{}{}L\discretionary {-}{}{}I}, 
+		\hyperpage{103}
+    \subitem {start}, \hyperpage{102}
+    \subitem {Timer}, \hyperpage{102}
+    \subitem {Timer\discretionary {-}{}{}::\discretionary {-}{}{}Result}, 
+		\hyperpage{85}
+    \subitem {value}, \hyperpage{102}
+  \item {Timer\-Interface}
+    \subitem {T\-I\-M\-E\-R\-\_\-\-B\-U\-S\-Y}, \hyperpage{104}
+    \subitem {T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-E\-R\-R\-O\-R}, 
+		\hyperpage{104}
+    \subitem {T\-I\-M\-E\-R\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-S\-U\-C\-C\-E\-S\-S}, 
+		\hyperpage{104}
+    \subitem {T\-I\-M\-E\-R\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-E\-R\-R\-O\-R}, 
+		\hyperpage{104}
+    \subitem {T\-I\-M\-E\-R\-\_\-\-N\-O\-T\-\_\-\-S\-T\-A\-R\-T\-E\-D}, 
+		\hyperpage{104}
+  \item {Timer\discretionary {-}{}{}::\discretionary {-}{}{}Result}, 
+		\hyperpage{84}
+    \subitem {operator$<$$<$}, \hyperpage{84}
+    \subitem {set}, \hyperpage{84}
+    \subitem {Timer}, \hyperpage{85}
+  \item {Timer\discretionary {-}{}{}Interface}, \hyperpage{103}
+    \subitem {get\discretionary {-}{}{}Timer\discretionary {-}{}{}Status}, 
+		\hyperpage{104}
+    \subitem {run\discretionary {-}{}{}Timing\discretionary {-}{}{}Analysis\discretionary {-}{}{}Blocking}, 
+		\hyperpage{104}
+    \subitem {start\discretionary {-}{}{}Timing\discretionary {-}{}{}Analysis\discretionary {-}{}{}Non\discretionary {-}{}{}Blocking}, 
+		\hyperpage{104}
+    \subitem {Status}, \hyperpage{104}
+    \subitem {wait}, \hyperpage{104}
+  \item {Timing\-\_\-\-Analysis}
+    \subitem {I\-N\-P\-U\-T}, \hyperpage{14}
+    \subitem {O\-U\-T\-P\-U\-T}, \hyperpage{14}
+    \subitem {P\-I}, \hyperpage{14}
+    \subitem {P\-I\-\_\-\-I\-N\-P\-U\-T}, \hyperpage{14}
+    \subitem {P\-O}, \hyperpage{14}
+    \subitem {R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-I\-N\-P\-U\-T}, 
+		\hyperpage{14}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{13}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Type}, 
+		\hyperpage{14}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Option}, 
+		\hyperpage{67}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{106}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{120}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Edge}
+    \subitem {\discretionary {-}{}{}\_\discretionary {-}{}{}from}, 
+		\hyperpage{32}
+    \subitem {\discretionary {-}{}{}\_\discretionary {-}{}{}to}, 
+		\hyperpage{32}
+    \subitem {add\discretionary {-}{}{}\_\discretionary {-}{}{}fanout}, 
+		\hyperpage{30}
+    \subitem {Edge}, \hyperpage{30}
+    \subitem {fanouts\discretionary {-}{}{}\_\discretionary {-}{}{}size}, 
+		\hyperpage{30}
+    \subitem {from}, \hyperpage{30}
+    \subitem {set\discretionary {-}{}{}\_\discretionary {-}{}{}fanout}, 
+		\hyperpage{30}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Edge$<$ T $>$}, 
+		\hyperpage{27}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Multi\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge}
+    \subitem {Multi\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge}, 
+		\hyperpage{60}
+    \subitem {to}, \hyperpage{60}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Multi\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge$<$ T $>$}, 
+		\hyperpage{57}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Option}, 
+		\hyperpage{66}
+    \subitem {Option}, \hyperpage{67}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{67}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Single\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge}
+    \subitem {Single\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge}, 
+		\hyperpage{90}
+    \subitem {to}, \hyperpage{90}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Single\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge$<$ T $>$}, 
+		\hyperpage{87}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{105}
+    \subitem {$\sim $\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{106}
+    \subitem {call\discretionary {-}{}{}\_\discretionary {-}{}{}prime\discretionary {-}{}{}\_\discretionary {-}{}{}time}, 
+		\hyperpage{107}
+    \subitem {first\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}O\discretionary {-}{}{}\_\discretionary {-}{}{}index}, 
+		\hyperpage{107}
+    \subitem {full\discretionary {-}{}{}\_\discretionary {-}{}{}timing\discretionary {-}{}{}\_\discretionary {-}{}{}analysis}, 
+		\hyperpage{107}
+    \subitem {number\discretionary {-}{}{}\_\discretionary {-}{}{}of\discretionary {-}{}{}\_\discretionary {-}{}{}options}, 
+		\hyperpage{107}
+    \subitem {option}, \hyperpage{107}
+    \subitem {pin\discretionary {-}{}{}\_\discretionary {-}{}{}capacitance}, 
+		\hyperpage{107}
+    \subitem {pin\discretionary {-}{}{}\_\discretionary {-}{}{}load}, 
+		\hyperpage{108}
+    \subitem {print\discretionary {-}{}{}\_\discretionary {-}{}{}circuit\discretionary {-}{}{}\_\discretionary {-}{}{}info}, 
+		\hyperpage{108}
+    \subitem {print\discretionary {-}{}{}\_\discretionary {-}{}{}info}, 
+		\hyperpage{108}
+    \subitem {report\discretionary {-}{}{}\_\discretionary {-}{}{}timing}, 
+		\hyperpage{108}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{106}
+    \subitem {timing\discretionary {-}{}{}\_\discretionary {-}{}{}arc}, 
+		\hyperpage{108}
+    \subitem {timing\discretionary {-}{}{}\_\discretionary {-}{}{}arcs\discretionary {-}{}{}\_\discretionary {-}{}{}size}, 
+		\hyperpage{109}
+    \subitem {timing\discretionary {-}{}{}\_\discretionary {-}{}{}net}, 
+		\hyperpage{109}
+    \subitem {timing\discretionary {-}{}{}\_\discretionary {-}{}{}nets\discretionary {-}{}{}\_\discretionary {-}{}{}size}, 
+		\hyperpage{109}
+    \subitem {timing\discretionary {-}{}{}\_\discretionary {-}{}{}point}, 
+		\hyperpage{109}
+    \subitem {timing\discretionary {-}{}{}\_\discretionary {-}{}{}points\discretionary {-}{}{}\_\discretionary {-}{}{}size}, 
+		\hyperpage{109}
+    \subitem {validate\discretionary {-}{}{}\_\discretionary {-}{}{}with\discretionary {-}{}{}\_\discretionary {-}{}{}prime\discretionary {-}{}{}\_\discretionary {-}{}{}time}, 
+		\hyperpage{109}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{110}
+    \subitem {$\sim $\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{113}
+    \subitem {arc\discretionary {-}{}{}\_\discretionary {-}{}{}number}, 
+		\hyperpage{113}
+    \subitem {clear}, \hyperpage{113}
+    \subitem {delay}, \hyperpage{114}
+    \subitem {gate\discretionary {-}{}{}\_\discretionary {-}{}{}number}, 
+		\hyperpage{114}
+    \subitem {operator$<$$<$}, \hyperpage{116}
+    \subitem {slew}, \hyperpage{115}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{113}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{116}
+    \subitem {$\sim $\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{119}
+    \subitem {name}, \hyperpage{119}
+    \subitem {operator$<$$<$}, \hyperpage{120}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{120}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{119}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{120}
+    \subitem {wire\discretionary {-}{}{}\_\discretionary {-}{}{}delay\discretionary {-}{}{}\_\discretionary {-}{}{}model}, 
+		\hyperpage{119}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{120}
+    \subitem {$\sim $\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{122}
+    \subitem {arc}, \hyperpage{122}
+    \subitem {arrival\discretionary {-}{}{}\_\discretionary {-}{}{}time}, 
+		\hyperpage{123}
+    \subitem {ceff}, \hyperpage{124}
+    \subitem {clear\discretionary {-}{}{}\_\discretionary {-}{}{}timing\discretionary {-}{}{}\_\discretionary {-}{}{}info}, 
+		\hyperpage{125}
+    \subitem {gate\discretionary {-}{}{}\_\discretionary {-}{}{}number}, 
+		\hyperpage{125}
+    \subitem {is\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}I}, 
+		\hyperpage{125}
+    \subitem {is\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}I\discretionary {-}{}{}\_\discretionary {-}{}{}input}, 
+		\hyperpage{125}
+    \subitem {is\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}P\discretionary {-}{}{}O}, 
+		\hyperpage{126}
+    \subitem {is\discretionary {-}{}{}\_\discretionary {-}{}{}input\discretionary {-}{}{}\_\discretionary {-}{}{}pin}, 
+		\hyperpage{125}
+    \subitem {is\discretionary {-}{}{}\_\discretionary {-}{}{}output\discretionary {-}{}{}\_\discretionary {-}{}{}pin}, 
+		\hyperpage{125}
+    \subitem {is\discretionary {-}{}{}\_\discretionary {-}{}{}reg\discretionary {-}{}{}\_\discretionary {-}{}{}input}, 
+		\hyperpage{126}
+    \subitem {load}, \hyperpage{126}
+    \subitem {name}, \hyperpage{126}
+    \subitem {net}, \hyperpage{126, 127}
+    \subitem {operator$<$$<$}, \hyperpage{129}
+    \subitem {required\discretionary {-}{}{}\_\discretionary {-}{}{}time}, 
+		\hyperpage{127}
+    \subitem {slack}, \hyperpage{127, 128}
+    \subitem {slew}, \hyperpage{128}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{129}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{122}
+    \subitem {update\discretionary {-}{}{}\_\discretionary {-}{}{}slack}, 
+		\hyperpage{129}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Arc}, 
+		\hyperpage{113}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{119}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{129}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{120}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{122}
+  \item {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Type}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{14}
+  \item {timing\discretionary {-}{}{}\_\discretionary {-}{}{}arc}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{108}
+  \item {timing\discretionary {-}{}{}\_\discretionary {-}{}{}arcs}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{21}
+  \item {timing\discretionary {-}{}{}\_\discretionary {-}{}{}arcs\discretionary {-}{}{}\_\discretionary {-}{}{}size}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{109}
+  \item {timing\discretionary {-}{}{}\_\discretionary {-}{}{}net}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{109}
+  \item {timing\discretionary {-}{}{}\_\discretionary {-}{}{}nets\discretionary {-}{}{}\_\discretionary {-}{}{}size}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{109}
+  \item {timing\discretionary {-}{}{}\_\discretionary {-}{}{}point}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{109}
+  \item {timing\discretionary {-}{}{}\_\discretionary {-}{}{}points}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{21}
+  \item {timing\discretionary {-}{}{}\_\discretionary {-}{}{}points\discretionary {-}{}{}\_\discretionary {-}{}{}size}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{109}
+  \item {Timing\discretionary {-}{}{}Analysis/doc/\discretionary {-}{}{}Index.\discretionary {-}{}{}dox}, 
+		\hyperpage{147}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/circuit\discretionary {-}{}{}\_\discretionary {-}{}{}netlist.\discretionary {-}{}{}h}, 
+		\hyperpage{147}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/configuration.\discretionary {-}{}{}h}, 
+		\hyperpage{148}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/design\discretionary {-}{}{}\_\discretionary {-}{}{}constraints.\discretionary {-}{}{}h}, 
+		\hyperpage{150}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/edge.\discretionary {-}{}{}h}, 
+		\hyperpage{151}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/liberty\discretionary {-}{}{}\_\discretionary {-}{}{}library.\discretionary {-}{}{}h}, 
+		\hyperpage{153}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/multi\discretionary {-}{}{}\_\discretionary {-}{}{}fanout\discretionary {-}{}{}\_\discretionary {-}{}{}edge.\discretionary {-}{}{}h}, 
+		\hyperpage{156}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/parser.\discretionary {-}{}{}h}, 
+		\hyperpage{157}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/single\discretionary {-}{}{}\_\discretionary {-}{}{}fanout\discretionary {-}{}{}\_\discretionary {-}{}{}edge.\discretionary {-}{}{}h}, 
+		\hyperpage{159}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/spef\discretionary {-}{}{}\_\discretionary {-}{}{}net.\discretionary {-}{}{}h}, 
+		\hyperpage{161}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/timer.\discretionary {-}{}{}h}, 
+		\hyperpage{163}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/timer\discretionary {-}{}{}\_\discretionary {-}{}{}interface.\discretionary {-}{}{}h}, 
+		\hyperpage{164}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/timing\discretionary {-}{}{}\_\discretionary {-}{}{}analysis.\discretionary {-}{}{}h}, 
+		\hyperpage{165}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/timing\discretionary {-}{}{}\_\discretionary {-}{}{}arc.\discretionary {-}{}{}h}, 
+		\hyperpage{166}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/timing\discretionary {-}{}{}\_\discretionary {-}{}{}net.\discretionary {-}{}{}h}, 
+		\hyperpage{168}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/timing\discretionary {-}{}{}\_\discretionary {-}{}{}point.\discretionary {-}{}{}h}, 
+		\hyperpage{169}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/transitions.\discretionary {-}{}{}h}, 
+		\hyperpage{170}
+  \item {Timing\discretionary {-}{}{}Analysis/src/include/wire\discretionary {-}{}{}\_\discretionary {-}{}{}delay\discretionary {-}{}{}\_\discretionary {-}{}{}model.\discretionary {-}{}{}h}, 
+		\hyperpage{172}
+  \item {timing\discretionary {-}{}{}Arcs}
+    \subitem {Liberty\discretionary {-}{}{}Cell\discretionary {-}{}{}Info}, 
+		\hyperpage{35}
+  \item {timing\discretionary {-}{}{}Sense}
+    \subitem {Liberty\discretionary {-}{}{}Timing\discretionary {-}{}{}Info}, 
+		\hyperpage{48}
+  \item {to}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Multi\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge}, 
+		\hyperpage{60}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Single\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Fanout\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Edge}, 
+		\hyperpage{90}
+  \item {to\discretionary {-}{}{}Pin}
+    \subitem {Liberty\discretionary {-}{}{}Timing\discretionary {-}{}{}Info}, 
+		\hyperpage{48}
+  \item {Traits}, \hyperpage{130}
+    \subitem {I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}2012}, 
+		\hyperpage{130}
+    \subitem {ispd\discretionary {-}{}{}\_\discretionary {-}{}{}contest\discretionary {-}{}{}\_\discretionary {-}{}{}benchmark}, 
+		\hyperpage{130}
+    \subitem {ispd\discretionary {-}{}{}\_\discretionary {-}{}{}contest\discretionary {-}{}{}\_\discretionary {-}{}{}root}, 
+		\hyperpage{130}
+    \subitem {S\discretionary {-}{}{}T\discretionary {-}{}{}D\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}T\discretionary {-}{}{}H\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}S\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D}, 
+		\hyperpage{130}
+  \item {transition\discretionary {-}{}{}Indices}
+    \subitem {Liberty\discretionary {-}{}{}Lookup\discretionary {-}{}{}Table}, 
+		\hyperpage{39}
+  \item {Transitions}
+    \subitem {abs}, \hyperpage{137}
+    \subitem {aggregate}, \hyperpage{135}
+    \subitem {exp}, \hyperpage{137}
+    \subitem {get\discretionary {-}{}{}Fall}, \hyperpage{135}
+    \subitem {get\discretionary {-}{}{}Max}, \hyperpage{135}
+    \subitem {get\discretionary {-}{}{}Min}, \hyperpage{135}
+    \subitem {get\discretionary {-}{}{}Reversed}, \hyperpage{136}
+    \subitem {get\discretionary {-}{}{}Rise}, \hyperpage{136}
+    \subitem {max}, \hyperpage{138}
+    \subitem {min}, \hyperpage{138}
+    \subitem {operator$<$$<$}, \hyperpage{138}
+    \subitem {operator=}, \hyperpage{136}
+    \subitem {pow}, \hyperpage{138}
+    \subitem {reverse}, \hyperpage{137}
+    \subitem {set}, \hyperpage{137}
+    \subitem {sqrt}, \hyperpage{138}
+    \subitem {Transitions}, \hyperpage{134}
+  \item {Transitions$<$ T $>$}, \hyperpage{131}
+  \item {transitions.\-h}
+    \subitem {F\-A\-L\-L}, \hyperpage{172}
+    \subitem {R\-I\-S\-E}, \hyperpage{172}
+  \item {transitions.\discretionary {-}{}{}h}
+    \subitem {Edge\discretionary {-}{}{}Type}, \hyperpage{172}
+    \subitem {M\discretionary {-}{}{}A\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}O\discretionary {-}{}{}R}, 
+		\hyperpage{172}
+    \subitem {M\discretionary {-}{}{}A\discretionary {-}{}{}K\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}L\discretionary {-}{}{}F\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}O\discretionary {-}{}{}P\discretionary {-}{}{}E\discretionary {-}{}{}R\discretionary {-}{}{}A\discretionary {-}{}{}T\discretionary {-}{}{}O\discretionary {-}{}{}R}, 
+		\hyperpage{172}
+
+  \indexspace
+
+  \item {Unateness}
+    \subitem {liberty\discretionary {-}{}{}\_\discretionary {-}{}{}library.\discretionary {-}{}{}h}, 
+		\hyperpage{155}
+  \item {update\discretionary {-}{}{}\_\discretionary {-}{}{}slack}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Point}, 
+		\hyperpage{129}
+  \item {update\discretionary {-}{}{}Topology}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{21}
+
+  \indexspace
+
+  \item {validate\discretionary {-}{}{}\_\discretionary {-}{}{}with\discretionary {-}{}{}\_\discretionary {-}{}{}prime\discretionary {-}{}{}\_\discretionary {-}{}{}time}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis}, 
+		\hyperpage{109}
+  \item {value}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Capacitor}, 
+		\hyperpage{17}
+    \subitem {Spef\discretionary {-}{}{}Net\discretionary {-}{}{}I\discretionary {-}{}{}S\discretionary {-}{}{}P\discretionary {-}{}{}D2013\discretionary {-}{}{}::\discretionary {-}{}{}Resistor}, 
+		\hyperpage{83}
+    \subitem {Timer}, \hyperpage{102}
+  \item {verilog}
+    \subitem {Circuit\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Netlist}, 
+		\hyperpage{21}
+  \item {Verilog\discretionary {-}{}{}Parser}, \hyperpage{139}
+    \subitem {$\sim $\discretionary {-}{}{}Verilog\discretionary {-}{}{}Parser}, 
+		\hyperpage{140}
+    \subitem {read\discretionary {-}{}{}File}, \hyperpage{141}
+
+  \indexspace
+
+  \item {wait}
+    \subitem {Timer\discretionary {-}{}{}Interface}, \hyperpage{104}
+  \item {wire\discretionary {-}{}{}\_\discretionary {-}{}{}delay\discretionary {-}{}{}\_\discretionary {-}{}{}model}
+    \subitem {Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Analysis\discretionary {-}{}{}::\discretionary {-}{}{}Timing\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Net}, 
+		\hyperpage{119}
+  \item {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{141}
+    \subitem {$\sim $\discretionary {-}{}{}Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{144}
+    \subitem {\discretionary {-}{}{}\_\discretionary {-}{}{}lumped\discretionary {-}{}{}\_\discretionary {-}{}{}capacitance}, 
+		\hyperpage{146}
+    \subitem {clear}, \hyperpage{144}
+    \subitem {delay\discretionary {-}{}{}\_\discretionary {-}{}{}at\discretionary {-}{}{}\_\discretionary {-}{}{}fanout\discretionary {-}{}{}\_\discretionary {-}{}{}node}, 
+		\hyperpage{144}
+    \subitem {interpolator}, \hyperpage{146}
+    \subitem {lumped\discretionary {-}{}{}\_\discretionary {-}{}{}capacitance}, 
+		\hyperpage{145}
+    \subitem {root\discretionary {-}{}{}\_\discretionary {-}{}{}delay}, 
+		\hyperpage{145}
+    \subitem {root\discretionary {-}{}{}\_\discretionary {-}{}{}slew}, 
+		\hyperpage{145}
+    \subitem {set\discretionary {-}{}{}Fanout\discretionary {-}{}{}Pin\discretionary {-}{}{}Capacitance}, 
+		\hyperpage{145}
+    \subitem {simulate}, \hyperpage{146}
+    \subitem {slew\discretionary {-}{}{}\_\discretionary {-}{}{}at\discretionary {-}{}{}\_\discretionary {-}{}{}fanout\discretionary {-}{}{}\_\discretionary {-}{}{}node}, 
+		\hyperpage{146}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{144}
+    \subitem {Wire\discretionary {-}{}{}Delay\discretionary {-}{}{}Model}, 
+		\hyperpage{144}
+
+  \indexspace
+
+  \item {zero}
+    \subitem {std\discretionary {-}{}{}::numeric\discretionary {-}{}{}\_\discretionary {-}{}{}limits$<$ Transitions$<$ double $>$ $>$}, 
+		\hyperpage{66}
+
+\end{theindex}

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="structRCTreeWireDelayModel_1_1NodeAndResistor">
+<title>RCTreeWireDelayModel::NodeAndResistor struct Reference</title>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int nodeIndex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int resistorIndex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="structRCTreeWireDelayModel_1_1NodeAndResistor_1aa405070310610d860e471d54d536ab29">NodeAndResistor</link> (
+const int &amp; node, const int &amp; resistor)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Struct which represents a node and resistor association. </para>
+    </simplesect>
+            <section xml:id="structRCTreeWireDelayModel_1_1NodeAndResistor_1aa405070310610d860e471d54d536ab29">
+                <title>RCTreeWireDelayModel::NodeAndResistor::NodeAndResistor (const int &amp;node, const int &amp;resistor)</title> <emphasis>NodeAndResistor default constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int &amp; node, const int &amp; resistor </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+</section>

@@ -62,7 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="inherits.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Friends</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,19 +99,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="dynheader">
 Inheritance diagram for LibertyLookupTableInterpolator:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="classLibertyLookupTableInterpolator.png" usemap="#LibertyLookupTableInterpolator_map" alt=""/>
-  <map id="LibertyLookupTableInterpolator_map" name="LibertyLookupTableInterpolator_map">
-<area href="classLinearLibertyLookupTableInterpolator.html" title="Linear interpolation calculator. " alt="LinearLibertyLookupTableInterpolator" shape="rect" coords="0,56,223,80"/>
-</map>
- </div></div>
+<div class="center"><img src="classLibertyLookupTableInterpolator__inherit__graph.png" border="0" usemap="#LibertyLookupTableInterpolator_inherit__map" alt="Inheritance graph"/></div>
+<map name="LibertyLookupTableInterpolator_inherit__map" id="LibertyLookupTableInterpolator_inherit__map">
+<area shape="rect" id="node3" href="classLinearLibertyLookupTableInterpolator.html" title="Linear interpolation calculator. " alt="" coords="31,173,201,293"/></map>
+</div>
+<div class="dynheader">
+Collaboration diagram for LibertyLookupTableInterpolator:</div>
+<div class="dyncontent">
+<div class="center"><img src="classLibertyLookupTableInterpolator__coll__graph.png" border="0" usemap="#LibertyLookupTableInterpolator_coll__map" alt="Collaboration graph"/></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae12e0b9e427488bc933b54a427586f47"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLookupTableInterpolator.html#ae12e0b9e427488bc933b54a427586f47">interpolate</a> (const <a class="el" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp;lut, const double load, const double transition)=0</td></tr>
 <tr class="memdesc:ae12e0b9e427488bc933b54a427586f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns interpolated value.  <a href="#ae12e0b9e427488bc933b54a427586f47">More...</a><br/></td></tr>
 <tr class="separator:ae12e0b9e427488bc933b54a427586f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f840a4246b193e9e620b3ec8cadb720"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLookupTableInterpolator.html#a3f840a4246b193e9e620b3ec8cadb720">interpolate</a> (const <a class="el" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp;riseLut, const <a class="el" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp;fallLut, const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; load, const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; transition, Unateness unateness=NEGATIVE_UNATE, bool is_input_driver=false)=0</td></tr>
+<tr class="memitem:a3f840a4246b193e9e620b3ec8cadb720"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLookupTableInterpolator.html#a3f840a4246b193e9e620b3ec8cadb720">interpolate</a> (const <a class="el" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp;riseLut, const <a class="el" href="structLibertyLookupTable.html">LibertyLookupTable</a> &amp;fallLut, const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; load, const <a class="el" href="classTransitions.html">Transitions</a>&lt; double &gt; transition, <a class="el" href="liberty__library_8h.html#aec44423ef220f800b99f85740d9cc011">Unateness</a> unateness=<a class="el" href="liberty__library_8h.html#aec44423ef220f800b99f85740d9cc011a9f0596f72cc1d35d8a8f5a6d75171948">NEGATIVE_UNATE</a>, bool is_input_driver=false)=0</td></tr>
 <tr class="memdesc:a3f840a4246b193e9e620b3ec8cadb720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns Transitions&lt;double, double&gt; with its rise and fall delay values interpolated.  <a href="#a3f840a4246b193e9e620b3ec8cadb720">More...</a><br/></td></tr>
 <tr class="separator:a3f840a4246b193e9e620b3ec8cadb720"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -123,8 +126,7 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr class="memitem:ad2d3a3313189ba7c9bb10dfbbef1a367"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad2d3a3313189ba7c9bb10dfbbef1a367"></a>
-static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_DECIMAL_PLACES</b></td></tr>
+<tr class="memitem:ad2d3a3313189ba7c9bb10dfbbef1a367"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLibertyLookupTableInterpolator.html#ad2d3a3313189ba7c9bb10dfbbef1a367">DEFAULT_DECIMAL_PLACES</a></td></tr>
 <tr class="separator:ad2d3a3313189ba7c9bb10dfbbef1a367"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -215,8 +217,8 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_D
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Unateness&#160;</td>
-          <td class="paramname"><em>unateness</em> = <code>NEGATIVE_UNATE</code>, </td>
+          <td class="paramtype"><a class="el" href="liberty__library_8h.html#aec44423ef220f800b99f85740d9cc011">Unateness</a>&#160;</td>
+          <td class="paramname"><em>unateness</em> = <code><a class="el" href="liberty__library_8h.html#aec44423ef220f800b99f85740d9cc011a9f0596f72cc1d35d8a8f5a6d75171948">NEGATIVE_UNATE</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -293,13 +295,34 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>DEFAULT_D
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ad2d3a3313189ba7c9bb10dfbbef1a367"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int LibertyLookupTableInterpolator::DEFAULT_DECIMAL_PLACES</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>tccChrystian/src/include/<a class="el" href="liberty__library_8h_source.html">liberty_library.h</a></li>
+<li>TimingAnalysis/src/include/<a class="el" href="liberty__library_8h_source.html">liberty_library.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 9 2013 10:26:54 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 23 2013 15:22:25 for TimingAnalysis by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

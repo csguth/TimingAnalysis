@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classSpefParserISPD2012">
+<title>SpefParserISPD2012 class Reference</title>
+<para>
+    <programlisting>#include <link linkend="parser_8h">&lt;parser.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classSpefParserISPD2012_1aea5a59b11468ab0f8b42bc27ee565a63">read_net_cap</link> (
+string &amp; net, double &amp; cap)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="spef__net_8h_1a37551e9359ee22bb0821ca94784447d4">Parasitics2012</link> <link linkend="classSpefParserISPD2012_1a130209fe17a1d791cd03543304e48d5e">readFile</link> (
+const string filename)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Inherits from <link linkend="classParser">Parser</link>. Used to generate <link linkend="classSpefNetISPD2012">SpefNetISPD2012</link> files from an input. </para>
+    </simplesect>
+            <section xml:id="classSpefParserISPD2012_1aea5a59b11468ab0f8b42bc27ee565a63">
+                <title>bool SpefParserISPD2012::read_net_cap (string &amp;net, double &amp;cap)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="classSpefParserISPD2012_1a130209fe17a1d791cd03543304e48d5e">
+                <title>const Parasitics2012 SpefParserISPD2012::readFile (const string filename)</title> <emphasis>Returns Parasitics2012 object generated using informations read from file passed as filename parameter.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string filename</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>Parasitics2012 </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

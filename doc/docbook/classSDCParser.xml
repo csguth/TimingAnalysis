@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classSDCParser">
+<title>SDCParser class Reference</title>
+<para>
+    <programlisting>#include <link linkend="parser_8h">&lt;parser.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classSDCParser_1a55636f3fba1cf20fee705586b2dff7b1">read_clock</link> (
+string &amp; clockName, string &amp; clockPort, double &amp; period)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classSDCParser_1a8619274d51510b69bdf228791a8e3ad4">read_input_delay</link> (
+string &amp; portName, double &amp; delay)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classSDCParser_1ac0528d560639e490d8c457cf88ddb5ce">read_driver_info</link> (
+string &amp; inPortName, string &amp; driverSize, string &amp; driverPin, double &amp; inputTransitionFall, double &amp; inputTransitionRise)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classSDCParser_1a718651cf3c504f4dba58edcccecc4f84">read_output_delay</link> (
+string &amp; portName, double &amp; delay)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="classSDCParser_1a76f89181ca12072e47d56ac25513403f">read_output_load</link> (
+string &amp; outPortName, double &amp; load)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classDesign__Constraints">Design_Constraints</link> <link linkend="classSDCParser_1afc0ae26ac89138dd7b84e2986375785f">readFile</link> (
+const string filename)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Inherits from <link linkend="classParser">Parser</link>. SDC stands for Synopsys Design Constraints. Used to generate a <link linkend="classDesign__Constraints">Design_Constraints</link> object from file. </para>
+    </simplesect>
+            <section xml:id="classSDCParser_1a55636f3fba1cf20fee705586b2dff7b1">
+                <title>bool SDCParser::read_clock (string &amp;clockName, string &amp;clockPort, double &amp;period)</title> <emphasis>Read clock definition. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string&amp;</entry>
+                                <entry>
+<para>clockName, string&amp; clockPort, double&amp; period</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSDCParser_1a8619274d51510b69bdf228791a8e3ad4">
+                <title>bool SDCParser::read_input_delay (string &amp;portName, double &amp;delay)</title> <emphasis>Reads input delay. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string&amp;</entry>
+                                <entry>
+<para>portName, double&amp; delay</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSDCParser_1ac0528d560639e490d8c457cf88ddb5ce">
+                <title>bool SDCParser::read_driver_info (string &amp;inPortName, string &amp;driverSize, string &amp;driverPin, double &amp;inputTransitionFall, double &amp;inputTransitionRise)</title> <emphasis>Driver info for the input port. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string&amp;</entry>
+                                <entry>
+<para>inPortName, string&amp; driverSize, string&amp; driverPin, double&amp; inputTransitionFall, double&amp; inputTransitionRise</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSDCParser_1a718651cf3c504f4dba58edcccecc4f84">
+                <title>bool SDCParser::read_output_delay (string &amp;portName, double &amp;delay)</title> <emphasis>Reads output delay. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string&amp;</entry>
+                                <entry>
+<para>portName, double&amp; delay</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSDCParser_1a76f89181ca12072e47d56ac25513403f">
+                <title>bool SDCParser::read_output_load (string &amp;outPortName, double &amp;load)</title> <emphasis>Reads output load. Return value indicates if the last read was successful or not.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string&amp;</entry>
+                                <entry>
+<para>outPortName, double&amp; load</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>bool </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSDCParser_1afc0ae26ac89138dd7b84e2986375785f">
+                <title>const Design_Constraints SDCParser::readFile (const string filename)</title> <emphasis>Returns Design_Constraints object generated using informations read from file passed as filename parameter.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string filename</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classDesign__Constraints">Design_Constraints</link> </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

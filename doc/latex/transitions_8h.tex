@@ -1,0 +1,99 @@
+\hypertarget{transitions_8h}{\section{Timing\-Analysis/src/include/transitions.h File Reference}
+\label{transitions_8h}\index{Timing\-Analysis/src/include/transitions.\-h@{Timing\-Analysis/src/include/transitions.\-h}}
+}
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$ostream$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+Include dependency graph for transitions.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{transitions_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{transitions_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classTransitions}{Transitions$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Template class which encapsulates any \mbox{[}rise,fall\mbox{]} twosome values and provides methods to work with it. \end{DoxyCompactList}\item 
+class \hyperlink{classstd_1_1numeric__limits_3_01Transitions_3_01double_01_4_01_4}{std\-::numeric\-\_\-limits$<$ Transitions$<$ double $>$ $>$}
+\begin{DoxyCompactList}\small\item\em Class used to make easier to work with double variable numeric limits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacestd}{std}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{transitions_8h_a2e27fd3cb3f7f096809eded93d9f7622}{M\-A\-K\-E\-\_\-\-S\-E\-L\-F\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R}(O\-P)
+\item 
+\#define \hyperlink{transitions_8h_a2e4ff0f970d5db7545567795c8db01f5}{M\-A\-K\-E\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R}(O\-P)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4}{Edge\-Type} \{ \hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6}{R\-I\-S\-E} = 0, 
+\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498}{F\-A\-L\-L} = 1
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{transitions_8h_a2e4ff0f970d5db7545567795c8db01f5}{\index{transitions.\-h@{transitions.\-h}!M\-A\-K\-E\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R@{M\-A\-K\-E\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R}}
+\index{M\-A\-K\-E\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R@{M\-A\-K\-E\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R}!transitions.h@{transitions.\-h}}
+\subsubsection[{M\-A\-K\-E\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-K\-E\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{O\-P}
+\end{DoxyParamCaption}
+)}}\label{transitions_8h_a2e4ff0f970d5db7545567795c8db01f5}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keyword}{friend} \hyperlink{classTransitions}{Transitions<T>} \textcolor{keyword}{operator} OP ( \textcolor{keyword}{const} \hyperlink{classTransitions}{Transitions<T>} v0, \textcolor{keyword}{const} 
+      \hyperlink{classTransitions}{Transitions<T>} v1 ) \{ \textcolor{keywordflow}{return} \hyperlink{classTransitions}{Transitions<T>}(v0[\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6}{RISE}] OP v1[
+      \hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6}{RISE}], v0[\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498}{FALL}] OP v1[\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498}{FALL}]); \} \(\backslash\)
+friend \hyperlink{classTransitions}{Transitions<T>} \textcolor{keyword}{operator} OP ( \textcolor{keyword}{const} T            v0, \textcolor{keyword}{const} 
+      \hyperlink{classTransitions}{Transitions<T>} v1 ) \{ \textcolor{keywordflow}{return} \hyperlink{classTransitions}{Transitions<T>}(v0       OP v1[
+      \hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6}{RISE}], v0       OP v1[\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498}{FALL}]); \} \(\backslash\)
+friend \hyperlink{classTransitions}{Transitions<T>} \textcolor{keyword}{operator} OP ( \textcolor{keyword}{const} \hyperlink{classTransitions}{Transitions<T>} v0, \textcolor{keyword}{const} T           
+       v1 ) \{ \textcolor{keywordflow}{return} \hyperlink{classTransitions}{Transitions<T>}(v0[\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6}{RISE}] OP v1      , v0[\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498}{FALL}] OP v1      ); \}
+\end{DoxyCode}
+\hypertarget{transitions_8h_a2e27fd3cb3f7f096809eded93d9f7622}{\index{transitions.\-h@{transitions.\-h}!M\-A\-K\-E\-\_\-\-S\-E\-L\-F\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R@{M\-A\-K\-E\-\_\-\-S\-E\-L\-F\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R}}
+\index{M\-A\-K\-E\-\_\-\-S\-E\-L\-F\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R@{M\-A\-K\-E\-\_\-\-S\-E\-L\-F\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R}!transitions.h@{transitions.\-h}}
+\subsubsection[{M\-A\-K\-E\-\_\-\-S\-E\-L\-F\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-K\-E\-\_\-\-S\-E\-L\-F\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{O\-P}
+\end{DoxyParamCaption}
+)}}\label{transitions_8h_a2e27fd3cb3f7f096809eded93d9f7622}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keyword}{friend} \textcolor{keywordtype}{void} \textcolor{keyword}{operator} OP ( \hyperlink{classTransitions}{Transitions<T>} &v0, \textcolor{keyword}{const} \hyperlink{classTransitions}{Transitions<T>} v1 ) \{ v0[
+      \hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6}{RISE}] OP v1[\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6}{RISE}], v0[\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498}{FALL}] OP v1[\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498}{FALL}]; \} \(\backslash\)
+friend \textcolor{keywordtype}{void} \textcolor{keyword}{operator} OP ( \hyperlink{classTransitions}{Transitions<T>} &v0, \textcolor{keyword}{const} T            v1 ) \{ v0[
+      \hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6}{RISE}] OP v1; v0[\hyperlink{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498}{FALL}] OP v1; \}
+\end{DoxyCode}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4}{\index{transitions.\-h@{transitions.\-h}!Edge\-Type@{Edge\-Type}}
+\index{Edge\-Type@{Edge\-Type}!transitions.h@{transitions.\-h}}
+\subsubsection[{Edge\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Edge\-Type}}}\label{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\-I\-S\-E@{R\-I\-S\-E}!transitions.\-h@{transitions.\-h}}\index{transitions.\-h@{transitions.\-h}!R\-I\-S\-E@{R\-I\-S\-E}}\item[{\em 
+\hypertarget{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6}{R\-I\-S\-E}\label{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a41106e7d8538710e6d22794a225800a6}
+}]\index{F\-A\-L\-L@{F\-A\-L\-L}!transitions.\-h@{transitions.\-h}}\index{transitions.\-h@{transitions.\-h}!F\-A\-L\-L@{F\-A\-L\-L}}\item[{\em 
+\hypertarget{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498}{F\-A\-L\-L}\label{transitions_8h_a424a64da753a3cd5e96ab8d0553a04c4a9115c69bd310223cf4ca0da58ed7b498}
+}]\end{description}
+\end{Desc}

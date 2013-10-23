@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classLumpedCapacitanceWireDelayModel">
+<title>LumpedCapacitanceWireDelayModel class Reference</title>
+<para>
+    <programlisting>#include <link linkend="wire__delay__model_8h">&lt;wire_delay_model.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _delay</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Transitions&lt; double &gt; _slew</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classLumpedCapacitanceWireDelayModel_1ae147cdba517e3f6152ed8234473e5443">LumpedCapacitanceWireDelayModel</link> (
+const <link linkend="configuration_8h_1ab11dad9e61bc038c56517ca2735fb449">SpefNet</link> &amp; descriptor, const string root_node, const bool dummy_edge)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classLumpedCapacitanceWireDelayModel_1a1bba0aef3bebe8df97a63e05b307b19a">simulate</link> (
+const <link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo, const int input, const <link linkend="classTransitions">Transitions</link>&lt; double &gt; _slew, bool is_input_driver)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classLumpedCapacitanceWireDelayModel_1a0266cb676908d95bdfcb64d1137898b0">delay_at_fanout_node</link> (
+const string fanout_node_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classLumpedCapacitanceWireDelayModel_1aaedd69e811e7220e48493c51fb0443ed">slew_at_fanout_node</link> (
+const string fanout_node_name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classLumpedCapacitanceWireDelayModel_1a888f7e6a4951837072b937ae30e93073">setFanoutPinCapacitance</link> (
+const string fanout_name_and_pin, const double pinCapacitance)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classLumpedCapacitanceWireDelayModel_1ab090355a74a21b5d6008352ff2a7d137">root_delay</link> (
+int arc_number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="classTransitions">Transitions</link>&lt; double &gt; <link linkend="classLumpedCapacitanceWireDelayModel_1a65e4141bbf97638c2334f71dfbf0ccfd">root_slew</link> (
+int arc_number)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classLumpedCapacitanceWireDelayModel_1acca0415a76729b616be06543262ef441">clear</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>This model describes the parasitic capacitances distributed along a wire as a single circuit element. Does not take resistors into account. </para>
+    </simplesect>
+            <section xml:id="classLumpedCapacitanceWireDelayModel_1ae147cdba517e3f6152ed8234473e5443">
+                <title>LumpedCapacitanceWireDelayModel::LumpedCapacitanceWireDelayModel (const SpefNet &amp;descriptor, const string root_node, const bool dummy_edge=false)</title> <emphasis>LumpedCapacitanceWireDelayModel default constructor.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>SpefNet &amp; descriptor, const string root_node, const bool dummy_edge(default false) </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                </para>
+
+            </section>
+            <section xml:id="classLumpedCapacitanceWireDelayModel_1a1bba0aef3bebe8df97a63e05b307b19a">
+                <title>const Transitions&lt;double&gt; LumpedCapacitanceWireDelayModel::simulate (const LibertyCellInfo &amp;cellInfo, const int input, const Transitions&lt; double &gt; _slew, bool is_input_driver)</title> <emphasis>Updates delay and slew times and returns Transitions with lumped capacitance values.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para><link linkend="structLibertyCellInfo">LibertyCellInfo</link> &amp; cellInfo, const int input, const <link linkend="classTransitions">Transitions&lt;double&gt;</link> _slew, bool is_input_driver</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLumpedCapacitanceWireDelayModel_1a0266cb676908d95bdfcb64d1137898b0">
+                <title>const Transitions&lt;double&gt; LumpedCapacitanceWireDelayModel::delay_at_fanout_node (const string fanout_node_name) const </title> <emphasis>Returns Transitions with rise and fall delay time values set to zero.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string fanout_node_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLumpedCapacitanceWireDelayModel_1aaedd69e811e7220e48493c51fb0443ed">
+                <title>const Transitions&lt;double&gt; LumpedCapacitanceWireDelayModel::slew_at_fanout_node (const string fanout_node_name) const </title> <emphasis>Returns Transitions with rise and fall slew time values set to zero.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string fanout_node_name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLumpedCapacitanceWireDelayModel_1a888f7e6a4951837072b937ae30e93073">
+                <title>void LumpedCapacitanceWireDelayModel::setFanoutPinCapacitance (const string fanout_name_and_pin, const double pinCapacitance)</title> <emphasis>Increments total lumped capacitance with pinCapacitance.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string fanout_name_and_pin, const double pinCapacitance</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLumpedCapacitanceWireDelayModel_1ab090355a74a21b5d6008352ff2a7d137">
+                <title>Transitions&lt;double&gt; LumpedCapacitanceWireDelayModel::root_delay (int arc_number)</title> <emphasis>Returns delay time value.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>int</entry>
+                                <entry>
+<para>arc_number</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLumpedCapacitanceWireDelayModel_1a65e4141bbf97638c2334f71dfbf0ccfd">
+                <title>Transitions&lt;double&gt; LumpedCapacitanceWireDelayModel::root_slew (int arc_number)</title> <emphasis>Returns slew time value.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>int</entry>
+                                <entry>
+<para>arc_number</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para><link linkend="classTransitions">Transitions&lt;double&gt;</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classLumpedCapacitanceWireDelayModel_1acca0415a76729b616be06543262ef441">
+                <title>void LumpedCapacitanceWireDelayModel::clear ()</title> <emphasis>Not implemented. Included for completeness.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

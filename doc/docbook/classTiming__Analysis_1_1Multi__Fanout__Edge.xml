@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classTiming__Analysis_1_1Multi__Fanout__Edge">
+<title>Timing_Analysis::Multi_Fanout_Edge class Reference</title>
+<para>
+    <programlisting>#include <link linkend="multi__fanout__edge_8h">&lt;multi_fanout_edge.h&gt;</link></programlisting>
+</para>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classTiming__Analysis_1_1Multi__Fanout__Edge_1a877f7672fb4fbabf49943fd3c86b7f59">Multi_Fanout_Edge</link> (
+T * from)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>T &amp; <link linkend="classTiming__Analysis_1_1Multi__Fanout__Edge_1a77ac79088e9ef11d222e777e2963f676">to</link> (
+const int i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>Inherits from <link linkend="classTiming__Analysis_1_1Edge">Edge</link>. An multi fanout edge is a group of edges which connects a vertex to more than one vertexes. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 14 of file multi_fanout_edge.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>multi_fanout_edge.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classTiming__Analysis_1_1Multi__Fanout__Edge_1a877f7672fb4fbabf49943fd3c86b7f59">
+                <title>Timing_Analysis::Multi_Fanout_Edge&lt; T &gt;::Multi_Fanout_Edge (T *from)</title> <emphasis>Multi_Fanout_Edge constructor.</emphasis>
+                
+            </section>
+            <section xml:id="classTiming__Analysis_1_1Multi__Fanout__Edge_1a77ac79088e9ef11d222e777e2963f676">
+                <title>T&amp; Timing_Analysis::Multi_Fanout_Edge&lt; T &gt;::to (const int i) const </title> <emphasis>Returns Edge&lt;T&gt; at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>int i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>T &amp; </para>
+</formalpara>
+</para>
+
+            </section>
+</section>

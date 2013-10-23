@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="classSpefNetISPD2013">
+<title>SpefNetISPD2013 class Reference</title>
+<para>
+    <programlisting>#include <link linkend="spef__net_8h">&lt;spef_net.h&gt;</link></programlisting>
+</para>
+        <simplesect>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structSpefNetISPD2013_1_1Capacitor">SpefNetISPD2013::Capacitor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structSpefNetISPD2013_1_1Node">SpefNetISPD2013::Node</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="structSpefNetISPD2013_1_1Resistor">SpefNetISPD2013::Resistor</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Node &gt; nodes</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Resistor &gt; resistors</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>vector&lt; Capacitor &gt; capacitors</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>map&lt; string, int &gt; nodeMap</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title>Public Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>string netName</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>double netLumpedCap</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classSpefNetISPD2013_1ae3b74dccc497934f9e7153ddbbd645d8">addNode</link> (
+const string &amp; name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="classSpefNetISPD2013_1a41ab1d666a3724e63e0fd815765f1372">SpefNetISPD2013</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="classSpefNetISPD2013_1a6bd1c7cc6d7bdf677fb69bb577a6327f">~SpefNetISPD2013</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classSpefNetISPD2013_1ac837ca5049dd0fc8301b1c51a8508bfd">addResistor</link> (
+const string &amp; node1, const string &amp; node2, const double &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classSpefNetISPD2013_1a9d5344541f303241af6bec439a692850">addCapacitor</link> (
+const string &amp; node, const double &amp; value)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classSpefNetISPD2013_1a68ae22df2961b88537802d444dd20588">nodesSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="structSpefNetISPD2013_1_1Node">Node</link> &amp; <link linkend="classSpefNetISPD2013_1a8beeae8a280358ba32eedab9367b1006">getNode</link> (
+const unsigned &amp; i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="classSpefNetISPD2013_1aa5143da0b98e3fa1613562061238f4ee">getNodeIndex</link> (
+const string &amp; name)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>size_t <link linkend="classSpefNetISPD2013_1a1a15314aec6fae289f90b9e7de201fe8">resistorsSize</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const <link linkend="structSpefNetISPD2013_1_1Resistor">Resistor</link> &amp; <link linkend="classSpefNetISPD2013_1a1baa70cdf4b2c65a7e695849c2ad2525">getResistor</link> (
+const unsigned &amp; i)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="classSpefNetISPD2013_1a3a0ed208b150100bda0544112fb1c0ba">set</link> (
+string name, double lumpedCapacitance)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+        <simplesect>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Brief Description</title>
+
+<para>SPEF stands for Standard Parasitic Exchange Format. Describes the set of parasitic elements of the wires in a circuit, within its descriptions and values. Generated by <link linkend="classSpefParserISPD2013">SpefParserISPD2013</link>. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 47 of file spef_net.h</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>spef_net.h</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="classSpefNetISPD2013_1ae3b74dccc497934f9e7153ddbbd645d8">
+                <title>int SpefNetISPD2013::addNode (const string &amp;name)</title> <emphasis>Adds node to nodes list, returns its index.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefNetISPD2013_1a41ab1d666a3724e63e0fd815765f1372">
+                <title>SpefNetISPD2013::SpefNetISPD2013 ()</title> <emphasis>Empty SpefNet constructor.</emphasis>
+                
+            </section>
+            <section xml:id="classSpefNetISPD2013_1a6bd1c7cc6d7bdf677fb69bb577a6327f">
+                <title>virtual SpefNetISPD2013::~SpefNetISPD2013 ()</title> <emphasis>Empty SpefNet destructor.</emphasis>
+                
+            </section>
+            <section xml:id="classSpefNetISPD2013_1ac837ca5049dd0fc8301b1c51a8508bfd">
+                <title>void SpefNetISPD2013::addResistor (const string &amp;node1, const string &amp;node2, const double &amp;value)</title> <emphasis>Adds new resistor to nodes/resistors list.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; node1, const string &amp; node2, const double &amp; value</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefNetISPD2013_1a9d5344541f303241af6bec439a692850">
+                <title>void SpefNetISPD2013::addCapacitor (const string &amp;node, const double &amp;value)</title> <emphasis>Adds new capacitor to nodes/capacitors list.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; node, const double &amp; value</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefNetISPD2013_1a68ae22df2961b88537802d444dd20588">
+                <title>size_t SpefNetISPD2013::nodesSize () const </title> <emphasis>Returns number of nodes.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefNetISPD2013_1a8beeae8a280358ba32eedab9367b1006">
+                <title>const Node&amp; SpefNetISPD2013::getNode (const unsigned &amp;i) const </title> <emphasis>Gets node at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>unsigned &amp; i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="structSpefNetISPD2013_1_1Node">Node</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefNetISPD2013_1aa5143da0b98e3fa1613562061238f4ee">
+                <title>int SpefNetISPD2013::getNodeIndex (const string &amp;name) const </title> <emphasis>Returns index of node name. If not found, returns -1.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>string &amp; name</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>int </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefNetISPD2013_1a1a15314aec6fae289f90b9e7de201fe8">
+                <title>size_t SpefNetISPD2013::resistorsSize () const </title> <emphasis>Retuns number of resistors.</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>size_t </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefNetISPD2013_1a1baa70cdf4b2c65a7e695849c2ad2525">
+                <title>const Resistor&amp; SpefNetISPD2013::getResistor (const unsigned &amp;i) const </title> <emphasis>Returns resistor at index i.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>const</entry>
+                                <entry>
+<para>unsigned &amp; i</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>const <link linkend="structSpefNetISPD2013_1_1Resistor">Resistor</link> </para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="classSpefNetISPD2013_1a3a0ed208b150100bda0544112fb1c0ba">
+                <title>void SpefNetISPD2013::set (string name, double lumpedCapacitance)</title> <emphasis>Sets SPEF netlist atributtes.</emphasis>
+                
+<para>
+                <formalpara>
+                    <title/>
+                    <table frame="all">
+                        <title>Parameters</title>
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <tbody>
+                            <row>
+                                <entry>string</entry>
+                                <entry>
+<para>name,double lumpedCapacitance</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                </formalpara>
+                <formalpara><title>Returns: </title>
+
+<para>void </para>
+</formalpara>
+</para>
+
+            </section>
+</section>
