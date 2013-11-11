@@ -51,6 +51,7 @@ public:
 		string port_name;
 		Transitions<double> slack;
 		Transitions<double> slew;
+        Transitions<double> arrival_window;
 
 		friend ostream & operator <<( ostream & out, const Port_Timing & port)
 		{

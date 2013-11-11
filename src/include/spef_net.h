@@ -35,8 +35,9 @@ class SpefNetISPD2012
 public:
 	string netName;
 	double netLumpedCap;
+    double total_resistance;
 
-    SpefNetISPD2012():netName("DEFAULT_NET_NAME"), netLumpedCap(0){}
+    SpefNetISPD2012():netName("DEFAULT_NET_NAME"), netLumpedCap(0), total_resistance(0){}
 };
 
 class SpefNetISPD2013
@@ -85,9 +86,10 @@ public:
     size_t resistorsSize() const { return resistors.size(); }
     const Resistor & getResistor(const unsigned & i) const { return resistors.at(i); }
 
-	void set(string name, double lumpedCapacitance);
+    void set(string name, double lumpedCapacitance, double total_resistance);
 	string netName;
 	double netLumpedCap;
+    double total_resistance;
 
 
 

@@ -29,6 +29,7 @@ Timing_Point::Timing_Point(std::string name, const size_t gate_number, Timing_Po
         _slack =  numeric_limits<Transitions<double> >::zero();
         _slew = numeric_limits<Transitions<double> >::zero();
         _arrival_time = numeric_limits<Transitions<double> >::zero();
+        _ceff = numeric_limits<Transitions<double> >::min();
     }
 
     std::ostream & operator<<(std::ostream &out, const Timing_Point &tp)

@@ -15,10 +15,11 @@ class WireDelayModel
 {
 protected:
     double _lumped_capacitance;
+    double _total_resistance;
 	static LinearLibertyLookupTableInterpolator interpolator;
 
 public:
-    WireDelayModel(const double & lumped_capacitance) : _lumped_capacitance(lumped_capacitance){}
+    WireDelayModel(const double & lumped_capacitance, const double & total_resistance) : _lumped_capacitance(lumped_capacitance), _total_resistance(total_resistance){}
     virtual ~WireDelayModel(){}
     virtual const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver) = 0;
     virtual const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const = 0;
@@ -32,14 +33,17 @@ public:
 
 
     double lumped_capacitance() const;
+    double total_resistance() const;
 };
 
 class LumpedCapacitanceWireDelayModel : public WireDelayModel
 {
     Transitions<double> _delay;
     Transitions<double> _slew;
+
+    Transitions<double> _max_slew;
 public:
-    LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string root_node, const bool dummy_edge = false) : WireDelayModel(descriptor.netLumpedCap){	}
+    LumpedCapacitanceWireDelayModel(const SpefNet & descriptor, const string root_node, const bool dummy_edge = false) : WireDelayModel(descriptor.netLumpedCap, descriptor.total_resistance){	}
     const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> _slew, bool is_input_driver);
     const Transitions<double> delay_at_fanout_node(const string fanout_node_name) const;
     const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const;
@@ -92,14 +96,14 @@ protected:
     vector<vector<Transitions<double> > >_slews;
     vector<vector<Transitions<double> > >_delays;
 
-    vector<Transitions<double> > _max_delays;
-    vector<Transitions<double> > _max_slews;
     map<std::string, int> _node_name_to_node_number;
 
 
     void IBM_update_downstream_capacitances();
     void IBM_initialize_effective_capacitances();
     void IBM_update_slews(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
+
+
     void IBM_update_effective_capacitances();
 
 protected:
@@ -125,12 +129,12 @@ public:
   SLEW: PURI02 (IBM)
 
 */
-class Full: public RC_Tree_Wire_Delay_Model
+class Ceff_Elmore_Slew_Degradation_PURI: public RC_Tree_Wire_Delay_Model
 {
 
 
 public:
-    Full(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false)
+    Ceff_Elmore_Slew_Degradation_PURI(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false)
         : RC_Tree_Wire_Delay_Model(descriptor, rootNode, arcs_size, dummyEdge)
     {
 
@@ -139,6 +143,26 @@ public:
     const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
 };
 
+/*
+
+  DRIVER: CEFF
+  INTERCONNECT: ELMORE + CEFF
+  SLEW: sqrt(driver_slew ^ 2 + slew_degradation^2)
+
+*/
+class Ceff_Elmore_Slew_Degradation: public RC_Tree_Wire_Delay_Model
+{
+
+
+public:
+    Ceff_Elmore_Slew_Degradation(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false)
+        : RC_Tree_Wire_Delay_Model(descriptor, rootNode, arcs_size, dummyEdge)
+    {
+
+    }
+
+    const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
+};
 
 /*
 
@@ -147,12 +171,75 @@ public:
   SLEW: PURI02 (IBM)
 
 */
-class Elmore_Wire_Delay_Model: public RC_Tree_Wire_Delay_Model
+class Lumped_Elmore_Slew_Degradation: public RC_Tree_Wire_Delay_Model
 {
 
 
 public:
-    Elmore_Wire_Delay_Model(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false)
+    Lumped_Elmore_Slew_Degradation(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false)
+        : RC_Tree_Wire_Delay_Model(descriptor, rootNode, arcs_size, dummyEdge)
+    {
+
+    }
+
+    const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
+};
+
+/*
+
+DRIVER: LUMPED
+INTERCONNECT: ELMORE
+SLEW: NO!
+
+*/
+class Lumped_Elmore_No_Slew_Degradation: public RC_Tree_Wire_Delay_Model
+{
+
+
+public:
+    Lumped_Elmore_No_Slew_Degradation(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false)
+        : RC_Tree_Wire_Delay_Model(descriptor, rootNode, arcs_size, dummyEdge)
+    {
+
+    }
+
+    const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
+};
+
+/*
+
+DRIVER: CEFF
+INTERCONNECT: ELMORE
+SLEW: NO!
+
+*/
+class Ceff_Elmore_No_Slew_Degradation: public RC_Tree_Wire_Delay_Model
+{
+
+
+public:
+    Ceff_Elmore_No_Slew_Degradation(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false)
+        : RC_Tree_Wire_Delay_Model(descriptor, rootNode, arcs_size, dummyEdge)
+    {
+
+    }
+
+    const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);
+};
+
+/*
+
+DRIVER: CEFF
+INTERCONNECT: NO!
+SLEW: NO!
+
+*/
+class Ceff_Without_Wire_Delay_And_Slew_Degradation: public RC_Tree_Wire_Delay_Model
+{
+
+
+public:
+    Ceff_Without_Wire_Delay_And_Slew_Degradation(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false)
         : RC_Tree_Wire_Delay_Model(descriptor, rootNode, arcs_size, dummyEdge)
     {
 

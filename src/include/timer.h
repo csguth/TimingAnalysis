@@ -34,6 +34,8 @@ public:
         {
             return out << result._time << " " << result._unity;
         }
+
+        float time() const { return _time; }
     };
 
 private:

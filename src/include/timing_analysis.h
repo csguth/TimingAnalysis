@@ -22,6 +22,9 @@ using std::fstream;
 #include <stack>
 using std::stack;
 
+#include <set>
+using std::set;
+
 #include <cstdlib>
 
 #include "timer_interface.h"
@@ -89,12 +92,11 @@ namespace Timing_Analysis
         Transitions<double> _capacitance_violations;
 
         unsigned _total_violating_POs;
-
-        map<string, Transitions<double> > _max_ceff;
-        map<string, Transitions<double> > _min_ceff;
-
-
         int _first_PO_index;
+
+
+        void initialize_timing_data();
+
 
         // PRIVATE GETTERS
         const LibertyCellInfo & liberty_cell_info(const int node_index) const;
@@ -145,6 +147,11 @@ namespace Timing_Analysis
         Transitions<double> worst_slack() const { return _worst_slack; }
         Transitions<double> target_delay() const { return _target_delay; }
         unsigned total_violating_POs() const { return _total_violating_POs; }
+        Transitions<double> critical_path() const { return _critical_path; }
+
+        set<int> timing_points_in_longest_path();
+        set<int> timing_points_in_critical_path();
+
 
 
         int first_PO_index() const { return _first_PO_index; }
@@ -161,7 +168,7 @@ namespace Timing_Analysis
         pair<pair<int, int>, pair<Transitions<double>, Transitions<double> > > check_ceffs(double precision);
 
 
-	};
+    };
 
 };
 

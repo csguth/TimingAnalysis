@@ -91,8 +91,6 @@ public:
 }; // end class
 
 
-
-
 namespace std {
     template<>
     class numeric_limits<Transitions<double> > {

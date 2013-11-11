@@ -10,10 +10,19 @@ using std::endl;
 
 #include "include/configuration.h"
 #include "include/timer.h"
+#include "include/ceff_ratio_experiment.h"
+#include "include/slew_degradation_experiment.h"
 
 #include <cstdio>
+#include <queue>
+using std::priority_queue;
+
+#include <ostream>
+using std::ostream;
 
 using std::make_pair;
+
+
 
 struct PassingArgs {
     string _contest_root;
@@ -41,6 +50,7 @@ struct ISPDContestFiles
     }
 };
 
+
 int main(int argc, char const *argv[])
 {
 	if(argc != 3)
@@ -60,28 +70,42 @@ int main(int argc, char const *argv[])
 
 	ISPDContestFiles files(argv[1], argv[2]);
 
-	const Circuit_Netlist netlist = vp.readFile(files.verilog);
-	const LibertyLibrary library = lp.readFile(files.liberty);
-	const Parasitics parasitics = sp.readFile(files.spef);
-	const Design_Constraints constraints = dcp.readFile(files.designConstraints);
+    const Circuit_Netlist netlist = vp.readFile(files.verilog);
+    const LibertyLibrary library = lp.readFile(files.liberty);
+    const Parasitics parasitics = sp.readFile(files.spef);
+    const Design_Constraints constraints = dcp.readFile(files.designConstraints);
 
     Timing_Analysis::Timing_Analysis ta(netlist, &library, &parasitics, &constraints);
 
+    cout << endl << "## " << Traits::ispd_contest_benchmark << endl;
     Timer timer;
     timer.start();
     ta.full_timing_analysis();
+//    ta.call_prime_time();
     timer.end();
+    cout << "runtime " << timer.value(Timer::MICRO) << endl;
 
-//    for(int i = 0; i < ta.timing_points_size(); i++)
-//    {
-//        cout << ta.timing_point(i) << endl;
-//    }
+//    if(Traits::ispd_contest_benchmark == "usb_phy_slow")
+//        printf("    BENCHMARK NAME |         TNS |     Viol. POs |     Crit. Rise |     Crit. Fall |     Target |  Runtime (s)\n");
+//    printf("%18s |%12.1lf |%14d |%15.2lf |%15.2lf |%11.2lf |%13.2lf\n", Traits::ispd_contest_benchmark.c_str(), ta.total_negative_slack().aggregate(), ta.total_violating_POs(), ta.critical_path().getRise(), ta.critical_path().getFall(), ta.target_delay().getRise(), timer.value(Timer::MICRO).time() * 1e-12);
 
-//    printf("%s\t%f", Traits::ispd_contest_benchmark, ta.total_negative_slack().aggregate(), ta.total_violating_POs());
+
+//    Ceff_Ratio_Experiment::run_sorted_by_wire_size(ta);
+//    Ceff_Ratio_Experiment::run_sorted_by_slew(ta);
+
+//    Slew_Degradation_Experiment::run(ta);
+
+    //    if(Traits::ispd_contest_benchmark == "usb_phy_slow")
+    //        printf("    BENCHMARK NAME |         TNS |     Viol. POs |     Crit. Rise |     Crit. Fall |     Target |  Runtime (s)\n");
 
 //    ta.print_info();
 	
-//    ta.validate_with_prime_time();
+
+
+    ta.validate_with_prime_time();
+
+//    ta.longest_path();
+//    ta.critical_path();
 
 //    ta.print_effective_capacitances();
 
@@ -91,8 +115,5 @@ int main(int argc, char const *argv[])
 //    else
 //        cout << "ceffs OK with primetime!" << endl;
 
-
-    cout << "Runtime " << timer.value(Timer::MICRO) << endl;
-    cout << endl << endl;
 	return 0;
 }

@@ -1,9 +1,10 @@
 #include "include/spef_net.h"
 
-void SpefNetISPD2013::set(string name, double lumpedCapacitance)
+void SpefNetISPD2013::set(string name, double lumpedCapacitance, double total_resistance)
 {
 	this->netName = name;
     this->netLumpedCap = lumpedCapacitance;
+    this->total_resistance = total_resistance;
 }
 int SpefNetISPD2013::addNode(const string & name)
 {

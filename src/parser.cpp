@@ -950,6 +950,7 @@ void SpefParserISPD2013::read_resistances(SpefNetISPD2013 & net)
 {
 	vector<string> tokens;
 	bool valid = true;
+    double total_resistance = 0.0f;
 	while (valid)
 	{
 		valid = readLineAsTokens(is, tokens, true /*include special chars*/);
@@ -974,7 +975,10 @@ void SpefParserISPD2013::read_resistances(SpefNetISPD2013 & net)
 		const double value = std::atof(tokens[tokenIndex++].c_str());
 		assert(value >= 0);
 		net.addResistor(fromNodeName, toNodeName, value);
+        total_resistance += value;
 	}
+    net.total_resistance = total_resistance;
+
 }
 
 // Read the spef data for the next net.
@@ -1398,6 +1402,8 @@ const Prime_Time_Output_Parser::Prime_Time_Output Prime_Time_Output_Parser::pars
 				output._ports.back().port_name = tokens.at(0);
 				output._ports.back().slack = Transitions<double>(atof(tokens.at(1).c_str()), atof(tokens.at(2).c_str()));
 				output._ports.back().slew = Transitions<double>(atof(tokens.at(3).c_str()), atof(tokens.at(4).c_str()));
+                if(tokens.size() == 7)
+                    output._ports.back().arrival_window = Transitions<double>(atof(tokens.at(5).c_str()), atof(tokens.at(6).c_str()));
 			}
             else
 				assert(false);

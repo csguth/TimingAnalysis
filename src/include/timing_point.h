@@ -51,7 +51,7 @@ namespace Timing_Analysis {
         Timing_Arc & arc () const { return *_arc; }
         int logic_level() const { return _logic_level; }
 
-        void ceff(Transitions<double> & ceff) { _ceff = ceff; }
+        void ceff(const Transitions<double> & ceff) { _ceff = ceff; }
         void slack(const Transitions<double> & slack ) { _slack = slack; }
         void slew(const Transitions<double> & slew ) { _slew = slew; }
         void arrival_time(const Transitions<double> & arrival_time ) { _arrival_time = arrival_time; }
