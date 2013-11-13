@@ -116,10 +116,10 @@ RC_Tree_Wire_Delay_Model::RC_Tree_Wire_Delay_Model(const SpefNetISPD2013 & descr
 const Transitions<double> Ceff_Elmore_Slew_Degradation_PURI::simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver)
 {
     Transitions<double> ceff = run_IBM_algorithm(cellInfo, input, slew, is_input_driver);
-    for(int i = 1; i < _delays.at(input).size(); i++)
-    {
-        _delays.at(input).at(i) *= log(2);
-    }
+//    for(int i = 1; i < _delays.at(input).size(); i++)
+//    {
+//        _delays.at(input).at(i) *= log(2);
+//    }
     return ceff;
 }
 
@@ -219,10 +219,12 @@ const Transitions<double> RC_Tree_Wire_Delay_Model::run_IBM_algorithm(const Libe
     Transitions<double> error;
 
     Transitions<double> current_source_slew, old_source_slew;
+    Transitions<double> current_source_ceff, old_source_ceff;
     int i = 0;
 
     _nodes[0].slew = RC_Tree_Wire_Delay_Model::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, _nodes[0].totalCapacitance, slew, (cellInfo.isSequential?NON_UNATE:NEGATIVE_UNATE));
     current_source_slew = _nodes[0].slew;
+    current_source_ceff = _nodes[0].totalCapacitance;
 
     do
     {
@@ -235,11 +237,18 @@ const Transitions<double> RC_Tree_Wire_Delay_Model::run_IBM_algorithm(const Libe
         old_source_slew = current_source_slew;
         current_source_slew = _nodes[0].slew;
 
+
+        old_source_ceff = current_source_ceff;
+        current_source_ceff = _nodes[0].effectiveCapacitance;
+
+
         i++;
-        error = old_source_slew - current_source_slew;
+        error = abs(old_source_slew - current_source_slew) / max(abs(old_source_slew), abs(current_source_slew));
+//        error = abs(old_source_ceff - current_source_ceff) / max(abs(old_source_ceff), abs(current_source_ceff));
+
 
     }
-    while (error.getRise() > Traits::STD_THRESHOLD/10 || error.getFall() > Traits::STD_THRESHOLD/10);
+    while (error.getRise() > Traits::STD_THRESHOLD || error.getFall() > Traits::STD_THRESHOLD);
 
     return _nodes.front().effectiveCapacitance;
 }
@@ -420,6 +429,11 @@ const Transitions<double> Lumped_Elmore_Slew_Degradation::simulate(const Liberty
     IBM_initialize_effective_capacitances();
     _nodes[0].slew = RC_Tree_Wire_Delay_Model::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, _nodes[0].totalCapacitance, slew, (cellInfo.isSequential?NON_UNATE:NEGATIVE_UNATE));
     IBM_update_slews(cellInfo, input, slew, is_input_driver);
+
+    for(int i = 1; i < _delays.at(input).size(); i++)
+    {
+        _delays.at(input).at(i) *= log(2);
+    }
     return _nodes.front().effectiveCapacitance;
 }
 
@@ -508,12 +522,12 @@ const Transitions<double> Ceff_Elmore_Slew_Degradation::simulate(const LibertyCe
     Transitions<double> ceff = run_IBM_algorithm(cellInfo, input, slew, is_input_driver);
     Transitions<double> root_slew = _slews.at(input).front();
 
-//    vector<Transitions<double> > ceff_elmore_delays(_delays.at(input).size());
+    vector<Transitions<double> > ceff_elmore_delays(_delays.at(input).size());
 
-    for(int i = 0; i < _slews[input].size(); i++)
-    {
+//    for(int i = 0; i < _slews[input].size(); i++)
+//    {
 //        ceff_elmore_delays.at(i) = _delays[input][i];
-    }
+//    }
 
 
     for(int i = 1; i < _nodes.size(); i++)
@@ -526,22 +540,22 @@ const Transitions<double> Ceff_Elmore_Slew_Degradation::simulate(const LibertyCe
     }
 
 
-    for(int i = 0; i < _slews[input].size(); i++)
-    {
-//        Transitions<double> degradation = _slews.at(input).at(i);
-//        Transitions<double> degradation = _slews[input][i] - root_slew;
-        Transitions<double> degradation = _delays.at(input).at(i) * log(4);
+//    for(int i = 0; i < _slews[input].size(); i++)
+//    {
+////        Transitions<double> degradation = _slews.at(input).at(i);
+////        Transitions<double> degradation = _slews[input][i] - root_slew;
+//        Transitions<double> degradation = _delays.at(input).at(i) * log(4);
 
-//        if(_nodes.at(i).sink)
-//            cout << "root slew = " << root_slew << ", leaf slew = " << _slews.at(input).at(i) << endl;
+////        if(_nodes.at(i).sink)
+////            cout << "root slew = " << root_slew << ", leaf slew = " << _slews.at(input).at(i) << endl;
 
-//        _slews.at(input).at(i) = sqrt(root_slew * root_slew + degradation * degradation);
-//        _slews.at(input).at(i) = root_slew;
+////        _slews.at(input).at(i) = sqrt(root_slew * root_slew + degradation * degradation);
+////        _slews.at(input).at(i) = root_slew;
 
-//          _slews[input][i] = (_slews[input][i] + root_slew) / 2;
-        _delays[input][i] *= log(2);
+////          _slews[input][i] = (_slews[input][i] + root_slew) / 2;
+////        _delays[input][i] *= log(2);
 
-    }
+//    }
 
 //    _delays[input] = ceff_elmore_delays;
 

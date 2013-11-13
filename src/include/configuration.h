@@ -34,7 +34,7 @@ class Traits
 {
 public:
     static const bool ISPD_2012 = false;
-    static const double STD_THRESHOLD = 0.01;
+    static const double STD_THRESHOLD = 1e-3;
     static string ispd_contest_root;
     static string ispd_contest_benchmark;
 };

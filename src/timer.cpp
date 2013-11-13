@@ -1,7 +1,11 @@
 #include "include/timer.h"
 
-const double Timer::MICRO = 1000000;
-const double Timer::MILI = 1000;
+const double Timer::MICRO = 1000000.0f;
+const string Timer::micro = "us";
+const double Timer::MILI = 1000.0f;
+const string Timer::mili = "ms";
+const double Timer::SECOND = 1.0f;
+const string Timer::second = "s";
 
 Timer::Timer()
 {
@@ -28,7 +32,16 @@ void Timer::end()
 
 const Timer::Result & Timer::value(const double time_definition)
 {
-    assert(time_definition == MICRO || time_definition == MILI);
-    _execution_time.set(_execution_time._time * time_definition, (time_definition == MICRO ? "us" : "ms"));
+    assert(time_definition == MICRO || time_definition == MILI || time_definition == SECOND);
+
+    string def;
+    if(time_definition == MICRO)
+        def = Timer::micro;
+    else if (time_definition == MILI)
+        def = Timer::mili;
+    else if (time_definition == SECOND)
+        def = Timer::second;
+
+    _execution_time.set(_execution_time._time * time_definition, def);
     return _execution_time;
 }

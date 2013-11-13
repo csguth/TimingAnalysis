@@ -266,7 +266,7 @@ public:
     Reduced_Pi(const SpefNetISPD2013 & descriptor, const string rootNode, const size_t arcs_size, const bool dummyEdge = false)
         : RC_Tree_Wire_Delay_Model(descriptor, rootNode, arcs_size, dummyEdge)
     {
-        cout << rootNode << endl;
+//        cout << rootNode << endl;
     }
 
     const Transitions<double> simulate(const LibertyCellInfo & cellInfo, const int input, const Transitions<double> slew, bool is_input_driver);

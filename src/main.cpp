@@ -41,12 +41,6 @@ struct ISPDContestFiles
 		spef = contestRoot + "/" + contestBenchmark + "/" + contestBenchmark + ".spef";
 		designConstraints = contestRoot + "/" + contestBenchmark + "/" + contestBenchmark + ".sdc";
 		liberty = contestRoot + "/lib/contest.lib";
-
-
-//		cout << "Verilog file: " << verilog << endl;
-//		cout << "Spef File: " << spef << endl;
-//		cout << "SDC File: " << designConstraints << endl;
-//		cout << "Liberty File: " << liberty << endl;
     }
 };
 
@@ -77,17 +71,17 @@ int main(int argc, char const *argv[])
 
     Timing_Analysis::Timing_Analysis ta(netlist, &library, &parasitics, &constraints);
 
-    cout << endl << "## " << Traits::ispd_contest_benchmark << endl;
+//    cout << endl << "## " << Traits::ispd_contest_benchmark << endl;
     Timer timer;
     timer.start();
     ta.full_timing_analysis();
 //    ta.call_prime_time();
     timer.end();
-    cout << "runtime " << timer.value(Timer::MICRO) << endl;
+//    cout << "runtime " << timer.value(Timer::MICRO) << endl;
 
 //    if(Traits::ispd_contest_benchmark == "usb_phy_slow")
 //        printf("    BENCHMARK NAME |         TNS |     Viol. POs |     Crit. Rise |     Crit. Fall |     Target |  Runtime (s)\n");
-//    printf("%18s |%12.1lf |%14d |%15.2lf |%15.2lf |%11.2lf |%13.2lf\n", Traits::ispd_contest_benchmark.c_str(), ta.total_negative_slack().aggregate(), ta.total_violating_POs(), ta.critical_path().getRise(), ta.critical_path().getFall(), ta.target_delay().getRise(), timer.value(Timer::MICRO).time() * 1e-12);
+//    printf("%18s |%12.1lf |%14d |%15.2lf |%15.2lf |%11.2lf |%13.2lf\n", Traits::ispd_contest_benchmark.c_str(), ta.total_negative_slack().aggregate(), ta.total_violating_POs(), ta.critical_path().getRise(), ta.critical_path().getFall(), ta.target_delay().getRise(), timer.value(Timer::SECOND).time());
 
 
 //    Ceff_Ratio_Experiment::run_sorted_by_wire_size(ta);
@@ -95,25 +89,6 @@ int main(int argc, char const *argv[])
 
 //    Slew_Degradation_Experiment::run(ta);
 
-    //    if(Traits::ispd_contest_benchmark == "usb_phy_slow")
-    //        printf("    BENCHMARK NAME |         TNS |     Viol. POs |     Crit. Rise |     Crit. Fall |     Target |  Runtime (s)\n");
-
-//    ta.print_info();
-	
-
-
-    ta.validate_with_prime_time();
-
-//    ta.longest_path();
-//    ta.critical_path();
-
-//    ta.print_effective_capacitances();
-
-//    pair<pair<int, int>, pair<Transitions<double>, Transitions<double> > > first_error = ta.check_ceffs(0.01f);
-//    if(first_error.first.second < numeric_limits<int>::max())
-//        cout << "ceffs NOT OK with primetime!\nfirst error = " << ta.timing_point(first_error.first.first).name() << "\n" << "tool ceff " << first_error.second.first << " pt ceff " << first_error.second.second << " error " << abs(first_error.second.first-first_error.second.second)/max(abs(first_error.second.first), abs(first_error.second.second)) << endl;
-//    else
-//        cout << "ceffs OK with primetime!" << endl;
 
 	return 0;
 }

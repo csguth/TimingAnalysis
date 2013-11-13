@@ -51,7 +51,11 @@ public:
     const Timer::Result &value(const double time_definition);
 
     static const double MICRO;
+    static const string micro;
     static const double MILI;
+    static const string mili;
+    static const double SECOND;
+    static const string second;
 };
 
 #endif // TIMER_H

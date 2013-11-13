@@ -108,11 +108,11 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
             if(parasitics->find(net.name) != parasitics->end())
             {
 //                delay_model = new Ceff_Elmore_Slew_Degradation_PURI(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
-//                delay_model = new Lumped_Elmore_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
+                delay_model = new Lumped_Elmore_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
 //                delay_model = new Lumped_Elmore_No_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
 //                delay_model = new Ceff_Elmore_No_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
 
-                delay_model = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name), driver_timing_point.name());
+//                delay_model = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name), driver_timing_point.name());
 
 //                delay_model = new Ceff_Elmore_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
 //                delay_model = new Ceff_Without_Wire_Delay_And_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
@@ -909,16 +909,16 @@ void Timing_Analysis::call_prime_time()
     initialize_timing_data();
     const unsigned pollingTime = 1;
 
-    cout << "Running timing analysis" << endl;
+//    cout << "Running timing analysis" << endl;
 
     TimerInterface::Status s = TimerInterface::runTimingAnalysisBlocking(_sizes,  Traits::ispd_contest_root, Traits::ispd_contest_benchmark, pollingTime);
-    cout << "Timing analysis finished with status: " << s << endl;
+//    cout << "Timing analysis finished with status: " << s << endl;
 
-    cout << "Reading Timing Information" << endl;
+//    cout << "Reading Timing Information" << endl;
     Prime_Time_Output_Parser prime_time_parser;
     const Prime_Time_Output_Parser::Prime_Time_Output prime_time_output = prime_time_parser.parse_prime_time_output_file(timing_file);
 
-    cout << "Setting Timing Information" << endl;
+//    cout << "Setting Timing Information" << endl;
 
     for(size_t i = 0; i < prime_time_output.pins_size(); i++)
     {
@@ -953,7 +953,8 @@ void Timing_Analysis::call_prime_time()
 
         if(timing_point.is_PO())
         {
-            _critical_path = max(_critical_path, timing_point.arrival_time());
+            timing_point.arrival_time(_target_delay - timing_point.slack());
+            _critical_path = max(_critical_path, _target_delay - timing_point.slack());
             if(timing_point.slack().getMin() < 0)
             {
                 _total_negative_slack -= timing_point.slack();
@@ -1062,6 +1063,8 @@ bool Timing_Analysis::check_timing_file(const string timing_file)
     string filename_critical_path = Traits::ispd_contest_root + "/" + Traits::ispd_contest_benchmark + "/" + Traits::ispd_contest_benchmark + ".critical_path_errors";
     critical_path_file.open(filename_critical_path.c_str(), fstream::out);
 
+    Transitions<double> critical_path = numeric_limits<Transitions<double> >::min();
+
     for(size_t i = 0; i < prime_time_output.pins_size(); i++)
     {
         const Prime_Time_Output_Parser::Pin_Timing pin_timing = prime_time_output.pin(i);
@@ -1069,13 +1072,13 @@ bool Timing_Analysis::check_timing_file(const string timing_file)
 
 
 
-        Transitions<double> pin_slack_error = 1 - timing_point.slack()/pin_timing.slack;
-        Transitions<double> pin_slew_error = 1 - timing_point.slew()/pin_timing.slew;
-        Transitions<double> pin_arrival_time_error = 1 - timing_point.arrival_time()/pin_timing.arrival_time;
+        Transitions<double> pin_slack_error = (timing_point.slack()/pin_timing.slack) -1;
+        Transitions<double> pin_slew_error = (timing_point.slew()/pin_timing.slew) -1;
+        Transitions<double> pin_arrival_time_error = (timing_point.arrival_time()/pin_timing.arrival_time) -1;
 
 
 
-        if(timing_point.is_output_pin())
+        if(timing_point.is_output_pin() || timing_point.is_PO())
         {
             if(path.find(_pin_name_to_timing_point_index.at(pin_timing.pin_name)) != path.end())
             {
@@ -1087,6 +1090,11 @@ bool Timing_Analysis::check_timing_file(const string timing_file)
                 critical_path_file << _points.at(_pin_name_to_timing_point_index.at(pin_timing.pin_name)).logic_level() << "\t" << pin_arrival_time_error.getMax() << endl;
             }
             out << timing_point.logic_level() << "\t" << pin_arrival_time_error.getMax() << endl;
+        }
+
+        if(timing_point.is_PO())
+        {
+            critical_path = max(critical_path, pin_timing.arrival_time);
         }
 
         //                Transitions<double> pin_slack_error = abs(timing_point.slack() - pin_timing.slack);
@@ -1143,6 +1151,25 @@ bool Timing_Analysis::check_timing_file(const string timing_file)
         Transitions<double> port_slack_error = 1 - timing_point.slack() / port_timing.slack;
         Transitions<double> port_slew_error = 1 - timing_point.slew() / port_timing.slew;
 
+
+        if(timing_point.is_PO())
+        {
+
+            Transitions<double> arrival_time = _target_delay - port_timing.slack;
+            Transitions<double> port_arrival_time_error = (timing_point.arrival_time() / arrival_time) - 1;
+
+            critical_path = max(critical_path, arrival_time);
+            if(path.find(_pin_name_to_timing_point_index.at(port_timing.port_name)) != path.end())
+            {
+                longest_path_file << _points.at(_pin_name_to_timing_point_index.at(port_timing.port_name)).logic_level() << "\t" << port_arrival_time_error.getMax() << endl;
+            }
+
+            if(critical.find(_pin_name_to_timing_point_index.at(port_timing.port_name)) != critical.end())
+            {
+                critical_path_file << _points.at(_pin_name_to_timing_point_index.at(port_timing.port_name)).logic_level() << "\t" << port_arrival_time_error.getMax() << endl;
+            }
+            out << timing_point.logic_level() << "\t" << port_arrival_time_error.getMax() << endl;
+        }
 
         //                Transitions<double> port_slack_error = abs(timing_point.slack() - port_timing.slack);
         //                Transitions<double> port_slew_error = abs(timing_point.slew() - port_timing.slew);
@@ -1229,6 +1256,10 @@ bool Timing_Analysis::check_timing_file(const string timing_file)
     runtime_file.close();
     longest_path_file.close();
     critical_path_file.close();
+
+
+    cout << "CRITICAL PATH VALUE PRIMETIME: " << critical_path << endl;
+    cout << "CRITICAL PATH VALUE: " << _critical_path << endl;
     return true;
 }
 
