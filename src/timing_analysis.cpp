@@ -1212,12 +1212,14 @@ bool Timing_Analysis::has_capacitance_violations(const Timing_Point &tp)
 {
     if(tp.ceff().getMax() > liberty_cell_info(tp.gate_number()).pins.front().maxCapacitance)
         return true;
+    return false;
 }
 
 bool Timing_Analysis::has_slew_violations(const Timing_Point &tp)
 {
     if(tp.slew().getMax() > _max_transition.getMax())
         return true;
+    return false;
 }
 void Timing_Analysis::get_sizes_vector()
 {
