@@ -45,6 +45,7 @@ class Ceff_Ratio_Experiment
 public:
     static void run_sorted_by_wire_size(Timing_Analysis::Timing_Analysis & ta);
     static void run_sorted_by_slew(Timing_Analysis::Timing_Analysis & ta);
+    static void run_average_calculation(Timing_Analysis::Timing_Analysis & ta);
 
 };
 

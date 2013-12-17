@@ -25,6 +25,9 @@ using std::stack;
 #include <set>
 using std::set;
 
+#include <queue>
+using std::priority_queue;
+
 #include <cstdlib>
 
 #include "timer_interface.h"
@@ -47,6 +50,12 @@ using std::set;
 namespace Timing_Analysis
 {
 
+    class ita_comparator {
+
+    public:
+        bool operator()(Timing_Point * a, Timing_Point * b);
+    };
+
     class Option
 	{
         friend class Timing_Analysis;
@@ -57,7 +66,9 @@ namespace Timing_Analysis
     public:
         Option():_footprint_index(-1), _option_index(-1), _dont_touch(false){}
         Option(const int footprintIndex, const int optionIndex) : _footprint_index(footprintIndex), _option_index(optionIndex), _dont_touch(false){}
-
+        int footprint_index() const;
+        int option_index() const;
+        bool is_dont_touch() const;
 	};
 
 
@@ -99,7 +110,6 @@ namespace Timing_Analysis
 
 
         // PRIVATE GETTERS
-        const LibertyCellInfo & liberty_cell_info(const int node_index) const;
         const Transitions<double> calculate_timing_arc_delay(const Timing_Arc & timing_arc, const Transitions<double> transition, const Transitions<double> ceff);
 
         // STATIC TIMING ANALYSIS
@@ -113,7 +123,6 @@ namespace Timing_Analysis
 
 		// PRIMETIME CALLING
         void get_sizes_vector();
-		bool check_timing_file(const string timing_file);
 
 		// OUTPUT METHODS
         void write_sizes_file(const string filename);
@@ -127,8 +136,12 @@ namespace Timing_Analysis
 
         void call_prime_time();
         void full_timing_analysis();
+        void incremental_timing_analysis(int gate_number, int new_option);
+        void update_timing_points(const Timing_Point * output_timing_point);
 
 		// GETTERS
+        size_t number_of_gates() const { return _options.size(); }
+
         size_t timing_points_size() { return _points.size(); }
         const Timing_Point & timing_point( const int i ) { return _points.at(i); }
 
@@ -140,7 +153,9 @@ namespace Timing_Analysis
 
         double pin_capacitance(const int timing_point_index) const;
         double pin_load(const int timing_point_index) const;
-        int option(const int gate_number);
+        const Option & option(const int gate_number);
+        const LibertyCellInfo & liberty_cell_info(const int gate_index) const;
+
         size_t number_of_options(const int gate_index);
 
         Transitions<double> total_negative_slack() const { return _total_negative_slack; }
@@ -148,9 +163,17 @@ namespace Timing_Analysis
         Transitions<double> target_delay() const { return _target_delay; }
         unsigned total_violating_POs() const { return _total_violating_POs; }
         Transitions<double> critical_path() const { return _critical_path; }
+        Transitions<double> capacitance_violations() const { return _capacitance_violations; }
+        Transitions<double> slew_violations() const { return _slew_violations; }
+
+
+        bool has_capacitance_violations(const Timing_Point & tp);
+        bool has_slew_violations(const Timing_Point & tp);
 
         set<int> timing_points_in_longest_path();
         set<int> timing_points_in_critical_path();
+
+        bool has_timing_violations();
 
 
 
@@ -159,12 +182,19 @@ namespace Timing_Analysis
 		// SETTERS
         bool option(const int gate_index, const int option);
 
+        void set_all_gates_to_max_size();
+        void set_all_gates_to_min_size();
+
         // DEBUG
         bool validate_with_prime_time();
         void print_info();
         void print_circuit_info();
         void report_timing();
         void print_effective_capacitances();
+
+        void write_timing_file(const string filename);
+        bool check_timing_file(const string timing_file);
+
         pair<pair<int, int>, pair<Transitions<double>, Transitions<double> > > check_ceffs(double precision);
 
 

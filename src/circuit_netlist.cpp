@@ -11,7 +11,6 @@ void Circuit_Netlist::updateTopology()
     queue<int> primary_output_queue;
 	for(size_t i = 0; i < gates.size(); i++)
 	{
-
 		if(gates[i].inputDriver)
 		{
             gates_queue.push(i);
@@ -83,11 +82,11 @@ void Circuit_Netlist::updateTopology()
 
     while(!primary_output_queue.empty())
     {
+
+
         const int PO_index = primary_output_queue.front();
         primary_output_queue.pop();
         Logic_Gate & gate = gates.at(PO_index);
-
-//        cout << gate.name << " " << (gate.sequential?"SEQUENTIAL":"") << endl;
 
         // Insert Input Nets
         for(size_t i = 0; i < gate.inNets.size(); i++)
@@ -125,6 +124,7 @@ int Circuit_Netlist::addGate(const string name, const string cellType, const int
 
 	//const string name, const string cellType, const unsigned inputs, int fanoutNetIndex
 	gates.push_back(Logic_Gate(name, cellType, inputs, -1, isInputDriver, primary_output));
+
 //    _timing_points++;
 //    if(cellType != "__PO__" || (gates.back().sequential && !gates.back().inputDriver))
 //    {
@@ -171,6 +171,28 @@ void Circuit_Netlist::addCellInst(const string name, const string cellType, vect
 {
 	const string outputPin = inputPinPairs.back().first;
 	const string fanoutNetName = inputPinPairs.back().second;
+
+
+//        if(isSequential)
+//        {
+//            _timing_points += 3;
+//            _timing_arcs++;
+//        }
+//        else if (isInputDriver)
+//        {
+//            _timing_points += 2;
+//            _timing_arcs++;
+//        }
+//        else if (!primary_output)
+//        {
+//            _timing_points++;
+//        }
+//        else
+//        {
+//            _timing_points += inputPinPairs.size();
+//            _timing_arcs += inputPinPairs.size() - 1;
+//        }
+
 
 	if(isSequential)
 	{

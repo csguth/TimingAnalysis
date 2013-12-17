@@ -430,10 +430,10 @@ const Transitions<double> Lumped_Elmore_Slew_Degradation::simulate(const Liberty
     _nodes[0].slew = RC_Tree_Wire_Delay_Model::interpolator.interpolate(cellInfo.timingArcs.at(input).riseTransition, cellInfo.timingArcs.at(input).fallTransition, _nodes[0].totalCapacitance, slew, (cellInfo.isSequential?NON_UNATE:NEGATIVE_UNATE));
     IBM_update_slews(cellInfo, input, slew, is_input_driver);
 
-    for(int i = 1; i < _delays.at(input).size(); i++)
-    {
-        _delays.at(input).at(i) *= log(2);
-    }
+//    for(int i = 1; i < _delays.at(input).size(); i++)
+//    {
+//        _delays.at(input).at(i) *= log(2);
+//    }
     return _nodes.front().effectiveCapacitance;
 }
 

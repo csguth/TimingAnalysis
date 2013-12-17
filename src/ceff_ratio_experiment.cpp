@@ -148,3 +148,26 @@ void Ceff_Ratio_Experiment::run_sorted_by_slew(Timing_Analysis::Timing_Analysis 
         cout << item << endl;
     }
 }
+
+void Ceff_Ratio_Experiment::run_average_calculation(Timing_Analysis::Timing_Analysis &ta)
+{
+    int num_items = 0;
+    Transitions<double> average(0.0f, 0.0f);
+    Transitions<double> slew_average(0.0f, 0.0f);
+    for(int i = 0; i < ta.timing_points_size(); i++)
+    {
+        const Timing_Analysis::Timing_Point & tp = ta.timing_point(i);
+        if(tp.is_PI() || tp.is_output_pin())
+        {
+            num_items++;
+            average += (tp.ceff().getMax() / tp.net().wire_delay_model()->lumped_capacitance());
+            slew_average += tp.slew();
+        }
+    }
+    slew_average /= num_items;
+    average /= num_items;
+
+
+
+    cout << average << " slew " << slew_average;
+}
