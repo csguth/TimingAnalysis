@@ -108,13 +108,14 @@ namespace Timing_Analysis
 
         void initialize_timing_data();
 
-
         // PRIVATE GETTERS
         const Transitions<double> calculate_timing_arc_delay(const Timing_Arc & timing_arc, const Transitions<double> transition, const Transitions<double> ceff);
 
         // STATIC TIMING ANALYSIS
         void update_timing(const int timing_point_index);
         void update_slacks(const int timing_point_index);
+        void remove_violations(const int timing_point_index);
+        void update_violations(const int timing_point_index);
 
 		// TOPOLOGY INIT
         const pair<size_t, size_t> create_timing_points(const int i,const Circuit_Netlist::Logic_Gate & gate,const pair<int, int> cellIndex, const LibertyCellInfo & cellInfo);
@@ -190,12 +191,12 @@ namespace Timing_Analysis
         void print_info();
         void print_circuit_info();
         void report_timing();
+        void print_PO_arrivals();
         void print_effective_capacitances();
-
         void write_timing_file(const string filename);
         bool check_timing_file(const string timing_file);
-
         pair<pair<int, int>, pair<Transitions<double>, Transitions<double> > > check_ceffs(double precision);
+        void print_gates();
 
 
     };

@@ -22,8 +22,6 @@ using std::ostream;
 
 using std::make_pair;
 
-
-
 struct PassingArgs {
     string _contest_root;
     string _contest_benchmark;
@@ -69,60 +67,51 @@ int main(int argc, char const *argv[])
     const Design_Constraints constraints = dcp.readFile(files.designConstraints);
 
     Timing_Analysis::Timing_Analysis ta(netlist, &library, &parasitics, &constraints);
+    ta.full_timing_analysis();
     cout << "Slew Violations: " << ta.slew_violations() << endl;
     cout << "Capacitance Violations: " << ta.capacitance_violations() << endl;
     cout << "TNS: " << ta.total_negative_slack() << endl;
 
-//    ta.set_all_gates_to_max_size();
-//    ta.full_timing_analysis();
-//    ta.write_timing_file("min_power.timing");
+    //    ta.print_gates();
 
-//    ta.incremental_timing_analysis(ta.number_of_gates()/2, 15);
-//    ta.write_timing_file("after_change_inc.timing");
-//    ta.full_timing_analysis();
-//    ta.write_timing_file("after_change.timing");
+    /*
+618	g1661_u0
+614	g1680_u0
+571	g1681_u0
+613	g1695_u0
+466	g1696_u0
+527	g1697_u0
+615	g1702_u0
+605	g1703_u0
+460	g1707_u0
+603	g1709_u0
+518	g1711_u0
+365	g1717_u0
+454	g1718_u0
+389	g1719_u0
+     */
 
-//    bool ok = ta.check_timing_file("after_change_inc.timing");
-//    assert(ok);
-//    cout << "OK!" << endl;
-
-//    cout << "number of gates " << ta.number_of_gates() << endl;
-//    cout << "timing points   " << ta.timing_points_size() << endl;
-//    cout << "timing nets     " << ta.timing_nets_size() << endl;
-//    cout << "timing arcs     " << ta.timing_arcs_size() << endl;
 
 
-//    cout << "gates " << endl;
-//    for (int i = 0; i < ta.number_of_gates(); ++i) {
-//        cout << " #" << i << endl;
-//        cout << "  footprint index " << ta.option(i).footprint_index() << endl;
-//        cout << "  option index    " << ta.option(i).option_index() << endl;
-//        cout << "  is dont touch?  " << (ta.option(i).is_dont_touch() ? "yes" : "no") << endl;
-//    }
+    ta.print_circuit_info();
 
-//    cout << "timing points " << endl;
-//    for (int i = 0; i < ta.timing_points_size(); ++i) {
+//    cout << "PO arrival times\n\n\n";
 
-//        string type;
-//        if(ta.timing_point(i).is_input_pin())
-//            type = "input_pin";
-//        else if(ta.timing_point(i).is_output_pin())
-//            type = "output_pin";
-//        else if(ta.timing_point(i).is_PI())
-//            type = "PI";
-//        else if(ta.timing_point(i).is_PI_input())
-//            type = "PI_input";
-//        else if(ta.timing_point(i).is_PO())
-//            type = "PO";
-//        else if(ta.timing_point(i).is_reg_input())
-//            type = "reg_input";
-//        else
-//            type = "__UNKNOWN__";
-//        cout << " #" << i << endl;
-//        cout << "  name        " << ta.timing_point(i).name() << endl;
-//        cout << "  gate number " << ta.timing_point(i).gate_number() << endl;
-//        cout << "  type        " << type << endl;
-//    }
+//    ta.print_PO_arrivals();
+
+
+    cout << "changing gate 518 to option 15 ... \n\n\n";
+//    assert(ta.option(518, 15));
+    ta.incremental_timing_analysis(518, 15);
+    ta.print_circuit_info();
+
+//    ta.print_PO_arrivals();
+
+
+    cout << "sta!\n\n\n";
+    ta.full_timing_analysis();
+    ta.print_circuit_info();
+
 
     return 0;
 }

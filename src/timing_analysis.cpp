@@ -334,6 +334,7 @@ void Timing_Analysis::initialize_timing_data()
     _total_negative_slack = numeric_limits<Transitions<double> >::zero();
     _critical_path = numeric_limits<Transitions<double> >::zero();
     _total_violating_POs = 0;
+
 }
 
 void Timing_Analysis::full_timing_analysis()
@@ -341,7 +342,10 @@ void Timing_Analysis::full_timing_analysis()
     initialize_timing_data();
 
     for(size_t i = 0; i < _points.size(); i++)
+    {
         update_timing(i);
+        update_violations(i);
+    }
 
     for(size_t i = 0; i < _points.size(); i++)
     {
@@ -375,6 +379,7 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
     Timing_Point * timing_point = &_points.at(tp_index);
     assert(timing_point->is_output_pin());
     assert(timing_point->gate_number() == gate_number);
+
     ita_priority_queue pq;
 
     _total_negative_slack = numeric_limits<Transitions<double> >::zero();
@@ -387,7 +392,7 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
         assert(option(timing_point->gate_number(), new_option));
     }
 
-    //input nodes must be inserted only when the size changes, i.e., when the input capacitance of the gate is changed
+    // FANINS MUST BE PUSHED IF THE GATE SIZE (INPUT PIN CAPACITANCE) CHANGES
     int input_pin_index = tp_index - 1;
     while(input_pin_index >= 0 && _points.at(input_pin_index).gate_number() == timing_point->gate_number())
     {
@@ -405,20 +410,40 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
 
         pq.pop();
 
-        Transitions<double> slew0 = tp->slew();
-        Transitions<double> arrival_time0 = tp->arrival_time();
+        // SAVE PREVIOUS TIMING INFORMATION
+        vector<Transitions<double> > slews0(tp->net().fanouts_size());
+        vector<Transitions<double> > arrival_times0(slews0);
+        vector<Transitions<double> > slew_violations0(slews0);
 
+        for(int i = 0; i < slews0.size(); i++)
+        {
+            slews0.at(i) = tp->net().to(i).slew();
+            arrival_times0.at(i) = tp->net().to(i).arrival_time();
+            slew_violations0.at(i) = max(numeric_limits<Transitions<double> >::zero(), tp->net().to(i).slew() - _max_transition);
+        }
+
+        // UPDATE GATE TIMING POINTS AND VIOLATIONS
         update_timing_points(tp);
 
-        Transitions<double> slewF = tp->slew();
-        Transitions<double> arrival_timeF = tp->arrival_time();
+        // IF CHANGES, PUSH FANOUTS
+        vector<Transitions<double> > slewsF(tp->net().fanouts_size());
+        vector<Transitions<double> > arrival_timesF(slewsF);
 
-        const bool changed = abs(slewF - slew0).getMax() > Traits::STD_THRESHOLD || abs(arrival_timeF - arrival_time0).getMax() > Traits::STD_THRESHOLD;
-        if(changed)
+        for(int i = 0; i < slewsF.size(); i++)
         {
-            for(int i = 0; i < tp->net().fanouts_size(); i++)
+            slewsF.at(i) = tp->net().to(i).slew();
+            arrival_timesF.at(i) = tp->net().to(i).arrival_time();
+
+            const bool changed =
+                    abs(slewsF.at(i) - slews0.at(i)).getMax() > Traits::STD_THRESHOLD ||
+                    abs(arrival_timesF.at(i) - arrival_timesF.at(i)).getMax() > Traits::STD_THRESHOLD;
+
+            if(changed)
             {
                 Timing_Point * input_tp_of_fanout = &tp->net().to(i);
+                if( tp->net().to(i).is_PO() )
+                    continue;
+
                 Timing_Point * output_tp_of_fanout = &tp->net().to(i).arc().to();
                 if(input_tp_of_fanout->is_input_pin() && inserted.insert(output_tp_of_fanout).second)
                     pq.push(output_tp_of_fanout);
@@ -426,7 +451,10 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
         }
     }
 
-    for (int i = _points.size() - 1 ; i >= _first_PO_index; --i) {
+    // UPDATE PO SLACKS, TNS AND CRITICAL PATH VALUES
+    for (int i = _points.size() - 1 ; i >= _first_PO_index; --i)
+    {
+        update_timing(i);
         update_slacks(i);
     }
 
@@ -440,16 +468,19 @@ void Timing_Analysis::update_timing_points(const Timing_Point *output_timing_poi
 
     _dirty.at(_points.at(output_timing_point_index).gate_number()) = false;
 
-
     while (input_timing_point_index < _points.size())
     {
         if(output_timing_point->gate_number() != _points.at(input_timing_point_index).gate_number())
             break;
+        this->remove_violations(input_timing_point_index);
         this->update_timing(input_timing_point_index);
+        this->update_violations(input_timing_point_index);
         input_timing_point_index--;
     }
 
+    this->remove_violations(input_timing_point_index);
     this->update_timing(output_timing_point_index);
+    this->update_violations(output_timing_point_index);
 }
 
 bool Timing_Analysis::option(const int gate_index, const int option_number)
@@ -512,10 +543,7 @@ void Timing_Analysis::update_slacks(const int timing_point_index)
     if( timing_point.is_PI_input() || timing_point.is_reg_input() ) // doesn't matter
         return;
     if( timing_point.is_input_pin() )
-    {
         required_time = (timing_point.arc().to().required_time() - timing_point.arc().delay()).getReversed();
-        _slew_violations += max(numeric_limits<Transitions<double> >::zero(), timing_point.slew() - _max_transition);
-    }
     else if( timing_point.is_PO() )
         required_time = _target_delay;
     else if( timing_point.is_output_pin() || timing_point.is_PI() )
@@ -530,7 +558,42 @@ void Timing_Analysis::update_slacks(const int timing_point_index)
     if(timing_point.update_slack(required_time).getMin() < 0 && timing_point.is_PO())
     {
         _total_violating_POs++;
-        _total_negative_slack -= timing_point.slack();
+        _total_negative_slack -= min(numeric_limits<Transitions<double> >::zero(), timing_point.slack());
+    }
+}
+
+void Timing_Analysis::remove_violations(const int timing_point_index)
+{
+    Timing_Point & timing_point = _points.at(timing_point_index);
+    if(timing_point.is_input_pin() || timing_point.is_PI_input() || timing_point.is_reg_input())
+    {
+        _slew_violations -= max(numeric_limits<Transitions<double> >::zero(), timing_point.slew() - _max_transition);
+    }
+    else if(timing_point.is_output_pin() || timing_point.is_PI())
+    {
+        const LibertyCellInfo & cell_info = liberty_cell_info(timing_point.gate_number());
+        _capacitance_violations -= max(numeric_limits<Transitions<double> >::zero(), (timing_point.ceff() - cell_info.pins.front().maxCapacitance));
+    }
+    else if(timing_point.is_PO())
+    {
+    }
+}
+
+void Timing_Analysis::update_violations(const int timing_point_index)
+{
+    Timing_Point & timing_point = _points.at(timing_point_index);
+
+    if(timing_point.is_input_pin() || timing_point.is_PI_input() || timing_point.is_reg_input())
+    {
+        _slew_violations += max(numeric_limits<Transitions<double> >::zero(), timing_point.slew() - _max_transition);
+    }
+    else if(timing_point.is_output_pin() || timing_point.is_PI())
+    {
+        const LibertyCellInfo & cell_info = liberty_cell_info(timing_point.gate_number());
+        _capacitance_violations += max(numeric_limits<Transitions<double> >::zero(), (timing_point.ceff() - cell_info.pins.front().maxCapacitance));
+    }
+    else if(timing_point.is_PO())
+    {
     }
 }
 
@@ -552,22 +615,13 @@ void Timing_Analysis::update_timing(const int timing_point_index)
         if( is_the_first_input_pin_of_a_gate )
         {
             assert(output_pin.gate_number() < _dirty.size());
-            _dirty[output_pin.gate_number()] = true;
+            _dirty.at(output_pin.gate_number()) = true;
             output_pin.clear_timing_info();
             output_net.wire_delay_model()->clear();
         }
 
         const Transitions<double> ceff_by_this_timing_arc = output_net.wire_delay_model()->simulate(cell_info, timing_arc.arc_number(), timing_point.slew(), timing_point.is_PI_input());
         output_pin.ceff(max(output_pin.ceff(), ceff_by_this_timing_arc));
-
-        //            if(_max_ceff.find(output_pin.name()) == _max_ceff.end())
-        //                _max_ceff[output_pin.name()] = ceff_by_this_timing_arc;
-        //            else
-        //                _max_ceff[output_pin.name()] = max(_max_ceff.at(output_pin.name()), ceff_by_this_timing_arc);
-        //            if(_min_ceff.find(output_pin.name()) == _min_ceff.end())
-        //                _min_ceff[output_pin.name()] = ceff_by_this_timing_arc;
-        //            else
-        //                _min_ceff[output_pin.name()] = max(_min_ceff.at(output_pin.name()), ceff_by_this_timing_arc);
 
         const Transitions<double> current_arc_delay_at_output_pin = calculate_timing_arc_delay(timing_arc, timing_point.slew(), ceff_by_this_timing_arc);
         const Transitions<double> current_arc_slew_at_output_pin = output_net.wire_delay_model()->root_slew(timing_arc.arc_number());
@@ -582,22 +636,9 @@ void Timing_Analysis::update_timing(const int timing_point_index)
         output_pin.arrival_time(max_arrival_time); // NEGATIVE UNATE
         output_pin.slew(max_slew);
 
-        //            assert(output_pin.arrival_time().getRise() >= timing_point.arrival_time().getFall() + timing_arc.delay().getRise());
-        //            assert(output_pin.arrival_time().getFall() >= timing_point.arrival_time().getRise() + timing_arc.delay().getFall());
-
-        //            assert(output_pin.slew().getRise() >= timing_arc.slew().getRise());
-        //            assert(output_pin.slew().getFall() >= timing_arc.slew().getFall());
-
-
-
     }
     else if(timing_point.is_output_pin() || timing_point.is_PI())
     {
-        // SETTING OUTPUT PIN VIOLATIONS
-        const LibertyCellInfo & cell_info = liberty_cell_info(timing_point.gate_number());
-        _capacitance_violations += max(numeric_limits<Transitions<double> >::zero(), (timing_point.ceff() - cell_info.pins.front().maxCapacitance));
-
-        //            timing_point.ceff(_max_ceff.at(timing_point.name()));
         Timing_Net & output_net = timing_point.net();
 
         for(size_t i = 0; i < output_net.fanouts_size(); i++)
@@ -608,12 +649,6 @@ void Timing_Analysis::update_timing(const int timing_point_index)
 
             fanout_timing_point.arrival_time(timing_point.arrival_time() + output_net.wire_delay_model()->delay_at_fanout_node(fanout_timing_point.name()));
             fanout_timing_point.slew(output_net.wire_delay_model()->slew_at_fanout_node(fanout_timing_point.name()));
-
-
-            //                assert(fanout_timing_point.arrival_time().getRise() >= timing_point.arrival_time().getRise());
-            //                assert(fanout_timing_point.arrival_time().getFall() >= timing_point.arrival_time().getFall());
-            //                assert(fanout_timing_point.slew().getRise() >= timing_point.slew().getRise());
-            //                assert(fanout_timing_point.slew().getFall() >= timing_point.slew().getFall());
         }
     }
     else if(timing_point.is_PO())
@@ -817,6 +852,17 @@ void Timing_Analysis::report_timing()
 
 }
 
+void Timing_Analysis::print_PO_arrivals()
+{
+    for(int i = _first_PO_index; i < _points.size(); i++)
+    {
+        Timing_Point & tp = _points.at(i);
+        assert(tp.is_PO());
+
+        cout << tp.name() << " arr " << tp.arrival_time() << " req " << tp.required_time() << " slack " << tp.slack() << " slew " << tp.slew() << endl;
+    }
+}
+
 void Timing_Analysis::print_effective_capacitances()
 {
     //        cout << "-- Effective Capacitances" << endl;
@@ -1013,6 +1059,15 @@ pair<pair<int, int>, pair<Transitions<double>, Transitions<double> > > Timing_An
         }
     }
     return make_pair(make_pair(first_point_index, first_logic_level), make_pair(tool_ceff, pt_ceff));
+}
+
+void Timing_Analysis::print_gates()
+{
+    for(int i = 0; i < _verilog.size(); i++)
+    {
+        if(!_options.at(_verilog.at(i).first).is_dont_touch())
+            cout << _verilog.at(i).first << "\t" << _verilog.at(i).second << endl;
+    }
 }
 
 
@@ -1367,7 +1422,7 @@ bool Option::is_dont_touch() const
 
 bool ita_comparator::operator()(Timing_Point *a, Timing_Point *b)
 {
-    return a->logic_level() < b->logic_level();
+    return a->logic_level() >= b->logic_level();
 }
 
 }
