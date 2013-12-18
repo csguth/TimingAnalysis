@@ -99,19 +99,32 @@ int main(int argc, char const *argv[])
 
 //    ta.print_PO_arrivals();
 
+    int previous_option = ta.option(518).option_index();
 
     cout << "changing gate 518 to option 15 ... \n\n\n";
-//    assert(ta.option(518, 15));
     ta.incremental_timing_analysis(518, 15);
+    ta.write_timing_file("incremental.timing");
+
     ta.print_circuit_info();
 
-//    ta.print_PO_arrivals();
+    cout << "sta!\n\n\n";
+    ta.full_timing_analysis();
+    if(ta.check_timing_file("incremental.timing"))
+        cout << "ITA is OK!!" << endl;
+
+    cout << "changing gate 518 to previous option ... \n\n\n";
+
+    ta.incremental_timing_analysis(518, previous_option);
+    ta.write_timing_file("voltando.timing");
+
+    ta.print_circuit_info();
 
 
     cout << "sta!\n\n\n";
     ta.full_timing_analysis();
     ta.print_circuit_info();
-
+    if(ta.check_timing_file("voltando.timing"))
+        cout << "ITA is OK!!" << endl;
 
     return 0;
 }

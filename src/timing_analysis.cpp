@@ -113,7 +113,7 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
                 //                delay_model = new Lumped_Elmore_No_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
                 //                delay_model = new Ceff_Elmore_No_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
 
-                //                delay_model = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name), driver_timing_point.name());
+//                                delay_model = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name), driver_timing_point.name());
 
                 //                delay_model = new Ceff_Elmore_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
                 //                delay_model = new Ceff_Without_Wire_Delay_And_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
@@ -1400,7 +1400,6 @@ bool Timing_Analysis::check_timing_file(const string timing_file)
 
 
     if(max_arrival_time_error.getMax() > Traits::STD_THRESHOLD
-            || max_slack_error.getMax() > Traits::STD_THRESHOLD
             || max_slew_error.getMax() > Traits::STD_THRESHOLD)
         return false;
 
