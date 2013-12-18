@@ -114,7 +114,7 @@ namespace Timing_Analysis
         // STATIC TIMING ANALYSIS
         void update_timing(const int timing_point_index);
         void update_slacks(const int timing_point_index);
-        void remove_violations(const int timing_point_index);
+        void clear_violations(const int timing_point_index);
         void update_violations(const int timing_point_index);
 
 		// TOPOLOGY INIT

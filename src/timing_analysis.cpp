@@ -472,13 +472,13 @@ void Timing_Analysis::update_timing_points(const Timing_Point *output_timing_poi
     {
         if(output_timing_point->gate_number() != _points.at(input_timing_point_index).gate_number())
             break;
-        this->remove_violations(input_timing_point_index);
+        this->clear_violations(input_timing_point_index);
         this->update_timing(input_timing_point_index);
         this->update_violations(input_timing_point_index);
         input_timing_point_index--;
     }
 
-    this->remove_violations(input_timing_point_index);
+    this->clear_violations(output_timing_point_index);
     this->update_timing(output_timing_point_index);
     this->update_violations(output_timing_point_index);
 }
@@ -562,7 +562,7 @@ void Timing_Analysis::update_slacks(const int timing_point_index)
     }
 }
 
-void Timing_Analysis::remove_violations(const int timing_point_index)
+void Timing_Analysis::clear_violations(const int timing_point_index)
 {
     Timing_Point & timing_point = _points.at(timing_point_index);
     if(timing_point.is_input_pin() || timing_point.is_PI_input() || timing_point.is_reg_input())
@@ -1265,7 +1265,9 @@ size_t Timing_Analysis::number_of_options(const int gate_index)
 
 bool Timing_Analysis::has_capacitance_violations(const Timing_Point &tp)
 {
-    if(tp.ceff().getMax() > liberty_cell_info(tp.gate_number()).pins.front().maxCapacitance)
+//    if(tp.ceff().getMax() > liberty_cell_info(tp.gate_number()).pins.front().maxCapacitance)
+//        return true;
+    if(tp.net().wire_delay_model()->lumped_capacitance() > liberty_cell_info(tp.gate_number()).pins.front().maxCapacitance)
         return true;
     return false;
 }
