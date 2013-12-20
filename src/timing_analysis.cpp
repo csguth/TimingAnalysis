@@ -384,6 +384,7 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
 
     _total_negative_slack = numeric_limits<Transitions<double> >::zero();
     _critical_path = numeric_limits<Transitions<double> >::zero();
+    _total_violating_POs = 0;
 
     set<Timing_Point*> inserted;
     if(inserted.insert(timing_point).second)
@@ -402,9 +403,11 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
         input_pin_index--;
     }
 
+//    cout << " -- timing points being updated: " << endl;
     while(!pq.empty())
     {
         Timing_Point * tp = pq.top();
+//        cout << "   " << tp->name() << endl;
 
         assert(tp->is_output_pin() || tp->is_PI());
 
@@ -450,10 +453,13 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
             }
         }
     }
+//    cout << "  --" << endl;
 
     // UPDATE PO SLACKS, TNS AND CRITICAL PATH VALUES
-    for (int i = _points.size() - 1 ; i >= _first_PO_index; --i)
+    for (int i = 0; i < _points.size(); i++)
     {
+        if(!_points.at(i).is_PO())
+            continue;
         update_timing(i);
         update_slacks(i);
     }
@@ -464,18 +470,23 @@ void Timing_Analysis::update_timing_points(const Timing_Point *output_timing_poi
 {
 
     unsigned output_timing_point_index = output_timing_point - &_points.front();
-    unsigned input_timing_point_index = output_timing_point_index - 1;
+    unsigned first_input_timing_point_index = output_timing_point_index;
 
     _dirty.at(_points.at(output_timing_point_index).gate_number()) = false;
 
-    while (input_timing_point_index < _points.size())
+    while (--first_input_timing_point_index < _points.size())
     {
-        if(output_timing_point->gate_number() != _points.at(input_timing_point_index).gate_number())
+        if(output_timing_point->gate_number() != _points.at(first_input_timing_point_index).gate_number())
             break;
-        this->clear_violations(input_timing_point_index);
-        this->update_timing(input_timing_point_index);
-        this->update_violations(input_timing_point_index);
-        input_timing_point_index--;
+    }
+    first_input_timing_point_index++;
+
+    for(int i = first_input_timing_point_index; i < output_timing_point_index; i++)
+    {
+        output_timing_point->gate_number() == _points.at(i).gate_number();
+        this->clear_violations(i);
+        this->update_timing(i);
+        this->update_violations(i);
     }
 
     this->clear_violations(output_timing_point_index);
@@ -644,9 +655,6 @@ void Timing_Analysis::update_timing(const int timing_point_index)
         for(size_t i = 0; i < output_net.fanouts_size(); i++)
         {
             Timing_Point & fanout_timing_point = output_net.to(i);
-
-            int fanout_number = &fanout_timing_point - &_points.front();
-
             fanout_timing_point.arrival_time(timing_point.arrival_time() + output_net.wire_delay_model()->delay_at_fanout_node(fanout_timing_point.name()));
             fanout_timing_point.slew(output_net.wire_delay_model()->slew_at_fanout_node(fanout_timing_point.name()));
         }
@@ -666,9 +674,11 @@ const Transitions<double> Timing_Analysis::calculate_timing_arc_delay(const Timi
     return _interpolator->interpolate(riseLUT, fallLUT, ceff, transition, cellInfo.isSequential ? NON_UNATE : NEGATIVE_UNATE, timing_arc.from()->is_PI_input());
 }
 
-const LibertyCellInfo &Timing_Analysis::liberty_cell_info(const int gate_index) const
+const LibertyCellInfo &Timing_Analysis::liberty_cell_info(int gate_index, int option_index) const
 {
-    return _library->getCellInfo(_options.at(gate_index)._footprint_index, _options.at(gate_index)._option_index);
+    if(option_index == -1)
+        return _library->getCellInfo(_options.at(gate_index)._footprint_index, _options.at(gate_index)._option_index);
+    return _library->getCellInfo(_options.at(gate_index)._footprint_index, option_index);
 }
 
 void Timing_Analysis::print_info()
@@ -1007,6 +1017,11 @@ set<int> Timing_Analysis::timing_points_in_critical_path()
 bool Timing_Analysis::has_timing_violations()
 {
     return _total_negative_slack.getFall() != 0.0f || _total_negative_slack.getRise() != 0.0f;
+}
+
+int Timing_Analysis::Timing_Analysis::output_timing_point_index(int gate_number)
+{
+    return _gate_index_to_timing_point_index.at(gate_number).second;
 }
 
 pair<pair<int, int>, pair<Transitions<double>, Transitions<double> > > Timing_Analysis::check_ceffs(double precision)

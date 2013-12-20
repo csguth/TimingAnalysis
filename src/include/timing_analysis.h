@@ -108,9 +108,6 @@ namespace Timing_Analysis
 
         void initialize_timing_data();
 
-        // PRIVATE GETTERS
-        const Transitions<double> calculate_timing_arc_delay(const Timing_Arc & timing_arc, const Transitions<double> transition, const Transitions<double> ceff);
-
         // STATIC TIMING ANALYSIS
         void update_timing(const int timing_point_index);
         void update_slacks(const int timing_point_index);
@@ -155,7 +152,7 @@ namespace Timing_Analysis
         double pin_capacitance(const int timing_point_index) const;
         double pin_load(const int timing_point_index) const;
         const Option & option(const int gate_number);
-        const LibertyCellInfo & liberty_cell_info(const int gate_index) const;
+        const LibertyCellInfo & liberty_cell_info(int gate_index, int option_index = -1) const;
 
         size_t number_of_options(const int gate_index);
 
@@ -166,7 +163,7 @@ namespace Timing_Analysis
         Transitions<double> critical_path() const { return _critical_path; }
         Transitions<double> capacitance_violations() const { return _capacitance_violations; }
         Transitions<double> slew_violations() const { return _slew_violations; }
-
+        int output_timing_point_index(int gate_number);
 
         bool has_capacitance_violations(const Timing_Point & tp);
         bool has_slew_violations(const Timing_Point & tp);
@@ -176,13 +173,14 @@ namespace Timing_Analysis
 
         bool has_timing_violations();
 
+        const Transitions<double> calculate_timing_arc_delay(const Timing_Arc & timing_arc, const Transitions<double> transition, const Transitions<double> ceff);
 
 
         int first_PO_index() const { return _first_PO_index; }
 
 		// SETTERS
         bool option(const int gate_index, const int option);
-
+        void target_delay(Transitions<double> target_delay) { _target_delay = target_delay; }
         void set_all_gates_to_max_size();
         void set_all_gates_to_min_size();
 
