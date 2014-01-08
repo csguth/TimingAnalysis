@@ -1412,5 +1412,41 @@ const Prime_Time_Output_Parser::Prime_Time_Output Prime_Time_Output_Parser::pars
 	}
 
 	is.close();
-	return output;
+    return output;
+}
+
+const Prime_Time_Output_Parser::Ceffs Prime_Time_Output_Parser::parse_ceffs_file(const std::string filename)
+{
+    Ceffs output;
+    vector<string> tokens;
+    is.open(filename.c_str(), istream::in);
+    bool valid = readLineAsTokens(is, tokens, true);
+    while( valid )
+    {
+        if(!tokens.empty())
+        {
+            if(tokens.size() == 5)
+            {
+                output._pins.push_back(Pin_Ceff());
+                output._pins.back().pin_name = tokens.at(0) + ":" + tokens.at(2);
+                output._pins.back().ceff = Transitions<double>(atof(tokens.at(3).c_str()), atof(tokens.at(4).c_str()));
+
+//                cout << output._pins.back().pin_name << " ceff " << output._pins.back().ceff << endl;
+            }
+            else if(tokens.size() == 3)
+            {
+                output._pins.push_back(Pin_Ceff());
+                output._pins.back().pin_name = tokens.at(0);
+                output._pins.back().ceff = Transitions<double>(atof(tokens.at(1).c_str()), atof(tokens.at(2).c_str()));
+
+//                cout << output._pins.back().pin_name << " ceff " << output._pins.back().ceff << endl;
+            }
+            else
+                assert(false);
+        }
+        valid = readLineAsTokens(is, tokens, true);
+    }
+
+    is.close();
+    return output;
 }

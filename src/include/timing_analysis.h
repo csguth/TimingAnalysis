@@ -142,6 +142,7 @@ namespace Timing_Analysis
 
         size_t timing_points_size() { return _points.size(); }
         const Timing_Point & timing_point( const int i ) { return _points.at(i); }
+        const Timing_Point & timing_point( const string & name ) { return _points.at(_pin_name_to_timing_point_index.at(name)); }
 
         size_t timing_arcs_size() { return _arcs.size(); }
         const Timing_Arc & timing_arc( const int i ) { return _arcs.at(i); }

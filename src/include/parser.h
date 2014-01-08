@@ -68,8 +68,24 @@ public:
 		const Pin_Timing & pin(const size_t i) const { return _pins.at(i); }
 		const Port_Timing & port(const size_t i) const { return _ports.at(i); }
 	};
+
+    struct Pin_Ceff
+    {
+        string pin_name;
+        Transitions<double> ceff;
+    };
+
+    class Ceffs {
+        friend class Prime_Time_Output_Parser;
+        vector<Pin_Ceff> _pins;
+    public:
+        size_t pins_size() const { return _pins.size(); }
+        const Pin_Ceff & pin(const size_t i) const { return _pins.at(i); }
+    };
+
     Prime_Time_Output_Parser(){}
-	const Prime_Time_Output parse_prime_time_output_file(const string filename);
+    const Prime_Time_Output parse_prime_time_output_file(const string filename);
+    const Ceffs parse_ceffs_file(const string filename);
 };
 
 

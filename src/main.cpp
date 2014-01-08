@@ -66,65 +66,13 @@ int main(int argc, char const *argv[])
     const Parasitics parasitics = sp.readFile(files.spef);
     const Design_Constraints constraints = dcp.readFile(files.designConstraints);
 
+
+
+
     Timing_Analysis::Timing_Analysis ta(netlist, &library, &parasitics, &constraints);
-    ta.full_timing_analysis();
-    cout << "Slew Violations: " << ta.slew_violations() << endl;
-    cout << "Capacitance Violations: " << ta.capacitance_violations() << endl;
-    cout << "TNS: " << ta.total_negative_slack() << endl;
-
-    //    ta.print_gates();
-
-    /*
-618	g1661_u0
-614	g1680_u0
-571	g1681_u0
-613	g1695_u0
-466	g1696_u0
-527	g1697_u0
-615	g1702_u0
-605	g1703_u0
-460	g1707_u0
-603	g1709_u0
-518	g1711_u0
-365	g1717_u0
-454	g1718_u0
-389	g1719_u0
-     */
-
-
-
+//    ta.full_timing_analysis();
+    ta.call_prime_time();
     ta.print_circuit_info();
-
-//    cout << "PO arrival times\n\n\n";
-
-//    ta.print_PO_arrivals();
-
-    int previous_option = ta.option(518).option_index();
-
-    cout << "changing gate 518 to option 15 ... \n\n\n";
-    ta.incremental_timing_analysis(518, 15);
-    ta.write_timing_file("incremental.timing");
-
-    ta.print_circuit_info();
-
-    cout << "sta!\n\n\n";
-    ta.full_timing_analysis();
-    if(ta.check_timing_file("incremental.timing"))
-        cout << "ITA is OK!!" << endl;
-
-    cout << "changing gate 518 to previous option ... \n\n\n";
-
-    ta.incremental_timing_analysis(518, previous_option);
-    ta.write_timing_file("voltando.timing");
-
-    ta.print_circuit_info();
-
-
-    cout << "sta!\n\n\n";
-    ta.full_timing_analysis();
-    ta.print_circuit_info();
-    if(ta.check_timing_file("voltando.timing"))
-        cout << "ITA is OK!!" << endl;
 
     return 0;
 }

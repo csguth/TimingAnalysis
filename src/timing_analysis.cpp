@@ -109,7 +109,7 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
             {
                 delay_model = new Ceff_Elmore_Slew_Degradation_PURI(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
 
-                //                delay_model = new Lumped_Elmore_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
+//                                delay_model = new Lumped_Elmore_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
                 //                delay_model = new Lumped_Elmore_No_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
                 //                delay_model = new Ceff_Elmore_No_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
 
@@ -377,6 +377,7 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
     int tp_index = _gate_index_to_timing_point_index.at(gate_number).second;
 
     Timing_Point * timing_point = &_points.at(tp_index);
+
     assert(timing_point->is_output_pin());
     assert(timing_point->gate_number() == gate_number);
 
@@ -403,15 +404,16 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
         input_pin_index--;
     }
 
+    int updated = 0;
 //    cout << " -- timing points being updated: " << endl;
     while(!pq.empty())
     {
         Timing_Point * tp = pq.top();
-//        cout << "   " << tp->name() << endl;
 
         assert(tp->is_output_pin() || tp->is_PI());
 
         pq.pop();
+        updated++;
 
         // SAVE PREVIOUS TIMING INFORMATION
         vector<Transitions<double> > slews0(tp->net().fanouts_size());
@@ -439,27 +441,30 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
 
             const bool changed =
                     abs(slewsF.at(i) - slews0.at(i)).getMax() > Traits::STD_THRESHOLD ||
-                    abs(arrival_timesF.at(i) - arrival_timesF.at(i)).getMax() > Traits::STD_THRESHOLD;
+                    abs(arrival_timesF.at(i) - arrival_times0.at(i)).getMax() > Traits::STD_THRESHOLD;
 
             if(changed)
             {
                 Timing_Point * input_tp_of_fanout = &tp->net().to(i);
-                if( tp->net().to(i).is_PO() )
+                if( input_tp_of_fanout->is_PO() )
+                {
                     continue;
+                }
 
                 Timing_Point * output_tp_of_fanout = &tp->net().to(i).arc().to();
                 if(input_tp_of_fanout->is_input_pin() && inserted.insert(output_tp_of_fanout).second)
+                {
                     pq.push(output_tp_of_fanout);
+                }
             }
         }
     }
-//    cout << "  --" << endl;
+//    cout << "  -- total = " << updated << endl;
 
     // UPDATE PO SLACKS, TNS AND CRITICAL PATH VALUES
-    for (int i = 0; i < _points.size(); i++)
+    for (int i = _first_PO_index; i < _points.size(); i++)
     {
-        if(!_points.at(i).is_PO())
-            continue;
+
         update_timing(i);
         update_slacks(i);
     }
@@ -468,22 +473,14 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
 
 void Timing_Analysis::update_timing_points(const Timing_Point *output_timing_point)
 {
-
     unsigned output_timing_point_index = output_timing_point - &_points.front();
-    unsigned first_input_timing_point_index = output_timing_point_index;
+    unsigned first_input_timing_point_index = _gate_index_to_timing_point_index.at(output_timing_point->gate_number()).first;
 
     _dirty.at(_points.at(output_timing_point_index).gate_number()) = false;
 
-    while (--first_input_timing_point_index < _points.size())
-    {
-        if(output_timing_point->gate_number() != _points.at(first_input_timing_point_index).gate_number())
-            break;
-    }
-    first_input_timing_point_index++;
-
     for(int i = first_input_timing_point_index; i < output_timing_point_index; i++)
     {
-        output_timing_point->gate_number() == _points.at(i).gate_number();
+        assert(output_timing_point->gate_number() == _points.at(i).gate_number());
         this->clear_violations(i);
         this->update_timing(i);
         this->update_violations(i);
@@ -601,7 +598,8 @@ void Timing_Analysis::update_violations(const int timing_point_index)
     else if(timing_point.is_output_pin() || timing_point.is_PI())
     {
         const LibertyCellInfo & cell_info = liberty_cell_info(timing_point.gate_number());
-        _capacitance_violations += max(numeric_limits<Transitions<double> >::zero(), (timing_point.ceff() - cell_info.pins.front().maxCapacitance));
+//        _capacitance_violations += max(numeric_limits<Transitions<double> >::zero(), (timing_point.ceff() - cell_info.pins.front().maxCapacitance));
+        _capacitance_violations += max(double(0.0f), (timing_point.net().wire_delay_model()->lumped_capacitance() - cell_info.pins.front().maxCapacitance));
     }
     else if(timing_point.is_PO())
     {
@@ -1106,6 +1104,7 @@ bool Timing_Analysis::validate_with_prime_time()
 void Timing_Analysis::call_prime_time()
 {
     const string timing_file = Traits::ispd_contest_root + "/" + Traits::ispd_contest_benchmark + "/" + Traits::ispd_contest_benchmark + ".timing";
+    const string ceff_file = Traits::ispd_contest_root + "/" + Traits::ispd_contest_benchmark + "/" + Traits::ispd_contest_benchmark + ".ceff";
 
     get_sizes_vector();
 
@@ -1120,8 +1119,18 @@ void Timing_Analysis::call_prime_time()
     cout << "Reading Timing Information" << endl;
     Prime_Time_Output_Parser prime_time_parser;
     const Prime_Time_Output_Parser::Prime_Time_Output prime_time_output = prime_time_parser.parse_prime_time_output_file(timing_file);
+    const Prime_Time_Output_Parser::Ceffs ceffs = prime_time_parser.parse_ceffs_file(ceff_file);
 
     cout << "Setting Timing Information" << endl;
+
+    // setting ceffs
+    for(size_t i = 0; i < ceffs.pins_size(); i++)
+    {
+        const Prime_Time_Output_Parser::Pin_Ceff pin_ceff = ceffs.pin(i);
+        Timing_Point & timing_point = _points.at(_pin_name_to_timing_point_index.at(pin_ceff.pin_name));
+        assert(timing_point.is_output_pin() || timing_point.is_PI());
+        timing_point.ceff(pin_ceff.ceff);
+    }
 
     for(size_t i = 0; i < prime_time_output.pins_size(); i++)
     {
@@ -1130,6 +1139,8 @@ void Timing_Analysis::call_prime_time()
         timing_point.slack(pin_timing.slack);
         timing_point.slew(pin_timing.slew);
         timing_point.arrival_time(pin_timing.arrival_time);
+
+        update_violations(_pin_name_to_timing_point_index.at(pin_timing.pin_name));
 
         if(timing_point.is_PO() /* pode ser o pino d de um registrador */)
         {
@@ -1151,6 +1162,8 @@ void Timing_Analysis::call_prime_time()
         timing_point.slack(port_timing.slack);
         timing_point.slew(port_timing.slew);
         timing_point.arrival_time(port_timing.arrival_window);
+
+        update_violations(_pin_name_to_timing_point_index.at(port_timing.port_name));
 
         //            cout << "port timing " << timing_point << endl;
 
@@ -1405,13 +1418,13 @@ bool Timing_Analysis::check_timing_file(const string timing_file)
     average_port_slack_error /= prime_time_output.ports_size();
     average_port_slew_error /= prime_time_output.ports_size();
 
-    cout << "max slack error " << max_slack_error << endl;
-    cout << "max slew error " << max_slew_error << endl;
-    cout << "max arrival error " << max_arrival_time_error << endl;
+//    cout << "max slack error " << max_slack_error << endl;
+//    cout << "max slew error " << max_slew_error << endl;
+//    cout << "max arrival error " << max_arrival_time_error << endl;
 
-    cout << "min slack error " << min_slack_error << endl;
-    cout << "min slew error " << min_slew_error << endl;
-    cout << "min arrival error " << min_arrival_time_error << endl;
+//    cout << "min slack error " << min_slack_error << endl;
+//    cout << "min slew error " << min_slew_error << endl;
+//    cout << "min arrival error " << min_arrival_time_error << endl;
 
 
     if(max_arrival_time_error.getMax() > Traits::STD_THRESHOLD
