@@ -132,7 +132,7 @@ namespace Timing_Analysis
 
         //
 
-        void call_prime_time();
+        void call_prime_time(double target_delay_factor = 1.0f);
         void full_timing_analysis();
         void incremental_timing_analysis(int gate_number, int new_option);
         void update_timing_points(const Timing_Point * output_timing_point);

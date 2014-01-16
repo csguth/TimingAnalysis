@@ -115,7 +115,7 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
 
 //                                delay_model = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name), driver_timing_point.name());
 
-                //                delay_model = new Ceff_Elmore_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
+//                                delay_model = new Ceff_Elmore_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
                 //                delay_model = new Ceff_Without_Wire_Delay_And_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
                 //                delay_model = new Reduced_Pi(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
             }
@@ -1101,7 +1101,7 @@ bool Timing_Analysis::validate_with_prime_time()
     return check_timing_file(timing_file);
 }
 
-void Timing_Analysis::call_prime_time()
+void Timing_Analysis::call_prime_time(double target_delay_factor)
 {
     const string timing_file = Traits::ispd_contest_root + "/" + Traits::ispd_contest_benchmark + "/" + Traits::ispd_contest_benchmark + ".timing";
     const string ceff_file = Traits::ispd_contest_root + "/" + Traits::ispd_contest_benchmark + "/" + Traits::ispd_contest_benchmark + ".ceff";
@@ -1145,6 +1145,7 @@ void Timing_Analysis::call_prime_time()
         if(timing_point.is_PO() /* pode ser o pino d de um registrador */)
         {
             _critical_path = max(_critical_path, timing_point.arrival_time());
+            timing_point.slack(timing_point.slack() * target_delay_factor);
             if(timing_point.slack().getMin() < 0)
             {
                 _total_negative_slack -= timing_point.slack();
@@ -1171,6 +1172,7 @@ void Timing_Analysis::call_prime_time()
         {
             timing_point.arrival_time(_target_delay - timing_point.slack());
             _critical_path = max(_critical_path, _target_delay - timing_point.slack());
+            timing_point.slack(timing_point.slack() * target_delay_factor);
             if(timing_point.slack().getMin() < 0)
             {
                 _total_negative_slack -= timing_point.slack();
@@ -1178,7 +1180,6 @@ void Timing_Analysis::call_prime_time()
             }
         }
     }
-
 }
 
 void Timing_Analysis::write_sizes_file(const string filename)

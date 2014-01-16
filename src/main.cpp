@@ -71,8 +71,55 @@ int main(int argc, char const *argv[])
 
     Timing_Analysis::Timing_Analysis ta(netlist, &library, &parasitics, &constraints);
 //    ta.full_timing_analysis();
-    ta.call_prime_time();
-    ta.print_circuit_info();
+//    ta.call_prime_time();
+//    ta.print_circuit_info();
 
+//    ta.full_timing_analysis();
+//    ta.print_circuit_info();
+    ta.full_timing_analysis();
+
+
+    for(int i = 0; i < ta.timing_points_size(); i++)
+    {
+        cout << ta.timing_point(i).name() << ",\t";
+    }
+    cout << endl;
+
+    cout << "[";
+    for(int i = 0; i < ta.timing_points_size(); i++)
+    {
+//        cout << i+1 << "\t";
+        const Timing_Analysis::Timing_Point & tp = ta.timing_point(i);
+        for(int j = 0; j < ta.timing_points_size(); j++)
+        {
+            if(tp.is_input_pin())
+            {
+                const Timing_Analysis::Timing_Arc & arc = tp.arc();
+                cout << (&arc.to() - &ta.timing_point(0) == j ? arc.to().arrival_time().getRise()-tp.arrival_time().getRise() : 0) << (j == ta.timing_points_size()-1 && i != ta.timing_points_size()-1?";\n":",");
+            } else if(tp.is_reg_input() || tp.is_PI_input())
+            {
+                const Timing_Analysis::Timing_Arc & arc = tp.arc();
+                cout << (&arc.to() - &ta.timing_point(0) == j ? arc.to().arrival_time().getRise()-tp.arrival_time().getRise() : 0) << (j == ta.timing_points_size()-1 && i != ta.timing_points_size()-1?";\n":",");
+            } else if(tp.is_output_pin() || tp.is_PI())
+            {
+                const Timing_Analysis::Timing_Net & net = tp.net();
+                for(int k = 0; k < net.fanouts_size(); k++)
+                    cout << (&net.to(k) - &ta.timing_point(0) == j ? net.to(k).arrival_time().getRise()-tp.arrival_time().getRise() : 0) << (j == ta.timing_points_size()-1 && i != ta.timing_points_size()-1?";\n":",");
+            }
+            else if(tp.is_PO())
+            {
+                if(i == ta.timing_points_size() - 1)
+                    cout << 0 << (j == ta.timing_points_size()-1?"":",");
+                else
+                    cout << 0 << (j == ta.timing_points_size()-1?";\n":",");
+            }
+        }
+
+    }
+
+    cout << "]\n";
+
+
+    ta.print_circuit_info();
     return 0;
 }
