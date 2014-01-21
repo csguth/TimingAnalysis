@@ -7,7 +7,6 @@ libta_a_SOURCES = \
     $(sources_path)/configuration.cpp \
     $(sources_path)/design_constraints.cpp \
     $(sources_path)/liberty_library.cpp \
-    $(sources_path)/main.cpp \
     $(sources_path)/parser.cpp \
     $(sources_path)/slew_degradation_experiment.cpp \
     $(sources_path)/spef_net.cpp \
