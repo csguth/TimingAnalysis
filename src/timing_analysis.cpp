@@ -167,7 +167,7 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
         }
         else if(tp.is_input_pin() || tp.is_PO())
         {
-            tp.logic_level(tp.net().from()->logic_level() + 1);
+            tp.logic_level(tp.net().from().logic_level() + 1);
         } else if(tp.is_output_pin() || tp.is_PI())
         {
 
@@ -302,7 +302,7 @@ void Timing_Analysis::create_timing_arcs(const pair<size_t, size_t> tpIndexes, c
         // cout << "  PI timing arc " << points.at(tpIndexes.first).name << " -> " << points.at(tpIndexes.second).name << endl;
         _arcs.push_back(Timing_Arc(&_points.at(tpIndexes.first), &_points.at(tpIndexes.second), 0, _points.at(tpIndexes.first).gate_number()));
         _points.at(tpIndexes.first).arc(&_arcs.back());
-        assert(_arcs.back().from() == &_points.at(tpIndexes.first) && &_arcs.back().to() == &_points.at(tpIndexes.second));
+        assert(&_arcs.back().from() == &_points.at(tpIndexes.first) && &_arcs.back().to() == &_points.at(tpIndexes.second));
         // cout << "  PI timing arc OK" << endl;
     }
     else
@@ -314,7 +314,7 @@ void Timing_Analysis::create_timing_arcs(const pair<size_t, size_t> tpIndexes, c
                 // cout << "  timing arc " << points.at(j).name << " -> " << points.at(tpIndexes.second).name << endl;
                 _arcs.push_back(Timing_Arc(&_points.at(j), &_points.at(tpIndexes.second), j-tpIndexes.first, _points.at(j).gate_number()));
                 _points.at(j).arc(&_arcs.back());
-                assert(_arcs.back().from() == &_points.at(j) && &_arcs.back().to() == &_points.at(tpIndexes.second));
+                assert(&_arcs.back().from() == &_points.at(j) && &_arcs.back().to() == &_points.at(tpIndexes.second));
                 // cout << "  timing arc OK" << endl;
             }
         }
@@ -398,9 +398,9 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
     int input_pin_index = tp_index - 1;
     while(input_pin_index >= 0 && _points.at(input_pin_index).gate_number() == timing_point->gate_number())
     {
-        Timing_Point * fanin = _points.at(input_pin_index).net().from();
-        if(inserted.insert(fanin).second)
-            pq.push(fanin);
+        Timing_Point & fanin = _points.at(input_pin_index).net().from();
+        if(inserted.insert(&fanin).second)
+            pq.push(&fanin);
         input_pin_index--;
     }
 
@@ -669,7 +669,7 @@ const Transitions<double> Timing_Analysis::calculate_timing_arc_delay(const Timi
     const LibertyCellInfo & cellInfo = liberty_cell_info(timing_arc.gate_number());
     const LibertyLookupTable & fallLUT = cellInfo.timingArcs.at(timing_arc.arc_number()).fallDelay;
     const LibertyLookupTable & riseLUT = cellInfo.timingArcs.at(timing_arc.arc_number()).riseDelay;
-    return _interpolator->interpolate(riseLUT, fallLUT, ceff, transition, cellInfo.isSequential ? NON_UNATE : NEGATIVE_UNATE, timing_arc.from()->is_PI_input());
+    return _interpolator->interpolate(riseLUT, fallLUT, ceff, transition, cellInfo.isSequential ? NON_UNATE : NEGATIVE_UNATE, timing_arc.from().is_PI_input());
 }
 
 const LibertyCellInfo &Timing_Analysis::liberty_cell_info(int gate_index, int option_index) const
@@ -905,7 +905,7 @@ set<int> Timing_Analysis::timing_points_in_longest_path()
         const Timing_Point & tp = _points.at(current);
         if(tp.is_PO() || tp.is_input_pin())
         {
-            const int input_index = tp.net().from() - &_points[0];
+            const int input_index = &tp.net().from() - &_points[0];
             current = input_index;
         } else if(tp.is_output_pin())
         {
@@ -968,7 +968,7 @@ set<int> Timing_Analysis::timing_points_in_critical_path()
         const Timing_Point & tp = _points.at(current);
         if(tp.is_PO() || tp.is_input_pin())
         {
-            const int input_index = tp.net().from() - &_points[0];
+            const int input_index = &tp.net().from() - &_points[0];
             current = input_index;
         } else if(tp.is_output_pin())
         {

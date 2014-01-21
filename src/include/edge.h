@@ -38,9 +38,9 @@ namespace Timing_Analysis {
 
 
     public:
-        T * from() const
+        T & from() const
         {
-            return _from;
+            return *Edge<T>::_from;
         }
 
         size_t fanouts_size() const
