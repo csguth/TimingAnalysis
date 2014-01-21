@@ -19,9 +19,6 @@ Code Style
 
 ..... is a \<TAB\>
 
-To run
---------------
-./RunTimer \<BENCHMARK\> \<2012 or 2013\>
 
 
 
