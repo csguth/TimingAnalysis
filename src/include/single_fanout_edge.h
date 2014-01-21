@@ -12,7 +12,8 @@ namespace Timing_Analysis {
         Single_Fanout_Edge(T * from, T * to) : Edge<T>(from) {
             Edge<T>::set_fanout(0, to);
         }
-        T & to(void) const { return *Edge<T>::_to.at(0);  }
+        T & to(void) { return *Edge<T>::_to.at(0);  }
+        const T & to(void) const { return *Edge<T>::_to.at(0);  }
 
     };
 

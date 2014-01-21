@@ -53,7 +53,7 @@ namespace Timing_Analysis
     class ita_comparator {
 
     public:
-        bool operator()(Timing_Point * a, Timing_Point * b);
+        bool operator()(const Timing_Point * a, const Timing_Point * b);
     };
 
     class Option
@@ -135,7 +135,7 @@ namespace Timing_Analysis
         void call_prime_time(double target_delay_factor = 1.0f);
         void full_timing_analysis();
         void incremental_timing_analysis(int gate_number, int new_option);
-        void update_timing_points(const Timing_Point * output_timing_point);
+        void update_timing_points(int gate_number);
 
 		// GETTERS
         size_t number_of_gates() const { return _options.size(); }

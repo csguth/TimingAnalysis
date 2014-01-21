@@ -11,7 +11,8 @@ namespace Timing_Analysis
     {
     public:
         Multi_Fanout_Edge(T * from) : Edge<T>(from) {}
-        T & to(const int i) const { return *Edge<T>::_to.at(i);  }
+        const T & to(const int i) const { return *Edge<T>::_to.at(i);  }
+        T & to(const int i) { return *Edge<T>::_to.at(i);  }
     };
 
 }

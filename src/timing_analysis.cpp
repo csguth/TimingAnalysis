@@ -334,7 +334,7 @@ void Timing_Analysis::full_timing_analysis()
 
 }
 
-typedef priority_queue<Timing_Point*, vector<Timing_Point*>, ita_comparator> ita_priority_queue;
+typedef priority_queue<const Timing_Point*, vector<const Timing_Point*>, ita_comparator> ita_priority_queue;
 
 /*
 Timing_Analysis::incremental_timing_analysis
@@ -366,7 +366,7 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
     _critical_path = numeric_limits<Transitions<double> >::zero();
     _total_violating_POs = 0;
 
-    set<Timing_Point*> inserted;
+    set<const Timing_Point*> inserted;
     if(inserted.insert(timing_point).second)
     {
         pq.push(timing_point);
@@ -377,7 +377,7 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
     int input_pin_index = tp_index - 1;
     while(input_pin_index >= 0 && _points.at(input_pin_index).gate_number() == timing_point->gate_number())
     {
-        Timing_Point & fanin = _points.at(input_pin_index).net().from();
+        const Timing_Point & fanin = _points.at(input_pin_index).net().from();
         if(inserted.insert(&fanin).second)
             pq.push(&fanin);
         input_pin_index--;
@@ -387,7 +387,7 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
 //    cout << " -- timing points being updated: " << endl;
     while(!pq.empty())
     {
-        Timing_Point * tp = pq.top();
+        const Timing_Point * tp = pq.top();
 
         assert(tp->is_output_pin() || tp->is_PI());
 
@@ -407,7 +407,7 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
         }
 
         // UPDATE GATE TIMING POINTS AND VIOLATIONS
-        update_timing_points(tp);
+        update_timing_points(tp->gate_number());
 
         // IF CHANGES, PUSH FANOUTS
         vector<Transitions<double> > slewsF(tp->net().fanouts_size());
@@ -424,13 +424,13 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
 
             if(changed)
             {
-                Timing_Point * input_tp_of_fanout = &tp->net().to(i);
+                const Timing_Point * input_tp_of_fanout = &tp->net().to(i);
                 if( input_tp_of_fanout->is_PO() )
                 {
                     continue;
                 }
 
-                Timing_Point * output_tp_of_fanout = &tp->net().to(i).arc().to();
+                const Timing_Point * output_tp_of_fanout = &tp->net().to(i).arc().to();
                 if(input_tp_of_fanout->is_input_pin() && inserted.insert(output_tp_of_fanout).second)
                 {
                     pq.push(output_tp_of_fanout);
@@ -450,16 +450,17 @@ void Timing_Analysis::incremental_timing_analysis(int gate_number, int new_optio
 
 }
 
-void Timing_Analysis::update_timing_points(const Timing_Point *output_timing_point)
+void Timing_Analysis::update_timing_points(int gate_number)
 {
-    unsigned output_timing_point_index = output_timing_point - &_points.front();
-    unsigned first_input_timing_point_index = _gate_index_to_timing_point_index.at(output_timing_point->gate_number()).first;
 
-    _dirty.at(_points.at(output_timing_point_index).gate_number()) = false;
+    unsigned output_timing_point_index = _gate_index_to_timing_point_index.at(gate_number).second;
+    unsigned first_input_timing_point_index = _gate_index_to_timing_point_index.at(gate_number).first;
+
+    _dirty.at(gate_number) = false;
 
     for(int i = first_input_timing_point_index; i < output_timing_point_index; i++)
     {
-        assert(output_timing_point->gate_number() == _points.at(i).gate_number());
+        assert(gate_number == _points.at(i).gate_number());
         this->clear_violations(i);
         this->update_timing(i);
         this->update_violations(i);
@@ -1409,7 +1410,7 @@ bool Option::is_dont_touch() const
     return _dont_touch;
 }
 
-bool ita_comparator::operator()(Timing_Point *a, Timing_Point *b)
+bool ita_comparator::operator()(const Timing_Point *a, const Timing_Point *b)
 {
     return a->logic_level() >= b->logic_level();
 }

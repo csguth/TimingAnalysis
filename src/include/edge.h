@@ -38,7 +38,7 @@ namespace Timing_Analysis {
 
 
     public:
-        T & from() const
+        const T & from() const
         {
             return *Edge<T>::_from;
         }

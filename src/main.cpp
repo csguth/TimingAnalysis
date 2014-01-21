@@ -78,7 +78,6 @@ int main(int argc, char const *argv[])
 //    ta.print_circuit_info();
     ta.full_timing_analysis();
 
-
     for(int i = 0; i < ta.timing_points_size(); i++)
     {
         cout << ta.timing_point(i).name() << ",\t";
@@ -121,5 +120,7 @@ int main(int argc, char const *argv[])
 
 
     ta.print_circuit_info();
+
+    cout << "OK!" << endl;
     return 0;
 }
