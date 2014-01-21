@@ -3,7 +3,6 @@
 
 #include "spef_net.h"
 #include "parser.h"
-
 #include <string>
 using std::string;
 
@@ -30,18 +29,25 @@ struct IF<false, ThenType, ElseType>
 // User configurable {
 
 
-class Traits 
+class Traits
 {
 public:
+    enum Wire_Delay_Model_Factory_Types {
+        PURI = 0,
+        LUMPED_WITH_WIREDELAY
+    };
+
     static const bool ISPD_2012 = false;
     static const double STD_THRESHOLD = 0.01;
     static string ispd_contest_root;
     static string ispd_contest_benchmark;
     static string arrival_time_file_name;
+    static const Wire_Delay_Model_Factory_Types WIRE_DELAY_MODEL_TYPE = LUMPED_WITH_WIREDELAY;
+
 };
 
-
 // }
+
 
 
 

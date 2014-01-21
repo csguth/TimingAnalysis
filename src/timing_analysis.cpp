@@ -100,31 +100,11 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
         {
             const int timing_point_index = _gate_index_to_timing_point_index.at(driverTopologicIndex).second;
             Timing_Point & driver_timing_point = _points.at(timing_point_index);
-
-            // Just a test {
             WireDelayModel * delay_model = 0;
             const LibertyCellInfo & opt = liberty_cell_info(driver_timing_point.gate_number());
-
             if(parasitics->find(net.name) != parasitics->end())
-            {
-                delay_model = new Ceff_Elmore_Slew_Degradation_PURI(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
-
-//                                delay_model = new Lumped_Elmore_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
-                //                delay_model = new Lumped_Elmore_No_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
-                //                delay_model = new Ceff_Elmore_No_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
-
-//                                delay_model = new LumpedCapacitanceWireDelayModel(parasitics->at(net.name), driver_timing_point.name());
-
-//                                delay_model = new Ceff_Elmore_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
-                //                delay_model = new Ceff_Without_Wire_Delay_And_Slew_Degradation(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
-                //                delay_model = new Reduced_Pi(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
-            }
-            // }
-
+                delay_model = new Wire_Delay_Model_Type(parasitics->at(net.name), driver_timing_point.name(), opt.timingArcs.size());
             _nets.push_back(Timing_Net(net.name, &driver_timing_point, delay_model));
-
-            // if(delayModel)
-            // 	cout << "created net " << nets.back().netName << " with lumped capacitance " << driverTp->load() << endl;
             driver_timing_point.net(&(_nets.back()));
         }
 
@@ -148,7 +128,6 @@ Timing_Analysis::Timing_Analysis(const Circuit_Netlist & netlist, const LibertyL
             in_net->add_fanout(&fanout_timing_point);
             if(in_net->_wire_delay_model)
             {
-
                 const double pin_cap = pin_capacitance(in_timing_point_index);
                 in_net->_wire_delay_model->setFanoutPinCapacitance(fanout_timing_point.name(), pin_cap);
             }
@@ -893,7 +872,6 @@ set<int> Timing_Analysis::timing_points_in_longest_path()
         if(tp.logic_level() > _points.at(max_path_PO).logic_level())
             max_path_PO = i;
     }
-    //    cout << "longest path size = " << _points.at(max_path_PO).logic_level() << endl;
 
     int current = max_path_PO;
     stack<int> path;
@@ -926,25 +904,6 @@ set<int> Timing_Analysis::timing_points_in_longest_path()
     path.push(current);
     longest_path.insert(current);
 
-
-    //    while(!path.empty())
-    //    {
-    //        const int index = path.top();
-    //        path.pop();
-
-    //        const Timing_Point & tp = _points.at(index);
-    //        cout << tp.name();
-    //        if(tp.is_PI())
-    //            cout << " PI";
-    //        else if (tp.is_PO())
-    //            cout << " PO";
-
-    //        if(!path.empty())
-    //            cout << " -> ";
-    //        else
-    //            cout << ";";
-    //    }
-    //    cout << endl;
     return longest_path;
 }
 

@@ -10,7 +10,7 @@ using std::endl;
 #include "configuration.h"
 
 #include <cassert>
-
+namespace Timing_Analysis {
 class WireDelayModel
 {
 protected:
@@ -274,5 +274,12 @@ public:
     const Transitions<double> slew_at_fanout_node(const string fanout_node_name) const;
 };
 
+// Wire_Delay_Model_Factory
+typedef IF<Traits::WIRE_DELAY_MODEL_TYPE == 0 && !Traits::ISPD_2012,
+        /*THEN*/Ceff_Elmore_Slew_Degradation_PURI,
+        /*ELSE*/IF<Traits::WIRE_DELAY_MODEL_TYPE == 1 && !Traits::ISPD_2012,
+           /*THEN*/Lumped_Elmore_Slew_Degradation,
+           /*ELSE*/LumpedCapacitanceWireDelayModel>::RET>::RET Wire_Delay_Model_Type;
 
+}
 #endif

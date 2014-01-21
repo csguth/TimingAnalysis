@@ -30,9 +30,6 @@ namespace Timing_Analysis {
         Transitions<double> _ceff;
         int _logic_level;
 
-
-
-
     public:
         Timing_Point(string name, const size_t gate_number, Timing_Point_Type type);
         virtual ~Timing_Point(){}
